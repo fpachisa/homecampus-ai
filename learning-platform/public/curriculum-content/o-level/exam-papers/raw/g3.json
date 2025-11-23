@@ -1,0 +1,404 @@
+{
+  "topicId": "G3",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 22,
+        "questionId": "G3-navalbase-2024-p1-q22",
+        "topicID": "G3",
+        "stem": "A, B and C are points on the circle, centre O. DE is a tangent to the circle at A. Angle $AOC=4x^{\\circ}$ and angle $ACB=x^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with centre O. Tangent DAE at A. Triangle ABC inside. Angle AOC at centre is 4x. Angle ACB is x.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find, in terms of $x$, angle ABC. Give a reason for each step of your answer.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find, in terms of $x$, angle BAE. Give a reason for each step of your answer.",
+            "marks": 2,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Circle Theorems",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with centre O. Tangent DAE at A. Triangle ABC inside. Angle AOC at centre is 4x. Angle ACB is x.",
+          "notes": "Circle Theorems",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-navalbase-2024-p1-q22.svg"
+        }
+      },
+      {
+        "questionNumber": 12,
+        "questionId": "G3-orchidpark-2024-p1-q12",
+        "topicID": "G3",
+        "stem": "In the diagram, A, B, C and D are points on the circumference of a circle with centre O. AB is parallel to DO and angle $AOD=67^{\\circ}$. AOC is the diameter of the circle.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with points A, B, C, D on circumference. O is centre. AOC is diameter. AB parallel to DO. Angle AOD=67.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle BCD. Give a reason for each step of your working.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why angle DAB is $123.5^{\\circ}$",
+            "marks": 1,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find angle DBC. Give a reason for each step of your working.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Circle Properties",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with points A, B, C, D on circumference. O is centre. AOC is diameter. AB parallel to DO. Angle AOD=67.",
+          "notes": "Circle Properties",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-orchidpark-2024-p1-q12.svg"
+        }
+      },
+      {
+        "questionNumber": 13,
+        "questionId": "G3-tkgs-2024-p1-q13",
+        "topicID": "G3",
+        "stem": "In the diagram, A, B, C and D are four points on a circle, centre O. Angle $ABO=x^{\\circ}$ and angle $ADO=y^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with points A, B, C, D. O is the centre. Quadrilateral ABCD inside. Lines connecting O to A, B, D.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle BCD in terms of $x$ and $y$. Give reasons for each step of your working.",
+            "marks": 3,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Circle Geometry Angles",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with points A, B, C, D. O is the centre. Quadrilateral ABCD inside. Lines connecting O to A, B, D.",
+          "notes": "Circle Geometry Angles",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-tkgs-2024-p1-q13.svg"
+        }
+      },
+      {
+        "questionNumber": 25,
+        "questionId": "G3-tkgs-2024-p1-q25",
+        "topicID": "G3",
+        "stem": "PR is a diameter of the large circle, centre O. QS is a diameter of the small circle, centre O. PQ and RS are tangents to the small circle.",
+        "hasDiagram": true,
+        "diagramDescription": "Two concentric circles with centre O. PR is diameter of large circle. QS is diameter of small circle. PQ and RS are chords of large circle tangent to small circle. Triangles OPQ and ORS formed.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that triangle OPQ is congruent to triangle ORS. Give a reason for each statement you make.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "The ratio of OQ to PQ to OP is 5 : 12 : 13. Express the area of the shaded region as a percentage of the large circle.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Concentric Circles Congruency",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Two concentric circles with centre O. PR is diameter of large circle. QS is diameter of small circle. PQ and RS are chords of large circle tangent to small circle. Triangles OPQ and ORS formed.",
+          "notes": "Concentric Circles Congruency",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-tkgs-2024-p1-q25.svg"
+        }
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "G3-zhonghua-2024-p1-q16",
+        "topicID": "G3",
+        "stem": "A, B, C and D are four points on a circle, centre O. Angle $OCB=61^{\\circ}$, angle $OAD=12^{\\circ}$ and reflex angle $AOC=256^{\\circ}$. OC and AD intersect at the point X.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with points A, B, C, D. Centre O. Reflex angle AOC is 256 degrees. Triangle OCB with angle OCB=61. Triangle OAD with angle OAD=12.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle BAD. Give reasons for each step of your working.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Circle Properties Angles",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with points A, B, C, D. Centre O. Reflex angle AOC is 256 degrees. Triangle OCB with angle OCB=61. Triangle OAD with angle OAD=12.",
+          "notes": "Circle Properties Angles",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-zhonghua-2024-p1-q16.svg"
+        }
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 5,
+        "questionId": "G3-broadrick-2024-p2-q5",
+        "topicID": "G3",
+        "stem": "In the diagram, A, B, C and D are points on the circle with centre O. CT is tangent to the circle and AC is parallel to OT. Angle $AOC=100^{\\circ}$",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with centre O. Quadrilateral ABCD inscribed. Tangent CT at C. Line AC parallel to line OT.",
+        "parts": [
+          {
+            "partId": "ai",
+            "questionText": "Giving reason(s) for your workings, find angle ABC.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "aii",
+            "questionText": "Giving reason(s) for your workings, find angle ADC.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "aiii",
+            "questionText": "Giving reason(s) for your workings, find angle OTC.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain whether a circle can be drawn passing through the points A, O, C and D.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Given $CT=4.8$ cm, find the area of the minor segment ADC.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Geometry",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with centre O. Quadrilateral ABCD inscribed. Tangent CT at C. Line AC parallel to line OT.",
+          "notes": "Geometry",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-broadrick-2024-p2-q5.svg"
+        }
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "G3-cchms-2024-p2-q6",
+        "topicID": "G3",
+        "stem": "A, B, C and D are points on the circle with centre O and radius 5 cm. AE is a tangent to the circle at A and OE is a straight line that passes through C. Angle $OEA=28^{\\circ}$ and $CD=5$ cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with centre O. Tangent AE meets circle at A. Line O-C-E intersects circle at C. Points A, B, C, D are on circle. CD is a chord. Shaded region is bounded by arc CD, line CE, and line AE.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find, giving a reason for each step of your working,\n(i) angle OAD,\n(ii) angle ABC.",
+            "marks": 5,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the area of the shaded region.",
+            "marks": 4,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Circle Properties and Tangents",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with centre O. Tangent AE meets circle at A. Line O-C-E intersects circle at C. Points A, B, C, D are on circle. CD is a chord. Shaded region is bounded by arc CD, line CE, and line AE.",
+          "notes": "Circle Properties and Tangents",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-cchms-2024-p2-q6.svg"
+        }
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "G3-navalbase-2024-p2-q6",
+        "topicID": "G3",
+        "stem": "The diagram, not drawn to scale, shows two concentric circles, centre O. AB and AD are tangents to the smaller circle at B and D respectively, centre O. AC is the diameter of the larger circle.",
+        "hasDiagram": true,
+        "diagramDescription": "Two concentric circles. Tangents AB and AD from A (on outer circle) to B and D (on inner circle). AC is diameter of outer circle.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that triangle ABC is congruent to triangle ADC. Give a reason for each statement you make.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "The radius of the larger circle is 8 cm and angle $BAO=42.5^{\\circ}$. Calculate the area of triangle AOB.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Calculate the area of the shaded region.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Concentric Circles and Tangents",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Two concentric circles. Tangents AB and AD from A (on outer circle) to B and D (on inner circle). AC is diameter of outer circle.",
+          "notes": "Concentric Circles and Tangents",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-navalbase-2024-p2-q6.svg"
+        }
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "G3-orchidpark-2024-p2-q8",
+        "topicID": "G3",
+        "stem": "P, R and Q are points on the circle with centre, O. PT and QT are tangents to the circle at P and Q respectively. $\\angle PTQ=60^{\\circ}$ and $\\angle OQR=20^{\\circ}$",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with tangents PT and QT meeting at T. Angle PTQ=60. Angle OQR=20. Triangle PQR inside circle.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Writing your reasons clearly, find $\\angle TQP$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $\\angle PRQ$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find $\\angle OPR$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "If the radius of the circle is 5 cm, find the area of the major segment QRP of the circle.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Circle Geometry",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with tangents PT and QT meeting at T. Angle PTQ=60. Angle OQR=20. Triangle PQR inside circle.",
+          "notes": "Circle Geometry",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-orchidpark-2024-p2-q8.svg"
+        }
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "G3-swisscottage-2024-p2-q6",
+        "topicID": "G3",
+        "stem": "The diagram shows a circle PQRST, with centre O. PV and RV are tangents to the circle and U is the intersection of PS and TR. Angle $PVR=40^{\\circ}$ and angle $STU=43^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle PQRST with centre O. Tangents PV and RV meeting at V. TR and PS intersect at U inside the circle. T, S, R, Q, P are on circle. Angle PVR = 40 degrees. Angle STU (STR) = 43 degrees.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle PQR. Give a reason for each step of your working.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find angle TUP. Give a reason for each step of your working.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Alice claims that the area of the minor sector OSR is more than one third of the area of the major sector OSR. Do you support her claim? Justify your decision with calculations.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Circle Properties and Sector Area",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle PQRST with centre O. Tangents PV and RV meeting at V. TR and PS intersect at U inside the circle. T, S, R, Q, P are on circle. Angle PVR = 40 degrees. Angle STU (STR) = 43 degrees.",
+          "notes": "Circle Properties and Sector Area",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-swisscottage-2024-p2-q6.svg"
+        }
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "G3-tkgs-2024-p2-q5",
+        "topicID": "G3",
+        "stem": "In the diagram, O is the centre of the circle through A, B, C, D and TB is the tangent at B. AC is the diameter of the circle, and the length of the minor arc BAD is 11 cm. Given that $\\angle OBC=40^{\\circ}$, $\\angle ACD=30^{\\circ}$ and $\\angle BTC=70^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with points A, B, C, D. TB tangent at B. Angle OBC=40, ACD=30, BTC=70. AC is diameter.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find $\\angle ABD$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find $\\angle BAD$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Taking $\\pi=\\frac{22}{7}$, calculate the radius of the circle.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Show that triangle BCD is similar to triangle CTB. Give a reason for each statement you make.",
+            "marks": 4,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Hence, express CT in terms of x and y given that $BC=x$ cm and $BD=y$ cm.",
+            "marks": 2,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Circle Properties and Similarity",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with points A, B, C, D. TB tangent at B. Angle OBC=40, ACD=30, BTC=70. AC is diameter.",
+          "notes": "Circle Properties and Similarity",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-tkgs-2024-p2-q5.svg"
+        }
+      }
+    ]
+  }
+}

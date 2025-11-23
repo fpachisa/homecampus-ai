@@ -1,0 +1,747 @@
+{
+  "topicId": "S1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 6,
+        "questionId": "S1-acsi-2024-p1-q6",
+        "topicID": "S1",
+        "stem": "Justin drew this graph to show his mobile data usage for each of the following four months.",
+        "hasDiagram": true,
+        "diagramDescription": "A bar chart representing Mobile Data Usage (Gigabytes) over four months: Jan, Feb, Mar, Apr. The bars are replaced by images of mobile phones of increasing size. The height of the phone for Jan is lowest, Feb higher, Mar higher, and Apr is highest, reaching near the 50 mark on the y-axis. The width of the phones also increases with height.",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "State one aspect of the graph that may be misleading and explain how this may lead to a misinterpretation of the graph.",
+            "marks": 2,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Misleading Statistics"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "S1-acsi-2024-p1-q18",
+        "topicID": "S1",
+        "stem": "The cumulative frequency curve below illustrates the wait time of 240 customers who visited a bank.",
+        "hasDiagram": true,
+        "diagramDescription": "A cumulative frequency graph plotting 'Time (Minutes)' on the x-axis (0 to 120) against 'Cumulative Frequency' on the y-axis (0 to 240). The curve starts at (0,0) and rises in an S-shape to (120, 240). Grid lines are provided for reading values.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Use the graph to estimate the 60th percentile,",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Use the graph to estimate the interquartile range of the wait time.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Only 10% of the customers complained about the long wait time they experienced. What was the minimum wait time for these customers?",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Two customers are chosen at random. Find the probability that one customer waited for less than or equal to 60 minutes and the other waited for more than 100 minutes.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Cumulative Frequency"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "S1-broadrick-2024-p1-q10",
+        "topicID": "S1",
+        "stem": "The graphs below show the average test scores of Class A and Class B over three consecutive years.",
+        "hasDiagram": true,
+        "diagramDescription": "Two bar charts showing scores for Class A and Class B for 2022, 2023, and 2024. The Class B chart has a truncated y-axis starting at 65, exaggerating the growth.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "What feature of the graph misleads readers to think that the scores of Class A in 2022 had increased to 6 times that in 2024?",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Hailey claims that the scores of Class A and Class B shows the same improvement from 2022 to 2024. Do you agree? Explain your answer.",
+            "marks": 1,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Misleading Statistics"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "S1-cchms-2024-p1-q16",
+        "topicID": "S1",
+        "stem": "A company presented their 2023 financial report in this graph.",
+        "hasDiagram": true,
+        "diagramDescription": "A bar chart showing Profit (in $100 000) on the y-axis and time periods on the x-axis. The first bar for 'Jan to Jun' has height 20 and is narrower. The second bar for 'Jul to Dec' has height 60 and is much wider (about double the width) than the first bar.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State one aspect of the graph that may be misleading and explain how they may lead to a misinterpretation.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Misleading Statistical Graph"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "S1-canberra-2024-p1-q20",
+        "topicID": "S1",
+        "stem": "The line chart below shows the sales performance of a company.",
+        "hasDiagram": true,
+        "diagramDescription": "Line graph showing sales from Jan to Jun. Y-axis starts at 95 and goes to 130. The line shows a steady increase from 100 in Jan to 125 in Jun.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Explain what is misleading about this line chart and how it may mislead the reader.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Misleading Line Chart"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "S1-greenridge-2024-p1-q3",
+        "topicID": "S1",
+        "stem": "School students were surveyed on their favourite brand of drink. The results are represented in the pie chart below.",
+        "hasDiagram": true,
+        "diagramDescription": "Pie chart showing percentages for four brands: Brand A 41%, Brand B 9%, Brand C 39%, Brand D 21%.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State one error in the pie chart above.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "State one way to correct the error stated in part (a).",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Pie Chart Analysis"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "S1-swisscottage-2024-p1-q15",
+        "topicID": "S1",
+        "stem": "The graph shows information about the waste generated in Singapore from 2013 to 2023.",
+        "hasDiagram": true,
+        "diagramDescription": "Stacked bar chart showing 'Waste Recycled' and 'Waste Disposed of' for years 2013 to 2023. Tonnage on y-axis from 0 to 9000 ('000 tonnes).",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Estimate the waste recycled in 2021.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Make one comment about the total waste generated in the 2020s compared with the 2010s.",
+            "marks": 1,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "There was a significant drop in the amount of construction and demolition waste, which is usually completely recycled, over the last decade. Brian claims that this contributed to a decline in the percentage of waste recycled in the 2020s compared with the 2010s. Does the graph support his claim? Justify your answer with reference to the graph.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Waste Generation Statistics"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 8,
+        "questionId": "S1-acsi-2024-p2-q8",
+        "topicID": "S1",
+        "stem": "The box-and-whisker plots show the distribution of the masses (in grams) of eggs sold in Shop A and Shop B.",
+        "hasDiagram": true,
+        "diagramDescription": "Two box-and-whisker plots aligned vertically against a mass scale from 40 to 70 grams. Shop A's plot spans from about 45 to 67, with a box from 49 to 59 and median at 54. Shop B's plot spans from 41 to 61, with box from 44 to 53 and median at 50.",
+        "parts": [
+          {
+            "partId": "a-i",
+            "questionText": "There are 25 eggs with masses of more than 59 g sold in Shop A. Find the total number of eggs sold in Shop A.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a-ii",
+            "questionText": "Make a comment comparing the averages and a comment comparing the distribution of the masses of the eggs sold in Shop A and Shop B. Use figures to support your answers.",
+            "marks": 3,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b-i",
+            "questionText": "In a sample of 80 eggs, 4 are cracked. One egg is selected from the sample at random. Find the probability that the egg is cracked.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b-ii",
+            "questionText": "Two eggs are selected from the sample at random. Find the probability that both eggs are cracked.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b-iii",
+            "questionText": "Three eggs are selected from the sample at random. Find the probability that at least one egg is cracked.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Statistics and Probability"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "S1-broadrick-2024-p2-q7",
+        "topicID": "S1",
+        "stem": "The cumulative frequency curve shows the distribution of the masses of 160 apples in tree A.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curve for masses of apples. Also a box-and-whisker plot for Tree B.",
+        "parts": [
+          {
+            "partId": "ai",
+            "questionText": "Use the curve to estimate the median mass.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "aii",
+            "questionText": "Use the curve to estimate the interquartile range of the masses.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "20% of the heaviest apples belong to the top grade. Find the minimum mass an apple needs to be in the top grade.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Two apples are chosen at random. Find the probability that one apple weighs less than 320 g and the other apple weighs more than 360 g. Give your answer to 3 significant figures.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "The masses of 160 apples from tree B were recorded. The box-and-whisker plot shows the distribution of the masses. Explain if the following statement is true: \"In tree B, there are more apples weighing less than 320 g as compared to those weighing more than 360 g.\"",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "e",
+            "questionText": "Justine claims that it is better to get the apples from tree B. Do you agree? Explain your answer using appropriate figures.",
+            "marks": 2,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Statistics"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "S1-cchms-2024-p2-q4",
+        "topicID": "S1",
+        "stem": "(a) 12 students from class A took a Mathematics test. The table below shows the test marks of the students. However, two of the students' marks are covered with ink.\n\n| | | | | |\n| :--- | :--- | :--- | :--- | :--- |\n| 40 | 95 | 84 | 47 | 63 |\n| 52 | 63 | 55 | 52 | 61 |",
+        "hasDiagram": true,
+        "diagramDescription": "A box-and-whisker plot for Mathematics Test Marks. Range appears to be from 40 to 95. Q1, Median, Q3 boxes are shown.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Given that the box-and-whisker plot below shows the distribution of the results, explain why the information may not be sufficient to find the missing marks of the two students.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Given further that the modal mark is 63, find the two missing marks.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "12 students from class B also took the same Mathematics test. The distribution of their test marks is shown on the cumulative frequency graph. Make a comment comparing the averages and a comment comparing the distribution of the Mathematics Test marks between the two classes. Use figures to support your answers.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Alice rolled a six-sided die, X, 100 times. Bala rolled another six-sided die, Y, 80 times. The number of times they each obtained a '6' is recorded in the table.\n\n| Die | Number of rolls | Number of times '6' is obtained |\n| :--- | :--- | :--- |\n| X | 100 | 16 |\n| Y | 80 | 18 |\n\n(i) Find the probability of rolling a '6' by Alice and Bala respectively.\n(ii) One of the dice is biased. Using your answers in (b)(i) determine which die, X or Y, is likely to be the unbiased 6-sided die. Explain your answer.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Test Scores and Dice Probabilities"
+      },
+      {
+        "questionNumber": 2,
+        "questionId": "S1-canberra-2024-p2-q2",
+        "topicID": "S1",
+        "stem": "(a) The heights, in centimeters, of 100 plants of each of species A and species B are recorded. The cumulative frequency curves show the distributions of their heights.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency graph for Species A and Species B. X-axis Heights 20-65. Y-axis Cumulative Frequency 0-100.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the curve to estimate (a) the median height for species B, (b) the $40^{th}$ percentile for species A, (c) the interquartile range for species A.",
+            "marks": 4,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Plants from species B are used for an event. Only plants with height within 10% of 50 cm are used. Find the percentage of plants from species B which are used.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "A box has 20 pots of plants. There are 5 pink pots, 9 blue pots and the remaining pots are green.\n(i) Two pots are taken from the box at random, without replacement. Find, as a fraction in its simplest form, the probability that one pot is pink and the other is blue.\n(ii) These two pots are returned to the box. Three pots are taken from the box at random, without replacement. Find, as a fraction in its simplest form, the probability that only one pot is green.",
+            "marks": 4,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Cumulative Frequency and Probability"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "S1-greenridge-2024-p2-q8",
+        "topicID": "S1",
+        "stem": "(a) The cumulative frequency graph shows the distribution of times of the first 120 runners to finish a marathon in 2022. This box-and-whisker plot represents the distribution of the times of the first 120 runners to finish the marathon in 2023.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency graph for 2022. Box plot for 2023.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the two diagrams to complete this table for the two marathons.",
+            "table": {
+              "type": "data",
+              "headers": [
+                "Year",
+                "Lower quartile",
+                "Median",
+                "Upper quartile",
+                "Interquartile range"
+              ],
+              "rows": [
+                [
+                  "2022",
+                  "",
+                  154.5,
+                  "",
+                  ""
+                ],
+                [
+                  "2023",
+                  145,
+                  "",
+                  155,
+                  10
+                ]
+              ]
+            },
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Simon says that the runners in 2022 were quicker on average. Do you agree? Give a reason for your answer.",
+            "marks": 1,
+            "answerType": "proof"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Complete the frequency table below for the runners in 2023.",
+            "table": {
+              "type": "data",
+              "headers": [
+                "Time (minutes)",
+                "Frequency"
+              ],
+              "rows": [
+                [
+                  "$135<t\\le140$",
+                  4
+                ],
+                [
+                  "$140<t\\le145$",
+                  ""
+                ],
+                [
+                  "$145<t\\le150$",
+                  32
+                ],
+                [
+                  "$150<t\\le155$",
+                  28
+                ],
+                [
+                  "$155<t\\le160$",
+                  ""
+                ],
+                [
+                  "$160<t\\le165$",
+                  9
+                ]
+              ]
+            },
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "In a game two dice are used. Die A has 2 blue faces and 4 yellow faces. Die B has 4 blue faces and 2 pink faces. The two dice are thrown together.\n(i) Find the probability that (a) both dice show a blue face on top, (b) just one die shows a blue face on top.\n(ii) If both dice show blue, the player wins a prize. If just one show blue, the player throws both dice again. He also wins a prize if both show blue on the second throw. Calculate the probability that the player wins a prize on either the first throw or second throw.",
+            "marks": 5,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Marathon Statistics and Probability"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "S1-greenridge-2024-p2-q9",
+        "topicID": "S1",
+        "stem": "Electricity tariffs are regulated by the Energy Market Authority (EMA) of Singapore and revised quarterly to reflect the actual cost of electricity. The cost of electricity per kilowatt(kWh) is known as the electricity tariff rate, which is revised every quarter by SP power.",
+        "hasDiagram": true,
+        "diagramDescription": "Bar chart of Quarterly Household Electricity Tariff from Jul-Sep 22 to Jan-Mar 24. Values fluctuate around 30 cents/kWh. Also a solar panel diagram.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Mr Faizal's average electricity consumption in January to March 2024 is shown in the table: Jan 24: 727, Feb 24: 682, Mar 24: 769. Show that Mr Faizal paid $217 on average per month for his family consumption from January to March 2024.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Mr Faizal stays in a terrace house in the east of Singapore. He is considering installing solar panel at his home. He did some research and gets a quotation from a company that installs solar panel. Based on his house type, he is recommended to use the 60-cells solar panel (dimensions roughly 1.0m x 1.65m). Dimensions of roof area for installation: 9m x 4m. Calculate the maximum number of solar panels that can be installed on the roof of Mr Faizal's house.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Using your answer in (a) and (b), determine if Mr Faizal should proceed with the installation of solar panel. Justify your answer and show your calculations clearly. State one assumption you have used.\n\nInformation for installation of solar panels:\nCost of installing every 10 solar panels: $5950\nAverage amount of electricity produced by 1 solar panel: 19 kWh per month\nMaintenance fee per year: $500\nLifespan of solar panels: 20 years",
+            "marks": 6,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Electricity and Solar Panel"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "S1-huayi-2024-p2-q7",
+        "topicID": "S1",
+        "stem": "A researcher wants to conduct a study to find out if there is a correlation between the analytical skills of adults with age. The researcher invited 80 adults to solve a number puzzle. The cumulative frequency curve shows the distribution of the time taken.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curve for time taken. X-axis 10 to 80s. Y-axis 0 to 80.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the curve to estimate the median time taken.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Use the curve to estimate the interquartile range of the time taken.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "20% of the adults took more than $n$ seconds to solve the puzzle. Find $n$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "The frequency distribution of the data for the 80 adults invited to solve the number puzzle is shown in the table. Find an estimate of the standard deviation of the time taken by the 80 adults to solve the number puzzle.\n\n| Time taken, x (seconds) | Frequency |\n| :--- | :--- |\n| $0<x\\le20$ | 5 |\n| $20<x\\le40$ | 40 |\n| $40<x\\le60$ | 29 |\n| $60<x\\le80$ | 6 |",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "The same group of adults were each given a word puzzle to solve. The box-and-whisker plot shows the distribution of the time taken. Make two comparisons between the performances of the adults in solving the two puzzles.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Statistics Cumulative Frequency and Box Plot"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "S1-navalbase-2024-p2-q3",
+        "topicID": "S1",
+        "stem": "(a) In February 2021, a survey was carried out to find the number of days 500 patients stayed at a hospital. The graph shows the cumulative frequency curve for the data collected.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curve showing Number of days (0-30) vs Cumulative Frequency (0-500).",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the curve to estimate the median number of days,",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Use the curve to estimate the interquartile range of the number of days,",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Use the curve to estimate the percentage of patients who stayed more than 20 days in the hospital.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "In February 2022, the same survey was carried out again on another 500 patients with the following result shown in the box-and-whisker plot below. Make two comments comparing the number of days stayed in the hospital in February 2021 and February 2022. Use figures to support your answer.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "One patient in February 2021 was selected at random. Find the probability that the patient stayed for at most 20 days.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Two patients in February 2022 were selected at random. Find the probability that one of the patients stayed for at most 8 days while the other stayed for more than 8 days.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Cumulative Frequency and Probability"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "S1-swisscottage-2024-p2-q8",
+        "topicID": "S1",
+        "stem": "The cumulative frequency curve shows the distribution of the wages per week of 80 workers in a factory.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curve of Wages per week. X-axis 0-1000. Y-axis 0-90.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the curve to estimate the median wages per week.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Use the curve to estimate the interquartile range of the wages per week.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "In June 2024, the average wages per week of factory workers in Singapore was $540. Calculate the percentage of the workers in the factory who earned more than this average.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the number of workers who earned between $460 and $800.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "The factory employed more workers and paid them not more than $650 per week. Find the additional number of workers employed if the probability of choosing a worker who earned not more than $650 is $\\frac{11}{15}$.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Cumulative Frequency Statistics"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "S1-tkgs-2024-p2-q6",
+        "topicID": "S1",
+        "stem": "The cumulative frequency graph shows distribution of the waiting times before being served, in minutes, of 60 customers at restaurant A on a particular day.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curve of waiting times.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the curve to estimate the median waiting time.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Use the curve to estimate the interquartile range.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Use the curve to estimate the $35^{th}$ percentile of the waiting time.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that 20% of the customers waited more than x minutes to be served, find the value of x.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "The data below represents the waiting times of 10 customers from restaurant B on the same day. 10, 12, 14, 14, 15, 17, 17, 18, 22, 28. Calculate (i) the median waiting time, (ii) the interquartile range.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "The owner of restaurant B claims that his restaurant is more efficient and consistent in their service compared to restaurant A based on the data given. Give a reason why this is not a fair comparison.",
+            "marks": 1,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Cumulative Frequency and Comparison"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "S1-woodgrove-2024-p2-q5",
+        "topicID": "S1",
+        "stem": "The masses of two batches of 400 steel bars produced by factory A and B were measured and recorded. The cumulative frequency graph below shows the masses.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curves for Factory A and Factory B. Masses from 60 to 110 kg.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "For the steel bars produced by factory A, find the median,",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "For the steel bars produced by factory A, find the interquartile range.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The steel bars produced by factory B are heavier than those produced by factory A. Do you agree? Explain your answer.",
+            "marks": 1,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "Which factory is more consistent in the production of steel bars? Support your answer with workings.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "d",
+            "questionText": "One steel bar is chosen at random from factory A and another steel bar is chosen at random from factory B. Find, as a fraction in its simplest form, the probability that both steel bars chosen are more than 80kg.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Cumulative Frequency Statistics"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "S1-zhonghua-2024-p2-q7",
+        "topicID": "S1",
+        "stem": "In February 2021, a survey was carried out to find the number of days 500 patients stayed at a hospital. The graph shows the cumulative frequency curve for the data collected.",
+        "hasDiagram": true,
+        "diagramDescription": "Cumulative frequency curve for hospital stay duration.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Use the curve to estimate the median number of days.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Use the curve to estimate the interquartile range of the number of days.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Use the curve to estimate the percentage of patients who stayed more than 20 days in the hospital.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "In February 2022, the same survey was carried out again on another 500 patients with the following result shown in the box-and-whisker plot below. Make two comments comparing the number of days stayed in the hospital in February 2021 and February 2022. Use figures to support your answer.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "One patient in February 2021 was selected at random. Find the probability that the patient stayed for at most 20 days.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Two patients in February 2022 were selected at random. Find the probability that one of the patients stayed for at most 8 days while the other stayed for more than 8 days.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Cumulative Frequency and Box Plot Analysis"
+      }
+    ]
+  }
+}

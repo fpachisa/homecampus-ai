@@ -1,0 +1,196 @@
+{
+  "topicId": "N1",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [
+      {
+        "questionNumber": 9,
+        "questionId": "N1-canberra-2024-p2-q9",
+        "topicID": "N1",
+        "stem": "Jim, his wife and their child visited Hokkaido, Japan. The tables below give information that can be used to work out some of their expenses.\n\n**Prices of flight tickets for a return trip**\n| Payment mode | Cash (Includes tax) | | Redemption with miles (Excludes tax of $115 per pax) | |\n| :--- | :--- | :--- | :--- | :--- |\n| Class | Business | Economy | Business | Economy |\n| Adult | $5500 | $1920 | 140 000 miles | 90 000 miles |\n| Child | $4000 | $1350 | | |\n\n**Amount of fuel used (litres/100 km)**\n| Type of car | Type of driving | | |\n| :--- | :--- | :--- | :--- |\n| | Sport Utility Vehicle (SUV) | Sedan car | Mini van |\n| City | 9.3 | 7.8 | 10.8 |\n| Out of city | 7.5 | 5.7 | 8.9 |\n| Combined | 8.8 | 6.2 | 9.5 |\n\n**Daily rates of driver**\n| Day(s) of hire | 8 hours | Additional time |\n| :--- | :--- | :--- |\n| 1 | $350 | $45 per hour |\n| 2 or more | $300 | $40 per hour |",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "They travelled in business class and Jim had 150 000 miles to offset some of the cost of their flight tickets. Calculate the amount of money he paid for the tickets.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$9615",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine how the miles are used.",
+                  "working": "Jim has 150,000 miles. A Business class redemption requires 140,000 miles. He can redeem 1 ticket (for himself).",
+                  "reasoning": "He has enough for 1 adult ticket but not enough for more."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate cost for Jim (Redemption).",
+                  "working": "Tax only = $115.",
+                  "reasoning": "Redemption excludes tax, so tax must be paid in cash."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate cost for Wife and Child (Cash).",
+                  "working": "Wife (Adult Business) = $5500.\nChild (Business) = $4000.",
+                  "reasoning": "Remaining family members must pay full cash price."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Sum the total cost.",
+                  "working": "$115 + 5500 + 4000 = 9615$",
+                  "reasoning": "Add all cash components."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Jim engaged a driver for 10 hours and his family travelled in a SUV for one day during their trip. The driver picked them from their accommodation in the city to attractions outside the city. The driver drove the first stage of the journey at an average speed of $70~km/h$. The second stage of the journey is 32 km longer than the first stage. The driver drove at an average speed of $80~km/h$. The journey takes a total of 4 hours and 9 minutes. Fuel price for the vehicle was $1.70 per litre. Jim paid $550 to the driver. He thinks that he included a 20% tips in the amount paid to the driver. Is he correct? Justify your decision with calculations.",
+            "marks": 8,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "No, Jim is incorrect. The tip was approximately 13%.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation for distance ($d_1$) of the first stage.",
+                  "working": "Let $d_1$ be the distance of stage 1.\nStage 2 distance = $d_1 + 32$.\nTotal time = 4h 9m = $4 \\frac{9}{60} = 4.15$ hours.\nTime = $\\frac{\\text{Distance}}{\\text{Speed}}$\n$\\frac{d_1}{70} + \\frac{d_1 + 32}{80} = 4.15$",
+                  "reasoning": "Total time is the sum of time taken for both stages."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $d_1$.",
+                  "working": "Multiply by 560 (LCM of 70, 80):\n$8d_1 + 7(d_1 + 32) = 4.15 \\times 560$\n$8d_1 + 7d_1 + 224 = 2324$\n$15d_1 = 2100$\n$d_1 = 140$ km.",
+                  "reasoning": "Algebraic simplification."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate total distance travelled.",
+                  "working": "Total Distance = $d_1 + (d_1 + 32) = 140 + 172 = 312$ km.",
+                  "reasoning": "Sum of both stages."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate fuel cost.",
+                  "working": "Using 'Combined' rate for SUV (standard for mixed driving): 8.8 L / 100 km.\nFuel used = $\\frac{312}{100} \\times 8.8 = 27.456$ Litres.\nCost = $27.456 \\times 1.70 \\approx 46.68$.",
+                  "reasoning": "Fuel cost = Litres used $\\times$ Price per litre."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate Driver Hire cost.",
+                  "working": "Duration: 10 hours (1 day).\nBase (8h) = $350.\nOvertime (2h) = $2 \\times 45 = 90$.\nTotal Hire = $350 + 90 = 440$.",
+                  "reasoning": "Refer to 'Daily rates of driver' table for 1 day."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Calculate total base cost and verify tip percentage.",
+                  "working": "Total Base Cost = Hire + Fuel = $440 + 46.68 = 486.68$.\nAmount Paid = $550.\nTip Amount = $550 - 486.68 = 63.32$.\nTip Percentage = $\\frac{63.32}{486.68} \\times 100 \\approx 13.0\\%$.",
+                  "reasoning": "Tip is the amount paid over the base cost."
+                },
+                {
+                  "step": 7,
+                  "explanation": "Conclusion.",
+                  "working": "13% < 20%. Therefore, Jim is incorrect.",
+                  "reasoning": "Compare calculated percentage with Jim's claim."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Travel Expenses Problem"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "N1-huayi-2024-p2-q10",
+        "topicID": "N1",
+        "stem": "Javier and Stella are planning their exercise routines. Javier and Stella have a body mass of 70 kg and 60 kg respectively. The speed for walking and jogging of the two individuals are represented in the chart. They research the following information about the benefits of exercise.",
+        "hasDiagram": true,
+        "diagramDescription": "Bar chart comparing walking and jogging speeds for Javier and Stella. Text boxes with Health Advice and Calorie burn tables.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "In their first week of exercise, they each plan to go for four brisk walks. They will walk the same route each time. The four walks together meet the minimum target for the time for optimal health benefits in one week. Find the distance of one of these walks.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find out how many more calories Javier burns in these four walks than Stella.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "After one month, they change their routines. Javier wants to gain additional health benefits. He decides to do a 4 km walk 3 times per week and do a 6 km jog 2 times per week. He will also attend a 45-minute yoga class 2 times per week. Stella wants to maintain optimal health benefits. She decides to do an 8 km jog 2 times per week. She will also attend a 30-minute weight training session 2 times per week. Javier says: 'We will both meet our targets for exercise. However, I will burn about 50% more calories than Stella during our exercise per week.' Is Javier correct? Justify your decision with clear calculations.",
+            "marks": 7,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Exercise Planning Real-World Problem"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N1-navalbase-2024-p2-q9",
+        "topicID": "N1",
+        "stem": "The table below shows the price board displayed at a petrol station on 12 April 2023.\n\n| Grade | Pump price (per litre) | Nett price (per litre) |\n| :--- | :--- | :--- |\n| Levo 98 | $3.41 | x |\n| Levo 95 | $2.92 | $2.77 |\n| Levo Diesel | $2.69 | $2.55 |\n\nPump price refers to the price before a discount is given, whereas nett price refers to the price after a discount is given. The discount given for the 3 grades is the same.",
+        "hasDiagram": true,
+        "diagramDescription": "A picture of a car.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Mrs Ong always drives her car from her house in Singapore to Malacca to visit her parents. Below is some information about her car.\n\nFuel tank capacity: 11.0952 gallon\nFuel consumption: 47 miles per gallon (mpg)\nFuel consumption is distance travelled per unit volume of fuel used.\n$1~mpg=0.42554~km/litres.$\n$1~gallon=3.7855$ litres.\n\nMrs Ong decided to visit her parents during Labour Day. She pumped a full tank of Levo 95 for the car and drove a distance of 244 km. The tank was left with 70% of fuel in the end. Mrs Ong made two claims:\n\"The fuel consumption was 47 mpg.\" and \"The total discount she received would allow her to travel an extra distance of approximately 13.6 km.\" Were her claims correct? Justify your decisions and show your calculations clearly.",
+            "marks": 7,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Fuel Consumption and Discount"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N1-swisscottage-2024-p2-q9",
+        "topicID": "N1",
+        "stem": "An event organiser is organising a 3-day Pet Festival for 300 exhibitors. The event organiser charges each exhibitor a registration fee of $90 and a daily booth rental of $150.",
+        "hasDiagram": true,
+        "diagramDescription": "Layout of halls A, B, C, D, E with areas and rental prices. Halls A, B, C are in a row. D and E are below them. Foldable partitions between adjacent halls.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total amount of money the organiser collected from each exhibitor.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The event organiser needs to rent an exhibition space for the Pet Festival. Each booth size is $15~m^{2}$. Aisle space and open spaces required is 65% of the total area occupied by the booths. Calculate the minimum amount payable by the event organiser for the daily rental of the exhibition hall(s) needed.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "It is estimated that there will be a total of 35 000 visitors for the 3-day exhibition. The event organiser says: 'We will meet our minimum target profit of $300 000 if we charge an entrance fee of $6 per visitor.' Is the event organiser correct? Using your answers in part (a) and (b), justify your decision with calculations.",
+            "marks": 7,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Event Planning Profit Analysis"
+      }
+    ]
+  }
+}

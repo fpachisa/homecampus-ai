@@ -1,0 +1,101 @@
+<svg width="400" height="350" viewBox="0 0 600 550" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white" />
+
+  <!-- 
+    New Coordinate Calculation based on E being on AD (and E being center):
+    Center E: (300, 350)
+    Radius: 140
+    
+    Vertical Axis: x = 300 (Line QE)
+    
+    Point C:
+    Chosen at angle -40 degrees (Top Right relative to center in math, Up-Right in visual).
+    Angle theta = 40 deg.
+    x_C = 300 + 140 * cos(40) = 300 + 107.25 = 407.25
+    y_C = 350 - 140 * sin(40) = 350 - 90 = 260
+    
+    Point A:
+    Reflection of C across vertical axis x=300 (since AC is horizontal).
+    x_A = 300 - 107.25 = 192.75
+    y_A = 260
+    
+    Point D:
+    CD is parallel to QE (vertical), so D has same x as C.
+    D is on the circle. Since C is y=260 (90 above center), D is y=350+90=440.
+    D = (407.25, 440)
+    Check: AD is a line from (192.75, 260) to (407.25, 440).
+    Midpoint = (300, 350) = E. This confirms E is on AD.
+    
+    Point B:
+    Top intersection of circle and vertical line.
+    B = (300, 350 - 140) = (300, 210)
+    
+    Tangent Line (PCQ):
+    Tangent at C(407.25, 260). Normal slope (to center) is (260-350)/(407.25-300) = -90/107.25 approx -0.84.
+    Tangent slope m = 1.1917 (positive in SVG means down-right).
+    Line eq: y - 260 = 1.1917 * (x - 407.25).
+    
+    Point Q:
+    Intersection of tangent and vertical line x=300.
+    y_Q = 260 + 1.1917 * (300 - 407.25) = 260 + 1.1917 * (-107.25) = 260 - 127.8 = 132.2.
+    Q = (300, 132.2)
+    
+    Point F:
+    Intersection of AC and QE.
+    F = (300, 260)
+    
+    Point P:
+    Extension of tangent. Let x = 520.
+    y_P = 260 + 1.1917 * (520 - 407.25) = 394.
+  -->
+
+  <!-- Main Circle -->
+  <circle cx="300" cy="350" r="140" stroke="black" stroke-width="2" fill="none" />
+
+  <!-- Line QE (Vertical from Q to E) -->
+  <!-- Note: Image shows line segment starting at Q, going down to E. -->
+  <line x1="300" y1="132.2" x2="300" y2="350" stroke="black" stroke-width="2" />
+  
+  <!-- Tangent Line PCQ -->
+  <line x1="240" y1="60.7" x2="520" y2="394.4" stroke="black" stroke-width="2" />
+
+  <!-- Chord AC (Horizontal) -->
+  <line x1="192.75" y1="260" x2="407.25" y2="260" stroke="black" stroke-width="2" />
+
+  <!-- Chord CD (Vertical) -->
+  <line x1="407.25" y1="260" x2="407.25" y2="440" stroke="black" stroke-width="2" />
+
+  <!-- Line AD (Passing through E) -->
+  <line x1="192.75" y1="260" x2="407.25" y2="440" stroke="black" stroke-width="2" />
+
+  <!-- Line EC -->
+  <line x1="300" y1="350" x2="407.25" y2="260" stroke="black" stroke-width="2" />
+  
+  <!-- Line ED (Part of chord, just confirming stroke) -->
+  <!-- Already drawn by AD, but ensuring visual weight if needed -->
+
+  <!-- Arrows denoting parallel lines -->
+  <!-- Arrow on QB -->
+  <path d="M300,165 L300,167" marker-end="url(#arrow)" stroke="black" stroke-width="2" />
+  <!-- Arrow on CD -->
+  <path d="M407.25,345 L407.25,347" marker-end="url(#arrow)" stroke="black" stroke-width="2" />
+
+  <!-- Points/Vertices Labels -->
+  <text x="285" y="130" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="end">Q</text>
+  <text x="288" y="208" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="end">B</text>
+  <text x="300" y="250" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="start" dx="5">F</text>
+  <text x="180" y="260" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="end">A</text>
+  <text x="420" y="260" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="start">C</text>
+  <text x="420" y="450" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="start">D</text>
+  <text x="300" y="380" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="middle">E</text>
+  <text x="530" y="400" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="start">P</text>
+
+</svg>

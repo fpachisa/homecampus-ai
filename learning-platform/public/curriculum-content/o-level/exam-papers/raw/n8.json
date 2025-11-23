@@ -1,0 +1,89 @@
+{
+  "topicId": "N8",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 10,
+        "questionId": "N8-zhonghua-2024-p1-q10",
+        "topicID": "N8",
+        "stem": "The first four diagrams in a sequence are shown below. Diagram 1 has 4 grey squares. Diagram 2 has 8 grey squares. Diagram 3 has 12 grey squares.",
+        "hasDiagram": true,
+        "diagramDescription": "Three square grids showing a pattern of grey and white squares. Diagram 1 is a 3x3 grid with corners grey. Diagram 2 is a 4x4 grid. Diagram 3 is a 5x5 grid.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the number of grey squares in Diagram 5.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of n, for the number of grey squares in Diagram n.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Diagram n has 400 white squares. Find n.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Number Patterns in Grids"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 3,
+        "questionId": "N8-greenridge-2024-p2-q3",
+        "topicID": "N8",
+        "stem": "$\\xi=$ {x: x is an integer, $2\\le x\\le14\\}$\n$A=$ {x: x is a prime number}\n$B=$ {x: x is a multiple of 3}",
+        "hasDiagram": true,
+        "diagramDescription": "Also contains a cone diagram for part b.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "List the elements in $(A\\cup B)^{\\prime}$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "List the elements in $A\\cap B$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Given that $C\\subset A$, $n(C)=3$ and $B\\cap C=\\emptyset$, list the elements of a possible set C.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "The diagram shows a cone P of height 24 cm. The volume of the liquid in the cone is half the volume of the cone. Calculate the depth, d cm, of the liquid.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "The volume of cone P is v $cm^{3}$. Cone T has radius which is double that of the cone P and its height is one-third that of the cone P. Express the volume of cone T in terms of v.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "A, B and C are points on the circumference of a circle. Angle $CAB=$ angle CBA. DA and DB are tangents to the circle from the point D. Prove that triangle ACD and triangle BCD are congruent.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Sets and Cone Volume"
+      }
+    ]
+  }
+}

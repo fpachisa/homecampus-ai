@@ -1,0 +1,505 @@
+{
+  "topicId": "G5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 25,
+        "questionId": "G5-cchms-2024-p1-q25",
+        "topicID": "G5",
+        "stem": "The diagram below shows an indoor adventure park in the shape of a trapezoidal prism with a square base ABCD. The indoor adventure park is positioned on horizontal ground and the walls ADHE and BCGF are slanted. The top of the prism, EFGH, is the ceiling of the adventure park which is also horizontal. EFGH is a square and the centre of EFGH lies vertically above the centre of ABCD. $AB=120$ m, $AE=BF=CG=DH=10$ m and $\\angle ABF=60^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "3D diagram of a trapezoidal prism. Base ABCD is square. Top EFGH is square. Sides AE, BF, CG, DH are 10m slanted edges. Angle ABF is 60 degrees.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the area of ABFE.",
+            "marks": 4,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The owner of the indoor park wants to build a flying fox feature from point H to point B. The angle of depression from point H to point B must not exceed $5^{\\circ}$, in order to meet the safety requirements. Explain, with mathematical working, whether the flying fox feature can be built.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Trapezoidal Prism Geometry"
+      },
+      {
+        "questionNumber": 22,
+        "questionId": "G5-canberra-2024-p1-q22",
+        "topicID": "G5",
+        "stem": "A logo, as shown below, has a circle with centre O and radius 2 cm, an equilateral triangle ABC of side 5 cm and an isosceles triangle ODF with $OD=OF$. DEF is a tangent to the circle at E and angle $DOF=2.4$ radians. Half of the circle lies inside triangle ABC.",
+        "hasDiagram": true,
+        "diagramDescription": "A composite shape. Equilateral triangle ABC is at the top. A circle with center O is partially inside ABC. An isosceles triangle ODF is at the bottom, intersecting the bottom half of the circle. DEF is a horizontal tangent line at the bottom of the circle.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the area of the shaded region.",
+            "marks": 5,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Composite Logo Area"
+      },
+      {
+        "questionNumber": 26,
+        "questionId": "G5-canberra-2024-p1-q26",
+        "topicID": "G5",
+        "stem": "A conical container with a diameter of 10 cm and a height of 8 cm is filled with water to a depth of 4 cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Inverted cone. Top diameter 10, height 8. Water level at height 4 from bottom.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the volume of the water in the container is $\\frac{25}{3}\\pi~cm^{3}$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the surface area of the inside of the container that is in contact with the water.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "The water in the cone is poured into a test tube. The test tube is made by joining together a cylinder of diameter 3 cm and a hemisphere of diameter 3 cm. Calculate the height of the water in the test tube.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Cone and Test Tube Volume"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "G5-huayi-2024-p1-q19",
+        "topicID": "G5",
+        "stem": "A composite solid is made from a cylinder and two hemispheres. The cylinder has radius $p$ and length $2p$, while the hemispheres have radius $p$. The total surface area of the solid is six times the total surface area of a solid cone with radius $p$ and slant height $l$.",
+        "hasDiagram": true,
+        "diagramDescription": "Composite solid with a central cylinder of length 2p and two hemispherical ends of radius p.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $l$ in terms of $p$.",
+            "marks": 3,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Surface Area of Composite Solid"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "G5-woodgrove-2024-p1-q16",
+        "topicID": "G5",
+        "stem": "X, Y and Z lie on a circle with centre O and radius 4 cm. Angle $XOY=2.5$ radians.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with centre O. Sector XOY. Z is on the major arc. Angle XOY is 2.5 radians.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the area of minor sector XOY.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Write down, in term of $\\pi$, for reflex angle XOY.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Find the length of the arc XZY, in term of $\\pi$.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "The major sector XZYO is used to make a cone. Calculate the base radius of the cone.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Circular Measure and Cone"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 5,
+        "questionId": "G5-acsi-2024-p2-q5",
+        "topicID": "G5",
+        "stem": "The diagram shows a solid ornament in the shape of a cylinder with an upright cone cut out at one end and a hemisphere attached to the other end. The vertical heights of the cone and cylinder are x cm and 2x cm respectively.",
+        "hasDiagram": true,
+        "diagramDescription": "A solid object consisting of a central cylinder of height 2x. On top, a cone of height x is cut out (inverted cone void). On the bottom, a hemisphere is attached. The radius of the cylinder, cone base, and hemisphere is r.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the ratio of the volume of the cone to that of the cylinder, expressing your answer as a fraction in the simplest form.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b-i",
+            "questionText": "If the volume of the cylinder is $345~cm^{3}$ and its height is 8 cm, calculate the radius of the cylinder,",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b-ii",
+            "questionText": "calculate the curved surface area of the cone,",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b-iii",
+            "questionText": "calculate the quantity of paint needed to paint the exterior of the ornament with a 0.2 mm thick coat of paint.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Mensuration of Composite Solid"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "G5-broadrick-2024-p2-q9",
+        "topicID": "G5",
+        "stem": "An upright container is in the shape of a cone, mounted on a hemisphere. The centre of the base of the cone and the hemisphere coincides. The cone has a radius of 2 m and height of 3 m. The hemisphere has a radius of 3 m.",
+        "hasDiagram": true,
+        "diagramDescription": "Cone on top of a hemisphere.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the capacity of the container.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "There is a tap on the vertex of the cone. The container is filled with water such that the hemisphere and 90% of the cone are filled. Find the area which the water is in contact with the container.",
+            "marks": 5,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Mensuration"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "G5-cchms-2024-p2-q3",
+        "topicID": "G5",
+        "stem": "The diagram shows two open containers, a right cylinder and an inverted frustum. The right cylinder has a base radius of 10 cm and a height of 20 cm. The frustum is formed by cutting a smaller cone off the bottom of a larger cone. The smaller cone that was cut off has a height of 4 cm. The larger cone has a base radius of 15 cm and a height of 12 cm. Three identical spherical marbles, each of radius 3 cm, are placed into the cylindrical container and water is poured in to a depth of $h$ cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram showing a cylinder with 3 marbles and water, labeled with radius 10cm and height 20cm. Next to it is an inverted frustum (truncated cone) labeled with top radius 15cm, total height 12cm, and the missing tip height 4cm.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the volume of each marble, leaving your answer in terms of $\\pi$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the volume of the frustum, leaving your answer in terms of $\\pi$.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "All the water from the cylinder, without the marbles, is then poured into the empty frustum, filling it completely without any overflow. Find the value of $h$, correct to two decimal places.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "The exterior surface area of each container is painted. Find the total area painted.",
+            "marks": 6,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 13,
+        "paper": "Paper 2",
+        "title": "Cylinder and Frustum Volumes"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "G5-huayi-2024-p2-q6",
+        "topicID": "G5",
+        "stem": "The diagram shows a semicircle, centre O, radius 16 cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Semicircle with centre O and radius 16cm. Chord AB. Shaded segment below chord AB. Distance from midpoint of AB to chord is 3.2cm? No, height of segment is 3.2cm.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that angle $AOB=1.287$ radians, correct to 3 decimal places.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the area of the shaded region.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c_i",
+            "questionText": "The semicircle is the cross section of a water trough of length 2.8 m, standing on level ground. The shaded area represents the water in the trough. Calculate the volume of water, in $cm^{3}$, in the trough. Leave your answer in standard form.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c_ii",
+            "questionText": "Calculate the number of litres of water that must be added to fill the trough.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Circular Measure and Volume"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "G5-navalbase-2024-p2-q5",
+        "topicID": "G5",
+        "stem": "The diagram shows a container which consists of a cylinder of radius $r$ cm and height $h$ cm joined to a hemisphere of radius $r$ cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram of a cylinder on top of a hemisphere.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Given that the ratio of the volume of the hemisphere to the volume of the cylinder is 1 : 3, show that $h=2r$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "The container is filled with water to a depth of 8 cm. Find an expression, in terms of $\\pi$ and $r$, for the surface area of the container that is in contact with the water.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Three tin containers are geometrically similar. The heights of tin container A and tin container C are 8 cm and 16 cm respectively. The base area of tin container B is $\\frac{25}{64}$ of the base area of tin container C. Calculate the height of tin container B.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "The weight of tin container C is 450 g. Calculate the weight of tin container A.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Volume and Similarity"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "G5-orchidpark-2024-p2-q4",
+        "topicID": "G5",
+        "stem": "The diagrams below show a solid hemisphere and a solid cone. The hemisphere has a radius of 3y cm. The cone has a radius of 2y cm and slanted height $l$ cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Solid cone and solid hemisphere.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the total surface area of the solid cone is $2\\pi y(l+2y)cm^{2}.$",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "The total surface area of the solid hemisphere is equal to the total surface area of the solid cone. Find $l$ in terms of y.",
+            "marks": 3,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "The volume of the hemisphere is $729~cm^{3}$. Calculate the volume of the cone.",
+            "marks": 4,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Surface Area and Volume"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "G5-swisscottage-2024-p2-q3",
+        "topicID": "G5",
+        "stem": "The diagram shows a solid formed from a cone, a cylinder and a hemisphere. The cone has base radius 1.5x cm and height y cm. The cylinder has radius 1.5x cm and height 3x cm. The hemisphere has radius 3x cm.",
+        "hasDiagram": true,
+        "diagramDescription": "A composite solid consisting of a cone on top of a cylinder, which is on top of a hemisphere. The cone's base matches the cylinder's top. The cylinder's base sits on the flat face of the hemisphere. Wait, the diagram shows the cylinder sitting on the flat face of a larger hemisphere. Cylinder radius is 1.5x, hemisphere radius is 3x.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The volume of the hemisphere is thrice the volume of the cone. Show that $y=8x.$",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "The total surface area of the solid is 450 cm². Calculate the total height, h cm, of the solid.",
+            "marks": 7,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Composite Solid Volume and Surface Area"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "G5-tkgs-2024-p2-q7",
+        "topicID": "G5",
+        "stem": "The figure shows a solid frustum of height 16 cm cut from right pyramid with square base. The horizontal top surface has an area of $5~cm^{2}$ while the base area is $125~cm^{2}$. The portion that is removed is h cm high.",
+        "hasDiagram": true,
+        "diagramDescription": "Frustum of a square pyramid. Top area 5 cm2, base area 125 cm2. Height 16cm. Removed top height h.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Show that $h=4$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Calculate the volume of the frustum.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Find the percentage of the right pyramid that has been removed.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Two solid cones have the same height but the radius of cone A is 1.5 times of cone B. Given that the volume of cone B is $240~cm^{3}$. Find the volume of cone A.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Frustum and Cone Volumes"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "G5-woodgrove-2024-p2-q8",
+        "topicID": "G5",
+        "stem": "The diagram above shows a solid structure that is formed from two identical cones and a cylinder. The cylinder is attached to the bases of the two cones. The cone has radius 3x cm, height 4x cm and slant height $l$ cm. The cylinder has radius 3x cm and height y cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Composite solid: Cone on top, cylinder in middle, cone at bottom. Dimensions given in terms of x and y.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $l$ in terms of x.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "The volume of the cylinder is equal to the volume of one cone. Show that $y=\\frac{4}{3}x$",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "The total surface area of the solid structure is $(200-x)\\pi~cm^{2}$. Write an expression, in terms of x, for the total surface area of the solid and show that it reduces to $38x^{2}+x-200=0$.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve the equation $38x^{2}+x-200=0$, giving your solutions correct to 2 decimal places.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Composite Solid Volume and Area"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "G5-zhonghua-2024-p2-q4",
+        "topicID": "G5",
+        "stem": "The diagram shows the cross-section of a pipe filled with water. The cross-section is a circle with centre O and radius r cm. P, X, A and Q are points on the circle. PBQ is a straight line such that $PB=BQ$ and $BQ=8~cm.$ The ratio of AB: BO is 1:2.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with centre O. Chord PQ. Radius OA passes through B on PQ. X is on arc PAQ. Shaded segment below PQ.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that $r=10.733~cm$.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find arc length AXP.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Circular Measure Pipe"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "G5-zhonghua-2024-p2-q10",
+        "topicID": "G5",
+        "stem": "The diagram shows a trapezoidal prism. The base ABCD is on flat ground. ABGH, BCFG, ADEH and DCFE are vertical rectangular planes. $AB=43~m$, $BC=21~m$, $CD=15.2~m$ $AD=16~m,$ $AH=8$ m and $\\angle ABC=34.8^{\\circ}$. AB is parallel to DC.",
+        "hasDiagram": true,
+        "diagramDescription": "Trapezoidal prism ABCDEFGH.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the length of AC.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate angle FAC.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the area of triangle AFB.",
+            "marks": 4,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Calculate the perpendicular distance from point D to the line AB.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Trapezoidal Prism Geometry"
+      }
+    ]
+  }
+}

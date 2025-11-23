@@ -1,0 +1,79 @@
+<svg width="400" height="400" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for hatch marks -->
+  <defs>
+    <style>
+      .label { font-family: "Times New Roman", serif; font-style: italic; font-size: 24px; }
+      .angle-text { font-family: "Times New Roman", serif; font-size: 18px; }
+    </style>
+  </defs>
+
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white" />
+
+  <!-- 
+    Coordinates Calculation:
+    D = (200, 300)
+    Line BDK angle: -45 degrees (up-right) for DB.
+    B: distance 200 from D at -45 deg => (341.4, 158.6)
+    K: distance 100 from D at 135 deg => (129.3, 370.7)
+    
+    Point A:
+    Triangle ABD is isosceles (AB=AD). Angle ABD = 36 deg.
+    Therefore Angle ADB = 36 deg.
+    Angle of DB vector = -45 deg.
+    Angle of DA vector = -45 - 36 = -81 deg.
+    Side AD calculation: AD / sin(36) = BD / sin(108). AD = 200 * sin(36)/sin(108) = 123.6.
+    A = (200 + 123.6*cos(-81), 300 + 123.6*sin(-81)) = (219.3, 177.9)
+    
+    Point C:
+    Angle CBD = 49 deg.
+    Vector DB angle is 135 deg (from B to D).
+    Vector BC angle = 135 - 49 = 86 deg.
+    Angle CDK = 121 deg.
+    Vector DK angle is 135 deg.
+    Vector DC angle = 135 - 121 = 14 deg.
+    Intersection of Line(B, 86deg) and Line(D, 14deg).
+    Line 1: y - 158.6 = tan(86)(x - 341.4) => y = 14.3x - 4723
+    Line 2: y - 300 = tan(14)(x - 200) => y = 0.249x + 250.2
+    Intersection: x approx 353.6, y approx 338.2.
+  -->
+
+  <!-- Lines -->
+  <!-- BDK Straight Line -->
+  <line x1="341.4" y1="158.6" x2="129.3" y2="370.7" stroke="black" stroke-width="2" />
+  
+  <!-- Triangle Sides -->
+  <line x1="219.3" y1="177.9" x2="341.4" y2="158.6" stroke="black" stroke-width="2" /> <!-- AB -->
+  <line x1="219.3" y1="177.9" x2="200" y2="300" stroke="black" stroke-width="2" /> <!-- AD -->
+  <line x1="341.4" y1="158.6" x2="353.6" y2="338.2" stroke="black" stroke-width="2" /> <!-- BC -->
+  <line x1="200" y1="300" x2="353.6" y2="338.2" stroke="black" stroke-width="2" /> <!-- DC -->
+
+  <!-- Hash Marks for Equality (AB = AD) -->
+  <!-- AB midpoint approx (280, 168). Vector roughly horizontal. Perpendicular mark vertical. -->
+  <line x1="280" y1="160" x2="280" y2="176" stroke="black" stroke-width="2" />
+  <!-- AD midpoint approx (210, 239). Vector vertical-ish. Perpendicular mark horizontal. -->
+  <line x1="202" y1="239" x2="218" y2="239" stroke="black" stroke-width="2" />
+
+  <!-- Angle Arcs -->
+  <!-- Angle ABD = 36 deg -->
+  <!-- Inverted arc by changing sweep flag from 0 to 1 -->
+  <path d="M 313 187 A 40 40 0 0 1 303 165" fill="none" stroke="black" stroke-width="1.5" />
+  <text x="280" y="195" class="angle-text">36°</text>
+
+  <!-- Angle CBD = 49 deg -->
+  <!-- Inverted arc by changing sweep flag from 1 to 0 -->
+  <path d="M 323 177 A 40 40 0 0 0 343 198" fill="none" stroke="black" stroke-width="1.5" />
+  <text x="310" y="220" class="angle-text">49°</text>
+
+  <!-- Angle CDK = 121 deg -->
+  <path d="M 230 307 A 30 30 0 0 1 180 320" fill="none" stroke="black" stroke-width="1.5" />
+  <text x="205" y="350" class="angle-text">121°</text>
+
+  <!-- Point Labels -->
+  <text x="210" y="180" class="label" text-anchor="end">A</text>
+  <text x="350" y="150" class="label" text-anchor="start">B</text>
+  <text x="360" y="345" class="label" text-anchor="start">C</text>
+  <text x="185" y="305" class="label" text-anchor="end">D</text>
+  <text x="120" y="390" class="label" text-anchor="end">K</text>
+
+</svg>

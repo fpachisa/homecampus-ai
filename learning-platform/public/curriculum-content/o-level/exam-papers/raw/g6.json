@@ -1,0 +1,243 @@
+{
+  "topicId": "G6",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 21,
+        "questionId": "G6-broadrick-2024-p1-q21",
+        "topicID": "G6",
+        "stem": "P is the point (-3, 1) and Q is the point (3, 3).",
+        "hasDiagram": true,
+        "diagramDescription": "A coordinate grid showing points P at (-3, 1) and Q at (3, 3).",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the length of the PQ.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The point R is such that PQR forms an isosceles triangle. The angle bisector of angle PQR has an equation of $y=x$. Find the coordinates of R.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "G6-canberra-2024-p1-q19",
+        "topicID": "G6",
+        "stem": "The coordinates of P and Q are (0, 3) and (15, 12) respectively.",
+        "hasDiagram": true,
+        "diagramDescription": "Coordinate axes with points P(0,3) on y-axis and Q(15,12) in first quadrant. Line segment PQ is drawn.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the equation of PQ.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the perimeter of trapezium OPQR, where O is the origin and R is the point of reflection of Q along the x-axis.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Coordinate Geometry Trapezium"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "G6-greenridge-2024-p1-q24",
+        "topicID": "G6",
+        "stem": "The triangle with vertices A (2, 5), $B(-2,-3)$ and $C(2,-2)$ is shown in the diagram below.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABC drawn on Cartesian plane.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the area of triangle ABC.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the coordinates of point D such that ABCD is a parallelogram.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the area of parallelogram ABCD.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Find angle BAC.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "e",
+            "questionText": "Find the gradient of line AC.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "f",
+            "questionText": "Find the cosine value of angle BCA in terms of p, where $p=BC.$",
+            "marks": 1,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Coordinate Geometry Triangle"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "G6-orchidpark-2024-p1-q18",
+        "topicID": "G6",
+        "stem": "The diagram below shows a triangle ABC, with $A(3,6)$ and $B(-11,0)$. Triangle ABC has an area of $22.5~units^{2}$. E is a point on the line AB passing through the y-axis.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABC on Cartesian plane. A(3,6), B(-11,0), C is on x-axis. E is y-intercept of line AB.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the length AB.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the equation of the line AB.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "State the coordinates of E.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Find the coordinates of C.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "e",
+            "questionText": "Given that ABDC is a parallelogram, find the coordinates of D.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "f",
+            "questionText": "The line $l$ has equation $7y-3x+15=0$. Explain whether line $l$ will ever cut the line AB when both lines are extended. Show your workings clearly.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 1",
+        "title": "Coordinate Geometry"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 3,
+        "questionId": "G6-broadrick-2024-p2-q3",
+        "topicID": "G6",
+        "stem": "A is the point (-3, -1) (inferred) and D is the point (0, 1.5) (inferred). B is a point on the y-axis.",
+        "hasDiagram": true,
+        "diagramDescription": "Quadrilateral ABCD on Cartesian axes. A is in third quadrant, B on negative y-axis, C in first or fourth, D on positive y-axis.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The line AB is parallel to $3y+5x-6=0$. Find the equation of the line AB.",
+            "marks": 3,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the coordinates of C such that it is equidistant from B and D and it lies on the line $y=7.5-x$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the area of the quadrilateral ABCD.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Find the size of angle ABC.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "G6-greenridge-2024-p2-q5",
+        "topicID": "G6",
+        "stem": "(a) A is the point (2,3) and B is the point (3,-5).",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram for part b showing parallelogram OABC. Vector OA=2a, Vector OC=3c. T on OB. M on BC.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find the equation of the line AB.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find the length of AB.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "$\\vec{BC}=\\begin{pmatrix}-4\\\\ 3\\end{pmatrix}.$ Find the coordinates of point C.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "OABC is a parallelogram. $\\vec{OA}=2a$ and $\\vec{OC}=3c$. M is the midpoint of BC. T is the point on OB such that OT: $TB=2:1$. Find $\\vec{OB}$ in terms of a and c.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Find $\\vec{OT}$ in terms of a and c.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Determine if the points A, T and M lie on a straight line.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Coordinate Geometry and Vectors"
+      }
+    ]
+  }
+}

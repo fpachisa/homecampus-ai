@@ -1,0 +1,87 @@
+<svg width="400" height="350" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrowhead marker pointing right (forward) -->
+    <!-- Changed refX to 10 so the tip touches the end point -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="black" />
+    </marker>
+    <!-- Arrowhead marker pointing left (backward) -->
+    <!-- Changed refX to 0 so the tip touches the start point -->
+    <marker id="arrow_reversed" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 L8,5 Z" fill="black" />
+    </marker>
+    <!-- Pattern for water shading -->
+    <pattern id="waterPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+       <circle cx="1" cy="1" r="1" fill="#AAA" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white" />
+
+  <!-- 
+    Scale: 10 pixels = 1 cm.
+    Radius r = 13 cm -> 130 px.
+    Center (cx, cy) = (250, 250).
+    
+    Chord properties:
+    Width = 24 cm -> 240 px. Half-width = 120 px.
+    Depth = 18 cm.
+    Math check: r=13. If depth is 18, water level is 5 cm above center (13 + 5 = 18).
+    Chord Y position = 250 - 50 = 200.
+    Chord X coords: 250 +/- 120 => 130 and 370.
+    
+    Points:
+    O = (250, 250)
+    A = (130, 200)
+    B = (370, 200)
+    P = (250, 380) (Bottom of circle, 250 + 130)
+    Top Intersection M = (250, 200)
+  -->
+
+  <!-- Shaded Water Region (Major Arc) -->
+  <!-- Path: Move to A, Line to B, Arc to A -->
+  <path d="M 130 200 L 370 200 A 130 130 0 1 1 130 200 Z" fill="#D3D3D3" stroke="none" />
+
+  <!-- Main Circle Outline -->
+  <circle cx="250" cy="250" r="130" stroke="black" stroke-width="2.5" fill="none" />
+
+  <!-- Chord AB -->
+  <line x1="130" y1="200" x2="370" y2="200" stroke="black" stroke-width="2.5" />
+
+  <!-- Dashed Lines -->
+  <!-- Radius OA -->
+  <line x1="250" y1="250" x2="130" y2="200" stroke="black" stroke-width="2" stroke-dasharray="6,4" />
+  <!-- Radius OB -->
+  <line x1="250" y1="250" x2="370" y2="200" stroke="black" stroke-width="2" stroke-dasharray="6,4" />
+  <!-- Vertical Line from Chord through O to P -->
+  <line x1="250" y1="200" x2="250" y2="380" stroke="black" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Right Angle Symbol at intersection M (250, 200) -->
+  <!-- Small square 10x10 -->
+  <polyline points="250,210 260,210 260,200" fill="none" stroke="black" stroke-width="1.5" />
+
+  <!-- Dimension Line for 18cm (Depth) -->
+  <!-- Located to the right side. Extends from Y=200 to Y=380 -->
+  <!-- marker-start uses reversed arrow to point up, marker-end uses normal arrow to point down -->
+  <line x1="430" y1="200" x2="430" y2="380" stroke="black" stroke-width="1.5" marker-start="url(#arrow_reversed)" marker-end="url(#arrow)" />
+  <!-- Extension dashed lines for dimension -->
+  <line x1="370" y1="200" x2="440" y2="200" stroke="black" stroke-width="1" stroke-dasharray="4,2" />
+  <line x1="250" y1="380" x2="440" y2="380" stroke="black" stroke-width="1" stroke-dasharray="4,2" />
+
+  <!-- Labels -->
+  <text x="250" y="185" font-family="Times New Roman, serif" font-size="20" text-anchor="middle">24 cm</text>
+  <text x="445" y="290" font-family="Times New Roman, serif" font-size="20" text-anchor="start">18 cm</text>
+  
+  <text x="115" y="205" font-family="Times New Roman, serif" font-style="italic" font-size="20" text-anchor="end">A</text>
+  <text x="383" y="198" font-family="Times New Roman, serif" font-style="italic" font-size="20" text-anchor="start">B</text>
+  <text x="275" y="260" font-family="Times New Roman, serif" font-style="italic" font-size="20" text-anchor="end">O</text>
+  <text x="250" y="405" font-family="Times New Roman, serif" font-style="italic" font-size="20" text-anchor="middle">P</text>
+
+  <!-- Radius Labels 'r' -->
+  <!-- On OB -->
+  <text x="310" y="215" font-family="Times New Roman, serif" font-style="italic" font-size="20" text-anchor="middle">r</text>
+  <!-- On OP (Vertical) -->
+  <text x="240" y="315" font-family="Times New Roman, serif" font-style="italic" font-size="20" text-anchor="end">r</text>
+
+</svg>

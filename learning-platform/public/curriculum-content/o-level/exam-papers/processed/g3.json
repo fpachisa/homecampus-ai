@@ -1,7 +1,555 @@
 {
   "topicId": "G3",
   "questions": {
-    "Paper 1": [],
-    "Paper 2": []
+    "Paper 1": [
+      {
+        "questionNumber": 10,
+        "questionId": "G3-canberra-2024-p1-q10",
+        "topicID": "G3",
+        "stem": "In the diagram, O is the centre of the circle and ABCD is a cyclic quadrilateral. Angle AOB = angle $ADC=70^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with center O. Points A, B, C, D on circumference. Central angle AOB is 70 degrees. Angle ADC is 70 degrees. Triangle ABC is drawn.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Explain why triangle ABC is an isosceles triangle. Give reasons for each step of your working.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Triangle $ABC$ is isosceles because $\\angle BAC = \\angle BCA = 35^\\circ$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate angle $ACB$ using the relationship between the angle at the centre and the angle at the circumference subtended by the same arc $AB$.",
+                  "working": "$\\angle ACB = \\frac{1}{2} \\times \\angle AOB$\n$\\angle ACB = \\frac{1}{2} \\times 70^\\circ = 35^\\circ$",
+                  "reasoning": "Angle at centre = $2 \\times$ angle at circumference."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate angle $ABC$ using the properties of the cyclic quadrilateral $ABCD$.",
+                  "working": "$\\angle ABC + \\angle ADC = 180^\\circ$\n$\\angle ABC + 70^\\circ = 180^\\circ$\n$\\angle ABC = 180^\\circ - 70^\\circ = 110^\\circ$",
+                  "reasoning": "Opposite angles of a cyclic quadrilateral sum to $180^\\circ$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the remaining angle, $\\angle BAC$, in triangle $ABC$.",
+                  "working": "In $\\triangle ABC$:\n$\\angle BAC = 180^\\circ - \\angle ABC - \\angle ACB$\n$\\angle BAC = 180^\\circ - 110^\\circ - 35^\\circ = 35^\\circ$",
+                  "reasoning": "Angle sum of a triangle is $180^\\circ$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Conclude the nature of the triangle based on its angles.",
+                  "working": "Since $\\angle BAC = 35^\\circ$ and $\\angle ACB = 35^\\circ$, we can see that $\\angle BAC = \\angle ACB$. Therefore, side $AB$ = side $BC$.",
+                  "reasoning": "Base angles of an isosceles triangle are equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Cyclic Quadrilateral Proof",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with center O. Points A, B, C, D on circumference. Central angle AOB is 70 degrees. Angle ADC is 70 degrees.",
+          "notes": "Cyclic Quadrilateral Proof",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-canberra-2024-p1-q10.svg"
+        }
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "G3-greenridge-2024-p1-q16",
+        "topicID": "G3",
+        "stem": "The figure below shows a circle with centre O. Points A, B and C lie on the circle. Angle $ABC=100^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with centre O. Chord AC. Point B on major arc? No, angle ABC is 100 degrees, which is obtuse, so B must be on the minor arc relative to AC if AC is not diameter. However, O is centre. Triangle AOC and triangle ABC drawn. B is on the circumference. Reflex angle AOC corresponds to angle ABC.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle OAC, giving reasons for each step of your working.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10^\\circ",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the reflex angle $AOC$ at the center of the circle.",
+                  "working": "Reflex $\\angle AOC = 2 \\times \\angle ABC$\nReflex $\\angle AOC = 2 \\times 100^\\circ = 200^\\circ$",
+                  "reasoning": "The angle subtended by an arc at the center is double the angle subtended by it at any point on the remaining part of the circle. "
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the obtuse angle $AOC$ inside the triangle $OAC$.",
+                  "working": "Obtuse $\\angle AOC = 360^\\circ - \\text{Reflex } \\angle AOC$\nObtuse $\\angle AOC = 360^\\circ - 200^\\circ = 160^\\circ$",
+                  "reasoning": "Angles at a point on a full circle sum to $360^\\circ$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find angle $OAC$ using the properties of triangle $OAC$.",
+                  "working": "Since $OA$ and $OC$ are both radii of the circle, triangle $OAC$ is an isosceles triangle.\nTherefore, base angles are equal: $\\angle OAC = \\angle OCA$.\n$\\angle OAC = \\frac{180^\\circ - 160^\\circ}{2}$\n$\\angle OAC = \\frac{20^\\circ}{2} = 10^\\circ$",
+                  "reasoning": "Base angles of an isosceles triangle are equal; sum of angles in a triangle is $180^\\circ$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Circle Angle Calculation",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with centre O.",
+          "notes": "Circle Angle Calculation",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-greenridge-2024-p1-q16.svg"
+        }
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "G3-huayi-2024-p1-q16",
+        "topicID": "G3",
+        "stem": "In the diagram, BDK is a straight line and $AB=AD.$ Angle $ABD=36^{\\circ}$, angle $CBD=49^{\\circ}$ and angle $CDK=121^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Quadrilateral ABCD with diagonal BD extended to K. Triangle ABD is isosceles with AB=AD. Angle ABD = 36. Angle CBD = 49. Exterior angle CDK = 121.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Explain why it is possible to draw a circle that passes through the points A, B, C and D. Give reasons for each step of your working.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Opposite angles sum to $180^{\\circ}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find angle $ADB$ using the properties of triangle $ABD$.",
+                  "working": "Since $AB = AD$, triangle $ABD$ is an isosceles triangle.\nBase angles are equal, so $\\angle ADB = \\angle ABD$.\n$\\angle ADB = 36^{\\circ}$",
+                  "reasoning": "Base angles of an isosceles triangle are equal."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find angle $BDC$ using the straight line $BDK$.",
+                  "working": "Angles on a straight line sum to $180^{\\circ}$.\n$\\angle BDC + \\angle CDK = 180^{\\circ}$\n$\\angle BDC = 180^{\\circ} - 121^{\\circ} = 59^{\\circ}$",
+                  "reasoning": "Angles on a straight line are supplementary."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total size of the opposite angles, $\\angle ADC$ and $\\angle ABC$.",
+                  "working": "$\\angle ADC = \\angle ADB + \\angle BDC = 36^{\\circ} + 59^{\\circ} = 95^{\\circ}$\n$\\angle ABC = \\angle ABD + \\angle CBD = 36^{\\circ} + 49^{\\circ} = 85^{\\circ}$",
+                  "reasoning": "Sum of adjacent angles."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Add the two opposite angles to test for a cyclic quadrilateral.",
+                  "working": "$\\angle ADC + \\angle ABC = 95^{\\circ} + 85^{\\circ} = 180^{\\circ}$",
+                  "reasoning": "Check for supplementary opposite angles."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Conclude based on the geometric property.",
+                  "working": "Since the opposite angles of the quadrilateral sum to $180^{\\circ}$ ($85^{\\circ} + 95^{\\circ}$), the quadrilateral $ABCD$ is a cyclic quadrilateral. Therefore, a circle can be drawn passing through all four points. ",
+                  "reasoning": "Converse of the property: Angles in opposite segments are supplementary."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Cyclic Quadrilateral Proof",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Quadrilateral ABCD with diagonal BD extended to K. Triangle ABD is isosceles with AB=AD. Angle ABD = 36. Angle CBD = 49. Exterior angle CDK = 121.",
+          "notes": "Cyclic Quadrilateral Proof",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-huayi-2024-p1-q16.svg"
+        }
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "G3-huayi-2024-p1-q24",
+        "topicID": "G3",
+        "stem": "A, B and C are points on the circle with centre O. Q and R are points on the circle with centre P. CSR and BSQ are tangents on to both circles. AOB is a straight line.",
+        "hasDiagram": true,
+        "diagramDescription": "Two circles with centres O and P. Tangent lines CSR and BSQ intersect at S between the circles. AOB is diameter of circle O. Triangle CSQ and BSR are formed.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that triangle CQS is congruent to triangle BRS. Give a reason for each statement you make.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Congruent (SAS)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Establish the equality of side lengths SC and SB for the circle with centre O.",
+                  "working": "Consider the circle with centre $O$. $S$ is an external point from which two tangent lines, $CSR$ and $BSQ$, touch the circle at points $C$ and $B$ respectively.\nTherefore, the lengths of the tangents are equal:\n$SC = SB$",
+                  "reasoning": "Tangents from an external point to a circle are equal in length. "
+                },
+                {
+                  "step": 2,
+                  "explanation": "Establish the equality of side lengths SQ and SR for the circle with centre P.",
+                  "working": "Consider the circle with centre $P$. Similarly, $S$ is an external point from which tangents touch the circle at points $Q$ and $R$.\nTherefore, the lengths of these tangents are also equal:\n$SQ = SR$",
+                  "reasoning": "Tangents from an external point to a circle are equal in length."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the equal included angle at intersection S.",
+                  "working": "The straight lines $CSR$ and $BSQ$ intersect at point $S$. The angles opposite each other at the vertex are equal.\n$\\angle CSQ = \\angle BSR$",
+                  "reasoning": "Vertically opposite angles are equal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Conclude congruence using the SAS criterion.",
+                  "working": "In triangles $CQS$ and $BRS$:\n1. $SC = SB$ (Side)\n2. $\\angle CSQ = \\angle BSR$ (Included Angle)\n3. $SQ = SR$ (Side)\n\nTherefore, $\\triangle CQS \\equiv \\triangle BRS$ (SAS).",
+                  "reasoning": "SAS Congruence Test (Side-Angle-Side)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Angle $ABC=y^{\\circ}$. Find, in terms of $y$, angle BAC.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "90^{\\circ} - y^{\\circ}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify that AB is the diameter of the circle.",
+                  "working": "The problem states that $AOB$ is a straight line passing through the center $O$. This defines $AB$ as the diameter of the circle.",
+                  "reasoning": "Definition of a diameter."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the measure of angle ACB.",
+                  "working": "Since $AB$ is the diameter, the angle it subtends at the circumference ($\\,\\angle ACB\\,$) is a right angle.\n$\\angle ACB = 90^{\\circ}$",
+                  "reasoning": "Angle in a semicircle property. "
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate angle BAC using the sum of angles in triangle ABC.",
+                  "working": "The sum of interior angles in a triangle is always $180^{\\circ}$.\n$\\angle BAC + \\angle ABC + \\angle ACB = 180^{\\circ}$\n\nSubstitute the known values:\n$\\angle BAC + y^{\\circ} + 90^{\\circ} = 180^{\\circ}$\n\nSolve for $\\angle BAC$:\n$\\angle BAC = 180^{\\circ} - 90^{\\circ} - y^{\\circ}$\n$\\angle BAC = 90^{\\circ} - y^{\\circ}$",
+                  "reasoning": "Angle sum property of triangles."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Find, in terms of $y$, angle QPR.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "180^{\\circ} - 2y^{\\circ}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find angle CBS.",
+                  "working": "Since $AOB$ is a straight line passing through the center, $OB$ is a radius. $BSQ$ is a tangent to the circle at $B$.\nThe angle between a tangent and a radius is $90^{\\circ}$. Therefore, $\\angle OBS = 90^{\\circ}$.\nFrom the diagram, $\\angle CBS = \\angle OBS - \\angle ABC$.\n$\\angle CBS = 90^{\\circ} - y^{\\circ}$",
+                  "reasoning": "Tangent-radius property ($ tangent \\perp radius$). Alternatively, using the Alternate Segment Theorem: Angle between tangent $SB$ and chord $BC$ equals angle in alternate segment $\\angle BAC$ ($90-y$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find angle BSC (the angle at S).",
+                  "working": "We know from part (a) that tangents from an external point are equal in length, so $SB = SC$. This makes triangle $BSC$ an isosceles triangle with base angles equal: $\\angle BCS = \\angle CBS = 90^{\\circ} - y^{\\circ}$.\nUsing the angle sum of a triangle:\n$\\angle BSC = 180^{\\circ} - (\\angle CBS + \\angle BCS)$\n$\\angle BSC = 180^{\\circ} - ((90 - y) + (90 - y))$\n$\\angle BSC = 180^{\\circ} - (180 - 2y)$\n$\\angle BSC = 2y^{\\circ}$",
+                  "reasoning": "Base angles of isosceles triangle; Angle sum of triangle."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine angle QSR.",
+                  "working": "Since $CSR$ and $BSQ$ are straight lines intersecting at $S$, the vertically opposite angles are equal.\n$\\angle QSR = \\angle BSC = 2y^{\\circ}$",
+                  "reasoning": "Vertically opposite angles property."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate angle QPR.",
+                  "working": "Consider the quadrilateral $PQSR$. Since $SQ$ and $SR$ are tangents to the circle with centre $P$, the angles $\\angle PQS$ and $\\angle PRS$ are both $90^{\\circ}$.\nThe sum of angles in a quadrilateral is $360^{\\circ}$.\n$\\angle QPR + \\angle PQS + \\angle QSR + \\angle PRS = 360^{\\circ}$\n$\\angle QPR + 90^{\\circ} + 2y^{\\circ} + 90^{\\circ} = 360^{\\circ}$\n$\\angle QPR + 180^{\\circ} + 2y^{\\circ} = 360^{\\circ}$\n$\\angle QPR = 180^{\\circ} - 2y^{\\circ}$",
+                  "reasoning": "Tangent-radius property; Angle sum of a quadrilateral."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Tangents and Congruency",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Two circles with centres O and P. Tangent lines CSR and BSQ intersect at S between the circles. AOB is diameter of circle O. Triangle CSQ and BSR are formed.",
+          "notes": "Tangents and Congruency",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-huayi-2024-p1-q24.svg"
+        }
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 4,
+        "questionId": "G3-canberra-2024-p2-q4",
+        "topicID": "G3",
+        "stem": "A, B, C and D are points on a circle. Line PCQ is a tangent to the circle. Line QE bisects angle AEC and is parallel to line CD.",
+        "hasDiagram": true,
+        "diagramDescription": "Circle with points A, B, C, D. Tangent line PCQ at C. Line QE bisects angle AEC inside the circle.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that $EC=ED$. Give a reason for each statement you make.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Shown that $EC = ED$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relationship between angles formed by the parallel lines $QE$ and $CD$ with transversal $EC$.",
+                  "working": "Since line $QE$ is parallel to line $CD$ ($QE // CD$), the alternate interior angles are equal.\n$\\angle QEC = \\angle ECD$ ........... (1)",
+                  "reasoning": "Alternate angles, $QE // CD$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the given information that $QE$ bisects angle $AEC$.",
+                  "working": "Since $QE$ bisects $\\angle AEC$, the two resulting angles are equal.\n$\\angle AEQ = \\angle QEC$ ........... (2)",
+                  "reasoning": "Given property of angle bisector."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the relationship between angles formed by the parallel lines $QE$ and $CD$ with transversal line $AD$.",
+                  "working": "Assuming $A$, $E$, and $D$ lie on a straight line (chord $AD$), the corresponding angles formed by the parallel lines are equal.\n$\\angle AEQ = \\angle EDC$ ........... (3)",
+                  "reasoning": "Corresponding angles, $QE // CD$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine the equations to relate the base angles of triangle $ECD$.",
+                  "working": "From (1) and (2), we have $\\angle ECD = \\angle AEQ$.\nSubstituting (3) into this relationship:\n$\\angle ECD = \\angle EDC$",
+                  "reasoning": "Transitive property of equality."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Conclude the nature of the triangle side lengths.",
+                  "working": "Since the base angles $\\angle ECD$ and $\\angle EDC$ are equal, triangle $ECD$ is an isosceles triangle.\nTherefore, $EC = ED$.",
+                  "reasoning": "Sides opposite equal angles in a triangle are equal."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that triangle AEF is similar to triangle QCF. Give a reason for each statement you make.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Triangle $AEF$ is similar to triangle $QCF$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify vertically opposite angles at the intersection point F.",
+                  "working": "Lines $AC$ and $QE$ intersect at $F$. Therefore, the vertically opposite angles are equal:\n$\\angle AFE = \\angle QFC$",
+                  "reasoning": "Vertically opposite angles."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Relate the angle at A to an angle involving the tangent using the Alternate Segment Theorem.",
+                  "working": "Consider chord $CD$ and tangent $PCQ$. The angle in the alternate segment ($\\angle CAD$) is equal to the angle between the tangent and the chord ($\\angle QCD$).\n$\\angle FAE = \\angle QCD$ (Since $A, F, C$ and $A, E, D$ are straight lines).",
+                  "reasoning": "Alternate Segment Theorem."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Relate the tangent angle to the angle at Q using parallel line properties.",
+                  "working": "Since line $QE$ is parallel to line $CD$ ($QE // CD$) and line $QC$ acts as a transversal, the alternate interior angles are equal.\n$\\angle QCD = \\angle FQC$ (Note: $\\angle FQC$ is the same as $\\angle EQC$).",
+                  "reasoning": "Alternate angles, $QE // CD$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Establish the equality of the second pair of angles by combining the previous steps.",
+                  "working": "From Step 2, we have $\\angle FAE = \\angle QCD$.\nFrom Step 3, we have $\\angle FQC = \\angle QCD$.\nTherefore, $\\angle FAE = \\angle FQC$.",
+                  "reasoning": "Transitive property of equality."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Conclude similarity using the Angle-Angle (AA) test.",
+                  "working": "In $\\triangle AEF$ and $\\triangle QCF$:\n1. $\\angle AFE = \\angle QFC$ (Vertically opposite)\n2. $\\angle FAE = \\angle FQC$ (Proved above)\nSince two angles are equal, the triangles are similar.",
+                  "reasoning": "AA Similarity Test."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Diameter $AD=28$ cm and angle QCF $=61^{\\circ}$. Calculate the area of segment CD.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "16.1 \\text{ cm}^2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the right angle in the triangle.",
+                  "working": "Since $AD$ is the diameter, the angle in the semicircle is a right angle.\n$\\angle ACD = 90^\\circ$.",
+                  "reasoning": "Angle in a semicircle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find angle ADC using the Alternate Segment Theorem.",
+                  "working": "We are given $\\angle QCF = 61^\\circ$. Since $F$ lies on the chord $AC$, $\\angle QCA = 61^\\circ$.\nThe angle between the tangent $QC$ and chord $AC$ is equal to the angle in the alternate segment, which is $\\angle ADC$.\n$\\angle ADC = 61^\\circ$.",
+                  "reasoning": "Alternate Segment Theorem."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate angle CAD.",
+                  "working": "In the right-angled $\\triangle ACD$:\n$\\angle CAD = 180^\\circ - \\angle ACD - \\angle ADC$\n$\\angle CAD = 180^\\circ - 90^\\circ - 61^\\circ = 29^\\circ$.",
+                  "reasoning": "Angle sum of a triangle."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine the angle at the center subtended by arc CD.",
+                  "working": "Let $O$ be the center of the circle. The angle at the center is twice the angle at the circumference subtended by the same arc $CD$.\n$\\angle COD = 2 \\times \\angle CAD = 2 \\times 29^\\circ = 58^\\circ$.",
+                  "reasoning": "Angle at center = $2 \\times$ Angle at circumference."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate the area of the sector OCD and triangle OCD to find the segment area.",
+                  "working": "Radius $r = \\frac{28}{2} = 14$ cm.\n\nArea of sector $OCD = \\frac{\\theta}{360} \\times \\pi r^2$\n$= \\frac{58}{360} \\times \\pi \\times 14^2 \\approx 99.204 \\text{ cm}^2$.\n\nArea of $\\triangle OCD = \\frac{1}{2}r^2 \\sin \\theta$\n$= \\frac{1}{2} \\times 14^2 \\times \\sin(58^\\circ) \\approx 83.109 \\text{ cm}^2$.\n\nArea of segment $CD =$ Area of sector - Area of triangle\n$= 99.204 - 83.109 = 16.095 \\text{ cm}^2$.",
+                  "reasoning": "Area of segment formula."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Final Answer.",
+                  "working": "Area $\\approx 16.1 \\text{ cm}^2$ (to 3 significant figures).",
+                  "reasoning": "Rounding."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Circle Geometry and Area",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Circle with points A, B, C, D. Tangent line PCQ at C. Line QE bisects angle AEC inside the circle.",
+          "notes": "Circle Geometry and Area",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-canberra-2024-p2-q4.svg"
+        }
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "G3-greenridge-2024-p2-q4",
+        "topicID": "G3",
+        "stem": "The diagram shows the cross section of a cylinder, centre O, radius r, lying on its side. The cylinder contains water to a depth of 18 cm. The width, AB, of the surface of the water is 24 cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Cross section of a cylinder with water. Centre O. Chord AB is water surface. Depth of water is 18cm. Vertical radius perpendicular to AB.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Use algebraic method to show that $r=13$ cm.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "r = 13\\text{ cm}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the dimensions of the right-angled triangle formed by the radius, the chord, and the distance from the center.",
+                  "working": "Let $M$ be the midpoint of the chord $AB$. Since the perpendicular from the center bisects the chord:\n$MB = \\frac{24}{2} = 12\\text{ cm}$\n\nThe depth of the water is given as $18\\text{ cm}$. This is the distance from the bottom of the circle ($P$) to the chord ($AB$).\nLet $O$ be the center and $r$ be the radius ($OB$ and $OP$).\nThe distance from the center $O$ to the chord $AB$ (length $OM$) is the total depth minus the radius:\n$OM = 18 - r$",
+                  "reasoning": "Geometry of a circle: The perpendicular from the center to a chord bisects the chord. "
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up an equation using Pythagoras' Theorem in triangle $OMB$.",
+                  "working": "In the right-angled triangle $OMB$:\n$Hypotenuse^2 = Side_1^2 + Side_2^2$\n$OB^2 = OM^2 + MB^2$\n\nSubstituting our values in terms of $r$:\n$r^2 = (18 - r)^2 + 12^2$",
+                  "reasoning": "Pythagorean theorem ($a^2 + b^2 = c^2$) applies to right-angled triangles."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and solve the algebraic equation to find $r$.",
+                  "working": "Expand the bracket $(18 - r)^2$:\n$r^2 = (324 - 36r + r^2) + 144$\n\nCombine like terms (subtract $r^2$ from both sides):\n$0 = 324 + 144 - 36r$\n$0 = 468 - 36r$\n\nRearrange to solve for $r$:\n$36r = 468$\n$r = \\frac{468}{36}$\n$r = 13\\text{ cm}$",
+                  "reasoning": "Algebraic expansion and simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that angle AOB is $134.76^{\\circ}$ correct to 2 decimal places.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "134.76^{\\circ}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify a suitable triangle to calculate the angle. We can use the right-angled triangle formed by the radius, half the chord, and the perpendicular from the center.",
+                  "working": "Let $M$ be the midpoint of the chord $AB$. The triangle $OMB$ is a right-angled triangle where:\n- Hypotenuse $OB = r = 13\\text{ cm}$\n- Opposite side $MB = \\frac{24}{2} = 12\\text{ cm}$\n- The angle we want to find first is $\\angle MOB$, which is half of $\\angle AOB$.",
+                  "reasoning": "Splitting the isosceles triangle $AOB$ into two right-angled triangles simplifies the calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use trigonometry (SOH CAH TOA) to find half of angle AOB.",
+                  "working": "Using the sine ratio for $\\angle MOB$:\n$\\sin(\\angle MOB) = \\frac{\\text{Opposite}}{\\text{Hypotenuse}}$\n$\\sin(\\angle MOB) = \\frac{12}{13}$\n$\\angle MOB = \\sin^{-1}\\left(\\frac{12}{13}\\right)$\n$\\angle MOB \\approx 67.3801^{\\circ}$",
+                  "reasoning": "Definition of sine in a right-angled triangle."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the full angle AOB.",
+                  "working": "Since triangle $AOB$ is isosceles, the altitude bisects the angle at the center.\n$\\angle AOB = 2 \\times \\angle MOB$\n$\\angle AOB = 2 \\times 67.3801^{\\circ}$\n$\\angle AOB = 134.7602^{\\circ}$\nRounding to 2 decimal places: $\\angle AOB = 134.76^{\\circ}$",
+                  "reasoning": "Symmetry of the circle and isosceles triangle properties."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Hence calculate the area of the shaded segment.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "392.23 \\text{ cm}^2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the strategy to find the area of the shaded major segment.",
+                  "working": "The shaded region is the **major segment** of the circle. We can calculate this by finding the area of the major sector (reflex angle) and adding the area of triangle $AOB$.\n\n$\\text{Area of Shaded Segment} = \\text{Area of Major Sector} + \\text{Area of } \\triangle AOB$",
+                  "reasoning": "The shaded area is composed of the large 'Pac-Man' shaped sector plus the triangular part between the center and the chord."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the reflex angle for the major sector.",
+                  "working": "$\\text{Reflex } \\angle AOB = 360^{\\circ} - 134.76^{\\circ}$\n$\\text{Reflex } \\angle AOB = 225.24^{\\circ}$",
+                  "reasoning": "Angles at a point sum to $360^{\\circ}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the area of the major sector.",
+                  "working": "$\\text{Area} = \\frac{\\theta}{360} \\times \\pi r^2$\n$\\text{Area} = \\frac{225.24}{360} \\times \\pi \\times 13^2$\n$\\text{Area} \\approx 332.23 \\text{ cm}^2$",
+                  "reasoning": "Formula for the area of a sector."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the area of triangle AOB.",
+                  "working": "Using the sine formula for area:\n$\\text{Area} = \\frac{1}{2}ab \\sin C$\n$\\text{Area} = \\frac{1}{2} \\times 13 \\times 13 \\times \\sin(134.76^{\\circ})$\n$\\text{Area} \\approx 60.00 \\text{ cm}^2$\n\n*(Alternative check: $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 24 \\times 5 = 60 \\text{ cm}^2$)*",
+                  "reasoning": "Area of a triangle using sine rule or base and height."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Sum the areas to find the final answer.",
+                  "working": "$\\text{Total Area} = 332.23 + 60.00$\n$\\text{Total Area} = 392.23 \\text{ cm}^2$",
+                  "reasoning": "Sum of component parts."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Circle Segment and Cylinder",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Cross section of a cylinder with water. Centre O. Chord AB is water surface. Depth of water is 18cm. Vertical radius perpendicular to AB.",
+          "notes": "Circle Segment and Cylinder",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G3-greenridge-2024-p2-q4.svg"
+        }
+      }
+    ]
   }
 }

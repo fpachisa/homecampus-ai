@@ -1,0 +1,329 @@
+{
+  "topicId": "G7",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 27,
+        "questionId": "G7-broadrick-2024-p1-q27",
+        "topicID": "G7",
+        "stem": "ABC is a triangle. D is the point on BC such that $3BD=2DC.$ $\\vec{AB} = m$ and $\\vec{AC} = n$.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABC with D on BC. Vector arrows for m and n.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $\\vec{AD}$ in terms of m and n.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "bi",
+            "questionText": "R is on AD produced such that $\\vec{AR}=k\\vec{AD}$ and AC is parallel to BR. Show that $k=\\frac{5}{3}$.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "bii",
+            "questionText": "Find the ratio of area of triangle ABD to area of triangle RBD.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Vectors"
+      },
+      {
+        "questionNumber": 26,
+        "questionId": "G7-cchms-2024-p1-q26",
+        "topicID": "G7",
+        "stem": "In the diagram below, PQRST is a trapezium made up of a parallelogram PQRS and an isosceles triangle PST where $PT=PS$. It is given that $\\vec{RS}=\\mathbf{a}$, $\\vec{RQ}=\\mathbf{b}$ and $SR=ST$.",
+        "hasDiagram": true,
+        "diagramDescription": "Trapezium PQRST composed of parallelogram PQRS on the right and triangle PST on the left. PT = PS. Vector RS is a, vector RQ is b.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that $\\vec{QS}=\\vec{PT}$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence or otherwise, prove that the trapezium is made up of three isosceles triangles PST.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Vector Proofs in Trapezium"
+      },
+      {
+        "questionNumber": 25,
+        "questionId": "G7-huayi-2024-p1-q25",
+        "topicID": "G7",
+        "stem": "ORS is a triangle. J is a point on RS such that $RJ:JS=3:2$. $\\vec{OR}=\\mathbf{r}$ and $\\vec{OS}=\\mathbf{s}.$",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ORS. Point J on RS.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that $\\vec{OJ}=\\frac{1}{5}(2\\mathbf{r}+3\\mathbf{s})$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "X is a point such that $\\vec{RX}=\\frac{1}{5}(\\mathbf{r}+9\\mathbf{s})$. Explain why O, J and X lie on a straight line.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Vector Geometry"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 6,
+        "questionId": "G7-acsi-2024-p2-q6",
+        "topicID": "G7",
+        "stem": "In the diagram, OABC is a parallelogram and D is the midpoint of BC. BE and OC produced intersect at point F. It is given that BE: $BF=1:3$, OC: OF = 1:2, $\\vec{OA}=a$ and $\\vec{OC}=c.$",
+        "hasDiagram": true,
+        "diagramDescription": "Parallelogram OABC with OA=a and OC=c. Point D is on BC. Lines are extended to point F such that O-C-F is a straight line and B-E-F is a straight line.",
+        "parts": [
+          {
+            "partId": "a-i",
+            "questionText": "Express and simplify $\\vec{BF}$ in terms of a and c,",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "a-ii",
+            "questionText": "Express and simplify $\\vec{AE}$ in terms of a and c,",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "a-iii",
+            "questionText": "Express and simplify $\\vec{OD}$ in terms of a and c.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Determine, with clear working shown, whether points O, D and E lie on a straight line.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $\\frac{\\text{area of triangle CDE}}{\\text{area of parallelogram OABC}}$",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Vectors in Geometry"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "G7-canberra-2024-p2-q6",
+        "topicID": "G7",
+        "stem": "In the diagram ABCD is a parallelogram. The diagonal AC and BD intersect at E. F is a point on AD such that $\\frac{AF}{AD}=\\frac{1}{3}$. G is the mid-point of AE. $\\vec{AF}=2p$ and $\\vec{AB}=6p+4q$.",
+        "hasDiagram": true,
+        "diagramDescription": "Parallelogram ABCD with diagonals intersecting at E. Point F on AD. Point G on AC. Vectors labelled.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $\\vec{DE}$ in terms of p and q, as simply as possible.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Express $\\vec{AG}$ in terms of p and q, as simply as possible.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Show that $\\vec{BG}=-3p-3q$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain why B, G and F lie on a straight line.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "e",
+            "questionText": "Calculate the ratio of the area of triangle ABF to the area of parallelogram ABCD.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Vectors in Parallelogram"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "G7-swisscottage-2024-p2-q7",
+        "topicID": "G7",
+        "stem": "(a) The position vector of point X is $\\binom{8}{-4}$. The position vector of point Y is $\\binom{6}{4}.$",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram for part b showing trapezium OABC. OA is parallel to CB. OA=a, OC=2c, CB=2a. P on AC? No, P is on OB?",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find the vector that represents the translation from X to Y.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find the magnitude of $\\vec{XY}$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Z has coordinates (-1, k) and lies on the line XY produced. Find the position vector of point Z.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "OABC is a trapezium. $\\vec{OA}=a$, $\\vec{OC}=2c$ and $\\vec{CB}=2a.$ $OP:PB=1:3$. Express $\\vec{OB}$ in terms of a and c, as simply as possible.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Express $\\vec{CP}$ in terms of a and c, as simply as possible.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Explain why C, P and A do not lie on a straight line.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_iv",
+            "questionText": "Write down the value of $\\frac{\\text{area of triangle OBC}}{\\text{area of trapezium OABC}}$.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 12,
+        "paper": "Paper 2",
+        "title": "Vectors in Geometry"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "G7-tkgs-2024-p2-q8",
+        "topicID": "G7",
+        "stem": "$\\vec{AB}=\\begin{pmatrix}-3\\\\ 9\\end{pmatrix},$ $\\vec{BC}=\\begin{pmatrix}2\\\\ 5\\end{pmatrix},$ $\\vec{CD}=\\begin{pmatrix}d\\\\ 4\\end{pmatrix},$",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram for part b showing trapezium OABC. Vector OA=a, OC=2c, CB=2a. P is on OC?",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Given that $\\vec{CD}$ is parallel to $\\vec{AB}$, find the value of d.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find $\\mid\\vec{AC}\\mid$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "OABC is a trapezium. $\\vec{OA}=a$, $\\vec{OC}=2c$ and $\\vec{CB}=2a.$ $OP:PB=1:3$. Express $\\vec{OB}$ in terms of a and c, as simply as possible.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Express $\\vec{CP}$ in terms of a and c, as simply as possible.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Explain why C, P and A do not lie on a straight line.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_iv",
+            "questionText": "Write down the value of $\\frac{\\text{area of triangle OBC}}{\\text{area of trapezium OABC}}$.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Vector Geometry"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "G7-woodgrove-2024-p2-q6",
+        "topicID": "G7",
+        "stem": "(a) Point A is translated to point B by the vector $\\binom{-5}{4}$. The position vector of point B is $\\binom{3}{8}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram for part b showing quadrilateral OPQR. Vector OP=3p, OR=4r, RQ=7p+4r. B lies on PR.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find $\\mid\\vec{OA}\\mid$.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "P is a point that lies on AB and has coordinates (k, 10). Find the value of k.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "OPQR is a quadrilateral. $\\vec{OP}=3p$, $\\vec{OR}=4r$ and $\\vec{RQ}=7p+4r$. B is a point on PR such that $PB:BR=3:2$. Write down $\\vec{OQ}$ in terms of p and r.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Write down $\\vec{PQ}$ in terms of p and r.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Write down $\\vec{OB}$ in terms of p and r.",
+            "marks": 3,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain why points O, B and Q are not collinear.",
+            "marks": 1,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Vectors"
+      }
+    ]
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "topicId": "N6",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 5,
+        "questionId": "N6-acsi-2024-p1-q5",
+        "topicID": "N6",
+        "stem": "Part of the graph of a quadratic function is shown below. The graph passes through the point $A(1,15)$ and it cuts the x-axis at the points B and C. Given that C is (6, 0) and $x=2$ is the line of symmetry of the graph,",
+        "hasDiagram": true,
+        "diagramDescription": "A parabolic curve opening downwards plotted on a Cartesian coordinate system. It peaks above the x-axis, passes through point A(1, 15) on the left side of the peak, intersects the x-axis at B on the left and C(6, 0) on the right. The line of symmetry is marked as the vertical dashed line x = 2.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "write down the equation of the quadratic curve in the form $y=a(x-h)^{2}+k$.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "find the positive value of x when $y=4,$ leaving your answer in exact form.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Quadratic Graph Properties"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "N6-broadrick-2024-p1-q7",
+        "topicID": "N6",
+        "stem": "In the following graph, write down a possible value of n and the corresponding value of b for the equation $y=x^n+b$.",
+        "hasDiagram": true,
+        "diagramDescription": "A coordinate graph showing a curve passing through the point (1, -1). The curve is in the shape of a cubic or odd power function, starting from bottom left and going to top right.",
+        "parts": [
+          {
+            "partId": "7",
+            "questionText": "Find $n$ and $b$.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Graphs of Functions"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "N6-broadrick-2024-p1-q16",
+        "topicID": "N6",
+        "stem": "",
+        "hasDiagram": true,
+        "diagramDescription": "Part (a) shows two intersecting lines AB and PQ on a Cartesian plane. Part (b) shows a parabola opening upwards intersecting the x-axis at -4 and 1.5.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Leanne says that the equation of the line AB is $2y=-4x+1$ and the equation of the line PQ is $4y=-9x+2$. Is she correct? Explain your answer.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "The diagram shows the graph of $y=x^{2}+px+q$. (i) Write down equation of the graph in the form $y=x^{2}+px+q$. (ii) Find the coordinates of the minimum point.",
+            "marks": 4,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 26,
+        "questionId": "N6-broadrick-2024-p1-q26",
+        "topicID": "N6",
+        "stem": "The diagrams show the speed-time graph and the corresponding distance-time graph of a car. The car travelled from a point P to Q and in the journey, its greatest speed attained was 1.5 km/min.",
+        "hasDiagram": true,
+        "diagramDescription": "Two graphs. First is speed-time with speed reaching 1.5 km/min. Second is distance-time showing total distance 92.25 km. Times 0800, 0820, 0900 and T are marked.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Convert $1.5~km/min$ to m/s.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that v, the initial speed, was $0.6~km/min$",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the speed of the car, in $m/s,$ at 0812.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "The total distance travelled by the car is 92.25 km. Find the time, T, when it comes to a complete stop.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Kinematics"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "N6-cchms-2024-p1-q6",
+        "topicID": "N6",
+        "stem": "From the diagrams below, select one of them which best illustrates each of the following statements.",
+        "hasDiagram": true,
+        "diagramDescription": "Five sketch graphs labelled Diagram 1 to Diagram 5. Diagram 1 is a straight line y=c. Diagram 2 is a straight line passing through origin. Diagram 3 is a straight line with positive y-intercept. Diagram 4 is an increasing curve starting from origin (like x^2 or x^3). Diagram 5 is a decreasing curve (inverse proportion).",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$y=4\\pi x^{3}$",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The cost of a project $y$ is a linear function of $x$, where $x$ is the number of man-hours required to complete the project. The project has a fixed cost of $100.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "An object is travelling at a constant speed towards a fixed point O. The distance $y$ (in metres) represents how far the object is from point O at time $x$ (in minutes).",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Matching Graphs to Situations"
+      },
+      {
+        "questionNumber": 23,
+        "questionId": "N6-navalbase-2024-p1-q23",
+        "topicID": "N6",
+        "stem": "A vaccine was introduced to a virus in an experiment. The number, N, of virus t hours after being introduced to the vaccine is given by $N=v\\times0.9^{2t}$ where v is the amount of vaccine introduced.",
+        "hasDiagram": true,
+        "diagramDescription": "Four diagrams showing shapes of N against t. Diagram 1: Decreasing curve convex. Diagram 2: Linear decreasing. Diagram 3: Increasing curve. Diagram 4: Increasing linear.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "After 1 hour, the number of virus has decreased to 81 000. Find v.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find in terms of $k$, the number of virus when $0.81^{t}=k$.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the decrease in the number of virus after 2 hours as a percentage of the number of virus at the beginning.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Which of these diagrams represent the graph of N against t?",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Exponential Decay Function"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "N6-swisscottage-2024-p1-q24",
+        "topicID": "N6",
+        "stem": "The graphs of $y=\\frac{x^{3}}{2}-4x-1$ and $y=1-x$ are drawn on the grid.",
+        "hasDiagram": true,
+        "diagramDescription": "A graph showing a cubic curve and a straight line intersecting at three points. The x-axis ranges from -4 to 5, y-axis from -5 to 4.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The points of intersection of the curve and the straight line give the solutions of a cubic equation. Find the cubic equation, giving your answer in the form $ax^{3}+bx^{2}+cx+d=0$, where a, b, c and d are integers.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "By drawing a tangent, find the gradient of the curve at (-2,3).",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c_i",
+            "questionText": "The equation $x^{3}-4x=0$ can be solved by drawing a suitable straight line on the grid. Find the equation of the straight line.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c_ii",
+            "questionText": "By drawing this straight line, solve the equation $x^{3}-4x=0$.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Graphical Solutions"
+      }
+    ],
+    "Paper 2": []
+  }
+}

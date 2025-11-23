@@ -1,0 +1,27 @@
+{
+  "topicId": "N7",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [
+      {
+        "questionNumber": 2,
+        "questionId": "N7-orchidpark-2024-p2-q2",
+        "topicID": "N7",
+        "stem": "In the diagram, ABCD is a rectangle. Given that $AB=(2x+y)$ cm, $BC=(x+y)$ cm, $CD=(3x+5y+3)$ cm and $AD=(4x+5y-7)$ cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Rectangle ABCD with side lengths given as algebraic expressions.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the values of x and y.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Simultaneous Equations Rectangle"
+      }
+    ]
+  }
+}

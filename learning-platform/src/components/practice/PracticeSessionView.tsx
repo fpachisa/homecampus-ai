@@ -100,7 +100,15 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const [loadingSolution, setLoadingSolution] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState<{ current: number; total: number } | null>(null);
   const [showMathToolbar, setShowMathToolbar] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Auto-resize textarea when content changes
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.style.height = 'auto';
+      inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
+    }
+  }, [studentAnswer]);
 
   // Timer tracking for time spent per problem
   const [problemStartTime, setProblemStartTime] = useState<Date>(new Date());
@@ -201,6 +209,12 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
   const initializeSession = async () => {
     try {
+      // Reset UI state for new session
+      setStudentAnswer('');
+      setSolution(null);
+      setSubmitting(false);
+      setLoadingSolution(false);
+
       setSession(prev => ({ ...prev, loading: true, error: null }));
 
       console.log('=== PRACTICE SESSION INIT ===');
@@ -364,9 +378,43 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const saveSessionToStorage = (data: any) => {
     try {
       const key = `practice_session_${node.id}`;
-      localStorage.setItem(key, JSON.stringify(data));
-    } catch (error) {
-      console.error('Failed to save session to storage:', error);
+      const serializedData = JSON.stringify(data);
+      localStorage.setItem(key, serializedData);
+    } catch (error: any) {
+      // Handle QuotaExceededError
+      if (error.name === 'QuotaExceededError' ||
+        error.name === 'NS_ERROR_DOM_QUOTA_REACHED' ||
+        error.message?.includes('quota')) {
+
+        console.warn('⚠️ LocalStorage quota exceeded. Attempting to save without scratchpad data...');
+
+        try {
+          // Create a "light" version of the data by removing scratchpad drawings
+          const lightData = { ...data };
+
+          if (lightData.problemSessions) {
+            // Deep copy problemSessions to avoid mutating original state
+            lightData.problemSessions = JSON.parse(JSON.stringify(lightData.problemSessions));
+
+            // Remove scratchpad data from all problem sessions
+            Object.keys(lightData.problemSessions).forEach((id: string) => {
+              if (lightData.problemSessions[id].scratchPad) {
+                delete lightData.problemSessions[id].scratchPad;
+              }
+            });
+          }
+
+          const lightSerializedData = JSON.stringify(lightData);
+          const key = `practice_session_${node.id}`;
+          localStorage.setItem(key, lightSerializedData);
+          console.log('✅ Saved session (without scratchpad data) after quota error');
+
+        } catch (retryError) {
+          console.error('❌ Failed to save session even after removing scratchpad data:', retryError);
+        }
+      } else {
+        console.error('Failed to save session to storage:', error);
+      }
     }
   };
 
@@ -594,7 +642,44 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       const solutionData = await pathPracticeService.getSolution(currentProblem);
 
       setSolution(solutionData);
-      setSession(prev => ({ ...prev, showingSolution: true }));
+
+      // Update session state to reflect showing solution
+      // CRITICAL: We must also update currentProblemSession and save to storage
+      // to ensure this state persists across reloads
+
+      const updatedProblemSession: ProblemSessionState = {
+        ...(session.currentProblemSession || {
+          problemId: currentProblem.id,
+          attemptCount: 0,
+          attemptHistory: [],
+          canRetry: false,
+          showingSolution: true
+        }),
+        showingSolution: true,
+        canRetry: false // Cannot retry once solution is shown
+      };
+
+      const updatedProblemSessions = {
+        ...session.problemSessions,
+        [currentProblem.id]: updatedProblemSession
+      };
+
+      setSession(prev => ({
+        ...prev,
+        showingSolution: true,
+        currentProblemSession: updatedProblemSession,
+        problemSessions: updatedProblemSessions
+      }));
+
+      // Save to storage immediately
+      saveSessionToStorage({
+        nodeId: node.id,
+        problems: session.problems,
+        currentIndex: session.currentIndex,
+        attempts: session.attempts,
+        problemSessions: updatedProblemSessions,
+      });
+
     } catch (error) {
       console.error('Failed to load solution:', error);
       setSolution({
@@ -907,7 +992,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           </div>
 
           {/* Bottom Row: Problem Navigation Pills */}
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 -mx-1 px-1">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto py-2 -mx-1 px-1">
             {session.problems.map((problem, index) => {
               const isAttempted = session.attempts.some(a => a.problemId === problem.id);
               const hasVisited = session.problemSessions[problem.id] !== undefined;
@@ -1103,14 +1188,14 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                       ? `(Attempt ${Math.min(session.currentProblemSession.attemptCount + 1, 3)} of 3)`
                       : ''}:
                   </label>
-                  <input
+                  <textarea
                     ref={inputRef}
-                    type="text"
                     value={studentAnswer}
                     onChange={(e) => setStudentAnswer(e.target.value)}
                     onKeyDown={(e) => {
                       const canSubmit = session.currentProblemSession?.canRetry ?? false;
-                      if (e.key === 'Enter' && canSubmit && !submitting) {
+                      // Submit on Ctrl+Enter or Cmd+Enter
+                      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter' && canSubmit && !submitting) {
                         handleSubmitAnswer();
                       }
                     }}
@@ -1120,12 +1205,13 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                       (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
                       false
                     }
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed resize-y min-h-[120px]"
                     placeholder={
                       session.currentProblemSession && !session.currentProblemSession.canRetry
                         ? "Maximum attempts reached"
-                        : "Enter your answer..."
+                        : "Enter your answer... (Press Ctrl+Enter to submit)"
                     }
+                    rows={4}
                   />
                 </div>
 

@@ -1109,25 +1109,6 @@
             "title": "CPF and Investment Planning"
         },
         {
-            "questionNumber": 10,
-            "questionId": "G3-canberra-2024-p1-q10",
-            "topicID": "G3",
-            "stem": "In the diagram, O is the centre of the circle and ABCD is a cyclic quadrilateral. Angle AOB = angle $ADC=70^{\\circ}$.",
-            "hasDiagram": true,
-            "diagramDescription": "Circle with center O. Points A, B, C, D on circumference. Central angle AOB is 70 degrees. Angle ADC is 70 degrees. Triangle ABC is drawn.",
-            "parts": [
-                {
-                    "partId": "a",
-                    "questionText": "Explain why triangle ABC is an isosceles triangle. Give reasons for each step of your working.",
-                    "marks": 3,
-                    "answerType": "proof"
-                }
-            ],
-            "totalMarks": 3,
-            "paper": "Paper 1",
-            "title": "Cyclic Quadrilateral Proof"
-        },
-        {
             "questionNumber": 14,
             "questionId": "G4-canberra-2024-p1-q14",
             "topicID": "G4",
@@ -1326,37 +1307,6 @@
             "totalMarks": 10,
             "paper": "Paper 2",
             "title": "Cumulative Frequency and Probability"
-        },
-        {
-            "questionNumber": 4,
-            "questionId": "G3-canberra-2024-p2-q4",
-            "topicID": "G3",
-            "stem": "A, B, C and D are points on a circle. Line PCQ is a tangent to the circle. Line QE bisects angle AEC and is parallel to line CD.",
-            "hasDiagram": true,
-            "diagramDescription": "Circle with points A, B, C, D. Tangent line PCQ at C. Line QE bisects angle AEC inside the circle.",
-            "parts": [
-                {
-                    "partId": "a",
-                    "questionText": "Show that $EC=ED$. Give a reason for each statement you make.",
-                    "marks": 2,
-                    "answerType": "proof"
-                },
-                {
-                    "partId": "b",
-                    "questionText": "Show that triangle AEF is similar to triangle QCF. Give a reason for each statement you make.",
-                    "marks": 2,
-                    "answerType": "proof"
-                },
-                {
-                    "partId": "c",
-                    "questionText": "Diameter $AD=28$ cm and angle QCF $=61^{\\circ}$. Calculate the area of segment CD.",
-                    "marks": 4,
-                    "answerType": "numerical"
-                }
-            ],
-            "totalMarks": 8,
-            "paper": "Paper 2",
-            "title": "Circle Geometry and Area"
         },
         {
             "questionNumber": 5,
@@ -1571,25 +1521,6 @@
             "title": "Pie Chart Analysis"
         },
         {
-            "questionNumber": 16,
-            "questionId": "G3-greenridge-2024-p1-q16",
-            "topicID": "G3",
-            "stem": "The figure below shows a circle with centre O. Points A, B and C lie on the circle. Angle $ABC=100^{\\circ}$.",
-            "hasDiagram": true,
-            "diagramDescription": "Circle with centre O. Chord AC. Point B on major arc? No, angle ABC is 100 degrees, which is obtuse, so B must be on the minor arc relative to AC if AC is not diameter. However, O is centre. Triangle AOC and triangle ABC drawn. B is on the circumference. Reflex angle AOC corresponds to angle ABC.",
-            "parts": [
-                {
-                    "partId": "a",
-                    "questionText": "Find angle OAC, giving reasons for each step of your working.",
-                    "marks": 4,
-                    "answerType": "numerical"
-                }
-            ],
-            "totalMarks": 4,
-            "paper": "Paper 1",
-            "title": "Circle Angle Calculation"
-        },
-        {
             "questionNumber": 22,
             "questionId": "G4-greenridge-2024-p1-q22",
             "topicID": "G4",
@@ -1711,43 +1642,6 @@
             "totalMarks": 10,
             "paper": "Paper 2",
             "title": "Sets and Cone Volume"
-        },
-        {
-            "questionNumber": 4,
-            "questionId": "G3-greenridge-2024-p2-q4",
-            "topicID": "G3",
-            "stem": "The diagram shows the cross section of a cylinder, centre O, radius r, lying on its side. The cylinder contains water to a depth of 18 cm. The width, AB, of the surface of the water is 24 cm.",
-            "hasDiagram": true,
-            "diagramDescription": "Cross section of a cylinder with water. Centre O. Chord AB is water surface. Depth of water is 18cm. Vertical radius perpendicular to AB.",
-            "parts": [
-                {
-                    "partId": "a",
-                    "questionText": "Use algebraic method to show that $r=13$ cm.",
-                    "marks": 2,
-                    "answerType": "proof"
-                },
-                {
-                    "partId": "b",
-                    "questionText": "Show that angle AOB is $134.76^{\\circ}$ correct to 2 decimal places.",
-                    "marks": 2,
-                    "answerType": "proof"
-                },
-                {
-                    "partId": "c",
-                    "questionText": "Hence calculate the area of the shaded segment.",
-                    "marks": 4,
-                    "answerType": "numerical"
-                },
-                {
-                    "partId": "d",
-                    "questionText": "The length of the cylinder is 40 cm. The cylinder is turned so that it stands on one of its circular ends. In this position, the depth of the water is h cm. Find the value of h.",
-                    "marks": 2,
-                    "answerType": "numerical"
-                }
-            ],
-            "totalMarks": 10,
-            "paper": "Paper 2",
-            "title": "Circle Segment and Cylinder"
         },
         {
             "questionNumber": 5,
@@ -1963,25 +1857,6 @@
             "title": "Electricity and Solar Panel"
         },
         {
-            "questionNumber": 16,
-            "questionId": "G3-huayi-2024-p1-q16",
-            "topicID": "G3",
-            "stem": "In the diagram, BDK is a straight line and $AB=AD.$ Angle $ABD=36^{\\circ}$, angle $CBD=49^{\\circ}$ and angle $CDK=121^{\\circ}$.",
-            "hasDiagram": true,
-            "diagramDescription": "Quadrilateral ABCD with diagonal BD extended to K. Triangle ABD is isosceles with AB=AD. Angle ABD = 36. Angle CBD = 49. Exterior angle CDK = 121.",
-            "parts": [
-                {
-                    "partId": "a",
-                    "questionText": "Explain why it is possible to draw a circle that passes through the points A, B, C and D. Give reasons for each step of your working.",
-                    "marks": 3,
-                    "answerType": "proof"
-                }
-            ],
-            "totalMarks": 3,
-            "paper": "Paper 1",
-            "title": "Cyclic Quadrilateral Proof"
-        },
-        {
             "questionNumber": 19,
             "questionId": "G5-huayi-2024-p1-q19",
             "topicID": "G5",
@@ -1999,37 +1874,6 @@
             "totalMarks": 3,
             "paper": "Paper 1",
             "title": "Surface Area of Composite Solid"
-        },
-        {
-            "questionNumber": 24,
-            "questionId": "G3-huayi-2024-p1-q24",
-            "topicID": "G3",
-            "stem": "A, B and C are points on the circle with centre O. Q and R are points on the circle with centre P. CSR and BSQ are tangents on to both circles. AOB is a straight line.",
-            "hasDiagram": true,
-            "diagramDescription": "Two circles with centres O and P. Tangent lines CSR and BSQ intersect at S between the circles. AOB is diameter of circle O. Triangle CSQ and BSR are formed.",
-            "parts": [
-                {
-                    "partId": "a",
-                    "questionText": "Show that triangle CQS is congruent to triangle BRS. Give a reason for each statement you make.",
-                    "marks": 3,
-                    "answerType": "proof"
-                },
-                {
-                    "partId": "b_i",
-                    "questionText": "Angle $ABC=y^{\\circ}$. Find, in terms of $y$, angle BAC.",
-                    "marks": 1,
-                    "answerType": "algebraic"
-                },
-                {
-                    "partId": "b_ii",
-                    "questionText": "Find, in terms of $y$, angle QPR.",
-                    "marks": 2,
-                    "answerType": "algebraic"
-                }
-            ],
-            "totalMarks": 6,
-            "paper": "Paper 1",
-            "title": "Tangents and Congruency"
         },
         {
             "questionNumber": 25,

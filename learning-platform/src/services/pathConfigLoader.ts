@@ -8,6 +8,7 @@
 
 import type { PathNode, PathDifficulty, PathConfigSet } from '../types/practice';
 import { yamlPathLoader } from './yamlPathLoader';
+import { jsonPathLoader } from './jsonPathLoader';
 
 class PathConfigLoader {
   private cache: Map<string, PathNode[]> = new Map();
@@ -63,6 +64,20 @@ class PathConfigLoader {
     // Check cache first
     if (this.cache.has(cacheKey)) {
       return this.cache.get(cacheKey)!;
+    }
+
+    // Try loading from JSON first (for O-Level exam papers)
+    if (category.startsWith('olevel-')) {
+      try {
+        const jsonNodes = await jsonPathLoader.loadUnifiedPath(category);
+        if (jsonNodes && jsonNodes.length > 0) {
+          console.log(`✅ Loaded unified path from JSON for ${category}`);
+          this.cache.set(cacheKey, jsonNodes);
+          return jsonNodes;
+        }
+      } catch (jsonError) {
+        console.warn(`Failed to load JSON path for ${category}, falling back to YAML`, jsonError);
+      }
     }
 
     // Load from YAML file

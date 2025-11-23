@@ -1,0 +1,108 @@
+{
+  "topicId": "N5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 17,
+        "questionId": "N5-navalbase-2024-p1-q17",
+        "topicID": "N5",
+        "stem": "The numbers 1 to 100 are arranged in a table. An L-shaped shaded frame can be placed around various numbers throughout the table. $L_{x}$ is used to refer to the shaded frame that is drawn around a particular number. For example, $L_{2}$ refers to the shaded frame shown above drawn around the number 2.\n\n| | 2 | 3 | ... | 10 |\n| :--- | :--- | :--- | :--- | :--- |\n| | 13 | | | |\n\n(Diagram shows L-shape covering 2, 13, 14)",
+        "hasDiagram": true,
+        "diagramDescription": "A number grid with 10 columns. An L-shape frame covers a number $n$, the number below it ($n+11$?), and the number to the right of that ($n+12$?). Wait, the example $L_2$ covers 2, 13, 14? Let's check the grid structure. \nRow 1: 2, 3... 10? No, usually 1-10. Let's assume standard 10-column grid.\n2 is in row 1, col 2. Below 2 is 12. Right of 12 is 13. \nIf $L_2$ covers 2, 12, 13, then the numbers are $n$, $n+10$, $n+11$.\nLet's check the image. Image shows 2, 13, 14? No, looking at crop 6180: \nRow 1: ... 2 3 ...\nRow 2: ... 13 14 ...\nWait, 2 is above 13? If 1-10 is row 1, then 11-20 is row 2. Then 2 is above 12. Why 13? \nMaybe the grid starts with 2? \nLet's look at the crop 6180 carefully. \nTop row: 2, 3, 4, ... 10. (Missing 1?)\nSecond row: 13, 14, ... 20. (Missing 11, 12?)\nThis implies the grid might be non-standard or shifted. \nHowever, looking at $L_2$, the frame surrounds 2, then goes down to 13, then right to 14? \nIf 2 is directly above 13, the difference is 11. \nLet's assume the L-shape consists of $n$, $n+11$, $n+12$ based on visual alignment or description. \nOr maybe the grid is width 11? 2+11 = 13. Yes. \nSo grid has 11 columns? \nLet's check part (a) for clues. 'State the largest $L_n$'. \nThe last number is 100. The L-shape needs to exist. \nIt needs $n$, a number below it, and a number to the right of the one below. \nIf grid is width 11. \nLet's re-read the text. 'The numbers 1 to 100 are arranged in a table'. \nIf 2 is above 13, diff is 11. So row length is 11? \nIf row length is 11: \nRow 1: 1..11 \nRow 2: 12..22 \nThen 2 is above 13. Correct. \nSo the L-shape for $L_n$ covers $n$, $n+11$, $n+12$. \nLargest $L_n$: The bottom right of the L is $n+12$. This must be $\\le 100$. \n$n+12 \\le 100 \\Rightarrow n \\le 88$. \nAlso need to ensure $n$ is not in the last column (if the L goes right) or $n+11$ is not in last column. \nThe L-shape seems to be: $n$ (top), $n+11$ (below), $n+12$ (right of below). \nSo $n+11$ must not be in the last column. \nLast column numbers are multiples of 11. \nSo $n+11$ cannot be a multiple of 11? No, if $n+11$ is in last column, there is no number to its right. \nSo $n+11$ cannot be $11k$. \nSo $n$ cannot be $11k$. \nMax $n = 88$. 88 is multiple of 11. So $L_{88}$ would involve 88, 99, 100? \nWait, 99 is in last column? No, $99 = 9 \\times 11$. Yes. \nIf 99 is in last column, 100 is in next row? Or does the table end at 100? \nIf table is 1 to 100, and width 11. \n$100 = 9 \\times 11 + 1$. \nSo 100 is in first column of last row. \n88 is in last col. Below 88 is 99. Right of 99 is 100? \nNo, 99 is last col. 100 is next row. \nSo we cannot form L shape at 88. \nMax $n$ such that $n+12 \\le 100$ and row constraint met. \nLet's verify 'sum of numbers is always a multiple of 3'. \nSum $= n + (n+11) + (n+12) = 3n + 23$. \nThis is not a multiple of 3. \nMaybe the L shape is different. \nLet's look at the diagram $L_2$ again. \nIf it's 2, 12, 13 (standard 10-col grid). \nSum $= n + n+10 + n+11 = 3n + 21 = 3(n+7)$. \nThis IS a multiple of 3. \nSo the grid is likely a standard 10-column grid (1-10, 11-20...). \nIn standard 10-col grid: \nRow 1: 1..10 \nRow 2: 11..20 \n2 is above 12. Right of 12 is 13. \nWait, the diagram shows 2, 13, 14? \nLet's re-examine crop 6180. \nRow 1: 2 3 4 5 6 7 8 9 10. (1 is missing or cut off). \nRow 2: 13 14 15 16 17 18 19 20. (11, 12 missing). \nIf 2 is above 13, the difference is 11. \nIf difference is 11, then sum is $3n+23$, not divisible by 3. \nMaybe the L shape includes 2, 3, 13? \nNo, description says 'L-shaped'. Usually vertical then horizontal. \nLet's assume the question implies the sum is a multiple of 3. \nThen the grid must be 10-column. \nIf grid is 10-column, then 2 is above 12. \nWhy does the crop show 13 below 2? \nMaybe the numbers are shifted? \nOr maybe I am misinterpreting the crop. \nLet's assume the question claim 'sum is multiple of 3' is correct. \nThen $Sum = 3n + k$ where $k$ is multiple of 3. \nIf grid width is $w$, numbers are $n, n+w, n+w+1$. \nSum $= 3n + 2w + 1$. \nFor $2w+1$ to be multiple of 3: \nIf $w=10, 2w+1=21$ (div by 3). \nIf $w=11, 2w+1=23$ (not div by 3). \nSo grid MUST be 10-column. \nSo the diagram in the paper might be misleading or I am misreading the alignment. \nHowever, if the grid is 10-column (1-10, 11-20...), then: \n$L_n$ numbers: $n, n+10, n+11$. \nSum $= 3n + 21 = 3(n+7)$. \n(a) Largest $L_n$. \nNeed $n+11 \\le 100$. $n \\le 89$. \nAlso $n+10$ must not be in last column (because $n+11$ is to its right). \nLast column numbers: 10, 20, ... 90, 100. \nSo $n+10 \\neq 10k$. $\\Rightarrow n \\neq 10k$. \nMax $n=89$. $89+10=99$ (not last col). $99+1=100$. \nSo $L_{89}$ works. Numbers: 89, 99, 100. \nSo answer to (a) is 89. \n(b) Expression: $3(n+7)$. \n(c) Explain: Factor of 3.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State the largest $L_{n}$.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Write and simplify an expression, in terms of $n$, for the sum of the numbers in $L_{n}.$",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain why the sum of the numbers is always a multiple of 3.",
+            "marks": 1,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Number Grid Patterns"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 8,
+        "questionId": "N5-cchms-2024-p2-q8",
+        "topicID": "N5",
+        "stem": "(a) The figure shows the first three figures of a sequence formed by sticks of the same size.\n\n| Figure Number | Number of Squares |\n| :--- | :--- |\n| 1 | $(1+1)^{2}-1$ |\n| 2 | $(2+1)^{2}-1$ |\n| 3 | $(3+1)^{2}-1$ |",
+        "hasDiagram": true,
+        "diagramDescription": "Sequence of shapes made of sticks forming squares. Figure 1 has 3 squares. Figure 2 has 8 squares. Figure 3 has 15 squares. The pattern is a large square of size (n+1)x(n+1) with one corner square removed.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "(i) Find the number of small squares formed in Figure 5.\n(ii) Find, in terms of n, an expression for the number of squares in Figure n.\n(iii) Explain why the sum of the number of squares in two consecutive figures is always odd.",
+            "marks": 4,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "The table below shows the $n^{th}$ terms of 4 sequences.\n\n| Sequence number | $n^{th}$ term |\n| :--- | :--- |\n| 1 | $4n+3$ |\n| 2 | $7n+1$ |\n| 3 | $14n$ |\n| 4 | $8n-1$ |\n\nFor each sequence, are the numbers in the sequence always multiples of 7, sometimes multiples of 7 or never multiples of 7? Write down the letter 'A', 'S' or 'N' to represent your answer.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Square Patterns and Sequences"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N5-huayi-2024-p2-q3",
+        "topicID": "N5",
+        "stem": "(a) The first four terms of a sequence are 5, $\\frac{13}{4}$, $\\frac{17}{9}$, $\\frac{21}{16}$...",
+        "hasDiagram": true,
+        "diagramDescription": "A number grid showing numbers from 1 to 36 arranged in rows. A 2x2 rectangle outlines four numbers: 4, 5, 11, 12.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "State the fifth term of the sequence.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find an expression, in terms of $n$, for the nth term, $T_{n}$, of this sequence.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Elijah finds a number grid from his board game. A rectangle outlining four numbers, as shown, can be placed anywhere on the grid. If $p$ represents the number in the top right corner of the rectangle, write down an expression, in terms of $p$, for the number in the bottom left corner of the rectangle.",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Show that the difference between the products of the numbers in the opposite corners of the rectangle is always -7.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Elijah says it is impossible for the sum of the four numbers in the rectangle to be 199. Justify with relevant working, why he is correct.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Number Sequences and Grid Puzzle"
+      }
+    ]
+  }
+}

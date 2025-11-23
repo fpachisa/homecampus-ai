@@ -1,0 +1,70 @@
+{
+  "topicId": "N3",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [
+      {
+        "questionNumber": 9,
+        "questionId": "N3-acsi-2024-p2-q9",
+        "topicID": "N3",
+        "stem": "Emily is considering signing up for a new credit card and has shortlisted three options: Card A, Card B and Card C. Each card offers distinct benefits, rewards, and imposes different annual fees.",
+        "hasDiagram": true,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the net rewards (which consist of cashback and sign-up bonus) for each credit card for an expenditure of SGD 2000 within the first month of card usage.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Emily's monthly card expenditure is SGD 2000. Assuming Emily has signed up for credit card A, by considering only the annual fee and the net rewards, calculate the total amount she has to pay for her credit card bill after the first year of usage.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Emily enjoys travelling. As such, travel perks are important to her. Additional information provided: Monthly Card Expenditure is SGD 2000, requires 5 Airport Lounge Access Passes per year (costing $50 each if bought). Determine which credit card might be the best choice for Emily if she signs up for the card and uses it for two consecutive years. Justify any decisions you make and show your calculations clearly.",
+            "marks": 7,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 12,
+        "paper": "Paper 2",
+        "title": "Financial Literacy"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N3-cchms-2024-p2-q9",
+        "topicID": "N3",
+        "stem": "Sam is a 40-year-old man who earns a gross salary of $8000 a month. He is a Singaporean and an employee of a Singapore firm. Sam is required to put a certain percentage of his monthly gross salary into his Central Provident Fund (CPF) account.",
+        "hasDiagram": true,
+        "diagramDescription": "Two tables and a line graph. First table shows CPF Contribution Rates by age group. Second table shows Sam's monthly expenditure breakdown. The line graph shows Yearly Interest Rate of 5-year term Deposit from 2020 to 2024, fluctuating between 3% and 4.3%.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the amount of money Sam's employer must contribute to his CPF monthly.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Sam wants to plan his monthly savings and has tabulated his monthly expenditure as shown in the table. He hopes to save at least 20% of his salary each month after CPF deductions. Determine whether Sam is able to achieve his saving goals by clearly showing your calculations.",
+            "marks": 4,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "After a year of saving, Sam decides to invest $15 000 of his savings for a period of 5 years. He comes up with 2 investment plans.\n\nPlan A: Sam can invest his money in a 5-year savings bond at the beginning of 2025. The interest rate for the 5-year term is shown in the table. The savings bond compounds annually.\n\nPlan B: Sam can invest his money at the beginning of 2025 into an insurance company's fixed deposit account for a period of 5 years, compounded yearly. The interest rate is fixed over the duration of the investment and is determined by the year of issuance. The interest rate for 2025 is not yet available. Sam finds the information about the interest rates offered by the insurance company for the last 5 years (shown in graph).\n\nDetermine which plan Sam should choose. Justify the decision you make and show your calculations clearly.",
+            "marks": 5,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "CPF and Investment Planning"
+      }
+    ]
+  }
+}

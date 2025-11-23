@@ -1,0 +1,61 @@
+<svg width="300" height="300" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- 
+        Geometric Construction Logic:
+        Center (cx, cy) = (200, 200)
+        Radius (r) = 120
+        
+        Point A (Top): Angle -90° (Standard) -> 270°
+        x = 200, y = 80
+        
+        Point B: Angle AOB = 70°. B is to the right of A.
+        Angle = -90 + 70 = -20° (340°)
+        x = 200 + 120 * cos(-20°) ≈ 312.8
+        y = 200 + 120 * sin(-20°) ≈ 158.9
+        
+        Point C: We deduced arc AB = arc BC for isosceles triangle ABC.
+        So angle subtended by BC at center is also 70°.
+        Angle = -20 + 70 = 50°
+        x = 200 + 120 * cos(50°) ≈ 277.1
+        y = 200 + 120 * sin(50°) ≈ 291.9
+        
+        Point D: Given Angle ADC = 70°. This is consistent with D being on the major arc AC.
+        Visual placement: ~210°
+        x = 200 + 120 * cos(210°) ≈ 96.1
+        y = 200 + 120 * sin(210°) ≈ 260.0
+    -->
+
+    <!-- Circle -->
+    <circle cx="200" cy="200" r="120" stroke="#444" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Center Dot -->
+    <circle cx="200" cy="200" r="2.5" fill="black" />
+    <text x="185" y="215" font-family="Times New Roman, serif" font-style="italic" font-size="20" fill="#333">O</text>
+
+    <!-- Radii OA and OB -->
+    <line x1="200" y1="200" x2="200" y2="80" stroke="#333" stroke-width="1.5" fill="none" />
+    <line x1="200" y1="200" x2="312.8" y2="158.9" stroke="#333" stroke-width="1.5" fill="none" />
+
+    <!-- Cyclic Quadrilateral ABCD -->
+    <!-- A -> B -> C -> D -> A -->
+    <polygon points="200,80 312.8,158.9 277.1,291.9 96.1,260" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Diagonal AC (forming triangle ABC) -->
+    <line x1="200" y1="80" x2="277.1" y2="291.9" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- ANGLE MARKERS -->
+
+    <!-- Angle AOB (70°) -->
+    <path d="M 200 170 A 30 30 0 0 1 228.2 189.7" fill="none" stroke="black" stroke-width="1.5" />
+    <text x="205" y="170" font-family="sans-serif" font-size="14" fill="#333">70°</text>
+
+    <!-- Angle ADC (70°) -->
+    <path d="M 111.1 234.0 A 30 30 0 0 1 125.6 265.2" fill="none" stroke="black" stroke-width="1.5" />
+    <text x="128" y="248" font-family="sans-serif" font-size="14" fill="#333">70°</text>
+
+    <!-- LABELS -->
+    <text x="192" y="65" font-family="Times New Roman, serif" font-style="italic" font-size="20" fill="#333">A</text>
+    <text x="320" y="160" font-family="Times New Roman, serif" font-style="italic" font-size="20" fill="#333">B</text>
+    <text x="285" y="310" font-family="Times New Roman, serif" font-style="italic" font-size="20" fill="#333">C</text>
+    <text x="75" y="270" font-family="Times New Roman, serif" font-style="italic" font-size="20" fill="#333">D</text>
+
+</svg>

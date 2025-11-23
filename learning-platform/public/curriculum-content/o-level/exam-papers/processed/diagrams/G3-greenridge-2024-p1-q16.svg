@@ -1,0 +1,85 @@
+<svg width="400" height="350" viewBox="0 0 600 550" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white" />
+
+  <!-- 
+    Geometry Logic:
+    Center O: (300, 250)
+    Radius R: 180
+    
+    Given Angle ABC = 100 degrees.
+    Reflex Angle AOC = 2 * 100 = 200 degrees.
+    Obtuse Angle AOC (inside triangle) = 360 - 200 = 160 degrees.
+    
+    Placement for symmetry (aligned with vertical Y-axis):
+    - O is at (300, 250).
+    - Symmetry axis is the vertical line x = 300.
+    - Angle AOC = 160 degrees means OA and OC are +/- 80 degrees from the top vertical? 
+      No, B is at the bottom.
+      Let's place B at the bottom (90 degrees in SVG coordinates relative to center).
+      Actually, B is on the circle. 
+      The major arc AC subtends 200 degrees at center.
+      The minor arc AC subtends 160 degrees at center.
+      For B to be at the bottom (angle 90), it must be on the minor arc AC.
+      The chord AC separates the circle into major and minor segments. 
+      B is in the minor segment.
+      
+      Let's define angles relative to standard circle (0 is Right, 90 is Down).
+      Let B be at 90 deg (bottom).
+      To make B symmetric, A and C should be symmetric around 90 deg.
+      Angle AOC = 160 deg.
+      So A is at 90 + 80 = 170 degrees.
+      So C is at 90 - 80 = 10 degrees.
+      
+    Coordinates:
+      O = (300, 250)
+      A = (300 + 180*cos(170deg), 250 + 180*sin(170deg))
+        = (300 + 180*(-0.9848), 250 + 180*(0.1736))
+        = (300 - 177.2, 250 + 31.2) = (122.8, 281.2)
+      C = (300 + 180*cos(10deg), 250 + 180*sin(10deg))
+        = (300 + 180*(0.9848), 250 + 180*(0.1736))
+        = (300 + 177.2, 250 + 31.2) = (477.2, 281.2)
+      B = (300, 250 + 180) = (300, 430)
+      
+    Calculated Angles for verification:
+      Slope OA: small positive y, large negative x.
+      Slope OC: small positive y, large positive x.
+      Triangle OAC is isosceles with 160 deg at O.
+      Angles OAC and OCA = (180-160)/2 = 10 degrees.
+      In SVG, AC is horizontal y=281.2.
+      O is y=250.
+      Vertical distance = 31.2. Horizontal = 177.2.
+      tan(alpha) = 31.2 / 177.2 = 0.176 => alpha approx 10 degrees. Correct.
+  -->
+
+  <!-- Main Circle -->
+  <circle cx="300" cy="250" r="180" stroke="black" stroke-width="2" fill="none" />
+
+  <!-- Radius OA -->
+  <line x1="300" y1="250" x2="122.8" y2="281.2" stroke="black" stroke-width="2" />
+  
+  <!-- Radius OC -->
+  <line x1="300" y1="250" x2="477.2" y2="281.2" stroke="black" stroke-width="2" />
+
+  <!-- Chord AC -->
+  <line x1="122.8" y1="281.2" x2="477.2" y2="281.2" stroke="black" stroke-width="2" />
+
+  <!-- Chord AB -->
+  <line x1="122.8" y1="281.2" x2="300" y2="430" stroke="black" stroke-width="2" />
+
+  <!-- Chord BC -->
+  <line x1="300" y1="430" x2="477.2" y2="281.2" stroke="black" stroke-width="2" />
+
+  <!-- Angle Marker at B (100 degrees) -->
+  <!-- B is at (300, 430). Lines go to A and C. -->
+  <!-- Angle is obtuse (100). Let's draw a small arc. -->
+  <path d="M 270 405 Q 300 380 330 405" stroke="black" stroke-width="1.5" fill="none" />
+  <text x="300" y="390" font-family="Times New Roman, serif" font-size="20" text-anchor="middle">100°</text>
+
+  <!-- Point Labels -->
+  <text x="300" y="235" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="middle">O</text>
+  <text x="105" y="290" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="end">A</text>
+  <text x="495" y="290" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="start">C</text>
+  <text x="300" y="460" font-family="Times New Roman, serif" font-style="italic" font-size="24" text-anchor="middle">B</text>
+
+</svg>

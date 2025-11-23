@@ -1,0 +1,258 @@
+{
+  "topicId": "G1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 22,
+        "questionId": "G1-broadrick-2024-p1-q22",
+        "topicID": "G1",
+        "stem": "Regular pentagons and squares of the same sides are placed together in a pattern as shown in the diagram. Caleb claims that if he continues the pattern, a closed loop will form.",
+        "hasDiagram": true,
+        "diagramDescription": "A pattern showing alternating regular pentagons and squares connected by their sides, forming a curve.",
+        "parts": [
+          {
+            "partId": "22",
+            "questionText": "Explain whether his claim is true, showing your working clearly.",
+            "marks": 3,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Polygons"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "G1-cchms-2024-p1-q14",
+        "topicID": "G1",
+        "stem": "A number of regular $n$-sided polygons are placed together in a ring to form a regular $N$-sided polygon as shown in the diagram below.",
+        "hasDiagram": true,
+        "diagramDescription": "A partial diagram showing three adjacent regular n-sided polygons forming part of a ring. The outer vertices form part of a larger regular N-sided polygon.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that $N=\\frac{2n}{n-4}$.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, explain why a regular octagon cannot be formed by placing smaller $n$-sided regular polygons in a ring.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Regular Polygons Ring"
+      },
+      {
+        "questionNumber": 21,
+        "questionId": "G1-navalbase-2024-p1-q21",
+        "topicID": "G1",
+        "stem": "The diagram shows a regular hexagon P and a regular n-sided polygon Q. Polygon Q has an exterior angle of $18^{\\circ}$",
+        "hasDiagram": true,
+        "diagramDescription": "A regular hexagon P attached to a regular polygon Q. Angles a, b, c, d, e, f are exterior angles or related angles. Specifically, 'a' is the angle between a side of Q extended and a side of P? Diagram shows angles a, b, c, d, e, f around the hexagon P. 'a' and 'f' are adjacent to Q.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the sum of angles $a, b, c, d, e$ and $f$.",
+            "marks": 4,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Polygons and Angles"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "G1-orchidpark-2024-p1-q16",
+        "topicID": "G1",
+        "stem": "The figure is made up of a 7-sided regular polygon with centre O, a triangle OAG and a parallelogram OHFG, where GF is parallel to OH and GO is parallel to FH.",
+        "hasDiagram": true,
+        "diagramDescription": "Heptagon ABCDEFG with center O. Parallelogram OHFG attached.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find angle OGF.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Find angle EFH.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Three of the exterior angles of an n-sided polygon are $18^{\\circ}$, $22^{\\circ}$ and $32^{\\circ}$, four of its interior angles are $163^{\\circ}$ each, and each of the remaining interior angles is $160^{\\circ}$. Find the value of n.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Polygon Angles"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "G1-swisscottage-2024-p1-q14",
+        "topicID": "G1",
+        "stem": null,
+        "hasDiagram": true,
+        "diagramDescription": "A sketch showing a regular octagon attached to an equilateral triangle on one side. Angle x is the exterior angle formed between a side of the octagon and a side of the triangle.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A regular polygon has interior angles of $140^{\\circ}$. Find the number of sides of the polygon",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The diagram shows a sketch of a regular octagon and an equilateral triangle. Calculate x.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Polygons and Interior Angles"
+      },
+      {
+        "questionNumber": 17,
+        "questionId": "G1-tkgs-2024-p1-q17",
+        "topicID": "G1",
+        "stem": "The figure is made up of a regular pentagon ABCDE and a regular hexagon CDFGHI.",
+        "hasDiagram": true,
+        "diagramDescription": "Regular pentagon ABCDE and regular hexagon CDFGHI sharing side CD. Points B, C, I, H, G, F, E, D, A are vertices.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle BCI.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Determine whether BC and CI are two sides of another regular polygon. Justify your answers with mathematical working.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Polygons and Angles"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "G1-woodgrove-2024-p1-q18",
+        "topicID": "G1",
+        "stem": "ABCDE is part of a regular polygon which has an exterior angle of $20^{\\circ}$. CDLM is a square.",
+        "hasDiagram": true,
+        "diagramDescription": "Part of a regular polygon ABCDE... attached to a square CDLM on side CD.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of x. (Angle BCD)",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the value of y. (Angle MBC)",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Polygons and Angles"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "G1-zhonghua-2024-p1-q24",
+        "topicID": "G1",
+        "stem": "The diagram shows a regular pentagon, two squares and a triangle.",
+        "hasDiagram": true,
+        "diagramDescription": "Regular pentagon ABCDE. Two squares AHGF and CDEK attached to sides AH? No, AH is side of pentagon? No. Pentagon is ABCDE? No. Diagram shows a central pentagon with squares attached? Let's look at crop 20547. It says 'regular pentagon, two squares and a triangle'. Vertices are labeled A, B, C, D, E, F, G, H, K. It looks like ABCKH is the pentagon? Then squares on KH and BC? Wait. Let's trace. ABCDE looks like 4 sides of a pentagon? No. AB, BC, CD, DE. Then EK? KH? HA? \nLet's assume ABCKH is a regular pentagon. Square CD... No. \nLet's assume the central shape is a regular pentagon. \nLet's assume the shape ABCKH is a regular pentagon. Then square on side AH (AHGF) and square on side CD? No. \nLet's look at the crop again. 'regular pentagon, two squares and a triangle'. \nThe diagram has a central node K? No. The shape looks like a central pentagon P? No, P is not labeled. \nLet's try to identify the shapes. \nAHGF looks like a square. CDEK looks like a square? No. \nMaybe ABCKH is the pentagon? \nLet's re-read. 'The diagram shows a regular pentagon, two squares and a triangle.'\nPoints A, B, C, D, E, F, G, H, K.\nShapes: AHGF (Square?), CDEK (Square?), KEF (Triangle?), ABCKH (Pentagon?).\nLet's assume ABCKH is a regular pentagon. Side length s.\nAHGF is a square on side AH? Yes. side s.\nWhat about the other square? CDE...K? If CDEK is a square, then CD=DE=EK=KC=s? No, K is a vertex of pentagon? If ABCKH is pentagon, vertices are A, B, C, K, H. \nThen CDEK share CK? No, K is a vertex. C is a vertex. \nIs it possible the pentagon is the outer shape? No.\nLet's look at the solution key for 24. '108 degrees'. This is interior angle of regular pentagon. \n'angle HKE'. \nLet's try to deduce from the image. \nPentagon: A-B-C-K-H. Regular. Interior angle 108.\nSquare 1: H-G-F-K? No, H-G-F-A? No. \nLet's assume the square shares a side with the pentagon. \nSquare on AH: A-H-G-F? No, A-H is side. Square is A-H-G-? No. Square vertices usually listed in order. H-G-F-A? No, F is far. \nMaybe the square is on HK? \nLet's assume the shapes sharing vertex K are: Pentagon H-A-B-C-K, Square K-C-D-E, Triangle K-E-F, Square K-F-G-H. \nThis fits the topology around K.\nSo, Square 1: K-C-D-E. Square 2: K-F-G-H. Triangle: K-E-F. Pentagon: K-H-A-B-C.\nThis makes sense. All share vertex K.\n(a) Find angle ABC. (Interior of regular pentagon)\n(b) Explain why triangle KFE is not equilateral.\n(c) A polygon has interior angle BCD. Find number of sides.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle ABC.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why the triangle KFE is not an equilateral triangle.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "A polygon has interior angle BCD. Find the number of sides of the polygon.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Polygons and Angles"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 3,
+        "questionId": "G1-acsi-2024-p2-q3",
+        "topicID": "G1",
+        "stem": "In Diagram I below, ABCDE is a regular pentagon, centre O. $OA=OB=4~cm.$ Diagram II shows a design for a new badge. The vertices of the regular pentagon ABCDE are joined by circular arcs whose centres are the opposite vertices. For example, the arc AB has centre D and radius AD.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram I shows a regular pentagon ABCDE inscribed in a circle with center O, with radii OA and OB marked. Diagram II shows a curvilinear pentagon where each side is an arc curved outwards, with one shaded segment on side AB.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State the value of angle AOB.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the area of the pentagon ABCDE.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c-i",
+            "questionText": "Find angle ABD. Give reasons for each step of your working.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c-ii",
+            "questionText": "Show that the length of BD is approximately 7.61 cm.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c-iii",
+            "questionText": "Calculate the area of the shaded segment in Diagram II.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c-iv",
+            "questionText": "Calculate the area of the face ABCDE of the badge.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 12,
+        "paper": "Paper 2",
+        "title": "Geometry of Pentagon and Circular Arcs"
+      }
+    ]
+  }
+}

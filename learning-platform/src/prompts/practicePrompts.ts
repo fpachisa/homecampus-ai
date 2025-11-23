@@ -129,10 +129,10 @@ export const evaluatePracticeAnswerWithHistoryPrompt = (
 This is part of a multi-part question. Here's what the student answered for previous parts:
 
 ${relatedQuestionsContext.map((q, i) =>
-  `Part ${i + 1}: ${q.problemText}
+      `Part ${i + 1}: ${q.problemText}
 Student's answer: ${q.studentAnswer}
 Result: ${q.isCorrect ? '✓ Correct' : '✗ Incorrect'}`
-).join('\n\n')}
+    ).join('\n\n')}
 
 **IMPORTANT:** When evaluating the current answer, consider:
 - Whether the student's approach is consistent with their previous answers
@@ -154,9 +154,9 @@ ${solutionSteps.map((step, i) => `${i + 1}. ${step.replace(/\\/g, '\\\\')}`).joi
   const historyContext = previousAttempts.length > 0 ?
     `**PREVIOUS ATTEMPTS:**
 ${previousAttempts.map((attempt, i) =>
-  `Attempt ${i + 1}: Student answered "${attempt.answer}"
+      `Attempt ${i + 1}: Student answered "${attempt.answer}"
 Hint given: "${attempt.hint}"`
-).join('\n\n')}
+    ).join('\n\n')}
 
 **CURRENT ATTEMPT:** Attempt ${attemptNumber}
 ` : '';
@@ -166,17 +166,17 @@ Hint given: "${attempt.hint}"`
     1: {
       level: 'GENTLE NUDGE',
       instructions: 'Ask what information they have and what they need to find. Point them to think about the problem structure.',
-      avatarSpeech: 'Appropriate short speech to guide the student in the right direction based on the answer they provided. DO NOT assume they said/identified/mentioned something they did not.'
+      avatarSpeech: 'Appropriate short speech to guide the student in the right direction based on the answer they provided. CRITICAL: DO NOT include any LaTeX or special characters. Use plain text only. CRITICAL: DO NOT assume they said/identified/mentioned something they did not. CRITICAL: If the answer is wrong or way off then say so. DO NOT sugarcoat your speech.'
     },
     2: {
       level: 'SPECIFIC GUIDANCE',
       instructions: 'Point to the specific formula, concept, or approach they should use. Mention key relationships.',
-      avatarSpeech: 'Appropriate 1-2 sentences speech to guide the student further based on the answer they provided. DO NOT assume they said/identified/mentioned something they did not.'
+      avatarSpeech: 'Appropriate 1-2 sentences speech to guide the student further based on the answer they provided. CRITICAL: DO NOT include any LaTeX or special characters. Use plain text only. CRITICAL: DO NOT assume they said/identified/mentioned something they did not. CRITICAL: If the answer is wrong or way off then say so. DO NOT sugarcoat your speech.'
     },
     3: {
       level: 'DETAILED SETUP',
       instructions: 'Show the equation setup or first steps. Explain the approach clearly but don\'t solve completely.',
-      avatarSpeech: 'Appropriate 1-2 sentences speech to provide detailed guidance based on the answer they provided. DO NOT assume they said/identified/mentioned something they did not.'
+      avatarSpeech: 'Appropriate 1-2 sentences speech to provide detailed guidance based on the answer they provided. CRITICAL: DO NOT include any LaTeX or special characters. Use plain text only. CRITICAL: DO NOT assume they said/identified/mentioned something they did not. CRITICAL: If the answer is wrong or way off then say so. DO NOT sugarcoat your speech.'
     }
   };
 
@@ -210,7 +210,7 @@ ${studentAnswer}
    - Be encouraging and supportive
 
 **IMPORTANT GUIDELINES:**
-- avatarSpeech: Brief encouraging sentence (1-2 sentences max) that the avatar will speak. CRITICAL: DO NOT include any markdown or special characters. Use plain text only.
+- avatarSpeech: Brief encouraging sentence (1-2 sentences max) that the avatar will speak. CRITICAL: DO NOT include any LaTeXmarkdown or special characters. Use plain text only.
 - For attempt ${attemptNumber}: ${guidance.instructions}
 - Never give away the answer directly
 - Consider their previous attempts and adapt your guidance

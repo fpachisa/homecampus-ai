@@ -1,0 +1,27 @@
+{
+  "topicId": "N2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 5,
+        "questionId": "N2-zhonghua-2024-p1-q5",
+        "topicID": "N2",
+        "stem": "A picture taken on a particular handphone has dimensions in the ratio width : height $=3:4.$ On a sharing platform, the recommended dimensions for the picture are in the ratio width: height $=9:16$. When uploaded, the picture only fills the height of the sharing platform and not the width, as shown in the diagram, with the grey areas representing the portions of the image that will not be seen on the sharing platform.",
+        "hasDiagram": true,
+        "diagramDescription": "A diagram showing a rectangular image with grey areas on the left and right sides indicating cropped portions.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the fraction of the image that will not be seen on the sharing platform. Give your answer in its lowest terms.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Ratio and Image Cropping"
+      }
+    ],
+    "Paper 2": []
+  }
+}

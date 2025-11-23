@@ -1,0 +1,359 @@
+{
+  "topicId": "G2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 9,
+        "questionId": "G2-acsi-2024-p1-q9",
+        "topicID": "G2",
+        "stem": "In the diagram, ABCD is a rectangle and E and F are points on AD and BC respectively. The ratio of the area of triangle ABF to the area of rectangle ABCD is 1: 9. The ratio of the area of triangle AFE to the area of rectangle ABCD is 1: 6.",
+        "hasDiagram": true,
+        "diagramDescription": "A rectangle ABCD with points E on side AD and F on side BC. Lines connect A to F, E to F, and D to F, dividing the rectangle into several triangles: ABF, AFE, EFD, and DFC. Triangle ABF is in the top right corner.",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Explain with clear workings, if the following statements are true/false.\nA: The ratio of the area of triangle ABF to that of triangle AFE is 2: 3.\nB: The ratio of the area of triangle DFC to that of rectangle ABCD is 2: 5.\nC: The sum of the area of triangles ABF and triangle DFC is equal to the sum of the area of triangles AFE and EFD.",
+            "marks": 6,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Geometry Area Ratios"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "G2-broadrick-2024-p1-q15",
+        "topicID": "G2",
+        "stem": "In the diagram, two circles with centres O and P respectively intersects at A. The two circles have the same radius and AB // OP.",
+        "hasDiagram": true,
+        "diagramDescription": "Two overlapping circles with centres O and P. A line connects O and P. A secant line passes through intersection B and A.",
+        "parts": [
+          {
+            "partId": "15",
+            "questionText": "Show that $AB=OP$.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Geometry Proofs"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "G2-cchms-2024-p1-q18",
+        "topicID": "G2",
+        "stem": "The diagram shows a triangle AGD with the points C and B lying on AD and points E and F lying on GD. It is given that $CE // BF // AG$, $BF=2CE$ and $AG=3CE$.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle AGD with horizontal lines CE and BF drawn inside parallel to the base AG. C and B are on side AD. E and F are on side GD. The lines divide the triangle into smaller similar triangles.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that triangle DCE is similar to triangle DBF.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the area of trapezium $BFEC = 15 \\text{ cm}^{2}$, find the area of trapezium AGFB.",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Similar Triangles and Areas"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "G2-navalbase-2024-p1-q10",
+        "topicID": "G2",
+        "stem": "In the scale drawing, R is the centre of a rock bed, A is a ship and B is a port. The line AB shows the ship's course. Scale: 1 cm to 5 km.",
+        "hasDiagram": true,
+        "diagramDescription": "A scale drawing with points A, B and R. A north arrow is at A. Line AB is drawn. R is a point between A and B but off the line.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Measure the bearing of B from A.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The rock bed covers a 25 km radius. If the ship were to stay on course, state the distance at which the ship will first hit the rock bed.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Scale Drawing and Bearings"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "G2-navalbase-2024-p1-q15",
+        "topicID": "G2",
+        "stem": "In the diagram, BCD is a straight line and $BC:CD=3:5$",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABD with a line AC dividing it into two triangles ABC and ACD. BCD is a straight line.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the area of triangle ABC as a percentage of the area of the triangle ABD.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Area of Triangles Ratio"
+      },
+      {
+        "questionNumber": 25,
+        "questionId": "G2-navalbase-2024-p1-q25",
+        "topicID": "G2",
+        "stem": "The diagram shows triangle ABC and parallelogram BDEF. FE bisects angle DEC and angle $FEC=x^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABC with parallelogram BDEF inscribed such that D is on AB, E on AC, F on BC. FE bisects angle DEC.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle ECF in terms of $x$. Give a reason for each step of your answer.",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that triangle AED is similar to triangle ECF.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "c",
+            "questionText": "State another triangle that is similar to AED and ECF.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Similarity and Parallelograms"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "G2-orchidpark-2024-p1-q14",
+        "topicID": "G2",
+        "stem": "The base areas of two geometrically similar cones are in the ratio of 9: 49.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram of a cone.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "If the volume of the bigger cone is $1200~cm^{3},$ find the volume of the smaller cone.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "80% of the smaller cone was filled with water. Find the height of water in the smaller cone given that the radius is 3 cm.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Similar Cones"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "G2-swisscottage-2024-p1-q16",
+        "topicID": "G2",
+        "stem": "In the diagram, ABC and ACD are triangles such that angle $ACB=$ angle ADC.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABD with line segment BC dividing it into triangles ABC and ACD. Angle ACB is marked equal to angle ADC.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the two triangles are similar.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that $AB=6.5$ cm and $BD=5.5$ cm, find AC.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Similar Triangles"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "G2-tkgs-2024-p1-q10",
+        "topicID": "G2",
+        "stem": "The diagram shows a quadrilateral ABCD made up of two triangles. $AB=20$ cm, $AD=12$ cm, $CD=32$ cm. Angle $CBD=90^{\\circ}$ and angle $BCD=30^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Quadrilateral ABCD divided into two triangles ABD and BCD by diagonal BD. Angle CBD is 90 degrees. Angle BCD is 30 degrees.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find BD.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence or otherwise, show that it is possible to form a circle with diameter AB such that point D lies on the circumference of the circle.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Quadrilateral and Circle Properties"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "G2-woodgrove-2024-p1-q15",
+        "topicID": "G2",
+        "stem": "The diagram shows a parallelogram ABCD. APQ, BRQ, CRS and DPS are straight lines which bisect angles A, B, C and D respectively.",
+        "hasDiagram": true,
+        "diagramDescription": "Parallelogram ABCD. Interior angle bisectors form a quadrilateral PQRS inside.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that angle $PAD=$ angle RCB.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Prove that triangles ADP and CBR are congruent.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Congruence in Parallelogram"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "G2-zhonghua-2024-p1-q18",
+        "topicID": "G2",
+        "stem": "In the diagram, M and N lie on AB and AC respectively such that AM: $MB=AN$: $NC=1:3$.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABC with a line MN intersecting AB at M and AC at N. AM/MB = 1/3 and AN/NC = 1/3.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that MN is parallel to BC. Give a reason for each statement you make.",
+            "marks": 3,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Similar Triangles and Parallel Lines"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 4,
+        "questionId": "G2-woodgrove-2024-p2-q4",
+        "topicID": "G2",
+        "stem": "The diagram below shows two circles, with the same centre at O. Points A, B and C lie on the bigger circle and point D lies on the smaller circle. AC is a straight line that passes through the centre of both circles. AB and BC are both tangents to the smaller circle.",
+        "hasDiagram": true,
+        "diagramDescription": "Two concentric circles with center O. AC is diameter of larger circle. AB and BC tangent to smaller circle at D? No, AB tangent at some point, BC tangent at D? Diagram shows B is a point on outer circle. Tangents from B to inner circle are BA? No, text says AB and BC are tangents. Diagram shows Triangle ABC circumscribing the inner circle? No. AB and BC tangent to inner circle. D is point of tangency on BC? Yes diagram shows D on BC.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Show that triangles ABC and ODC are similar. Give a reason for each statement you made.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "The area of triangle ODC is given as $15cm^{2}$. Find the area of trapezium ABDO.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "PQRS are points on the circumference of a circle, centre O. Angle $OQR=50^{\\circ}$ angle $PSR=73^{\\circ}$ and obtuse angle $SOQ=156^{\\circ}$. Find angle QRS. Give a reason for each step of your working.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Find angle PSO. Give a reason for each step of your working.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Find angle PQO. Give a reason for each step of your working.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_iv",
+            "questionText": "Explain whether line PQ parallel to line SR. Support your answer with workings.",
+            "marks": 2,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Circle Properties and Similarity"
+      },
+      {
+        "questionNumber": 2,
+        "questionId": "G2-zhonghua-2024-p2-q2",
+        "topicID": "G2",
+        "stem": "The diagram shows two geometrically similar pails. The area of the base of the smaller pail is $54~cm^{2}$. The area of the base of the larger pail is 150 $cm^{2}$. The height of the larger pail is 26 cm.",
+        "hasDiagram": true,
+        "diagramDescription": "Two similar pails of different sizes.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the height of the smaller pail.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 2",
+        "title": "Similar Figures Area and Height"
+      },
+      {
+        "questionNumber": 11,
+        "questionId": "G2-zhonghua-2024-p2-q11",
+        "topicID": "G2",
+        "stem": "In the diagram, $AB=AC$, $\\angle AEB=\\angle ADC$ and $\\angle BAD=\\angle CAE$.",
+        "hasDiagram": true,
+        "diagramDescription": "Triangle ABC with points D and E inside. AB=AC. Angles marked equal.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Prove that the triangles ABE and ACD are congruent.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "A point P moves along AB. Find the largest angle of depression of P from E.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Congruence Proof"
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "topicId": "N4",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 23,
+        "questionId": "N4-canberra-2024-p1-q23",
+        "topicID": "N4",
+        "stem": "The diagram below shows the speed-time graph of a car which starts from rest.",
+        "hasDiagram": true,
+        "diagramDescription": "Speed-time graph. Starts at (0,0), goes to (15, 20), then to (40, u), then down to (60, 0).",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the speed of the car after 9 seconds.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Find the value of $u$, if the total distance covered in the first 40 seconds is 900 m.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Hence find the deceleration of the car at the last 20s.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Speed-Time Graph Calculations"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "N4-tkgs-2024-p1-q18",
+        "topicID": "N4",
+        "stem": "The diagram shows the speed-time graph of a cyclist from Town A to Town B.",
+        "hasDiagram": true,
+        "diagramDescription": "Speed-time graph. Starts at 0 speed at t=0, increases linearly to speed v at t=11, constant speed v until t=53, decreases linearly to 0 at t=63.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The total distance travelled by the cyclist is 14 km. Show that $v=16$.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the speed of the cyclist 5 minutes from the start of the journey.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the acceleration of the car in the last 10 minutes.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Speed-Time Graph Analysis"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "N4-woodgrove-2024-p1-q19",
+        "topicID": "N4",
+        "stem": "The diagram below shows the speed-time graph of a car's journey.",
+        "hasDiagram": true,
+        "diagramDescription": "Speed-time graph. Starts at 0, accelerates linearly to 24 m/s at t=40, then decelerates linearly to 0 at t=60.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "For this journey, calculate the acceleration during the first 40 seconds,",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the total distance travelled.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Speed-Time Graph Calculations"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 9,
+        "questionId": "N4-woodgrove-2024-p2-q9",
+        "topicID": "N4",
+        "stem": "David will travel on his own for a holiday day trip to Australia. He is planning to rent a car for a total of 9 days for the whole trip. (a) David plans to pick up his rental car from the airport and drive from the airport to his hotel. He uses the above map, drawn to scale, to plan his way to the hotel. The above map has a scale of 1: 500 000.",
+        "hasDiagram": true,
+        "diagramDescription": "Map showing Airport, Hotel and winding road connecting them. Scale 1:500 000.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Measure and estimate the total distance that David needs to drive from the airport to the hotel.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Assuming that David will drive at an average speed of $65~km/h$ from the airport to the hotel. Calculate the time he will take to drive from airport to the hotel. Give your answer correct to the nearest minute.",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The information below contains the different costs of renting a car in Australia. [Tables of rental charges for Petrol/Electric cars, tax info, petrol/charging costs provided]. David estimates that his total driving distance for the whole trip will be 850 km, including the journey to and fro from the airport to the hotel. After some calculations, David concludes that renting the electric car (5 seater) is the cheapest option for his whole trip. Do you agree with David? Justify your answer with workings.",
+            "marks": 6,
+            "answerType": "proof"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Travel Planning and Cost Comparison"
+      }
+    ]
+  }
+}
