@@ -9,6 +9,7 @@ import { AuthModal } from './auth/AuthModal';
 import { authService } from '../services/authService';
 import logoLight from '/logo.png?url';
 import logoDark from '/logo-dark.png?url';
+import MathAntigravity from './effects/MathAntigravity';
 
 export const LandingPage: React.FC = () => {
   const location = useLocation();
@@ -158,14 +159,17 @@ export const LandingPage: React.FC = () => {
         color: theme.colors.textPrimary,
       }}
     >
-      {/* Background pattern */}
-      <div
-        className="fixed inset-0 opacity-30 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 25% 25%, rgba(217, 119, 87, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(217, 119, 87, 0.05) 0%, transparent 50%)',
-        }}
-      />
+      {/* Background pattern with Math Antigravity Effect */}
+      <div className="fixed inset-0 z-0">
+        <MathAntigravity />
+        <div
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 25% 25%, rgba(217, 119, 87, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(217, 119, 87, 0.05) 0%, transparent 50%)',
+          }}
+        />
+      </div>
 
       {/* Header */}
       <header className="relative z-10 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
@@ -276,7 +280,7 @@ export const LandingPage: React.FC = () => {
                 e.currentTarget.style.boxShadow = theme.shadows.lg;
               }}
             >
-              Get Started Free
+              Master Maths
             </button>
 
             {/* Supported Grades */}
@@ -710,7 +714,7 @@ export const LandingPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Testimonials */}
+          {/* Testimonials 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
@@ -768,6 +772,7 @@ export const LandingPage: React.FC = () => {
               </div>
             ))}
           </div>
+          */}
         </div>
       </section>
 
@@ -803,7 +808,7 @@ export const LandingPage: React.FC = () => {
               e.currentTarget.style.boxShadow = theme.shadows.lg;
             }}
           >
-            Get Started Free
+            Master Maths
           </button>
 
           <p

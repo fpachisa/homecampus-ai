@@ -18,6 +18,7 @@ import { StudentDashboard } from './dashboard/StudentDashboard';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import logoLight from '/logo.png?url';
 import logoDark from '/logo-dark.png?url';
+import MathAntigravity from './effects/MathAntigravity';
 
 const HomePage: React.FC = () => {
   const { theme } = useTheme();
@@ -37,13 +38,17 @@ const HomePage: React.FC = () => {
       }}
     >
       {/* Background texture */}
-      <div
-        className="fixed inset-0 opacity-30 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
-        }}
-      />
+      {/* Background texture with Math Antigravity Effect */}
+      <div className="fixed inset-0 z-0">
+        <MathAntigravity />
+        <div
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
+          }}
+        />
+      </div>
 
       {/* Header */}
       <header className="relative z-[100] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-b" style={{ borderColor: theme.colors.border }}>
