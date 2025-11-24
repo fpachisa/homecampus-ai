@@ -90,9 +90,9 @@ class JsonPathLoader {
 
             // 2. Convert JSON questions to PathNode structure
             const questions = data.questions[paperKey];
-            const node = this.convertQuestionsToNode(questions, category);
+            const nodes = this.convertQuestionsToNodes(questions, category);
 
-            return [node];
+            return nodes;
 
         } catch (error) {
             console.error(`Error loading JSON path for ${category}:`, error);
@@ -111,56 +111,68 @@ class JsonPathLoader {
         return paperPart.charAt(0).toUpperCase() + paperPart.slice(1);
     }
 
-    private convertQuestionsToNode(questions: ProcessedQuestion[], category: string): PathNode {
-        const preWrittenQuestions: PreWrittenQuestion[] = [];
+    private convertQuestionsToNodes(questions: ProcessedQuestion[], category: string): PathNode[] {
+        const nodes: PathNode[] = [];
+        const parts = category.split('-');
+        const topicId = parts[1];
+        const paperPart = parts.slice(2).join('-');
+        const isPaper2 = paperPart.toLowerCase().includes('paper2') || paperPart.toLowerCase().includes('p2');
+        const paperShort = isPaper2 ? 'p2' : 'p1';
 
-        questions.forEach(q => {
-            // For each part, create a PreWrittenQuestion
-            // Or if it's a single question without parts, create one
+        questions.forEach((q, index) => {
+            const preWrittenQuestions: PreWrittenQuestion[] = [];
 
             if (q.parts && q.parts.length > 0) {
-                q.parts.forEach((part, index) => {
+                q.parts.forEach((part, partIndex) => {
                     // Construct a unique ID
                     const uniqueId = `${q.questionId}-${part.partId}`;
 
-                    // Combine stem and part text
-                    const problemText = `${q.stem}\n\n${part.questionText}`;
+                    // Combine stem and part text (only add stem to first part)
+                    let problemText = '';
+                    if (partIndex === 0 && q.stem) {
+                        problemText += q.stem + '\n\n';
+                    }
+                    problemText += part.questionText;
 
                     // Format solution steps
                     const stepByStepGuideline = part.solution.stepByStep.map(step =>
-                        `${step.explanation} ${step.working}`
+                        `**${step.explanation}**: ${step.working} _${step.reasoning}_`
                     );
 
                     preWrittenQuestions.push({
                         id: uniqueId,
                         questionGroup: q.questionId,
                         problemText: problemText,
-                        avatarIntro: index === 0 ? `Let's solve Question ${q.questionNumber}.` : undefined,
+                        avatarIntro: partIndex === 0 ? `Let's solve Question ${q.questionNumber}.` : undefined,
                         diagramSvg: q.diagram?.diagramPath || undefined,
                         finalAnswer: part.solution.finalAnswer,
-                        stepByStepGuideline: stepByStepGuideline
+                        stepByStepGuideline: stepByStepGuideline,
+                        // Add table support if needed, matching oLevelPathLoader
+                        questionTable: undefined // Add logic to extract table if available in ProcessedQuestion
                     });
                 });
             }
+
+            // Create a node for this question
+            nodes.push({
+                id: `olevel-${topicId.toLowerCase()}-${paperShort}-node${index + 1}`,
+                nodeNumber: index + 1,
+                title: q.title || `Question ${q.questionNumber}`,
+                layer: 'examPractice',
+                problemsRequired: preWrittenQuestions.length,
+                prerequisites: isPaper2 && index > 0 ? [`olevel-${topicId.toLowerCase()}-${paperShort}-node${index}`] : [],
+                descriptor: {
+                    aiGeneratedQuestions: false,
+                    difficulty: 'medium',
+                    mathTool: undefined,
+                    preWrittenQuestions: preWrittenQuestions,
+                    problemDescription: [`O-Level ${topicId.toUpperCase()} - ${q.title || 'Question ' + q.questionNumber}`],
+                    contexts: ['exam']
+                }
+            });
         });
 
-        return {
-            id: `${category}-node-1`,
-            nodeNumber: 1,
-            title: `${category.toUpperCase().replace(/-/g, ' ')} Practice`,
-            layer: 'examPractice',
-            problemsRequired: preWrittenQuestions.length, // Require all for now, or cap it
-            prerequisites: [],
-            descriptor: {
-                aiGeneratedQuestions: false,
-                difficulty: 'medium', // Default
-                mathTool: undefined,
-                preWrittenQuestions: preWrittenQuestions,
-                // Required fields for type safety (even if unused for pre-written)
-                problemDescription: [],
-                contexts: []
-            }
-        };
+        return nodes;
     }
 }
 

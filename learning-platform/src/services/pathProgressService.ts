@@ -203,8 +203,8 @@ class PathProgressService {
     const accuracy =
       pathProgress.totalProblemsAttempted > 0
         ? Math.round(
-            (pathProgress.totalProblemsCorrect / pathProgress.totalProblemsAttempted) * 100
-          )
+          (pathProgress.totalProblemsCorrect / pathProgress.totalProblemsAttempted) * 100
+        )
         : 0;
 
     return {
@@ -591,10 +591,17 @@ class PathProgressService {
     uid?: string,
     category?: string
   ): void {
-    const nodeProgress = pathProgress.nodes[nodeId];
+    let nodeProgress = pathProgress.nodes[nodeId];
     if (!nodeProgress) {
-      console.warn(`Node ${nodeId} not found in progress`);
-      return;
+      console.warn(`Node ${nodeId} not found in progress, initializing...`);
+      nodeProgress = {
+        nodeId: nodeId,
+        problemsAttempted: 0,
+        problemsCorrect: 0,
+        status: 'current', // Default to current/unlocked
+        timeSpentSeconds: 0,
+      };
+      pathProgress.nodes[nodeId] = nodeProgress;
     }
 
     // Update node progress
@@ -673,8 +680,18 @@ class PathProgressService {
     uid?: string,
     category?: string
   ): void {
-    const nodeProgress = pathProgress.nodes[nodeId];
-    if (!nodeProgress) return;
+    let nodeProgress = pathProgress.nodes[nodeId];
+    if (!nodeProgress) {
+      console.warn(`Node ${nodeId} not found in progress during completion, initializing...`);
+      nodeProgress = {
+        nodeId: nodeId,
+        problemsAttempted: 0,
+        problemsCorrect: 0,
+        status: 'current',
+        timeSpentSeconds: 0,
+      };
+      pathProgress.nodes[nodeId] = nodeProgress;
+    }
 
     // Mark as completed
     nodeProgress.status = 'completed';

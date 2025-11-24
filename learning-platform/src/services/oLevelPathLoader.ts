@@ -42,6 +42,7 @@ interface OLevelQuestion {
   title?: string;
   stem?: string;
   table?: QuestionTable;
+  questionTable?: QuestionTable; // Support alternate key
   hasDiagram?: boolean;
   diagramDescription?: string;
   diagram?: {
@@ -65,6 +66,7 @@ interface OLevelQuestion {
     marks: number;
     answerType: string;
     table?: QuestionTable;
+    questionTable?: QuestionTable; // Support alternate key
     solution: {
       finalAnswer: string;
       stepByStep: Array<{
@@ -251,11 +253,17 @@ class OLevelPathLoader {
       }
 
       // Add structured table if present
-      // Priority: Part-specific table > Question-level table (only for first part)
+      // Priority: Part-specific table > Part-specific questionTable > Question-level table > Question-level questionTable (only for first part)
       if (part.table) {
         preWrittenQuestion.questionTable = part.table;
-      } else if (partIndex === 0 && question.table) {
-        preWrittenQuestion.questionTable = question.table;
+      } else if (part.questionTable) {
+        preWrittenQuestion.questionTable = part.questionTable;
+      } else if (partIndex === 0) {
+        if (question.table) {
+          preWrittenQuestion.questionTable = question.table;
+        } else if (question.questionTable) {
+          preWrittenQuestion.questionTable = question.questionTable;
+        }
       }
 
       // Add avatar intro for first part only

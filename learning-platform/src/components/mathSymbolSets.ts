@@ -77,29 +77,47 @@ const CIRCLE_SYMBOLS: MathButton[] = [
   { label: 'd', insert: 'd', tooltip: 'Diameter' },
 ];
 
+// Matrix symbols
+const MATRIX_SYMBOLS: MathButton[] = [
+  { label: 'Matrix', insert: 'MATRIX_BUILDER', tooltip: 'Open Matrix Builder' },
+];
+
 /**
  * Get math symbols for a specific topic
  * Returns universal symbols + topic-specific symbols
  */
 export function getSymbolsForTopic(topicId: string): MathButton[] {
   const symbols = [...UNIVERSAL_SYMBOLS];
+  const normalizedId = topicId.toLowerCase();
 
-  // Determine topic category from topicId prefix
-  if (topicId.startsWith('s3-math-trigonometry-')) {
+  // Trigonometry (S3/S4 Trigonometry, O-Level g4: Pythagoras & Trigonometry)
+  if (normalizedId.includes('trigonometry') || normalizedId.includes('advanced-trig') || normalizedId.includes('-g4-')) {
     symbols.push(...TRIGONOMETRY_SYMBOLS);
-  } else if (topicId.startsWith('s3-math-sets-')) {
-    symbols.push(...SETS_SYMBOLS);
-  } else if (topicId.startsWith('s3-math-quadratic-')) {
-    symbols.push(...QUADRATIC_SYMBOLS);
-  } else if (topicId.startsWith('s3-math-exponential-logarithms-')) {
-    symbols.push(...EXPONENTIAL_SYMBOLS);
-  } else if (topicId.startsWith('s3-math-circle-geometry-')) {
-    symbols.push(...CIRCLE_SYMBOLS);
-  } else if (topicId.startsWith('p6-math-fractions-')) {
-    // Fractions just need universal symbols
-    // Could add specific fraction symbols in the future
   }
-  // For unknown topics, return universal symbols only
+  // Sets (S3 Sets, O-Level n8: Set Language & Notation)
+  else if (normalizedId.includes('sets') || normalizedId.includes('-n8-')) {
+    symbols.push(...SETS_SYMBOLS);
+  }
+  // Quadratics & Inequalities (S3/S4 Quadratics, O-Level n7: Equations & Inequalities, n6: Functions & Graphs)
+  else if (normalizedId.includes('quadratic') || normalizedId.includes('quad-') || normalizedId.includes('-n7-') || normalizedId.includes('-n6-')) {
+    symbols.push(...QUADRATIC_SYMBOLS);
+  }
+  // Exponential & Logarithms (S3 Exponential)
+  else if (normalizedId.includes('exponential') || normalizedId.includes('logarithms')) {
+    symbols.push(...EXPONENTIAL_SYMBOLS);
+  }
+  // Circle Geometry (S3 Circle Geometry, O-Level g3: Circle Properties)
+  else if (normalizedId.includes('circle-geometry') || normalizedId.includes('-g3-')) {
+    symbols.push(...CIRCLE_SYMBOLS);
+  }
+  // Matrices (O-Level n9: Matrices)
+  else if (normalizedId.includes('matrices') || normalizedId.includes('-n9-')) {
+    symbols.push(...MATRIX_SYMBOLS);
+  }
+  // Fractions (P6 Fractions)
+  else if (normalizedId.includes('fractions')) {
+    // Fractions just need universal symbols
+  }
 
   return symbols;
 }

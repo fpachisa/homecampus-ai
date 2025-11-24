@@ -240,10 +240,10 @@ export const LandingPage: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Heading */}
-          <div className="mb-8 sm:mb-12">
+          <div className="mb-8 sm:mb-10">
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
               style={{ color: theme.colors.textPrimary }}
@@ -295,7 +295,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Problem-Solution Framework */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 sm:py-8" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-6 sm:pb-8" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-4"

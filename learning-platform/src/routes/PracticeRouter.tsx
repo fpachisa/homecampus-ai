@@ -201,15 +201,8 @@ const OLevelSession = () => {
   const currentNode = nodes[currentNodeIndex];
 
   const handleComplete = () => {
-    // Move to next node or back to node selector
-    if (currentNodeIndex < nodes.length - 1) {
-      const nextNode = nodes[currentNodeIndex + 1];
-      const nextNodeId = nextNode.id.split('-').pop(); // Extract "node1", "node2", etc.
-      navigate(`/practice/olevel/${topicId}/${paper}/${nextNodeId}`);
-    } else {
-      // All nodes complete, go back to node selector
-      navigate(`/practice/olevel/${topicId}`);
-    }
+    // Always go back to node selector instead of auto-advancing
+    navigate(`/practice/olevel/${topicId}`);
   };
 
   const handleBack = () => {

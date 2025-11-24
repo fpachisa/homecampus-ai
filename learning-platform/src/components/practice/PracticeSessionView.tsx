@@ -99,7 +99,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const [submitting, setSubmitting] = useState(false);
   const [loadingSolution, setLoadingSolution] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState<{ current: number; total: number } | null>(null);
-  const [showMathToolbar, setShowMathToolbar] = useState(false);
+  const [showMathToolbar, setShowMathToolbar] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-resize textarea when content changes
@@ -244,11 +244,32 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         console.log('Current progress:', correctIndex + 1, '/', savedSession.problems.length);
         console.log('=============================');
 
-        // If we've already completed all problems, start a new session
+        // If we've already completed all problems, load in review mode (start at index 0)
         if (correctIndex >= savedSession.problems.length) {
-          console.log('⚠️ All problems in cached session are complete - generating new session');
-          clearSessionFromStorage();
-          // Fall through to generate new problems
+          console.log('🎓 All problems complete - loading in REVIEW MODE');
+
+          const currentProblem = savedSession.problems[0];
+          const savedProblemSessions = savedSession.problemSessions || {};
+
+          const currentProblemSession: ProblemSessionState = savedProblemSessions[currentProblem?.id] || {
+            problemId: currentProblem?.id || '',
+            attemptCount: 0,
+            attemptHistory: [],
+            canRetry: false, // Disable retry in review mode if not already set
+            showingSolution: false,
+          };
+
+          setSession(prev => ({
+            ...prev,
+            problems: savedSession.problems,
+            currentIndex: 0, // Start at beginning for review
+            attempts: savedSession.attempts || [],
+            problemSessions: savedProblemSessions,
+            loading: false,
+            currentProblemSession,
+          }));
+
+          return;
         } else {
           // Resume saved session with corrected index
           const currentProblem = savedSession.problems[correctIndex];
@@ -418,14 +439,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     }
   };
 
-  const clearSessionFromStorage = () => {
-    try {
-      const key = `practice_session_${node.id}`;
-      localStorage.removeItem(key);
-    } catch (error) {
-      console.error('Failed to clear session from storage:', error);
-    }
-  };
+
 
   const handleSubmitAnswer = async () => {
     if (!studentAnswer.trim() || submitting) return;
@@ -823,12 +837,25 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       // Load all nodes (needed for completion check)
       const allNodes = await pathConfigLoader.loadUnifiedPathNodes(category);
 
-      // NOTE: We do NOT re-record attempts here because they are already tracked in real-time
-      // in handleSubmitAnswer (line 494). Re-recording would cause duplicate counting.
-      // Each problem is saved to both localStorage and Firestore immediately after submission.
+      // CRITICAL: Sync progress with current nodes to ensure IDs match
+      // This fixes the issue where old progress objects don't have the new node IDs
+      const synced = pathProgressService.syncUnifiedProgress(pathProgress, allNodes);
+      if (synced) {
+        console.log('🔄 Synced unified progress with current nodes');
+        pathProgressService.saveUnifiedProgress(category, pathProgress);
+      }
 
       // Check if node is complete (it may already be marked complete from real-time tracking)
       const nodeProgress = pathProgress.nodes[node.id];
+
+      console.log('🔍 Debug Node Completion:', {
+        nodeId: node.id,
+        nodeProgress: nodeProgress,
+        problemsAttempted: nodeProgress?.problemsAttempted,
+        problemsRequired: node.problemsRequired,
+        allNodeKeys: Object.keys(pathProgress.nodes).filter(k => k.includes(node.id.split('-').pop() || ''))
+      });
+
       if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
         console.log(`✓ Node complete! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
 
@@ -854,8 +881,8 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
     console.log('===========================');
 
-    // Clear session from storage
-    clearSessionFromStorage();
+    // DO NOT clear session from storage - keep it for review mode
+    // clearSessionFromStorage();
 
     // Navigate back to path map
     onComplete();
@@ -1062,6 +1089,51 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         <div className="grid-layout-responsive mb-6">
           {/* Problem Column */}
           <div className="problem-column">
+            {/* Previous Parts Context (for multi-part questions) */}
+            {currentProblem?.questionGroup && (
+              (() => {
+                // Find previous parts in the same group
+                const previousParts = session.problems.filter((p, idx) =>
+                  p.questionGroup === currentProblem.questionGroup &&
+                  idx < session.currentIndex
+                );
+
+                if (previousParts.length === 0) return null;
+
+                return (
+                  <div className="mb-6 space-y-4">
+                    {previousParts.map((part, idx) => {
+                      const attempt = session.attempts.find(a => a.problemId === part.id);
+                      // Determine part label (e.g., "Part (a)")
+                      const partLabel = part.metadata?.partNumber
+                        ? `Part (${String.fromCharCode(96 + part.metadata.partNumber)})`
+                        : `Part ${idx + 1}`;
+
+                      return (
+                        <div key={part.id} className="bg-gray-50 rounded-lg border border-gray-200 p-4 opacity-90 hover:opacity-100 transition-opacity">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-sm font-bold text-gray-500 uppercase tracking-wider">{partLabel}</span>
+                            <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full border border-green-100">
+                              Completed
+                            </span>
+                          </div>
+                          <div className="text-gray-600 mb-3 text-sm">
+                            <MathText>{part.problemText}</MathText>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm">
+                            <span className="font-medium text-gray-700">Answer:</span>
+                            <span className="font-mono bg-white px-2 py-1 rounded border border-gray-200 text-gray-800">
+                              <MathText>{attempt?.studentAnswer || part.correctAnswer}</MathText>
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()
+            )}
+
             {/* Problem Card */}
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-lg font-semibold text-gray-700 mb-4">Problem {progress}</h2>
@@ -1153,6 +1225,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                   <div className="mb-3">
                     <MathInputToolbar
                       onInsert={handleMathInsert}
+                      topicId={category}
                       disabled={
                         submitting ||
                         (session.currentProblemSession && !session.currentProblemSession.canRetry) ||

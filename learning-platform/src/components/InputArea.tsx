@@ -17,7 +17,7 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
   const { theme } = useTheme();
   const { keyboardHeight } = useKeyboardHeight(); // Mobile keyboard detection
   const [input, setInput] = useState('');
-  const [showMathToolbar, setShowMathToolbar] = useState(false);
+  const [showMathToolbar, setShowMathToolbar] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Expose focus method to parent
