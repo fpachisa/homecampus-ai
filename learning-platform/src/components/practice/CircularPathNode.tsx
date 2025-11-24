@@ -105,6 +105,23 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
   const circumference = 2 * Math.PI * outerRadius;
   const strokeDashoffset = circumference - (progressPercent / 100) * circumference;
 
+  // Determine in-progress state
+  // Show in-progress if attempted > 0 and not completed
+  const isInProgress = status === 'current' && nodeProgress && nodeProgress.problemsAttempted > 0;
+
+  // Debug logging
+  React.useEffect(() => {
+    if (nodeProgress || status === 'current') {
+      console.log(`Node ${node.nodeNumber} (${node.title}) Status:`, {
+        status,
+        attempted: nodeProgress?.problemsAttempted,
+        required: node.problemsRequired,
+        isInProgress,
+        progress: nodeProgress
+      });
+    }
+  }, [nodeProgress, node, status, isInProgress]);
+
   return (
     <div
       className="absolute flex items-center"
@@ -187,13 +204,13 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
           style={{
             width: `${innerSize}px`,
             height: `${innerSize}px`,
-            backgroundColor: status === 'completed' ? colors.main : '#FFFFFF',
+            backgroundColor: status === 'completed' ? colors.main : (isInProgress ? colors.light : '#FFFFFF'),
             border: `3px solid ${colors.main}`,
             boxShadow: status === 'completed'
               ? `0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06), inset 0 -2px 4px rgba(0, 0, 0, 0.1)`
               : status === 'current'
-              ? `0 4px 16px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06)`
-              : `0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04)`,
+                ? `0 4px 16px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06)`
+                : `0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04)`,
           }}
         >
           {/* Icon */}
@@ -221,14 +238,15 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
         </div>
 
         {/* Progress text for current node */}
-        {status === 'current' && nodeProgress && nodeProgress.problemsAttempted > 0 && (
+        {isInProgress && (
           <div
             className="text-xs mt-0.5 font-semibold"
             style={{
               color: colors.main,
             }}
           >
-            {nodeProgress.problemsAttempted}/{node.problemsRequired} problems
+            <span className="block text-[10px] uppercase tracking-wider opacity-90 mb-0.5">In Progress</span>
+            {nodeProgress?.problemsAttempted}/{node.problemsRequired} problems
           </div>
         )}
 

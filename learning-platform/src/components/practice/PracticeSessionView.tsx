@@ -233,11 +233,13 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         // IMPORTANT: Sync with unified progress to ensure consistency
         const unifiedProgress = pathProgressService.loadUnifiedProgress(category);
         const nodeProgress = unifiedProgress?.nodes[node.id];
-        const problemsCompleted = nodeProgress?.problemsAttempted || 0;
+        // Use problemsCorrect (not problemsAttempted) to determine which problems are actually done
+        const problemsCompleted = nodeProgress?.problemsCorrect || 0;
 
-        console.log('Unified progress shows:', problemsCompleted, 'problems attempted');
+        console.log('Unified progress shows:', problemsCompleted, 'problems completed correctly');
 
         // Determine the correct current index based on unified progress
+        // Only advance past problems that were solved correctly
         const correctIndex = Math.max(savedSession.currentIndex, problemsCompleted);
 
         console.log('Setting current index to:', correctIndex);
@@ -542,11 +544,49 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         } : undefined
       );
 
-      // If correct or last attempt, record for progress
-      if (result.isCorrect || updatedProblemSession.attemptCount >= 3) {
-        // Calculate time spent on this problem
-        const timeSpent = Math.floor((new Date().getTime() - problemStartTime.getTime()) / 1000);
+      // Calculate time spent on this problem (for all attempts)
+      const timeSpent = Math.floor((new Date().getTime() - problemStartTime.getTime()) / 1000);
 
+      // CRITICAL: Update unified progress on FIRST attempt (to show "in progress") 
+      // OR when correct (to count as solved)
+      // This prevents incrementing problemsAttempted multiple times for the same problem
+      if (updatedProblemSession.attemptCount === 1 || result.isCorrect) {
+        const pathProgress = pathProgressService.loadUnifiedProgress(category);
+        if (pathProgress) {
+          const allNodes = await pathConfigLoader.loadUnifiedPathNodes(category);
+
+          // Check if this was a first-try success
+          const isFirstTry = updatedProblemSession.attemptCount === 1;
+          pathProgressService.recordUnifiedAttempt(
+            pathProgress,
+            node.id,
+            result.isCorrect,
+            allNodes,
+            isFirstTry,
+            effectiveUid,
+            category
+          );
+
+          // Accumulate time spent to total (using timeSpent from above)
+          pathProgress.totalTimeSpentSeconds = (pathProgress.totalTimeSpentSeconds || 0) + timeSpent;
+          console.log(`⏱️ Time spent on this problem: ${timeSpent}s (Total: ${pathProgress.totalTimeSpentSeconds}s)`);
+
+          // Check if node is complete and mark it (all problems solved CORRECTLY)
+          const nodeProgress = pathProgress.nodes[node.id];
+          if (nodeProgress && nodeProgress.problemsCorrect >= node.problemsRequired) {
+            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes, effectiveUid, category);
+            console.log(`✅ Node completed! (${nodeProgress.problemsCorrect}/${node.problemsRequired} correct)`);
+          }
+
+          pathProgressService.saveUnifiedProgress(category, pathProgress);
+          console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
+
+          // Firestore save is now automatic via pathProgressService auto-save
+        }
+      }
+
+      // If correct or last attempt, record for session history
+      if (result.isCorrect || updatedProblemSession.attemptCount >= 3) {
         const attempt: ProblemAttempt = {
           problemId: currentProblem.id,
           nodeId: node.id,
@@ -578,40 +618,6 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           problemSessions: updatedProblemSessions,
         });
         console.log(`💾 Saved attempt (${result.isCorrect ? 'correct' : 'incorrect'}): ${newAttempts.length} total attempts, current index: ${session.currentIndex}`);
-
-        // CRITICAL: Also update unified progress immediately after each problem
-        const pathProgress = pathProgressService.loadUnifiedProgress(category);
-        if (pathProgress) {
-          const allNodes = await pathConfigLoader.loadUnifiedPathNodes(category);
-
-          // Check if this was a first-try success (attemptCount = 1 means first try)
-          const isFirstTry = updatedProblemSession.attemptCount === 1;
-          pathProgressService.recordUnifiedAttempt(
-            pathProgress,
-            node.id,
-            result.isCorrect,
-            allNodes,
-            isFirstTry,
-            effectiveUid,
-            category
-          );
-
-          // Accumulate time spent to total (using timeSpent from above)
-          pathProgress.totalTimeSpentSeconds = (pathProgress.totalTimeSpentSeconds || 0) + timeSpent;
-          console.log(`⏱️ Time spent on this problem: ${timeSpent}s (Total: ${pathProgress.totalTimeSpentSeconds}s)`);
-
-          // Check if node is complete and mark it
-          const nodeProgress = pathProgress.nodes[node.id];
-          if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
-            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes, effectiveUid, category);
-            console.log(`✅ Node completed! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
-          }
-
-          pathProgressService.saveUnifiedProgress(category, pathProgress);
-          console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
-
-          // Firestore save is now automatic via pathProgressService auto-save
-        }
       } else {
         // For incorrect attempts that can retry, also save the session state
         const updatedProblemSessions = {
