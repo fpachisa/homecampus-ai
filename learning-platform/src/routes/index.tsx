@@ -18,6 +18,10 @@ const HomeworkHistoryPageWrapper = lazy(() => import('../pages/HomeworkHistoryPa
 const SessionDetailPageWrapper = lazy(() => import('../pages/SessionDetailPageWrapper'));
 const QuestionBankQA = lazy(() => import('../components/QuestionBankQA'));
 
+// Legal pages
+const PrivacyPolicy = lazy(() => import('../components/legal/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('../components/legal/TermsOfService'));
+
 // Lazy load sub-routers for better code splitting
 const LearnRouter = lazy(() => import('./LearnRouter'));
 const PracticeRouter = lazy(() => import('./PracticeRouter'));
@@ -157,6 +161,22 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <LandingPage />
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/privacy',
+    element: (
+      <RootLayout>
+        <PrivacyPolicy />
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/terms',
+    element: (
+      <RootLayout>
+        <TermsOfService />
       </RootLayout>
     ),
   },

@@ -1,297 +1,275 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 
 interface Particle {
-    x: number;
-    y: number;
-    vx: number;
-    vy: number;
-    size: number;
-    mass: number;
-    angle: number;
-    vAngle: number;
-    symbol: string;
-    color: string;
-    update: (width: number, height: number, mouse: { x: number; y: number; isDown: boolean }, config: any) => void;
-    draw: (ctx: CanvasRenderingContext2D) => void;
+  x: number;
+  y: number;
+  z: number;
+  baseX: number;
+  baseY: number;
+  baseZ: number;
+  size: number;
+  symbol: string;
+  color: string;
+  phase: number;
 }
 
 const MathAntigravity: React.FC = () => {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { theme } = useTheme();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
+  const [scrollOpacity, setScrollOpacity] = useState(1);
 
-    // Configuration
-    const config = {
-        particleCount: 60, // Slightly reduced for performance
-        mouseRepelRadius: 200,
-        mouseRepelForce: 2,
-        friction: 0.995,
-        elasticity: 0.9,
-        gravity: 0,
-        colors: [
-            theme.colors.brand,
-            theme.colors.success,
-            theme.colors.warning,
-            theme.colors.info,
-            theme.colors.textAccent,
-            theme.colors.interactiveHover
-        ],
-        symbols: [
-            // Numbers
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-            // Basic Operators
-            '+', '-', '×', '÷', '=', '≠', '≈', '±',
-            // Algebra & Calculus
-            'π', '∑', '∫', '√', '∞', '∂', '∆', 'λ', 'θ', 'α', 'β', 'γ', 'φ', 'ω', 'μ',
-            // Trigonometry
-            'sine', 'cos', 'tan',
-            // Set Theory & Logic
-            '∈', '∉', '⊂', '⊃', '∪', '∩', '∀', '∃', '∅', '⇒', '⇔',
-            // Geometry
-            '∠', '⊥', '∥', '°', '△', '□',
-            // Other
-            '!', '%', 'log', 'ln', 'e', 'i'
-        ]
+  const config = {
+    particleCount: 100, // Increased for sphere density
+    colors: [
+      theme.colors.brand,
+      theme.colors.success,
+      theme.colors.warning,
+      theme.colors.info,
+      theme.colors.textAccent,
+    ],
+    symbols: [
+      '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+      '+', '-', '×', '÷', '=',
+      'π', '∑', '∫', '√', '∞', 'θ', 'α', 'β',
+      'sin', 'cos', 'log',
+      '∠', '△',
+      '%', 'e', '∂', '∇', '∀', '∃', '∈', '∉'
+    ]
+  };
+
+  // Handle scroll fade
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const foldHeight = window.innerHeight * 0.7;
+
+      if (scrollY <= 0) {
+        setScrollOpacity(1);
+      } else if (scrollY >= foldHeight) {
+        setScrollOpacity(0);
+      } else {
+        setScrollOpacity(1 - (scrollY / foldHeight));
+      }
     };
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const container = containerRef.current;
-        if (!canvas || !container) return;
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-        let width = container.clientWidth;
-        let height = container.clientHeight;
-        let particles: Particle[] = [];
-        let animationFrameId: number;
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
 
-        // Mouse state
-        const mouse = {
-            x: -1000,
-            y: -1000,
-            isDown: false
-        };
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-        class ParticleImpl implements Particle {
-            x: number;
-            y: number;
-            vx: number;
-            vy: number;
-            size: number;
-            mass: number;
-            angle: number;
-            vAngle: number;
-            symbol: string;
-            color: string;
+    let width = container.clientWidth;
+    let height = container.clientHeight;
+    let particles: Particle[] = [];
+    let animationFrameId: number;
+    let time = 0;
 
-            constructor(x: number, y: number) {
-                this.x = x;
-                this.y = y;
-                this.vx = (Math.random() - 0.5) * 4;
-                this.vy = (Math.random() - 0.5) * 4;
-                this.size = 16 + Math.random() * 24;
-                this.mass = this.size / 10;
-                this.angle = Math.random() * Math.PI * 2;
-                this.vAngle = (Math.random() - 0.5) * 0.1;
-                this.symbol = config.symbols[Math.floor(Math.random() * config.symbols.length)];
-                this.color = config.colors[Math.floor(Math.random() * config.colors.length)];
-            }
+    // Mouse state for rotation and parallax
+    const mouse = {
+      x: 0,
+      y: 0,
+      targetX: 0,
+      targetY: 0
+    };
 
-            update(width: number, height: number, mouse: { x: number; y: number; isDown: boolean }, config: any) {
-                // Mouse Interaction (Repulsion)
-                const dx = this.x - mouse.x;
-                const dy = this.y - mouse.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+    const createParticle = (index: number, total: number): Particle => {
+      // Fibonacci Sphere Algorithm
+      const phi = Math.acos(1 - 2 * (index + 0.5) / total);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * (index + 0.5);
 
-                if (distance < config.mouseRepelRadius) {
-                    const forceDirectionX = dx / distance;
-                    const forceDirectionY = dy / distance;
-                    const force = (config.mouseRepelRadius - distance) / config.mouseRepelRadius;
-                    const strength = mouse.isDown ? config.mouseRepelForce * 5 : config.mouseRepelForce;
+      const radius = 300; // Base radius of the sphere
 
-                    this.vx += forceDirectionX * force * strength;
-                    this.vy += forceDirectionY * force * strength;
-                }
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.sin(phi) * Math.sin(theta);
+      const z = radius * Math.cos(phi);
 
-                // Center Repulsion (Keep text area clear)
-                const centerX = width / 2;
-                const safeZone = width * 0.6; // Central 60% is "safe" for text
-                const distFromCenter = Math.abs(this.x - centerX);
+      return {
+        x, y, z,
+        baseX: x,
+        baseY: y,
+        baseZ: z,
+        size: 16 + Math.random() * 24,
+        symbol: config.symbols[Math.floor(Math.random() * config.symbols.length)],
+        color: config.colors[Math.floor(Math.random() * config.colors.length)],
+        phase: Math.random() * Math.PI * 2,
+      };
+    };
 
-                if (distFromCenter < safeZone / 2) {
-                    // Push away from center towards nearest edge
-                    const force = (safeZone / 2 - distFromCenter) / (safeZone / 2);
-                    const direction = this.x < centerX ? -1 : 1;
-                    // Gentle but persistent push
-                    this.vx += direction * force * 0.5;
-                }
+    const resize = () => {
+      if (container && canvas) {
+        width = container.clientWidth;
+        height = container.clientHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+    };
 
-                // Apply Friction
-                this.vx *= config.friction;
-                this.vy *= config.friction;
+    const init = () => {
+      resize();
+      particles = [];
+      for (let i = 0; i < config.particleCount; i++) {
+        particles.push(createParticle(i, config.particleCount));
+      }
+    };
 
-                // Limit speed
-                const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-                const maxSpeed = 6;
-                if (speed > maxSpeed) {
-                    this.vx = (this.vx / speed) * maxSpeed;
-                    this.vy = (this.vy / speed) * maxSpeed;
-                }
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+      time += 0.01;
 
-                // Update Position
-                this.x += this.vx;
-                this.y += this.vy;
-                this.angle += this.vAngle;
+      // Smooth mouse movement
+      mouse.x += (mouse.targetX - mouse.x) * 0.05;
+      mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
-                // Wall Collisions
-                this.handleBoundaries(width, height);
-            }
+      // Aggressive Parallax Center
+      // Move the center of the sphere towards the mouse position
+      // Factor 0.4 means it moves 40% of the way to the mouse from the center
+      const centerX = width / 2 + mouse.x * 0.4;
+      const centerY = height / 2 + mouse.y * 0.4;
 
-            handleBoundaries(width: number, height: number) {
-                const buffer = this.size;
+      // Rotation angles
+      const rotY = mouse.x * 0.001; // Rotate around Y axis (horizontal mouse move)
+      const rotX = -mouse.y * 0.001; // Rotate around X axis (vertical mouse move)
 
-                if (this.x > width - buffer) {
-                    this.x = width - buffer;
-                    this.vx *= -config.elasticity;
-                }
-                if (this.x < buffer) {
-                    this.x = buffer;
-                    this.vx *= -config.elasticity;
-                }
-                if (this.y > height - buffer) {
-                    this.y = height - buffer;
-                    this.vy *= -config.elasticity;
-                }
-                if (this.y < buffer) {
-                    this.y = buffer;
-                    this.vy *= -config.elasticity;
-                }
-            }
+      // Breathing effect - Brighter and stronger
+      const breathCycle = (Math.sin(time * 3.0) + 2) / 2; // Increased speed from 0.5 to 2.0
+      const breathScale = 1 + breathCycle * 0.25;
+      const breathGlow = 25 + breathCycle * 15; // Glow pulses from 10 to 25
 
-            draw(ctx: CanvasRenderingContext2D) {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.angle);
+      // Pre-calculate rotation matrices
+      const cosY = Math.cos(rotY);
+      const sinY = Math.sin(rotY);
+      const cosX = Math.cos(rotX);
+      const sinX = Math.sin(rotX);
 
-                ctx.font = `bold ${this.size}px "Segoe UI", sans-serif`;
-                ctx.fillStyle = this.color;
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
+      particles.forEach((p) => {
+        // Apply breathing scale to base position
+        let x = p.baseX * breathScale;
+        let y = p.baseY * breathScale;
+        let z = p.baseZ * breathScale;
 
-                // Glow effect
-                ctx.shadowColor = this.color;
-                ctx.shadowBlur = 10;
+        // Add organic float
+        x += Math.sin(time + p.phase) * 5;
+        y += Math.cos(time * 0.8 + p.phase) * 5;
+        z += Math.sin(time * 1.2 + p.phase) * 5;
 
-                // Opacity based on theme (subtle)
-                ctx.globalAlpha = 0.6;
+        // Rotate around Y axis
+        let x1 = x * cosY - z * sinY;
+        let z1 = z * cosY + x * sinY;
 
-                ctx.fillText(this.symbol, 0, 0);
-                ctx.restore();
-            }
+        // Rotate around X axis
+        let y2 = y * cosX - z1 * sinX;
+        let z2 = z1 * cosX + y * sinX;
+
+        // Update particle 3D position
+        p.x = x1;
+        p.y = y2;
+        p.z = z2;
+      });
+
+      // Sort particles by Z depth (painters algorithm)
+      particles.sort((a, b) => a.z - b.z);
+
+      // Draw particles
+      particles.forEach((p) => {
+        // 3D Projection
+        const perspective = 800;
+        const scale = perspective / (perspective + p.z);
+
+        const screenX = centerX + p.x * scale;
+        const screenY = centerY + p.y * scale;
+
+        // Depth-based styling
+        const depthAlpha = Math.max(0.1, Math.min(1, (p.z + 400) / 800)); // Fade out back particles
+        const depthScale = scale; // Smaller when further away
+
+        ctx.save();
+        ctx.translate(screenX, screenY);
+
+        // Breathing opacity - Brighter!
+        // Base opacity increased, plus stronger pulse
+        const pulseOpacity = 0.7 + Math.sin(time + p.phase) * 0.3;
+        ctx.globalAlpha = Math.min(1, depthAlpha * pulseOpacity); // Cap at 1
+
+        ctx.font = `${p.size * depthScale}px "Segoe UI", system-ui, sans-serif`;
+        ctx.fillStyle = p.color;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        // Enhanced Glow
+        if (scale > 0.6) {
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = breathGlow * scale; // Pulse the glow
         }
 
-        const resize = () => {
-            if (container && canvas) {
-                width = container.clientWidth;
-                height = container.clientHeight;
-                canvas.width = width;
-                canvas.height = height;
-            }
-        };
+        ctx.fillText(p.symbol, 0, 0);
+        ctx.restore();
+      });
 
-        const init = () => {
-            resize();
-            particles = [];
-            for (let i = 0; i < config.particleCount; i++) {
-                // Spawn on left or right side (avoid center)
-                const side = Math.random() > 0.5 ? 'left' : 'right';
-                let x;
-                if (side === 'left') {
-                    x = Math.random() * (width * 0.2); // Left 20%
-                } else {
-                    x = width - (Math.random() * (width * 0.2)); // Right 20%
-                }
+      animationFrameId = requestAnimationFrame(animate);
+    };
 
-                const y = Math.random() * height;
-                particles.push(new ParticleImpl(x, y));
-            }
-        };
+    const handleResize = () => {
+      init();
+    };
 
-        const animate = () => {
-            ctx.clearRect(0, 0, width, height);
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-            particles.forEach(p => {
-                p.update(width, height, mouse, config);
-                p.draw(ctx);
-            });
+      // Calculate mouse position relative to center
+      // Invert X so moving mouse left rotates sphere left (natural feel)
+      mouse.targetX = (e.clientX - rect.left - centerX);
+      mouse.targetY = (e.clientY - rect.top - centerY);
+    };
 
-            animationFrameId = requestAnimationFrame(animate);
-        };
+    const handleMouseLeave = () => {
+      mouse.targetX = 0;
+      mouse.targetY = 0;
+    };
 
-        // Event Listeners
-        const handleResize = () => {
-            resize();
-            // Optional: re-init particles on resize to keep them in bounds? 
-            // Or just let them bounce back. Let's just resize canvas.
-        };
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
 
-        const handleMouseMove = (e: MouseEvent) => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
-        };
+    init();
+    animate();
 
-        const handleMouseDown = () => {
-            mouse.isDown = true;
-        };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [theme]);
 
-        const handleMouseUp = () => {
-            mouse.isDown = false;
-        };
-
-        const handleMouseLeave = () => {
-            mouse.x = -1000;
-            mouse.y = -1000;
-            mouse.isDown = false;
-        };
-
-        window.addEventListener('resize', handleResize);
-        // Attach mouse events to the container or window? 
-        // Since it's a background effect, we might want it to react to mouse anywhere on the page
-        // But coordinates need to be relative to canvas if canvas is not full screen.
-        // If canvas is fixed inset-0, then clientX/Y matches.
-
-        // Using window for mouse move to ensure smooth interaction even if over other elements
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('mousedown', handleMouseDown);
-        window.addEventListener('mouseup', handleMouseUp);
-        window.addEventListener('mouseleave', handleMouseLeave);
-
-        init();
-        animate();
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mousedown', handleMouseDown);
-            window.removeEventListener('mouseup', handleMouseUp);
-            window.removeEventListener('mouseleave', handleMouseLeave);
-            cancelAnimationFrame(animationFrameId);
-        };
-    }, [theme]); // Re-run when theme changes to update colors
-
-    return (
-        <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-            <canvas
-                ref={canvasRef}
-                className="block w-full h-full"
-                style={{ opacity: 0.8 }} // Global opacity for the effect
-            />
-        </div>
-    );
+  return (
+    <div
+      ref={containerRef}
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      style={{
+        opacity: scrollOpacity,
+        transition: 'opacity 0.2s ease-out',
+        visibility: scrollOpacity > 0 ? 'visible' : 'hidden',
+        zIndex: 0
+      }}
+    >
+      <canvas
+        ref={canvasRef}
+        className="block w-full h-full"
+      />
+    </div>
+  );
 };
 
 export default MathAntigravity;

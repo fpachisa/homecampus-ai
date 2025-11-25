@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useLocation, Navigate } from 'react-router-dom';
+import { useLocation, Navigate, Link } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
@@ -7,6 +7,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { OnboardingWizard } from './onboarding/OnboardingWizard';
 import { AuthModal } from './auth/AuthModal';
 import { authService } from '../services/authService';
+import { ProductShowcase } from './landing/ProductShowcase';
 import logoLight from '/logo.png?url';
 import logoDark from '/logo-dark.png?url';
 import MathAntigravity from './effects/MathAntigravity';
@@ -23,6 +24,7 @@ export const LandingPage: React.FC = () => {
   const [inviteInfo, setInviteInfo] = useState<any>(null);
   const [inviteType, setInviteType] = useState<'parent-to-child' | 'student-to-parent' | null>(null);
   const [loadingInvite, setLoadingInvite] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Theme-aware logo
   const logoSrc = isDark ? logoDark : logoLight;
@@ -172,7 +174,7 @@ export const LandingPage: React.FC = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+      <header className="relative z-20 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-4">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
@@ -185,12 +187,43 @@ export const LandingPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Sign In and Theme Toggle */}
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <a
+              href="#demo"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: theme.colors.textSecondary }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+            >
+              How It Works
+            </a>
+            <a
+              href="#features"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: theme.colors.textSecondary }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+            >
+              Features
+            </a>
+            <a
+              href="#testimonials"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: theme.colors.textSecondary }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+            >
+              Testimonials
+            </a>
+          </nav>
+
+          {/* Sign In, Theme Toggle, and Mobile Menu */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Sign In Button */}
             <button
               onClick={goToLogin}
-              className="px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base rounded-lg font-semibold transition-all duration-200"
+              className="hidden sm:block px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base rounded-lg font-semibold transition-all duration-200"
               style={{
                 backgroundColor: theme.colors.brand,
                 color: '#ffffff',
@@ -235,9 +268,146 @@ export const LandingPage: React.FC = () => {
                 </svg>
               )}
             </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="md:hidden p-2 rounded-lg transition-all duration-200"
+              style={{
+                backgroundColor: theme.colors.interactive,
+                color: theme.colors.textSecondary,
+                cursor: 'pointer',
+              }}
+              aria-label="Open menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
       </header>
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 md:hidden"
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backdropFilter: 'blur(4px)',
+            }}
+            onClick={() => setMobileMenuOpen(false)}
+          />
+
+          {/* Drawer */}
+          <div
+            className="fixed top-0 right-0 bottom-0 w-[280px] z-50 md:hidden transform transition-transform duration-300"
+            style={{
+              backgroundColor: theme.colors.surface,
+              boxShadow: theme.shadows.xl,
+            }}
+          >
+            {/* Drawer Header */}
+            <div
+              className="flex items-center justify-between p-4"
+              style={{ borderBottom: `1px solid ${theme.colors.border}` }}
+            >
+              <span
+                className="text-lg font-semibold"
+                style={{ color: theme.colors.textPrimary }}
+              >
+                Menu
+              </span>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 rounded-lg transition-colors duration-200"
+                style={{
+                  backgroundColor: theme.colors.interactive,
+                  color: theme.colors.textSecondary,
+                }}
+                aria-label="Close menu"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Drawer Content */}
+            <nav className="p-4 space-y-2">
+              <a
+                href="#demo"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200"
+                style={{
+                  color: theme.colors.textPrimary,
+                  backgroundColor: 'transparent',
+                }}
+              >
+                How It Works
+              </a>
+              <a
+                href="#features"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200"
+                style={{
+                  color: theme.colors.textPrimary,
+                  backgroundColor: 'transparent',
+                }}
+              >
+                Features
+              </a>
+              <a
+                href="#testimonials"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200"
+                style={{
+                  color: theme.colors.textPrimary,
+                  backgroundColor: 'transparent',
+                }}
+              >
+                Testimonials
+              </a>
+
+              <div
+                className="my-4"
+                style={{ borderTop: `1px solid ${theme.colors.border}` }}
+              />
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  goToLogin();
+                }}
+                className="w-full px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200"
+                style={{
+                  backgroundColor: 'transparent',
+                  color: theme.colors.textPrimary,
+                  border: `1px solid ${theme.colors.border}`,
+                }}
+              >
+                Sign In
+              </button>
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  goToSignup();
+                }}
+                className="w-full px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200"
+                style={{
+                  backgroundColor: theme.colors.brand,
+                  color: '#ffffff',
+                }}
+              >
+                Get Started
+              </button>
+            </nav>
+          </div>
+        </>
+      )}
 
       {/* Hero Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8">
@@ -611,8 +781,11 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Product Showcase - Scroll-driven Demo */}
+      <ProductShowcase />
+
       {/* Features */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section id="features" className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-4"
@@ -674,7 +847,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Social Proof */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section id="testimonials" className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-12"
@@ -771,8 +944,7 @@ export const LandingPage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-          */}
+          </div> */}
         </div>
       </section>
 
@@ -815,17 +987,145 @@ export const LandingPage: React.FC = () => {
             className="mt-6 text-sm"
             style={{ color: theme.colors.textMuted }}
           >
-            Supporting Secondary 1 - 4 Mathematics • No credit card required
+            Supporting Secondary 1 - 4 Mathematics
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border-t" style={{ borderColor: theme.colors.border }}>
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-            © 2025 Home Campus - Personalized Learning Platform
-          </p>
+      <footer className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t" style={{ borderColor: theme.colors.border }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Column 1: Logo & Tagline */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={logoSrc} alt="Home Campus" className="w-10 h-10 object-contain" />
+                <span
+                  className="text-xl font-bold"
+                  style={{ color: theme.colors.textPrimary }}
+                >
+                  Home Campus
+                </span>
+              </div>
+              <p
+                className="text-sm"
+                style={{ color: theme.colors.textSecondary }}
+              >
+                Personalized AI tutoring that builds real understanding through Socratic learning.
+              </p>
+            </div>
+
+            {/* Column 2: Quick Links */}
+            <div>
+              <h4
+                className="font-semibold mb-4"
+                style={{ color: theme.colors.textPrimary }}
+              >
+                Quick Links
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#features"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#demo"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    How It Works
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <button
+                    onClick={goToSignup}
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary, background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    Get Started
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Legal & Contact */}
+            <div>
+              <h4
+                className="font-semibold mb-4"
+                style={{ color: theme.colors.textPrimary }}
+              >
+                Legal
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="mailto:support@homecampus.sg"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: theme.colors.textSecondary }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = theme.colors.textSecondary; }}
+                  >
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div
+            className="pt-8 text-center"
+            style={{ borderTop: `1px solid ${theme.colors.border}` }}
+          >
+            <p className="text-sm" style={{ color: theme.colors.textMuted }}>
+              © {new Date().getFullYear()} Home Campus. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
 
