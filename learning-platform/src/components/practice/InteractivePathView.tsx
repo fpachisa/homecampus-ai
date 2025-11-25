@@ -6,7 +6,7 @@
  * Right: Leaderboard & Goals
  */
 
-import { useEffect, useState, useRef, lazy, Suspense } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense, useMemo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { useAuth } from '../../contexts/AuthContext';
@@ -16,7 +16,7 @@ import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
 import {
   loadPracticeProgress,
-  savePracticeProgress,
+  savePracticeProgressLightweight,
   pathProgressToFirestore
 } from '../../services/firestoreProgressService';
 import { loadGlobalStreak } from '../../services/globalStreakService';
@@ -164,10 +164,19 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
         setDisplayName(category.replace(/^s\d+-math-/i, '').replace(/-/g, ' '));
       }
 
-      let pathProgress: PathProgress | null = null;
+      // ============ FAST LOADING: localStorage FIRST ============
+      // This matches how O-Level practice loads (which is fast)
 
-      // PRIORITY 1: Try loading from Firestore (if authenticated)
-      if (user?.uid) {
+      // PRIORITY 1: Check localStorage FIRST (instant)
+      let pathProgress = pathProgressService.loadUnifiedProgress(category);
+      let needsBackgroundSync = false;
+
+      if (pathProgress) {
+        console.log('📂 Loaded progress from localStorage (fast path)');
+        // Will sync with Firestore in background after render
+        needsBackgroundSync = !!user?.uid;
+      } else if (user?.uid) {
+        // PRIORITY 2: localStorage empty + authenticated → try Firestore (first visit on this device)
         try {
           const firestoreProgress = await loadPracticeProgress(user.uid, category);
 
@@ -185,7 +194,6 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
               lastUpdated: firestoreProgress.pathStartedAt.toDate(),
               totalXP: firestoreProgress.totalXP,
               currentLevel: firestoreProgress.currentLevel,
-              // Convert achievements: Timestamp -> Date
               achievements: firestoreProgress.achievements.map(a => ({
                 ...a,
                 earnedAt: a.earnedAt.toDate()
@@ -194,7 +202,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
               totalTimeSpentSeconds: firestoreProgress.totalTimeSpentSeconds,
             };
 
-            // Convert node progress (include nodeId)
+            // Convert node progress
             Object.entries(firestoreProgress.nodes).forEach(([nodeId, firestoreNode]) => {
               pathProgress!.nodes[nodeId] = {
                 nodeId,
@@ -205,18 +213,10 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
               };
             });
 
-            console.log('✅ Loaded progress from Firestore');
+            console.log('✅ Loaded progress from Firestore (first visit on this device)');
           }
         } catch (firestoreErr) {
-          console.warn('Failed to load from Firestore, falling back to localStorage:', firestoreErr);
-        }
-      }
-
-      // PRIORITY 2: Fall back to localStorage if Firestore had no data
-      if (!pathProgress) {
-        pathProgress = pathProgressService.loadUnifiedProgress(category);
-        if (pathProgress) {
-          console.log('📂 Loaded progress from localStorage');
+          console.warn('Firestore load failed:', firestoreErr);
         }
       }
 
@@ -224,24 +224,22 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       if (!pathProgress) {
         pathProgress = pathProgressService.initializeUnifiedProgress(category, loadedNodes);
         console.log('🆕 Initialized new progress');
-      } else {
-        // Sync progress with current nodes (handles new nodes added to path)
-        const wasUpdated = pathProgressService.syncUnifiedProgress(pathProgress, loadedNodes);
-        if (wasUpdated) {
-          console.log('🔄 Synced progress with current path structure');
-        }
+        needsBackgroundSync = !!user?.uid; // Sync new progress to Firestore in background
       }
 
-      // Save to both localStorage and Firestore
+      // Sync with current nodes (handles new nodes added to path)
+      pathProgressService.syncUnifiedProgress(pathProgress, loadedNodes);
+
+      // Save to localStorage (fast, always do this)
       pathProgressService.saveUnifiedProgress(category, pathProgress);
 
-      if (user?.uid && pathProgress) {
-        const displayName = category.replace(/^s\d+-math-/i, '');
-        const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, loadedNodes);
-        await savePracticeProgress(user.uid, category, firestoreProgress);
-        console.log('💾 Saved progress to both localStorage and Firestore');
-      } else {
-        console.log('💾 Saved progress to localStorage only (not authenticated)');
+      // Set progress and render page immediately
+      setProgress(pathProgress);
+
+      // ============ BACKGROUND SYNC (non-blocking) ============
+      // Don't await - let it run in background after page renders
+      if (needsBackgroundSync && user?.uid) {
+        syncProgressInBackground(user.uid, category, pathProgress, loadedNodes);
       }
 
       // Load global streak (separate from per-topic progress)
@@ -257,8 +255,6 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       } else {
         setGlobalStreak(initializeStreak());
       }
-
-      setProgress(pathProgress);
     } catch (err) {
       console.error('Failed to load path data:', err);
       setError('Failed to load practice path. Please try again.');
@@ -266,6 +262,104 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       setLoading(false);
     }
   };
+
+  // Background sync helper - runs after page renders, non-blocking
+  const syncProgressInBackground = async (
+    uid: string,
+    cat: string,
+    localProgress: PathProgress,
+    nodes: PathNode[]
+  ) => {
+    try {
+      const firestoreProgress = await loadPracticeProgress(uid, cat);
+
+      if (!firestoreProgress) {
+        // No Firestore data - upload local (lightweight, no cascade)
+        const displayName = cat.replace(/^s\d+-math-/i, '');
+        const converted = pathProgressToFirestore(localProgress, cat, displayName, nodes);
+        await savePracticeProgressLightweight(uid, cat, converted);
+        console.log('📤 Background: Uploaded local progress to Firestore');
+      } else {
+        // Compare timestamps - sync if local is newer
+        const firestoreDate = firestoreProgress.lastUpdated?.toDate?.() || new Date(0);
+        const localDate = localProgress.lastUpdated || new Date(0);
+
+        if (localDate > firestoreDate) {
+          // Local is newer - push to Firestore (lightweight, no cascade)
+          const displayName = cat.replace(/^s\d+-math-/i, '');
+          const converted = pathProgressToFirestore(localProgress, cat, displayName, nodes);
+          await savePracticeProgressLightweight(uid, cat, converted);
+          console.log('📤 Background: Synced newer local progress to Firestore');
+        } else {
+          console.log('📂 Background: Firestore already up to date');
+        }
+      }
+    } catch (err) {
+      console.warn('Background Firestore sync failed:', err);
+      // Non-fatal - user experience not affected
+    }
+  };
+
+  // ============ ALL HOOKS MUST BE BEFORE EARLY RETURNS ============
+
+  // Memoize path positions (expensive calculation)
+  const basePositions = useMemo(() => {
+    if (nodes.length === 0) return [];
+    const verticalSpacing = isMobile ? 120 : 80;
+    return generateMeanderingPath(nodes.length, verticalSpacing);
+  }, [nodes.length, isMobile]);
+
+  // Memoize layer groupings
+  const nodesByLayer = useMemo<Record<PathLayer, PathNode[]>>(() => ({
+    foundation: nodes.filter(n => n.layer === 'foundation'),
+    integration: nodes.filter(n => n.layer === 'integration'),
+    application: nodes.filter(n => n.layer === 'application'),
+    examPractice: nodes.filter(n => n.layer === 'examPractice'),
+  }), [nodes]);
+
+  // Memoize layer boundaries
+  const { foundationEnd, integrationEnd } = useMemo(() => ({
+    foundationEnd: nodesByLayer.foundation.length - 1,
+    integrationEnd: nodesByLayer.foundation.length - 1 + nodesByLayer.integration.length,
+  }), [nodesByLayer]);
+
+  // Memoize node positions with layer gaps
+  const nodePositions = useMemo(() => {
+    if (basePositions.length === 0) return [];
+    const layerGap = 60;
+    return basePositions.map((pos, index) => {
+      let extraOffset = 0;
+      if (index > foundationEnd) extraOffset += layerGap;
+      if (index > integrationEnd) extraOffset += layerGap;
+      return { ...pos, y: pos.y + extraOffset };
+    });
+  }, [basePositions, foundationEnd, integrationEnd]);
+
+  // Memoize total path height
+  const totalHeight = useMemo(() =>
+    nodePositions.length > 0 ? nodePositions[nodePositions.length - 1].y + 240 : 0,
+    [nodePositions]
+  );
+
+  // Memoize getNodeStatus callback
+  const getNodeStatus = useCallback((nodeId: string): 'current' | 'completed' | 'locked' => {
+    if (!progress) return 'current';
+    const nodeProgress = progress.nodes[nodeId];
+    if (!nodeProgress || nodeProgress.status === 'locked') return 'current';
+    return nodeProgress.status === 'completed' ? 'completed' : 'current';
+  }, [progress]);
+
+  // Memoize completion stats
+  const { totalCompletedNodes, isPathComplete } = useMemo(() => {
+    if (!progress) return { totalCompletedNodes: 0, isPathComplete: false };
+    const completed = Object.values(progress.nodes).filter(n => n.status === 'completed').length;
+    return {
+      totalCompletedNodes: completed,
+      isPathComplete: completed === nodes.length && nodes.length > 0,
+    };
+  }, [progress, nodes.length]);
+
+  // ============ EARLY RETURNS AFTER ALL HOOKS ============
 
   if (loading) {
     return (
@@ -300,59 +394,6 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       </div>
     );
   }
-
-  // Generate meandering path positions with responsive spacing
-  // Mobile: 120px spacing, Desktop: 80px spacing
-  const verticalSpacing = isMobile ? 120 : 80;
-  const basePositions = generateMeanderingPath(nodes.length, verticalSpacing);
-
-  // Group nodes by layer
-  const nodesByLayer: Record<PathLayer, PathNode[]> = {
-    foundation: nodes.filter(n => n.layer === 'foundation'),
-    integration: nodes.filter(n => n.layer === 'integration'),
-    application: nodes.filter(n => n.layer === 'application'),
-    examPractice: nodes.filter(n => n.layer === 'examPractice'),
-  };
-
-  // Layer boundaries for milestones
-  const foundationEnd = nodesByLayer.foundation.length - 1;
-  const integrationEnd = foundationEnd + nodesByLayer.integration.length;
-
-  // Add extra spacing at layer boundaries for dividers
-  const layerGap = 60; // Extra gap for layer dividers
-  const nodePositions = basePositions.map((pos, index) => {
-    let extraOffset = 0;
-
-    // Add extra space after foundation layer
-    if (index > foundationEnd) {
-      extraOffset += layerGap;
-    }
-
-    // Add extra space after integration layer
-    if (index > integrationEnd) {
-      extraOffset += layerGap;
-    }
-
-    return {
-      ...pos,
-      y: pos.y + extraOffset
-    };
-  });
-
-  // Calculate total path height (add 80px offset for spacing)
-  const totalHeight = nodePositions.length > 0
-    ? nodePositions[nodePositions.length - 1].y + 240
-    : 0;
-
-  // Get node status
-  const getNodeStatus = (nodeId: string): 'current' | 'completed' | 'locked' => {
-    const nodeProgress = progress.nodes[nodeId];
-    if (!nodeProgress || nodeProgress.status === 'locked') return 'current'; // All unlocked
-    return nodeProgress.status === 'completed' ? 'completed' : 'current';
-  };
-
-  const totalCompletedNodes = Object.values(progress.nodes).filter(n => n.status === 'completed').length;
-  const isPathComplete = totalCompletedNodes === nodes.length && nodes.length > 0;
 
   return (
     <div className="min-h-[100dvh] md:flex overflow-hidden" style={{ background: theme.gradients.panel }}>

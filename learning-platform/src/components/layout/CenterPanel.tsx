@@ -321,143 +321,21 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState, i
         backgroundColor: theme.colors.chat,
       }}
     >
-      {/* Top Bar */}
-      <div
-        className="flex items-center justify-between px-4 py-3 border-b"
+      {/* Mobile Menu Button - Only shown on mobile in welcome state */}
+      <button
+        onClick={layoutActions.toggleLeftPanel}
+        className="sm:hidden fixed top-4 left-4 z-30 p-3 rounded-lg shadow-lg transition-all duration-200"
         style={{
-          borderColor: theme.colors.border,
-          backgroundColor: theme.colors.chat,
+          backgroundColor: theme.colors.sidebar,
+          color: theme.colors.textPrimary,
+          boxShadow: theme.shadows.lg,
         }}
+        title="Open Topics Menu"
       >
-        <div className="flex items-center space-x-3">
-          {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 sm:hidden">
-            <button
-              onClick={layoutActions.toggleLeftPanel}
-              className="p-2 rounded-md transition-colors duration-200"
-              style={{
-                color: theme.colors.textSecondary,
-                backgroundColor: 'transparent',
-              }}
-              title="Topics"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-
-            <button
-              onClick={layoutActions.toggleRightPanel}
-              className="p-2 rounded-md transition-colors duration-200"
-              style={{
-                color: theme.colors.textSecondary,
-                backgroundColor: 'transparent',
-              }}
-              title="Scratch Pad"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </button>
-          </div>
-
-          {/* App Info */}
-          <div className="flex items-center space-x-3">
-            <div
-              className="w-8 h-8 rounded-full flex items-center justify-center text-lg"
-              style={{ backgroundColor: theme.colors.brand }}
-            >
-              📚
-            </div>
-            <div>
-              <h1 className="font-semibold text-lg" style={{ color: theme.colors.textPrimary }}>
-                Home Campus
-              </h1>
-              <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-                Select a topic to start learning!
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side Controls */}
-        <div className="flex items-center space-x-2">
-          {/* Theme Toggle */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              console.log('Theme toggle clicked, current theme:', theme.name);
-              toggleTheme();
-            }}
-            className="p-2 rounded-md transition-all duration-300 hover:scale-110 relative z-10"
-            style={{
-              color: theme.colors.textSecondary,
-              backgroundColor: 'transparent',
-            }}
-            onMouseEnter={(e) => {
-              console.log('Theme button mouse enter');
-              e.currentTarget.style.backgroundColor = theme.colors.interactive;
-              e.currentTarget.style.color = theme.colors.textPrimary;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = theme.colors.textSecondary;
-            }}
-            title={`Switch to ${theme.name === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            {theme.name === 'dark' ? (
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            ) : (
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
-            )}
-          </button>
-
-          {/* Desktop Panel Toggles */}
-          <div className="hidden sm:flex items-center space-x-1">
-            <button
-              onClick={() => {
-                console.log('Desktop left panel toggle clicked, current state:', layoutState.leftPanelCollapsed);
-                layoutActions.toggleLeftPanel();
-              }}
-              className={`p-2 rounded-md transition-colors duration-200 ${
-                layoutState.leftPanelCollapsed ? 'opacity-50' : ''
-              }`}
-              style={{
-                color: theme.colors.textSecondary,
-                backgroundColor: layoutState.leftPanelCollapsed ? theme.colors.interactive : 'transparent',
-              }}
-              title="Toggle Topics Panel"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
-              </svg>
-            </button>
-
-            <button
-              onClick={() => {
-                console.log('Desktop right panel toggle clicked, current state:', layoutState.rightPanelCollapsed);
-                layoutActions.toggleRightPanel();
-              }}
-              className={`p-2 rounded-md transition-colors duration-200 ${
-                layoutState.rightPanelCollapsed ? 'opacity-50' : ''
-              }`}
-              style={{
-                color: theme.colors.textSecondary,
-                backgroundColor: layoutState.rightPanelCollapsed ? theme.colors.interactive : 'transparent',
-              }}
-              title="Toggle Scratch Pad"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
       {/* Welcome Content */}
       <div className="flex-1 flex flex-col overflow-hidden">

@@ -622,6 +622,39 @@ export async function savePracticeProgress(
 }
 
 /**
+ * Save Practice Progress - Lightweight Version (No Cascade)
+ *
+ * Saves only the progress document without triggering the expensive cascade:
+ * - NO aggregateGlobalStats
+ * - NO updateDailyActivity
+ * - NO updateGlobalStreak
+ *
+ * Use this for background sync operations where the full cascade would hurt performance.
+ *
+ * @param uid - User ID
+ * @param topicId - Topic ID (e.g., "s3-math-trigonometry")
+ * @param progress - Practice progress data to save
+ */
+export async function savePracticeProgressLightweight(
+  uid: string,
+  topicId: string,
+  progress: PracticeProgress
+): Promise<void> {
+  try {
+    const progressRef = doc(firestore, `users/${uid}/practice/${topicId}`);
+    const cleanedProgress = stripUndefined({
+      ...progress,
+      lastUpdated: serverTimestamp()
+    });
+    await setDoc(progressRef, cleanedProgress, { merge: true });
+    console.log('📤 Background sync to Firestore (lightweight)');
+  } catch (error) {
+    console.error('Lightweight save failed:', error);
+    throw error;
+  }
+}
+
+/**
  * Load Practice Mode Progress
  *
  * Loads practice progress for a specific topic.

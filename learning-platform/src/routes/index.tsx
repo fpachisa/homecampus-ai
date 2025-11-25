@@ -4,6 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { OnboardingWizard } from '../components/onboarding/OnboardingWizard';
+import { AuthenticatedLayout } from '../components/layout/AuthenticatedLayout';
 
 // Lazy load components for code splitting
 const LandingPage = lazy(() => import('../components/LandingPage'));
@@ -195,7 +196,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <HomePage />
+          <AuthenticatedLayout showFooter={true} footerVariant="minimal">
+            <HomePage />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -205,7 +208,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <SettingsPage />
+          <AuthenticatedLayout showFooter={false}>
+            <SettingsPage />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -215,7 +220,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <StudentStatsDashboard />
+          <AuthenticatedLayout showFooter={true} footerVariant="minimal">
+            <StudentStatsDashboard />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -225,7 +232,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <HomeworkHelperPage />
+          <AuthenticatedLayout showFooter={false}>
+            <HomeworkHelperPage />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -235,7 +244,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <HomeworkHistoryPageWrapper />
+          <AuthenticatedLayout showFooter={false}>
+            <HomeworkHistoryPageWrapper />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -245,7 +256,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <SessionDetailPageWrapper />
+          <AuthenticatedLayout showFooter={false}>
+            <SessionDetailPageWrapper />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -255,7 +268,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <LearnRouter />
+          <AuthenticatedLayout showSidebar={false} showFooter={false} showBackground={false} maxWidth="full">
+            <LearnRouter />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -265,7 +280,9 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <PracticeRouter />
+          <AuthenticatedLayout showFooter={false}>
+            <PracticeRouter />
+          </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
     ),
@@ -276,7 +293,9 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <ParentGuard>
-            <ParentDashboard />
+            <AuthenticatedLayout showFooter={true} footerVariant="minimal">
+              <ParentDashboard />
+            </AuthenticatedLayout>
           </ParentGuard>
         </ProtectedRoute>
       </RootLayout>

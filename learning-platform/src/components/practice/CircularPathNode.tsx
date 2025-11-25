@@ -27,7 +27,7 @@ interface CircularPathNodeProps {
   isMobile?: boolean; // Mobile device detection for responsive sizing
 }
 
-export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
+export const CircularPathNode: React.FC<CircularPathNodeProps> = React.memo(({
   node,
   nodeProgress,
   status,
@@ -74,21 +74,13 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
 
   const colors = layerColors[layer];
 
-  // Calculate progress percentage
-  const progressPercent = nodeProgress
-    ? Math.round((nodeProgress.problemsAttempted / node.problemsRequired) * 100)
-    : 0;
-
-  // Debug logging
-  React.useEffect(() => {
-    if (nodeProgress && nodeProgress.problemsAttempted > 0) {
-      console.log(`Node ${node.nodeNumber} (${node.title}):`, {
-        attempted: nodeProgress.problemsAttempted,
-        required: node.problemsRequired,
-        percent: progressPercent,
-      });
-    }
-  }, [nodeProgress, node, progressPercent]);
+  // Calculate progress percentage (memoized for performance)
+  const progressPercent = React.useMemo(() =>
+    nodeProgress
+      ? Math.round((nodeProgress.problemsAttempted / node.problemsRequired) * 100)
+      : 0,
+    [nodeProgress?.problemsAttempted, node.problemsRequired]
+  );
 
   // Icon selection based on status
   const getIcon = (): string => {
@@ -108,19 +100,6 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
   // Determine in-progress state
   // Show in-progress if attempted > 0 and not completed
   const isInProgress = status === 'current' && nodeProgress && nodeProgress.problemsAttempted > 0;
-
-  // Debug logging
-  React.useEffect(() => {
-    if (nodeProgress || status === 'current') {
-      console.log(`Node ${node.nodeNumber} (${node.title}) Status:`, {
-        status,
-        attempted: nodeProgress?.problemsAttempted,
-        required: node.problemsRequired,
-        isInProgress,
-        progress: nodeProgress
-      });
-    }
-  }, [nodeProgress, node, status, isInProgress]);
 
   return (
     <div
@@ -264,4 +243,4 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
       </div>
     </div>
   );
-};
+});

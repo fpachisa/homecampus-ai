@@ -81,7 +81,7 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
       style={{
         background: theme.gradients.panel,
         color: theme.colors.textPrimary,
-        minHeight: '100dvh',
+        height: '100dvh',
       }}
     >
       {/* Background texture/pattern for depth */}

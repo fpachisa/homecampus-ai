@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { BookOpen, Loader, AlertCircle, ArrowLeft, History } from 'lucide-react';
+import { BookOpen, Loader, AlertCircle, History } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useHomeworkAutoSave } from '../../hooks/useHomeworkAutoSave';
@@ -365,58 +365,15 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         session={resumeData?.session || null}
       />
 
-      <div className="min-h-screen flex flex-col" style={{ background: theme.gradients.panel }}>
-        {/* Background texture */}
-        <div
-          className="fixed inset-0 opacity-30 pointer-events-none"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
-          }}
-        />
-
-      {/* Header - show unless in session */}
-      {flowState !== 'session' && (
-        <header
-          className="relative z-10 border-b pt-safe-t"
-          style={{ borderColor: theme.colors.border }}
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                <button
-                  onClick={() => navigate('/home')}
-                  className="min-w-[44px] min-h-[44px] p-2 sm:p-2.5 rounded-lg transition-all duration-200 flex-shrink-0"
-                  style={{
-                    backgroundColor: theme.colors.interactive,
-                    color: theme.colors.textSecondary,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = theme.colors.brand;
-                    e.currentTarget.style.color = '#ffffff';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = theme.colors.interactive;
-                    e.currentTarget.style.color = theme.colors.textSecondary;
-                  }}
-                  title="Back to home"
-                >
-                  <ArrowLeft className="w-5 h-5" />
-                </button>
-                <div className="min-w-0">
-                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold truncate" style={{ color: theme.colors.textPrimary }}>
-                    Homework Helper
-                  </h1>
-                  <p className="text-xs sm:text-sm hidden xs:block" style={{ color: theme.colors.textMuted }}>
-                    Get hints and guidance step-by-step
-                  </p>
-                </div>
-              </div>
-
-              {/* History Button */}
+      {/* Main Content - Layout provided by AuthenticatedLayout */}
+      <div className="flex-1">
+        {flowState === 'upload' && (
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+            {/* History Link */}
+            <div className="flex justify-end mb-4">
               <button
                 onClick={() => navigate('/homework/history')}
-                className="flex items-center gap-2 px-3 sm:px-4 min-h-[44px] rounded-lg transition-all duration-200 font-medium flex-shrink-0"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm"
                 style={{
                   backgroundColor: theme.colors.interactive,
                   color: theme.colors.textSecondary,
@@ -431,18 +388,11 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                 }}
                 title="View homework history"
               >
-                <History className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span className="hidden sm:inline text-sm">History</span>
+                <History className="w-4 h-4" />
+                <span>View History</span>
               </button>
             </div>
-          </div>
-        </header>
-      )}
 
-      {/* Main Content */}
-      <main className="relative z-10 flex-1 overflow-y-auto pb-safe-b">
-        {flowState === 'upload' && (
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
             {/* Welcome Card */}
             <div
               className="p-5 sm:p-6 md:p-8 rounded-2xl mb-4 sm:mb-6"
@@ -587,8 +537,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
             </div>
           </div>
         )}
-      </main>
-    </div>
+      </div>
     </>
   );
 };
