@@ -261,11 +261,11 @@ export const TermsOfService: React.FC = () => {
               </p>
               <p className="text-base mt-2">
                 <a
-                  href="mailto:support@homecampus.sg"
+                  href="mailto:aitutor@homecampus.ai"
                   style={{ color: theme.colors.brand }}
                   className="hover:underline"
                 >
-                  support@homecampus.sg
+                  aitutor@homecampus.ai
                 </a>
               </p>
             </section>

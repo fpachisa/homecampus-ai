@@ -1104,7 +1104,7 @@ export const LandingPage: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href="mailto:support@homecampus.sg"
+                    href="mailto:aitutor@homecampus.ai"
                     className="text-sm transition-colors duration-200"
                     style={{ color: theme.colors.textSecondary }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = theme.colors.brand; }}
