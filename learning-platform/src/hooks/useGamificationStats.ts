@@ -18,6 +18,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { doc, getDoc } from 'firebase/firestore';
 import { firestore } from '../services/firebase';
+import { streakService } from '../services/streakService';
 import type { PathProgress } from '../types/practice';
 import type { UserProfile } from '../types/user';
 
@@ -97,10 +98,21 @@ export function useGamificationStats(_pathProgress?: PathProgress | null): Gamif
   // ALWAYS read from effectiveProfile.gamification (single source of truth)
   // Stats are aggregated globally across ALL topics via globalStatsAggregator
   if (effectiveProfile.gamification) {
+    // Construct streak object to check effectiveness
+    const rawStreak = {
+      currentStreak: effectiveProfile.gamification.currentStreak || 0,
+      longestStreak: effectiveProfile.gamification.longestStreak || 0,
+      lastActivityDate: effectiveProfile.gamification.lastActivityDate || '',
+      streakDates: effectiveProfile.gamification.streakDates || []
+    };
+
+    // Get effective streak (resets to 0 if broken)
+    const effectiveStreak = streakService.getEffectiveStreak(rawStreak);
+
     return {
       totalXP: effectiveProfile.gamification.totalXP || 0,                      // ✅ Global across all topics
       currentLevel: effectiveProfile.gamification.currentLevel || 1,            // ✅ Calculated from total XP
-      currentStreak: effectiveProfile.gamification.currentStreak || 0,          // ✅ Global daily streak
+      currentStreak: effectiveStreak.currentStreak,                             // ✅ Corrected for broken streaks
       longestStreak: effectiveProfile.gamification.longestStreak || 0,          // ✅ Global longest streak
       totalAchievements: effectiveProfile.gamification.totalAchievements || 0,  // ✅ Deduplicated count
       lastUpdated: effectiveProfile.gamification.lastUpdated,

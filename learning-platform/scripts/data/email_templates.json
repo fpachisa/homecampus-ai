@@ -1,0 +1,44 @@
+[
+    {
+        "name": "child-trial-started",
+        "subject": "Your Home Campus Trial Has Started! 🚀",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Welcome to Home Campus!</h1><p>Hi {{parentName}},</p><p>Great news! A 7-day free trial has been activated for <strong>{{childName}}</strong>.</p><p>During this trial, {{childName}} will have full access to all our AI-powered learning topics, practice questions, and personalized tutoring.</p><p><strong>Trial End Date:</strong> {{trialEndDate}}</p><a href=\"{{appUrl}}\" style=\"display: inline-block; background-color: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;\">Go to Dashboard</a><p>Happy Learning,<br>The Home Campus Team</p></div>",
+        "text": "Welcome to Home Campus! Hi {{parentName}}, A 7-day free trial has been activated for {{childName}}. Trial End Date: {{trialEndDate}}. Log in now: {{appUrl}}"
+    },
+    {
+        "name": "child-trial-ending-soon",
+        "subject": "Reminder: {{childName}}'s Trial Ends Soon ⏳",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Your Trial is Ending Soon</h1><p>Hi {{parentName}},</p><p>Just a friendly reminder that <strong>{{childName}}'s</strong> free trial on Home Campus will end on <strong>{{trialEndDate}}</strong>.</p><p>To ensure {{childName}} can keep learning without interruption, please subscribe to a plan before the trial expires.</p><a href=\"{{subscribeUrl}}\" style=\"display: inline-block; background-color: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;\">Subscribe Now</a><p>If you don't take action, access will be paused when the trial ends.</p><p>Best regards,<br>The Home Campus Team</p></div>",
+        "text": "Your Trial is Ending Soon. Hi {{parentName}}, {{childName}}'s free trial ends on {{trialEndDate}}. Subscribe now to keep learning: {{subscribeUrl}}"
+    },
+    {
+        "name": "child-trial-ended",
+        "subject": "Trial Expired: {{childName}}'s Access is Paused ⏸️",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Trial Expired</h1><p>Hi {{parentName}},</p><p>The free trial for <strong>{{childName}}</strong> has ended.</p><p>Don't worry, all learning progress and history have been saved! To resume access and continue the learning journey, simply choose a subscription plan.</p><a href=\"{{subscribeUrl}}\" style=\"display: inline-block; background-color: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;\">Resume Access</a><p>We hope to see you back soon!</p><p>The Home Campus Team</p></div>",
+        "text": "Trial Expired. Hi {{parentName}}, {{childName}}'s free trial has ended. Subscribe to resume access: {{subscribeUrl}}"
+    },
+    {
+        "name": "child-subscription-activated",
+        "subject": "Subscription Confirmed! 🎉",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Subscription Active</h1><p>Hi {{parentName}},</p><p>Confirmed! The subscription for <strong>{{childName}}</strong> is now active.</p><p>Thank you for investing in your child's education. They now have unlimited access to Home Campus.</p><a href=\"{{appUrl}}\" style=\"display: inline-block; background-color: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;\">Start Learning</a><p>If you need anything, just reply to this email.</p><p>Cheers,<br>The Home Campus Team</p></div>",
+        "text": "Subscription Confirmed! Hi {{parentName}}, The subscription for {{childName}} is now active. Thank you! Start learning: {{appUrl}}"
+    },
+    {
+        "name": "subscription-renewed",
+        "subject": "Subscription Renewal Receipt: {{childName}} ✅",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Receipt for Your Renewal</h1><p>Hi {{parentName}},</p><p>This email confirms that your subscription for <strong>{{childName}}</strong> has successfully renewed.</p><p><strong>Amount:</strong> {{currency}} {{amount}}</p><p>We're glad to be a part of your educational journey!</p><p>Best,<br>The Home Campus Team</p></div>",
+        "text": "Subscription Renewal Receipt. Hi {{parentName}}, Your subscription for {{childName}} has renewed. Amount: {{currency}} {{amount}}."
+    },
+    {
+        "name": "subscription-canceled",
+        "subject": "Subscription Cancellation Confirmed",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Subscription Canceled</h1><p>Hi {{parentName}},</p><p>We've received your request to cancel the subscription for <strong>{{childName}}</strong>.</p><p>Access will continue until the end of the current billing period on <strong>{{accessEndDate}}</strong>.</p><p>We're sorry to see you go. If there's anything we could have done better, please let us know.</p><p>Best wishes,<br>The Home Campus Team</p></div>",
+        "text": "Subscription Canceled. Hi {{parentName}}, The subscription for {{childName}} has been canceled. Access continues until {{accessEndDate}}."
+    },
+    {
+        "name": "payment-failed",
+        "subject": "Action Required: Payment Failed ⚠️",
+        "html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\"><h1>Payment Failed</h1><p>Hi {{parentName}},</p><p>We were unable to process the renewal payment for <strong>{{childName}}</strong>.</p><p>Don't panic! We've provided a 7-day grace period so learning isn't interrupted immediately.</p><p><strong>Grace Period Ends:</strong> {{graceEndDate}}</p><p>Please update your payment method to avoid losing access.</p><a href=\"{{updateCardUrl}}\" style=\"display: inline-block; background-color: #ef4444; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;\">Update Payment Method</a><p>Thank you,<br>The Home Campus Team</p></div>",
+        "text": "Action Required: Payment Failed. Hi {{parentName}}, We couldn't process the payment for {{childName}}. Grace period ends on {{graceEndDate}}. Update your payment method here: {{updateCardUrl}}"
+    }
+]

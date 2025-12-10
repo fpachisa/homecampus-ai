@@ -170,6 +170,23 @@ export const generateHeatmapData = (streak: DailyStreak, days: number = 30): {
   return heatmap;
 };
 
+/**
+ * Returns the effective streak, resetting count to 0 if the streak is broken.
+ * This is important for UI display to show "0 Day Streak" instead of stale data.
+ */
+export const getEffectiveStreak = (streak: DailyStreak): DailyStreak => {
+  const status = getStreakStatus(streak);
+
+  if (!status.isActive) {
+    return {
+      ...streak,
+      currentStreak: 0
+    };
+  }
+
+  return streak;
+};
+
 // ============================================
 // SERVICE EXPORTS
 // ============================================
@@ -178,6 +195,7 @@ export const streakService = {
   initializeStreak,
   updateStreak,
   getStreakStatus,
+  getEffectiveStreak, // ✅ Added for UI display safety
   generateHeatmapData,
   getTodayString,
   getYesterdayString,

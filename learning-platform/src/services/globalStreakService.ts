@@ -8,7 +8,7 @@
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { firestore } from './firebase';
 import type { DailyStreak } from '../types/practice';
-import { updateStreak, initializeStreak, generateHeatmapData } from './streakService';
+import { updateStreak, initializeStreak, generateHeatmapData, getEffectiveStreak } from './streakService';
 
 /**
  * Load global streak from user profile
@@ -59,7 +59,8 @@ export async function loadGlobalStreak(uid: string): Promise<DailyStreak> {
           );
         }
 
-        return streak;
+        // Return effective streak (resets to 0 if broken)
+        return getEffectiveStreak(streak);
       }
     }
 
