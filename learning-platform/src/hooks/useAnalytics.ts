@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { analytics } from '../services/firebase';
-import { logEvent } from 'firebase/analytics';
 
 /**
  * Hook to track page views in Google Analytics
@@ -13,9 +12,10 @@ export const useAnalytics = () => {
     useEffect(() => {
         // Analytics is initialized asynchronously and might be null in non-browser envs
         if (analytics) {
-            analytics.then((analyticsInstance) => {
+            analytics.then(async (analyticsInstance) => {
                 if (analyticsInstance) {
-
+                    // Dynamic import to avoid TDZ error
+                    const { logEvent } = await import('firebase/analytics');
                     logEvent(analyticsInstance, 'page_view', {
                         page_path: location.pathname + location.search,
                         page_title: document.title
