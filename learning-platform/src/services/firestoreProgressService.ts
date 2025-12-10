@@ -47,7 +47,7 @@ import {
 import { updateGlobalStreak } from './globalStreakService';
 
 // Import global stats aggregator
-// aggregateGlobalStats is dynamically imported to avoid circular dependencies
+import { aggregateGlobalStats } from './globalStatsAggregator';
 
 // Import daily activity and mastery services
 import { updateDailyActivity } from './dailyActivityService';
@@ -218,7 +218,6 @@ export async function saveLearnProgress(
 
     // 5. Aggregate global stats from BOTH learn AND practice modes
     try {
-      const { aggregateGlobalStats } = await import('./globalStatsAggregator');
       const globalStats = await aggregateGlobalStats(uid);
 
       // Update user profile with AGGREGATED stats
@@ -519,7 +518,6 @@ export async function savePracticeProgress(
 
     // 4. Aggregate global stats from ALL practice topics
     try {
-      const { aggregateGlobalStats } = await import('./globalStatsAggregator');
       const globalStats = await aggregateGlobalStats(uid);
 
       // Update user profile with AGGREGATED stats (not just this topic)

@@ -12,7 +12,7 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from './firebase';
 import { achievementService } from './achievementService';
-import { loadGlobalStreak } from './globalStreakService';
+// loadGlobalStreak is dynamically imported to avoid circular dependencies
 
 // ============================================
 // TYPES
@@ -91,7 +91,8 @@ export async function aggregateGlobalStats(uid: string): Promise<GlobalStats> {
     // Calculate level from TOTAL XP across ALL modes
     const currentLevel = calculateLevelFromXP(totalXP);
 
-    // Load current streak data
+    // Load current streak data (dynamic import to avoid circular dependency)
+    const { loadGlobalStreak } = await import('./globalStreakService');
     const streakData = await loadGlobalStreak(uid);
 
     console.log('📊 Global Stats Aggregation:', {
