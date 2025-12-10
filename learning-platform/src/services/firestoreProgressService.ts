@@ -47,7 +47,7 @@ import {
 import { updateGlobalStreak } from './globalStreakService';
 
 // Import global stats aggregator
-import { aggregateGlobalStats } from './globalStatsAggregator';
+// aggregateGlobalStats is dynamically imported to avoid circular dependencies
 
 // Import daily activity and mastery services
 import { updateDailyActivity } from './dailyActivityService';
@@ -519,6 +519,7 @@ export async function savePracticeProgress(
 
     // 4. Aggregate global stats from ALL practice topics
     try {
+      const { aggregateGlobalStats } = await import('./globalStatsAggregator');
       const globalStats = await aggregateGlobalStats(uid);
 
       // Update user profile with AGGREGATED stats (not just this topic)
@@ -724,10 +725,10 @@ export function pathProgressToFirestore(
       status: nodeProgress.status,
       completedAt: nodeProgress.completedAt
         ? Timestamp.fromDate(
-            nodeProgress.completedAt instanceof Date
-              ? nodeProgress.completedAt
-              : new Date(nodeProgress.completedAt)
-          )
+          nodeProgress.completedAt instanceof Date
+            ? nodeProgress.completedAt
+            : new Date(nodeProgress.completedAt)
+        )
         : undefined,
       timeSpentSeconds: 0 // Not tracked in PathProgress
     };
