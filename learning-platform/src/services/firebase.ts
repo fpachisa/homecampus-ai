@@ -22,7 +22,8 @@ const firebaseConfig = {
   projectId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FIREBASE_PROJECT_ID) || process.env.VITE_FIREBASE_PROJECT_ID || "placeholder-project",
   storageBucket: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FIREBASE_STORAGE_BUCKET) || process.env.VITE_FIREBASE_STORAGE_BUCKET || "placeholder.appspot.com",
   messagingSenderId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FIREBASE_MESSAGING_SENDER_ID) || process.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "000000000000",
-  appId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FIREBASE_APP_ID) || process.env.VITE_FIREBASE_APP_ID || "placeholder-app-id"
+  appId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FIREBASE_APP_ID) || process.env.VITE_FIREBASE_APP_ID || "placeholder-app-id",
+  measurementId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FIREBASE_MEASUREMENT_ID) || process.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -34,6 +35,12 @@ export const googleProvider = new GoogleAuthProvider();
 export const firestore = getFirestore(app);
 export const storage = getStorage(app);
 export const functions = getFunctions(app, 'asia-southeast1');
+
+// Initialize Analytics (only in browser environment)
+// We use a conditional init because getAnalytics can fail in non-browser environments (like tests)
+export const analytics = typeof window !== 'undefined' ?
+  import('firebase/analytics').then(({ getAnalytics }) => getAnalytics(app)).catch(() => null) :
+  null;
 
 // Connect to emulators in development
 // Set VITE_USE_EMULATORS=true in .env to enable

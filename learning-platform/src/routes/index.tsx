@@ -37,8 +37,12 @@ const PageLoader = () => (
   </div>
 );
 
+import { useAnalytics } from '../hooks/useAnalytics';
+
 // Root layout wrapper (passes through children)
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  useAnalytics(); // Initialize analytics tracking
+
   return (
     <Suspense fallback={<PageLoader />}>
       <ErrorBoundary>
@@ -325,7 +329,7 @@ export const router = createBrowserRouter([
       </RootLayout>
     ),
   },
-  
+
   {
     path: '/invite/:type/:token',
     element: (
