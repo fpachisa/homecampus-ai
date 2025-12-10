@@ -5,11 +5,13 @@ import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { OnboardingWizard } from '../components/onboarding/OnboardingWizard';
 import { AuthenticatedLayout } from '../components/layout/AuthenticatedLayout';
+import { SubscriptionGuard } from '../components/auth/SubscriptionGuard';
 
 // Lazy load components for code splitting
 const LandingPage = lazy(() => import('../components/LandingPage'));
 const HomePage = lazy(() => import('../components/HomePage'));
 const SettingsPage = lazy(() => import('../pages/SettingsPage'));
+const BillingPage = lazy(() => import('../pages/BillingPage'));
 const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'));
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
 const GreetingsViewer = lazy(() => import('../pages/GreetingsViewer'));
@@ -216,12 +218,28 @@ export const router = createBrowserRouter([
     ),
   },
   {
+    path: '/billing',
+    element: (
+      <RootLayout>
+        <ProtectedRoute>
+          <ParentGuard>
+            <AuthenticatedLayout showFooter={false}>
+              <BillingPage />
+            </AuthenticatedLayout>
+          </ParentGuard>
+        </ProtectedRoute>
+      </RootLayout>
+    ),
+  },
+  {
     path: '/stats',
     element: (
       <RootLayout>
         <ProtectedRoute>
           <AuthenticatedLayout showFooter={true} footerVariant="minimal">
-            <StudentStatsDashboard />
+            <SubscriptionGuard>
+              <StudentStatsDashboard />
+            </SubscriptionGuard>
           </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
@@ -233,7 +251,9 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <AuthenticatedLayout showFooter={false}>
-            <HomeworkHelperPage />
+            <SubscriptionGuard>
+              <HomeworkHelperPage />
+            </SubscriptionGuard>
           </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
@@ -269,7 +289,9 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <AuthenticatedLayout showSidebar={false} showFooter={false} showBackground={false} maxWidth="full">
-            <LearnRouter />
+            <SubscriptionGuard>
+              <LearnRouter />
+            </SubscriptionGuard>
           </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>
@@ -281,7 +303,9 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <AuthenticatedLayout showFooter={false}>
-            <PracticeRouter />
+            <SubscriptionGuard>
+              <PracticeRouter />
+            </SubscriptionGuard>
           </AuthenticatedLayout>
         </ProtectedRoute>
       </RootLayout>

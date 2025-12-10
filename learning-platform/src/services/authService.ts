@@ -4,9 +4,10 @@ import {
   signInWithEmailLink,
   signInWithPopup,
   signOut,
+  signInWithEmailAndPassword,
   type User as FirebaseUser,
 } from 'firebase/auth';
-import { doc, setDoc, getDoc, updateDoc, collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc, collection, addDoc, serverTimestamp, query, where, getDocs, Timestamp } from 'firebase/firestore';
 import { auth, googleProvider, firestore } from './firebase';
 import { emailService } from './emailService';
 import type { UserProfile } from '../types/user';
@@ -123,6 +124,35 @@ class AuthService {
       return result.user;
     } catch (error: any) {
       console.error('Google sign in error:', error);
+      throw this.handleAuthError(error);
+    }
+  }
+
+  /**
+   * Dev-only: Sign in with email/password (emulator testing only)
+   * Only available when VITE_USE_EMULATORS=true
+   */
+  async signInWithPassword(email: string, password: string): Promise<FirebaseUser> {
+    // Check if emulators are enabled
+    const useEmulators = typeof import.meta !== 'undefined' && import.meta.env?.VITE_USE_EMULATORS === 'true';
+    if (!useEmulators) {
+      throw new Error('Password sign-in is only available in emulator mode');
+    }
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+      // Check if user profile exists, update last login if so
+      const profileExists = await this.userProfileExists(userCredential.user.uid);
+
+      if (profileExists) {
+        await this.updateLastLogin(userCredential.user.uid);
+      }
+
+      console.log('🔧 [Dev] Signed in with password:', email);
+      return userCredential.user;
+    } catch (error: any) {
+      console.error('Password sign in error:', error);
       throw this.handleAuthError(error);
     }
   }
@@ -281,12 +311,12 @@ class AuthService {
    * @param parentUid - Parent's UID
    * @returns Array of linked children with their details
    */
-  async getLinkedChildren(parentUid: string): Promise<Array<{uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string}>> {
+  async getLinkedChildren(parentUid: string): Promise<Array<{ uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string }>> {
     try {
       const childrenRef = collection(firestore, `users/${parentUid}/children`);
       const snapshot = await getDocs(childrenRef);
 
-      const children: Array<{uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string}> = [];
+      const children: Array<{ uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string }> = [];
       snapshot.forEach((doc) => {
         const data = doc.data();
 
@@ -879,6 +909,28 @@ class AuthService {
           audioEnabled: true,
         },
         createdAt: timestamp,
+        // Initialize trial subscription (matches shadow doc)
+        subscription: {
+          subscriptionStatus: 'trial',
+          trialStartDate: Timestamp.now(),
+          trialEndDate: Timestamp.fromMillis(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+          trialExtendedUntil: null,
+          trialExtensionReason: null,
+          trialExtensionSetBy: null,
+          trialExtensionSetAt: null,
+          stripeCustomerId: null,
+          subscriptionId: null,
+          priceId: null,
+          billingInterval: null,
+          currentPeriodStart: null,
+          currentPeriodEnd: null,
+          cancelAtPeriodEnd: false,
+          graceUntil: null,
+          lastPaymentDate: null,
+          lastPaymentAmount: null,
+          currency: 'SGD',
+          updatedAt: Timestamp.now()
+        }
       };
 
       childProfiles.push(newChildProfile);
@@ -928,10 +980,14 @@ class AuthService {
             lastActivityDate: null,
           },
         },
+        // Initialize trial subscription (copy from newChildProfile to ensure timestamps match)
+        subscription: newChildProfile.subscription
       };
 
+      // (Redundant assignment removed)
+
       await setDoc(doc(firestore, 'users', profileId), shadowUserDoc);
-      console.log('✅ Created shadow user document:', profileId);
+      console.log('✅ Created shadow user document with trial subscription:', profileId);
 
       // 2. Create parent-child relationship subcollections (for security rules)
       await setDoc(doc(firestore, `users/${parentUid}/children`, profileId), {
@@ -948,7 +1004,19 @@ class AuthService {
         parentUid: parentUid,
         linkedAt: serverTimestamp(),
       });
+      await setDoc(doc(firestore, `users/${profileId}/parents`, parentUid), {
+        parentUid: parentUid,
+        linkedAt: serverTimestamp(),
+      });
       console.log('✅ Created child→parent subcollection entry');
+
+      // 2.5 Create childProfiles subcollection entry (Required for useSubscription hook)
+      // This duplicates the profile/subscription data for the parent's efficient read
+      await setDoc(doc(firestore, `users/${parentUid}/childProfiles`, profileId), {
+        ...newChildProfile, // Includes subscription
+        subscription: shadowUserDoc.subscription, // Explicitly ensure sync
+      });
+      console.log('✅ Created childProfiles subcollection entry (for subscription hook)');
 
       // 3. Create empty progress summary (required for parent dashboard analytics)
       await setDoc(doc(firestore, 'progressSummaries', profileId), {
@@ -958,6 +1026,17 @@ class AuthService {
         lastUpdated: serverTimestamp(),
       });
       console.log('✅ Created progress summary document');
+
+      // 4. Create active trial tracking document (for backend expiration checks)
+      await setDoc(doc(firestore, 'activeTrials', `${parentUid}_${profileId}`), {
+        parentUid: parentUid,
+        childProfileId: profileId,
+        trialEndDate: shadowUserDoc.subscription.trialEndDate,
+        effectiveTrialEnd: shadowUserDoc.subscription.trialEndDate,
+        reminderSent: false,
+        expiredProcessed: false,
+      });
+      console.log('✅ Created active trial record');
 
       // 4. Update parent profile with child entry (for UI compatibility)
       await this.updateUserProfile(parentUid, {

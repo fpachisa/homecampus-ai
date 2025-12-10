@@ -6,9 +6,11 @@ on:
       - main
     paths:
       - 'learning-platform/**'
+      - 'functions/**'
       - '.github/workflows/production.yml'
       - 'firebase.json'
       - 'firestore.rules'  # Root Firestore rules (single source of truth)
+      - 'firestore.indexes.json'
 
   workflow_dispatch:
     inputs:
@@ -99,6 +101,7 @@ jobs:
           VITE_FROM_EMAIL=noreply@homecampus.ai
           VITE_FROM_NAME=Home Campus
           VITE_SUPPORT_EMAIL=support@homecampus.ai
+          VITE_STRIPE_PUBLISHABLE_KEY=${{ secrets.VITE_STRIPE_PUBLISHABLE_KEY }}
           EOF
 
       - name: Build application
@@ -154,6 +157,23 @@ jobs:
       - name: Deploy Firestore rules
         run: |
           firebase deploy --only firestore:rules --project homecampus-ai
+
+      - name: Deploy Firestore indexes
+        run: |
+          firebase deploy --only firestore:indexes --project homecampus-ai
+
+      - name: Setup Node.js for Functions
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Functions dependencies
+        run: |
+          cd functions && npm ci
+
+      - name: Deploy Firebase Functions
+        run: |
+          firebase deploy --only functions --project homecampus-ai
 
       - name: Notify deployment success
         if: success()

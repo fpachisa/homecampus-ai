@@ -3,7 +3,11 @@ import { useTheme } from '../hooks/useTheme';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { useAuth } from '../contexts/AuthContext';
 
-export const ProfileSwitcher: React.FC = () => {
+interface ProfileSwitcherProps {
+  direction?: 'up' | 'down';
+}
+
+export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({ direction = 'down' }) => {
   const { theme } = useTheme();
   const { activeProfile, switchToSelf, switchToChildProfile, switchToLinkedChild, canSwitchProfiles } = useActiveProfile();
   const { userProfile } = useAuth();
@@ -143,7 +147,8 @@ export const ProfileSwitcher: React.FC = () => {
       {/* Dropdown Menu */}
       {isOpen && (
         <div
-          className="absolute top-full right-0 mt-2 rounded-xl overflow-hidden shadow-xl min-w-[250px]"
+          className={`absolute right-0 rounded-xl overflow-hidden shadow-xl min-w-[250px] max-h-80 overflow-y-auto ${direction === 'up' ? 'bottom-full mb-2' : 'top-full mt-2'
+            }`}
           style={{
             backgroundColor: theme.colors.overlay,
             border: `1px solid ${theme.colors.border}`,

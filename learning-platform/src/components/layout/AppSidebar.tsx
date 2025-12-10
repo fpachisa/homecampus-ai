@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import { useThemeContext } from '../../contexts/ThemeContext';
+import { ProfileSwitcher } from '../ProfileSwitcher';
 import { Logo } from '../ui/Logo';
 import { NavLink } from '../ui/NavLink';
 import {
@@ -14,9 +15,12 @@ import {
   ChevronRight,
   X,
   Settings,
+  CreditCard,
   Sun,
   Moon,
+  LogOut,
 } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
 
 export interface AppSidebarProps {
   isOpen: boolean;
@@ -40,6 +44,8 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
   ({ isOpen, collapsed, onToggleCollapse, onClose, isMobile = false, className = '' }, ref) => {
     const { theme } = useTheme();
     const { toggleTheme, isDark } = useThemeContext();
+    const { userProfile, logout, user } = useAuth();
+    const isParent = userProfile?.accountType === 'parent';
 
     if (!isOpen) return null;
 
@@ -48,9 +54,8 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
     return (
       <aside
         ref={ref}
-        className={`fixed top-0 left-0 h-screen flex flex-col transition-all duration-300 z-50 ${
-          isCollapsed ? 'w-16' : 'w-64'
-        } ${className}`}
+        className={`fixed top-0 left-0 h-screen flex flex-col transition-all duration-300 z-50 ${isCollapsed ? 'w-16' : 'w-64'
+          } ${className}`}
         style={{
           backgroundColor: theme.colors.sidebar,
           borderRight: `1px solid ${theme.colors.border}`,
@@ -58,9 +63,8 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
       >
         {/* Header with Logo */}
         <div
-          className={`p-4 flex items-center border-b ${
-            isCollapsed ? 'justify-center' : 'justify-between'
-          }`}
+          className={`p-4 flex items-center border-b ${isCollapsed ? 'justify-center' : 'justify-between'
+            }`}
           style={{ borderColor: theme.colors.border }}
         >
           {isCollapsed ? (
@@ -154,6 +158,13 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
           className="border-t p-3 space-y-2"
           style={{ borderColor: theme.colors.border }}
         >
+          {/* Profile Switcher (visible when expanded) */}
+          {!isCollapsed && (
+            <div className="mb-2">
+              <ProfileSwitcher direction="up" />
+            </div>
+          )}
+
           {/* Settings link */}
           <NavLink
             to="/settings"
@@ -165,12 +176,24 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
             Settings
           </NavLink>
 
+          {/* Billing link (parent only) */}
+          {isParent && (
+            <NavLink
+              to="/billing"
+              icon={<CreditCard size={20} />}
+              collapsed={isCollapsed}
+              variant="sidebar"
+              onClick={isMobile ? onClose : undefined}
+            >
+              Billing
+            </NavLink>
+          )}
+
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className={`flex items-center gap-3 w-full p-3 rounded-lg transition-colors ${
-              isCollapsed ? 'justify-center' : ''
-            }`}
+            className={`flex items-center gap-3 w-full p-3 rounded-lg transition-colors ${isCollapsed ? 'justify-center' : ''
+              }`}
             style={{
               backgroundColor: 'transparent',
               color: theme.colors.textSecondary,
@@ -188,6 +211,36 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
             {!isCollapsed && <span className="text-sm font-medium">{isDark ? 'Light Mode' : 'Dark Mode'}</span>}
           </button>
+
+          {/* Sign Out button (only show when logged in) */}
+          {user && (
+            <button
+              onClick={async () => {
+                try {
+                  await logout();
+                  if (isMobile && onClose) onClose();
+                } catch (error) {
+                  console.error('Error signing out:', error);
+                }
+              }}
+              className={`flex items-center gap-3 w-full p-3 rounded-lg transition-colors ${isCollapsed ? 'justify-center' : ''
+                }`}
+              style={{
+                backgroundColor: 'transparent',
+                color: '#f87171', // red-400
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = theme.colors.interactive;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+              title="Sign out"
+            >
+              <LogOut size={20} />
+              {!isCollapsed && <span className="text-sm font-medium">Sign Out</span>}
+            </button>
+          )}
         </div>
       </aside>
     );

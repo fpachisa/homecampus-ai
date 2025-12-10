@@ -125,3 +125,69 @@ export interface ProfileSetupData {
     gradeLevel: string;
   };
 }
+
+// ==================== SUBSCRIPTION TYPES ====================
+
+export type SubscriptionStatus =
+  | 'trial'           // 7-day free access (no payment yet)
+  | 'trial_expired'   // Trial ended, no subscription
+  | 'active'          // Paid and active
+  | 'past_due'        // Payment failed, grace period
+  | 'canceled'        // User canceled, access until period end
+  | 'expired';        // Subscription ended
+
+export interface SubscriptionData {
+  // Trial tracking
+  trialStartDate: Date;
+  trialEndDate: Date;
+
+  // Admin trial extension (optional override)
+  trialExtendedUntil: Date | null;
+  trialExtensionReason: string | null;
+  trialExtensionSetBy: string | null;
+  trialExtensionSetAt: Date | null;
+
+  // Stripe identifiers (null until first payment)
+  stripeCustomerId: string | null;
+  subscriptionId: string | null;
+
+  // Subscription details
+  subscriptionStatus: SubscriptionStatus;
+  priceId: string | null;
+  billingInterval: 'month' | 'year' | null;
+  currentPeriodStart: Date | null;
+  currentPeriodEnd: Date | null;
+  cancelAtPeriodEnd: boolean;
+
+  // Grace period for past_due
+  graceUntil: Date | null;
+
+  // Payment info
+  lastPaymentDate: Date | null;
+  lastPaymentAmount: number | null;  // In cents
+  currency: string;
+
+  updatedAt: Date;
+}
+
+// Child profile with subscription (from subcollection)
+export interface ChildProfileWithSubscription extends ChildProfile {
+  subscription: SubscriptionData;
+}
+
+// Computed subscription state for UI
+export interface ChildSubscriptionState {
+  childProfileId: string;
+  childName: string;
+  status: SubscriptionStatus;
+  hasAccess: boolean;
+  isInTrial: boolean;
+  isTrialExpired: boolean;
+  isSubscribed: boolean;
+  isPastDue: boolean;
+  isCanceled: boolean;
+  trialEndsAt: Date | null;
+  trialDaysRemaining: number | null;
+  graceEndsAt: Date | null;
+  currentPeriodEnd: Date | null;
+}

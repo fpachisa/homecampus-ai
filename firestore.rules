@@ -182,6 +182,49 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    // ============================================
+    // BILLING & SUBSCRIPTION COLLECTIONS
+    // ============================================
+
+    // Child profiles with subscriptions (subcollection under users)
+    match /users/{userId}/childProfiles/{childId} {
+      // Parent can read their children's profiles
+      allow read: if isOwner(userId);
+
+      // CREATE: Allow parent to create child profile (Client-side implementation)
+      allow create: if isOwner(userId);
+
+      // UPDATE: Allow parent to update, including subscription fields (for manual sync/init)
+      allow update: if isOwner(userId);
+
+      // DELETE: Allow owner to delete
+      allow delete: if isOwner(userId);
+    }
+
+    // Active trials - server-only (used for efficient trial expiration queries)
+    match /activeTrials/{trialId} {
+      // Allow parent to create trial record for their child
+      allow create: if isAuthenticated() && 
+                    request.resource.data.parentUid == request.auth.uid;
+      allow read, update, delete: if false; // Only allow creation, background process handles the rest
+    }
+
+    // Stripe customer mappings - server-only
+    match /stripeCustomers/{customerId} {
+      allow read, write: if false;
+    }
+
+    // Stripe webhook events - server-only (idempotency tracking)
+    match /stripeEvents/{eventId} {
+      allow read, write: if false;
+    }
+
+    // Disputes - admin read only
+    match /disputes/{disputeId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
     // Deny all other access by default
     match /{document=**} {
       allow read, write: if false;

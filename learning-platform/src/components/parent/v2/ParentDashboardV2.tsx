@@ -11,6 +11,8 @@ import { useAuth } from '../../../contexts/AuthContext';
 import { authService } from '../../../services/authService';
 import { useChildProgress } from '../../../hooks/parent/useChildProgress';
 import type { ChildProfile, LinkedChild } from '../../../types/user';
+import { useNavigate } from 'react-router-dom';
+import { useActiveProfile } from '../../../contexts/ActiveProfileContext';
 
 // Components
 import { ChildSelector } from './ChildSelector';
@@ -23,6 +25,8 @@ import { InsightsPanel } from './InsightsPanel';
 export const ParentDashboardV2: React.FC = () => {
   const { theme } = useTheme();
   const { user, userProfile } = useAuth();
+  const navigate = useNavigate();
+  const { switchToChildProfile, switchToLinkedChild } = useActiveProfile();
 
   // State
   const [childProfiles, setChildProfiles] = useState<ChildProfile[]>([]);
@@ -142,6 +146,35 @@ export const ParentDashboardV2: React.FC = () => {
           <p className="text-lg" style={{ color: theme.colors.textSecondary }}>
             Track your child's achievements and growth
           </p>
+          {selectedChildUid && (
+            <button
+              onClick={() => {
+                const child = selectedChildType === 'linked-child'
+                  ? linkedChildren.find(c => c.uid === selectedChildUid)
+                  : childProfiles.find(c => c.profileId === selectedChildUid);
+
+                if (child) {
+                  const grade = selectedChildType === 'linked-child'
+                    ? (child as LinkedChild).grade
+                    : (child as ChildProfile).gradeLevel;
+
+                  if (selectedChildType === 'linked-child') {
+                    switchToLinkedChild(selectedChildUid, child.displayName, grade);
+                  } else {
+                    switchToChildProfile(selectedChildUid, child.displayName, grade);
+                  }
+                  navigate('/home');
+                }
+              }}
+              className="mt-2 text-sm font-medium hover:underline flex items-center gap-1"
+              style={{ color: theme.colors.brand }}
+            >
+              <span>Login as {childProfiles.find(c => c.profileId === selectedChildUid)?.displayName || linkedChildren.find(c => c.uid === selectedChildUid)?.displayName || 'Child'}</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          )}
         </div>
 
         <div className="flex items-center gap-4">

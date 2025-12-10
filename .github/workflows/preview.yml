@@ -50,6 +50,7 @@ jobs:
           VITE_FROM_EMAIL=noreply@homecampus.ai
           VITE_FROM_NAME=Home Campus
           VITE_SUPPORT_EMAIL=support@homecampus.ai
+          VITE_STRIPE_PUBLISHABLE_KEY=${{ secrets.VITE_STRIPE_PUBLISHABLE_KEY }}
           EOF
 
       - name: Build application

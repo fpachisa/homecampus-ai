@@ -4,6 +4,7 @@ import { useTheme } from '../../hooks/useTheme';
 interface UnifiedAuthFormProps {
   onEmailSubmit?: (email: string) => void;
   onGoogleSignIn?: () => void;
+  onPasswordSignIn?: (email: string, password: string) => void;
   loading?: boolean;
   error?: string | null;
 }
@@ -11,11 +12,17 @@ interface UnifiedAuthFormProps {
 export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
   onEmailSubmit,
   onGoogleSignIn,
+  onPasswordSignIn,
   loading = false,
   error = null,
 }) => {
   const { theme } = useTheme();
   const [email, setEmail] = useState('');
+
+  // Dev-only: Password login state (only used when VITE_USE_EMULATORS=true)
+  const [devEmail, setDevEmail] = useState('parent1@test.com');
+  const [devPassword, setDevPassword] = useState('Test123!');
+  const isEmulatorMode = import.meta.env?.VITE_USE_EMULATORS === 'true';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -180,6 +187,70 @@ export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
           {loading ? 'Sending...' : 'Continue with email'}
         </button>
       </form>
+
+      {/* Dev-only: Password login for emulator testing */}
+      {isEmulatorMode && onPasswordSignIn && (
+        <div
+          className="mt-8 p-4 rounded-lg"
+          style={{
+            border: '2px dashed #f59e0b',
+            backgroundColor: 'rgba(245, 158, 11, 0.05)',
+          }}
+        >
+          <p
+            className="text-sm font-medium mb-3 flex items-center gap-2"
+            style={{ color: '#f59e0b' }}
+          >
+            <span>🔧</span>
+            <span>Dev Mode: Password Login</span>
+          </p>
+          <div className="space-y-3">
+            <input
+              type="email"
+              value={devEmail}
+              onChange={(e) => setDevEmail(e.target.value)}
+              placeholder="Email"
+              className="w-full px-3 py-2 rounded text-sm"
+              style={{
+                backgroundColor: theme.colors.interactive,
+                border: `1px solid ${theme.colors.border}`,
+                color: theme.colors.textPrimary,
+              }}
+              disabled={loading}
+            />
+            <input
+              type="password"
+              value={devPassword}
+              onChange={(e) => setDevPassword(e.target.value)}
+              placeholder="Password"
+              className="w-full px-3 py-2 rounded text-sm"
+              style={{
+                backgroundColor: theme.colors.interactive,
+                border: `1px solid ${theme.colors.border}`,
+                color: theme.colors.textPrimary,
+              }}
+              disabled={loading}
+            />
+            <button
+              type="button"
+              onClick={() => onPasswordSignIn(devEmail, devPassword)}
+              disabled={loading || !devEmail || !devPassword}
+              className="w-full py-2 font-medium rounded text-sm transition-all"
+              style={{
+                backgroundColor: '#f59e0b',
+                color: '#000',
+                opacity: loading ? 0.5 : 1,
+                cursor: loading ? 'not-allowed' : 'pointer',
+              }}
+            >
+              {loading ? 'Signing in...' : 'Sign In (Dev)'}
+            </button>
+          </div>
+          <p className="text-xs mt-2" style={{ color: theme.colors.textMuted }}>
+            Test accounts created by seed script. Only visible in emulator mode.
+          </p>
+        </div>
+      )}
 
       {/* Privacy note */}
       <p

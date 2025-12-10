@@ -21,7 +21,8 @@
     "generate-question-bank": "tsx scripts/generateQuestionBank.ts",
     "extract:exam-questions": "tsx scripts/exam-extraction/extract-questions.ts",
     "migrate-tables": "tsx scripts/migrate-tables.ts",
-    "merge-qa": "tsx scripts/merge-all-qa.ts"
+    "merge-qa": "tsx scripts/merge-all-qa.ts",
+    "seed-test-data": "node scripts/seedTestData.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.64.0",

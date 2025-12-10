@@ -23,6 +23,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     needsProfileSetup,
     sendVerificationEmail,
     signInWithGoogle,
+    signInWithPassword,
     completeProfileSetup,
   } = useAuth();
 
@@ -74,6 +75,22 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       // onAuthStateChanged will handle the rest
     } catch (err: any) {
       setError(err.message || 'Failed to sign in with Google');
+      setLoading(false);
+    }
+  };
+
+  // Dev-only: Password sign-in for emulator testing
+  const handlePasswordSignIn = async (devEmail: string, devPassword: string) => {
+    if (!signInWithPassword) return;
+
+    setError(null);
+    setLoading(true);
+
+    try {
+      await signInWithPassword(devEmail, devPassword);
+      // onAuthStateChanged will handle the rest
+    } catch (err: any) {
+      setError(err.message || 'Failed to sign in with password');
       setLoading(false);
     }
   };
@@ -153,6 +170,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             <UnifiedAuthForm
               onEmailSubmit={handleEmailSubmit}
               onGoogleSignIn={handleGoogleSignIn}
+              onPasswordSignIn={handlePasswordSignIn}
               loading={loading}
               error={error}
             />

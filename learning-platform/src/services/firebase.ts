@@ -1,7 +1,8 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
+import { getAuth, GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
+import { getFirestore, enableIndexedDbPersistence, connectFirestoreEmulator } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
+import { getFunctions, connectFunctionsEmulator } from 'firebase/functions';
 
 // Load .env in Node environments (scripts)
 if (typeof process !== 'undefined' && process.env.NODE_ENV !== 'production') {
@@ -32,10 +33,22 @@ export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const firestore = getFirestore(app);
 export const storage = getStorage(app);
+export const functions = getFunctions(app, 'asia-southeast1');
+
+// Connect to emulators in development
+// Set VITE_USE_EMULATORS=true in .env to enable
+const useEmulators = typeof import.meta !== 'undefined' && import.meta.env?.VITE_USE_EMULATORS === 'true';
+
+if (typeof window !== 'undefined' && useEmulators) {
+  connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
+  connectFirestoreEmulator(firestore, 'localhost', 8080);
+  connectFunctionsEmulator(functions, 'localhost', 5001);
+  console.log('🔧 Connected to Firebase Emulators');
+}
 
 // Enable offline persistence (MVP requirement)
-// Only enable in browser environment
-if (typeof window !== 'undefined') {
+// Only enable in browser environment, and NOT when using emulators
+if (typeof window !== 'undefined' && !useEmulators) {
   enableIndexedDbPersistence(firestore).catch((err) => {
     if (err.code === 'failed-precondition') {
       console.log('Offline mode disabled: Multiple tabs open');

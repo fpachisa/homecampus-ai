@@ -15,6 +15,22 @@
         { "fieldPath": "userId", "order": "ASCENDING" },
         { "fieldPath": "startedAt", "order": "DESCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "activeTrials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "effectiveTrialEnd", "order": "ASCENDING" },
+        { "fieldPath": "reminderSent", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "activeTrials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "effectiveTrialEnd", "order": "ASCENDING" },
+        { "fieldPath": "expiredProcessed", "order": "ASCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []

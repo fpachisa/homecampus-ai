@@ -23,6 +23,9 @@ interface AuthContextType {
   updateProfile: (updates: Partial<UserProfile>) => Promise<void>;
   completeProfileSetup: (profileData: Partial<UserProfile>) => Promise<void>;
   reloadProfile: () => Promise<void>; // Manually reload profile from Firestore
+
+  // Dev-only: Password sign-in for emulator testing
+  signInWithPassword?: (email: string, password: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -77,6 +80,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // onAuthStateChanged will handle setting the user and checking profile
     } catch (error) {
       console.error('Error signing in with Google:', error);
+      throw error;
+    }
+  };
+
+  // Dev-only: Sign in with email/password (for emulator testing)
+  const signInWithPassword = async (email: string, password: string) => {
+    try {
+      await authService.signInWithPassword(email, password);
+      // onAuthStateChanged will handle setting the user and checking profile
+    } catch (error) {
+      console.error('Error signing in with password:', error);
       throw error;
     }
   };
@@ -230,6 +244,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     sendVerificationEmail,
     completeEmailSignIn,
     signInWithGoogle,
+    signInWithPassword,
     logout,
     updateProfile,
     completeProfileSetup,
