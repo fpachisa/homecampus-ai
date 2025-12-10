@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { analytics } from '../services/firebase';
+import { getAnalyticsInstance } from '../services/firebase';
 
 /**
  * Hook to track page views in Google Analytics
@@ -10,18 +10,22 @@ export const useAnalytics = () => {
     const location = useLocation();
 
     useEffect(() => {
-        // Analytics is initialized asynchronously and might be null in non-browser envs
-        if (analytics) {
-            analytics.then(async (analyticsInstance) => {
+        // Initialize analytics and log page view
+        const trackPageView = async () => {
+            try {
+                const analyticsInstance = await getAnalyticsInstance();
                 if (analyticsInstance) {
-                    // Dynamic import to avoid TDZ error
                     const { logEvent } = await import('firebase/analytics');
                     logEvent(analyticsInstance, 'page_view', {
                         page_path: location.pathname + location.search,
                         page_title: document.title
                     });
                 }
-            });
-        }
+            } catch (error) {
+                console.warn('Analytics tracking failed:', error);
+            }
+        };
+
+        trackPageView();
     }, [location]);
 };

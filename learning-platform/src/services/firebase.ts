@@ -38,9 +38,20 @@ export const functions = getFunctions(app, 'asia-southeast1');
 
 // Initialize Analytics (only in browser environment)
 // We use a conditional init because getAnalytics can fail in non-browser environments (like tests)
-export const analytics = typeof window !== 'undefined' ?
-  import('firebase/analytics').then(({ getAnalytics }) => getAnalytics(app)).catch(() => null) :
-  null;
+// Lazy initialization to avoid circular dependency issues
+export const analytics: Promise<any> | null = null;
+
+// Helper function to get analytics instance (call this instead of using analytics directly)
+export const getAnalyticsInstance = async () => {
+  if (typeof window === 'undefined') return null;
+  try {
+    const { getAnalytics } = await import('firebase/analytics');
+    return getAnalytics(app);
+  } catch (error) {
+    console.warn('Analytics initialization failed:', error);
+    return null;
+  }
+};
 
 // Connect to emulators in development
 // Set VITE_USE_EMULATORS=true in .env to enable
