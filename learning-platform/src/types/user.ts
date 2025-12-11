@@ -54,6 +54,7 @@ export interface LinkedChild {
   displayName: string;
   grade: string;
   lastActivityAt?: string;
+  subscription?: SubscriptionData; // Optional, populated if trial/sub exists
 }
 
 export interface UserProfile {

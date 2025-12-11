@@ -29,29 +29,46 @@ export const ParentDashboardV2: React.FC = () => {
   const { switchToChildProfile, switchToLinkedChild } = useActiveProfile();
 
   // State
+  // State
   const [childProfiles, setChildProfiles] = useState<ChildProfile[]>([]);
   const [linkedChildren, setLinkedChildren] = useState<LinkedChild[]>([]);
+  const [pendingInvites, setPendingInvites] = useState<Array<{
+    email: string;
+    displayName: string;
+    gradeLevel: string;
+    sentAt: string;
+  }>>([]);
   const [selectedChildUid, setSelectedChildUid] = useState<string | null>(null);
   const [selectedChildType, setSelectedChildType] = useState<'child-profile' | 'linked-child'>('child-profile');
   const [timeRange, setTimeRange] = useState<'7d' | '30d' | '3m' | 'all'>('30d');
+  const [isLoadingChildren, setIsLoadingChildren] = useState(true);
 
   // Fetch children data
   useEffect(() => {
     async function loadChildren() {
       if (user) {
-        const profiles = userProfile?.childProfiles || [];
-        const linked = await authService.getLinkedChildren(user.uid);
+        setIsLoadingChildren(true);
+        try {
+          const profiles = userProfile?.childProfiles || [];
+          const linked = await authService.getLinkedChildren(user.uid);
+          const invites = await authService.getPendingChildInvites(user.uid);
 
-        setChildProfiles(profiles);
-        setLinkedChildren(linked);
+          setChildProfiles(profiles);
+          setLinkedChildren(linked);
+          setPendingInvites(invites);
 
-        // Auto-select first child
-        if (profiles.length > 0) {
-          setSelectedChildUid(profiles[0].profileId);
-          setSelectedChildType('child-profile');
-        } else if (linked.length > 0) {
-          setSelectedChildUid(linked[0].uid);
-          setSelectedChildType('linked-child');
+          // Auto-select first child
+          if (profiles.length > 0) {
+            setSelectedChildUid(profiles[0].profileId);
+            setSelectedChildType('child-profile');
+          } else if (linked.length > 0) {
+            setSelectedChildUid(linked[0].uid);
+            setSelectedChildType('linked-child');
+          }
+        } catch (err) {
+          console.error("Failed to load children data:", err);
+        } finally {
+          setIsLoadingChildren(false);
         }
       }
     }
@@ -66,11 +83,13 @@ export const ParentDashboardV2: React.FC = () => {
   const effectiveUid = selectedChildUid || null;
   const effectiveProfileId = (selectedChildType === 'child-profile' && selectedChildUid) ? selectedChildUid : undefined;
 
-  const { data: analytics, loading, error, refresh } = useChildProgress(
+  const { data: analytics, loading: analyticsLoading, error, refresh } = useChildProgress(
     effectiveUid,
     timeRange,
     effectiveProfileId
   );
+
+  const loading = analyticsLoading || isLoadingChildren;
 
   // Handle child selection
   const handleChildSelect = (uid: string, type: 'child-profile' | 'linked-child') => {
@@ -83,8 +102,12 @@ export const ParentDashboardV2: React.FC = () => {
     }
   };
 
-  // If no child selected, show selector only
+  // If no child selected (or still loading initial state where no child might be selected yet)
   if (!selectedChildUid || !analytics) {
+    // Check if we have any pending invites to show in this "empty" state
+    const hasPendingInvites = pendingInvites.length > 0;
+    const hasChildren = childProfiles.length > 0 || linkedChildren.length > 0;
+
     return (
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
@@ -98,12 +121,15 @@ export const ParentDashboardV2: React.FC = () => {
         </div>
 
         {/* Child Selector */}
-        <ChildSelector
-          childProfiles={childProfiles}
-          linkedChildren={linkedChildren}
-          selectedChildUid={selectedChildUid}
-          onSelect={handleChildSelect}
-        />
+        {(hasChildren || hasPendingInvites) && (
+          <ChildSelector
+            childProfiles={childProfiles}
+            linkedChildren={linkedChildren}
+            pendingInvites={pendingInvites}
+            selectedChildUid={selectedChildUid}
+            onSelect={handleChildSelect}
+          />
+        )}
 
         {/* Loading State */}
         {loading && (
@@ -112,10 +138,113 @@ export const ParentDashboardV2: React.FC = () => {
           </div>
         )}
 
+        {/* Pending Invites Section - Show prominently when no child is selected */}
+        {hasPendingInvites && !loading && (
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold mb-4" style={{ color: theme.colors.textPrimary }}>
+              Pending Invites
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {pendingInvites.map((invite, index) => (
+                <div
+                  key={`pending-${index}`}
+                  className="p-6 rounded-2xl"
+                  style={{
+                    background: theme.glass.background,
+                    border: `1px solid ${theme.colors.border}`,
+                    backdropFilter: theme.glass.backdrop,
+                    boxShadow: theme.shadows.md,
+                    opacity: 0.8,
+                  }}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h4 className="text-lg font-semibold mb-1" style={{ color: theme.colors.textPrimary }}>
+                        {invite.displayName}
+                      </h4>
+                      <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                        {invite.gradeLevel}
+                      </p>
+                    </div>
+                    <div
+                      className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{
+                        backgroundColor: theme.colors.warning + '20',
+                        color: theme.colors.warning,
+                      }}
+                    >
+                      Pending
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>
+                      {invite.email}
+                    </p>
+                  </div>
+
+                  <div
+                    className="p-3 rounded-lg flex items-center gap-2 text-sm"
+                    style={{
+                      backgroundColor: theme.colors.info + '10',
+                      color: theme.colors.textSecondary,
+                    }}
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                    Awaiting account creation
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Empty State - Only show if NO children AND NO pending invites */}
+        {!hasChildren && !hasPendingInvites && !loading && !error && (
+          <div
+            className="p-12 rounded-2xl text-center mt-8"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
+            }}
+          >
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-6"
+              style={{ backgroundColor: theme.colors.interactive }}
+            >
+              👨‍👩‍👧‍👦
+            </div>
+            <h3 className="text-2xl font-semibold mb-2" style={{ color: theme.colors.textPrimary }}>
+              No Children Added Yet
+            </h3>
+            <p className="text-base mb-6" style={{ color: theme.colors.textSecondary }}>
+              Start by adding children to monitor their learning progress
+            </p>
+            <button
+              className="px-6 py-3 rounded-xl font-medium transition-all"
+              style={{
+                backgroundColor: theme.colors.brand,
+                color: '#ffffff',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              Add Your First Child
+            </button>
+          </div>
+        )}
+
         {/* Error State */}
         {error && (
           <div
-            className="p-6 rounded-2xl text-center"
+            className="p-6 rounded-2xl text-center mt-8"
             style={{
               background: `${theme.colors.error}10`,
               border: `1px solid ${theme.colors.error}30`,
@@ -200,6 +329,7 @@ export const ParentDashboardV2: React.FC = () => {
           <ChildSelector
             childProfiles={childProfiles}
             linkedChildren={linkedChildren}
+            pendingInvites={pendingInvites}
             selectedChildUid={selectedChildUid}
             onSelect={handleChildSelect}
           />

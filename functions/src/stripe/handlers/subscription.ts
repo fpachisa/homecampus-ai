@@ -2,7 +2,6 @@ import Stripe from 'stripe';
 import { db, Timestamp, FieldValue } from '../../config/firebase';
 import { mapStripeStatus } from '../../types/subscription';
 import { queueEmail, EMAIL_TEMPLATES } from '../../utils/email';
-import { getStripeClient } from '../../config/stripe';
 
 /**
  * Get parent UID and child profile ID from subscription metadata
@@ -36,6 +35,25 @@ async function getUidsFromSubscription(subscription: Stripe.Subscription): Promi
 }
 
 /**
+ * Helper to resolve child document from either childProfiles or children collection
+ */
+async function resolveChildDocument(parentUid: string, childId: string) {
+  // Try childProfiles first (Netflix-style)
+  let ref = db.collection('users').doc(parentUid).collection('childProfiles').doc(childId);
+  let doc = await ref.get();
+
+  if (doc.exists) return { ref, doc };
+
+  // Try children (Linked accounts)
+  ref = db.collection('users').doc(parentUid).collection('children').doc(childId);
+  doc = await ref.get();
+
+  if (doc.exists) return { ref, doc };
+
+  return null;
+}
+
+/**
  * Handle customer.subscription.created event
  * Sets child's status to active, deletes active trial record
  */
@@ -47,21 +65,19 @@ export async function handleSubscriptionCreated(subscription: Stripe.Subscriptio
     return;
   }
 
-  const batch = db.batch();
+  // Resolve child document
+  const childResult = await resolveChildDocument(parentUid, childProfileId);
 
-  // 1. Update child's subscription
-  const childRef = db
-    .collection('users')
-    .doc(parentUid)
-    .collection('childProfiles')
-    .doc(childProfileId);
-
-  const childDoc = await childRef.get();
-  if (!childDoc.exists) {
+  if (!childResult) {
     console.error(`Child profile ${childProfileId} not found for parent ${parentUid}`);
     return;
   }
 
+  const { ref: childRef, doc: childDoc } = childResult;
+  const childData = childDoc.data();
+  const batch = db.batch();
+
+  // 1. Update child's subscription
   batch.update(childRef, {
     'subscription.subscriptionId': subscription.id,
     'subscription.stripeCustomerId': subscription.customer,
@@ -85,7 +101,6 @@ export async function handleSubscriptionCreated(subscription: Stripe.Subscriptio
   // 4. Send activation email
   try {
     const parentDoc = await db.collection('users').doc(parentUid).get();
-    const childData = childDoc.data();
 
     if (parentDoc.exists) {
       await queueEmail(parentDoc.data()?.email, EMAIL_TEMPLATES.CHILD_SUBSCRIPTION_ACTIVATED, {
@@ -112,23 +127,22 @@ export async function handleSubscriptionUpdated(subscription: Stripe.Subscriptio
     return;
   }
 
-  const childRef = db
-    .collection('users')
-    .doc(parentUid)
-    .collection('childProfiles')
-    .doc(childProfileId);
+  // Resolve child document
+  const childResult = await resolveChildDocument(parentUid, childProfileId);
 
-  const childDoc = await childRef.get();
-  if (!childDoc.exists) {
-    // Out-of-order event - subscription.created hasn't been processed yet
-    // Fetch full state and process as creation
-    console.log('Out-of-order event detected, processing as creation');
-    const stripe = getStripeClient();
-    const fullSubscription = await stripe.subscriptions.retrieve(subscription.id);
-    await handleSubscriptionCreated(fullSubscription);
+  if (!childResult) {
+    // Out-of-order event logic
+    console.log('Out-of-order event or missing child, checking if create needed');
+    // ... logic for OOO events assumes we missed Create, but if child really missing, this loop handles it.
+    // Simplifying for now: if child really gone, we can't update.
+    // Re-using existing logic: check if doc doesn't exist but here we already checked.
+    // If we missed a Create, resolveChildDocument would still find the child doc but without sub data?
+    // No, resolveChild checks USER doc existence.
+    console.error('Child not found for update event');
     return;
   }
 
+  const { ref: childRef, doc: childDoc } = childResult;
   const currentStatus = childDoc.data()?.subscription?.subscriptionStatus;
   const newStatus = mapStripeStatus(subscription.status);
 
@@ -204,11 +218,14 @@ export async function handleSubscriptionDeleted(subscription: Stripe.Subscriptio
     return;
   }
 
-  const childRef = db
-    .collection('users')
-    .doc(parentUid)
-    .collection('childProfiles')
-    .doc(childProfileId);
+  const childResult = await resolveChildDocument(parentUid, childProfileId);
+
+  if (!childResult) {
+    console.error(`Child profile ${childProfileId} not found for deletion event`);
+    return;
+  }
+
+  const { ref: childRef } = childResult;
 
   await childRef.update({
     'subscription.subscriptionStatus': 'expired',

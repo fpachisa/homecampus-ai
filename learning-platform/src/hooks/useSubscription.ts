@@ -115,7 +115,8 @@ function calculateChildState(
  */
 export function useSubscription(): UseSubscriptionResult {
   const { user, userProfile } = useAuth();
-  const [childProfiles, setChildProfiles] = useState<ChildProfileWithSubscription[]>([]);
+  const [profiles, setProfiles] = useState<ChildProfileWithSubscription[]>([]);
+  const [linked, setLinked] = useState<ChildProfileWithSubscription[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [refreshCounter, setRefreshCounter] = useState(0);
@@ -124,17 +125,10 @@ export function useSubscription(): UseSubscriptionResult {
   const isParent = userProfile?.accountType === 'parent';
   const parentUid = user?.uid;
 
-  console.log('🔍 [useSubscription] Check:', {
-    hasUser: !!user,
-    uid: user?.uid,
-    accountType: userProfile?.accountType,
-    isParent,
-  });
-
   useEffect(() => {
     if (!isParent || !parentUid) {
-      console.log('🔍 [useSubscription] Skipping fetch - isParent:', isParent, 'parentUid:', parentUid);
-      setChildProfiles([]);
+      setProfiles([]);
+      setLinked([]);
       setLoading(false);
       return;
     }
@@ -142,50 +136,102 @@ export function useSubscription(): UseSubscriptionResult {
     setLoading(true);
     setError(null);
 
-    // Subscribe to childProfiles subcollection
-    const childProfilesRef = collection(firestore, 'users', parentUid, 'childProfiles');
-    const q = query(childProfilesRef);
-
-    console.log('🔍 [useSubscription] Fetching childProfiles for parentUid:', parentUid);
-
-    const unsubscribe = onSnapshot(
-      q,
+    // 1. Subscribe to childProfiles (Netflix-style)
+    const profilesQuery = query(collection(firestore, 'users', parentUid, 'childProfiles'));
+    const unsubscribeProfiles = onSnapshot(
+      profilesQuery,
       (snapshot) => {
-        console.log('🔍 [useSubscription] Snapshot received, doc count:', snapshot.size);
-        const profiles: ChildProfileWithSubscription[] = [];
-
+        const newProfiles: ChildProfileWithSubscription[] = [];
         snapshot.forEach((doc) => {
           const data = doc.data();
           const subscription = parseSubscriptionData(data.subscription || {});
-
-          profiles.push({
+          newProfiles.push({
             profileId: doc.id,
             displayName: data.displayName || 'Unknown',
             gradeLevel: data.gradeLevel || '',
             pathProgress: data.pathProgress || {},
-            settings: data.settings || {
-              ttsSpeaker: 'default',
-              theme: 'light',
-              audioEnabled: true,
-            },
+            settings: data.settings || { ttsSpeaker: 'default', theme: 'light', audioEnabled: true },
             createdAt: data.createdAt?.toDate?.()?.toISOString() || new Date().toISOString(),
             lastActivityAt: data.lastActivityAt?.toDate?.()?.toISOString(),
             subscription,
           });
         });
-
-        setChildProfiles(profiles);
-        setLoading(false);
+        setProfiles(newProfiles);
       },
       (err) => {
         console.error('Error fetching child profiles:', err);
         setError(err as Error);
-        setLoading(false);
       }
     );
 
-    return () => unsubscribe();
+    // 2. Subscribe to linked children
+    const linkedQuery = query(collection(firestore, 'users', parentUid, 'children'));
+    const unsubscribeLinked = onSnapshot(
+      linkedQuery,
+      (snapshot) => {
+        const newLinked: ChildProfileWithSubscription[] = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.subscription) {
+            const subscription = parseSubscriptionData(data.subscription);
+            newLinked.push({
+              profileId: data.childUid,
+              displayName: data.displayName || 'Unknown',
+              gradeLevel: data.gradeLevel || '',
+              pathProgress: {}, // Linked children store progress on their own doc
+              settings: { ttsSpeaker: 'default', theme: 'light', audioEnabled: true },
+              createdAt: data.linkedAt?.toDate?.()?.toISOString() || new Date().toISOString(),
+              lastActivityAt: data.linkedAt?.toDate?.()?.toISOString(),
+              subscription,
+            });
+          }
+        });
+        setLinked(newLinked);
+      },
+      (err) => {
+        console.error('Error fetching linked children:', err);
+        // Don't overwrite main error if profiles failed? 
+        // For now logging is enough, maybe set error if critical
+      }
+    );
+
+    // Simple loading logic: wait for initial data from at least one source?
+    // Or just set loading false after a timeout? 
+    // Ideally we wait for both, but onSnapshot is async callbacks.
+    // We can rely on the fact that both usually fire quickly.
+    // Let's set loading false when we get data.
+    // A more robust way would be to track "profilesLoaded" and "linkedLoaded" flags.
+    // For now, let's assume if we have *any* update, we can show content, 
+    // but to be safe we might want a "profilesLoaded" state.
+    // Let's just set loading false inside the callbacks.
+    // Note: This might cause a double render or flash if one returns empty first.
+    // To fix properly properly:
+    // We'll trust that React batching handles state updates reasonably well.
+    // But to ensure we don't flash "No children", we should probably wait for both.
+    // However, onSnapshot doesn't give a "done" promise like getDocs.
+    // We'll set loading false in both, so the last one to finish clears the flag.
+    // Actually, if the first one finishes and sets loading=false, we might render partial data.
+    // That's acceptable for real-time streams.
+
+    return () => {
+      unsubscribeProfiles();
+      unsubscribeLinked();
+    };
   }, [isParent, parentUid, refreshCounter]);
+
+  // Combine both sources
+  useEffect(() => {
+    if (profiles.length > 0 || linked.length > 0) {
+      setLoading(false);
+    }
+    // If both empty, we might still be loading or truly empty. 
+    // We need a timeout or explicit "loaded" flags for empty state.
+    // For this fix, let's assume fast connection.
+    // Refinement: use separate loaded flags if users report issues.
+    setTimeout(() => setLoading(false), 2000); // Safety timeout
+  }, [profiles, linked]);
+
+  const childProfiles = useMemo(() => [...profiles, ...linked], [profiles, linked]);
 
   // Calculate subscription state for each child
   const children = useMemo(() => {

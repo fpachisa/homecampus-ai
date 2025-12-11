@@ -13,14 +13,18 @@ import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useGamificationStats } from '../../hooks/useGamificationStats';
 import { useProgressSummary } from '../../hooks/useProgressSummary';
 import { achievementService } from '../../services/achievementService';
+import { Skeleton } from '../LoadingSpinner';
 
 export const GreetingHeader: React.FC = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   const { activeProfile } = useActiveProfile();
-  const { currentLevel, totalXP, currentStreak, longestStreak } = useGamificationStats();
+  const { currentLevel, totalXP, currentStreak, longestStreak, isLoading: gamificationLoading } = useGamificationStats();
   const progressSummary = useProgressSummary();
   const [hoveredStat, setHoveredStat] = useState<string | null>(null);
+
+  // Combined loading state from both hooks
+  const isLoading = gamificationLoading || progressSummary.isLoading;
 
   // Calculate XP progress
   const xpProgress = achievementService.getXPProgress(totalXP);
@@ -62,24 +66,30 @@ export const GreetingHeader: React.FC = () => {
               border: `1px solid ${hoveredStat === 'level' ? theme.colors.brand : theme.colors.border}`,
               cursor: 'pointer',
             }}
-            onMouseEnter={() => setHoveredStat('level')}
+            onMouseEnter={() => !isLoading && setHoveredStat('level')}
             onMouseLeave={() => setHoveredStat(null)}
             onClick={() => navigate('/stats')}
           >
             <span className="text-base sm:text-xl">🎓</span>
             <div className="text-xs sm:text-sm">
-              <span
-                className="font-bold"
-                style={{ color: theme.colors.textPrimary }}
-              >
-                Level {currentLevel}
-              </span>
-              <span
-                className="text-[10px] sm:text-xs ml-1"
-                style={{ color: theme.colors.textMuted }}
-              >
-                ({totalXP} XP)
-              </span>
+              {isLoading ? (
+                <Skeleton width="60px" height="14px" borderRadius="4px" />
+              ) : (
+                <>
+                  <span
+                    className="font-bold"
+                    style={{ color: theme.colors.textPrimary }}
+                  >
+                    Level {currentLevel}
+                  </span>
+                  <span
+                    className="text-[10px] sm:text-xs ml-1"
+                    style={{ color: theme.colors.textMuted }}
+                  >
+                    ({totalXP} XP)
+                  </span>
+                </>
+              )}
             </div>
 
             {/* Tooltip */}
@@ -113,18 +123,22 @@ export const GreetingHeader: React.FC = () => {
                 border: `1px solid ${hoveredStat === 'streak' ? theme.colors.brand : theme.colors.border}`,
                 cursor: 'pointer',
               }}
-              onMouseEnter={() => setHoveredStat('streak')}
+              onMouseEnter={() => !isLoading && setHoveredStat('streak')}
               onMouseLeave={() => setHoveredStat(null)}
               onClick={() => navigate('/stats')}
             >
               <span className="text-base sm:text-xl">🔥</span>
               <div className="text-xs sm:text-sm">
-                <span
-                  className="font-bold"
-                  style={{ color: theme.colors.textPrimary }}
-                >
-                  {currentStreak}-day
-                </span>
+                {isLoading ? (
+                  <Skeleton width="50px" height="14px" borderRadius="4px" />
+                ) : (
+                  <span
+                    className="font-bold"
+                    style={{ color: theme.colors.textPrimary }}
+                  >
+                    {currentStreak}-day
+                  </span>
+                )}
               </div>
 
               {/* Tooltip */}
@@ -161,24 +175,30 @@ export const GreetingHeader: React.FC = () => {
               border: `1px solid ${hoveredStat === 'weekly' ? theme.colors.brand : theme.colors.border}`,
               cursor: 'pointer',
             }}
-            onMouseEnter={() => setHoveredStat('weekly')}
+            onMouseEnter={() => !isLoading && setHoveredStat('weekly')}
             onMouseLeave={() => setHoveredStat(null)}
             onClick={() => navigate('/stats')}
           >
             <span className="text-base sm:text-xl">📊</span>
             <div className="text-xs sm:text-sm">
-              <span
-                className="font-bold"
-                style={{ color: theme.colors.textPrimary }}
-              >
-                {progressSummary.weeklyProblems} problems
-              </span>
-              <span
-                className="text-[10px] sm:text-xs ml-1"
-                style={{ color: theme.colors.success }}
-              >
-                this week
-              </span>
+              {isLoading ? (
+                <Skeleton width="70px" height="14px" borderRadius="4px" />
+              ) : (
+                <>
+                  <span
+                    className="font-bold"
+                    style={{ color: theme.colors.textPrimary }}
+                  >
+                    {progressSummary.weeklyProblems} {progressSummary.weeklyProblems === 1 ? 'problem' : 'problems'}
+                  </span>
+                  <span
+                    className="text-[10px] sm:text-xs ml-1"
+                    style={{ color: theme.colors.success }}
+                  >
+                    this week
+                  </span>
+                </>
+              )}
             </div>
 
             {/* Tooltip */}

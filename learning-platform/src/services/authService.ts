@@ -700,6 +700,33 @@ class AuthService {
 
       // 2. Add child to parent's children subcollection
       const parentChildrenRef = doc(firestore, `users/${parentUid}/children/${studentUid}`);
+
+      // Initialize trial subscription logic (mirroring acceptChildInvite)
+      const now = new Date();
+      const trialEndDate = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 days from now
+
+      const subscriptionData: any = {
+        trialStartDate: now,
+        trialEndDate: trialEndDate,
+        trialExtendedUntil: null,
+        trialExtensionReason: null,
+        trialExtensionSetBy: null,
+        trialExtensionSetAt: null,
+        stripeCustomerId: null,
+        subscriptionId: null,
+        subscriptionStatus: 'trial',
+        priceId: null,
+        billingInterval: null,
+        currentPeriodStart: null,
+        currentPeriodEnd: null,
+        cancelAtPeriodEnd: false,
+        graceUntil: null,
+        lastPaymentDate: null,
+        lastPaymentAmount: null,
+        currency: 'SGD',
+        updatedAt: now
+      };
+
       await setDoc(parentChildrenRef, {
         childUid: studentUid,
         displayName: inviteData.studentInfo.displayName,
@@ -707,8 +734,25 @@ class AuthService {
         email: inviteData.studentInfo.email || inviteData.toEmail,
         linkedAt: serverTimestamp(),
         inviteToken: token,
+        subscription: subscriptionData // Save subscription data
       });
-      console.log('[AuthService] Created parent/children subcollection document');
+      console.log('[AuthService] Created parent/children subcollection document with trial subscription');
+
+      // Create active trial record
+      try {
+        const trialRef = doc(firestore, 'activeTrials', `${parentUid}_${studentUid}`);
+        await setDoc(trialRef, {
+          parentUid,
+          childProfileId: studentUid,
+          trialEndDate: trialEndDate,
+          effectiveTrialEnd: trialEndDate,
+          reminderSent: false,
+          expiredProcessed: false
+        });
+        console.log('[AuthService] Created activeTrials record for linked student');
+      } catch (trialError) {
+        console.error('[AuthService] Failed to create activeTrials record:', trialError);
+      }
 
       // Update parent's own profile with linkedChildren (parent has permission)
       try {
@@ -795,6 +839,33 @@ class AuthService {
 
       // 2. Add child to parent's children subcollection
       const parentChildrenRef = doc(firestore, `users/${parentUid}/children/${childUid}`);
+
+      // Initialize trial subscription logic (same as createTrialSubscription cloud function)
+      const now = new Date();
+      const trialEndDate = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 days from now
+
+      const subscriptionData: any = {
+        trialStartDate: now,
+        trialEndDate: trialEndDate,
+        trialExtendedUntil: null,
+        trialExtensionReason: null,
+        trialExtensionSetBy: null,
+        trialExtensionSetAt: null,
+        stripeCustomerId: null,
+        subscriptionId: null,
+        subscriptionStatus: 'trial',
+        priceId: null,
+        billingInterval: null,
+        currentPeriodStart: null,
+        currentPeriodEnd: null,
+        cancelAtPeriodEnd: false,
+        graceUntil: null,
+        lastPaymentDate: null,
+        lastPaymentAmount: null,
+        currency: 'SGD',
+        updatedAt: now
+      };
+
       await setDoc(parentChildrenRef, {
         childUid: childUid,
         displayName: inviteData.childInfo.displayName,
@@ -802,8 +873,26 @@ class AuthService {
         email: inviteData.toEmail,
         linkedAt: serverTimestamp(),
         inviteToken: token,
+        subscription: subscriptionData // Save subscription data for tracking
       });
-      console.log('[AuthService] Created parent/children subcollection document');
+      console.log('[AuthService] Created parent/children subcollection document with trial subscription');
+
+      // Create active trial record (allowed by security rules for parent)
+      try {
+        const trialRef = doc(firestore, 'activeTrials', `${parentUid}_${childUid}`);
+        await setDoc(trialRef, {
+          parentUid,
+          childProfileId: childUid, // For linked children, profileId is their UID
+          trialEndDate: trialEndDate,
+          effectiveTrialEnd: trialEndDate,
+          reminderSent: false,
+          expiredProcessed: false
+        });
+        console.log('[AuthService] Created activeTrials record for linked child');
+      } catch (trialError) {
+        console.error('[AuthService] Failed to create activeTrials record:', trialError);
+        // Continue - this is for background jobs, UI relies on subscription field above
+      }
 
       // Update child's own profile (child has permission to update their own profile)
       try {

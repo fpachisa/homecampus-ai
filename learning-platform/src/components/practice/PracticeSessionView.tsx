@@ -73,9 +73,13 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     allNodes: PathNode[],
     userId: string | undefined
   ) => {
-    if (!userId) return;
+    if (!userId) {
+      console.warn('Cannot save: No User ID');
+      return;
+    }
 
     try {
+      console.log('Attempts to save practice progress...');
       // Extract topic displayName from the path or nodes
       const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
 

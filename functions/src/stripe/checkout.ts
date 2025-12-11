@@ -61,12 +61,23 @@ export const createCheckoutSession = onCall<CheckoutRequest, Promise<CheckoutRes
     }
 
     // 5. Verify child exists and belongs to parent
-    const childDoc = await db
+    // First try standard child profiles
+    let childDoc = await db
       .collection('users')
       .doc(parentUid)
       .collection('childProfiles')
       .doc(childProfileId)
       .get();
+
+    // If not found, check linked children
+    if (!childDoc.exists) {
+      childDoc = await db
+        .collection('users')
+        .doc(parentUid)
+        .collection('children')
+        .doc(childProfileId)
+        .get();
+    }
 
     if (!childDoc.exists) {
       throw new HttpsError('not-found', 'Child profile not found');

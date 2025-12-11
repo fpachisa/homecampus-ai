@@ -487,6 +487,7 @@ export async function savePracticeProgress(
 
     // 1. Save practice progress document
     const progressRef = doc(firestore, `users/${uid}/practice/${topicId}`);
+
     const cleanedProgress = stripUndefined({
       ...progress,
       lastUpdated: serverTimestamp()
@@ -707,6 +708,21 @@ export function pathProgressToFirestore(
   displayName: string,
   allNodes: PathNode[]
 ): PracticeProgress {
+  // Helper to safely convert any date-like value to Firestore Timestamp
+  const toTimestamp = (dateValue: any): Timestamp => {
+    try {
+      if (dateValue instanceof Timestamp) return dateValue;
+      if (dateValue instanceof Date) return Timestamp.fromDate(dateValue);
+      if (typeof dateValue === 'string' || typeof dateValue === 'number') {
+        const d = new Date(dateValue);
+        if (!isNaN(d.getTime())) return Timestamp.fromDate(d);
+      }
+    } catch (e) {
+      console.warn('Invalid date encountered during Firestore conversion:', dateValue, e);
+    }
+    return Timestamp.now(); // Fallback to now if invalid
+  };
+
   // Convert node progress to Firestore format
   const firestoreNodes: Record<string, PracticeNodeProgress> = {};
 
@@ -721,13 +737,7 @@ export function pathProgressToFirestore(
       problemsAttempted: nodeProgress.problemsAttempted,
       problemsCorrect: nodeProgress.problemsCorrect,
       status: nodeProgress.status,
-      completedAt: nodeProgress.completedAt
-        ? Timestamp.fromDate(
-          nodeProgress.completedAt instanceof Date
-            ? nodeProgress.completedAt
-            : new Date(nodeProgress.completedAt)
-        )
-        : undefined,
+      completedAt: nodeProgress.completedAt ? toTimestamp(nodeProgress.completedAt) : undefined,
       timeSpentSeconds: 0 // Not tracked in PathProgress
     };
   });
@@ -759,42 +769,17 @@ export function pathProgressToFirestore(
     layerProgress,
     totalXP: pathProgress.totalXP,
     currentLevel: pathProgress.currentLevel,
-    achievements: pathProgress.achievements.map(a => {
-      // Convert earnedAt to Date if it's not already
-      let earnedAtDate: Date;
-      if (a.earnedAt instanceof Date) {
-        earnedAtDate = a.earnedAt;
-      } else if (typeof a.earnedAt === 'string' || typeof a.earnedAt === 'number') {
-        earnedAtDate = new Date(a.earnedAt);
-      } else {
-        // Fallback to current date if invalid
-        earnedAtDate = new Date();
-      }
-
-      return {
-        ...a,
-        earnedAt: Timestamp.fromDate(earnedAtDate)
-      };
-    }),
+    achievements: pathProgress.achievements.map(a => ({
+      ...a,
+      earnedAt: toTimestamp(a.earnedAt)
+    })),
     sessionHistory: pathProgress.sessionHistory,
     totalProblemsAttempted: pathProgress.totalProblemsAttempted,
     totalProblemsCorrect: pathProgress.totalProblemsCorrect,
     totalTimeSpentSeconds: pathProgress.totalTimeSpentSeconds,
-    pathStartedAt: Timestamp.fromDate(
-      pathProgress.pathStartedAt instanceof Date
-        ? pathProgress.pathStartedAt
-        : new Date(pathProgress.pathStartedAt)
-    ),
-    lastUpdated: Timestamp.fromDate(
-      pathProgress.lastUpdated instanceof Date
-        ? pathProgress.lastUpdated
-        : new Date(pathProgress.lastUpdated)
-    ),
-    createdAt: Timestamp.fromDate(
-      pathProgress.pathStartedAt instanceof Date
-        ? pathProgress.pathStartedAt
-        : new Date(pathProgress.pathStartedAt)
-    ),
+    pathStartedAt: toTimestamp(pathProgress.pathStartedAt),
+    lastUpdated: toTimestamp(pathProgress.lastUpdated),
+    createdAt: toTimestamp(pathProgress.pathStartedAt), // Use start time as creation time
     weeklyStats: pathProgress.weeklyStats
   };
 }

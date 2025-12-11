@@ -10,6 +10,7 @@ import { useEffect, useState, useRef, lazy, Suspense, useMemo, useCallback } fro
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { useAuth } from '../../contexts/AuthContext';
+import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useProgressSummary } from '../../hooks/useProgressSummary';
 import type { PathNode, PathLayer, PathProgress, DailyStreak } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
@@ -46,7 +47,10 @@ interface InteractivePathViewProps {
 export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const { pathId } = useParams<{ pathId: string }>();
   const { goToPractice, goToHome } = useAppNavigation();
+
   const { user } = useAuth();
+  const { activeProfile } = useActiveProfile();
+  const effectiveUid = activeProfile?.uid || user?.uid;
   const progressSummary = useProgressSummary();
   const category = pathId!; // pathId is the category
   const { theme } = useTheme();
@@ -71,9 +75,9 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   // Reload global streak when returning to this view (e.g., after practice session)
   useEffect(() => {
     const handleVisibilityChange = async () => {
-      if (!document.hidden && user?.uid) {
+      if (!document.hidden && effectiveUid) {
         try {
-          const streak = await loadGlobalStreak(user.uid);
+          const streak = await loadGlobalStreak(effectiveUid);
           setGlobalStreak(streak);
         } catch (error) {
           console.error('Failed to reload global streak:', error);
@@ -82,9 +86,9 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
     };
 
     const handleFocus = async () => {
-      if (user?.uid) {
+      if (effectiveUid) {
         try {
-          const streak = await loadGlobalStreak(user.uid);
+          const streak = await loadGlobalStreak(effectiveUid);
           setGlobalStreak(streak);
         } catch (error) {
           console.error('Failed to reload global streak:', error);
@@ -99,7 +103,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('focus', handleFocus);
     };
-  }, [user?.uid]);
+  }, [effectiveUid]);
 
   // Measure center panel width for path generation and detect mobile
   useEffect(() => {
@@ -174,11 +178,11 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       if (pathProgress) {
         console.log('📂 Loaded progress from localStorage (fast path)');
         // Will sync with Firestore in background after render
-        needsBackgroundSync = !!user?.uid;
-      } else if (user?.uid) {
+        needsBackgroundSync = !!effectiveUid;
+      } else if (effectiveUid) {
         // PRIORITY 2: localStorage empty + authenticated → try Firestore (first visit on this device)
         try {
-          const firestoreProgress = await loadPracticeProgress(user.uid, category);
+          const firestoreProgress = await loadPracticeProgress(effectiveUid, category);
 
           if (firestoreProgress) {
             // Convert Firestore format to PathProgress format
@@ -224,7 +228,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       if (!pathProgress) {
         pathProgress = pathProgressService.initializeUnifiedProgress(category, loadedNodes);
         console.log('🆕 Initialized new progress');
-        needsBackgroundSync = !!user?.uid; // Sync new progress to Firestore in background
+        needsBackgroundSync = !!effectiveUid; // Sync new progress to Firestore in background
       }
 
       // Sync with current nodes (handles new nodes added to path)
@@ -238,14 +242,14 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
 
       // ============ BACKGROUND SYNC (non-blocking) ============
       // Don't await - let it run in background after page renders
-      if (needsBackgroundSync && user?.uid) {
-        syncProgressInBackground(user.uid, category, pathProgress, loadedNodes);
+      if (needsBackgroundSync && effectiveUid) {
+        syncProgressInBackground(effectiveUid, category, pathProgress, loadedNodes);
       }
 
       // Load global streak (separate from per-topic progress)
-      if (user?.uid) {
+      if (effectiveUid) {
         try {
-          const streak = await loadGlobalStreak(user.uid);
+          const streak = await loadGlobalStreak(effectiveUid);
           setGlobalStreak(streak);
           console.log('🔥 Loaded global streak');
         } catch (streakErr) {

@@ -261,8 +261,8 @@ export class ParentAnalyticsService {
       displayName: userProfile.displayName || 'Student',
       gradeLevel: userProfile.gradeLevel || userProfile.grade || 'Unknown',
       lastActive,
-      currentStreak: userProfile.gamification?.dailyStreak?.currentStreak || 0,
-      longestStreak: userProfile.gamification?.dailyStreak?.longestStreak || 0,
+      currentStreak: userProfile.gamification?.currentStreak || 0,
+      longestStreak: userProfile.gamification?.longestStreak || 0,
       totalXP: userProfile.gamification?.totalXP || 0,              // ✅ Read from userProfile.gamification
       currentLevel: userProfile.gamification?.currentLevel || 1,     // ✅ Read from userProfile.gamification
       overallProgress
@@ -290,8 +290,8 @@ export class ParentAnalyticsService {
       : 0;
 
     // Streak (from global gamification stats)
-    const currentStreak = userProfile.gamification?.dailyStreak?.currentStreak || 0;
-    const longestStreak = userProfile.gamification?.dailyStreak?.longestStreak || 0;
+    const currentStreak = userProfile.gamification?.currentStreak || 0;
+    const longestStreak = userProfile.gamification?.longestStreak || 0;
 
     return {
       weeklyTime: {
@@ -631,8 +631,8 @@ export class ParentAnalyticsService {
         displayName: userProfile.displayName || 'Student',
         gradeLevel: userProfile.gradeLevel || userProfile.grade || 'Not Set',
         lastActive,
-        currentStreak: userProfile.gamification?.dailyStreak?.currentStreak || 0,
-        longestStreak: userProfile.gamification?.dailyStreak?.longestStreak || 0,
+        currentStreak: userProfile.gamification?.currentStreak || 0,
+        longestStreak: userProfile.gamification?.longestStreak || 0,
         totalXP: userProfile.gamification?.totalXP || 0,
         currentLevel: userProfile.gamification?.currentLevel || 1,
         overallProgress: 0
@@ -657,8 +657,8 @@ export class ParentAnalyticsService {
           trendDirection: 'neutral'
         },
         streak: {
-          current: userProfile.gamification?.dailyStreak?.currentStreak || 0,
-          longest: userProfile.gamification?.dailyStreak?.longestStreak || 0,
+          current: userProfile.gamification?.currentStreak || 0,
+          longest: userProfile.gamification?.longestStreak || 0,
           isBestEver: false
         }
       },

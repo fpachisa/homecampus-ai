@@ -1,3 +1,4 @@
+
 /**
  * useProgressSummary - Hook to fetch comprehensive progress data
  *
@@ -16,7 +17,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { getProgressSummary } from '../services/firestoreProgressService';
 import { loadPracticeProgress, listPracticeTopics } from '../services/firestoreProgressService';
-import type { ProgressSummary } from '../types/firestore';
+import type { ProgressSummary, PracticeProgress } from '../types/firestore';
 
 export interface TopicProgress {
   topicId: string;
@@ -96,23 +97,29 @@ export function useProgressSummary(): ProgressSummaryData {
       }
 
       try {
-        // Fetch progress summary from Firestore (using effectiveUid for child profiles)
-        const summary = await getProgressSummary(effectiveUid);
+        // Parallel Fetch: Get Summary AND All Practice Progress in one go
+        // This is the most efficient way to get all required data
+        const [summary, allPracticeProgress] = await Promise.all([
+          getProgressSummary(effectiveUid),
+          fetchAllPracticeProgress(effectiveUid)
+        ]);
 
         if (!isMounted) return;
 
         if (!summary) {
-          // No progress yet
+          // No progress summary yet
           setData(prev => ({ ...prev, isLoading: false }));
           return;
         }
 
-        // Transform Firestore data to component format
+        // Transform data (mostly in-memory calculations now)
         const topics = await transformTopicProgress(summary);
         const lastAccessed = findLastAccessedTopic(topics);
-        const { thisWeek, lastWeek } = await fetchWeeklyActivity(effectiveUid);
+
+        // Calculate stats from the pre-fetched practice data
+        const { thisWeek, lastWeek } = calculateWeeklyActivity(allPracticeProgress);
         const weeklyStats = calculateWeeklyStats(thisWeek);
-        const achievements = await fetchRecentAchievements(effectiveUid);
+        const achievements = calculateRecentAchievements(allPracticeProgress);
 
         if (isMounted) {
           setData({
@@ -146,6 +153,27 @@ export function useProgressSummary(): ProgressSummaryData {
   }, [effectiveUid, location.pathname]); // Re-fetch when effective UID changes OR when navigating
 
   return data;
+}
+
+/**
+ * Fetch ALL practice progress for a user in parallel
+ * Resilient to failures (ignores failed topics)
+ */
+async function fetchAllPracticeProgress(uid: string): Promise<PracticeProgress[]> {
+  try {
+    const topicIds = await listPracticeTopics(uid);
+    const promises = topicIds.map(topicId => loadPracticeProgress(uid, topicId));
+
+    const results = await Promise.allSettled(promises);
+
+    return results
+      .filter(result => result.status === 'fulfilled')
+      .map(result => (result as PromiseFulfilledResult<PracticeProgress | null>).value)
+      .filter((p): p is PracticeProgress => p !== null);
+  } catch (error) {
+    console.error('Error fetching practice progress:', error);
+    return [];
+  }
 }
 
 /**
@@ -281,23 +309,16 @@ function getLocalDateString(date: Date): string {
 }
 
 /**
- * Fetch weekly activity data from practice progress
+ * Calculate weekly activity data from in-memory practice progress
  * Returns last 14 days to support week-over-week trend calculation
  */
-async function fetchWeeklyActivity(uid: string): Promise<{ thisWeek: DailyActivity[]; lastWeek: DailyActivity[] }> {
+function calculateWeeklyActivity(allProgress: PracticeProgress[]): { thisWeek: DailyActivity[]; lastWeek: DailyActivity[] } {
   try {
-    const topicIds = await listPracticeTopics(uid);
-
     // Aggregate session history from all practice topics
     const allSessions: { [date: string]: { problems: number; time: number; xp: number } } = {};
 
-    for (const topicId of topicIds) {
-      const progress = await loadPracticeProgress(uid, topicId);
-      if (!progress?.sessionHistory) {
-        console.log(`⚠️ No sessionHistory for topic ${topicId}`);
-        continue;
-      }
-
+    for (const progress of allProgress) {
+      if (!progress.sessionHistory) continue;
 
       for (const session of progress.sessionHistory) {
         if (!allSessions[session.date]) {
@@ -348,7 +369,7 @@ async function fetchWeeklyActivity(uid: string): Promise<{ thisWeek: DailyActivi
 
     return { thisWeek, lastWeek };
   } catch (error) {
-    console.error('Failed to fetch weekly activity:', error);
+    console.error('Failed to calculate weekly activity:', error);
     return { thisWeek: [], lastWeek: [] };
   }
 }
@@ -408,26 +429,29 @@ function getTodayProblems(weeklyData: DailyActivity[]): number {
 }
 
 /**
- * Fetch recent achievements from practice progress
+ * Calculate recent achievements from in-memory practice progress
  */
-async function fetchRecentAchievements(uid: string): Promise<any[]> {
+function calculateRecentAchievements(allProgress: PracticeProgress[]): any[] {
   try {
-    const topicIds = await listPracticeTopics(uid);
     const allAchievements: any[] = [];
 
-    for (const topicId of topicIds) {
-      const progress = await loadPracticeProgress(uid, topicId);
-      if (progress?.achievements) {
+    for (const progress of allProgress) {
+      if (progress.achievements) {
         allAchievements.push(...progress.achievements);
       }
     }
 
     // Sort by earnedAt and take most recent 5
+    // Note: earnedAt might be Firestore timestamp or Date
     return allAchievements
-      .sort((a, b) => b.earnedAt.toMillis() - a.earnedAt.toMillis())
+      .sort((a, b) => {
+        const timeA = a.earnedAt?.toMillis ? a.earnedAt.toMillis() : new Date(a.earnedAt).getTime();
+        const timeB = b.earnedAt?.toMillis ? b.earnedAt.toMillis() : new Date(b.earnedAt).getTime();
+        return timeB - timeA;
+      })
       .slice(0, 5);
   } catch (error) {
-    console.error('Failed to fetch achievements:', error);
+    console.error('Failed to calculate achievements:', error);
     return [];
   }
 }

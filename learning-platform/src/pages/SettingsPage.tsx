@@ -7,12 +7,20 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { useTheme } from '../hooks/useTheme';
+import { authService } from '../services/authService';
+import type { UserProfile } from '../types/user';
 
 const SettingsPage: React.FC = () => {
   const navigate = useNavigate();
-  const { user, userProfile, updateProfile } = useAuth();
+  const { user } = useAuth();
+  const { activeProfile } = useActiveProfile();
   const { theme, themeName, setTheme } = useTheme();
+
+  // Active profile settings state
+  const [profileSettings, setProfileSettings] = useState<UserProfile | null>(null);
+  const [isLoadingProfile, setIsLoadingProfile] = useState(true);
 
   // Form state
   const [displayName, setDisplayName] = useState('');
@@ -24,13 +32,40 @@ const SettingsPage: React.FC = () => {
   const [saveMessage, setSaveMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
 
-  // Initialize form with user data
+  // Load active profile's settings from Firestore
   useEffect(() => {
-    if (userProfile) {
-      setDisplayName(userProfile.displayName || '');
-      setGradeLevel(userProfile.gradeLevel || '');
+    async function loadActiveProfileSettings() {
+      if (!activeProfile?.uid) {
+        setIsLoadingProfile(false);
+        return;
+      }
+
+      try {
+        setIsLoadingProfile(true);
+        const profile = await authService.getUserProfile(activeProfile.uid);
+        setProfileSettings(profile);
+      } catch (error) {
+        console.error('Failed to load profile settings:', error);
+        setSaveMessage({
+          type: 'error',
+          text: 'Failed to load settings. Please refresh the page.'
+        });
+      } finally {
+        setIsLoadingProfile(false);
+      }
     }
-  }, [userProfile]);
+
+    loadActiveProfileSettings();
+  }, [activeProfile?.uid]);
+
+  // Initialize form with active profile's data
+  useEffect(() => {
+    if (profileSettings) {
+      setDisplayName(profileSettings.displayName || '');
+      setGradeLevel(profileSettings.gradeLevel || '');
+      setSelectedTheme(profileSettings.settings?.theme || themeName);
+    }
+  }, [profileSettings, themeName]);
 
   // Validation
   const validate = (): boolean => {
@@ -56,6 +91,14 @@ const SettingsPage: React.FC = () => {
       return;
     }
 
+    if (!activeProfile?.uid) {
+      setSaveMessage({
+        type: 'error',
+        text: 'No active profile. Please refresh the page.'
+      });
+      return;
+    }
+
     setIsSaving(true);
     setSaveMessage(null);
 
@@ -65,16 +108,20 @@ const SettingsPage: React.FC = () => {
         setTheme(selectedTheme);
       }
 
-      // Update user profile in Firestore
-      await updateProfile({
+      // Update active profile's settings in Firestore
+      await authService.updateUserProfile(activeProfile.uid, {
         displayName: displayName.trim(),
         gradeLevel,
         settings: {
-          ttsSpeaker: userProfile?.settings?.ttsSpeaker || 'callirrhoe',
-          audioEnabled: userProfile?.settings?.audioEnabled ?? true,
+          ttsSpeaker: profileSettings?.settings?.ttsSpeaker || 'callirrhoe',
+          audioEnabled: profileSettings?.settings?.audioEnabled ?? true,
           theme: selectedTheme,
         },
       });
+
+      // Reload the profile settings to get the updated data
+      const updatedProfile = await authService.getUserProfile(activeProfile.uid);
+      setProfileSettings(updatedProfile);
 
       setSaveMessage({ type: 'success', text: 'Settings saved successfully!' });
 
@@ -98,7 +145,19 @@ const SettingsPage: React.FC = () => {
     navigate(-1);
   };
 
-  if (!user) {
+  // Show loading state while profile is being loaded
+  if (isLoadingProfile) {
+    return (
+      <div className="max-w-4xl mx-auto">
+        <div className="animate-pulse space-y-6">
+          <div className="h-64 rounded-2xl" style={{ backgroundColor: theme.colors.interactive }} />
+          <div className="h-48 rounded-2xl" style={{ backgroundColor: theme.colors.interactive }} />
+        </div>
+      </div>
+    );
+  }
+
+  if (!user || !activeProfile) {
     return null;
   }
 
@@ -109,6 +168,37 @@ const SettingsPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
+      {/* Profile Context Header */}
+      {activeProfile.type !== 'self' && (
+        <div
+          className="mb-6 p-4 rounded-lg flex items-center gap-3"
+          style={{
+            backgroundColor: theme.colors.brand + '15',
+            border: `1px solid ${theme.colors.brand}`,
+          }}
+        >
+          <div
+            className="w-10 h-10 rounded-full flex items-center justify-center text-lg"
+            style={{
+              backgroundColor: theme.colors.brand,
+              color: '#ffffff',
+            }}
+          >
+            {activeProfile.type === 'child-profile' ? '👤' : '✓'}
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: theme.colors.textPrimary }}>
+              Editing {activeProfile.displayName}'s Settings
+            </p>
+            <p className="text-xs" style={{ color: theme.colors.textSecondary }}>
+              {activeProfile.type === 'child-profile'
+                ? 'Child Profile'
+                : 'Linked Child Account'}
+            </p>
+          </div>
+        </div>
+      )}
+
       <form onSubmit={(e) => { e.preventDefault(); handleSave(); }} className="space-y-6">
         {/* Success/Error Message */}
         {saveMessage && (
@@ -198,42 +288,68 @@ const SettingsPage: React.FC = () => {
               )}
             </div>
 
-            {/* Email (read-only) */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium mb-2"
-                style={{ color: theme.colors.textPrimary }}
-              >
-                Email
-              </label>
-              <div className="flex items-center space-x-2">
-                <input
-                  id="email"
-                  type="email"
-                  value={user.email || 'Not set'}
-                  disabled
-                  className="flex-1 px-4 py-3 rounded-lg border-none outline-none"
+            {/* Email (read-only) - only show for accounts with email */}
+            {(activeProfile.type === 'self' || activeProfile.type === 'linked-child') && (
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: theme.colors.textPrimary }}
+                >
+                  Email
+                </label>
+                <div className="flex items-center space-x-2">
+                  <input
+                    id="email"
+                    type="email"
+                    value={profileSettings?.email || user.email || 'Not set'}
+                    disabled
+                    className="flex-1 px-4 py-3 rounded-lg border-none outline-none"
+                    style={{
+                      backgroundColor: theme.colors.interactive,
+                      color: theme.colors.textMuted,
+                      opacity: 0.7,
+                      cursor: 'not-allowed',
+                    }}
+                  />
+                  {!profileSettings?.isGuest && (profileSettings?.email || user?.email) && (
+                    <div
+                      className="px-3 py-2 rounded-lg text-xs font-medium"
+                      style={{
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        color: '#22c55e',
+                      }}
+                    >
+                      Verified
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Profile Type indicator for child profiles */}
+            {activeProfile.type === 'child-profile' && (
+              <div>
+                <label
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: theme.colors.textPrimary }}
+                >
+                  Profile Type
+                </label>
+                <div
+                  className="inline-flex px-4 py-2 rounded-lg text-sm font-medium"
                   style={{
                     backgroundColor: theme.colors.interactive,
-                    color: theme.colors.textMuted,
-                    opacity: 0.7,
-                    cursor: 'not-allowed',
+                    color: theme.colors.brand,
                   }}
-                />
-                {!userProfile?.isGuest && user?.email && (
-                  <div
-                    className="px-3 py-2 rounded-lg text-xs font-medium"
-                    style={{
-                      backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                      color: '#22c55e',
-                    }}
-                  >
-                    Verified
-                  </div>
-                )}
+                >
+                  👤 Child Profile (No Email)
+                </div>
+                <p className="mt-1 text-xs" style={{ color: theme.colors.textMuted }}>
+                  This profile is linked to your parent's account and doesn't require a separate email.
+                </p>
               </div>
-            </div>
+            )}
 
             {/* Grade Level */}
             <div>
@@ -286,8 +402,13 @@ const SettingsPage: React.FC = () => {
                   color: theme.colors.brand,
                 }}
               >
-                {userProfile?.accountType === 'parent' ? '👨‍👩‍👧 Parent' : '🎓 Student'}
+                {profileSettings?.accountType === 'parent' ? '👨‍👩‍👧 Parent' : '🎓 Student'}
               </div>
+              {activeProfile.type !== 'self' && (
+                <p className="mt-1 text-xs" style={{ color: theme.colors.textMuted }}>
+                  Currently viewing: {activeProfile.displayName}'s settings
+                </p>
+              )}
             </div>
           </div>
         </div>
