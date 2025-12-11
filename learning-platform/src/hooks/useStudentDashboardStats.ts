@@ -32,15 +32,15 @@ export interface UseStudentDashboardStatsReturn extends StudentDashboardData {
  * return <DashboardView data={overview} />;
  * ```
  */
-export function useStudentDashboardStats(): UseStudentDashboardStatsReturn {
+export function useStudentDashboardStats(studentId?: string): UseStudentDashboardStatsReturn {
   const { user } = useAuth();
   const { activeProfile } = useActiveProfile();
   const [data, setData] = useState<StudentDashboardData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Use effective UID: activeProfile for Netflix/linked children, otherwise user's UID
-  const effectiveUid = activeProfile?.uid || user?.uid;
+  // Use effective UID: studentId (if provided), activeProfile (for Netflix style), or user's UID
+  const effectiveUid = studentId || activeProfile?.uid || user?.uid;
 
   const fetchData = async () => {
     if (!effectiveUid) {

@@ -8,9 +8,10 @@
  * - Achievements: Badges, categories, recent achievements
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../../hooks/useTheme';
+import { useAuth } from '../../../contexts/AuthContext';
 import { useStudentDashboardStats } from '../../../hooks/useStudentDashboardStats';
 import { OverviewTab } from './OverviewTab';
 import { LearnModeTab } from './LearnModeTab';
@@ -34,8 +35,31 @@ const TABS: Tab[] = [
 
 export const StudentStatsDashboard: React.FC = () => {
   const { theme } = useTheme();
+  const { userProfile } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<TabId>('overview');
+  const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
+
+  // Combine parent's children (both Netflix-style and linked accounts)
+  const children = useMemo(() => {
+    if (!userProfile?.isParent) return [];
+
+    const childProfiles = userProfile.childProfiles || [];
+    const linkedChildren = userProfile.linkedChildren || [];
+
+    // Normalize to a common structure for the dropdown
+    return [
+      ...childProfiles.map(c => ({ id: c.profileId, name: c.displayName })),
+      ...linkedChildren.map(c => ({ id: c.uid, name: c.displayName }))
+    ];
+  }, [userProfile]);
+
+  // Auto-select first child if parent
+  useEffect(() => {
+    if (userProfile?.isParent && children.length > 0 && !selectedChildId) {
+      setSelectedChildId(children[0].id);
+    }
+  }, [userProfile, children, selectedChildId]);
 
   const {
     overview,
@@ -45,7 +69,16 @@ export const StudentStatsDashboard: React.FC = () => {
     isLoading,
     error,
     refresh
-  } = useStudentDashboardStats();
+  } = useStudentDashboardStats(selectedChildId || undefined);
+
+  // Determine display title
+  const displayTitle = useMemo(() => {
+    if (userProfile?.isParent && selectedChildId) {
+      const child = children.find(c => c.id === selectedChildId);
+      return child ? `${child.name}'s Stats Dashboard` : "Child's Stats Dashboard";
+    }
+    return 'My Stats Dashboard';
+  }, [userProfile, selectedChildId, children]);
 
   // Loading state
   if (isLoading) {
@@ -56,7 +89,7 @@ export const StudentStatsDashboard: React.FC = () => {
             <div className="text-center">
               <div className="text-4xl mb-4">📊</div>
               <div className="text-lg" style={{ color: theme.colors.textSecondary }}>
-                Loading your stats...
+                Loading {userProfile?.isParent ? "child's stats..." : "your stats..."}
               </div>
             </div>
           </div>
@@ -101,7 +134,7 @@ export const StudentStatsDashboard: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-4 sm:mb-6">
-          {/* Top row: Back button and Refresh button */}
+          {/* Top row: Back/Refresh buttons */}
           <div className="flex items-center justify-between mb-3">
             <button
               onClick={() => navigate('/')}
@@ -116,27 +149,49 @@ export const StudentStatsDashboard: React.FC = () => {
               <span className="text-sm">Back</span>
             </button>
 
-            <button
-              onClick={refresh}
-              className="px-3 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-1"
-              style={{
-                backgroundColor: theme.glass.background,
-                border: `1px solid ${theme.glass.border}`,
-                color: theme.colors.textSecondary
-              }}
-            >
-              <span>🔄</span>
-              <span className="hidden sm:inline text-sm">Refresh</span>
-            </button>
+            <div className="flex gap-3">
+              {/* Child Selector Dropdown (Parent Only) */}
+              {userProfile?.isParent && children.length > 1 && (
+                <select
+                  value={selectedChildId || ''}
+                  onChange={(e) => setSelectedChildId(e.target.value)}
+                  className="px-3 py-2 rounded-lg font-medium outline-none cursor-pointer"
+                  style={{
+                    backgroundColor: theme.glass.background,
+                    border: `1px solid ${theme.glass.border}`,
+                    color: theme.colors.textPrimary
+                  }}
+                >
+                  {children.map(child => (
+                    <option key={child.id} value={child.id}>
+                      {child.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+
+              <button
+                onClick={refresh}
+                className="px-3 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-1"
+                style={{
+                  backgroundColor: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`,
+                  color: theme.colors.textSecondary
+                }}
+              >
+                <span>🔄</span>
+                <span className="hidden sm:inline text-sm">Refresh</span>
+              </button>
+            </div>
           </div>
 
           {/* Title section */}
           <div>
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
-              My Stats Dashboard
+              {displayTitle}
             </h1>
             <p className="text-xs sm:text-sm mt-1" style={{ color: theme.colors.textSecondary }}>
-              Track your learning progress and achievements
+              Track {userProfile?.isParent ? "your child's" : "your"} learning progress and achievements
             </p>
           </div>
         </div>
