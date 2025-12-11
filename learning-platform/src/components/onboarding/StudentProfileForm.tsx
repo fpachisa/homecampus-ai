@@ -12,6 +12,8 @@ export const StudentProfileForm: React.FC<StudentProfileFormProps> = ({ onComple
   const [selectedGrade, setSelectedGrade] = useState<string | null>(null);
 
   const grades = [
+    { id: 'pri-5', label: 'Primary 5', fullLabel: 'Primary 5' },
+    { id: 'pri-6', label: 'Primary 6', fullLabel: 'Primary 6' },
     { id: 'sec-1', label: 'Secondary 1', fullLabel: 'Secondary 1' },
     { id: 'sec-2', label: 'Secondary 2', fullLabel: 'Secondary 2' },
     { id: 'sec-3', label: 'Secondary 3', fullLabel: 'Secondary 3' },

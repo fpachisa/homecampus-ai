@@ -458,7 +458,7 @@ export const LandingPage: React.FC = () => {
               className="mt-4 sm:mt-6 text-sm"
               style={{ color: theme.colors.textMuted }}
             >
-              Supporting Secondary 1 - 4 Mathematics
+              Supporting Primary 5 - Secondary 4 Mathematics
             </p>
           </div>
         </div>

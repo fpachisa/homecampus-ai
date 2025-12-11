@@ -83,13 +83,30 @@ export const ActiveProfileProvider: React.FC<ActiveProfileProviderProps> = ({ ch
 
         // For parents viewing child profiles, restore the selection
         if (userProfile.accountType === 'parent' && parsed.type !== 'self') {
-          // Validate child still exists in parent's profile
-          const childExists =
-            (parsed.type === 'child-profile' && userProfile.childProfiles?.some(c => c.profileId === parsed.profileId)) ||
-            (parsed.type === 'linked-child' && userProfile.linkedChildren?.some(c => c.uid === parsed.uid));
 
-          if (childExists) {
-            setActiveProfile(parsed);
+          // Validate child still exists in parent's profile AND get fresh data
+          const childProfile = userProfile.childProfiles?.find(c => c.profileId === parsed.profileId);
+          const linkedChild = userProfile.linkedChildren?.find(c => c.uid === parsed.uid);
+
+          if (parsed.type === 'child-profile' && childProfile) {
+            // Update with fresh data
+            setActiveProfile({
+              ...parsed,
+              displayName: childProfile.displayName,
+              gradeLevel: childProfile.gradeLevel,
+              // Ensure critical fields are preserved
+              profileId: childProfile.profileId,
+              uid: childProfile.profileId // Verify usage of UID for child profiles
+            });
+            return;
+          } else if (parsed.type === 'linked-child' && linkedChild) {
+            // Update with fresh data
+            setActiveProfile({
+              ...parsed,
+              displayName: linkedChild.displayName || parsed.displayName,
+              gradeLevel: linkedChild.grade || parsed.gradeLevel,
+              uid: linkedChild.uid
+            });
             return;
           }
         }

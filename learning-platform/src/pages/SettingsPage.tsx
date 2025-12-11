@@ -15,7 +15,7 @@ import type { UserProfile } from '../types/user';
 const SettingsPage: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { activeProfile } = useActiveProfile();
+  const { activeProfile, setActiveProfile } = useActiveProfile();
   const { theme, themeName, setTheme } = useTheme();
 
   // Active profile settings state
@@ -35,14 +35,37 @@ const SettingsPage: React.FC = () => {
   // Load active profile's settings from Firestore
   useEffect(() => {
     async function loadActiveProfileSettings() {
-      if (!activeProfile?.uid) {
+      if (!activeProfile?.uid || !user?.uid) {
         setIsLoadingProfile(false);
         return;
       }
 
       try {
         setIsLoadingProfile(true);
-        const profile = await authService.getUserProfile(activeProfile.uid);
+
+        let profile: UserProfile | null = null;
+
+        if (activeProfile.type === 'child-profile') {
+          // For Netflix-style child profiles, fetch the parent's profile and extract child data
+          const parentProfile = await authService.getUserProfile(user.uid);
+          const child = parentProfile?.childProfiles?.find(c => c.profileId === activeProfile.uid);
+
+          if (parentProfile && child) {
+            // Construct a temporary UserProfile object for the form
+            profile = {
+              ...parentProfile, // Start with parent defaults
+              ...child,         // Override with child specific data
+              uid: child.profileId, // Ensure UID matches active profile
+              // Map child settings
+              settings: child.settings || parentProfile.settings
+            } as UserProfile;
+          }
+        } else {
+          // Normal profiles (self, linked-child)
+          // Note: linked-child has its own document so this works
+          profile = await authService.getUserProfile(activeProfile.uid);
+        }
+
         setProfileSettings(profile);
       } catch (error) {
         console.error('Failed to load profile settings:', error);
@@ -56,7 +79,7 @@ const SettingsPage: React.FC = () => {
     }
 
     loadActiveProfileSettings();
-  }, [activeProfile?.uid]);
+  }, [activeProfile?.uid, activeProfile?.type, user?.uid]);
 
   // Initialize form with active profile's data
   useEffect(() => {
@@ -100,6 +123,15 @@ const SettingsPage: React.FC = () => {
     }
 
     setIsSaving(true);
+    if (!activeProfile?.uid || !user) {
+      setSaveMessage({
+        type: 'error',
+        text: 'Session error. Please refresh the page.'
+      });
+      return;
+    }
+
+    setIsSaving(true);
     setSaveMessage(null);
 
     try {
@@ -108,19 +140,58 @@ const SettingsPage: React.FC = () => {
         setTheme(selectedTheme);
       }
 
-      // Update active profile's settings in Firestore
-      await authService.updateUserProfile(activeProfile.uid, {
-        displayName: displayName.trim(),
-        gradeLevel,
-        settings: {
-          ttsSpeaker: profileSettings?.settings?.ttsSpeaker || 'callirrhoe',
-          audioEnabled: profileSettings?.settings?.audioEnabled ?? true,
-          theme: selectedTheme,
-        },
-      });
+      // Handle updates based on profile type
+      if (activeProfile.type === 'child-profile') {
+        // Use updateChildProfile for Netflix-style profiles
+        await authService.updateChildProfile(user.uid, activeProfile.uid, {
+          displayName: displayName.trim(),
+          gradeLevel,
+          settings: {
+            ttsSpeaker: profileSettings?.settings?.ttsSpeaker || 'callirrhoe',
+            audioEnabled: profileSettings?.settings?.audioEnabled ?? true,
+            theme: selectedTheme,
+          }
+        });
+
+      } else {
+        // Standard user update
+        await authService.updateUserProfile(activeProfile.uid, {
+          displayName: displayName.trim(),
+          gradeLevel,
+          settings: {
+            ttsSpeaker: profileSettings?.settings?.ttsSpeaker || 'callirrhoe',
+            audioEnabled: profileSettings?.settings?.audioEnabled ?? true,
+            theme: selectedTheme,
+          },
+        });
+      }
+
+      if (activeProfile.type === 'child-profile') {
+        setActiveProfile({
+          ...activeProfile,
+          displayName: displayName.trim(),
+          gradeLevel: gradeLevel
+        });
+      }
 
       // Reload the profile settings to get the updated data
-      const updatedProfile = await authService.getUserProfile(activeProfile.uid);
+      // For child profiles, we need to fetch the PARENT'S profile and extract the child
+      let updatedProfile: UserProfile | null = null;
+      if (activeProfile.type === 'child-profile') {
+        const parentProfile = await authService.getUserProfile(user.uid);
+        const child = parentProfile?.childProfiles?.find(c => c.profileId === activeProfile.uid);
+        // Construct a partial UserProfile for display purposes in this form
+        if (child) {
+          updatedProfile = {
+            ...parentProfile, // base defaults
+            ...child,         // override with child data
+            uid: child.profileId
+          } as UserProfile;
+        }
+      } else {
+        updatedProfile = await authService.getUserProfile(activeProfile.uid);
+      }
+
       setProfileSettings(updatedProfile);
 
       setSaveMessage({ type: 'success', text: 'Settings saved successfully!' });

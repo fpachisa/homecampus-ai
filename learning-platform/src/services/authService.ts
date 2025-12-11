@@ -10,7 +10,7 @@ import {
 import { doc, setDoc, getDoc, updateDoc, collection, addDoc, serverTimestamp, query, where, getDocs, Timestamp } from 'firebase/firestore';
 import { auth, googleProvider, firestore } from './firebase';
 import { emailService } from './emailService';
-import type { UserProfile } from '../types/user';
+import type { UserProfile, ChildProfile } from '../types/user';
 
 /**
  * Authentication Service
@@ -354,6 +354,39 @@ class AuthService {
       await setDoc(docRef, { ...updates }, { merge: true });
     } catch (error) {
       console.error('Error updating user profile:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Update a child profile (Netflix-style) within the parent's document
+   */
+  async updateChildProfile(parentUid: string, childProfileId: string, updates: Partial<ChildProfile>): Promise<void> {
+    try {
+      const parentRef = doc(firestore, 'users', parentUid);
+      const parentSnap = await getDoc(parentRef);
+
+      if (!parentSnap.exists()) {
+        throw new Error('Parent profile not found');
+      }
+
+      const parentData = parentSnap.data() as UserProfile;
+      const childProfiles = parentData.childProfiles || [];
+      const childIndex = childProfiles.findIndex(c => c.profileId === childProfileId);
+
+      if (childIndex === -1) {
+        throw new Error('Child profile not found');
+      }
+
+      // Update the specific child profile
+      childProfiles[childIndex] = {
+        ...childProfiles[childIndex],
+        ...updates
+      };
+
+      await updateDoc(parentRef, { childProfiles });
+    } catch (error) {
+      console.error('Error updating child profile:', error);
       throw error;
     }
   }

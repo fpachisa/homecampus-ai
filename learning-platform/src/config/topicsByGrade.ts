@@ -15,9 +15,11 @@ export interface Topic {
   subject: string;
 }
 
-export type GradeLevel = 'Secondary 1' | 'Secondary 2' | 'Secondary 3' | 'Secondary 4';
+export type GradeLevel = 'Primary 5' | 'Primary 6' | 'Secondary 1' | 'Secondary 2' | 'Secondary 3' | 'Secondary 4';
 
 export const GRADE_LEVELS: GradeLevel[] = [
+  'Primary 5',
+  'Primary 6',
   'Secondary 1',
   'Secondary 2',
   'Secondary 3',
@@ -25,6 +27,32 @@ export const GRADE_LEVELS: GradeLevel[] = [
 ];
 
 export const topicsByGrade: Record<GradeLevel, Topic[]> = {
+  'Primary 5': [
+    {
+      id: 'p5-math-main',
+      name: 'Primary 5 Mathematics',
+      icon: '5️⃣',
+      description: 'Master Primary 5 Mathematics topics including Whole Numbers, Fractions, and Decimals',
+      subtopicCount: 3,
+      isActive: true,
+      category: 'p5-math-placeholder',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
+  ],
+  'Primary 6': [
+    {
+      id: 'p6-math-main',
+      name: 'Primary 6 Mathematics',
+      icon: '6️⃣',
+      description: 'Master Primary 6 Mathematics topics including Algebra, Angles, and Circles',
+      subtopicCount: 3,
+      isActive: true,
+      category: 'p6-math-placeholder',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
+  ],
   'Secondary 1': [
     {
       id: 's1-factors-multiples',

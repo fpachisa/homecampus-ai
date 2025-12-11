@@ -120,65 +120,65 @@ export const ActiveStudentDashboard: React.FC = () => {
 
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-          {/* First Card: O-Level Practice (Sec 4) OR Streak Protection (Others) */}
-          {gradeLevel === 'Secondary 4' ? (
+            {/* First Card: O-Level Practice (Sec 4) OR Streak Protection (Others) */}
+            {gradeLevel === 'Secondary 4' ? (
+              <ActionCard
+                icon="🎓"
+                title="O-Level Practice"
+                description="Practice with real past-year questions"
+                buttonLabel="Start Practice"
+                buttonColor="#D97757"
+                onAction={() => navigate('/practice/olevel')}
+                metadata={{
+                  time: '35 questions',
+                  xp: 18,
+                }}
+              />
+            ) : currentStreak > 0 ? (
+              <ActionCard
+                icon="🔥"
+                title={`Keep your ${currentStreak}-day streak alive!`}
+                description="Solve at least 1 problem today to maintain your streak"
+                buttonLabel="Start Practice"
+                buttonColor="#D97757"
+                onAction={handleQuickPractice}
+                metadata={{
+                  time: '~5 min',
+                  xp: 5,
+                }}
+              />
+            ) : null}
+
+            {/* Daily Goal */}
             <ActionCard
-              icon="🎓"
-              title="O-Level Practice"
-              description="Practice with real past-year questions"
-              buttonLabel="Start Practice"
+              icon="🎯"
+              title={`Daily Goal: ${progressSummary.dailyProblems}/${progressSummary.dailyGoal} problems`}
+              description={
+                progressSummary.dailyProblems >= progressSummary.dailyGoal
+                  ? 'Great job! You completed your daily goal'
+                  : `Solve ${progressSummary.dailyGoal - progressSummary.dailyProblems} more to complete your daily goal`
+              }
+              buttonLabel="Complete Daily Goal"
               buttonColor="#D97757"
-              onAction={() => navigate('/practice/olevel')}
+              onAction={handleContinuePractice}
               metadata={{
-                time: '35 questions',
-                xp: 18,
+                time: '~10 min',
+                xp: 10,
               }}
             />
-          ) : currentStreak > 0 ? (
+
+            {/* Homework Helper */}
             <ActionCard
-              icon="🔥"
-              title={`Keep your ${currentStreak}-day streak alive!`}
-              description="Solve at least 1 problem today to maintain your streak"
-              buttonLabel="Start Practice"
+              icon="📸"
+              title="Need help with homework?"
+              description="Upload your math problem and I'll guide you through solving it"
+              buttonLabel="Get Help"
               buttonColor="#D97757"
-              onAction={handleQuickPractice}
+              onAction={goToHomeworkHelper}
               metadata={{
-                time: '~5 min',
-                xp: 5,
+                time: 'As needed',
               }}
             />
-          ) : null}
-
-          {/* Daily Goal */}
-          <ActionCard
-            icon="🎯"
-            title={`Daily Goal: ${progressSummary.dailyProblems}/${progressSummary.dailyGoal} problems`}
-            description={
-              progressSummary.dailyProblems >= progressSummary.dailyGoal
-                ? 'Great job! You completed your daily goal'
-                : `Solve ${progressSummary.dailyGoal - progressSummary.dailyProblems} more to complete your daily goal`
-            }
-            buttonLabel="Complete Daily Goal"
-            buttonColor="#D97757"
-            onAction={handleContinuePractice}
-            metadata={{
-              time: '~10 min',
-              xp: 10,
-            }}
-          />
-
-          {/* Homework Helper */}
-          <ActionCard
-            icon="📸"
-            title="Need help with homework?"
-            description="Upload your math problem and I'll guide you through solving it"
-            buttonLabel="Get Help"
-            buttonColor="#D97757"
-            onAction={goToHomeworkHelper}
-            metadata={{
-              time: 'As needed',
-            }}
-          />
           </div>
         </section>
 
@@ -277,22 +277,22 @@ export const ActiveStudentDashboard: React.FC = () => {
             <span>Progress & Insights</span>
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
-          {/* Recent Achievements */}
-          <RecentAchievementsPanel
-            achievements={progressSummary.achievements}
-            totalAchievements={progressSummary.totalAchievements}
-            onViewAll={() => {
-              // TODO: Navigate to achievements page
-            }}
-          />
+            {/* Recent Achievements */}
+            <RecentAchievementsPanel
+              achievements={progressSummary.achievements}
+              totalAchievements={progressSummary.totalAchievements}
+              onViewAll={() => {
+                // TODO: Navigate to achievements page
+              }}
+            />
 
-          {/* Weekly Activity Chart */}
-          <WeeklyActivityChart
-            data={weeklyData}
-            label="Problems Solved"
-            dailyAverage={weeklyData.length > 0 ? Math.round(weeklyData.reduce((sum, d) => sum + d.value, 0) / 7) : 0}
-            weekOverWeekChange={progressSummary.weekTrend}
-          />
+            {/* Weekly Activity Chart */}
+            <WeeklyActivityChart
+              data={weeklyData}
+              label="Problems Solved"
+              dailyAverage={weeklyData.length > 0 ? Math.round(weeklyData.reduce((sum, d) => sum + d.value, 0) / 7) : 0}
+              weekOverWeekChange={progressSummary.weekTrend}
+            />
           </div>
         </section>
       </div>

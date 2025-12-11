@@ -194,6 +194,16 @@
       "filename": "S4/Maths/s4-math-vectors.yaml",
       "displayName": "Vectors",
       "category": "s4-math-vectors"
+    },
+    {
+      "filename": "P5/Maths/p5-math-placeholder.yaml",
+      "displayName": "Primary 5 Mathematics",
+      "category": "p5-math-placeholder"
+    },
+    {
+      "filename": "P6/Maths/p6-math-placeholder.yaml",
+      "displayName": "Primary 6 Mathematics",
+      "category": "p6-math-placeholder"
     }
   ]
 }

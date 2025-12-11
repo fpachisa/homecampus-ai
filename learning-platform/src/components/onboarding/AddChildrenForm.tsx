@@ -19,6 +19,8 @@ export const AddChildrenForm: React.FC<AddChildrenFormProps> = ({ onComplete, on
   ]);
 
   const grades = [
+    { id: 'pri-5', label: 'Primary 5', displayLabel: 'Pri 5' },
+    { id: 'pri-6', label: 'Primary 6', displayLabel: 'Pri 6' },
     { id: 'sec-1', label: 'Secondary 1', displayLabel: 'Sec 1' },
     { id: 'sec-2', label: 'Secondary 2', displayLabel: 'Sec 2' },
     { id: 'sec-3', label: 'Secondary 3', displayLabel: 'Sec 3' },
