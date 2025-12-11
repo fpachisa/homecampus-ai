@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../../hooks/useTheme';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useStudentDashboardStats } from '../../../hooks/useStudentDashboardStats';
+import { authService } from '../../../services/authService';
 import { OverviewTab } from './OverviewTab';
 import { LearnModeTab } from './LearnModeTab';
 import { PracticeModeTab } from './PracticeModeTab';
@@ -35,24 +36,39 @@ const TABS: Tab[] = [
 
 export const StudentStatsDashboard: React.FC = () => {
   const { theme } = useTheme();
-  const { userProfile } = useAuth();
+  const { user, userProfile } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<TabId>('overview');
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
+  const [linkedChildren, setLinkedChildren] = useState<Array<{ uid: string; displayName: string }>>([]);
+
+  // Fetch linked children (separate accounts) from subcollection
+  useEffect(() => {
+    async function loadLinkedChildren() {
+      if (user && userProfile?.isParent) {
+        try {
+          const children = await authService.getLinkedChildren(user.uid);
+          setLinkedChildren(children);
+        } catch (error) {
+          console.error('Error loading linked children:', error);
+        }
+      }
+    }
+    loadLinkedChildren();
+  }, [user, userProfile]);
 
   // Combine parent's children (both Netflix-style and linked accounts)
   const children = useMemo(() => {
     if (!userProfile?.isParent) return [];
 
     const childProfiles = userProfile.childProfiles || [];
-    const linkedChildren = userProfile.linkedChildren || [];
 
-    // Normalize to a common structure for the dropdown
+    // Combine profiles from document and fetched linked children
     return [
       ...childProfiles.map(c => ({ id: c.profileId, name: c.displayName })),
       ...linkedChildren.map(c => ({ id: c.uid, name: c.displayName }))
     ];
-  }, [userProfile]);
+  }, [userProfile, linkedChildren]);
 
   // Auto-select first child if parent
   useEffect(() => {
