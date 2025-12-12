@@ -5752,8 +5752,124 @@ What is the mode of this data set?`,
 When analyzing a dataset, what is the primary characteristic of the data distribution that makes the **mean** the most appropriate measure of central tendency?`,
       showAfterSpeech: true
     }
-  }  
-  
+  },
+
+  /**
+   * ========================================
+   * P5 MATHEMATICS - NUMBERS UP TO 10 MILLION
+   * ========================================
+   */
+  'p5-math-numbers-10-million-place-value': {
+    speech: {
+      text: `Hello! Welcome to our lesson on big numbers! Today we're going to learn about numbers up to one million and even bigger! Have you ever wondered how to read really big numbers like three million, four hundred and fifty-six thousand, seven hundred and eighty-nine? That's a lot of digits! But don't worry, I'll show you a clever trick using a place value chart. Each digit has its own special spot that tells us exactly how much it's worth. Let's start by figuring out how many hundred thousands make one million!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-numbers-10-million-place-value.mp3'
+    },
+    display: {
+      content: `# Welcome to Numbers up to 10 Million!
+
+Today we'll explore the amazing world of **large numbers**! You'll learn how to read numbers with millions, understand what each digit means, and use place value charts like a pro.
+
+**Did you know?** One million is written as 1,000,000 - that's a 1 followed by 6 zeros!
+
+---
+
+### Let's Start: Building to One Million
+
+How many **hundred thousands** do you need to make **one million**?
+
+*Hint: Think about counting by hundred thousands: 100,000... 200,000... 300,000...*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "placeValueChart",
+      parameters: {
+        number: 1000000,
+        showExpandedForm: false,
+        showWords: true,
+        showColumnValues: true
+      },
+      caption: "A place value chart showing one million - notice how the 1 is in the millions column!"
+    }
+  },
+
+  'p5-math-numbers-10-million-writing-representing': {
+    speech: {
+      text: `Hi there! Now that you understand place values, let's learn how to write numbers in different ways. Sometimes you'll see numbers written with digits like three comma five six four comma one two seven. Other times you'll see them written in words like three million, five hundred sixty-four thousand, one hundred twenty-seven. And sometimes you'll even see them shown with colorful number discs! Being able to switch between these different ways of showing the same number is a super useful skill. Let's practice converting a number written in words into digits!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-numbers-10-million-writing-representing.mp3'
+    },
+    display: {
+      content: `# Writing & Representing Numbers
+
+Now let's learn to write numbers in different ways:
+- **Standard form**: 3,564,127 (using digits)
+- **Word form**: Three million, five hundred sixty-four thousand, one hundred twenty-seven
+- **Expanded form**: 3,000,000 + 500,000 + 60,000 + 4,000 + 100 + 20 + 7
+
+---
+
+### First Challenge: Words to Numbers
+
+Write this number using digits:
+
+**"Five million, two hundred and thirty thousand, eight hundred and fifteen"**
+
+*Remember: Start with the millions, then the thousands, then the rest!*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "placeValueChart",
+      parameters: {
+        number: 5230815,
+        showExpandedForm: true,
+        showWords: true,
+        showColumnValues: true
+      },
+      caption: "Here's what the answer looks like in a place value chart!"
+    }
+  },
+
+  'p5-math-numbers-10-million-comparing-ordering': {
+    speech: {
+      text: `Hello! You've become great at reading and writing big numbers. Now let's learn how to compare them! When you have two big numbers, how do you know which one is bigger? The trick is to start from the left side, from the biggest place value, and work your way right until you find a digit that's different. We use special symbols: the less than sign, the greater than sign, and the equals sign. Think of the less than and greater than signs like a hungry crocodile's mouth - it always wants to eat the bigger number! Let's try comparing some numbers!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-numbers-10-million-comparing-ordering.mp3'
+    },
+    display: {
+      content: `# Comparing & Ordering Large Numbers
+
+When comparing big numbers, remember:
+- **<** means "less than" (smaller number first)
+- **>** means "greater than" (bigger number first)
+- **=** means "equal to"
+
+**The Crocodile Trick**: The crocodile's mouth always opens toward the bigger number!
+
+---
+
+### First Challenge: Which is Greater?
+
+Compare these two numbers using **<**, **>**, or **=**:
+
+**4,567,890** _____ **4,576,890**
+
+*Hint: Start comparing from the left (millions place). When are the digits different?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "placeValueChart",
+      parameters: {
+        number: 4567890,
+        showExpandedForm: false,
+        showWords: false,
+        highlightPlace: "tenThousands",
+        showColumnValues: true
+      },
+      caption: "Look at the place value chart - where do the two numbers first become different?"
+    }
+  }
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

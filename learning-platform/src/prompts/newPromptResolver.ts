@@ -65,6 +65,9 @@ import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS, S2_PROBABILITY_SINGLE_EVENT_CONF
 import { STATISTICAL_DIAGRAMS_SUBTOPICS, S2_STATISTICAL_DIAGRAMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import { S2_MATH_AVERAGES_SUBTOPICS, S2_AVERAGES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 
+// Primary level topics
+import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS, P5_NUMBERS_10_MILLION_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+
 /**
  * Register all imported topics with the PromptRegistry
  * This ensures topics are available in browser environments where filesystem access isn't possible
@@ -77,7 +80,11 @@ function registerBrowserTopics() {
     Object.entries(subtopics).forEach(([id, data]) => {
       // Determine grade level from ID prefix
       let gradeLevel: any = 'secondary-3'; // default
-      if (id.startsWith('s1')) {
+      if (id.startsWith('p5')) {
+        gradeLevel = 'primary-5';
+      } else if (id.startsWith('p6')) {
+        gradeLevel = 'primary-6';
+      } else if (id.startsWith('s1')) {
         gradeLevel = 'secondary-1';
       } else if (id.startsWith('s2')) {
         gradeLevel = 'secondary-2';
@@ -148,6 +155,9 @@ function registerBrowserTopics() {
   registerTopics(S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS, { MATH_TOOLS_AVAILABLE: ['graphingCalculator', 'coordinatePlane'] });
   registerTopics(S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG);
   registerTopics(S4_VECTORS_SUBTOPICS, S4_VECTORS_CONFIG);
+
+  // Register P5 (Primary 5) topics
+  registerTopics(P5_MATH_NUMBERS_10_MILLION_SUBTOPICS, P5_NUMBERS_10_MILLION_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

@@ -77,6 +77,9 @@ import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathe
 import type { StatisticalDiagramsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 import type { AveragesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+// Primary level imports
+import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -174,6 +177,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS[topicId as AdvancedTrigonometryTopicId];
   } else if (category === 's4-math-vectors') {
     topicConfig = S4_VECTORS_SUBTOPICS[topicId as S4VectorsTopicId];
+  } else if (category === 'p5-math-numbers-10-million') {
+    topicConfig = P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
   }
 
   if (!topicConfig) {

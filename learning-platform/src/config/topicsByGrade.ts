@@ -29,13 +29,13 @@ export const GRADE_LEVELS: GradeLevel[] = [
 export const topicsByGrade: Record<GradeLevel, Topic[]> = {
   'Primary 5': [
     {
-      id: 'p5-math-main',
-      name: 'Primary 5 Mathematics',
-      icon: '5️⃣',
-      description: 'Master Primary 5 Mathematics topics including Whole Numbers, Fractions, and Decimals',
+      id: 'p5-numbers-10-million',
+      name: 'Numbers up to 10 Million',
+      icon: '🔢',
+      description: 'Master place value, reading and writing large numbers, and comparing numbers up to 10 million',
       subtopicCount: 3,
       isActive: true,
-      category: 'p5-math-placeholder',
+      category: 'p5-math-numbers-10-million',
       grade: 'Primary 5',
       subject: 'Mathematics',
     },

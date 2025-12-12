@@ -82,6 +82,9 @@ import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../../prompt-library/subjects/ma
 import type { StatisticalDiagramsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import { S2_MATH_AVERAGES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 import type { AveragesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+// Primary level imports
+import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import type { Numbers10MillionTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -91,6 +94,10 @@ interface LeftPanelProps {
 }
 
 function getTopicIcon(topicId: string): string {
+  // P5 Numbers up to 10 Million icons
+  if (topicId.includes('place-value')) return '📊';
+  if (topicId.includes('writing-representing')) return '✍️';
+  if (topicId.includes('comparing-ordering')) return '⚖️';
   // P6 Fractions icons
   if (topicId.includes('dividing-whole-numbers')) return '➗';
   if (topicId.includes('whole-number-dividing')) return '🔢';
@@ -391,6 +398,8 @@ function getTopicIcon(topicId: string): string {
 }
 
 function getCategoryDisplayName(category: string): string {
+  // Primary 5 categories
+  if (category === 'p5-math-numbers-10-million') return 'Numbers up to 10 Million';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -443,6 +452,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   // Derive category from pathId
   // Import helper to check if it's a valid path
   const knownPaths = [
+    // Primary 5 paths
+    'p5-math-numbers-10-million',
+    // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
     's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's2-math-expansion-factorisation', 's2-math-quadratic-equations-graphs', 's2-math-algebraic-fractions-formulae', 's2-math-direct-inverse-proportion', 's2-math-pythagoras', 's2-math-trigonometric-ratios', 's2-math-probability-single-event', 's2-math-statistical-diagrams', 's2-math-averages-statistical-data', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
@@ -797,6 +809,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's4-math-vectors') {
       return Object.entries(S4_VECTORS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId | QuadraticFunctionsTopicId | AdvancedTrigonometryTopicId | S4VectorsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-numbers-10-million') {
+      return Object.entries(P5_MATH_NUMBERS_10_MILLION_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as Numbers10MillionTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

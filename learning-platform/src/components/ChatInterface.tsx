@@ -92,6 +92,8 @@ import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathe
 import type { StatisticalDiagramsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 import type { AveragesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -261,6 +263,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S4 vectors topic
   if (topicId.startsWith('s4-math-vectors-')) {
     return S4_VECTORS_SUBTOPICS[topicId as S4VectorsTopicId];
+  }
+  // Check if it's a P5 numbers up to 10 million topic
+  if (topicId.startsWith('p5-math-numbers-10-million-')) {
+    return P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

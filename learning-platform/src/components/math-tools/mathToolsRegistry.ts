@@ -4182,6 +4182,64 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // PRIMARY MATH / NUMBER SENSE TOOLS
+  // ============================================
+
+  placeValueChart: {
+    name: "Place Value Chart",
+    technicalName: "placeValueChart",
+    component: "PlaceValueChartVisualizer",
+    category: "general",
+    description: "Interactive place value chart for displaying numbers up to 10 million. Shows digits in color-coded columns with expanded form and number words.",
+    whenToUse: "Use when teaching place value concepts, reading/writing large numbers, or when students need to understand the value of each digit in a number up to millions.",
+
+    parameters: {
+      number: "number (0-9999999) - The number to display in the place value chart",
+      showNumber: "boolean (optional, default: false) - Whether to show the number in standard form at top. Keep false when student should figure out the number.",
+      showExpandedForm: "boolean (optional, default: false) - Whether to show expanded form. Keep false when student should write expanded form.",
+      showWords: "boolean (optional, default: false) - Whether to show number in words. Keep false when student should write number words.",
+      highlightPlace: "string (optional) - Which column to highlight: 'millions' | 'hundredThousands' | 'tenThousands' | 'thousands' | 'hundreds' | 'tens' | 'ones' | 'none'",
+      showColumnValues: "boolean (optional, default: false) - Whether to show digit values below chart. Keep false when student should determine values."
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Student exercise - write the number from digits shown",
+        caption: "Look at the digits in each column. What number is this?",
+        parameters: {
+          number: 3964127
+        }
+      },
+      {
+        scenario: "Student exercise - find the value of a highlighted digit",
+        caption: "What is the value of the highlighted digit?",
+        parameters: {
+          number: 5234567,
+          highlightPlace: "millions"
+        }
+      },
+      {
+        scenario: "Teaching demo - showing all features",
+        caption: "This chart shows the number 7,005,060 with expanded form and words.",
+        parameters: {
+          number: 7005060,
+          showNumber: true,
+          showExpandedForm: true,
+          showWords: true,
+          showColumnValues: true
+        }
+      },
+      {
+        scenario: "Student exercise - write in expanded form",
+        caption: "Write this number in expanded form.",
+        parameters: {
+          number: 4040000
+        }
+      }
+    ]
   }
 };
 

@@ -188,6 +188,65 @@
   }
 
   /* ============================================================================
+     MARKDOWN TABLE STYLING
+     ============================================================================
+
+     Tables are used in educational content for:
+     - Place value charts (P5 Numbers to 10 Million)
+     - Data representation
+     - Comparison tables
+
+     These styles ensure tables are readable and visually appealing.
+     ============================================================================ */
+
+  .math-text-with-lists table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  .math-text-with-lists th,
+  .math-text-with-lists td {
+    border: 1px solid #e5e7eb;
+    padding: 0.75em 1em;
+    text-align: left;
+  }
+
+  .math-text-with-lists th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .math-text-with-lists tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+
+  .math-text-with-lists tr:hover {
+    background-color: #f3f4f6;
+  }
+
+  /* Dark mode table styling */
+  .dark .math-text-with-lists th,
+  .dark .math-text-with-lists td {
+    border-color: #374151;
+  }
+
+  .dark .math-text-with-lists th {
+    background-color: #1f2937;
+    color: #f3f4f6;
+  }
+
+  .dark .math-text-with-lists tr:nth-child(even) {
+    background-color: #1f2937;
+  }
+
+  .dark .math-text-with-lists tr:hover {
+    background-color: #374151;
+  }
+
+  /* ============================================================================
      INLINE MATH WRAPPING FIX
      ============================================================================
 

@@ -24,10 +24,7 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { S2_QUADRATIC_EQUATIONS_GRAPHS_CONFIGS } from './s2-quadratic-equations-graphs-firestore-configs.js';
-import { S2_TRIGONOMETRIC_RATIOS_CONFIGS } from './s2-trigonometric-ratios-firestore-configs.js';
-import { S2_STATISTICAL_DIAGRAMS_FIRESTORE_CONFIGS } from './s2-statistical-diagrams-firestore-configs.js';
-import { S2_AVERAGES_STATISTICAL_DATA_FIRESTORE_CONFIGS } from './s2-averages-statistical-data-firestore-configs.js';
+import { P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS } from './p5-numbers-10-million-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -231,8 +228,7 @@ export const S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS = [
 
 const ALL_CONFIGS = [
   ...S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS,
-  ...S2_STATISTICAL_DIAGRAMS_FIRESTORE_CONFIGS,
-  ...S2_AVERAGES_STATISTICAL_DATA_FIRESTORE_CONFIGS
+  ...P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS
 ];
 
 /**

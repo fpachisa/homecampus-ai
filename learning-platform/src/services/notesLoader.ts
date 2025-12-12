@@ -265,7 +265,10 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's4/math/vectors/Parallelism': () => import('../notes/s4/math/vectors/Parallelism'),
   's4/math/vectors/DotProduct': () => import('../notes/s4/math/vectors/DotProduct'),
   // Add more note components here as you create them
-  // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
+  // P5 Math notes
+  'p5/math/numbers-10-million/ComparingOrderingNumbers': () => import('../notes/p5/math/numbers-10-million/ComparingOrderingNumbers'),
+  'p5/math/numbers-10-million/PlaceValueMillions': () => import('../notes/p5/math/numbers-10-million/PlaceValueMillions'),
+  'p5/math/numbers-10-million/WritingRepresentingNumbers': () => import('../notes/p5/math/numbers-10-million/WritingRepresentingNumbers'),
 };
 
 interface NotesCache {

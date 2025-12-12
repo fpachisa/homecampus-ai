@@ -81,6 +81,9 @@ import FractionBarVisualizer from '../math-tools/FractionBarVisualizer';
 // Secondary 2 Algebra Expansion & Factorisation
 import MultiplicationGridVisualizer from '../math-tools/MultiplicationGridVisualizer';
 
+// Primary Math / Number Sense
+import PlaceValueChartVisualizer from '../math-tools/PlaceValueChartVisualizer';
+
 // Geometry - Angles
 import ParallelLinesTransversalVisualizer from '../math-tools/ParallelLinesTransversalVisualizer';
 import AnglesAtPointVisualizer from '../math-tools/AnglesAtPointVisualizer';
@@ -216,6 +219,9 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   parallelogram: ParallelogramVisualizer,
   trapezium: TrapeziumVisualizer,
   compositeShape: CompositeShapeVisualizer,
+
+  // Primary Math / Number Sense Tools
+  placeValueChart: PlaceValueChartVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

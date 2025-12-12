@@ -83,7 +83,12 @@ const MathText: React.FC<MathTextProps> = ({ children, className = '' }) => {
     textWithPlaceholders.includes('##') ||
     (textWithPlaceholders.includes('#') && textWithPlaceholders.match(/^#+ /m)) ||
     textWithPlaceholders.includes('\n- ') ||
-    textWithPlaceholders.includes('\n* ');
+    textWithPlaceholders.includes('\n* ') ||
+    // Table detection: lines starting with | or containing | --- | pattern
+    textWithPlaceholders.includes('| :---') ||
+    textWithPlaceholders.includes('|:---') ||
+    textWithPlaceholders.includes('| ---') ||
+    (textWithPlaceholders.includes('|') && textWithPlaceholders.match(/^\|.+\|/m));
 
   // DEBUG LOGGING: Keep for troubleshooting LaTeX/markdown rendering issues
   // WHEN TO USE: When investigating "extra line breaks" or "LaTeX on separate lines" bugs
