@@ -1,0 +1,46 @@
+<svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q19: Floor 700cm × 500cm, tiled with 100cm² tiles -->
+
+  <text x="20" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">Floor</text>
+
+  <!-- Floor rectangle -->
+  <rect x="50" y="35" width="280" height="150" fill="#e9d5ff" stroke="#a855f7" stroke-width="2" rx="2"/>
+
+  <!-- Dimension labels -->
+  <text x="190" y="200" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle">700 cm</text>
+  <path d="M50,195 L50,205 L330,205 L330,195" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <!-- Height label (rotated) -->
+  <text x="25" y="110" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle" transform="rotate(-90, 25, 110)">500 cm</text>
+  <path d="M35,35 L45,35 L45,185 L35,185" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <!-- Area calculation text inside -->
+  <text x="190" y="100" font-family="system-ui, sans-serif" font-size="14" fill="#7c3aed" text-anchor="middle">Area = ? (a)</text>
+
+  <!-- Sample tiles in corner -->
+  <rect x="55" y="145" width="20" height="15" fill="#fde047" stroke="#eab308" stroke-width="1" rx="1"/>
+  <rect x="75" y="145" width="20" height="15" fill="#fde047" stroke="#eab308" stroke-width="1" rx="1"/>
+  <rect x="95" y="145" width="20" height="15" fill="#fde047" stroke="#eab308" stroke-width="1" rx="1"/>
+  <rect x="55" y="160" width="20" height="15" fill="#fde047" stroke="#eab308" stroke-width="1" rx="1"/>
+  <rect x="75" y="160" width="20" height="15" fill="#fde047" stroke="#eab308" stroke-width="1" rx="1"/>
+  <rect x="95" y="160" width="20" height="15" fill="#fde047" stroke="#eab308" stroke-width="1" rx="1"/>
+
+  <!-- Tile size label -->
+  <text x="75" y="142" font-family="system-ui, sans-serif" font-size="9" fill="#854d0e" text-anchor="middle">100 cm²</text>
+  <text x="75" y="132" font-family="system-ui, sans-serif" font-size="9" fill="#854d0e" text-anchor="middle">each tile</text>
+
+  <!-- Calculation notes -->
+  <text x="350" y="50" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">Calculations:</text>
+
+  <text x="350" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Floor area:</text>
+  <text x="350" y="90" font-family="system-ui, sans-serif" font-size="10" fill="#374151">700 × 500</text>
+  <text x="350" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#374151">= 350,000 cm²</text>
+
+  <text x="350" y="130" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Number of tiles:</text>
+  <text x="350" y="145" font-family="system-ui, sans-serif" font-size="10" fill="#374151">350,000 ÷ 100</text>
+  <text x="350" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#374151">= 3,500 tiles</text>
+
+  <text x="350" y="185" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Total cost:</text>
+  <text x="350" y="200" font-family="system-ui, sans-serif" font-size="10" fill="#374151">3,500 × $2</text>
+  <text x="350" y="215" font-family="system-ui, sans-serif" font-size="11" fill="#22c55e" font-weight="bold">= $7,000</text>
+</svg>

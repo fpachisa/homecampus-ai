@@ -80,6 +80,8 @@ import type { AveragesTopicId } from '../prompt-library/subjects/mathematics/sec
 // Primary level imports
 import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import type { FourOperationsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -179,6 +181,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S4_VECTORS_SUBTOPICS[topicId as S4VectorsTopicId];
   } else if (category === 'p5-math-numbers-10-million') {
     topicConfig = P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
+  } else if (category === 'p5-math-four-operations') {
+    topicConfig = P5_MATH_FOUR_OPERATIONS_SUBTOPICS[topicId as FourOperationsTopicId];
   }
 
   if (!topicConfig) {

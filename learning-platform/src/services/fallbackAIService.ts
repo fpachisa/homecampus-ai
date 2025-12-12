@@ -278,7 +278,8 @@ class FallbackAIService implements AIService {
     sectionProgress: import('../types/types').SectionProgressState,
     preGeneratedQuestion: import('../data/learn/question-banks/types').PreGeneratedQuestion,
     nextQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion,
-    isLastQuestionInSection?: boolean
+    isLastQuestionInSection?: boolean,
+    previousAction?: string  // Previous evaluator action (GIVE_HINT, GIVE_SOLUTION, or none)
   ): Promise<import('../prompt-library/types/agents').PreGeneratedLearnEvaluatorOutput> {
     return await this.executeWithFallback(
       (service) => service.evaluateAnswerPreGenerated(
@@ -289,7 +290,8 @@ class FallbackAIService implements AIService {
         sectionProgress,
         preGeneratedQuestion,
         nextQuestion,
-        isLastQuestionInSection
+        isLastQuestionInSection,
+        previousAction
       ),
       'evaluateAnswerPreGenerated'
     );

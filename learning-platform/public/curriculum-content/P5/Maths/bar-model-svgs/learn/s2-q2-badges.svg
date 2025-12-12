@@ -1,0 +1,20 @@
+<svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q2: Badges, 20 damaged, sell 4 for $5, received $315 -->
+
+  <!-- Total badges bar -->
+  <text x="70" y="25" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Total bought:</text>
+
+  <!-- Damaged section -->
+  <rect x="80" y="35" width="50" height="40" fill="#d1d5db" stroke="#6b7280" stroke-width="2" rx="2"/>
+  <text x="105" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">20</text>
+  <text x="105" y="90" font-family="system-ui, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">damaged</text>
+
+  <!-- Sold section -->
+  <rect x="135" y="35" width="180" height="40" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="225" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Sold: ? badges</text>
+  <text x="225" y="70" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">(4 for $5)</text>
+
+  <!-- Given info -->
+  <text x="135" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Received: $315</text>
+  <text x="260" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#374151">Total bought = ?</text>
+</svg>

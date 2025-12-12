@@ -222,6 +222,16 @@ export interface RegistryConfig {
 // ============================================
 
 export interface FormattingRules {
+  // CRITICAL: Dollar currency escaping rule (must be first for visibility)
+  dollarCurrency?: {
+    rule: string;
+    examples?: {
+      correct?: string[];
+      incorrect?: string[];
+    };
+    reason?: string;
+    critical?: boolean;
+  };
   unicode?: {
     rule: string;
     examples?: {

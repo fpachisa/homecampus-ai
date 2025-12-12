@@ -1,0 +1,39 @@
+<svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q7: Mia, Neil, Olivia - Neil $8 more than Mia, Olivia 5x Neil, total $160 -->
+
+  <!-- Mia bar (1 unit - $8) -->
+  <text x="45" y="45" font-family="system-ui, sans-serif" font-size="14" fill="#374151" text-anchor="end">Mia</text>
+  <rect x="55" y="30" width="50" height="35" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+
+  <!-- Bracket showing ? -->
+  <path d="M55,25 L55,17 L105,17 L105,25" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="80" y="12" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">?</text>
+
+  <!-- Neil bar (1 unit) = Mia + $8 -->
+  <text x="45" y="95" font-family="system-ui, sans-serif" font-size="14" fill="#374151" text-anchor="end">Neil</text>
+  <rect x="55" y="80" width="50" height="35" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="105" y="80" width="25" height="35" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+
+  <!-- Dashed line showing alignment with Mia -->
+  <line x1="105" y1="65" x2="105" y2="80" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+
+  <!-- $8 label -->
+  <text x="117" y="72" font-family="system-ui, sans-serif" font-size="10" fill="#854d0e" text-anchor="middle">$8</text>
+
+  <!-- Olivia bar (5 units) -->
+  <text x="45" y="170" font-family="system-ui, sans-serif" font-size="14" fill="#374151" text-anchor="end">Olivia</text>
+  <rect x="55" y="140" width="50" height="50" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="105" y="140" width="50" height="50" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="155" y="140" width="50" height="50" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="205" y="140" width="50" height="50" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="255" y="140" width="50" height="50" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+
+  <!-- Group bracket on right showing $160 -->
+  <path d="M315,30 L325,30 L325,190 L315,190" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="340" y="115" font-family="system-ui, sans-serif" font-size="12" fill="#374151">$160</text>
+
+  <!-- Notes -->
+  <text x="350" y="45" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Add $8 to total:</text>
+  <text x="350" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">7 units = $168</text>
+  <text x="350" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">1 unit = $24</text>
+</svg>

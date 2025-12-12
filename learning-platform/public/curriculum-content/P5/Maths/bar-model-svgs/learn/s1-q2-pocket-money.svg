@@ -1,0 +1,29 @@
+<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q2: Emma, Liam, Sophie - total $200, Liam $10 more than Emma, Sophie 4x Liam -->
+
+  <!-- Emma's bar (1 unit) -->
+  <text x="55" y="35" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Emma</text>
+  <rect x="65" y="20" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="90" y="39" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">?</text>
+
+  <!-- Liam's bar (1 unit + $10) -->
+  <text x="55" y="70" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Liam</text>
+  <rect x="65" y="55" width="50" height="28" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <rect x="115" y="55" width="20" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="125" y="74" font-family="system-ui, sans-serif" font-size="8" fill="#374151" text-anchor="middle">$10</text>
+
+  <!-- Sophie's bar (4 × Liam) -->
+  <text x="55" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Sophie</text>
+  <rect x="65" y="105" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="115" y="105" width="20" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <rect x="135" y="105" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="185" y="105" width="20" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <rect x="205" y="105" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="255" y="105" width="20" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <rect x="275" y="105" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="325" y="105" width="20" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="210" y="150" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">4 × Liam</text>
+
+  <!-- Given info -->
+  <text x="65" y="12" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Total: $200</text>
+</svg>

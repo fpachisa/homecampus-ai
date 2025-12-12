@@ -5868,6 +5868,245 @@ Compare these two numbers using **<**, **>**, or **=**:
       },
       caption: "Look at the place value chart - where do the two numbers first become different?"
     }
+  },
+
+  /**
+   * ========================================
+   * P5 MATHEMATICS - FOUR OPERATIONS ON WHOLE NUMBERS
+   * ========================================
+   */
+  'p5-math-four-operations-multiply-10-100-1000': {
+    speech: {
+      text: `Hello there! Today we are going to discover some awesome patterns in multiplication! When you multiply by 10, 100, or 1000, something magical happens to the digits. Instead of doing long multiplication, there is a super quick shortcut! Are you ready to become a multiplication wizard?`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-multiply-10-100-1000.mp3'
+    },
+    display: {
+      content: `# Multiplying by 10, 100 and 1000
+
+Today we'll discover the **pattern** that makes multiplying by 10, 100, and 1000 super easy!
+
+**Did you know?** Instead of doing long multiplication, there's a shortcut that works every time!
+
+---
+
+### Let's Start: The Magic of Times 10
+
+What do you notice about these multiplications?
+
+- 3 × 10 = **30**
+- 12 × 10 = **120**
+- 245 × 10 = **2,450**
+
+*What happens to each number when we multiply by 10?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "placeValueChart",
+      parameters: {
+        number: 2450,
+        showExpandedForm: false,
+        showWords: true,
+        showColumnValues: true
+      },
+      caption: "Watch how the digit 245 becomes 2,450 when multiplied by 10 - each digit shifts one place to the left!"
+    }
+  },
+
+  'p5-math-four-operations-multiply-tens-hundreds-thousands': {
+    speech: {
+      text: `Excellent! Now that you know how to multiply by 10, 100, and 1000, we can tackle even bigger multiplications! What if you need to multiply by 20, or 60, or 400? There is a clever trick using what you already know. We break the number into parts and multiply step by step!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-multiply-tens-hundreds-thousands.mp3'
+    },
+    display: {
+      content: `# Multiplying by Tens, Hundreds and Thousands
+
+Now we'll learn to multiply by numbers like **20, 60, 400, 600**!
+
+**The Secret:** Break it into two steps using what you already know!
+
+---
+
+### Let's Start: Multiplying by 20
+
+To multiply 43 × 20, think of it as:
+- 20 = **2 × 10**
+- So: 43 × 20 = 43 × 2 × 10
+
+What is 43 × 2? Then multiply your answer by 10!
+
+*Hint: 43 × 2 = 86, then 86 × 10 = ?*`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-divide-10-100-1000': {
+    speech: {
+      text: `Great job with multiplication! Now let us learn the opposite, division! When you divide by 10, 100, or 1000, the digits shift the other way. If multiplying adds zeros, can you guess what dividing does? Let us find out together!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-divide-10-100-1000.mp3'
+    },
+    display: {
+      content: `# Dividing by 10, 100 and 1000
+
+Division is the **opposite** of multiplication! If multiplying by 10 adds a zero, what does dividing by 10 do?
+
+---
+
+### Let's Start: The Pattern
+
+Look at these divisions:
+
+- 30 ÷ 10 = **3**
+- 320 ÷ 10 = **32**
+- 32,000 ÷ 10 = **3,200**
+
+*What happens to each number when we divide by 10?*
+
+**Check:** You can verify by multiplying back! Does 3 × 10 = 30?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "placeValueChart",
+      parameters: {
+        number: 3200,
+        showExpandedForm: false,
+        showWords: true,
+        showColumnValues: true
+      },
+      caption: "When we divide 32,000 by 10, each digit shifts one place to the right, giving us 3,200!"
+    }
+  },
+
+  'p5-math-four-operations-divide-tens-hundreds-thousands': {
+    speech: {
+      text: `Awesome! Now let us use what we know to divide by bigger numbers like 20, 60, or 400. Just like with multiplication, we can break the division into two steps. First divide by 10 or 100, then divide by the remaining digit!`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-divide-tens-hundreds-thousands.mp3'
+    },
+    display: {
+      content: `# Dividing by Tens, Hundreds and Thousands
+
+We can divide by **20, 60, 400, 600** using two steps!
+
+**The Strategy:** Break it down!
+- 20 = 2 × 10, so ÷ 20 = ÷ 10 ÷ 2
+
+---
+
+### Let's Try: 860 ÷ 20
+
+Step 1: 860 ÷ 10 = ?
+Step 2: Then divide by 2
+
+*What answer do you get?*
+
+**Check your work:** Does your answer × 20 = 860?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-order-of-operations': {
+    speech: {
+      text: `Now for something really important! When you see a math expression like 6 plus 8 times 3, which operation do you do first? Is the answer 42 or 30? There is a rule that tells us the correct order to follow, and everyone in the world uses the same rule! Let us learn it together.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-order-of-operations.mp3'
+    },
+    display: {
+      content: `# Order of Operations
+
+When you see: **6 + 8 × 3**
+
+Is the answer **42** or **30**?
+
+Only ONE answer is correct! There's a rule that everyone follows:
+- **Multiplication and Division** come FIRST
+- **Addition and Subtraction** come SECOND
+
+---
+
+### Let's Find Out!
+
+**6 + 8 × 3 = ?**
+
+Which operation should you do first - the addition or the multiplication?
+
+*Hint: Remember, × and ÷ are "stronger" than + and −*`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-order-with-brackets': {
+    speech: {
+      text: `Here comes the VIP of math operations, the brackets! Brackets are like a fast pass at a theme park, they get to go first no matter what! When you see brackets, you ALWAYS work out what is inside them first. Brackets can completely change your answer!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-order-with-brackets.mp3'
+    },
+    display: {
+      content: `# Order of Operations with Brackets
+
+**Brackets are the VIP!** They ALWAYS come first!
+
+Compare these two expressions:
+- 6 + 8 × 3 = **30** (multiply first)
+- **(6 + 8)** × 3 = **42** (brackets first!)
+
+The brackets changed the answer!
+
+---
+
+### Full Order of Operations:
+
+1. **BRACKETS** - do what's inside first
+2. **× and ÷** - multiplication and division
+3. **+ and −** - addition and subtraction
+
+What is **(16 - 4) ÷ 2**?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-word-problems': {
+    speech: {
+      text: `Now let us put everything together! Real life problems often involve multiple steps and different operations. We will learn to use bar models to help us see the relationships between numbers. Bar models are like a map that shows us exactly what we need to do!`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-word-problems.mp3'
+    },
+    display: {
+      content: `# Word Problems with Bar Models
+
+Bar models help us **see** the problem clearly!
+
+**Problem-Solving Steps:**
+1. **READ** - What do we know? What do we need to find?
+2. **DRAW** - Create a bar model
+3. **SOLVE** - Choose the operations and calculate
+4. **CHECK** - Does the answer make sense?
+
+---
+
+### Let's Try One!
+
+Ahmad has \\$850. Mei Ling has \\$650.
+
+**How much more money does Ahmad have than Mei Ling?**
+
+*What operation do we need? Addition or subtraction?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "barModel",
+      parameters: {
+        title: "Comparing Ahmad and Mei Ling's Money",
+        bars: [
+          { label: "Ahmad", segments: [{ value: "$850" }] },
+          { label: "Mei Ling", segments: [{ value: "$650" }, { value: "?", highlight: true }] }
+        ],
+        showUnitDividers: false
+      },
+      caption: "The bar model shows that Ahmad's bar is longer. The difference (?) is what we need to find!"
+    }
   }
 
   // Add more topics as needed following the same pattern

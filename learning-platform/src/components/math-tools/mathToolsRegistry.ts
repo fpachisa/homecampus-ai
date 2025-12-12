@@ -4240,6 +4240,88 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // PRIMARY MATH - BAR MODEL TOOLS
+  // ============================================
+
+  barModel: {
+    name: "Bar Model Visualizer",
+    technicalName: "barModel",
+    component: "BarModelVisualizer",
+    category: "general",
+    description: "Singapore Math bar model diagram tool for word problems. Displays horizontal bars with labeled segments for comparison, part-whole, and before-after scenarios. Supports unit-based representation, brackets for totals, and comparison indicators.",
+    whenToUse: "Use for primary school word problems involving comparison (who has more/less), part-whole relationships, before-after scenarios, or problems requiring visual representation of quantities. Essential for Singapore Math model method problems.",
+
+    parameters: {
+      title: "string (optional) - Title above the diagram (e.g., 'Before', 'After', 'Money Problem')",
+      bars: "array of Bar objects - Each bar has: { label: string, segments: [{value: string, units?: number, highlight?: boolean}], totalLabel?: string, bracketPosition?: 'top'|'bottom' }",
+      comparison: "object (optional) - Show difference between bars: { value: string, between: [barIndex1, barIndex2] }",
+      groupBracket: "object (optional) - Group multiple bars with bracket: { value: string, bars: [indices], position?: 'right'|'left' }",
+      showUnitDividers: "boolean (optional, default: true) - Show dashed lines dividing units within segments",
+      caption: "string (optional) - Explanation text below the diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Simple comparison - Mary has more than John",
+        caption: "Mary has $60 more than John. John has $120. How much does Mary have?",
+        parameters: {
+          title: "Comparing Money",
+          bars: [
+            { label: "Mary", segments: [{ value: "$120" }, { value: "$60", highlight: true }], totalLabel: "?" },
+            { label: "John", segments: [{ value: "$120" }], totalLabel: "$120" }
+          ],
+          comparison: { value: "$60", between: [0, 1] }
+        }
+      },
+      {
+        scenario: "Part-whole with units - Packets of pens",
+        caption: "Packet A has twice as many pens as Packet B. Packet B has 218 pens.",
+        parameters: {
+          bars: [
+            { label: "Packet A", segments: [{ value: "", units: 2 }], totalLabel: "?" },
+            { label: "Packet B", segments: [{ value: "218", units: 1 }], totalLabel: "218" }
+          ],
+          showUnitDividers: true
+        }
+      },
+      {
+        scenario: "Three persons with combined total",
+        caption: "Mary, Jia Ling and Vicky have 1500 hair clips altogether.",
+        parameters: {
+          bars: [
+            { label: "Mary and Jia Ling", segments: [{ value: "", units: 6 }], totalLabel: "1500" },
+            { label: "Mary and Vicky", segments: [{ value: "650", units: 1 }] }
+          ],
+          groupBracket: { value: "1500", bars: [0], position: "right" }
+        }
+      },
+      {
+        scenario: "Before-After money transfer",
+        caption: "Leila had $60 more than Siti at first. Siti gave Leila $80.",
+        parameters: {
+          title: "Before",
+          bars: [
+            { label: "Leila", segments: [{ value: "" }, { value: "$60", highlight: true }] },
+            { label: "Siti", segments: [{ value: "" }] }
+          ],
+          comparison: { value: "$60", between: [0, 1] }
+        }
+      },
+      {
+        scenario: "Word problem with multiple operations",
+        caption: "Sam baked 16 cupcakes. He gave away 4 and packed the rest into 2 boxes.",
+        parameters: {
+          bars: [
+            { label: "Total", segments: [{ value: "4", highlight: true }, { value: "?", units: 2 }], totalLabel: "16", bracketPosition: "top" }
+          ],
+          showUnitDividers: true,
+          caption: "(16 - 4) ÷ 2 = ?"
+        }
+      }
+    ]
   }
 };
 

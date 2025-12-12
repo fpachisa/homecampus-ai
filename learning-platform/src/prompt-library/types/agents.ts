@@ -100,6 +100,9 @@ export interface PreGeneratedLearnEvaluatorOutput {
     content: string;
     showAfterSpeech: boolean;
   };
+
+  // Bar model image for word problems (revealed on hint 2+ and in solution)
+  hintImage?: string;
 }
 
 // ============================================

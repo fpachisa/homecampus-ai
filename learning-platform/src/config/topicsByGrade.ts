@@ -39,6 +39,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 5',
       subject: 'Mathematics',
     },
+    {
+      id: 'p5-four-operations',
+      name: 'Four Operations on Whole Numbers',
+      icon: '➗',
+      description: 'Master multiplication and division by 10, 100, 1000, order of operations, and word problems using bar models',
+      subtopicCount: 7,
+      isActive: true,
+      category: 'p5-math-four-operations',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
   ],
   'Primary 6': [
     {

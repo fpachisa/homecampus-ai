@@ -83,6 +83,7 @@ import MultiplicationGridVisualizer from '../math-tools/MultiplicationGridVisual
 
 // Primary Math / Number Sense
 import PlaceValueChartVisualizer from '../math-tools/PlaceValueChartVisualizer';
+import BarModelVisualizer from '../math-tools/BarModelVisualizer';
 
 // Geometry - Angles
 import ParallelLinesTransversalVisualizer from '../math-tools/ParallelLinesTransversalVisualizer';
@@ -222,6 +223,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
 
   // Primary Math / Number Sense Tools
   placeValueChart: PlaceValueChartVisualizer,
+  barModel: BarModelVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

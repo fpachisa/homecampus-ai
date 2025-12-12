@@ -28,19 +28,11 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
     return data && typeof data === 'object' && data.visualizationId && data.problemData && !Array.isArray(data.steps);
   };
 
-  // Type guard to check if this is a plain text solution
-  const isPlainTextSolution = (data: any): boolean => {
-    return data && typeof data === 'object' && data.isPlainTextSolution === true;
-  };
-
   // Check if this message has structured step data
   const hasStructuredStepData = isStructuredStepData(message.visualization);
 
   // Check if this message has simple visualization data
   const hasSimpleVisualization = isSimpleVisualizationData(message.visualization);
-
-  // Check if this message has plain text solution
-  const hasPlainTextSolution = isPlainTextSolution(message.visualization);
 
   // Extract the correct data based on type
   const structuredStepData = hasStructuredStepData ? message.visualization : null;
@@ -225,8 +217,8 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
         </div>
       </div>
 
-      {/* Continue Button - Show below the visualization card for step-by-step solutions OR plain text solutions */}
-      {(extractedVisualizationData || hasPlainTextSolution) && onContinue && !continueClicked && (
+      {/* Continue Learning Button - Show for solution messages */}
+      {onContinue && !continueClicked && (
         <div className="w-full flex justify-center mt-4">
           <button
             onClick={() => {
@@ -238,7 +230,7 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
               backgroundColor: theme.colors.brand,
             }}
           >
-            Continue →
+            Continue Learning
           </button>
         </div>
       )}

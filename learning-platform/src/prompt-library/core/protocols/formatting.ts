@@ -149,8 +149,29 @@ export const UNICODE_FIRST_RULE = {
  * SIMPLIFIED FORMATTING RULES - Compatible with FormattingRules type
  */
 export const FORMATTING_RULES: FormattingRules = {
-  
-  //RULE 1: Unicode First - Simple Examples
+
+  // CRITICAL RULE 0: Dollar Signs for Currency (MUST ESCAPE!)
+  // This rule MUST be followed to prevent currency amounts being interpreted as LaTeX
+  dollarCurrency: {
+    rule: "CRITICAL: For currency/money amounts, ALWAYS use backslash-dollar (\\$). Otherwise $ will be interpreted as LaTeX math delimiter and cause garbled output!",
+    examples: {
+      correct: [
+        "The cost is \\$1,500",
+        "They saved \\$400,000 each month",
+        "The budget is \\$1,000,000",
+        "Price: \\$99.99"
+      ],
+      incorrect: [
+        "The cost is $1,500",           // WRONG - $ starts LaTeX mode!
+        "They saved $400,000",          // WRONG - creates broken LaTeX
+        "$1,000,000 total"              // WRONG - garbled output
+      ]
+    },
+    reason: "Unescaped $ is interpreted as LaTeX math delimiter. Text between two $ signs becomes garbled LaTeX. ALWAYS escape with backslash for money: \\$",
+    critical: true
+  },
+
+  // RULE 1: Unicode First - Simple Examples
   unicode: {
     rule: "ALWAYS use Unicode characters when available. DO NOT use LaTeX where unicode is available.",
     examples: {

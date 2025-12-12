@@ -11,7 +11,10 @@ export interface SolutionStep {
 export interface PreGeneratedQuestion {
   questionId: string;
   problemStatement: string;
-  imagePath: string;
+  /** Image that IS the problem (e.g., geometric figure to analyze) - shown immediately */
+  imagePath?: string;
+  /** Image as a hint/scaffold (e.g., bar model) - revealed when student struggles */
+  hintImagePath?: string;
   correctAnswer: string | number;
   stepByStepSolution: SolutionStep[];
 }

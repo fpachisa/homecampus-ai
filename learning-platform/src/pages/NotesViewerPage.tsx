@@ -280,6 +280,14 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/numbers-10-million/ComparingOrderingNumbers': () => import('../notes/p5/math/numbers-10-million/ComparingOrderingNumbers'),
   'p5/math/numbers-10-million/PlaceValueMillions': () => import('../notes/p5/math/numbers-10-million/PlaceValueMillions'),
   'p5/math/numbers-10-million/WritingRepresentingNumbers': () => import('../notes/p5/math/numbers-10-million/WritingRepresentingNumbers'),
+  // P5 Four Operations notes
+  'p5/math/four-operations/MultiplyBy10_100_1000': () => import('../notes/p5/math/four-operations/MultiplyBy10_100_1000'),
+  'p5/math/four-operations/MultiplyByTensHundredsThousands': () => import('../notes/p5/math/four-operations/MultiplyByTensHundredsThousands'),
+  'p5/math/four-operations/DivideBy10_100_1000': () => import('../notes/p5/math/four-operations/DivideBy10_100_1000'),
+  'p5/math/four-operations/DivideByTensHundredsThousands': () => import('../notes/p5/math/four-operations/DivideByTensHundredsThousands'),
+  'p5/math/four-operations/OrderOfOperations': () => import('../notes/p5/math/four-operations/OrderOfOperations'),
+  'p5/math/four-operations/OrderOfOperationsWithBrackets': () => import('../notes/p5/math/four-operations/OrderOfOperationsWithBrackets'),
+  'p5/math/four-operations/WordProblems': () => import('../notes/p5/math/four-operations/WordProblems'),
 };
 
 // Helper to organize notes by hierarchy
@@ -312,7 +320,9 @@ function organizeNotesByHierarchy(): NotesHierarchy {
 
 // Friendly names
 const gradeName = (grade: string) => {
-  return grade.replace('s1', 'Secondary 1')
+  return grade.replace('p5', 'Primary 5')
+    .replace('p6', 'Primary 6')
+    .replace('s1', 'Secondary 1')
     .replace('s2', 'Secondary 2')
     .replace('s3', 'Secondary 3')
     .replace('s4', 'Secondary 4');

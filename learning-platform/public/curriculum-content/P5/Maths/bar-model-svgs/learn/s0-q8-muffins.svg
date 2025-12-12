@@ -1,0 +1,22 @@
+<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q8: Box 140g, 12 trays, each tray 15g, total 2420g -->
+
+  <!-- Total bar -->
+  <text x="70" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Total 2420g</text>
+
+  <!-- Box -->
+  <rect x="80" y="30" width="50" height="40" fill="#d1d5db" stroke="#6b7280" stroke-width="2" rx="2"/>
+  <text x="105" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Box 140g</text>
+
+  <!-- Trays with muffins -->
+  <rect x="135" y="30" width="200" height="40" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="235" y="50" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">12 trays with muffins</text>
+  <text x="235" y="65" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">= ?</text>
+
+  <!-- One tray breakdown -->
+  <text x="80" y="95" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Each tray:</text>
+  <rect x="150" y="85" width="40" height="30" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5" rx="2"/>
+  <text x="170" y="105" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">15g</text>
+  <rect x="192" y="85" width="80" height="30" fill="#f472b6" stroke="#ec4899" stroke-width="1.5" rx="2"/>
+  <text x="232" y="105" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">muffins ?</text>
+</svg>

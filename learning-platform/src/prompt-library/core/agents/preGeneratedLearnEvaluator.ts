@@ -62,7 +62,8 @@ export const PRE_GENERATED_LEARN_EVALUATOR: AgentPrompt = {
     display: {
       content: "string (markdown and LaTeX supported)",
       showAfterSpeech: "boolean"
-    }
+    },
+    hintImage: "string | null (path to hint image like bar model, reveal on hint 2+)"
   }
 };
 
@@ -85,14 +86,17 @@ export function createPreGeneratedLearnEvaluatorTemplate(): PromptTemplate {
 
 ## Context
 You are working with a pre-generated question that includes:
-- Problem statement (with image)
+- Problem statement
 - Correct answer
 - Step-by-step solution
+- Optional hint image (e.g., bar model) to reveal when student struggles
 
 **Step-by-Step Solution:**
 {{stepByStepSolution}}
 
 **Correct Answer:** {{correctAnswer}}
+
+**Hint Image Path (for bar model/visual hint):** {{hintImagePath}}
 
 **Current Problem:**
 {{currentProblem}}
@@ -107,15 +111,20 @@ Section Progress: {{sectionProgress}}
 **Problem State:**
 Hints already given: {{hintsGiven}}
 Attempts made: {{attemptsMade}}
+Previous Action: {{previousAction}}
 
 **Next Question Context (for transition speech if student answers correctly):**
 {{nextQuestionContext}}
 
 ## Decision Matrix
-1. **Evaluate** the student's answer against the correct answer and  **Decide** the next pedagogical action:
-   - If final answer is incorrect and less than 3 hints given: GIVE_HINT (Socratic, use solution as guide)
-   - If answer is incorrect and 3 hints given: GIVE_SOLUTION
+
+1. **Check previous action first:**
+   - If previousAction was GIVE_SOLUTION: Action = NEW_PROBLEM (student reviewed solution, move on to next problem)
+
+2. **Evaluate** the student's answer against the correct answer and **Decide** the next pedagogical action:
    - If answer is correct: NEW_PROBLEM (with transition speech)
+   - If answer is incorrect and less than 3 hints given: GIVE_HINT (Socratic, use solution as guide)
+   - If answer is incorrect and 3 hints given: GIVE_SOLUTION
 
 
 ## Hint Generation Guidelines (3-Hint Progressive Structure)
@@ -125,16 +134,18 @@ Use the step-by-step solution as your guide, but DON'T copy steps directly. Foll
 - Guide student to identify the correct approach or strategy
 - Ask Socratic questions about what methods/concepts apply
 
-**Hint 2 - Procedural Guidance:**
+**Hint 2 - Procedural Guidance (REVEAL BAR MODEL if available):**
 - Point to relevant formulas, steps, or procedures from the solution
 - Reference specific parts of the problem
 - Guide them towards the right calculations without revealing exact numbers
-
+- **If hintImagePath is available: Include it in the hintImage field to show the bar model**
+- Say something like "Let me draw a bar model to help you visualize this..."
 
 **Hint 3 - Specific Direction:**
 - Very specific guidance, almost revealing the calculation
 - Direct the student to the exact operation or value needed
 - This is the final hint before showing the full solution
+- Keep showing hintImage if it was revealed in hint 2
 
 
 ## Solution Presentation (When action is GIVE_SOLUTION)
@@ -202,6 +213,12 @@ Return ONLY valid JSON matching the output schema.`,
         type: 'number',
         required: true,
         description: 'Number of attempts student has made'
+      },
+      {
+        key: 'previousAction',
+        type: 'string',
+        required: false,
+        description: 'Previous evaluator action (GIVE_HINT, GIVE_SOLUTION, or none)'
       }
     ]
   });
@@ -222,6 +239,8 @@ export function buildPreGeneratedLearnEvaluatorPrompt(context: {
   hintsGiven: number;
   attemptsMade: number;
   formattingRules?: string;
+  hintImagePath?: string;  // Optional bar model/visual hint to reveal on hint 2+
+  previousAction?: string;  // Previous evaluator action (GIVE_HINT, GIVE_SOLUTION, or none)
   nextQuestion?: {
     questionId: string;
     problemStatement: {
@@ -259,6 +278,7 @@ export function buildPreGeneratedLearnEvaluatorPrompt(context: {
     ['outputSchema', JSON.stringify(PRE_GENERATED_LEARN_EVALUATOR.outputSchema, null, 2)],
     ['stepByStepSolution', formattedSolution],
     ['correctAnswer', context.correctAnswer.toString()],
+    ['hintImagePath', context.hintImagePath || 'none'],
     ['currentProblem', context.currentProblem],
     ['studentAnswer', context.studentAnswer],
     ['currentSection', context.currentSection],
@@ -266,6 +286,7 @@ export function buildPreGeneratedLearnEvaluatorPrompt(context: {
     ['hintsGiven', context.hintsGiven.toString()],
     ['attemptsMade', context.attemptsMade.toString()],
     ['formattingRules', context.formattingRules || ''],
+    ['previousAction', context.previousAction || 'none'],
     ['nextQuestionContext', nextQuestionContext]
   ]);
 

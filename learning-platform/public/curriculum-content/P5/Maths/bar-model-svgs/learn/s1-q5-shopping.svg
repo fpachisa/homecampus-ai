@@ -1,0 +1,36 @@
+<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q5: David 3x Sarah. David buys $150, Sarah buys $30. Sarah = 2x David after -->
+
+  <!-- BEFORE section -->
+  <text x="20" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">BEFORE:</text>
+
+  <text x="55" y="50" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Sarah</text>
+  <rect x="65" y="35" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="90" y="54" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">1 unit</text>
+
+  <text x="55" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">David</text>
+  <rect x="65" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="115" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="165" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="140" y="89" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">3 units</text>
+
+  <!-- AFTER section -->
+  <text x="20" y="120" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">AFTER buying:</text>
+
+  <text x="55" y="145" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Sarah</text>
+  <rect x="65" y="130" width="80" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="105" y="149" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">1u - $30</text>
+
+  <text x="55" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">David</text>
+  <rect x="65" y="160" width="40" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="85" y="179" font-family="system-ui, sans-serif" font-size="8" fill="#374151" text-anchor="middle">3u-$150</text>
+
+  <!-- Ratio indicator -->
+  <text x="155" y="150" font-family="system-ui, sans-serif" font-size="10" fill="#374151">= 2 ×</text>
+
+  <!-- Question -->
+  <text x="250" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">David spent: $150</text>
+  <text x="250" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Sarah spent: $30</text>
+  <text x="250" y="95" font-family="system-ui, sans-serif" font-size="10" fill="#374151">How much did David</text>
+  <text x="250" y="110" font-family="system-ui, sans-serif" font-size="10" fill="#374151">have at first?</text>
+</svg>

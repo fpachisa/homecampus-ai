@@ -25,6 +25,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS } from './p5-numbers-10-million-firestore-configs.js';
+import { P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS } from './p5-four-operations-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -228,7 +229,8 @@ export const S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS = [
 
 const ALL_CONFIGS = [
   ...S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS,
-  ...P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS
+  ...P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS,
+  ...P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS
 ];
 
 /**

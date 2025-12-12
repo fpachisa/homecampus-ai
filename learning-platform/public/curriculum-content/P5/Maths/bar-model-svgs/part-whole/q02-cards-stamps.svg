@@ -1,0 +1,43 @@
+<svg viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q2: $15 for cards + stamps, $3 left -->
+
+  <!-- Total bar showing $15 -->
+  <path d="M70,20 L70,12 L400,12 L400,20" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="235" y="8" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle">$15</text>
+
+  <!-- Main bar divided into: cards | stamps | left -->
+  <rect x="70" y="25" width="100" height="45" fill="#60a5fa" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="120" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#1e3a5f" text-anchor="middle">cards</text>
+
+  <rect x="170" y="25" width="160" height="45" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="250" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#831843" text-anchor="middle">stamps</text>
+
+  <rect x="330" y="25" width="70" height="45" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" rx="2" stroke-dasharray="4 2"/>
+  <text x="365" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">left</text>
+
+  <!-- Bracket below cards+stamps showing ? (a) -->
+  <path d="M70,75 L70,83 L330,83 L330,75" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="200" y="98" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle">? (a)</text>
+
+  <!-- Label for left amount -->
+  <text x="365" y="90" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">$3</text>
+
+  <!-- Second bar showing breakdown of spent money -->
+  <text x="15" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Spent:</text>
+  <rect x="70" y="110" width="40" height="25" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5" rx="2"/>
+  <text x="90" y="127" font-family="system-ui, sans-serif" font-size="10" fill="#1e3a5f" text-anchor="middle">$2</text>
+  <rect x="110" y="110" width="40" height="25" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5" rx="2"/>
+  <text x="130" y="127" font-family="system-ui, sans-serif" font-size="10" fill="#1e3a5f" text-anchor="middle">$2</text>
+  <rect x="150" y="110" width="40" height="25" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5" rx="2"/>
+  <text x="170" y="127" font-family="system-ui, sans-serif" font-size="10" fill="#1e3a5f" text-anchor="middle">$2</text>
+
+  <rect x="200" y="110" width="25" height="25" fill="#f472b6" stroke="#ec4899" stroke-width="1.5" rx="2"/>
+  <text x="212" y="127" font-family="system-ui, sans-serif" font-size="10" fill="#831843" text-anchor="middle">$1</text>
+  <rect x="225" y="110" width="25" height="25" fill="#f472b6" stroke="#ec4899" stroke-width="1.5" rx="2"/>
+  <rect x="250" y="110" width="25" height="25" fill="#f472b6" stroke="#ec4899" stroke-width="1.5" rx="2"/>
+  <text x="290" y="127" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">. . .</text>
+
+  <!-- Bracket showing $12 -->
+  <path d="M70,138 L330,138" fill="none" stroke="#374151" stroke-width="1"/>
+  <text x="340" y="127" font-family="system-ui, sans-serif" font-size="11" fill="#374151">$12</text>
+</svg>

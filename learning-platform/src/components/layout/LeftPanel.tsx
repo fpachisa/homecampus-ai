@@ -85,6 +85,8 @@ import type { AveragesTopicId } from '../../prompt-library/subjects/mathematics/
 // Primary level imports
 import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import type { Numbers10MillionTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import type { FourOperationsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -98,6 +100,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('place-value')) return '📊';
   if (topicId.includes('writing-representing')) return '✍️';
   if (topicId.includes('comparing-ordering')) return '⚖️';
+
+  // P5 Four Operations icons
+  if (topicId.startsWith('p5-math-four-operations-')) {
+    const icons = ['✖️', '🔢', '➗', '📊', '📐', '🔤', '📝'];
+    const index = Object.keys(P5_MATH_FOUR_OPERATIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
   // P6 Fractions icons
   if (topicId.includes('dividing-whole-numbers')) return '➗';
   if (topicId.includes('whole-number-dividing')) return '🔢';
@@ -400,6 +409,7 @@ function getTopicIcon(topicId: string): string {
 function getCategoryDisplayName(category: string): string {
   // Primary 5 categories
   if (category === 'p5-math-numbers-10-million') return 'Numbers up to 10 Million';
+  if (category === 'p5-math-four-operations') return 'Four Operations on Whole Numbers';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -454,6 +464,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   const knownPaths = [
     // Primary 5 paths
     'p5-math-numbers-10-million',
+    'p5-math-four-operations',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -817,6 +828,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-numbers-10-million') {
       return Object.entries(P5_MATH_NUMBERS_10_MILLION_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as Numbers10MillionTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-four-operations') {
+      return Object.entries(P5_MATH_FOUR_OPERATIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as FourOperationsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

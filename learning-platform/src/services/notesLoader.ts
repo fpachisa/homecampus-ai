@@ -265,10 +265,18 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's4/math/vectors/Parallelism': () => import('../notes/s4/math/vectors/Parallelism'),
   's4/math/vectors/DotProduct': () => import('../notes/s4/math/vectors/DotProduct'),
   // Add more note components here as you create them
-  // P5 Math notes
+  // P5 Math notes - Numbers up to 10 Million
   'p5/math/numbers-10-million/ComparingOrderingNumbers': () => import('../notes/p5/math/numbers-10-million/ComparingOrderingNumbers'),
   'p5/math/numbers-10-million/PlaceValueMillions': () => import('../notes/p5/math/numbers-10-million/PlaceValueMillions'),
   'p5/math/numbers-10-million/WritingRepresentingNumbers': () => import('../notes/p5/math/numbers-10-million/WritingRepresentingNumbers'),
+  // P5 Math notes - Four Operations on Whole Numbers
+  'p5/math/four-operations/MultiplyBy10_100_1000': () => import('../notes/p5/math/four-operations/MultiplyBy10_100_1000'),
+  'p5/math/four-operations/MultiplyByTensHundredsThousands': () => import('../notes/p5/math/four-operations/MultiplyByTensHundredsThousands'),
+  'p5/math/four-operations/DivideBy10_100_1000': () => import('../notes/p5/math/four-operations/DivideBy10_100_1000'),
+  'p5/math/four-operations/DivideByTensHundredsThousands': () => import('../notes/p5/math/four-operations/DivideByTensHundredsThousands'),
+  'p5/math/four-operations/OrderOfOperations': () => import('../notes/p5/math/four-operations/OrderOfOperations'),
+  'p5/math/four-operations/OrderOfOperationsWithBrackets': () => import('../notes/p5/math/four-operations/OrderOfOperationsWithBrackets'),
+  'p5/math/four-operations/WordProblems': () => import('../notes/p5/math/four-operations/WordProblems'),
 };
 
 interface NotesCache {

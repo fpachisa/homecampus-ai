@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q4: Aisha $20, 4 books ($3 each), stickers ($1 each), $4 left -->
+
+  <!-- Total money bar divided into parts -->
+  <text x="50" y="25" font-family="system-ui, sans-serif" font-size="13" fill="#374151" text-anchor="end">$20</text>
+
+  <!-- Books section (4 × $3 = $12) -->
+  <rect x="60" y="30" width="150" height="40" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="2" rx="2"/>
+  <text x="135" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">4 books × $3</text>
+
+  <!-- Stickers section (?) -->
+  <rect x="210" y="30" width="60" height="40" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="240" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">?</text>
+
+  <!-- Money left section ($4) -->
+  <rect x="270" y="30" width="60" height="40" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="300" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">$4</text>
+
+  <!-- Labels -->
+  <text x="135" y="85" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Books</text>
+  <text x="240" y="85" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Stickers</text>
+  <text x="300" y="85" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Left</text>
+
+  <text x="200" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">How many stickers? (each costs $1)</text>
+</svg>

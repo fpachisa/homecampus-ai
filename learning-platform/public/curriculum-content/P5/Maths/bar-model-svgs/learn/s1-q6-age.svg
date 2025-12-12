@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q6: Father 4x daughter now. In 8 years, Father = 2x daughter -->
+
+  <!-- NOW section -->
+  <text x="20" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">NOW:</text>
+
+  <text x="65" y="50" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Daughter</text>
+  <rect x="75" y="35" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="100" y="54" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">1 unit</text>
+
+  <text x="65" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Father</text>
+  <rect x="75" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="125" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="175" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="225" y="70" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="175" y="89" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">4 units</text>
+
+  <!-- IN 8 YEARS section -->
+  <text x="20" y="120" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">IN 8 YEARS:</text>
+
+  <text x="65" y="145" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Daughter</text>
+  <rect x="75" y="130" width="50" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="125" y="130" width="25" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="137" y="149" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">+8</text>
+
+  <text x="65" y="180" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Father</text>
+  <rect x="75" y="165" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="125" y="165" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="175" y="165" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="225" y="165" width="50" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="275" y="165" width="25" height="28" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="287" y="184" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">+8</text>
+
+  <text x="320" y="145" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Father = 2×</text>
+  <text x="320" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Daughter</text>
+  <text x="320" y="180" font-family="system-ui, sans-serif" font-size="10" fill="#374151">How old is</text>
+  <text x="320" y="190" font-family="system-ui, sans-serif" font-size="10" fill="#374151">daughter now?</text>
+</svg>

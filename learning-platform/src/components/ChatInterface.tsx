@@ -94,6 +94,8 @@ import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathemati
 import type { AveragesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import type { FourOperationsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -268,6 +270,10 @@ const getTopicConfig = (topicId: string) => {
   if (topicId.startsWith('p5-math-numbers-10-million-')) {
     return P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
   }
+  // Check if it's a P5 four operations topic
+  if (topicId.startsWith('p5-math-four-operations-')) {
+    return P5_MATH_FOUR_OPERATIONS_SUBTOPICS[topicId as FourOperationsTopicId];
+  }
   // Return undefined for unknown topics
   return undefined;
 };
@@ -417,6 +423,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   // Error state
   const [_error, setError] = useState<string | null>(null);
 
+  // Track when solution has been requested (to hide Show Solution button immediately)
+  const [solutionRequested, setSolutionRequested] = useState(false);
+
   // Section progression state
   const [sectionProgress, setSectionProgress] = useState<SectionProgressState>({
     currentSection: '', // Will be set on load/init
@@ -473,8 +482,13 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
         const grade = getGradeFromSubtopicId(topicId);
         const displayName = topicConfig?.displayName || 'Unknown Topic';
 
+        // Merge problemState into state before saving (problemState is stored separately)
+        const stateWithProblem = {
+          ...state,
+          problemState: problemState ?? undefined  // Convert null to undefined for type compatibility
+        };
         const firestoreConv = conversationStateToFirestore(
-          state,
+          stateWithProblem,
           topicId, // subtopicId
           pathId,  // topicId (parent path)
           displayName,
@@ -642,6 +656,7 @@ const scrollToBottom = () => {
 
   const resetProblemState = (newProblemText: string, problemType: number, mathTool?: import('../types/types').MathTool) => {
     setProblemState(createNewProblemState(newProblemText, problemType, mathTool));
+    setSolutionRequested(false); // Reset solution requested flag for new problem
   };
 
   // Removed unused _handleStepByStepComplete callback
@@ -1265,6 +1280,15 @@ const handleStudentSubmit = async (input: string) => {
 
         console.log(`📊 Next question preview: ${nextQuestion?.questionId || 'none'}, isLast: ${isLastQuestionInSection}`);
 
+        // Determine previous action from last tutor message's messageType
+        const lastTutorMessage = [...state.messages].reverse().find(m => m.role === 'tutor');
+        let previousAction: string | undefined;
+        if (lastTutorMessage?.metadata?.messageType === 'solution') {
+          previousAction = 'GIVE_SOLUTION';
+        } else if (lastTutorMessage?.metadata?.messageType === 'hint') {
+          previousAction = 'GIVE_HINT';
+        }
+
         // STEP 1: Pre-Generated Learn Evaluator - Evaluate with solution context
         const preGenEvaluatorOutput = await aiService.current.evaluateAnswerPreGenerated(
           input,
@@ -1274,7 +1298,8 @@ const handleStudentSubmit = async (input: string) => {
           sectionProgress,
           currentQuestion,
           nextQuestion ?? undefined,  // Pass next question for context (convert null to undefined)
-          isLastQuestionInSection  // Pass last question flag
+          isLastQuestionInSection,  // Pass last question flag
+          previousAction  // Pass previous action for decision matrix
         );
 
         console.log('Pre-Gen Evaluator output:', preGenEvaluatorOutput);
@@ -1481,9 +1506,14 @@ const handleStudentSubmit = async (input: string) => {
 
           // Speak with callback to show display content after speech completes
           speakText(preGenEvaluatorOutput.speech.text, emotion, async () => {
-            // After speech, show display content
+            // After speech, show display content (with bar model image if present)
             if (preGenEvaluatorOutput.display!.content) {
-              addMessage('tutor', preGenEvaluatorOutput.display!.content, {
+              // Append bar model image if evaluator included hintImage
+              const displayContent = preGenEvaluatorOutput.hintImage
+                ? `${preGenEvaluatorOutput.display!.content}\n\n![Bar Model](${preGenEvaluatorOutput.hintImage})`
+                : preGenEvaluatorOutput.display!.content;
+
+              addMessage('tutor', displayContent, {
                 problemType: problemTypeForExecution
               });
 
@@ -1508,8 +1538,13 @@ const handleStudentSubmit = async (input: string) => {
 
           // Speak the intro speech, then show the solution
           speakText(speechText, emotion, () => {
-            // Display the step-by-step solution
-            addMessage('tutor', preGenEvaluatorOutput.display!.content, {
+            // Display the step-by-step solution (with bar model image if present)
+            // Append bar model image if evaluator included hintImage
+            const displayContent = preGenEvaluatorOutput.hintImage
+              ? `${preGenEvaluatorOutput.display!.content}\n\n![Bar Model](${preGenEvaluatorOutput.hintImage})`
+              : preGenEvaluatorOutput.display!.content;
+
+            addMessage('tutor', displayContent, {
               problemType: problemTypeForExecution,
               messageType: 'solution'
             });
@@ -2329,16 +2364,8 @@ const handleStudentSubmit = async (input: string) => {
           )}
 
           {state.messages.map((message, index) => {
-            // Only pass the callback to messages that have step-by-step visualization OR plain text solution
-            const hasStepByStepVisualization = message.visualization &&
-              typeof message.visualization === 'object' &&
-              Array.isArray(message.visualization.steps) &&
-              message.visualization.steps.length > 0;
-
-            const hasPlainTextSolution = message.visualization &&
-              typeof message.visualization === 'object' &&
-              message.visualization.isPlainTextSolution === true;
-
+            // Show Continue Learning button for solution messages
+            const isSolutionMessage = message.metadata?.messageType === 'solution';
             const isLastMessage = index === state.messages.length - 1;
 
             return (
@@ -2347,7 +2374,7 @@ const handleStudentSubmit = async (input: string) => {
                   message={message}
                   problemText={problemState?.currentProblemText}
                   topicId={topicId}
-                  onContinue={(hasStepByStepVisualization || hasPlainTextSolution) ? () => handleStudentSubmit("continue learning") : undefined}
+                  onContinue={isSolutionMessage ? () => handleStudentSubmit("continue learning") : undefined}
                 />
               </div>
             );
@@ -2404,9 +2431,13 @@ const handleStudentSubmit = async (input: string) => {
       {problemState &&
        problemState.hintsGivenForCurrentProblem >= 3 &&
        !isLoading &&
+       !solutionRequested &&
        state.messages[state.messages.length - 1]?.metadata?.messageType !== 'solution' && (
         <SolutionPrompt
-          onRequestSolution={() => handleStudentSubmit("Please show me the step-by-step solution")}
+          onRequestSolution={() => {
+            setSolutionRequested(true);
+            handleStudentSubmit("Please show me the step-by-step solution");
+          }}
           isLoading={isLoading}
         />
       )}

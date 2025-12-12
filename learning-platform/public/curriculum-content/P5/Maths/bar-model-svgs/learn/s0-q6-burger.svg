@@ -1,0 +1,22 @@
+<svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Q6: Buy 2 get 1 free, burgers $6 each -->
+
+  <!-- 3 burger boxes -->
+  <rect x="60" y="30" width="80" height="50" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="100" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle">$6</text>
+  <text x="100" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">PAY</text>
+
+  <rect x="145" y="30" width="80" height="50" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="185" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle">$6</text>
+  <text x="185" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">PAY</text>
+
+  <rect x="230" y="30" width="80" height="50" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="270" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="middle">FREE</text>
+
+  <!-- Labels -->
+  <text x="60" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Burger 1</text>
+  <text x="145" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Burger 2</text>
+  <text x="230" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Burger 3</text>
+
+  <text x="185" y="100" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">How much saved per burger?</text>
+</svg>

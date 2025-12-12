@@ -654,7 +654,8 @@ Return ONLY a JSON object with this structure:
     sectionProgress: import('../types/types').SectionProgressState,
     preGeneratedQuestion: import('../data/learn/question-banks/types').PreGeneratedQuestion,
     nextQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion,
-    isLastQuestionInSection: boolean = false
+    isLastQuestionInSection: boolean = false,
+    previousAction?: string  // Previous evaluator action (GIVE_HINT, GIVE_SOLUTION, or none)
   ): Promise<import('../prompt-library/types/agents').PreGeneratedLearnEvaluatorOutput> {
 
     // Extract current section's detailed stats
@@ -666,32 +667,66 @@ Return ONLY a JSON object with this structure:
       throw new Error(`No section stats found for section: ${sectionProgress.currentSection}`);
     }
 
-    // Build the prompt using the pre-generated learn evaluator builder
-    // Note: masterySignals removed - AI should not make mastery decisions for pre-generated questions
-    // All questions in the section are shown; completion is based on isLastQuestionInSection flag only
-    const { buildPreGeneratedLearnEvaluatorPrompt } = await import(
-      '../prompt-library/core/agents/preGeneratedLearnEvaluator'
-    );
+    // Build the prompt using the appropriate evaluator
+    // Use word problems evaluator for questions with hintImagePath (bar model problems)
+    // Use generic evaluator for other pre-generated questions (e.g., composite figures)
+    const hasBarModel = !!(preGeneratedQuestion as any).hintImagePath;
 
+    let prompt: string;
 
-    const prompt = buildPreGeneratedLearnEvaluatorPrompt({
-      stepByStepSolution: preGeneratedQuestion.stepByStepSolution,
-      correctAnswer: preGeneratedQuestion.correctAnswer,
-      currentProblem: problemState.currentProblemText,
-      studentAnswer: studentResponse,
-      currentSection: sectionProgress.currentSection,
-      sectionProgress: `Attempted: ${currentSectionStats.questionsAttempted}, Correct: ${currentSectionStats.questionsCorrect}, Hints: ${currentSectionStats.hintsUsed}`,
-      hintsGiven: problemState.hintsGivenForCurrentProblem,
-      attemptsMade: problemState.attemptsForCurrentProblem,
-      nextQuestion: nextQuestion ? {
-        questionId: nextQuestion.questionId,
-        problemStatement: {
-          display: nextQuestion.problemStatement,
-          speech: nextQuestion.problemStatement
-        }
-      } : undefined,
-      isLastQuestionInSection
-    });
+    if (hasBarModel) {
+      // Word problems with bar models - use specialized evaluator (no LaTeX, plain text only)
+      const { buildWordProblemsEvaluatorPrompt } = await import(
+        '../prompt-library/core/agents/preGeneratedWordProblemsEvaluator'
+      );
+
+      prompt = buildWordProblemsEvaluatorPrompt({
+        stepByStepSolution: preGeneratedQuestion.stepByStepSolution,
+        correctAnswer: preGeneratedQuestion.correctAnswer,
+        currentProblem: problemState.currentProblemText,
+        studentAnswer: studentResponse,
+        currentSection: sectionProgress.currentSection,
+        sectionProgress: `Attempted: ${currentSectionStats.questionsAttempted}, Correct: ${currentSectionStats.questionsCorrect}, Hints: ${currentSectionStats.hintsUsed}`,
+        hintsGiven: problemState.hintsGivenForCurrentProblem,
+        attemptsMade: problemState.attemptsForCurrentProblem,
+        hintImagePath: (preGeneratedQuestion as any).hintImagePath,
+        previousAction,
+        nextQuestion: nextQuestion ? {
+          questionId: nextQuestion.questionId,
+          problemStatement: {
+            display: nextQuestion.problemStatement,
+            speech: nextQuestion.problemStatement
+          }
+        } : undefined,
+        isLastQuestionInSection
+      });
+    } else {
+      // Generic pre-generated questions (composite figures, etc.) - may need LaTeX
+      const { buildPreGeneratedLearnEvaluatorPrompt } = await import(
+        '../prompt-library/core/agents/preGeneratedLearnEvaluator'
+      );
+
+      prompt = buildPreGeneratedLearnEvaluatorPrompt({
+        stepByStepSolution: preGeneratedQuestion.stepByStepSolution,
+        correctAnswer: preGeneratedQuestion.correctAnswer,
+        currentProblem: problemState.currentProblemText,
+        studentAnswer: studentResponse,
+        currentSection: sectionProgress.currentSection,
+        sectionProgress: `Attempted: ${currentSectionStats.questionsAttempted}, Correct: ${currentSectionStats.questionsCorrect}, Hints: ${currentSectionStats.hintsUsed}`,
+        hintsGiven: problemState.hintsGivenForCurrentProblem,
+        attemptsMade: problemState.attemptsForCurrentProblem,
+        hintImagePath: preGeneratedQuestion.imagePath,
+        previousAction,
+        nextQuestion: nextQuestion ? {
+          questionId: nextQuestion.questionId,
+          problemStatement: {
+            display: nextQuestion.problemStatement,
+            speech: nextQuestion.problemStatement
+          }
+        } : undefined,
+        isLastQuestionInSection
+      });
+    }
 
     console.log('=== PRE-GENERATED LEARN EVALUATOR DEBUG ===');
     console.log('Prompt for pre-generated learn evaluator:', prompt);
