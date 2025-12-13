@@ -175,9 +175,6 @@ const FractionBarVisualizer: React.FC<FractionBarVisualizerProps> = ({
       style={{ borderColor: theme.colors.border, backgroundColor: theme.colors.surface }}
     >
       {/* Title */}
-      <div className="text-lg font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
-        Fraction Bar Visualizer
-      </div>
 
       {/* Single Fraction */}
       {!frac2 && (

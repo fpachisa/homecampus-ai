@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 95" xmlns="http://www.w3.org/2000/svg">
+  <!-- Find whole from part: 2/7 of marbles = 24, find total -->
+  <text x="200" y="15" text-anchor="middle" font-size="11" fill="#374151">? marbles</text>
+  <path d="M 20 25 L 20 20 L 380 20 L 380 25" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <rect x="20" y="30" width="52" height="35" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+  <rect x="72" y="30" width="52" height="35" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+  <rect x="124" y="30" width="51" height="35" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+  <rect x="175" y="30" width="51" height="35" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+  <rect x="226" y="30" width="51" height="35" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+  <rect x="277" y="30" width="51" height="35" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+  <rect x="328" y="30" width="52" height="35" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+
+  <path d="M 20 70 L 20 75 L 124 75 L 124 70" fill="none" stroke="#EF4444" stroke-width="2"/>
+  <text x="72" y="88" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">2/7 = 24</text>
+</svg>

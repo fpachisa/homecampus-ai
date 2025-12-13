@@ -82,6 +82,10 @@ import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects
 import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import type { FourOperationsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import type { FractionsDivisionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -183,6 +187,10 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
   } else if (category === 'p5-math-four-operations') {
     topicConfig = P5_MATH_FOUR_OPERATIONS_SUBTOPICS[topicId as FourOperationsTopicId];
+  } else if (category === 'p5-math-fractions-divisions') {
+    topicConfig = P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS[topicId as FractionsDivisionsTopicId];
+  } else if (category === 'p5-math-four-operations-fractions') {
+    topicConfig = P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS[topicId as FourOperationsFractionsTopicId];
   }
 
   if (!topicConfig) {

@@ -4242,6 +4242,50 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  fractionCircle: {
+    name: "Fraction Circle Visualizer",
+    technicalName: "fractionCircle",
+    component: "FractionCircleVisualizer",
+    category: "general",
+    description: "Displays fractions as divided circles (pizza/cake style). Shows parts of a whole with filled and empty segments. Perfect for teaching division as fractions and visualizing proper/improper fractions.",
+    whenToUse: "Use when teaching division as fractions (e.g., 1÷3 = 1/3), visualizing parts of a whole, or explaining fraction concepts with familiar sharing scenarios like pizza or cake slices.",
+
+    parameters: {
+      numerator: "number - Number of shaded/filled parts (e.g., 1 for one-third)",
+      denominator: "number (required, > 0) - Total number of equal parts the circle is divided into (e.g., 3 for thirds)",
+      highlightPart: "number (optional, 1-indexed) - Which specific part to highlight with a different color",
+      caption: "string (optional) - Additional explanation text below the visualization"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic fraction visualization - one third",
+        caption: "One pizza shared equally among 3 friends - each gets 1/3!",
+        parameters: {
+          numerator: 1,
+          denominator: 3
+        }
+      },
+      {
+        scenario: "Division as fraction - 2 ÷ 3",
+        caption: "2 pizzas shared among 3 children - each child gets 2/3 of a pizza.",
+        parameters: {
+          numerator: 2,
+          denominator: 3
+        }
+      },
+      {
+        scenario: "Highlight specific part",
+        caption: "Which part represents one-fifth?",
+        parameters: {
+          numerator: 1,
+          denominator: 5,
+          highlightPart: 1
+        }
+      }
+    ]
+  },
+
   // ============================================
   // PRIMARY MATH - BAR MODEL TOOLS
   // ============================================

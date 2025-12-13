@@ -96,6 +96,10 @@ import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects
 import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import type { FourOperationsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import type { FractionsDivisionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -270,9 +274,17 @@ const getTopicConfig = (topicId: string) => {
   if (topicId.startsWith('p5-math-numbers-10-million-')) {
     return P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
   }
+  // Check if it's a P5 four operations of fractions topic (check BEFORE four-operations since it's more specific)
+  if (topicId.startsWith('p5-math-four-operations-fractions-')) {
+    return P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS[topicId as FourOperationsFractionsTopicId];
+  }
   // Check if it's a P5 four operations topic
   if (topicId.startsWith('p5-math-four-operations-')) {
     return P5_MATH_FOUR_OPERATIONS_SUBTOPICS[topicId as FourOperationsTopicId];
+  }
+  // Check if it's a P5 fractions and divisions topic
+  if (topicId.startsWith('p5-math-fractions-divisions-')) {
+    return P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS[topicId as FractionsDivisionsTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

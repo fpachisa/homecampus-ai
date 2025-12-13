@@ -42,6 +42,11 @@ import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjec
 import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+// Primary 5 imports
+import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 
 export interface SubtopicContent {
   displayName: string;
@@ -100,6 +105,11 @@ class SubtopicContentLoader {
       ...S4_MATH_PROBABILITY_SUBTOPICS,
       ...S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS,
       ...S4_VECTORS_SUBTOPICS,
+      // P5 Primary topics
+      ...P5_MATH_NUMBERS_10_MILLION_SUBTOPICS,
+      ...P5_MATH_FOUR_OPERATIONS_SUBTOPICS,
+      ...P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS,
+      ...P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS,
       // Future topics will be added here
     };
   }

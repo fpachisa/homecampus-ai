@@ -68,6 +68,8 @@ import { S2_MATH_AVERAGES_SUBTOPICS, S2_AVERAGES_CONFIG } from '../prompt-librar
 // Primary level topics
 import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS, P5_NUMBERS_10_MILLION_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS, P5_FOUR_OPERATIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS, P5_FRACTIONS_DIVISIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -160,6 +162,8 @@ function registerBrowserTopics() {
   // Register P5 (Primary 5) topics
   registerTopics(P5_MATH_NUMBERS_10_MILLION_SUBTOPICS, P5_NUMBERS_10_MILLION_CONFIG);
   registerTopics(P5_MATH_FOUR_OPERATIONS_SUBTOPICS, P5_FOUR_OPERATIONS_CONFIG);
+  registerTopics(P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS, P5_FRACTIONS_DIVISIONS_CONFIG);
+  registerTopics(P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIONS_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

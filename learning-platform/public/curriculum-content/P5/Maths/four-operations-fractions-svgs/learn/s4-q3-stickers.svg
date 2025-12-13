@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 185" xmlns="http://www.w3.org/2000/svg">
+  <!-- Complex: 1/5 red, 2/3 blue, 1/2 of remainder yellow, rest green. Yellow - green = 18 -->
+  <!-- First bar showing breakdown -->
+  <text x="50" y="12" text-anchor="middle" font-size="9" fill="#374151">red</text>
+  <path d="M 20 20 L 20 15 L 80 15 L 80 20" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <text x="180" y="12" text-anchor="middle" font-size="9" fill="#374151">blue</text>
+  <path d="M 80 20 L 80 15 L 280 15 L 280 20" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <text x="310" y="12" text-anchor="middle" font-size="9" fill="#374151">remaining</text>
+  <path d="M 280 20 L 280 15 L 340 15 L 340 20" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <!-- First bar - 15 units: 3 red, 10 blue, 2 remaining -->
+  <rect x="20" y="22" width="20" height="26" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+  <rect x="40" y="22" width="20" height="26" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+  <rect x="60" y="22" width="20" height="26" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+
+  <rect x="80" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="100" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="120" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="140" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="160" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="180" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="200" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="220" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="240" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="260" y="22" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+
+  <rect x="280" y="22" width="30" height="26" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+  <rect x="310" y="22" width="30" height="26" fill="#E5E7EB" stroke="#374151" stroke-width="1"/>
+
+  <!-- Sub-labels for yellow/green -->
+  <text x="295" y="66" text-anchor="middle" font-size="8" fill="#CA8A04">yellow</text>
+  <path d="M 280 52 L 280 56 L 310 56 L 310 52" fill="none" stroke="#EAB308" stroke-width="1"/>
+
+  <text x="325" y="66" text-anchor="middle" font-size="8" fill="#059669">green</text>
+  <path d="M 310 52 L 310 56 L 340 56 L 340 52" fill="none" stroke="#10B981" stroke-width="1"/>
+
+  <!-- Arrow -->
+  <path d="M 180 76 L 180 90 M 175 85 L 180 90 L 185 85" fill="none" stroke="#374151" stroke-width="2"/>
+
+  <!-- Second bar: consolidated -->
+  <rect x="20" y="113" width="20" height="26" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+  <rect x="40" y="113" width="20" height="26" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+  <rect x="60" y="113" width="20" height="26" fill="#EF4444" stroke="#374151" stroke-width="1"/>
+
+  <rect x="80" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="100" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="120" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="140" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="160" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="180" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="200" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="220" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="240" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="260" y="113" width="20" height="26" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+
+  <rect x="280" y="113" width="30" height="26" fill="#EAB308" stroke="#374151" stroke-width="1"/>
+  <rect x="310" y="113" width="30" height="26" fill="#10B981" stroke="#374151" stroke-width="1"/>
+
+  <!-- Total bracket -->
+  <path d="M 20 144 L 20 149 L 340 149 L 340 144" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="180" y="164" text-anchor="middle" font-size="10" fill="#374151">?</text>
+
+  <!-- Key insight -->
+  <text x="180" y="180" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Yellow = Green, so no diff. Check problem!</text>
+</svg>

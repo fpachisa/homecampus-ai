@@ -6107,7 +6107,229 @@ Ahmad has \\$850. Mei Ling has \\$650.
       },
       caption: "The bar model shows that Ahmad's bar is longer. The difference (?) is what we need to find!"
     }
-  }
+  },
+
+  /**
+   * ========================================
+   * P5 FRACTIONS AND DIVISION TOPIC GREETINGS
+   * ========================================
+   */
+  'p5-math-fractions-divisions-whole-numbers': {
+    speech: {
+      text: `Hello! Today we are going to discover something amazing. Did you know that division and fractions are the same thing? When you share one pizza equally among three friends, each person gets one third. So 1 divided by 3 equals one third! Let us explore this together with some fun sharing problems!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-fractions-divisions-whole-numbers.mp3'
+    },
+    display: {
+      content: `# Division of Whole Numbers as Fractions
+
+Today we'll discover something amazing: **Division and Fractions are the same thing!**
+
+---
+
+### Think About This:
+
+When you share **1 pizza** equally among **3 friends**:
+- Each person gets **1/3** of the pizza
+- So: 1 ÷ 3 = 1/3
+
+The **numerator** is what you're sharing.
+The **denominator** is how many people are sharing.
+
+*What fraction does each person get if 2 pizzas are shared among 3 friends?*`,
+      showAfterSpeech: true
+    },
+  },
+
+  'p5-math-fractions-divisions-decimals': {
+    speech: {
+      text: `Great work with fractions! Now let us learn to express fractions as decimals. You already know that three tenths is zero point three. But what about fractions like one half or one quarter? We can convert them too! There are some really cool methods, and I will show you the tricks!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-fractions-divisions-decimals.mp3'
+    },
+    display: {
+      content: `# Expressing Fractions as Decimals
+
+Fractions and decimals are different ways to show the **same number**!
+
+---
+
+### Quick Reminder:
+
+| Fraction | Decimal |
+|:--------:|:-------:|
+| 3/10 | 0.3 |
+| 14/100 | 0.14 |
+| 1/2 | 0.5 |
+| 1/4 | 0.25 |
+
+**Methods to Convert:**
+1. If denominator is 10 or 100 → Easy! Just use place value
+2. Find an equivalent fraction with 10 or 100
+3. Use long division
+
+*What is 3/10 as a decimal?*`,
+      showAfterSpeech: true
+    }
+  },
+
+  // ============================================
+  // P5 FOUR OPERATIONS OF FRACTIONS
+  // ============================================
+
+  'p5-math-four-operations-fractions-add-subtract-mixed': {
+    speech: {
+      text: `Welcome to adding and subtracting mixed numbers! You have already learned to work with proper fractions. Now we take it up a notch with mixed numbers, those numbers with a whole part and a fraction part, like two and three quarters. The key is finding a common denominator and then handling the whole numbers cleverly. Let me show you!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-fractions-add-subtract-mixed.mp3'
+    },
+    display: {
+      content: `# Addition and Subtraction of Mixed Numbers
+
+Mixed numbers have a **whole part** and a **fraction part**!
+
+---
+
+### Remember:
+- 2¾ means 2 + ¾
+- To add or subtract mixed numbers with **unlike denominators**, first find a common denominator
+
+### Key Steps:
+1. Find the **common denominator**
+2. Convert the fractions
+3. Add or subtract the fractions
+4. Add or subtract the whole numbers
+5. **Simplify** if needed
+
+*Can you add 1⅔ + 2¼?*`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-fractions-multiply-fraction-whole': {
+    speech: {
+      text: `Let us learn to multiply fractions and whole numbers! Here is a secret: the word "of" in math often means multiply. So when we say three fifths of twenty, we actually mean three fifths times twenty. We will use bar models to see what this looks like. This is really useful for solving real problems!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-fractions-multiply-fraction-whole.mp3'
+    },
+    display: {
+      content: `# Multiplying a Fraction and a Whole Number
+
+**"Of" means multiply!**
+
+---
+
+### The Big Idea:
+- ⅗ **of** 20 means ⅗ × 20
+- First find ONE part, then find the required parts
+
+### Method:
+1. Divide by the **denominator** (find one part)
+2. Multiply by the **numerator** (find required parts)
+
+### Example:
+- ⅗ of 20
+- 20 ÷ 5 = 4 (one fifth)
+- 4 × 3 = 12 (three fifths)
+
+*What is ¾ of 24?*`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-fractions-multiply-two-fractions': {
+    speech: {
+      text: `Ready for something cool? Multiplying two fractions! Unlike adding fractions, you do not need a common denominator here. Just multiply the numerators together and the denominators together. But wait, there is a smart shortcut called cancelling that makes the numbers smaller before you multiply. Let me show you!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-fractions-multiply-two-fractions.mp3'
+    },
+    display: {
+      content: `# Multiplying Two Fractions
+
+Multiply across: **numerator × numerator** and **denominator × denominator**!
+
+---
+
+### The Rule:
+$$\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}$$
+
+### Smart Shortcut - Cancelling:
+Cancel **common factors** before multiplying to get smaller numbers!
+
+### Example:
+$$\\frac{2}{3} \\times \\frac{3}{4}$$
+
+Cancel the 3s: $$\\frac{2}{\\cancel{3}} \\times \\frac{\\cancel{3}}{4} = \\frac{2}{4} = \\frac{1}{2}$$
+
+*What is ⅔ × ¾?*`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-fractions-multiply-mixed-whole': {
+    speech: {
+      text: `Now we will multiply mixed numbers by whole numbers! The trick is to convert the mixed number to an improper fraction first. Remember, two and a half is the same as five halves. Then multiply like we learned before. Finally, convert back to a mixed number. Let us practice!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-fractions-multiply-mixed-whole.mp3'
+    },
+    display: {
+      content: `# Multiplying a Mixed Number and a Whole Number
+
+**Convert → Multiply → Simplify**
+
+---
+
+### The Method:
+1. **Convert** the mixed number to an improper fraction
+2. **Multiply** with the whole number
+3. **Convert** back to a mixed number
+
+### Converting Mixed to Improper:
+2½ = (2 × 2 + 1)/2 = 5/2
+
+### Example:
+2½ × 3
+= 5/2 × 3
+= 15/2
+= 7½
+
+*What is 1¾ × 4?*`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-four-operations-fractions-word-problems': {
+    speech: {
+      text: `Time to put all your fraction skills together with word problems! We will solve real world problems using addition, subtraction, and multiplication of fractions. Bar models will help us visualize what is happening in each problem. Remember, the word "of" usually means multiply, while "more than" and "less than" tell us to add or subtract. Let us tackle some interesting challenges!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-four-operations-fractions-word-problems.mp3'
+    },
+    display: {
+      content: `# Word Problems with Fractions
+
+Solving real-world problems with **all fraction operations**!
+
+---
+
+### Problem-Solving Strategy:
+1. **Read** - identify what's given and what to find
+2. **Draw** - create a bar model
+3. **Solve** - set up operations and calculate
+4. **Check** - verify your answer makes sense
+
+### Key Phrases:
+- **"more than" / "less than"** → Addition/Subtraction
+- **"of"** → Multiplication
+
+### Problem Types:
+- Addition & subtraction word problems
+- Finding fractions of totals
+- Multi-step problems with remainders
+
+*Let's solve some problems together!*`,
+      showAfterSpeech: true
+    }
+  },
 
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

@@ -87,6 +87,10 @@ import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../../prompt-library/subje
 import type { Numbers10MillionTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
 import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import type { FourOperationsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import type { FractionsDivisionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import type { FourOperationsFractionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -101,10 +105,22 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('writing-representing')) return '✍️';
   if (topicId.includes('comparing-ordering')) return '⚖️';
 
+  // P5 Four Operations of Fractions icons (check BEFORE four-operations since it's more specific)
+  if (topicId.startsWith('p5-math-four-operations-fractions-')) {
+    const icons = ['➕', '✖️', '🔢', '🔗', '📝'];  // Add/Sub Mixed, Multiply Fraction×Whole, Multiply 2 Fractions, Multiply Mixed×Whole, Word Problems
+    const index = Object.keys(P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
   // P5 Four Operations icons
   if (topicId.startsWith('p5-math-four-operations-')) {
     const icons = ['✖️', '🔢', '➗', '📊', '📐', '🔤', '📝'];
     const index = Object.keys(P5_MATH_FOUR_OPERATIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Fractions and Divisions icons
+  if (topicId.startsWith('p5-math-fractions-divisions-')) {
+    const icons = ['🍕', '🔢'];  // Pizza for division as sharing, decimal for decimals
+    const index = Object.keys(P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
   // P6 Fractions icons
@@ -410,6 +426,8 @@ function getCategoryDisplayName(category: string): string {
   // Primary 5 categories
   if (category === 'p5-math-numbers-10-million') return 'Numbers up to 10 Million';
   if (category === 'p5-math-four-operations') return 'Four Operations on Whole Numbers';
+  if (category === 'p5-math-fractions-divisions') return 'Fractions and Division';
+  if (category === 'p5-math-four-operations-fractions') return 'Four Operations of Fractions';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -465,6 +483,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     // Primary 5 paths
     'p5-math-numbers-10-million',
     'p5-math-four-operations',
+    'p5-math-fractions-divisions',
+    'p5-math-four-operations-fractions',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -836,6 +856,22 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-four-operations') {
       return Object.entries(P5_MATH_FOUR_OPERATIONS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as FourOperationsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-fractions-divisions') {
+      return Object.entries(P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as FractionsDivisionsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-four-operations-fractions') {
+      return Object.entries(P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as FourOperationsFractionsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

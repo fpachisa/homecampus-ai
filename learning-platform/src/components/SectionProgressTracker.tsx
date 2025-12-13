@@ -77,6 +77,15 @@ import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathe
 import type { StatisticalDiagramsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 import type { AveragesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+// Primary 5 imports
+import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import type { Numbers10MillionTopicId } from '../prompt-library/subjects/mathematics/primary/p5-numbers-10-million';
+import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import type { FourOperationsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
+import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import type { FractionsDivisionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
+import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -255,6 +264,26 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // S4 Vectors topics
     if (topicId.startsWith('s4-math-vectors-')) {
       const subtopic = S4_VECTORS_SUBTOPICS[topicId as S4VectorsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Numbers up to 10 Million topics
+    if (topicId.startsWith('p5-math-numbers-10-million-')) {
+      const subtopic = P5_MATH_NUMBERS_10_MILLION_SUBTOPICS[topicId as Numbers10MillionTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Four Operations of Fractions topics (check BEFORE four-operations since it's more specific)
+    if (topicId.startsWith('p5-math-four-operations-fractions-')) {
+      const subtopic = P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS[topicId as FourOperationsFractionsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Four Operations topics
+    if (topicId.startsWith('p5-math-four-operations-')) {
+      const subtopic = P5_MATH_FOUR_OPERATIONS_SUBTOPICS[topicId as FourOperationsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Fractions and Divisions topics
+    if (topicId.startsWith('p5-math-fractions-divisions-')) {
+      const subtopic = P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS[topicId as FractionsDivisionsTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

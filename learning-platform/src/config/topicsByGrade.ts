@@ -50,6 +50,28 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 5',
       subject: 'Mathematics',
     },
+    {
+      id: 'p5-fractions-divisions',
+      name: 'Fractions and Division',
+      icon: '🍕',
+      description: 'Learn division as fractions, convert fractions to decimals, and solve real-world sharing problems',
+      subtopicCount: 2,
+      isActive: true,
+      category: 'p5-math-fractions-divisions',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
+    {
+      id: 'p5-four-operations-fractions',
+      name: 'Four Operations of Fractions',
+      icon: '➗',
+      description: 'Master addition, subtraction, and multiplication of fractions and mixed numbers with word problems',
+      subtopicCount: 5,
+      isActive: true,
+      category: 'p5-math-four-operations-fractions',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
   ],
   'Primary 6': [
     {

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 400 90" xmlns="http://www.w3.org/2000/svg">
+  <!-- Before-after: Started with ?, spent 2 3/4, received 1 1/2, left with $45 -->
+  <rect x="20" y="15" width="120" height="35" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <text x="80" y="38" text-anchor="middle" font-size="12" fill="white" font-weight="bold">?</text>
+
+  <rect x="140" y="15" width="90" height="35" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="185" y="38" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">−$2¾</text>
+
+  <rect x="230" y="15" width="70" height="35" fill="#10B981" stroke="#374151" stroke-width="1"/>
+  <text x="265" y="38" text-anchor="middle" font-size="10" fill="white" font-weight="bold">+$1½</text>
+
+  <!-- Final amount bracket -->
+  <path d="M 20 55 L 20 60 L 300 60 L 300 55" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="160" y="78" text-anchor="middle" font-size="12" fill="#374151" font-weight="bold">$45</text>
+</svg>

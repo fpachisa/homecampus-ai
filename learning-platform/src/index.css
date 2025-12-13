@@ -264,13 +264,17 @@
      - Allow wrapping if math+context is too long
      ============================================================================ */
 
+  /* Force ALL KaTeX elements to inherit font for consistent appearance */
+  .katex,
+  .katex * {
+    font-family: inherit !important;
+  }
+
   .katex {
     display: inline !important;
     /* Ensure KaTeX is always inline, not block */
     font-size: inherit !important;
     /* Match surrounding text size */
-    font-family: inherit !important;
-    /* Use Georgia to match body text */
   }
 
   /* Increase size ONLY for complex math elements (fractions, radicals) */
@@ -286,14 +290,6 @@
   .katex .sqrt .mfrac,
   .katex .sqrt .sqrt {
     font-size: 1em;
-  }
-
-  /* Force all KaTeX math elements to use inherited font for consistency */
-  .katex .mathnormal,
-  .katex .mathit,
-  .katex .mathrm,
-  .katex .text {
-    font-family: inherit !important;
   }
 
   /* Prevent awkward line breaks before/within inline math */

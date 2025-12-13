@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 95" xmlns="http://www.w3.org/2000/svg">
+  <!-- 5/9 of 270 workers are men, how many women? -->
+  <text x="200" y="15" text-anchor="middle" font-size="11" fill="#374151">270 workers</text>
+  <path d="M 20 25 L 20 20 L 380 20 L 380 25" fill="none" stroke="#374151" stroke-width="1"/>
+
+  <rect x="20" y="30" width="40" height="35" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="60" y="30" width="40" height="35" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="100" y="30" width="40" height="35" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="140" y="30" width="40" height="35" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="180" y="30" width="40" height="35" fill="#3B82F6" stroke="#374151" stroke-width="1"/>
+  <rect x="220" y="30" width="40" height="35" fill="#EC4899" stroke="#374151" stroke-width="1"/>
+  <rect x="260" y="30" width="40" height="35" fill="#EC4899" stroke="#374151" stroke-width="1"/>
+  <rect x="300" y="30" width="40" height="35" fill="#EC4899" stroke="#374151" stroke-width="1"/>
+  <rect x="340" y="30" width="40" height="35" fill="#EC4899" stroke="#374151" stroke-width="1"/>
+
+  <path d="M 20 70 L 20 75 L 220 75 L 220 70" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="120" y="88" text-anchor="middle" font-size="9" fill="#2563EB">Men (5/9)</text>
+
+  <path d="M 220 70 L 220 75 L 380 75 L 380 70" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+  <text x="300" y="88" text-anchor="middle" font-size="9" fill="#DB2777">Women = ?</text>
+</svg>

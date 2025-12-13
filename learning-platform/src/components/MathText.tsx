@@ -388,46 +388,21 @@ function processBareLatexAndFractions(text: string): TextSegment[] {
 }
 
 /**
- * Step 2: Process plain fractions like 1/2, 3/4 (no LaTeX delimiters)
+ * Step 2: Return text as-is (no auto-conversion of plain fractions)
+ *
+ * DISABLED AUTO-CONVERSION (January 2025):
+ * Previously, this function converted plain fractions like 1/2, 3/4 to LaTeX \frac{}{}.
+ * This was DISABLED because:
+ * 1. When fractions are inside markdown formatting (e.g., **1/3**), extracting them
+ *    breaks the HTML structure: <strong>⟨⟨MATH0⟩⟩</strong> gets split incorrectly
+ * 2. This caused fractions to render on separate lines
+ * 3. Explicit is better than implicit - use $\frac{1}{3}$ or $1/3$ for LaTeX rendering
+ *
+ * Plain fractions like 1/3 will now render as plain text "1/3"
  */
 function processPlainFractions(text: string): TextSegment[] {
-  const segments: TextSegment[] = [];
-  const simpleFractionPattern = /(\b\d+\/\d+\b)/g;
-
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-
-  while ((match = simpleFractionPattern.exec(text)) !== null) {
-    // Add text before the fraction
-    if (match.index > lastIndex) {
-      const textBefore = text.substring(lastIndex, match.index);
-      if (textBefore) {
-        segments.push({ type: 'text', content: textBefore });
-      }
-    }
-
-    // Convert plain fraction to LaTeX and add as math
-    const fraction = match[1];
-    const latex = fraction.replace(/(\d+)\/(\d+)/, '\\frac{$1}{$2}');
-    segments.push({ type: 'math', content: latex });
-
-    lastIndex = match.index + match[1].length;
-  }
-
-  // Add remaining text
-  if (lastIndex < text.length) {
-    const remainingText = text.substring(lastIndex);
-    if (remainingText) {
-      segments.push({ type: 'text', content: remainingText });
-    }
-  }
-
-  // If no fractions found, return the text as-is
-  if (segments.length === 0) {
-    segments.push({ type: 'text', content: text });
-  }
-
-  return segments;
+  // Return text as-is without auto-conversion
+  return [{ type: 'text', content: text }];
 }
 
 export default MathText;

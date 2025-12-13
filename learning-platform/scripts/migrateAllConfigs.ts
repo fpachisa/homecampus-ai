@@ -26,6 +26,7 @@ import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS } from './p5-numbers-10-million-firestore-configs.js';
 import { P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS } from './p5-four-operations-firestore-configs.js';
+import { P5_FRACTIONS_DIVISIONS_FIRESTORE_CONFIGS } from './p5-fractions-divisions-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -89,6 +90,98 @@ const STANDARD_MODULES = {
   visualizations: true
 };
 
+
+// ============================================
+// P5 FOUR OPERATIONS OF FRACTIONS CONFIGS
+// ============================================
+
+export const P5_FOUR_OPERATIONS_FRACTIONS_FIRESTORE_CONFIGS = [
+  {
+    id: 'p5-math-four-operations-fractions-add-subtract-mixed',
+    displayName: 'Addition and Subtraction of Mixed Numbers',
+    grade: 'p5',
+    subject: 'math',
+    topic: 'four-operations-fractions',
+    subtopic: 'add-subtract-mixed',
+    metadata: {
+      difficulty: 'intermediate',
+      estimatedMinutes: 45,
+      prerequisites: ['p5-math-fractions-divisions-whole-numbers']
+    },
+    notesComponent: 'p5/math/four-operations-fractions/AddSubtractMixedNumbers',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+  {
+    id: 'p5-math-four-operations-fractions-multiply-fraction-whole',
+    displayName: 'Multiplying a Fraction and a Whole Number',
+    grade: 'p5',
+    subject: 'math',
+    topic: 'four-operations-fractions',
+    subtopic: 'multiply-fraction-whole',
+    metadata: {
+      difficulty: 'intermediate',
+      estimatedMinutes: 45,
+      prerequisites: ['p5-math-four-operations-fractions-add-subtract-mixed']
+    },
+    notesComponent: 'p5/math/four-operations-fractions/MultiplyFractionWholeNumber',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+  {
+    id: 'p5-math-four-operations-fractions-multiply-two-fractions',
+    displayName: 'Multiplying Two Fractions',
+    grade: 'p5',
+    subject: 'math',
+    topic: 'four-operations-fractions',
+    subtopic: 'multiply-two-fractions',
+    metadata: {
+      difficulty: 'intermediate',
+      estimatedMinutes: 45,
+      prerequisites: ['p5-math-four-operations-fractions-multiply-fraction-whole']
+    },
+    notesComponent: 'p5/math/four-operations-fractions/MultiplyTwoFractions',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+  {
+    id: 'p5-math-four-operations-fractions-multiply-mixed-whole',
+    displayName: 'Multiplying a Mixed Number and a Whole Number',
+    grade: 'p5',
+    subject: 'math',
+    topic: 'four-operations-fractions',
+    subtopic: 'multiply-mixed-whole',
+    metadata: {
+      difficulty: 'intermediate',
+      estimatedMinutes: 45,
+      prerequisites: ['p5-math-four-operations-fractions-multiply-two-fractions']
+    },
+    notesComponent: 'p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+  {
+    id: 'p5-math-four-operations-fractions-word-problems',
+    displayName: 'Word Problems',
+    grade: 'p5',
+    subject: 'math',
+    topic: 'four-operations-fractions',
+    subtopic: 'word-problems',
+    metadata: {
+      difficulty: 'advanced',
+      estimatedMinutes: 60,
+      prerequisites: ['p5-math-four-operations-fractions-multiply-mixed-whole']
+    },
+    notesComponent: 'p5/math/four-operations-fractions/WordProblems',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
 
 export const S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS = [
   // ========================================
@@ -230,7 +323,9 @@ export const S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS = [
 const ALL_CONFIGS = [
   ...S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS,
   ...P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS,
-  ...P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS
+  ...P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS,
+  ...P5_FRACTIONS_DIVISIONS_FIRESTORE_CONFIGS,
+  ...P5_FOUR_OPERATIONS_FRACTIONS_FIRESTORE_CONFIGS
 ];
 
 /**

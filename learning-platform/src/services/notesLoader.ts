@@ -277,6 +277,15 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p5/math/four-operations/OrderOfOperations': () => import('../notes/p5/math/four-operations/OrderOfOperations'),
   'p5/math/four-operations/OrderOfOperationsWithBrackets': () => import('../notes/p5/math/four-operations/OrderOfOperationsWithBrackets'),
   'p5/math/four-operations/WordProblems': () => import('../notes/p5/math/four-operations/WordProblems'),
+  // P5 Math notes - Fractions and Division
+  'p5/math/fractions-divisions/DivisionAsFractions': () => import('../notes/p5/math/fractions-divisions/DivisionAsFractions'),
+  'p5/math/fractions-divisions/FractionsAsDecimals': () => import('../notes/p5/math/fractions-divisions/FractionsAsDecimals'),
+  // P5 Math notes - Four Operations of Fractions
+  'p5/math/four-operations-fractions/AddSubtractMixedNumbers': () => import('../notes/p5/math/four-operations-fractions/AddSubtractMixedNumbers'),
+  'p5/math/four-operations-fractions/MultiplyFractionWholeNumber': () => import('../notes/p5/math/four-operations-fractions/MultiplyFractionWholeNumber'),
+  'p5/math/four-operations-fractions/MultiplyTwoFractions': () => import('../notes/p5/math/four-operations-fractions/MultiplyTwoFractions'),
+  'p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber': () => import('../notes/p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber'),
+  'p5/math/four-operations-fractions/WordProblems': () => import('../notes/p5/math/four-operations-fractions/WordProblems'),
 };
 
 interface NotesCache {

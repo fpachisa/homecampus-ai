@@ -288,6 +288,12 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/four-operations/OrderOfOperations': () => import('../notes/p5/math/four-operations/OrderOfOperations'),
   'p5/math/four-operations/OrderOfOperationsWithBrackets': () => import('../notes/p5/math/four-operations/OrderOfOperationsWithBrackets'),
   'p5/math/four-operations/WordProblems': () => import('../notes/p5/math/four-operations/WordProblems'),
+  // P5 Four Operations of Fractions notes
+  'p5/math/four-operations-fractions/AddSubtractMixedNumbers': () => import('../notes/p5/math/four-operations-fractions/AddSubtractMixedNumbers'),
+  'p5/math/four-operations-fractions/MultiplyFractionWholeNumber': () => import('../notes/p5/math/four-operations-fractions/MultiplyFractionWholeNumber'),
+  'p5/math/four-operations-fractions/MultiplyTwoFractions': () => import('../notes/p5/math/four-operations-fractions/MultiplyTwoFractions'),
+  'p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber': () => import('../notes/p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber'),
+  'p5/math/four-operations-fractions/WordProblems': () => import('../notes/p5/math/four-operations-fractions/WordProblems'),
 };
 
 // Helper to organize notes by hierarchy
