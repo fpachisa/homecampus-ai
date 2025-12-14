@@ -292,7 +292,14 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <ProtectedRoute>
-          <AuthenticatedLayout showSidebar={false} showFooter={false} showBackground={false} maxWidth="full">
+          <AuthenticatedLayout
+            showSidebar={false}
+            showFooter={false}
+            showBackground={false}
+            maxWidth="full"
+            contentPadding="none"
+            lockToViewport
+          >
             <SubscriptionGuard>
               <LearnRouter />
             </SubscriptionGuard>

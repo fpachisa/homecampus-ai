@@ -13,6 +13,8 @@ export interface AuthenticatedLayoutProps {
   showSidebar?: boolean;
   showBackground?: boolean;
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '7xl' | 'full';
+  contentPadding?: 'default' | 'none';
+  lockToViewport?: boolean; // Prevent page scroll; rely on internal scroll regions
 }
 
 const maxWidthClasses: Record<string, string> = {
@@ -31,6 +33,8 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
   showSidebar = true,
   showBackground = true,
   maxWidth = '7xl',
+  contentPadding = 'default',
+  lockToViewport = false,
 }) => {
   const { theme, isDark } = useTheme();
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -78,7 +82,7 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
 
   return (
     <div
-      className="min-h-screen"
+      className={lockToViewport ? 'h-[100dvh] overflow-hidden' : 'min-h-screen'}
       style={{ background: theme.gradients.panel }}
     >
       {/* Background effect */}
@@ -116,7 +120,7 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
 
       {/* Main content wrapper - offset by sidebar width on desktop */}
       <div
-        className="min-h-screen flex flex-col transition-all duration-300"
+        className={`${lockToViewport ? 'h-[100dvh] overflow-hidden' : 'min-h-screen'} flex flex-col transition-all duration-300`}
         style={{
           marginLeft: sidebarWidth,
         }}
@@ -138,10 +142,16 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
         )}
 
         {/* Page content */}
-        <main className="flex-1 px-4 sm:px-6 lg:px-8 py-6 relative z-10">
-          <div className={`mx-auto ${maxWidthClasses[maxWidth]}`}>
-            {children}
-          </div>
+        <main
+          className={`flex-1 relative z-10 ${contentPadding === 'none' ? 'p-0 overflow-hidden' : 'px-4 sm:px-6 lg:px-8 py-6'}`}
+        >
+          {contentPadding === 'none' ? (
+            children
+          ) : (
+            <div className={`mx-auto ${maxWidthClasses[maxWidth]}`}>
+              {children}
+            </div>
+          )}
         </main>
 
         {/* Footer */}
