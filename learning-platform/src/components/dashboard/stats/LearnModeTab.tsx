@@ -30,7 +30,7 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
     <div className="space-y-6">
       {/* Summary Card */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -51,8 +51,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Topics
@@ -66,8 +70,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Problems
@@ -81,8 +89,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Hints
@@ -96,8 +108,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Solutions
@@ -111,8 +127,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Time
@@ -130,7 +150,7 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
       {/* Hints Analysis */}
       {data.hintsAnalysis.byTopic.length > 0 && (
         <div
-          className="p-6 rounded-lg"
+          className="glass-surface p-6 rounded-lg"
           style={{
             backgroundColor: theme.glass.background,
             border: `1px solid ${theme.glass.border}`,
@@ -159,8 +179,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
               return (
                 <div
                   key={topic.topicId}
-                  className="p-4 rounded-lg"
-                  style={{ backgroundColor: theme.colors.interactive }}
+                  className="glass-surface p-4 rounded-lg"
+                  style={{
+                    background: theme.glass.background,
+                    border: `1px solid ${theme.glass.border}`,
+                    backdropFilter: theme.glass.backdrop
+                  }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="font-medium" style={{ color: theme.colors.textPrimary }}>
@@ -207,7 +231,7 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
       {/* Mastery Timeline */}
       {data.masteryTimeline.length > 0 && (
         <div
-          className="p-6 rounded-lg"
+          className="glass-surface p-6 rounded-lg"
           style={{
             backgroundColor: theme.glass.background,
             border: `1px solid ${theme.glass.border}`,
@@ -222,8 +246,12 @@ export const LearnModeTab: React.FC<LearnModeTabProps> = ({ data }) => {
             {data.masteryTimeline.slice(0, 10).map((event, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-3 p-3 rounded-lg"
-                style={{ backgroundColor: theme.colors.interactive }}
+                className="glass-surface flex items-start space-x-3 p-3 rounded-lg"
+                style={{
+                  background: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`,
+                  backdropFilter: theme.glass.backdrop
+                }}
               >
                 <div className="text-2xl">✅</div>
                 <div className="flex-1">

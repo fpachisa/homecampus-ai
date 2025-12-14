@@ -29,7 +29,7 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
     <div className="space-y-6">
       {/* Summary Card */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -50,8 +50,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Paths
@@ -65,8 +69,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Problems
@@ -80,8 +88,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Accuracy
@@ -100,8 +112,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Time
@@ -118,7 +134,7 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
 
       {/* Learn vs Practice Comparison */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -132,8 +148,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Learn Mode */}
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="flex items-center justify-between mb-4">
               <h4 className="font-bold" style={{ color: theme.colors.textPrimary }}>
@@ -174,8 +194,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
 
           {/* Practice Mode */}
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="flex items-center justify-between mb-4">
               <h4 className="font-bold" style={{ color: theme.colors.textPrimary }}>
@@ -228,7 +252,7 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
       {/* Practice Paths */}
       {data.pathsProgress.length > 0 && (
         <div
-          className="p-6 rounded-lg"
+          className="glass-surface p-6 rounded-lg"
           style={{
             backgroundColor: theme.glass.background,
             border: `1px solid ${theme.glass.border}`,
@@ -243,8 +267,12 @@ export const PracticeModeTab: React.FC<PracticeModeTabProps> = ({ data }) => {
             {data.pathsProgress.map(path => (
               <div
                 key={path.pathId}
-                className="p-4 rounded-lg"
-                style={{ backgroundColor: theme.colors.interactive }}
+                className="glass-surface p-4 rounded-lg"
+                style={{
+                  background: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`,
+                  backdropFilter: theme.glass.backdrop
+                }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div>

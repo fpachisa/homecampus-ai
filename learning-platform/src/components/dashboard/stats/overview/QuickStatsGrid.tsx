@@ -51,7 +51,7 @@ export const QuickStatsGrid: React.FC<QuickStatsGridProps> = ({ stats }) => {
       {quickStats.map((stat, index) => (
         <div
           key={index}
-          className="p-4 rounded-lg transition-all hover:scale-105 cursor-pointer"
+          className="glass-surface p-4 rounded-lg transition-all hover:scale-105 cursor-pointer"
           style={{
             backgroundColor: theme.glass.background,
             border: `1px solid ${theme.glass.border}`,

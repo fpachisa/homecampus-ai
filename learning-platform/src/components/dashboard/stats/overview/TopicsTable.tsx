@@ -61,7 +61,7 @@ export const TopicsTable: React.FC<TopicsTableProps> = ({ topics }) => {
   if (topics.length === 0) {
     return (
       <div
-        className="p-12 rounded-lg text-center"
+        className="glass-surface p-12 rounded-lg text-center"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -81,7 +81,7 @@ export const TopicsTable: React.FC<TopicsTableProps> = ({ topics }) => {
 
   return (
     <div
-      className="p-6 rounded-lg overflow-hidden"
+      className="glass-surface p-6 rounded-lg overflow-hidden"
       style={{
         backgroundColor: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,

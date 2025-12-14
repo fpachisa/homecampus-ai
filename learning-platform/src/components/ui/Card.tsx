@@ -31,6 +31,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     ref
   ) => {
     const { theme } = useTheme();
+    const isLight = theme.name === 'light';
 
     // Size configurations
     const sizeConfig = {
@@ -55,9 +56,17 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     const getVariantStyles = () => {
       const variants = {
         default: {
-          backgroundColor: theme.colors.secondary,
+          ...(isLight
+            ? {
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
+            }
+            : {
+              backgroundColor: theme.colors.secondary,
+              border: `1px solid ${theme.colors.border}`,
+            }),
           color: theme.colors.textPrimary,
-          border: `1px solid ${theme.colors.border}`,
         },
         user: {
           backgroundColor: theme.colors.userMessage,
@@ -75,9 +84,17 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           border: 'none',
         },
         elevated: {
-          backgroundColor: theme.colors.primary,
+          ...(isLight
+            ? {
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
+            }
+            : {
+              backgroundColor: theme.colors.primary,
+              border: 'none',
+            }),
           color: theme.colors.textPrimary,
-          border: 'none',
           boxShadow: theme.shadows.md,
         },
       };
@@ -129,7 +146,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         ref={ref}
-        className={`${config.padding} ${config.text} ${className}`}
+        className={`${(variant === 'default' || variant === 'elevated') ? 'glass-surface ' : ''}${config.padding} ${config.text} ${className}`}
         style={cardStyles}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}

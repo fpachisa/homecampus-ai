@@ -50,7 +50,7 @@ export const ActivityHeatmap: React.FC<ActivityHeatmapProps> = ({
 
   return (
     <div
-      className="p-6 rounded-lg"
+      className="glass-surface p-6 rounded-lg"
       style={{
         backgroundColor: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,
@@ -125,8 +125,12 @@ export const ActivityHeatmap: React.FC<ActivityHeatmapProps> = ({
       {/* Summary Stats */}
       <div className="mt-6 grid grid-cols-3 gap-4">
         <div
-          className="p-3 rounded-lg"
-          style={{ backgroundColor: theme.colors.interactive }}
+          className="glass-surface p-3 rounded-lg"
+          style={{
+            background: theme.glass.background,
+            border: `1px solid ${theme.glass.border}`,
+            backdropFilter: theme.glass.backdrop
+          }}
         >
           <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
             Active Days
@@ -136,8 +140,12 @@ export const ActivityHeatmap: React.FC<ActivityHeatmapProps> = ({
           </div>
         </div>
         <div
-          className="p-3 rounded-lg"
-          style={{ backgroundColor: theme.colors.interactive }}
+          className="glass-surface p-3 rounded-lg"
+          style={{
+            background: theme.glass.background,
+            border: `1px solid ${theme.glass.border}`,
+            backdropFilter: theme.glass.backdrop
+          }}
         >
           <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
             Total Problems
@@ -147,8 +155,12 @@ export const ActivityHeatmap: React.FC<ActivityHeatmapProps> = ({
           </div>
         </div>
         <div
-          className="p-3 rounded-lg"
-          style={{ backgroundColor: theme.colors.interactive }}
+          className="glass-surface p-3 rounded-lg"
+          style={{
+            background: theme.glass.background,
+            border: `1px solid ${theme.glass.border}`,
+            backdropFilter: theme.glass.backdrop
+          }}
         >
           <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
             Total XP

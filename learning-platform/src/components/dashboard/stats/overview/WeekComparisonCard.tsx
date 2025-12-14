@@ -63,7 +63,7 @@ export const WeekComparisonCard: React.FC<WeekComparisonCardProps> = ({ comparis
 
   return (
     <div
-      className="p-6 rounded-lg"
+      className="glass-surface p-6 rounded-lg"
       style={{
         backgroundColor: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,
@@ -86,8 +86,12 @@ export const WeekComparisonCard: React.FC<WeekComparisonCardProps> = ({ comparis
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-2" style={{ color: theme.colors.textMuted }}>
               {stat.label}

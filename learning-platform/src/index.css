@@ -90,9 +90,12 @@
   /* Light theme glass needs more edge contrast to read as frosted */
   [data-theme='light'] .glass-surface::before {
     background:
-      radial-gradient(120% 70% at 18% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.45) 26%, transparent 60%),
-      radial-gradient(120% 90% at 85% 100%, rgba(0, 0, 0, 0.10) 0%, transparent 55%),
-      linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, transparent 50%);
+      radial-gradient(120% 70% at 18% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.55) 26%, transparent 62%),
+      radial-gradient(120% 90% at 85% 100%, rgba(0, 0, 0, 0.12) 0%, transparent 55%),
+      radial-gradient(110% 70% at 0% 55%, rgba(217, 119, 87, 0.18) 0%, transparent 55%),
+      radial-gradient(120% 80% at 100% 15%, rgba(88, 101, 242, 0.14) 0%, transparent 58%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0%, transparent 52%),
+      repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.018) 0px, rgba(0, 0, 0, 0.018) 1px, transparent 1px, transparent 4px);
     opacity: 0.85;
   }
 

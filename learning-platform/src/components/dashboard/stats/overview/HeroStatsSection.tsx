@@ -29,7 +29,7 @@ export const HeroStatsSection: React.FC<HeroStatsSectionProps> = ({ stats }) => 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Level & XP */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -83,7 +83,7 @@ export const HeroStatsSection: React.FC<HeroStatsSectionProps> = ({ stats }) => 
 
       {/* Current Streak */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -125,7 +125,7 @@ export const HeroStatsSection: React.FC<HeroStatsSectionProps> = ({ stats }) => 
 
       {/* Total Time */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,

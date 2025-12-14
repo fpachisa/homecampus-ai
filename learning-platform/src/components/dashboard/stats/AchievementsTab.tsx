@@ -19,7 +19,7 @@ export const AchievementsTab: React.FC<AchievementsTabProps> = ({ data }) => {
     <div className="space-y-6">
       {/* Summary Card */}
       <div
-        className="p-6 rounded-lg"
+        className="glass-surface p-6 rounded-lg"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -40,8 +40,12 @@ export const AchievementsTab: React.FC<AchievementsTabProps> = ({ data }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Unlocked
@@ -55,8 +59,12 @@ export const AchievementsTab: React.FC<AchievementsTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               Progress
@@ -81,8 +89,12 @@ export const AchievementsTab: React.FC<AchievementsTabProps> = ({ data }) => {
           </div>
 
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: theme.colors.interactive }}
+            className="glass-surface p-4 rounded-lg"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
+            }}
           >
             <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
               XP from Achievements
@@ -112,7 +124,7 @@ export const AchievementsTab: React.FC<AchievementsTabProps> = ({ data }) => {
 
       {/* Placeholder for Achievement Grid */}
       <div
-        className="p-12 rounded-lg text-center"
+        className="glass-surface p-12 rounded-lg text-center"
         style={{
           backgroundColor: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,

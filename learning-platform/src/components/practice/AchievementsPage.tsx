@@ -61,7 +61,7 @@ export const AchievementsPage: React.FC<AchievementsPageProps> = ({ progress, gl
   const progressPercent = totalPossible > 0 ? Math.round((totalEarned / totalPossible) * 100) : 0;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: theme.colors.primary }}>
+    <div className="min-h-screen" style={{ background: theme.gradients.panel }}>
       {/* Header */}
       <div
         className="sticky top-0 z-10 border-b"

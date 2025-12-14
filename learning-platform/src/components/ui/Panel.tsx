@@ -32,6 +32,7 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(
     ref
   ) => {
     const { theme } = useTheme();
+    const isLight = theme.name === 'light';
 
     // Padding configurations
     const paddingClasses = {
@@ -45,18 +46,40 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(
     const getVariantStyles = () => {
       const variants = {
         default: {
-          backgroundColor: theme.colors.secondary,
-          border: 'none',
+          ...(isLight
+            ? {
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
+            }
+            : {
+              backgroundColor: theme.colors.secondary,
+            }),
           boxShadow: 'none',
         },
         elevated: {
-          backgroundColor: theme.colors.primary,
-          border: 'none',
+          ...(isLight
+            ? {
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
+            }
+            : {
+              backgroundColor: theme.colors.primary,
+            }),
           boxShadow: theme.shadows.md,
         },
         bordered: {
-          backgroundColor: theme.colors.primary,
-          border: `1px solid ${theme.colors.border}`,
+          ...(isLight
+            ? {
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
+            }
+            : {
+              backgroundColor: theme.colors.primary,
+              border: `1px solid ${theme.colors.border}`,
+            }),
           boxShadow: 'none',
         },
         ghost: {
@@ -115,7 +138,7 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(
     return (
       <div
         ref={ref}
-        className={`relative ${className}`}
+        className={`relative ${(variant !== 'ghost' && isLight) ? 'glass-surface ' : ''}${className}`}
         style={panelStyles}
         {...props}
       >

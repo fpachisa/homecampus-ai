@@ -100,7 +100,7 @@ export const StudentStatsDashboard: React.FC = () => {
   // Loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: theme.colors.primary }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'transparent' }}>
         <LoadingSpinner size="large" />
       </div>
     );
@@ -109,7 +109,7 @@ export const StudentStatsDashboard: React.FC = () => {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen p-6" style={{ backgroundColor: theme.colors.primary }}>
+      <div className="min-h-screen p-6" style={{ background: 'transparent' }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center h-96">
             <div className="text-center">
@@ -124,7 +124,7 @@ export const StudentStatsDashboard: React.FC = () => {
                 onClick={refresh}
                 className="px-6 py-2 rounded-lg font-medium transition-all hover:scale-105"
                 style={{
-                  backgroundColor: theme.colors.primary,
+                  backgroundColor: theme.colors.brand,
                   color: '#FFFFFF'
                 }}
               >
@@ -138,7 +138,7 @@ export const StudentStatsDashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen p-3 sm:p-4 md:p-6" style={{ backgroundColor: theme.colors.primary }}>
+    <div className="min-h-screen p-3 sm:p-4 md:p-6" style={{ background: 'transparent' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-4 sm:mb-6">
@@ -146,10 +146,11 @@ export const StudentStatsDashboard: React.FC = () => {
           <div className="flex items-center justify-between mb-3">
             <button
               onClick={() => navigate('/')}
-              className="p-2 rounded-lg transition-all hover:scale-105 flex items-center gap-1"
+              className="glass-surface p-2 rounded-lg transition-all hover:scale-105 flex items-center gap-1"
               style={{
-                backgroundColor: theme.glass.background,
+                background: theme.glass.background,
                 border: `1px solid ${theme.glass.border}`,
+                backdropFilter: theme.glass.backdrop,
                 color: theme.colors.textSecondary
               }}
             >
@@ -163,10 +164,11 @@ export const StudentStatsDashboard: React.FC = () => {
                 <select
                   value={selectedChildId || ''}
                   onChange={(e) => setSelectedChildId(e.target.value)}
-                  className="px-3 py-2 rounded-lg font-medium outline-none cursor-pointer"
+                  className="glass-surface px-3 py-2 rounded-lg font-medium outline-none cursor-pointer"
                   style={{
-                    backgroundColor: theme.glass.background,
+                    background: theme.glass.background,
                     border: `1px solid ${theme.glass.border}`,
+                    backdropFilter: theme.glass.backdrop,
                     color: theme.colors.textPrimary
                   }}
                 >
@@ -180,10 +182,11 @@ export const StudentStatsDashboard: React.FC = () => {
 
               <button
                 onClick={refresh}
-                className="px-3 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-1"
+                className="glass-surface px-3 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-1"
                 style={{
-                  backgroundColor: theme.glass.background,
+                  background: theme.glass.background,
                   border: `1px solid ${theme.glass.border}`,
+                  backdropFilter: theme.glass.backdrop,
                   color: theme.colors.textSecondary
                 }}
               >
@@ -207,10 +210,11 @@ export const StudentStatsDashboard: React.FC = () => {
         {/* Tab Navigation */}
         <div className="mb-4 sm:mb-6">
           <div
-            className="flex gap-1 sm:gap-2 p-1 rounded-lg overflow-x-auto"
+            className="glass-surface flex gap-1 sm:gap-2 p-1 rounded-lg overflow-x-auto"
             style={{
-              backgroundColor: theme.glass.background,
-              border: `1px solid ${theme.glass.border}`
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop
             }}
           >
             {TABS.map(tab => {
