@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="350" height="280" style="background-color: #f8f9fa;">
+  <!-- Star medal: regular hexagon with 6 equilateral triangles pointing out from each side -->
+  <defs>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="triGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!--
+    Regular hexagon (pointy-top) centered at (250, 170), radius 70
+    V1=(250,100) V2=(310,135) V3=(310,205) V4=(250,240) V5=(190,205) V6=(190,135)
+
+    Apex positions calculated perpendicular to each side at distance 45:
+    Top-right apex: (303, 79)
+    Right apex: (365, 170)
+    Bottom-right apex: (303, 261)
+    Bottom-left apex: (197, 261)
+    Left apex: (135, 170)
+    Top-left apex: (197, 79)
+  -->
+
+  <!-- Draw triangles FIRST (behind hexagon) -->
+  <!-- Triangle 1: top-right side (V1 to V2), apex up-right -->
+  <polygon points="250,100 310,135 303,79"
+           fill="url(#triGrad)" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Triangle 2: right side (V2 to V3), apex right -->
+  <polygon points="310,135 310,205 365,170"
+           fill="url(#triGrad)" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Triangle 3: bottom-right side (V3 to V4), apex down-right -->
+  <polygon points="310,205 250,240 303,261"
+           fill="url(#triGrad)" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Triangle 4: bottom-left side (V4 to V5), apex down-left -->
+  <polygon points="250,240 190,205 197,261"
+           fill="url(#triGrad)" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Triangle 5: left side (V5 to V6), apex left -->
+  <polygon points="190,205 190,135 135,170"
+           fill="url(#triGrad)" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Triangle 6: top-left side (V6 to V1), apex up-left -->
+  <polygon points="190,135 250,100 197,79"
+           fill="url(#triGrad)" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Hexagon drawn on TOP -->
+  <polygon points="250,100 310,135 310,205 250,240 190,205 190,135"
+           fill="url(#hexGrad)" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Hexagon label -->
+  <text x="250" y="165" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#854d0e" text-anchor="middle">
+    Hexagon
+  </text>
+  <text x="250" y="180" font-family="Arial, sans-serif" font-size="11" fill="#854d0e" text-anchor="middle">
+    48 cm²
+  </text>
+
+  <!-- Triangle info -->
+  <text x="250" y="330" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444" text-anchor="middle">
+    Each triangle: base 4 cm, height 3 cm
+  </text>
+  <text x="250" y="350" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">
+    6 identical triangles around the hexagon
+  </text>
+</svg>

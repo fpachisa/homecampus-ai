@@ -6331,6 +6331,100 @@ Solving real-world problems with **all fraction operations**!
     }
   },
 
+  // ============================================
+  // P5 MATHEMATICS - Area of Triangle
+  // ============================================
+
+  'p5-math-area-triangle-base-height': {
+    speech: {
+      text: `Welcome to learning about the base and height of triangles! Every triangle has a base and a height. The base can be any side of the triangle. The height is the perpendicular distance from the base to the opposite vertex, it always makes a ninety degree angle with the base. Sometimes the height falls inside the triangle, and sometimes it falls outside. Let us explore this together!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-area-triangle-base-height.mp3'
+    },
+    display: {
+      content: `# Base and Height of a Triangle
+
+Every triangle has a **base** and a **height**!
+
+---
+
+### Key Concepts:
+- **Base**: Any side of the triangle
+- **Height**: The perpendicular distance from the base to the opposite vertex
+- Height always meets the base at **90°** (right angle)
+
+### Important:
+- ANY side can be the base
+- Each base has its own corresponding height
+- Height can be **inside** or **outside** the triangle
+
+Ready to identify base and height in different triangles?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-area-triangle-formula': {
+    speech: {
+      text: `Now let us learn the formula for the area of a triangle! Here is the big idea: a triangle is exactly half of a rectangle with the same base and height. That is why the formula is one half times base times height. We write it as Area equals one half times base times height. Once you know the base and height, just multiply them and divide by two!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-area-triangle-formula.mp3'
+    },
+    display: {
+      content: `# Area of a Triangle
+
+A triangle is **half** of a rectangle!
+
+---
+
+### The Formula:
+$$\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$$
+
+### Why does this work?
+- A triangle is exactly **half** of a rectangle with the same base and height
+- Area of rectangle = base × height
+- Area of triangle = ½ × base × height
+
+### Remember:
+- Use the **perpendicular** height (not the slanted side!)
+- Don't forget to include **units²** in your answer
+
+Let's calculate some triangle areas!`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-area-triangle-composite': {
+    speech: {
+      text: `Time to tackle composite figures, shapes made from triangles and other shapes! There are two main strategies. First, the split and add method: break the figure into simpler shapes, find each area, then add them together. Second, the take away method: start with a larger shape and subtract the pieces that are cut out. Let us learn both approaches!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-area-triangle-composite.mp3'
+    },
+    display: {
+      content: `# Area of Composite Figures
+
+Find the area of shapes made from **triangles and rectangles**!
+
+---
+
+### Method 1: Split and Add
+1. **Split** the figure into triangles and rectangles
+2. Find the **area** of each part
+3. **Add** all the areas together
+
+### Method 2: Take Away
+1. Start with a **larger** simple shape
+2. Find the area of the **cutout**
+3. **Subtract** the cutout from the larger shape
+
+### When to use which?
+- **Split and Add**: Figure is made of joined shapes
+- **Take Away**: Shape has parts "cut out"
+
+Let's solve some composite figure problems!`,
+      showAfterSpeech: true
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

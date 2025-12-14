@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="350" height="280" style="background-color: #f8f9fa;">
+  <!-- Swallowtail flag: rectangle with triangle cut from bottom -->
+  <defs>
+    <linearGradient id="flagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Flag body (rectangle minus triangle cutout) -->
+  <path d="M 100,80 L 380,80 L 380,280 L 240,200 L 100,280 Z"
+        fill="url(#flagGrad)"
+        stroke="#1e40af"
+        stroke-width="3"/>
+
+  <!-- Flagpole -->
+  <line x1="100" y1="60" x2="100" y2="310" stroke="#6b7280" stroke-width="6"/>
+  <circle cx="100" cy="55" r="8" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Rectangle outline (dashed to show original shape) -->
+  <rect x="100" y="80" width="280" height="200"
+        fill="none"
+        stroke="#9ca3af"
+        stroke-width="1"
+        stroke-dasharray="6,3"/>
+
+  <!-- Cutout triangle (just the lines) -->
+  <line x1="100" y1="280" x2="240" y2="200" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="240" y1="200" x2="380" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="240" y="250" font-family="Arial, sans-serif" font-size="11" fill="#dc2626" text-anchor="middle" font-style="italic">
+    cutout
+  </text>
+
+  <!-- Rectangle length (80 cm) - top -->
+  <line x1="100" y1="60" x2="380" y2="60" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="100" y1="55" x2="100" y2="65" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="380" y1="55" x2="380" y2="65" stroke="#3b82f6" stroke-width="2"/>
+  <text x="240" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">
+    80 cm
+  </text>
+
+  <!-- Rectangle height (50 cm) - right side -->
+  <line x1="400" y1="80" x2="400" y2="280" stroke="#1e40af" stroke-width="2"/>
+  <line x1="395" y1="80" x2="405" y2="80" stroke="#1e40af" stroke-width="2"/>
+  <line x1="395" y1="280" x2="405" y2="280" stroke="#1e40af" stroke-width="2"/>
+  <text x="420" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">
+    50 cm
+  </text>
+
+  <!-- Triangle base (50 cm) - along bottom dashed line -->
+  <line x1="100" y1="300" x2="380" y2="300" stroke="#ef4444" stroke-width="2"/>
+  <line x1="100" y1="295" x2="100" y2="305" stroke="#ef4444" stroke-width="2"/>
+  <line x1="380" y1="295" x2="380" y2="305" stroke="#ef4444" stroke-width="2"/>
+  <text x="240" y="320" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="middle">
+    50 cm (cutout base)
+  </text>
+
+  <!-- Triangle height (20 cm) -->
+  <line x1="240" y1="200" x2="240" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="55" y1="200" x2="55" y2="280" stroke="#dc2626" stroke-width="2"/>
+  <line x1="50" y1="200" x2="60" y2="200" stroke="#dc2626" stroke-width="2"/>
+  <line x1="50" y1="280" x2="60" y2="280" stroke="#dc2626" stroke-width="2"/>
+  <text x="35" y="245" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">
+    20 cm
+  </text>
+
+  <!-- Question -->
+  <text x="250" y="375" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+    How much fabric is needed?
+  </text>
+</svg>

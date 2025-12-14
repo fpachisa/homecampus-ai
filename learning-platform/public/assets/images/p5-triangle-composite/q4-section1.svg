@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="350" height="280" style="background-color: #f8f9fa;">
+  <!-- Pennant: Square + Triangle pointing down -->
+  <defs>
+    <linearGradient id="squareGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="triGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Square (top) -->
+  <rect x="175" y="50" width="150" height="150"
+        fill="url(#squareGrad)"
+        stroke="#1e40af"
+        stroke-width="3"
+        rx="2"/>
+
+  <!-- Triangle (bottom point) -->
+  <polygon points="175,200 250,340 325,200"
+           fill="url(#triGrad)"
+           stroke="#dc2626"
+           stroke-width="3"/>
+
+  <!-- Square side (6 cm) - top -->
+  <line x1="175" y1="35" x2="325" y2="35" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="175" y1="30" x2="175" y2="40" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="325" y1="30" x2="325" y2="40" stroke="#3b82f6" stroke-width="2"/>
+  <text x="250" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">
+    6 cm
+  </text>
+
+  <!-- Square side (6 cm) - left -->
+  <line x1="155" y1="50" x2="155" y2="200" stroke="#6366f1" stroke-width="2"/>
+  <line x1="150" y1="50" x2="160" y2="50" stroke="#6366f1" stroke-width="2"/>
+  <line x1="150" y1="200" x2="160" y2="200" stroke="#6366f1" stroke-width="2"/>
+  <text x="130" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6366f1">
+    6 cm
+  </text>
+
+  <!-- Triangle base (6 cm) - shared with square bottom, shown with dashed -->
+  <line x1="175" y1="200" x2="325" y2="200" stroke="#2c3e50" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- Triangle height (8 cm) - center -->
+  <line x1="250" y1="200" x2="250" y2="340" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="345" y1="200" x2="345" y2="340" stroke="#ef4444" stroke-width="2"/>
+  <line x1="340" y1="200" x2="350" y2="200" stroke="#ef4444" stroke-width="2"/>
+  <line x1="340" y1="340" x2="350" y2="340" stroke="#ef4444" stroke-width="2"/>
+  <text x="365" y="275" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">
+    8 cm
+  </text>
+
+  <!-- Labels -->
+  <text x="250" y="130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">
+    Square
+  </text>
+  <text x="250" y="260" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">
+    Triangle
+  </text>
+</svg>

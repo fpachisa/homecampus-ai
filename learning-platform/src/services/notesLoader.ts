@@ -286,6 +286,10 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p5/math/four-operations-fractions/MultiplyTwoFractions': () => import('../notes/p5/math/four-operations-fractions/MultiplyTwoFractions'),
   'p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber': () => import('../notes/p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber'),
   'p5/math/four-operations-fractions/WordProblems': () => import('../notes/p5/math/four-operations-fractions/WordProblems'),
+  // P5 Math notes - Area of Triangle
+  'p5/math/area-of-triangle/BaseAndHeight': () => import('../notes/p5/math/area-of-triangle/BaseAndHeight'),
+  'p5/math/area-of-triangle/AreaOfTriangle': () => import('../notes/p5/math/area-of-triangle/AreaOfTriangle'),
+  'p5/math/area-of-triangle/CompositeTriangleFigures': () => import('../notes/p5/math/area-of-triangle/CompositeTriangleFigures'),
 };
 
 interface NotesCache {

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="350" height="280" style="background-color: #f8f9fa;">
+  <!-- Kite shape: two triangles sharing a vertical line -->
+  <defs>
+    <linearGradient id="leftGrad" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="rightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left triangle -->
+  <polygon points="250,60 250,330 90,195"
+           fill="url(#leftGrad)"
+           stroke="#047857"
+           stroke-width="3"/>
+
+  <!-- Right triangle -->
+  <polygon points="250,60 250,330 410,195"
+           fill="url(#rightGrad)"
+           stroke="#9333ea"
+           stroke-width="3"/>
+
+  <!-- Center line (shared base) - dashed -->
+  <line x1="250" y1="60" x2="250" y2="330" stroke="#2c3e50" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- Vertical dimension (18 cm) - outside on left -->
+  <line x1="60" y1="60" x2="60" y2="330" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="55" y1="60" x2="65" y2="60" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="55" y1="330" x2="65" y2="330" stroke="#2c3e50" stroke-width="2"/>
+  <text x="40" y="200" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" transform="rotate(-90 40 200)">
+    18 cm
+  </text>
+
+  <!-- Left triangle height (8 cm) - horizontal from left vertex -->
+  <line x1="90" y1="195" x2="250" y2="195" stroke="#10b981" stroke-width="2"/>
+  <line x1="90" y1="190" x2="90" y2="200" stroke="#10b981" stroke-width="2"/>
+  <line x1="250" y1="190" x2="250" y2="200" stroke="#10b981" stroke-width="2"/>
+  <text x="170" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">
+    8 cm
+  </text>
+
+  <!-- Right triangle height (8 cm) - horizontal from right vertex -->
+  <line x1="250" y1="195" x2="410" y2="195" stroke="#a855f7" stroke-width="2"/>
+  <line x1="250" y1="190" x2="250" y2="200" stroke="#a855f7" stroke-width="2"/>
+  <line x1="410" y1="190" x2="410" y2="200" stroke="#a855f7" stroke-width="2"/>
+  <text x="330" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a855f7" text-anchor="middle">
+    8 cm
+  </text>
+
+  <!-- Labels -->
+  <text x="160" y="200" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">
+    Left
+  </text>
+  <text x="340" y="200" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">
+    Right
+  </text>
+
+  <!-- Note -->
+  <text x="250" y="370" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">
+    Kite made of two identical triangles
+  </text>
+</svg>

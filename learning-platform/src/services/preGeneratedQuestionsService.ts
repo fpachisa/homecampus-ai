@@ -7,6 +7,7 @@ import type { PreGeneratedQuestion, QuestionBank } from '../data/learn/question-
 import { S1_MATH_PERIMETER_AREA_COMPOSITE_QUESTION_BANK } from '../data/learn/question-banks/s1-math-perimeter-area-composite.js';
 import { P5_MATH_FOUR_OPERATIONS_WORD_PROBLEMS_QUESTION_BANK } from '../data/learn/question-banks/p5-math-four-operations-word-problems.js';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_WORD_PROBLEMS_QUESTION_BANK } from '../data/learn/question-banks/p5-math-four-operations-fractions-word-problems.js';
+import { P5_MATH_AREA_TRIANGLE_COMPOSITE_QUESTION_BANK } from '../data/learn/question-banks/p5-math-area-triangle-composite.js';
 
 /**
  * Registry of all question banks, keyed by topicId
@@ -15,6 +16,7 @@ const QUESTION_BANKS: Record<string, QuestionBank> = {
   's1-math-perimeter-area-composite': S1_MATH_PERIMETER_AREA_COMPOSITE_QUESTION_BANK,
   'p5-math-four-operations-word-problems': P5_MATH_FOUR_OPERATIONS_WORD_PROBLEMS_QUESTION_BANK,
   'p5-math-four-operations-fractions-word-problems': P5_MATH_FOUR_OPERATIONS_FRACTIONS_WORD_PROBLEMS_QUESTION_BANK,
+  'p5-math-area-triangle-composite': P5_MATH_AREA_TRIANGLE_COMPOSITE_QUESTION_BANK,
 };
 
 export class PreGeneratedQuestionsService {

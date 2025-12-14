@@ -100,6 +100,8 @@ import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subject
 import type { FractionsDivisionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import type { AreaOfTriangleTopicId } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -285,6 +287,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P5 fractions and divisions topic
   if (topicId.startsWith('p5-math-fractions-divisions-')) {
     return P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS[topicId as FractionsDivisionsTopicId];
+  }
+  // Check if it's a P5 area of triangle topic
+  if (topicId.startsWith('p5-math-area-triangle-')) {
+    return P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS[topicId as AreaOfTriangleTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

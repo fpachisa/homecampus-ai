@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="350" height="280" style="background-color: #f8f9fa;">
+  <!-- Rectangle with triangle notch cut from center of top edge -->
+  <defs>
+    <linearGradient id="rectGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main rectangle -->
+  <rect x="80" y="100" width="340" height="180"
+        fill="url(#rectGrad)"
+        stroke="#d97706"
+        stroke-width="3"
+        rx="2"/>
+
+  <!-- Triangle cutout (from center of top edge, pointing down) -->
+  <polygon points="165,100 250,235 335,100"
+           fill="#f8f9fa"
+           stroke="#dc2626"
+           stroke-width="2"
+           stroke-dasharray="6,3"/>
+
+  <!-- Cutout label -->
+  <text x="250" y="160" font-family="Arial, sans-serif" font-size="11" fill="#dc2626" font-style="italic" text-anchor="middle">
+    cutout
+  </text>
+
+  <!-- Rectangle length (16 cm) - bottom -->
+  <line x1="80" y1="300" x2="420" y2="300" stroke="#f97316" stroke-width="2"/>
+  <line x1="80" y1="295" x2="80" y2="305" stroke="#f97316" stroke-width="2"/>
+  <line x1="420" y1="295" x2="420" y2="305" stroke="#f97316" stroke-width="2"/>
+  <text x="250" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f97316" text-anchor="middle">
+    16 cm
+  </text>
+
+  <!-- Rectangle height (8 cm) - right side -->
+  <line x1="440" y1="100" x2="440" y2="280" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="435" y1="100" x2="445" y2="100" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="435" y1="280" x2="445" y2="280" stroke="#fbbf24" stroke-width="2"/>
+  <text x="460" y="195" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d97706">
+    8 cm
+  </text>
+
+  <!-- Triangle base (8 cm) - along top edge -->
+  <line x1="165" y1="85" x2="335" y2="85" stroke="#ef4444" stroke-width="2"/>
+  <line x1="165" y1="80" x2="165" y2="90" stroke="#ef4444" stroke-width="2"/>
+  <line x1="335" y1="80" x2="335" y2="90" stroke="#ef4444" stroke-width="2"/>
+  <text x="250" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">
+    8 cm
+  </text>
+
+  <!-- Triangle height (6 cm) - vertical dashed line -->
+  <line x1="250" y1="100" x2="250" y2="235" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="50" y1="100" x2="50" y2="235" stroke="#dc2626" stroke-width="2"/>
+  <line x1="45" y1="100" x2="55" y2="100" stroke="#dc2626" stroke-width="2"/>
+  <line x1="45" y1="235" x2="55" y2="235" stroke="#dc2626" stroke-width="2"/>
+  <text x="30" y="172" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#dc2626">
+    6 cm
+  </text>
+
+  <!-- Right angle marker -->
+  <rect x="250" y="100" width="10" height="10" fill="none" stroke="#059669" stroke-width="2"/>
+</svg>

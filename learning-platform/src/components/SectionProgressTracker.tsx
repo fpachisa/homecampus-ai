@@ -86,6 +86,8 @@ import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subject
 import type { FractionsDivisionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import type { AreaOfTriangleTopicId } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -284,6 +286,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P5 Fractions and Divisions topics
     if (topicId.startsWith('p5-math-fractions-divisions-')) {
       const subtopic = P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS[topicId as FractionsDivisionsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Area of Triangle topics
+    if (topicId.startsWith('p5-math-area-triangle-')) {
+      const subtopic = P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS[topicId as AreaOfTriangleTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

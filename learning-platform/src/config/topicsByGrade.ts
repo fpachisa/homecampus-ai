@@ -72,6 +72,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 5',
       subject: 'Mathematics',
     },
+    {
+      id: 'p5-area-of-triangle',
+      name: 'Area of Triangle',
+      icon: '📐',
+      description: 'Master base and height identification, area formula, and composite figures involving triangles',
+      subtopicCount: 3,
+      isActive: true,
+      category: 'p5-math-area-triangle',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
   ],
   'Primary 6': [
     {

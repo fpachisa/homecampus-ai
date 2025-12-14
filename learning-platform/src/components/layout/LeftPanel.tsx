@@ -91,6 +91,8 @@ import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../../prompt-library/subj
 import type { FractionsDivisionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import type { FourOperationsFractionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import type { AreaOfTriangleTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -121,6 +123,12 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('p5-math-fractions-divisions-')) {
     const icons = ['🍕', '🔢'];  // Pizza for division as sharing, decimal for decimals
     const index = Object.keys(P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Area of Triangle icons
+  if (topicId.startsWith('p5-math-area-triangle-')) {
+    const icons = ['📏', '📐', '🔷'];  // Base/Height, Formula, Composite
+    const index = Object.keys(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
   // P6 Fractions icons
@@ -428,6 +436,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p5-math-four-operations') return 'Four Operations on Whole Numbers';
   if (category === 'p5-math-fractions-divisions') return 'Fractions and Division';
   if (category === 'p5-math-four-operations-fractions') return 'Four Operations of Fractions';
+  if (category === 'p5-math-area-triangle') return 'Area of Triangle';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -485,6 +494,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-four-operations',
     'p5-math-fractions-divisions',
     'p5-math-four-operations-fractions',
+    'p5-math-area-triangle',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -872,6 +882,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-four-operations-fractions') {
       return Object.entries(P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as FourOperationsFractionsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-area-triangle') {
+      return Object.entries(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as AreaOfTriangleTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

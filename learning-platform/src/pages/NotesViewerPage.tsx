@@ -294,6 +294,10 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/four-operations-fractions/MultiplyTwoFractions': () => import('../notes/p5/math/four-operations-fractions/MultiplyTwoFractions'),
   'p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber': () => import('../notes/p5/math/four-operations-fractions/MultiplyMixedNumberWholeNumber'),
   'p5/math/four-operations-fractions/WordProblems': () => import('../notes/p5/math/four-operations-fractions/WordProblems'),
+  // P5 Area of Triangle notes
+  'p5/math/area-of-triangle/BaseAndHeight': () => import('../notes/p5/math/area-of-triangle/BaseAndHeight'),
+  'p5/math/area-of-triangle/AreaOfTriangle': () => import('../notes/p5/math/area-of-triangle/AreaOfTriangle'),
+  'p5/math/area-of-triangle/CompositeTriangleFigures': () => import('../notes/p5/math/area-of-triangle/CompositeTriangleFigures'),
 };
 
 // Helper to organize notes by hierarchy

@@ -36,7 +36,7 @@ export interface MathToolDefinition {
   name: string;                    // Display name
   technicalName: string;           // Key used in code
   component: string;               // React component name
-  category: 'trigonometry' | 'geometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability';
+  category: 'trigonometry' | 'geometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability' | 'primary-geometry';
 
   // Documentation
   description: string;             // What this tool does
@@ -4363,6 +4363,133 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           ],
           showUnitDividers: true,
           caption: "(16 - 4) ÷ 2 = ?"
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // PRIMARY GEOMETRY TOOLS
+  // ============================================
+
+  triangleIdentify: {
+    name: "Triangle Base and Height Identifier",
+    technicalName: "triangleIdentify",
+    component: "TriangleIdentifyVisualizer",
+    category: "primary-geometry",
+    description: "Shows triangles in various orientations to help students identify base and height. Displays dashed height line perpendicular to base with right-angle marker. For obtuse triangles, shows extended base line where height falls outside the triangle.",
+    whenToUse: "Use for P5 Area of Triangle when teaching students to identify base and height in different triangle orientations. Perfect for exercises where students must recognize which side is the base and where the height is drawn.",
+
+    parameters: {
+      apex: "string (REQUIRED) - Label for vertex opposite to base (e.g., 'F', 'P'). This is where height drops from.",
+      baseLeft: "string (REQUIRED) - Label for left end of base (e.g., 'E', 'Q')",
+      baseRight: "string (REQUIRED) - Label for right end of base (e.g., 'G', 'R')",
+      heightFoot: "string (optional) - Label for point where height meets base (e.g., 'H', 'J'). Only shown if provided.",
+      shape: "'acute' | 'right' | 'obtuse-left' | 'obtuse-right' (REQUIRED) - Triangle shape. 'acute' = height inside, 'right' = right angle at apex, 'obtuse-left' = apex leans left (height outside on left), 'obtuse-right' = apex leans right (height outside on right)",
+      showHeight: "boolean (optional, default: true) - Show the dashed height line. Set false for 'find the height' exercises.",
+      rotation: "0 | 90 | 180 | 270 (optional, default: 0) - Rotate entire diagram. 0 = base at bottom, 90 = base on right, 180 = base at top, 270 = base on left",
+      caption: "string (optional) - Caption below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Acute triangle with height inside",
+        caption: "Triangle EFG with base EG and height from F to H",
+        parameters: {
+          apex: "F",
+          baseLeft: "E",
+          baseRight: "G",
+          heightFoot: "H",
+          shape: "acute",
+          showHeight: true
+        }
+      },
+      {
+        scenario: "Obtuse triangle with height outside",
+        caption: "Triangle WXY where height falls outside the triangle",
+        parameters: {
+          apex: "W",
+          baseLeft: "Y",
+          baseRight: "X",
+          heightFoot: "Z",
+          shape: "obtuse-right",
+          showHeight: true
+        }
+      },
+      {
+        scenario: "Right triangle",
+        caption: "Right-angled triangle PQR where the height is a side",
+        parameters: {
+          apex: "P",
+          baseLeft: "Q",
+          baseRight: "R",
+          shape: "right",
+          showHeight: true
+        }
+      },
+      {
+        scenario: "Rotated triangle - base on left",
+        caption: "Same triangle rotated 90 degrees",
+        parameters: {
+          apex: "F",
+          baseLeft: "E",
+          baseRight: "G",
+          heightFoot: "H",
+          shape: "acute",
+          rotation: 270
+        }
+      }
+    ]
+  },
+
+  triangleArea: {
+    name: "Triangle Area Calculator Diagram",
+    technicalName: "triangleArea",
+    component: "TriangleAreaVisualizer",
+    category: "primary-geometry",
+    description: "Shows triangle with base and height dimensions labeled for area calculation problems. Includes dashed height line, right-angle marker, and optional light shading. Does NOT show formula or calculation - student must figure out Area = ½ × base × height.",
+    whenToUse: "Use for P5 Area of Triangle calculation problems. Show the triangle with given dimensions and let students calculate the area using the formula.",
+
+    parameters: {
+      base: "string (REQUIRED) - Base dimension label (e.g., '10 cm', '15 m', '8 m')",
+      height: "string (REQUIRED) - Height dimension label (e.g., '6 cm', 'h', '4 m')",
+      shape: "'acute' | 'right' | 'obtuse-left' | 'obtuse-right' (REQUIRED) - Triangle shape",
+      rotation: "0 | 90 | 180 | 270 (optional, default: 0) - Rotate diagram",
+      shaded: "boolean (optional, default: true) - Light shading to indicate 'find this area'",
+      labels: "object (optional) - Vertex labels: { apex?: string, baseLeft?: string, baseRight?: string }",
+      caption: "string (optional) - Caption below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Simple acute triangle area problem",
+        caption: "Find the area of this triangle",
+        parameters: {
+          base: "10 cm",
+          height: "6 cm",
+          shape: "acute",
+          shaded: true
+        }
+      },
+      {
+        scenario: "Right triangle area",
+        caption: "Calculate the area of triangle J",
+        parameters: {
+          base: "6 cm",
+          height: "6 cm",
+          shape: "right",
+          labels: { apex: "J" },
+          shaded: true
+        }
+      },
+      {
+        scenario: "Obtuse triangle with height outside",
+        caption: "Find the area given base and perpendicular height",
+        parameters: {
+          base: "20 m",
+          height: "14 m",
+          shape: "obtuse-left",
+          shaded: true
         }
       }
     ]

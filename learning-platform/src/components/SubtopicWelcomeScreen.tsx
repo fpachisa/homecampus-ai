@@ -86,6 +86,8 @@ import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subject
 import type { FractionsDivisionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import type { AreaOfTriangleTopicId } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -191,6 +193,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS[topicId as FractionsDivisionsTopicId];
   } else if (category === 'p5-math-four-operations-fractions') {
     topicConfig = P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS[topicId as FourOperationsFractionsTopicId];
+  } else if (category === 'p5-math-area-triangle') {
+    topicConfig = P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS[topicId as AreaOfTriangleTopicId];
   }
 
   if (!topicConfig) {

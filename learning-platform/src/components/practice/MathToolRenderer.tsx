@@ -86,6 +86,10 @@ import PlaceValueChartVisualizer from '../math-tools/PlaceValueChartVisualizer';
 import BarModelVisualizer from '../math-tools/BarModelVisualizer';
 import FractionCircleVisualizer from '../math-tools/FractionCircleVisualizer';
 
+// Primary Geometry - P5 Area of Triangle
+import TriangleIdentifyVisualizer from '../math-tools/TriangleIdentifyVisualizer';
+import TriangleAreaVisualizer from '../math-tools/TriangleAreaVisualizer';
+
 // Geometry - Angles
 import ParallelLinesTransversalVisualizer from '../math-tools/ParallelLinesTransversalVisualizer';
 import AnglesAtPointVisualizer from '../math-tools/AnglesAtPointVisualizer';
@@ -226,6 +230,10 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   placeValueChart: PlaceValueChartVisualizer,
   barModel: BarModelVisualizer,
   fractionCircle: FractionCircleVisualizer,
+
+  // Primary Geometry - P5 Area of Triangle
+  triangleIdentify: TriangleIdentifyVisualizer,
+  triangleArea: TriangleAreaVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

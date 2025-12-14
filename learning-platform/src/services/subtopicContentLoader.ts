@@ -47,6 +47,7 @@ import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS } from '../prompt-library/subjects
 import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 
 export interface SubtopicContent {
   displayName: string;
@@ -110,6 +111,7 @@ class SubtopicContentLoader {
       ...P5_MATH_FOUR_OPERATIONS_SUBTOPICS,
       ...P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS,
       ...P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS,
+      ...P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS,
       // Future topics will be added here
     };
   }

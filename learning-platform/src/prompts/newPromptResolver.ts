@@ -70,6 +70,7 @@ import { P5_MATH_NUMBERS_10_MILLION_SUBTOPICS, P5_NUMBERS_10_MILLION_CONFIG } fr
 import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS, P5_FOUR_OPERATIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-four-operations';
 import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS, P5_FRACTIONS_DIVISIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
+import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS, P5_AREA_OF_TRIANGLE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -164,6 +165,7 @@ function registerBrowserTopics() {
   registerTopics(P5_MATH_FOUR_OPERATIONS_SUBTOPICS, P5_FOUR_OPERATIONS_CONFIG);
   registerTopics(P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS, P5_FRACTIONS_DIVISIONS_CONFIG);
   registerTopics(P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIONS_CONFIG);
+  registerTopics(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS, P5_AREA_OF_TRIANGLE_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

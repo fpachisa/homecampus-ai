@@ -27,6 +27,7 @@ import { readFileSync } from 'fs';
 import { P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS } from './p5-numbers-10-million-firestore-configs.js';
 import { P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS } from './p5-four-operations-firestore-configs.js';
 import { P5_FRACTIONS_DIVISIONS_FIRESTORE_CONFIGS } from './p5-fractions-divisions-firestore-configs.js';
+import { P5_AREA_OF_TRIANGLE_FIRESTORE_CONFIGS } from './p5-area-of-triangle-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -325,7 +326,8 @@ const ALL_CONFIGS = [
   ...P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS,
   ...P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS,
   ...P5_FRACTIONS_DIVISIONS_FIRESTORE_CONFIGS,
-  ...P5_FOUR_OPERATIONS_FRACTIONS_FIRESTORE_CONFIGS
+  ...P5_FOUR_OPERATIONS_FRACTIONS_FIRESTORE_CONFIGS,
+  ...P5_AREA_OF_TRIANGLE_FIRESTORE_CONFIGS
 ];
 
 /**

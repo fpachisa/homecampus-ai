@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="350" height="280" style="background-color: #f8f9fa;">
+  <!-- Picture frame: house shape with rectangular photo cutout -->
+  <defs>
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#92400e;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#78350f;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#b45309;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Frame rectangle -->
+  <rect x="110" y="140" width="280" height="190"
+        fill="url(#frameGrad)"
+        stroke="#78350f"
+        stroke-width="3"
+        rx="2"/>
+
+  <!-- Frame triangle (roof) -->
+  <polygon points="110,140 250,40 390,140"
+           fill="url(#roofGrad)"
+           stroke="#b45309"
+           stroke-width="3"/>
+
+  <!-- Photo area (inner rectangle - white/cutout) -->
+  <rect x="138" y="168" width="224" height="134"
+        fill="#f8f9fa"
+        stroke="#d1d5db"
+        stroke-width="2"/>
+
+  <!-- Photo label -->
+  <text x="250" y="240" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af" text-anchor="middle">
+    Photo Area
+  </text>
+  <text x="250" y="258" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">
+    24 cm × 14 cm
+  </text>
+
+  <!-- Frame dimensions - outer rectangle -->
+  <line x1="110" y1="350" x2="390" y2="350" stroke="#92400e" stroke-width="2"/>
+  <line x1="110" y1="345" x2="110" y2="355" stroke="#92400e" stroke-width="2"/>
+  <line x1="390" y1="345" x2="390" y2="355" stroke="#92400e" stroke-width="2"/>
+  <text x="250" y="370" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e" text-anchor="middle">
+    30 cm
+  </text>
+
+  <line x1="410" y1="140" x2="410" y2="330" stroke="#78350f" stroke-width="2"/>
+  <line x1="405" y1="140" x2="415" y2="140" stroke="#78350f" stroke-width="2"/>
+  <line x1="405" y1="330" x2="415" y2="330" stroke="#78350f" stroke-width="2"/>
+  <text x="430" y="240" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#78350f">
+    20 cm
+  </text>
+
+  <!-- Triangle height -->
+  <line x1="250" y1="40" x2="250" y2="140" stroke="#d97706" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="70" y1="40" x2="70" y2="140" stroke="#d97706" stroke-width="2"/>
+  <line x1="65" y1="40" x2="75" y2="40" stroke="#d97706" stroke-width="2"/>
+  <line x1="65" y1="140" x2="75" y2="140" stroke="#d97706" stroke-width="2"/>
+  <text x="50" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d97706">
+    12 cm
+  </text>
+
+  <!-- Right angle marker -->
+  <rect x="250" y="128" width="10" height="10" fill="none" stroke="#059669" stroke-width="2"/>
+
+  <!-- Question -->
+  <text x="250" y="390" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+    Find the visible frame area (not covered by photo)
+  </text>
+</svg>

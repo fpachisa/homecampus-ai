@@ -18,7 +18,7 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
   const { keyboardHeight } = useKeyboardHeight(); // Mobile keyboard detection
   const [input, setInput] = useState('');
   const [showMathToolbar, setShowMathToolbar] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Expose focus method to parent
   useImperativeHandle(ref, () => ({
@@ -34,8 +34,9 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
     }
   };
 
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    // Submit on Ctrl+Enter or Cmd+Enter (same as Practice module)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter' && !disabled) {
       e.preventDefault();
       handleSubmit();
     }
@@ -110,19 +111,22 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
             <span className="text-lg">{showMathToolbar ? '✕' : '∑'}</span>
           </button>
 
-          {/* Input field */}
-          <input
+          {/* Input field - textarea for multiline support */}
+          <textarea
             ref={inputRef}
-            type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             disabled={disabled}
-            placeholder="Type your answer or ask for help..."
-            className="flex-1 px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed transition-all duration-200"
+            placeholder="Type your answer or ask for help... (Ctrl+Enter to send)"
+            rows={1}
+            className="flex-1 px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed transition-all duration-200 resize-none"
             style={{
               color: theme.colors.textPrimary,
               fontSize: '16px', // Prevent iOS zoom on focus
+              minHeight: '44px',
+              maxHeight: '120px',
+              overflow: 'auto',
               ...(disabled && {
                 color: theme.colors.textMuted,
               }),
