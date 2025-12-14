@@ -32,7 +32,7 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
   showBackground = true,
   maxWidth = '7xl',
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -71,6 +71,11 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
   // Calculate sidebar width for margin offset
   const sidebarWidth = showSidebar && !isMobile ? (sidebarCollapsed ? '4rem' : '16rem') : '0';
 
+  const backgroundOverlayOpacity = isDark ? 0.4 : 0.6;
+  const backgroundOverlay = isDark
+    ? 'radial-gradient(circle at 25% 15%, rgba(217, 119, 87, 0.12) 0%, transparent 52%), radial-gradient(circle at 75% 85%, rgba(217, 119, 87, 0.08) 0%, transparent 55%)'
+    : 'radial-gradient(circle at 22% 10%, rgba(217, 119, 87, 0.22) 0%, transparent 55%), radial-gradient(circle at 82% 90%, rgba(217, 119, 87, 0.16) 0%, transparent 60%), radial-gradient(circle at 80% 12%, rgba(88, 101, 242, 0.16) 0%, transparent 52%), radial-gradient(circle at 14% 78%, rgba(88, 101, 242, 0.10) 0%, transparent 58%)';
+
   return (
     <div
       className="min-h-screen"
@@ -81,10 +86,10 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
         <div className="fixed inset-0 z-0 pointer-events-none">
           <MathAntigravity />
           <div
-            className="absolute inset-0 opacity-40"
+            className="absolute inset-0"
             style={{
-              backgroundImage:
-                'radial-gradient(circle at 25% 15%, rgba(217, 119, 87, 0.12) 0%, transparent 52%), radial-gradient(circle at 75% 85%, rgba(217, 119, 87, 0.08) 0%, transparent 55%)',
+              opacity: backgroundOverlayOpacity,
+              backgroundImage: backgroundOverlay,
             }}
           />
         </div>

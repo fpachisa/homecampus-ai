@@ -228,10 +228,11 @@ export const ActiveStudentDashboard: React.FC = () => {
             {/* Mode Toggle */}
             <div className="flex flex-col items-end gap-2">
               <div
-                className="flex items-center rounded-full p-1"
+                className="glass-surface flex items-center rounded-full p-1"
                 style={{
-                  backgroundColor: theme.colors.interactive,
-                  border: `1px solid ${theme.colors.border}`,
+                  background: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`,
+                  backdropFilter: theme.glass.backdrop,
                 }}
               >
                 <button

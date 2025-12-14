@@ -65,10 +65,11 @@ export const NewStudentHero: React.FC<NewStudentHeroProps> = ({ name }) => {
         {quickSteps.map((step, index) => (
           <div
             key={index}
-            className="flex-1 p-6 rounded-xl text-center"
+            className="glass-surface flex-1 p-6 rounded-xl text-center"
             style={{
-              backgroundColor: theme.colors.interactive,
-              border: `1px solid ${theme.colors.border}`,
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
             }}
           >
             <div className="text-4xl mb-3">{step.icon}</div>

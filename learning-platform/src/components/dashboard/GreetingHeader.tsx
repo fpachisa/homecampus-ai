@@ -60,10 +60,11 @@ export const GreetingHeader: React.FC = () => {
         <div className="flex items-center flex-wrap gap-2 sm:gap-3">
           {/* Level */}
           <div
-            className="relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
+            className="relative glass-surface px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
             style={{
-              backgroundColor: theme.colors.interactive,
-              border: `1px solid ${hoveredStat === 'level' ? theme.colors.brand : theme.colors.border}`,
+              background: theme.glass.background,
+              border: `1px solid ${hoveredStat === 'level' ? theme.colors.brand : theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
               cursor: 'pointer',
             }}
             onMouseEnter={() => !isLoading && setHoveredStat('level')}
@@ -117,10 +118,11 @@ export const GreetingHeader: React.FC = () => {
           {/* Streak */}
           {currentStreak > 0 && (
             <div
-              className="relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
+              className="relative glass-surface px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
               style={{
-                backgroundColor: theme.colors.interactive,
-                border: `1px solid ${hoveredStat === 'streak' ? theme.colors.brand : theme.colors.border}`,
+                background: theme.glass.background,
+                border: `1px solid ${hoveredStat === 'streak' ? theme.colors.brand : theme.glass.border}`,
+                backdropFilter: theme.glass.backdrop,
                 cursor: 'pointer',
               }}
               onMouseEnter={() => !isLoading && setHoveredStat('streak')}
@@ -169,10 +171,11 @@ export const GreetingHeader: React.FC = () => {
 
           {/* Weekly Stats */}
           <div
-            className="relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
+            className="relative glass-surface px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
             style={{
-              backgroundColor: theme.colors.interactive,
-              border: `1px solid ${hoveredStat === 'weekly' ? theme.colors.brand : theme.colors.border}`,
+              background: theme.glass.background,
+              border: `1px solid ${hoveredStat === 'weekly' ? theme.colors.brand : theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
               cursor: 'pointer',
             }}
             onMouseEnter={() => !isLoading && setHoveredStat('weekly')}

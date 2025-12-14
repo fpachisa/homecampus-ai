@@ -60,7 +60,7 @@
 @layer utilities {
   .glass-surface {
     position: relative;
-    overflow: hidden;
+    z-index: 0;
   }
 
   .glass-surface::before {
@@ -69,6 +69,7 @@
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
+    z-index: -1;
     background:
       radial-gradient(120% 70% at 20% 0%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 32%, transparent 62%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 45%);
@@ -81,6 +82,7 @@
     inset: 1px;
     border-radius: inherit;
     pointer-events: none;
+    z-index: -1;
     border: 1px solid rgba(255, 255, 255, 0.08);
     opacity: 0.6;
   }
@@ -91,7 +93,7 @@
       radial-gradient(120% 70% at 18% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.45) 26%, transparent 60%),
       radial-gradient(120% 90% at 85% 100%, rgba(0, 0, 0, 0.10) 0%, transparent 55%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, transparent 50%);
-    opacity: 0.65;
+    opacity: 0.85;
   }
 
   [data-theme='light'] .glass-surface::after {

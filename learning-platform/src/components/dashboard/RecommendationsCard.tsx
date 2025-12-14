@@ -62,10 +62,11 @@ export const RecommendationsCard: React.FC<RecommendationsCardProps> = ({
         {recommendations.map((rec) => (
           <div
             key={rec.id}
-            className="p-4 rounded-xl transition-all duration-200"
+            className="glass-surface p-4 rounded-xl transition-all duration-200"
             style={{
-              backgroundColor: theme.colors.interactive,
-              border: `1px solid ${theme.colors.border}`,
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
             }}
           >
             {/* Recommendation Header */}

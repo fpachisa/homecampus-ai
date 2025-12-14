@@ -219,7 +219,7 @@ export const lightTheme: Theme = {
     surface: '#FFFFFF',      // Card/container surface
 
     // Interactive
-    interactive: 'rgba(255, 240, 232, 0.70)',   // Buttons, inputs - frosted peach
+    interactive: 'rgba(255, 240, 232, 0.55)',   // Buttons, inputs - frosted peach
     interactiveHover: '#D97757', // Coral accent
     interactiveActive: '#C46649',
 
@@ -254,7 +254,7 @@ export const lightTheme: Theme = {
     md: '0 6px 18px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.85)',
     lg: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.10)',
     xl: '0 16px 64px rgba(0, 0, 0, 0.18), 0 8px 32px rgba(0, 0, 0, 0.12)',
-    glow: '0 0 24px rgba(217, 119, 87, 0.3), 0 0 48px rgba(217, 119, 87, 0.15)',
+    glow: '0 18px 44px rgba(0, 0, 0, 0.10), 0 10px 26px rgba(217, 119, 87, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset',
     focus: '0 0 0 3px rgba(217, 119, 87, 0.3), 0 0 20px rgba(217, 119, 87, 0.15)',
   },
   radius: {
@@ -264,14 +264,14 @@ export const lightTheme: Theme = {
     xl: '1.5rem',
   },
   glass: {
-    background: 'rgba(255, 255, 255, 0.58)',
-    border: 'rgba(0, 0, 0, 0.10)',
-    backdrop: 'blur(22px) saturate(160%) contrast(110%)',
-    overlay: 'rgba(255, 255, 255, 0.82)',
+    background: 'rgba(255, 255, 255, 0.46)',
+    border: 'rgba(0, 0, 0, 0.12)',
+    backdrop: 'blur(28px) saturate(170%) contrast(112%)',
+    overlay: 'rgba(255, 255, 255, 0.76)',
   },
   gradients: {
     brand: 'linear-gradient(135deg, #D97757 0%, #C46649 100%)',
-    panel: 'radial-gradient(circle at 18% 0%, rgba(217, 119, 87, 0.16) 0%, transparent 55%), radial-gradient(circle at 85% 100%, rgba(217, 119, 87, 0.10) 0%, transparent 60%), linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 245, 1) 100%)',
+    panel: 'radial-gradient(circle at 18% 0%, rgba(217, 119, 87, 0.22) 0%, transparent 55%), radial-gradient(circle at 85% 100%, rgba(217, 119, 87, 0.14) 0%, transparent 60%), radial-gradient(circle at 82% 12%, rgba(88, 101, 242, 0.12) 0%, transparent 52%), radial-gradient(circle at 12% 78%, rgba(88, 101, 242, 0.08) 0%, transparent 55%), linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 245, 1) 100%)',
     accent: 'linear-gradient(90deg, rgba(217, 119, 87, 0.1) 0%, rgba(196, 102, 73, 0.05) 100%)',
     subtle: 'linear-gradient(180deg, rgba(217, 119, 87, 0.04) 0%, rgba(217, 119, 87, 0.01) 100%)',
   },

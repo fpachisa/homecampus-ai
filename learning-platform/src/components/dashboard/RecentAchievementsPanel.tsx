@@ -117,10 +117,11 @@ export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = (
         {recentAchievements.map((achievement) => (
           <div
             key={achievement.id}
-            className="p-3 rounded-lg"
+            className="glass-surface p-3 rounded-lg"
             style={{
-              backgroundColor: theme.colors.interactive,
-              border: `1px solid ${theme.colors.border}`,
+              background: theme.glass.background,
+              border: `1px solid ${theme.glass.border}`,
+              backdropFilter: theme.glass.backdrop,
             }}
           >
             <div className="flex items-start gap-3">

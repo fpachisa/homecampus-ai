@@ -107,8 +107,12 @@ export const HeroStatsSection: React.FC<HeroStatsSectionProps> = ({ stats }) => 
 
         {/* Longest Streak */}
         <div
-          className="mt-4 p-3 rounded-lg"
-          style={{ backgroundColor: theme.colors.interactive }}
+          className="glass-surface mt-4 p-3 rounded-lg"
+          style={{
+            background: theme.glass.background,
+            border: `1px solid ${theme.glass.border}`,
+            backdropFilter: theme.glass.backdrop
+          }}
         >
           <div className="text-xs mb-1" style={{ color: theme.colors.textMuted }}>
             Longest Streak
@@ -145,8 +149,12 @@ export const HeroStatsSection: React.FC<HeroStatsSectionProps> = ({ stats }) => 
 
         {/* Additional Stats */}
         <div
-          className="mt-4 p-3 rounded-lg"
-          style={{ backgroundColor: theme.colors.interactive }}
+          className="glass-surface mt-4 p-3 rounded-lg"
+          style={{
+            background: theme.glass.background,
+            border: `1px solid ${theme.glass.border}`,
+            backdropFilter: theme.glass.backdrop
+          }}
         >
           <div className="flex justify-between items-center">
             <div>
