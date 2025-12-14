@@ -36,7 +36,7 @@ export const NewStudentHero: React.FC<NewStudentHeroProps> = ({ name }) => {
 
   return (
     <div
-      className="rounded-2xl p-8 md:p-12"
+      className="glass-surface rounded-2xl p-8 md:p-12"
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,

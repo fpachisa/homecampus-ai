@@ -58,7 +58,7 @@ export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = (
   if (recentAchievements.length === 0) {
     return (
       <div
-        className="p-6 rounded-2xl"
+        className="glass-surface p-6 rounded-2xl"
         style={{
           background: theme.glass.background,
           border: `1px solid ${theme.glass.border}`,
@@ -86,7 +86,7 @@ export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = (
 
   return (
     <div
-      className="p-6 rounded-2xl"
+      className="glass-surface p-6 rounded-2xl"
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,

@@ -35,8 +35,6 @@ export const ActiveStudentDashboard: React.FC = () => {
   const navigate = useNavigate();
   const [learningMode, setLearningMode] = useState<LearningMode>('learn');
 
-  // IMPORTANT: All hooks must be called before any conditional returns
-  // Fetch real progress data
   const progressSummary = useProgressSummary();
 
   // Get topics for student's grade
@@ -132,15 +130,6 @@ export const ActiveStudentDashboard: React.FC = () => {
         color: theme.colors.textPrimary,
       }}
     >
-      {/* Background texture */}
-      <div
-        className="fixed inset-0 opacity-30 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
-        }}
-      />
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-3 sm:py-4 lg:py-6">
         {/* Greeting Header with Integrated Stats */}

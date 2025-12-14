@@ -77,7 +77,7 @@ export const ImprovedTopicCard: React.FC<ImprovedTopicCardProps> = ({
     <button
       onClick={handleClick}
       disabled={!topic.isActive}
-      className="group relative p-4 sm:p-5 md:p-6 rounded-2xl transition-all duration-300 text-left w-full"
+      className="group relative glass-surface p-4 sm:p-5 md:p-6 rounded-2xl transition-all duration-300 text-left w-full"
       style={{
         background: topic.isActive ? theme.glass.background : theme.colors.interactive,
         border: `1px solid ${topic.isActive ? theme.glass.border : theme.colors.border}`,

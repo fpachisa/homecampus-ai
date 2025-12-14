@@ -32,7 +32,7 @@ export const NewTopicCard: React.FC<NewTopicCardProps> = ({ topic, disabled = fa
     <button
       onClick={handleClick}
       disabled={disabled}
-      className="group relative p-4 sm:p-5 md:p-6 rounded-2xl transition-all duration-300 text-left w-full"
+      className="group relative glass-surface p-4 sm:p-5 md:p-6 rounded-2xl transition-all duration-300 text-left w-full"
       style={{
         background: disabled ? theme.colors.interactive : theme.glass.background,
         border: `1px solid ${disabled ? theme.colors.border : theme.glass.border}`,

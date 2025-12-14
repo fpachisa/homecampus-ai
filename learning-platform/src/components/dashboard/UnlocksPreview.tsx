@@ -57,7 +57,7 @@ export const UnlocksPreview: React.FC = () => {
         {unlockCategories.map((category, index) => (
           <div
             key={index}
-            className="p-8 rounded-2xl text-center"
+            className="glass-surface p-8 rounded-2xl text-center"
             style={{
               background: theme.glass.background,
               border: `1px solid ${theme.glass.border}`,

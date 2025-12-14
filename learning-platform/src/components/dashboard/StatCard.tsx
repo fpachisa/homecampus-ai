@@ -33,7 +33,7 @@ export const StatCard: React.FC<StatCardProps> = ({
 
   return (
     <div
-      className={`p-3 sm:p-4 md:p-5 rounded-xl ${onClick ? 'cursor-pointer transition-all hover:scale-105' : ''}`}
+      className={`glass-surface p-3 sm:p-4 md:p-5 rounded-xl ${onClick ? 'cursor-pointer transition-all hover:scale-105' : ''}`}
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,

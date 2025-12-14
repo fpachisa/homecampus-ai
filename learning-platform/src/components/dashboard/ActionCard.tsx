@@ -35,7 +35,7 @@ export const ActionCard: React.FC<ActionCardProps> = ({
 
   return (
     <div
-      className="p-3 sm:p-4 lg:p-5 rounded-xl flex flex-col h-full"
+      className="glass-surface p-3 sm:p-4 lg:p-5 rounded-xl flex flex-col h-full"
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,

@@ -75,8 +75,10 @@ export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
         className={`fixed top-0 left-0 h-screen flex flex-col transition-all duration-300 z-50 ${isCollapsed ? 'w-16' : 'w-64'
           } ${className}`}
         style={{
-          backgroundColor: theme.colors.sidebar,
-          borderRight: `1px solid ${theme.colors.border}`,
+          background: theme.glass.background,
+          borderRight: `1px solid ${theme.glass.border}`,
+          backdropFilter: theme.glass.backdrop,
+          boxShadow: theme.shadows.lg,
         }}
       >
         {/* Header with Logo */}

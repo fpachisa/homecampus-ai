@@ -148,9 +148,9 @@ export const darkTheme: Theme = {
     systemMessage: '#3ba55c',
   },
   shadows: {
-    sm: '0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4)',
-    md: '0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.2)',
-    lg: '0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3)',
+    sm: '0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04)',
+    md: '0 6px 18px rgba(0, 0, 0, 0.32), 0 2px 6px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+    lg: '0 10px 36px rgba(0, 0, 0, 0.45), 0 4px 18px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
     xl: '0 16px 64px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4)',
     glow: '0 0 20px rgba(217, 119, 87, 0.3), 0 0 40px rgba(217, 119, 87, 0.15)',
     focus: '0 0 0 3px rgba(217, 119, 87, 0.3), 0 0 20px rgba(217, 119, 87, 0.2)',
@@ -162,14 +162,14 @@ export const darkTheme: Theme = {
     xl: '1.5rem',
   },
   glass: {
-    background: 'rgba(43, 43, 43, 0.8)',
-    border: 'rgba(255, 255, 255, 0.1)',
-    backdrop: 'blur(12px) saturate(180%)',
-    overlay: 'rgba(31, 31, 31, 0.85)',
+    background: 'rgba(25, 28, 40, 0.55)',
+    border: 'rgba(255, 255, 255, 0.14)',
+    backdrop: 'blur(18px) saturate(175%) contrast(110%)',
+    overlay: 'rgba(15, 16, 20, 0.72)',
   },
   gradients: {
     brand: 'linear-gradient(135deg, #D97757 0%, #C46649 100%)',
-    panel: 'linear-gradient(180deg, rgba(43, 43, 43, 0.95) 0%, rgba(31, 31, 31, 0.98) 100%)',
+    panel: 'radial-gradient(circle at 20% 0%, rgba(217, 119, 87, 0.10) 0%, transparent 55%), radial-gradient(circle at 80% 100%, rgba(217, 119, 87, 0.06) 0%, transparent 60%), linear-gradient(180deg, rgba(31, 31, 34, 0.98) 0%, rgba(18, 18, 20, 1) 100%)',
     accent: 'linear-gradient(90deg, rgba(217, 119, 87, 0.1) 0%, rgba(196, 102, 73, 0.05) 100%)',
     subtle: 'linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)',
   },
@@ -219,7 +219,7 @@ export const lightTheme: Theme = {
     surface: '#FFFFFF',      // Card/container surface
 
     // Interactive
-    interactive: '#FFF0E8',   // Buttons, inputs - light peach
+    interactive: 'rgba(255, 240, 232, 0.70)',   // Buttons, inputs - frosted peach
     interactiveHover: '#D97757', // Coral accent
     interactiveActive: '#C46649',
 
@@ -250,8 +250,8 @@ export const lightTheme: Theme = {
     systemMessage: '#10B981',
   },
   shadows: {
-    sm: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
-    md: '0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08)',
+    sm: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+    md: '0 6px 18px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.85)',
     lg: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.10)',
     xl: '0 16px 64px rgba(0, 0, 0, 0.18), 0 8px 32px rgba(0, 0, 0, 0.12)',
     glow: '0 0 24px rgba(217, 119, 87, 0.3), 0 0 48px rgba(217, 119, 87, 0.15)',
@@ -264,14 +264,14 @@ export const lightTheme: Theme = {
     xl: '1.5rem',
   },
   glass: {
-    background: 'rgba(255, 255, 255, 0.85)',
-    border: 'rgba(217, 119, 87, 0.2)',
-    backdrop: 'blur(16px) saturate(180%)',
-    overlay: 'rgba(255, 255, 255, 0.98)',
+    background: 'rgba(255, 255, 255, 0.58)',
+    border: 'rgba(0, 0, 0, 0.10)',
+    backdrop: 'blur(22px) saturate(160%) contrast(110%)',
+    overlay: 'rgba(255, 255, 255, 0.82)',
   },
   gradients: {
     brand: 'linear-gradient(135deg, #D97757 0%, #C46649 100%)',
-    panel: 'linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 248, 245, 1) 100%)',
+    panel: 'radial-gradient(circle at 18% 0%, rgba(217, 119, 87, 0.16) 0%, transparent 55%), radial-gradient(circle at 85% 100%, rgba(217, 119, 87, 0.10) 0%, transparent 60%), linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 245, 1) 100%)',
     accent: 'linear-gradient(90deg, rgba(217, 119, 87, 0.1) 0%, rgba(196, 102, 73, 0.05) 100%)',
     subtle: 'linear-gradient(180deg, rgba(217, 119, 87, 0.04) 0%, rgba(217, 119, 87, 0.01) 100%)',
   },

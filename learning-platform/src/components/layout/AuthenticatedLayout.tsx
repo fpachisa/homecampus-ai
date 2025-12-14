@@ -81,10 +81,10 @@ export const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
         <div className="fixed inset-0 z-0 pointer-events-none">
           <MathAntigravity />
           <div
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0 opacity-40"
             style={{
               backgroundImage:
-                'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
+                'radial-gradient(circle at 25% 15%, rgba(217, 119, 87, 0.12) 0%, transparent 52%), radial-gradient(circle at 75% 85%, rgba(217, 119, 87, 0.08) 0%, transparent 55%)',
             }}
           />
         </div>
