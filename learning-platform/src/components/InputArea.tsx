@@ -1,4 +1,4 @@
-import { useState, useRef, useImperativeHandle, forwardRef, type KeyboardEvent } from 'react';
+import { useState, useRef, useImperativeHandle, forwardRef, useEffect, useCallback, type KeyboardEvent } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useKeyboardHeight } from '../hooks/useKeyboardHeight';
 import MathInputToolbar from './MathInputToolbar';
@@ -27,10 +27,34 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
     }
   }));
 
+  // Auto-resize textarea based on content
+  const adjustHeight = useCallback(() => {
+    const textarea = inputRef.current;
+    if (!textarea) return;
+
+    // Reset height to auto to get accurate scrollHeight
+    textarea.style.height = 'auto';
+    // Set to scrollHeight, capped at maxHeight (200px)
+    const maxHeight = 200;
+    const newHeight = Math.min(textarea.scrollHeight, maxHeight);
+    textarea.style.height = `${newHeight}px`;
+    // Only show overflow if content exceeds max height
+    textarea.style.overflow = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden';
+  }, []);
+
+  // Adjust height whenever input changes
+  useEffect(() => {
+    adjustHeight();
+  }, [input, adjustHeight]);
+
   const handleSubmit = () => {
     if (input.trim() && !disabled) {
       onSubmit(input);
       setInput('');
+      // Reset textarea height after clearing
+      if (inputRef.current) {
+        inputRef.current.style.height = 'auto';
+      }
     }
   };
 
@@ -79,7 +103,7 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
         )}
 
         <div
-          className="flex items-center space-x-3 p-3 border backdrop-blur-sm"
+          className="flex items-end space-x-3 p-3 border backdrop-blur-sm"
           style={{
             background: theme.glass.background,
             borderColor: theme.glass.border,
@@ -111,7 +135,7 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
             <span className="text-lg">{showMathToolbar ? '✕' : '∑'}</span>
           </button>
 
-          {/* Input field - textarea for multiline support */}
+          {/* Input field - textarea for multiline support with auto-resize */}
           <textarea
             ref={inputRef}
             value={input}
@@ -120,13 +144,12 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
             disabled={disabled}
             placeholder="Type your answer or ask for help... (Ctrl+Enter to send)"
             rows={1}
-            className="flex-1 px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed transition-all duration-200 resize-none"
+            className="flex-1 px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed resize-none"
             style={{
               color: theme.colors.textPrimary,
               fontSize: '16px', // Prevent iOS zoom on focus
-              minHeight: '44px',
-              maxHeight: '120px',
-              overflow: 'auto',
+              lineHeight: '1.5',
+              overflow: 'hidden', // Changed dynamically by adjustHeight
               ...(disabled && {
                 color: theme.colors.textMuted,
               }),

@@ -11,19 +11,58 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
+import { useAuth } from '../../contexts/AuthContext';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
-import { getTopicsByGrade, type GradeLevel } from '../../config/topicsByGrade';
+import { GRADE_LEVELS, getTopicsByGrade, type GradeLevel } from '../../config/topicsByGrade';
 import { NewStudentHero } from './NewStudentHero';
 import { NewTopicCard } from './NewTopicCard';
 import { UnlocksPreview } from './UnlocksPreview';
+import LoadingSpinner from '../LoadingSpinner';
 
 export const NewStudentDashboard: React.FC = () => {
   const { theme } = useTheme();
+  const { userProfile } = useAuth();
   const { activeProfile } = useActiveProfile();
   const navigate = useNavigate();
 
   // Get topics for student's grade
-  const gradeLevel = (activeProfile?.gradeLevel as GradeLevel) || 'Secondary 3';
+  const resolvedGrade = activeProfile?.gradeLevel || userProfile?.gradeLevel;
+  const gradeLevel: GradeLevel | null =
+    resolvedGrade && GRADE_LEVELS.includes(resolvedGrade as GradeLevel)
+      ? (resolvedGrade as GradeLevel)
+      : null;
+
+  if (!gradeLevel) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          background: theme.gradients.panel,
+          color: theme.colors.textPrimary,
+        }}
+      >
+        {resolvedGrade ? (
+          <div className="text-center max-w-md px-6">
+            <p className="text-lg font-semibold">Unsupported grade level</p>
+            <p className="text-sm opacity-80 mt-2">{resolvedGrade}</p>
+            <button
+              className="mt-5 px-5 py-2 rounded-lg font-semibold"
+              style={{
+                backgroundColor: theme.colors.brand,
+                color: '#ffffff',
+              }}
+              onClick={() => navigate('/settings')}
+            >
+              Update in Settings
+            </button>
+          </div>
+        ) : (
+          <LoadingSpinner size="large" />
+        )}
+      </div>
+    );
+  }
+
   const topics = getTopicsByGrade(gradeLevel);
 
   return (
@@ -46,7 +85,7 @@ export const NewStudentDashboard: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Hero Section */}
-        <NewStudentHero name={activeProfile?.displayName || 'Student'} />
+        <NewStudentHero name={activeProfile?.displayName || userProfile?.displayName || 'Student'} />
 
         {/* O-Level Practice Section - Highlighted for Sec 4 students */}
         {gradeLevel === 'Secondary 4' && (

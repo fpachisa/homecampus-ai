@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useMemo } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import { useThemeContext } from '../../contexts/ThemeContext';
 import { ProfileSwitcher } from '../ProfileSwitcher';
@@ -21,6 +21,7 @@ import {
   LogOut,
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 
 export interface AppSidebarProps {
   isOpen: boolean;
@@ -31,21 +32,38 @@ export interface AppSidebarProps {
   className?: string;
 }
 
-const navItems = [
-  { to: '/home', icon: Home, label: 'Dashboard' },
-  { to: '/learn', icon: GraduationCap, label: 'Learn' },
-  { to: '/practice', icon: Target, label: 'Practice', exact: true },
-  { to: '/practice/olevel', icon: Award, label: 'O-Level' },
-  { to: '/homework-helper', icon: FileText, label: 'Homework' },
-  { to: '/stats', icon: BarChart3, label: 'Stats' },
-];
-
 export const AppSidebar = forwardRef<HTMLElement, AppSidebarProps>(
   ({ isOpen, collapsed, onToggleCollapse, onClose, isMobile = false, className = '' }, ref) => {
     const { theme } = useTheme();
     const { toggleTheme, isDark } = useThemeContext();
     const { userProfile, logout, user } = useAuth();
+    const { activeProfile } = useActiveProfile();
     const isParent = userProfile?.accountType === 'parent';
+
+    // Get effective grade level (active profile or user profile)
+    const effectiveGrade = activeProfile?.gradeLevel || userProfile?.gradeLevel;
+    const isSecondary4 = effectiveGrade === 'Secondary 4';
+
+    // Build nav items dynamically - O-Level only shows for Secondary 4
+    const navItems = useMemo(() => {
+      const items = [
+        { to: '/home', icon: Home, label: 'Dashboard' },
+        { to: '/learn', icon: GraduationCap, label: 'Learn' },
+        { to: '/practice', icon: Target, label: 'Practice', exact: true },
+      ];
+
+      // Only add O-Level for Secondary 4 students
+      if (isSecondary4) {
+        items.push({ to: '/practice/olevel', icon: Award, label: 'O-Level' });
+      }
+
+      items.push(
+        { to: '/homework-helper', icon: FileText, label: 'Homework' },
+        { to: '/stats', icon: BarChart3, label: 'Stats' },
+      );
+
+      return items;
+    }, [isSecondary4]);
 
     if (!isOpen) return null;
 

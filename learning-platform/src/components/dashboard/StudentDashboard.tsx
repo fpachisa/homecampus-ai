@@ -22,7 +22,8 @@ export const StudentDashboard: React.FC = () => {
   const { theme } = useTheme();
   const { loading: authLoading, userProfile } = useAuth();
   const { totalXP, currentStreak, isLoading: statsLoading } = useGamificationStats();
-  const [hasProgress, setHasProgress] = useState(false);
+  // null = not yet determined, prevents flash of wrong dashboard during load
+  const [hasProgress, setHasProgress] = useState<boolean | null>(null);
   const [isCheckingProgress, setIsCheckingProgress] = useState(true);
 
   // Determine if student has any progress
@@ -68,8 +69,8 @@ export const StudentDashboard: React.FC = () => {
     checkProgress();
   }, [authLoading, statsLoading, totalXP, currentStreak, userProfile]);
 
-  // Show loading state
-  if (authLoading || statsLoading || isCheckingProgress) {
+  // Show loading state until hasProgress decision is made
+  if (authLoading || statsLoading || isCheckingProgress || hasProgress === null) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"

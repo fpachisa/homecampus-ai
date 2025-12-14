@@ -11,33 +11,73 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
+import { useAuth } from '../../contexts/AuthContext';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useGamificationStats } from '../../hooks/useGamificationStats';
 import { useProgressSummary } from '../../hooks/useProgressSummary';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
-import { getTopicsByGrade, type GradeLevel } from '../../config/topicsByGrade';
+import { GRADE_LEVELS, getTopicsByGrade, type GradeLevel } from '../../config/topicsByGrade';
 import { GreetingHeader } from './GreetingHeader';
 import { ActionCard } from './ActionCard';
 import { ImprovedTopicCard } from './ImprovedTopicCard';
 import { WeeklyActivityChart } from './WeeklyActivityChart';
 import { RecentAchievementsPanel } from './RecentAchievementsPanel';
+import LoadingSpinner from '../LoadingSpinner';
 
 type LearningMode = 'learn' | 'practice';
 
 export const ActiveStudentDashboard: React.FC = () => {
   const { theme } = useTheme();
+  const { userProfile } = useAuth();
   const { activeProfile } = useActiveProfile();
   const { currentStreak } = useGamificationStats();
   const { goToPractice, goToHomeworkHelper } = useAppNavigation();
   const navigate = useNavigate();
   const [learningMode, setLearningMode] = useState<LearningMode>('learn');
 
-  // Get topics for student's grade
-  const gradeLevel = (activeProfile?.gradeLevel as GradeLevel) || 'Secondary 3';
-  const topics = getTopicsByGrade(gradeLevel);
-
+  // IMPORTANT: All hooks must be called before any conditional returns
   // Fetch real progress data
   const progressSummary = useProgressSummary();
+
+  // Get topics for student's grade
+  const resolvedGrade = activeProfile?.gradeLevel || userProfile?.gradeLevel;
+  const gradeLevel: GradeLevel | null =
+    resolvedGrade && GRADE_LEVELS.includes(resolvedGrade as GradeLevel)
+      ? (resolvedGrade as GradeLevel)
+      : null;
+
+  if (!gradeLevel) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          background: theme.gradients.panel,
+          color: theme.colors.textPrimary,
+        }}
+      >
+        {resolvedGrade ? (
+          <div className="text-center max-w-md px-6">
+            <p className="text-lg font-semibold">Unsupported grade level</p>
+            <p className="text-sm opacity-80 mt-2">{resolvedGrade}</p>
+            <button
+              className="mt-5 px-5 py-2 rounded-lg font-semibold"
+              style={{
+                backgroundColor: theme.colors.brand,
+                color: '#ffffff',
+              }}
+              onClick={() => navigate('/settings')}
+            >
+              Update in Settings
+            </button>
+          </div>
+        ) : (
+          <LoadingSpinner size="large" />
+        )}
+      </div>
+    );
+  }
+
+  const topics = getTopicsByGrade(gradeLevel);
 
   // Transform weekly activity to chart format
   const weeklyData = progressSummary.weeklyActivity.map((activity) => {

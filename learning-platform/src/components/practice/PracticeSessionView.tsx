@@ -21,6 +21,7 @@ import Avatar from '../Avatar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useAudioManager } from '../../hooks/useAudioManager';
+import { useTheme } from '../../hooks/useTheme';
 import MathText from '../MathText';
 import MathInputToolbar from '../MathInputToolbar';
 import ScratchPad from './ScratchPad';
@@ -50,7 +51,7 @@ interface SessionState {
 
 export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   category,
-  difficulty,
+  difficulty: _difficulty, // Kept for API compatibility, no longer used for styling
   node,
   onComplete,
   onBack,
@@ -126,6 +127,9 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   // Auth and Profile
   const { user } = useAuth();
   const { activeProfile } = useActiveProfile();
+
+  // Theme for consistent styling
+  const { theme } = useTheme();
 
   // Compute effective UID: use activeProfile's UID if viewing as child, otherwise user's UID
   // This ensures progress saves to the correct user document (Netflix profiles or linked children)
@@ -919,14 +923,6 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const isReviewing = session.currentIndex < finalActiveIndex &&
     session.currentProblemSession?.attemptHistory.some(a => a.isCorrect);
 
-  // Color schemes by difficulty
-  const colorSchemes = {
-    easy: { bg: 'bg-emerald-50', border: 'border-emerald-400', text: 'text-emerald-700', button: 'bg-emerald-600 hover:bg-emerald-700' },
-    medium: { bg: 'bg-amber-50', border: 'border-amber-400', text: 'text-amber-700', button: 'bg-amber-600 hover:bg-amber-700' },
-    hard: { bg: 'bg-rose-50', border: 'border-rose-400', text: 'text-rose-700', button: 'bg-rose-600 hover:bg-rose-700' },
-  };
-
-  const colors = colorSchemes[difficulty];
 
   if (session.loading) {
     return (
@@ -1037,19 +1033,37 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
               // Can click if: attempted, current, has visited session, or any problem up to current index
               const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
 
+              // Compute pill styles based on state
+              const pillStyle = isAttempted
+                ? { backgroundColor: theme.colors.success, color: '#ffffff' }
+                : isCurrent
+                  ? { backgroundColor: theme.colors.brand, color: '#ffffff', boxShadow: theme.shadows.lg }
+                  : hasVisited || index < session.currentIndex
+                    ? { backgroundColor: theme.colors.brandHover, color: '#ffffff' }
+                    : { backgroundColor: theme.colors.interactive, color: theme.colors.textMuted, opacity: 0.6 };
+
               return (
                 <button
                   key={problem.id}
                   onClick={() => canClick && handleNavigateToProblem(index)}
                   disabled={!canClick}
-                  className={`min-w-[44px] min-h-[44px] w-11 h-11 flex-shrink-0 rounded-full font-semibold transition-all text-sm sm:text-base ${isAttempted
-                    ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
-                    : isCurrent
-                      ? 'bg-amber-500 text-white shadow-lg scale-105 sm:scale-110'  // Orange for current
-                      : hasVisited || index < session.currentIndex
-                        ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
-                        : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
-                    } ${isCurrent && isAttempted ? 'ring-2 sm:ring-4 ring-amber-300' : ''}`}
+                  className={`min-w-[44px] min-h-[44px] w-11 h-11 flex-shrink-0 rounded-full font-semibold transition-all text-sm sm:text-base ${
+                    isAttempted || hasVisited || index < session.currentIndex ? 'cursor-pointer' : 'cursor-not-allowed'
+                  } ${isCurrent ? 'scale-105 sm:scale-110' : ''} ${isCurrent && isAttempted ? 'ring-2 sm:ring-4' : ''}`}
+                  style={{
+                    ...pillStyle,
+                    ...(isCurrent && isAttempted ? { boxShadow: `0 0 0 4px ${theme.colors.brand}40` } : {}),
+                  }}
+                  onMouseEnter={(e) => {
+                    if (canClick && !isCurrent) {
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isCurrent) {
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }
+                  }}
                   title={
                     isCurrent && isAttempted
                       ? `Current problem ${index + 1} (attempted)`
@@ -1120,10 +1134,24 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                         : `Part ${idx + 1}`;
 
                       return (
-                        <div key={part.id} className="bg-gray-50 rounded-lg border border-gray-200 p-4 opacity-90 hover:opacity-100 transition-opacity">
+                        <div
+                          key={part.id}
+                          className="rounded-lg border p-4 opacity-90 hover:opacity-100 transition-opacity"
+                          style={{
+                            backgroundColor: theme.colors.surface,
+                            borderColor: theme.colors.border,
+                          }}
+                        >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-bold text-gray-500 uppercase tracking-wider">{partLabel}</span>
-                            <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full border border-green-100">
+                            <span className="text-sm font-bold uppercase tracking-wider" style={{ color: theme.colors.textMuted }}>{partLabel}</span>
+                            <span
+                              className="text-xs font-medium px-2 py-1 rounded-full"
+                              style={{
+                                backgroundColor: `${theme.colors.success}20`,
+                                color: theme.colors.success,
+                                border: `1px solid ${theme.colors.success}30`,
+                              }}
+                            >
                               Completed
                             </span>
                           </div>
@@ -1208,8 +1236,13 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                       {/* Tutor's Hint/Feedback - WhatsApp style (right-aligned) */}
                       <div className="flex items-start space-x-2 justify-end">
                         <div className="max-w-[75%]">
-                          <div className={`rounded-lg px-3 py-2 ${attempt.isCorrect ? 'bg-green-50 text-green-800' : 'bg-yellow-50 text-gray-800'
-                            }`}>
+                          <div
+                            className="rounded-lg px-3 py-2"
+                            style={{
+                              backgroundColor: attempt.isCorrect ? `${theme.colors.success}20` : `${theme.colors.warning}20`,
+                              color: theme.colors.textPrimary,
+                            }}
+                          >
                             {/* Show explanation for correct answers, hint with label for incorrect */}
                             <MathText>
                               {attempt.isCorrect
@@ -1219,7 +1252,13 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                           </div>
                         </div>
                         {/* Tutor label badge */}
-                        <div className="flex-shrink-0 px-2 py-1 rounded bg-indigo-100 text-indigo-700 text-xs font-semibold whitespace-nowrap">
+                        <div
+                          className="flex-shrink-0 px-2 py-1 rounded text-xs font-semibold whitespace-nowrap"
+                          style={{
+                            backgroundColor: `${theme.colors.brand}20`,
+                            color: theme.colors.brand,
+                          }}
+                        >
                           Tutor
                         </div>
                       </div>
@@ -1258,8 +1297,8 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                     }
                     className="text-xs px-3 py-1.5 mb-2 rounded-md transition-all duration-150 hover:scale-105 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{
-                      backgroundColor: showMathToolbar ? '#4f46e5' : '#e5e7eb',
-                      color: showMathToolbar ? '#ffffff' : '#374151',
+                      backgroundColor: showMathToolbar ? theme.colors.brand : theme.colors.interactive,
+                      color: showMathToolbar ? '#ffffff' : theme.colors.textPrimary,
                     }}
                     title="Toggle math symbols toolbar"
                   >
@@ -1288,7 +1327,19 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                       (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
                       false
                     }
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed resize-y min-h-[120px]"
+                    className="w-full px-4 py-3 focus:outline-none text-lg disabled:cursor-not-allowed resize-y min-h-[120px]"
+                    style={{
+                      background: theme.glass.background,
+                      border: `1px solid ${theme.glass.border}`,
+                      backdropFilter: theme.glass.backdrop,
+                      borderRadius: theme.radius.lg,
+                      color: theme.colors.textPrimary,
+                      ...(submitting ||
+                        (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                        (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect))
+                        ? { backgroundColor: theme.colors.interactive, opacity: 0.7 }
+                        : {}),
+                    }}
                     placeholder={
                       session.currentProblemSession && !session.currentProblemSession.canRetry
                         ? "Maximum attempts reached"
@@ -1299,12 +1350,24 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex space-x-3">
+                <div className="flex justify-center space-x-3">
                   {/* Check if student got it correct */}
                   {session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect) ? (
                     <button
                       onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
-                      className={`w-full px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
+                      className="px-6 py-2.5 text-white rounded-lg font-semibold transition-all duration-200"
+                      style={{
+                        background: theme.gradients.brand,
+                        boxShadow: theme.shadows.glow,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.02)';
+                        e.currentTarget.style.boxShadow = theme.shadows.xl;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)';
+                        e.currentTarget.style.boxShadow = theme.shadows.glow;
+                      }}
                     >
                       {session.currentIndex >= session.problems.length - 1
                         ? 'Finish Lesson'
@@ -1319,7 +1382,22 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                         <button
                           onClick={handleSubmitAnswer}
                           disabled={!studentAnswer.trim() || submitting}
-                          className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed`}
+                          className="px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 disabled:cursor-not-allowed"
+                          style={{
+                            background: (!studentAnswer.trim() || submitting) ? theme.colors.interactive : theme.gradients.brand,
+                            color: (!studentAnswer.trim() || submitting) ? theme.colors.textMuted : '#ffffff',
+                            boxShadow: (!studentAnswer.trim() || submitting) ? 'none' : theme.shadows.glow,
+                          }}
+                          onMouseEnter={(e) => {
+                            if (studentAnswer.trim() && !submitting) {
+                              e.currentTarget.style.transform = 'scale(1.02)';
+                              e.currentTarget.style.boxShadow = theme.shadows.xl;
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)';
+                            e.currentTarget.style.boxShadow = (!studentAnswer.trim() || submitting) ? 'none' : theme.shadows.glow;
+                          }}
                         >
                           {submitting ? 'Checking...' : 'Submit Answer'}
                         </button>
@@ -1330,14 +1408,40 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                             <button
                               onClick={handleShowSolution}
                               disabled={loadingSolution}
-                              className="flex-1 px-6 py-3 min-h-[48px] bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50"
+                              className="px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50"
+                              style={{
+                                backgroundColor: theme.colors.interactive,
+                                color: theme.colors.textPrimary,
+                              }}
+                              onMouseEnter={(e) => {
+                                if (!loadingSolution) {
+                                  e.currentTarget.style.backgroundColor = theme.colors.interactiveHover;
+                                  e.currentTarget.style.transform = 'scale(1.02)';
+                                }
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.backgroundColor = theme.colors.interactive;
+                                e.currentTarget.style.transform = 'scale(1)';
+                              }}
                             >
                               {loadingSolution ? 'Loading...' : 'Show Solution'}
                             </button>
                           ) : (
                             <button
                               onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
-                              className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
+                              className="px-6 py-2.5 text-white rounded-lg font-semibold transition-all duration-200"
+                              style={{
+                                background: theme.gradients.brand,
+                                boxShadow: theme.shadows.glow,
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.02)';
+                                e.currentTarget.style.boxShadow = theme.shadows.xl;
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = theme.shadows.glow;
+                              }}
                             >
                               {session.currentIndex >= session.problems.length - 1
                                 ? 'Finish Lesson'
@@ -1355,16 +1459,22 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
               {/* Solution Display */}
               {solution && (
-                <div className="mt-6 p-4 bg-purple-100 border-2 border-purple-400 rounded-lg">
-                  <div className="font-semibold text-purple-800 mb-3">Solution:</div>
+                <div
+                  className="mt-6 p-4 rounded-lg"
+                  style={{
+                    backgroundColor: theme.colors.surface,
+                    border: `2px solid ${theme.colors.brand}`,
+                  }}
+                >
+                  <div className="font-semibold mb-3" style={{ color: theme.colors.brand }}>Solution:</div>
                   <div className="space-y-2">
                     {solution.steps.map((step, index) => (
-                      <div key={index} className="text-gray-700">
+                      <div key={index} style={{ color: theme.colors.textSecondary }}>
                         <MathText>{step}</MathText>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-3 font-semibold text-purple-800">
+                  <div className="mt-3 font-semibold" style={{ color: theme.colors.brand }}>
                     Final Answer: <MathText>{solution.finalAnswer}</MathText>
                   </div>
                 </div>

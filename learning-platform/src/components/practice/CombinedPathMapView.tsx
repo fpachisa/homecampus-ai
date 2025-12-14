@@ -10,6 +10,7 @@ import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
 import { useTheme } from '../../hooks/useTheme';
+import { LoadingSpinner } from '../LoadingSpinner';
 
 interface CombinedPathMapViewProps {
   category: string;
@@ -110,12 +111,7 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: theme.gradients.panel }}>
-        <div className="text-center">
-          <div className="text-6xl mb-4">⏳</div>
-          <div className="text-xl font-semibold" style={{ color: theme.colors.textPrimary }}>
-            Loading Practice Path...
-          </div>
-        </div>
+        <LoadingSpinner size="large" />
       </div>
     );
   }

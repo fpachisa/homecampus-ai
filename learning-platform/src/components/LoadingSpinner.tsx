@@ -1,5 +1,6 @@
 import React from 'react';
 import { useThemeContext } from '../contexts/ThemeContext';
+import MathSphereLoader from './MathSphereLoader';
 
 interface LoadingSpinnerProps {
   size?: 'small' | 'medium' | 'large';
@@ -10,6 +11,7 @@ interface LoadingSpinnerProps {
 /**
  * Loading Spinner Component
  * Shows animated spinner with optional message
+ * For large/fullScreen modes, displays an engaging math sphere animation
  */
 export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   size = 'medium',
@@ -18,6 +20,43 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 }) => {
   const { theme } = useThemeContext();
 
+  // Use MathSphereLoader for large or fullScreen modes
+  if (size === 'large' || fullScreen) {
+    const containerStyle: React.CSSProperties = fullScreen
+      ? {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: theme.colors.overlay,
+          backdropFilter: 'blur(4px)',
+          zIndex: 9998,
+        }
+      : {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem',
+        };
+
+    return (
+      <div style={containerStyle}>
+        <MathSphereLoader
+          size={fullScreen ? 280 : 220}
+          message={message}
+          particleCount={fullScreen ? 40 : 35}
+        />
+      </div>
+    );
+  }
+
+  // Simple spinner for small/medium sizes
   const sizeMap = {
     small: '24px',
     medium: '48px',
@@ -26,31 +65,16 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 
   const spinnerSize = sizeMap[size];
 
-  const containerStyle: React.CSSProperties = fullScreen
-    ? {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: theme.colors.overlay,
-        backdropFilter: 'blur(4px)',
-        zIndex: 9998,
-      }
-    : {
+  return (
+    <div
+      style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem',
-      };
-
-  return (
-    <div style={containerStyle}>
+      }}
+    >
       {/* Spinner */}
       <div
         style={{

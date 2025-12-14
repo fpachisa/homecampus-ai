@@ -28,6 +28,7 @@ import { StatsPanel } from './StatsPanel';
 import { LeaderboardPanel } from './LeaderboardPanel';
 import { MilestoneMarker } from './MilestoneMarker';
 import { BackButton } from '../BackButton';
+import { LoadingSpinner } from '../LoadingSpinner';
 import { useTheme } from '../../hooks/useTheme';
 
 // Lazy load panels for mobile drawers
@@ -368,11 +369,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: theme.gradients.panel }}>
-        <div className="text-center">
-          <div className="text-xl font-semibold" style={{ color: theme.colors.textPrimary }}>
-            Loading Practice Path...
-          </div>
-        </div>
+        <LoadingSpinner size="large" />
       </div>
     );
   }

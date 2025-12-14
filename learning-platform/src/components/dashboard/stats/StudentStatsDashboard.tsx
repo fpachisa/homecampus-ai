@@ -14,6 +14,7 @@ import { useTheme } from '../../../hooks/useTheme';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useStudentDashboardStats } from '../../../hooks/useStudentDashboardStats';
 import { authService } from '../../../services/authService';
+import { LoadingSpinner } from '../../LoadingSpinner';
 import { OverviewTab } from './OverviewTab';
 import { LearnModeTab } from './LearnModeTab';
 import { PracticeModeTab } from './PracticeModeTab';
@@ -99,17 +100,8 @@ export const StudentStatsDashboard: React.FC = () => {
   // Loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen p-6" style={{ backgroundColor: theme.colors.primary }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center h-96">
-            <div className="text-center">
-              <div className="text-4xl mb-4">📊</div>
-              <div className="text-lg" style={{ color: theme.colors.textSecondary }}>
-                Loading {userProfile?.isParent ? "child's stats..." : "your stats..."}
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: theme.colors.primary }}>
+        <LoadingSpinner size="large" />
       </div>
     );
   }

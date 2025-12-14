@@ -12,6 +12,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import DrawingCanvas from './DrawingCanvas';
 import type { ScratchPadData } from '../../types/practice';
+import { useTheme } from '../../hooks/useTheme';
 
 interface ScratchPadProps {
   problemId: string;
@@ -35,6 +36,9 @@ const ScratchPad: React.FC<ScratchPadProps> = ({
   onChange,
   isMobile
 }) => {
+  // Theme for consistent styling
+  const { theme } = useTheme();
+
   // Initialize state from props or defaults
   const [mode, setMode] = useState<'text' | 'draw'>(initialData?.mode || 'text');
   const [textContent, setTextContent] = useState(initialData?.textContent || '');
@@ -188,27 +192,31 @@ const ScratchPad: React.FC<ScratchPadProps> = ({
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => handleModeSwitch('text')}
-                className={`flex-1 px-4 py-2 rounded-lg font-semibold transition ${
-                  mode === 'text'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                className="flex-1 px-4 py-2 rounded-lg font-semibold transition"
+                style={{
+                  backgroundColor: mode === 'text' ? theme.colors.brand : theme.colors.interactive,
+                  color: mode === 'text' ? '#ffffff' : theme.colors.textPrimary,
+                }}
               >
                 ✍️ Text
               </button>
               <button
                 onClick={() => handleModeSwitch('draw')}
-                className={`flex-1 px-4 py-2 rounded-lg font-semibold transition ${
-                  mode === 'draw'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                className="flex-1 px-4 py-2 rounded-lg font-semibold transition"
+                style={{
+                  backgroundColor: mode === 'draw' ? theme.colors.brand : theme.colors.interactive,
+                  color: mode === 'draw' ? '#ffffff' : theme.colors.textPrimary,
+                }}
               >
                 🎨 Draw
               </button>
               <button
                 onClick={handleClear}
-                className="px-4 py-2 bg-red-100 text-red-700 rounded-lg font-semibold hover:bg-red-200 transition"
+                className="px-4 py-2 rounded-lg font-semibold transition"
+                style={{
+                  backgroundColor: `${theme.colors.error}20`,
+                  color: theme.colors.error,
+                }}
                 title="Clear work space"
               >
                 🗑️ Clear
@@ -241,11 +249,11 @@ const ScratchPad: React.FC<ScratchPadProps> = ({
                     <div className="w-px h-8 bg-gray-300 mx-2" />
                     <button
                       onClick={() => setTool('eraser')}
-                      className={`px-3 py-1 rounded text-sm font-semibold transition ${
-                        tool === 'eraser'
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                      }`}
+                      className="px-3 py-1 rounded text-sm font-semibold transition"
+                      style={{
+                        backgroundColor: tool === 'eraser' ? theme.colors.brand : theme.colors.interactive,
+                        color: tool === 'eraser' ? '#ffffff' : theme.colors.textPrimary,
+                      }}
                       title="Eraser"
                     >
                       Eraser
@@ -261,11 +269,11 @@ const ScratchPad: React.FC<ScratchPadProps> = ({
                       <button
                         key={preset.size}
                         onClick={() => setPenSize(preset.size)}
-                        className={`px-4 py-2 rounded-lg text-sm font-semibold transition ${
-                          penSize === preset.size
-                            ? 'bg-blue-600 text-white'
-                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
+                        className="px-4 py-2 rounded-lg text-sm font-semibold transition"
+                        style={{
+                          backgroundColor: penSize === preset.size ? theme.colors.brand : theme.colors.interactive,
+                          color: penSize === preset.size ? '#ffffff' : theme.colors.textPrimary,
+                        }}
                       >
                         {preset.label}
                       </button>
