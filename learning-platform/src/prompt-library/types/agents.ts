@@ -33,7 +33,6 @@ export interface EvaluatorOutput {
   conceptGaps: string[];
 
   // Progression decision
-  sectionMastered: boolean;
   advanceToNextSection: boolean;
 
   // Action decision (from decision matrix)

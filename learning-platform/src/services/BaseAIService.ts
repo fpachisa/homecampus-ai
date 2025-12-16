@@ -630,7 +630,7 @@ Return ONLY a JSON object with this structure:
       // Validate required fields
       validateRequiredKeys(
         evaluation,
-        ['action', 'answerCorrect', 'understanding', 'sectionMastered', 'advanceToNextSection', 'reasoning'],
+        ['action', 'answerCorrect', 'understanding', 'advanceToNextSection', 'reasoning'],
         'Invalid evaluator output'
       );
 

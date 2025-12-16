@@ -39,7 +39,6 @@ export const NewStudentHero: React.FC<NewStudentHeroProps> = ({ name }) => {
       className="glass-surface rounded-2xl p-8 md:p-12"
       style={{
         background: theme.glass.background,
-        border: `1px solid ${theme.glass.border}`,
         backdropFilter: theme.glass.backdrop,
         boxShadow: theme.shadows.glow,
       }}
@@ -68,7 +67,6 @@ export const NewStudentHero: React.FC<NewStudentHeroProps> = ({ name }) => {
             className="glass-surface flex-1 p-6 rounded-xl text-center"
             style={{
               background: theme.glass.background,
-              border: `1px solid ${theme.glass.border}`,
               backdropFilter: theme.glass.backdrop,
             }}
           >

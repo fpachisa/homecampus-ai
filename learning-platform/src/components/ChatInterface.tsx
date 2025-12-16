@@ -102,6 +102,10 @@ import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/s
 import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 import type { AreaOfTriangleTopicId } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import { P5_MATH_VOLUME_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_DECIMALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
+import type { DecimalsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
+import type { VolumeTopicId } from '../prompt-library/subjects/mathematics/primary/p5-volume';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -292,6 +296,14 @@ const getTopicConfig = (topicId: string) => {
   if (topicId.startsWith('p5-math-area-triangle-')) {
     return P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS[topicId as AreaOfTriangleTopicId];
   }
+  // Check if it's a P5 volume topic
+  if (topicId.startsWith('p5-math-volume-')) {
+    return P5_MATH_VOLUME_SUBTOPICS[topicId as VolumeTopicId];
+  }
+  // Check if it's a P5 decimals topic
+  if (topicId.startsWith('p5-math-decimals-')) {
+    return P5_MATH_DECIMALS_SUBTOPICS[topicId as DecimalsTopicId];
+  }
   // Return undefined for unknown topics
   return undefined;
 };
@@ -423,8 +435,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   // Legacy isLoading for backward compatibility
   const isLoading = loadingState.active;
 
-  const [currentScore, setCurrentScore] = useState(0);
-  const [subtopicComplete, setSubtopicComplete] = useState(false);
+  const [_currentScore, setCurrentScore] = useState(0);
+  const [_subtopicComplete, setSubtopicComplete] = useState(false);
   const [problemsCompleted, setProblemsCompleted] = useState(0);
   const [problemState, setProblemState] = useState<ProblemState | null>(null);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
@@ -1165,24 +1177,9 @@ const handleStudentSubmit = async (input: string) => {
     setLoadingState({ active: true, stage: 'evaluating' });
 
     try {
-      // Check if subtopic is already complete
-      if (subtopicComplete) {
-        console.log('Subtopic already complete, generating celebration message');
-
-        const sessionDuration = Math.round(
-          (new Date().getTime() - state.sessionStats.startTime.getTime()) / 60000
-        );
-
-        const celebration = await aiService.current.generateCelebration(
-          currentScore,
-          problemsCompleted,
-          sessionDuration,
-          topicId
-        );
-
-        addMessage('tutor', celebration);
-        return;
-      }
+      // NOTE: All user input flows through the evaluator - no bypasses.
+      // The evaluator is intelligent enough to decide whether to celebrate,
+      // answer questions, or handle any other type of input.
 
       // Get recent conversation history (filtered by current section)
       // IMPORTANT: Add current student input to history since setState is async
@@ -1607,7 +1604,6 @@ const handleStudentSubmit = async (input: string) => {
 
       console.log('Evaluator output:', evaluatorOutput);
       console.log('Action:', evaluatorOutput.action);
-      console.log('Section mastered:', evaluatorOutput.sectionMastered);
       console.log('Advance to next section:', evaluatorOutput.advanceToNextSection);
 
       // Stage 2: Update loading stage based on evaluator's decision
@@ -1705,7 +1701,7 @@ const handleStudentSubmit = async (input: string) => {
       }
 
       // STEP 2.5: Handle section mastery and progression
-      if (evaluatorOutput.sectionMastered && currentSectionId && !sectionProgress.masteredSections.includes(currentSectionId)) {
+      if (evaluatorOutput.advanceToNextSection && currentSectionId && !sectionProgress.masteredSections.includes(currentSectionId)) {
         console.log(`✅ Section mastered: ${currentSectionId}`);
 
         const newMasteredSections = [...sectionProgress.masteredSections, currentSectionId];
@@ -1739,17 +1735,15 @@ const handleStudentSubmit = async (input: string) => {
           ).catch(err => console.error('Failed to record mastery event:', err));
         }
 
-        // Get next section from topic config if advancing
+        // Get next section from topic config (always advance when section is mastered)
         let newCurrentSection = currentSectionId;
-        if (evaluatorOutput.advanceToNextSection) {
-          const topicConfig = getTopicConfig(topicId);
-          if (topicConfig && 'progressionStructure' in topicConfig) {
-            const sections = (topicConfig as any).progressionStructure.sections;
-            const currentIndex = sections.findIndex((s: any) => s.id === currentSectionId);
-            if (currentIndex >= 0 && currentIndex < sections.length - 1) {
-              newCurrentSection = sections[currentIndex + 1].id;
-              console.log(`📍 Section transition: ${currentSectionId} → ${newCurrentSection}`);
-            }
+        const topicConfig = getTopicConfig(topicId);
+        if (topicConfig && 'progressionStructure' in topicConfig) {
+          const sections = (topicConfig as any).progressionStructure.sections;
+          const currentIndex = sections.findIndex((s: any) => s.id === currentSectionId);
+          if (currentIndex >= 0 && currentIndex < sections.length - 1) {
+            newCurrentSection = sections[currentIndex + 1].id;
+            console.log(`📍 Section transition: ${currentSectionId} → ${newCurrentSection}`);
           }
         }
 
@@ -1854,7 +1848,8 @@ const handleStudentSubmit = async (input: string) => {
             {
               recentHistory: formattedHistory,
               evaluatorReasoning: evaluatorOutput.reasoning,
-              currentSection: sectionProgress.currentSection
+              currentSection: sectionProgress.currentSection,
+              advanceToNextSection: evaluatorOutput.advanceToNextSection
             }
           );
 

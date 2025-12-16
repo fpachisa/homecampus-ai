@@ -6425,6 +6425,399 @@ Let's solve some composite figure problems!`,
     }
   },
 
+  // ============================================
+  // P5 MATHEMATICS - Volume
+  // ============================================
+
+  'p5-math-volume-unit-cubes': {
+    speech: {
+      text: `Welcome to learning about volume! Volume is the amount of space inside a solid object. Imagine filling a box with small cubes. Each small cube is called a unit cube, and it takes up exactly one cubic unit of space. We can find the volume of a solid by counting how many unit cubes fit inside it. Remember to count the hidden cubes too, not just the ones you can see on the outside!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-volume-unit-cubes.mp3'
+    },
+    display: {
+      content: `# Understanding Volume with Unit Cubes
+
+**Volume** is the amount of space inside a solid object!
+
+---
+
+### Key Concepts:
+- A **unit cube** is a cube with edges of 1 unit
+- Volume of a unit cube = **1 cubic unit**
+- We find volume by **counting** how many unit cubes fit inside
+
+### Important:
+- Remember to count **hidden cubes** inside the solid!
+- A helpful strategy: count cubes in one layer, then multiply by the number of layers
+
+Ready to count some cubes?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "unitCubeGrid",
+      parameters: {
+        cubesAlong: 3,
+        cubesDeep: 2,
+        cubesHigh: 2
+      },
+      caption: "A cuboid made of unit cubes. Can you count how many cubes there are?"
+    }
+  },
+
+  'p5-math-volume-cubic-units': {
+    speech: {
+      text: `Now let us learn about the units we use to measure volume! A cubic centimetre, written as centimetres cubed, is the space taken up by a cube with edges of one centimetre. It is about the size of your fingertip! For larger objects like rooms or swimming pools, we use cubic metres. A cubic metre is huge, it can fit about three to four children inside! Choosing the right unit helps us write sensible numbers.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-volume-cubic-units.mp3'
+    },
+    display: {
+      content: `# Volume in cm³ and m³
+
+We measure volume in **cubic units**!
+
+---
+
+### Cubic Centimetre (cm³):
+- A cube with edges of **1 cm**
+- Size reference: about the size of a **fingertip**
+- Used for: small objects (boxes, drink cartons)
+
+### Cubic Metre (m³):
+- A cube with edges of **1 m**
+- Size reference: fits about **3-4 children** inside!
+- Used for: large objects (rooms, pools, trucks)
+
+### Choosing Units:
+- Small objects → cm³
+- Large objects → m³
+
+Would you use cm³ or m³ to measure a pencil case?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-volume-formula': {
+    speech: {
+      text: `Now for the volume formula! Instead of counting cubes one by one, we can use a shortcut. Volume equals length times breadth times height. Think of it this way: length times breadth tells us how many cubes fit in one layer. Then we multiply by height to get the total number of layers. For a cube where all sides are equal, we just multiply the side by itself three times!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-volume-formula.mp3'
+    },
+    display: {
+      content: `# Volume of Cubes and Cuboids
+
+The **volume formula** is a shortcut for counting cubes!
+
+---
+
+### Volume of a Cuboid:
+$$V = \\text{Length} \\times \\text{Breadth} \\times \\text{Height}$$
+$$V = L \\times B \\times H$$
+
+### Why does this work?
+- L × B = cubes in **one layer**
+- Multiply by H = total number of **layers**
+
+### Volume of a Cube:
+$$V = \\text{side} \\times \\text{side} \\times \\text{side}$$
+(All edges are equal!)
+
+### Remember:
+- Always include the **units** (cm³ or m³)
+- For unknown dimensions: divide volume by the known dimensions
+
+Can you find the volume of the cuboid shown below?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "unitCubeGrid",
+      parameters: {
+        cubesAlong: 4,
+        cubesDeep: 3,
+        cubesHigh: 2,
+        highlightLayer: 1
+      },
+      caption: "A 4 × 3 × 2 cuboid. Notice how the highlighted layer has 4 × 3 = 12 cubes!"
+    }
+  },
+
+  'p5-math-volume-liquids': {
+    speech: {
+      text: `Let us connect volume to liquids! We measure liquid volume in litres and millilitres. Here is the key connection: one millilitre equals exactly one cubic centimetre! That means one litre equals one thousand millilitres, which equals one thousand cubic centimetres. So if a tank has a volume of five thousand cubic centimetres, it can hold five litres of water. This connection helps us solve many real-world problems!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-volume-liquids.mp3'
+    },
+    display: {
+      content: `# Volume of Liquids
+
+Connecting **solid volume** to **liquid capacity**!
+
+---
+
+### The Key Connection:
+$$1 \\text{ ml} = 1 \\text{ cm}^3$$
+
+### Converting Units:
+- 1 litre = **1000 ml**
+- 1 litre = **1000 cm³**
+
+### Container Capacity:
+1. Calculate volume using V = L × B × H
+2. Convert cm³ to ml (same number!)
+3. Convert to litres if needed (÷ 1000)
+
+### Water Level Problems:
+- Volume of water = L × B × **water height**
+- Water height = Volume ÷ (L × B)
+
+If a tank has a volume of 2000 cm³, how many litres of water can it hold?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-volume-word-problems': {
+    speech: {
+      text: `Time for volume word problems! These problems combine everything we have learned: counting cubes, using formulas, and working with liquids. You might see problems about filling tanks, transferring water between containers, or finding how much space is left. Some problems involve fractions, like a tank that is two thirds full. Take it step by step: read carefully, identify what is given and what is asked, then choose the right formula!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-volume-word-problems.mp3'
+    },
+    display: {
+      content: `# Word Problems on Volume
+
+Bringing it all together!
+
+---
+
+### Problem-Solving Strategy:
+1. **Read carefully** - what's given and what's asked?
+2. **Visualize** the situation
+3. **Choose** the right formula
+4. **Calculate** step by step
+5. **Check** your answer makes sense
+
+### Common Problem Types:
+- **Basic**: Find volume from dimensions
+- **Transfer**: Track water between containers
+- **Fractional**: ²/₃ full means (²/₃) × capacity
+- **Multi-step**: Combine concepts systematically
+
+### Key Formulas:
+- V = L × B × H
+- 1 ℓ = 1000 ml = 1000 cm³
+
+Ready to put your volume skills to the test?`,
+      showAfterSpeech: true
+    }
+  },
+
+  // ============================================
+  // P5 MATHEMATICS - Decimals
+  // ============================================
+
+  'p5-math-decimals-multiply-10-100-1000': {
+    speech: {
+      text: `Welcome to multiplying decimals! Today we will learn a simple but powerful pattern. When you multiply a decimal by ten, every digit moves one place to the left, making the number bigger. Multiply by one hundred and digits move two places left. Multiply by one thousand and they move three places! Think of the decimal point as staying still while the digits shift. This pattern works for any decimal number.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-decimals-multiply-10-100-1000.mp3'
+    },
+    display: {
+      content: `# Multiplying Decimals by 10, 100, 1000
+
+Welcome! Today we'll master a powerful pattern for multiplying decimals.
+
+### The Pattern:
+When multiplying by powers of 10, **digits shift LEFT** (number gets bigger):
+
+| × 10 | × 100 | × 1000 |
+|------|-------|--------|
+| 1 place left | 2 places left | 3 places left |
+
+### Example:
+**2.34 × 100**
+- Digits shift 2 places LEFT
+- 2.34 → 234
+
+### Key Insight:
+- The decimal point **stays still**
+- The **digits** move around it
+- Moving LEFT = number gets BIGGER
+
+If you multiply 3.45 by 100, how many places do the digits shift?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-decimals-multiply-tens-hundreds-thousands': {
+    speech: {
+      text: `Now let us level up our multiplication skills! What if we need to multiply by twenty, or three hundred, or four thousand? Here is the two step method. First, multiply by the simple number like two or three. Then multiply by ten, hundred, or thousand using our place value shift. So for two point three times twenty, first find two point three times two, which is four point six. Then multiply by ten to get forty six. Easy!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-decimals-multiply-tens-hundreds-thousands.mp3'
+    },
+    display: {
+      content: `# Multiplying by Tens, Hundreds, Thousands
+
+Level up! Now we multiply by numbers like 20, 300, or 4000.
+
+### The Two-Step Method:
+**Break down the multiplier**, then combine!
+
+### Example: 2.3 × 20
+**Step 1:** 20 = 2 × 10
+**Step 2:** 2.3 × 2 = 4.6
+**Step 3:** 4.6 × 10 = **46**
+
+### Another Example: 1.5 × 300
+**Step 1:** 300 = 3 × 100
+**Step 2:** 1.5 × 3 = 4.5
+**Step 3:** 4.5 × 100 = **450**
+
+### Key Strategy:
+1. Factor the multiplier (e.g., 20 = 2 × 10)
+2. Multiply by the simple number first
+3. Then shift digits for the power of 10
+
+Can you break down 4000 into a simple number times a power of 10?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-decimals-divide-10-100-1000': {
+    speech: {
+      text: `Now for division! When we divide decimals by ten, one hundred, or one thousand, we do the opposite of multiplication. The digits move to the right instead of left, and the number gets smaller. Divide by ten and digits shift one place right. Divide by one hundred, two places right. Divide by one thousand, three places right. You might need to add zeros as placeholders when the digits move past the decimal point.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-decimals-divide-10-100-1000.mp3'
+    },
+    display: {
+      content: `# Dividing Decimals by 10, 100, 1000
+
+Division is the **opposite** of multiplication!
+
+### The Pattern:
+When dividing by powers of 10, **digits shift RIGHT** (number gets smaller):
+
+| ÷ 10 | ÷ 100 | ÷ 1000 |
+|------|-------|--------|
+| 1 place right | 2 places right | 3 places right |
+
+### Example:
+**45.6 ÷ 100**
+- Digits shift 2 places RIGHT
+- 45.6 → 0.456
+
+### Comparison:
+| Multiplication | Division |
+|----------------|----------|
+| Digits go LEFT | Digits go RIGHT |
+| Number BIGGER | Number SMALLER |
+
+### Remember:
+- May need **placeholder zeros** (e.g., 2.3 ÷ 100 = 0.023)
+
+When you divide 5.6 by 1000, which direction do the digits move?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-decimals-divide-tens-hundreds-thousands': {
+    speech: {
+      text: `Let us complete our skills with dividing by numbers like thirty, two hundred, or five thousand! Just like with multiplication, we use a two step method. First divide by the simple number, then divide by the power of ten. For example, six point three divided by thirty becomes six point three divided by three, which is two point one, then divided by ten gives zero point two one. Breaking it into steps makes it manageable!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-decimals-divide-tens-hundreds-thousands.mp3'
+    },
+    display: {
+      content: `# Dividing by Tens, Hundreds, Thousands
+
+Complete your skills! Divide by numbers like 30, 200, or 5000.
+
+### The Two-Step Method:
+**Break down the divisor**, divide in steps!
+
+### Example: 6.3 ÷ 30
+**Step 1:** 30 = 3 × 10
+**Step 2:** 6.3 ÷ 3 = 2.1
+**Step 3:** 2.1 ÷ 10 = **0.21**
+
+### Another Example: 24 ÷ 400
+**Step 1:** 400 = 4 × 100
+**Step 2:** 24 ÷ 4 = 6
+**Step 3:** 6 ÷ 100 = **0.06**
+
+### Key Strategy:
+1. Factor the divisor (e.g., 30 = 3 × 10)
+2. Divide by the simple number first
+3. Then shift digits right for the power of 10
+
+What two steps would you use to divide 8.4 by 40?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-decimals-converting-measurements': {
+    speech: {
+      text: `Now let us apply our decimal skills to real measurements! Converting between units like metres and centimetres, or kilograms and grams, uses exactly what we have learned. There are one hundred centimetres in a metre, so to convert metres to centimetres, multiply by one hundred. To go from centimetres to metres, divide by one hundred. The same pattern works for kilometres and metres, kilograms and grams, and litres and millilitres!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-decimals-converting-measurements.mp3'
+    },
+    display: {
+      content: `# Converting Measurements
+
+Apply your decimal skills to real measurements!
+
+### Key Conversions:
+| Larger → Smaller | Smaller → Larger |
+|------------------|------------------|
+| m → cm: × 100 | cm → m: ÷ 100 |
+| km → m: × 1000 | m → km: ÷ 1000 |
+| kg → g: × 1000 | g → kg: ÷ 1000 |
+| ℓ → ml: × 1000 | ml → ℓ: ÷ 1000 |
+
+### Examples:
+- **2.5 m = ? cm** → 2.5 × 100 = **250 cm**
+- **450 g = ? kg** → 450 ÷ 1000 = **0.45 kg**
+- **3.2 km = ? m** → 3.2 × 1000 = **3200 m**
+
+### Rule of Thumb:
+- Going to **smaller** units? **Multiply** (more of them!)
+- Going to **larger** units? **Divide** (fewer of them!)
+
+To convert 2.5 km to metres, should you multiply or divide by 1000?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-decimals-word-problems': {
+    speech: {
+      text: `Time to put everything together with word problems! These problems use all your decimal multiplication and division skills in real life situations. You might calculate the total cost of multiple items, find how many pieces you can cut from a length, or convert measurements in a recipe. Read carefully to identify the operation needed: is the answer bigger or smaller than what you started with? That tells you whether to multiply or divide!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-decimals-word-problems.mp3'
+    },
+    display: {
+      content: `# Word Problems on Decimals
+
+Put all your skills together with real problems!
+
+### Problem Types:
+- **Total cost**: Multiple items at decimal prices
+- **Equal sharing**: Divide into equal parts
+- **Cutting/measuring**: How many pieces from a length?
+- **Measurement conversions**: Real-world applications
+
+### Problem-Solving Strategy:
+1. **Read** carefully - what's given? what's asked?
+2. **Identify** the operation - will the answer be bigger or smaller?
+3. **Set up** the calculation
+4. **Check** - does the answer make sense?
+
+### Key Question:
+> "Will my answer be **bigger** or **smaller** than what I started with?"
+- Bigger → likely **multiplication**
+- Smaller → likely **division**
+
+If a ribbon is 12.6 m long and you cut it into pieces of 0.3 m each, will you multiply or divide to find how many pieces?`,
+      showAfterSpeech: true
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

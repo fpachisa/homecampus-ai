@@ -90,6 +90,10 @@ import FractionCircleVisualizer from '../math-tools/FractionCircleVisualizer';
 import TriangleIdentifyVisualizer from '../math-tools/TriangleIdentifyVisualizer';
 import TriangleAreaVisualizer from '../math-tools/TriangleAreaVisualizer';
 
+// Primary Volume - P5 Volume
+import UnitCubeGridVisualizer from '../math-tools/UnitCubeGridVisualizer';
+import WaterTankVisualizer from '../math-tools/WaterTankVisualizer';
+
 // Geometry - Angles
 import ParallelLinesTransversalVisualizer from '../math-tools/ParallelLinesTransversalVisualizer';
 import AnglesAtPointVisualizer from '../math-tools/AnglesAtPointVisualizer';
@@ -234,6 +238,10 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Primary Geometry - P5 Area of Triangle
   triangleIdentify: TriangleIdentifyVisualizer,
   triangleArea: TriangleAreaVisualizer,
+
+  // Primary Volume - P5 Volume
+  unitCubeGrid: UnitCubeGridVisualizer,
+  waterTank: WaterTankVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

@@ -83,6 +83,28 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 5',
       subject: 'Mathematics',
     },
+    {
+      id: 'p5-math-volume',
+      name: 'Volume',
+      icon: '📦',
+      description: 'Master volume of cubes and cuboids using unit cubes and formula, and solve liquid volume problems',
+      subtopicCount: 5,
+      isActive: true,
+      category: 'p5-math-volume',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
+    {
+      id: 'p5-math-decimals',
+      name: 'Decimals',
+      icon: '🔢',
+      description: 'Multiply and divide decimals by 10, 100, 1000 and tens/hundreds/thousands, convert measurements, and solve word problems',
+      subtopicCount: 6,
+      isActive: true,
+      category: 'p5-math-decimals',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
   ],
   'Primary 6': [
     {

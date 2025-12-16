@@ -213,7 +213,14 @@ class FallbackAIService implements AIService {
   async generateQuestion(
     problemType: number,
     topicId: string = 'fraction-division-by-whole-numbers',
-    context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any }
+    context?: {
+      recentHistory?: string;
+      evaluatorReasoning?: string;
+      evaluatorAction?: string;
+      advanceToNextSection?: boolean;
+      currentSection?: string;
+      recentProblems?: string[];
+    }
   ): Promise<QuestionGenerationResponse> {
     return this.executeWithFallback(
       (service) => service.generateQuestion(problemType, topicId, context),
@@ -258,7 +265,6 @@ class FallbackAIService implements AIService {
         answerCorrect: false,
         understanding: 'struggling',
         conceptGaps: ['Unable to assess due to service failure'],
-        sectionMastered: false,
         advanceToNextSection: false,
         action: "GIVE_HINT",
         hintLevel: Math.min(problemState.hintsGivenForCurrentProblem + 1, 3) as 1 | 2 | 3,

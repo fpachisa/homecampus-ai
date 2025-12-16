@@ -123,7 +123,14 @@ export interface AIService {
   generateQuestion(
     problemType: number,
     topicId: string,
-    context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any; currentSection?: string }
+    context?: {
+      recentHistory?: string;
+      evaluatorReasoning?: string;
+      evaluatorAction?: string;
+      advanceToNextSection?: boolean;
+      currentSection?: string;
+      recentProblems?: string[];
+    }
   ): Promise<QuestionGenerationResponse>;
 
   /**

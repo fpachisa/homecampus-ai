@@ -17,7 +17,7 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
   const { theme } = useTheme();
   const { keyboardHeight } = useKeyboardHeight(); // Mobile keyboard detection
   const [input, setInput] = useState('');
-  const [showMathToolbar, setShowMathToolbar] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
+  const [showMathToolbar, setShowMathToolbar] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Expose focus method to parent
@@ -184,17 +184,17 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
             }}
           >
             {disabled ? (
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                 <div
                   className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"
                   style={{ borderColor: theme.colors.textMuted }}
                 />
-                <span>Sending...</span>
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
-                <span>Send</span>
-                <span>↗</span>
+              <div className="flex items-center space-x-1.5">
+                <span className="text-sm">Send</span>
+                <span className="text-sm opacity-50">Ctrl</span>
+                <span className="text-sm opacity-50">↵</span>
               </div>
             )}
           </button>

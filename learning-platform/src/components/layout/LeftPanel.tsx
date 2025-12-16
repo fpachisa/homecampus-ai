@@ -93,6 +93,10 @@ import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../../prompt-librar
 import type { FourOperationsFractionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 import type { AreaOfTriangleTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import { P5_MATH_VOLUME_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_DECIMALS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-decimals';
+import type { DecimalsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-decimals';
+import type { VolumeTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-volume';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -129,6 +133,18 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('p5-math-area-triangle-')) {
     const icons = ['📏', '📐', '🔷'];  // Base/Height, Formula, Composite
     const index = Object.keys(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Volume icons
+  if (topicId.startsWith('p5-math-volume-')) {
+    const icons = ['🧊', '📐', '📦', '💧', '📝'];  // Unit Cubes, Cubic Units, Formula, Liquids, Word Problems
+    const index = Object.keys(P5_MATH_VOLUME_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Decimals icons
+  if (topicId.startsWith('p5-math-decimals-')) {
+    const icons = ['✖️', '🔢', '➗', '📊', '📏', '📝'];  // Multiply 10/100/1000, Multiply Tens, Divide 10/100/1000, Divide Tens, Measurements, Word Problems
+    const index = Object.keys(P5_MATH_DECIMALS_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
   // P6 Fractions icons
@@ -437,6 +453,8 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p5-math-fractions-divisions') return 'Fractions and Division';
   if (category === 'p5-math-four-operations-fractions') return 'Four Operations of Fractions';
   if (category === 'p5-math-area-triangle') return 'Area of Triangle';
+  if (category === 'p5-math-volume') return 'Volume';
+  if (category === 'p5-math-decimals') return 'Decimals';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -495,6 +513,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-fractions-divisions',
     'p5-math-four-operations-fractions',
     'p5-math-area-triangle',
+    'p5-math-volume',
+    'p5-math-decimals',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -890,6 +910,22 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-area-triangle') {
       return Object.entries(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as AreaOfTriangleTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-volume') {
+      return Object.entries(P5_MATH_VOLUME_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as VolumeTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-decimals') {
+      return Object.entries(P5_MATH_DECIMALS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as DecimalsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

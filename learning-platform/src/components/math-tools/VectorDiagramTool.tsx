@@ -475,12 +475,12 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
         drawArrow(start2.x, start2.y, end2.x, end2.y, '#ef4444', vectorList[1].label)
       );
 
-      // Draw resultant if requested
+      // Draw resultant if requested (no label to avoid overlap)
       if (resultant && resultantVector) {
         const resultStart = toSVG(0, 0);
         const resultEnd = toSVG(resultantVector.x, resultantVector.y);
         elements.push(
-          drawArrow(resultStart.x, resultStart.y, resultEnd.x, resultEnd.y, '#10b981', `${vectorList[0].label}+${vectorList[1].label}`)
+          drawArrow(resultStart.x, resultStart.y, resultEnd.x, resultEnd.y, '#10b981', '', false)
         );
       }
     } else if (operation === 'subtract' && vectorList.length >= 2) {
@@ -498,12 +498,12 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
         drawArrow(startNeg.x, startNeg.y, endNeg.x, endNeg.y, '#f59e0b', `-${vectorList[1].label}`)
       );
 
-      // Draw resultant if requested
+      // Draw resultant if requested (no label to avoid overlap)
       if (resultant && resultantVector) {
         const resultStart = toSVG(0, 0);
         const resultEnd = toSVG(resultantVector.x, resultantVector.y);
         elements.push(
-          drawArrow(resultStart.x, resultStart.y, resultEnd.x, resultEnd.y, '#10b981', `${vectorList[0].label}-${vectorList[1].label}`)
+          drawArrow(resultStart.x, resultStart.y, resultEnd.x, resultEnd.y, '#10b981', '', false)
         );
       }
     }

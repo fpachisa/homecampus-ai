@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { collection, doc, onSnapshot, query } from 'firebase/firestore';
 import { firestore } from '../services/firebase';
 import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
@@ -270,10 +270,119 @@ export function useCurrentChildSubscription(): {
   loading: boolean;
   error: Error | null;
 } {
-  const { children, loading, error } = useSubscription();
+  const { children, loading: parentLoading, error } = useSubscription();
   const { activeProfile } = useActiveProfile();
+  const { user, userProfile } = useAuth();
 
+  // State for linked child's own subscription (when logged in directly)
+  const [linkedChildSubscription, setLinkedChildSubscription] = useState<ChildSubscriptionState | null>(null);
+  const [linkedChildLoading, setLinkedChildLoading] = useState(false);
+
+  // State for parent UID fetched from parents subcollection
+  const [parentUidFromSubcollection, setParentUidFromSubcollection] = useState<string | null>(null);
+
+  // For students, fetch parent UID from their parents subcollection
+  useEffect(() => {
+    if (userProfile?.accountType !== 'student' || !user?.uid) {
+      setParentUidFromSubcollection(null);
+      return;
+    }
+
+    // Query the parents subcollection to find linked parent
+    const parentsRef = collection(firestore, `users/${user.uid}/parents`);
+    const unsubscribe = onSnapshot(
+      parentsRef,
+      (snapshot) => {
+        if (!snapshot.empty) {
+          // Get first parent's UID (document ID is the parent's UID)
+          const firstParentDoc = snapshot.docs[0];
+          setParentUidFromSubcollection(firstParentDoc.id);
+        } else {
+          setParentUidFromSubcollection(null);
+        }
+      },
+      (err) => {
+        console.error('[useCurrentChildSubscription] Error fetching parents subcollection:', err);
+        setParentUidFromSubcollection(null);
+      }
+    );
+
+    return () => unsubscribe();
+  }, [userProfile?.accountType, user?.uid]);
+
+  // Detect if current user is a linked child logged in directly
+  const isLinkedChildDirect = useMemo(() => {
+    return (
+      userProfile?.accountType === 'student' &&
+      activeProfile?.type === 'self' &&
+      !!parentUidFromSubcollection // Use parent UID from subcollection
+    );
+  }, [userProfile?.accountType, activeProfile?.type, parentUidFromSubcollection]);
+
+  // Fetch subscription for linked children logging in directly
+  useEffect(() => {
+    if (!isLinkedChildDirect || !user?.uid || !parentUidFromSubcollection) {
+      setLinkedChildSubscription(null);
+      setLinkedChildLoading(false);
+      return;
+    }
+
+    setLinkedChildLoading(true);
+    const parentUid = parentUidFromSubcollection;
+    const childUid = user.uid;
+
+    // Fetch from parent's children subcollection
+    const childRef = doc(firestore, `users/${parentUid}/children/${childUid}`);
+    const unsubscribe = onSnapshot(
+      childRef,
+      (docSnap) => {
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          if (data.subscription) {
+            const subscription = parseSubscriptionData(data.subscription);
+            const state = calculateChildState(
+              childUid,
+              userProfile?.displayName || 'Student',
+              subscription
+            );
+            setLinkedChildSubscription(state);
+          } else {
+            // Document exists but no subscription field - check root level fields
+            // (in case subscription data is stored flat)
+            if (data.subscriptionStatus) {
+              const subscription = parseSubscriptionData(data);
+              const state = calculateChildState(
+                childUid,
+                userProfile?.displayName || 'Student',
+                subscription
+              );
+              setLinkedChildSubscription(state);
+            } else {
+              setLinkedChildSubscription(null);
+            }
+          }
+        } else {
+          console.warn('[useCurrentChildSubscription] Linked child document not found in parent subcollection');
+          setLinkedChildSubscription(null);
+        }
+        setLinkedChildLoading(false);
+      },
+      (err) => {
+        console.error('[useCurrentChildSubscription] Error fetching linked child subscription:', err);
+        setLinkedChildLoading(false);
+      }
+    );
+
+    return () => unsubscribe();
+  }, [isLinkedChildDirect, user?.uid, parentUidFromSubcollection, userProfile?.displayName]);
+
+  // Determine which subscription to return
   const subscription = useMemo(() => {
+    // For linked children logged in directly, use their fetched subscription
+    if (isLinkedChildDirect) {
+      return linkedChildSubscription;
+    }
+
     if (!activeProfile) return null;
 
     // For Netflix-style profiles, match by profileId
@@ -281,14 +390,16 @@ export function useCurrentChildSubscription(): {
       return children.find((c) => c.childProfileId === activeProfile.profileId) || null;
     }
 
-    // For linked children, we might need different logic if their sub is on their own doc
-    // But if valid, match by uid (assuming ID consistency in children array)
+    // For parent viewing linked children, match by uid
     if (activeProfile.type === 'linked-child') {
       return children.find((c) => c.childProfileId === activeProfile.uid) || null;
     }
 
     return null;
-  }, [children, activeProfile]);
+  }, [isLinkedChildDirect, linkedChildSubscription, children, activeProfile]);
+
+  // Combined loading state
+  const loading = isLinkedChildDirect ? linkedChildLoading : parentLoading;
 
   return { subscription, loading, error };
 }

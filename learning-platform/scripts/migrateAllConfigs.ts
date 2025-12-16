@@ -28,6 +28,7 @@ import { P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS } from './p5-numbers-10-million
 import { P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS } from './p5-four-operations-firestore-configs.js';
 import { P5_FRACTIONS_DIVISIONS_FIRESTORE_CONFIGS } from './p5-fractions-divisions-firestore-configs.js';
 import { P5_AREA_OF_TRIANGLE_FIRESTORE_CONFIGS } from './p5-area-of-triangle-firestore-configs.js';
+import { P5_VOLUME_FIRESTORE_CONFIGS } from './p5-volume-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -321,13 +322,147 @@ export const S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS = [
   }
 ];
 
+// ============================================
+// P5 MATHEMATICS - Decimals
+// ============================================
+const P5_DECIMALS_FIRESTORE_CONFIGS = [
+  {
+    id: "p5-math-decimals-multiply-10-100-1000",
+    displayName: "Multiplying Decimals by 10, 100, 1000",
+    grade: "p5",
+    subject: "math",
+    topic: "decimals",
+    subtopic: "multiply-10-100-1000",
+    metadata: {
+      difficulty: "foundational",
+      estimatedMinutes: 35,
+      prerequisites: []
+    },
+    notesComponent: "p5/math/decimals/MultiplyingBy10_100_1000",
+    teachingTemplate: "",
+    scoring: {
+      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+    },
+    modules: { learn: true, practice: true, visualizations: true }
+  },
+  {
+    id: "p5-math-decimals-multiply-tens-hundreds-thousands",
+    displayName: "Multiplying Decimals by Tens, Hundreds, Thousands",
+    grade: "p5",
+    subject: "math",
+    topic: "decimals",
+    subtopic: "multiply-tens-hundreds-thousands",
+    metadata: {
+      difficulty: "foundational-to-intermediate",
+      estimatedMinutes: 40,
+      prerequisites: ["p5-math-decimals-multiply-10-100-1000"]
+    },
+    notesComponent: "p5/math/decimals/MultiplyingByTensHundredsThousands",
+    teachingTemplate: "",
+    scoring: {
+      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+    },
+    modules: { learn: true, practice: true, visualizations: true }
+  },
+  {
+    id: "p5-math-decimals-divide-10-100-1000",
+    displayName: "Dividing Decimals by 10, 100, 1000",
+    grade: "p5",
+    subject: "math",
+    topic: "decimals",
+    subtopic: "divide-10-100-1000",
+    metadata: {
+      difficulty: "intermediate",
+      estimatedMinutes: 40,
+      prerequisites: ["p5-math-decimals-multiply-10-100-1000"]
+    },
+    notesComponent: "p5/math/decimals/DividingBy10_100_1000",
+    teachingTemplate: "",
+    scoring: {
+      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+    },
+    modules: { learn: true, practice: true, visualizations: true }
+  },
+  {
+    id: "p5-math-decimals-divide-tens-hundreds-thousands",
+    displayName: "Dividing Decimals by Tens, Hundreds, Thousands",
+    grade: "p5",
+    subject: "math",
+    topic: "decimals",
+    subtopic: "divide-tens-hundreds-thousands",
+    metadata: {
+      difficulty: "intermediate",
+      estimatedMinutes: 45,
+      prerequisites: ["p5-math-decimals-divide-10-100-1000", "p5-math-decimals-multiply-tens-hundreds-thousands"]
+    },
+    notesComponent: "p5/math/decimals/DividingByTensHundredsThousands",
+    teachingTemplate: "",
+    scoring: {
+      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+    },
+    modules: { learn: true, practice: true, visualizations: true }
+  },
+  {
+    id: "p5-math-decimals-converting-measurements",
+    displayName: "Converting Measurements",
+    grade: "p5",
+    subject: "math",
+    topic: "decimals",
+    subtopic: "converting-measurements",
+    metadata: {
+      difficulty: "intermediate-to-challenging",
+      estimatedMinutes: 50,
+      prerequisites: ["p5-math-decimals-multiply-10-100-1000", "p5-math-decimals-divide-10-100-1000"]
+    },
+    notesComponent: "p5/math/decimals/ConvertingMeasurements",
+    teachingTemplate: "",
+    scoring: {
+      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+    },
+    modules: { learn: true, practice: true, visualizations: true }
+  },
+  {
+    id: "p5-math-decimals-word-problems",
+    displayName: "Word Problems on Decimals",
+    grade: "p5",
+    subject: "math",
+    topic: "decimals",
+    subtopic: "word-problems",
+    metadata: {
+      difficulty: "challenging",
+      estimatedMinutes: 60,
+      prerequisites: ["p5-math-decimals-multiply-tens-hundreds-thousands", "p5-math-decimals-divide-tens-hundreds-thousands", "p5-math-decimals-converting-measurements"]
+    },
+    notesComponent: "p5/math/decimals/WordProblems",
+    teachingTemplate: "",
+    scoring: {
+      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+    },
+    modules: { learn: true, practice: true, visualizations: true }
+  }
+];
+
 const ALL_CONFIGS = [
   ...S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS,
   ...P5_NUMBERS_10_MILLION_FIRESTORE_CONFIGS,
   ...P5_FOUR_OPERATIONS_FIRESTORE_CONFIGS,
   ...P5_FRACTIONS_DIVISIONS_FIRESTORE_CONFIGS,
   ...P5_FOUR_OPERATIONS_FRACTIONS_FIRESTORE_CONFIGS,
-  ...P5_AREA_OF_TRIANGLE_FIRESTORE_CONFIGS
+  ...P5_AREA_OF_TRIANGLE_FIRESTORE_CONFIGS,
+  ...P5_VOLUME_FIRESTORE_CONFIGS,
+  ...P5_DECIMALS_FIRESTORE_CONFIGS
 ];
 
 /**

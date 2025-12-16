@@ -79,7 +79,7 @@
   .glass-surface::after {
     content: '';
     position: absolute;
-    inset: 1px;
+    inset: 0;
     border-radius: inherit;
     pointer-events: none;
     z-index: -1;

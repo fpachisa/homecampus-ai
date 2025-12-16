@@ -298,6 +298,12 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/area-of-triangle/BaseAndHeight': () => import('../notes/p5/math/area-of-triangle/BaseAndHeight'),
   'p5/math/area-of-triangle/AreaOfTriangle': () => import('../notes/p5/math/area-of-triangle/AreaOfTriangle'),
   'p5/math/area-of-triangle/CompositeTriangleFigures': () => import('../notes/p5/math/area-of-triangle/CompositeTriangleFigures'),
+  // P5 Volume notes
+  'p5/math/volume/UnitCubes': () => import('../notes/p5/math/volume/UnitCubes'),
+  'p5/math/volume/CubicUnits': () => import('../notes/p5/math/volume/CubicUnits'),
+  'p5/math/volume/VolumeFormula': () => import('../notes/p5/math/volume/VolumeFormula'),
+  'p5/math/volume/VolumeLiquids': () => import('../notes/p5/math/volume/VolumeLiquids'),
+  'p5/math/volume/WordProblems': () => import('../notes/p5/math/volume/WordProblems'),
 };
 
 // Helper to organize notes by hierarchy

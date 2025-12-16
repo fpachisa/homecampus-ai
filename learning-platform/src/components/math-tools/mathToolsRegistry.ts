@@ -36,7 +36,7 @@ export interface MathToolDefinition {
   name: string;                    // Display name
   technicalName: string;           // Key used in code
   component: string;               // React component name
-  category: 'trigonometry' | 'geometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability' | 'primary-geometry';
+  category: 'trigonometry' | 'geometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability' | 'primary-geometry' | 'volume';
 
   // Documentation
   description: string;             // What this tool does
@@ -3241,7 +3241,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     parameters: {
       vectors: "string - JSON array of vectors: [{\"label\":\"a\",\"x\":3,\"y\":4},{\"label\":\"b\",\"x\":-2,\"y\":1}]. Each vector needs label (string), x (number), y (number). Keep it simple with 1-3 vectors maximum. Use negative coordinates to represent opposite directions (e.g., x=-150 for West).",
       operation: "'none' | 'add' | 'subtract' | 'scalar' (default: 'none') - operation to visualize. 'add' shows triangle law, 'subtract' shows a and -b from origin (for teaching a-b=a+(-b) concept), 'scalar' shows scalar multiples, 'none' shows individual vectors as-is from origin. IMPORTANT: For relative motion problems (cars, trains), use 'none' and encode direction in coordinates (e.g., x=60, x=40 for same direction; x=100, x=-150 for opposite directions). Only use 'subtract' when teaching the mathematical concept of vector subtraction.",
-      resultant: "boolean (default: false) - show resultant vector in green when operation is 'add' or 'subtract'",
+      resultant: "boolean (default: false) - show resultant vector in green when operation is 'add' or 'subtract' (no label shown on resultant to avoid overlap)",
       showComponents: "boolean (default: false) - show i,j component breakdown as dashed lines for each vector",
       gridSize: "number (optional, auto-scales if not provided) - manual grid scale override. Grid automatically calculates optimal scale based on vector magnitudes. Only specify this to force a particular scale. Supports any positive number."
     },
@@ -4490,6 +4490,169 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           height: "14 m",
           shape: "obtuse-left",
           shaded: true
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // VOLUME TOOLS (P5 Mathematics)
+  // ============================================
+
+  unitCubeGrid: {
+    name: "Unit Cube Grid",
+    technicalName: "unitCubeGrid",
+    component: "UnitCubeGridVisualizer",
+    category: "volume",
+
+    description: "Shows a 3D solid made of unit cubes for counting volume. Displays individual cubes in an isometric view with optional layer highlighting. Perfect for teaching volume by counting unit cubes.",
+
+    whenToUse: "Use when teaching volume by counting unit cubes, showing how a cuboid is built from smaller cubes, or for P5 volume problems where students count cubes to find volume. Ideal for Subtopics 1-2 of P5 Volume.",
+
+    parameters: {
+      cubesAlong: "number (REQUIRED) - Number of cubes along the length (left-right direction). Example: 4",
+      cubesDeep: "number (REQUIRED) - Number of cubes along the depth (front-back direction). Example: 3",
+      cubesHigh: "number (REQUIRED) - Number of cubes along the height (up-down direction). Example: 2",
+      unit: "'cubic units' | 'cm³' | 'm³' (optional, default: 'cubic units') - Unit label for the volume",
+      showDimensions: "boolean (optional, default: true) - Show dimension labels on the grid",
+      highlightLayer: "number (optional) - Layer number to highlight for counting (1 = bottom layer)",
+      caption: "string (optional) - Caption text below the visualization"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Simple unit cube counting",
+        caption: "A solid made of unit cubes. Count to find the volume.",
+        parameters: {
+          cubesAlong: 4,
+          cubesDeep: 3,
+          cubesHigh: 2,
+          unit: "cubic units",
+          showDimensions: true
+        }
+      },
+      {
+        scenario: "Counting 1-cm cubes",
+        caption: "This solid is made of 1-cm cubes. What is its volume in cm³?",
+        parameters: {
+          cubesAlong: 5,
+          cubesDeep: 2,
+          cubesHigh: 3,
+          unit: "cm³",
+          showDimensions: true
+        }
+      },
+      {
+        scenario: "Layer-by-layer counting",
+        caption: "Count the cubes layer by layer. The bottom layer is highlighted.",
+        parameters: {
+          cubesAlong: 3,
+          cubesDeep: 3,
+          cubesHigh: 4,
+          unit: "cubic units",
+          highlightLayer: 1,
+          showDimensions: true
+        }
+      },
+      {
+        scenario: "Large cubic metre structure",
+        caption: "A structure made of 1-m cubes. Find the volume in m³.",
+        parameters: {
+          cubesAlong: 4,
+          cubesDeep: 3,
+          cubesHigh: 2,
+          unit: "m³",
+          showDimensions: true
+        }
+      }
+    ]
+  },
+
+  waterTank: {
+    name: "Water Tank",
+    technicalName: "waterTank",
+    component: "WaterTankVisualizer",
+    category: "volume",
+
+    description: "Shows a rectangular tank with water filled to a specific height. Displays tank outline with solid lines (visible edges) and dotted lines (hidden edges), water level with solid blue line, and dimension labels. Perfect for liquid volume problems.",
+
+    whenToUse: "Use when teaching volume of liquids, partially filled tanks, water transfer problems, or any problem involving rectangular containers with water. Ideal for P5 Volume Subtopics 4-5 (Volume of Liquids and Word Problems).",
+
+    parameters: {
+      length: "number (REQUIRED) - Tank length in specified unit. Example: 30",
+      width: "number (REQUIRED) - Tank width in specified unit. Example: 20",
+      height: "number (REQUIRED) - Tank total height in specified unit. Example: 25",
+      waterHeight: "number (REQUIRED) - Height of water level (0 = empty, equal to height = full). Example: 15",
+      unit: "'cm' | 'm' (optional, default: 'cm') - Unit for all dimensions",
+      showDimensions: "boolean (optional, default: true) - Show all dimension labels",
+      showWaterHeight: "boolean (optional, default: true) - Show water height label separately",
+      caption: "string (optional) - Caption text below the visualization"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Partially filled tank",
+        caption: "A rectangular tank is partially filled with water. Find the volume of water.",
+        parameters: {
+          length: 30,
+          width: 20,
+          height: 25,
+          waterHeight: 15,
+          unit: "cm",
+          showDimensions: true,
+          showWaterHeight: true
+        }
+      },
+      {
+        scenario: "Tank filled to specific depth",
+        caption: "The tank is filled with water to a depth of 12 cm.",
+        parameters: {
+          length: 40,
+          width: 15,
+          height: 20,
+          waterHeight: 12,
+          unit: "cm",
+          showDimensions: true,
+          showWaterHeight: true
+        }
+      },
+      {
+        scenario: "Large water tank in metres",
+        caption: "A cubical tank of side 30 m is partially filled with water.",
+        parameters: {
+          length: 30,
+          width: 30,
+          height: 30,
+          waterHeight: 12,
+          unit: "m",
+          showDimensions: true,
+          showWaterHeight: true
+        }
+      },
+      {
+        scenario: "Finding water needed to fill",
+        caption: "How much more water is needed to fill this tank completely?",
+        parameters: {
+          length: 36,
+          width: 20,
+          height: 24,
+          waterHeight: 13,
+          unit: "cm",
+          showDimensions: true,
+          showWaterHeight: true
+        }
+      },
+      {
+        scenario: "Empty tank (for comparison)",
+        caption: "An empty rectangular tank with the given dimensions.",
+        parameters: {
+          length: 50,
+          width: 30,
+          height: 40,
+          waterHeight: 0,
+          unit: "cm",
+          showDimensions: true,
+          showWaterHeight: false
         }
       }
     ]

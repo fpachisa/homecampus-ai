@@ -71,6 +71,8 @@ import { P5_MATH_FOUR_OPERATIONS_SUBTOPICS, P5_FOUR_OPERATIONS_CONFIG } from '..
 import { P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS, P5_FRACTIONS_DIVISIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-fractions-divisions';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS, P5_AREA_OF_TRIANGLE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import { P5_MATH_VOLUME_SUBTOPICS, P5_VOLUME_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_DECIMALS_SUBTOPICS, P5_DECIMALS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -166,6 +168,8 @@ function registerBrowserTopics() {
   registerTopics(P5_MATH_FRACTIONS_DIVISIONS_SUBTOPICS, P5_FRACTIONS_DIVISIONS_CONFIG);
   registerTopics(P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIONS_CONFIG);
   registerTopics(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS, P5_AREA_OF_TRIANGLE_CONFIG);
+  registerTopics(P5_MATH_VOLUME_SUBTOPICS, P5_VOLUME_CONFIG);
+  registerTopics(P5_MATH_DECIMALS_SUBTOPICS, P5_DECIMALS_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }
@@ -697,8 +701,7 @@ Return ONLY a JSON object exactly matching the output schema below.`)
         answerCorrect: "boolean - true only if final answer is correct",
         understanding: "mastery | developing | struggling - understanding level based on masteryRubric",
         conceptGaps: "string[] - specific concepts student needs to work on",
-        sectionMastered: "boolean - true if understanding is mastery",
-        advanceToNextSection: "boolean - true if sectionMastered is true",
+        advanceToNextSection: "boolean - true if section is mastered and student should advance to next section",
         action: "CLARIFY_CONCEPT | GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE - next action",
         hintLevel: "1 | 2 | 3 ....(optional) - hint level if action is GIVE_HINT",
         reasoning: "string - detailed explanation for other agents (plain text, NO LaTeX)"
@@ -920,14 +923,14 @@ CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA.`);
       .addTask(`Create an enthusiastic celebration for completing the entire topic!
 
 Your celebration should:
-  1. Congratulate the student warmly and enthusiastically
+  1. A simple "Congratulations!" message
   2. Summarize key concepts learned across all sections
-  3. Present the statistics in an encouraging, meaningful way
+  3. Present the statistics in a meaningful way
   4. Reflect on their growth and perseverance
   5. Connect learning to real-world applications or broader mathematical ideas
   6. Encourage continued learning
 
-Tone: Enthusiastic, proud, reflective (not just "good job")
+Tone: Simple and instructive (not just "good job")
 Include the stats in your display content in a visually appealing format.
 
 CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA, including the stats field.`);
@@ -989,7 +992,7 @@ CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA, including the s
       // Evaluator's decision and reasoning
       .addSection("EVALUATOR'S ACTION", context.evaluatorInstruction?.action || 'NEW_PROBLEM')
       .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || '')
-      .addSection("ADVANCE TO NEXT SECTION", context.evaluatorInstruction?.advanceToNextSection || false) 
+      .addSection("ADVANCE TO NEXT SECTION", context.evaluatorInstruction?.advanceToNextSection || false)
 
       // Recent history and problems for variation
       .addSection('RECENT HISTORY', context.recentHistory || '')
@@ -997,7 +1000,7 @@ CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA, including the s
         b.addSection('RECENT PROBLEMS', context.recentProblems);
       })
 
-      .addTask(`Generate an appropriate problem based on evaluator's decision. 
+      .addTask(`Generate an appropriate problem based on evaluator's decision.
 
 Rule: Ensure the problem only has one part unless the second part is using the answer from the first part.
 
@@ -1009,6 +1012,9 @@ If ADVANCE TO NEXT SECTION is true:
 Otherwise:
   - Generate a problem for the CURRENT SECTION
   - Match the difficulty and objectives of current section
+
+Use available visual tools when appropriate.
+Celebrate the previous correct answer in your speech before presenting the new problem.
 
 CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA`)
 .addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");

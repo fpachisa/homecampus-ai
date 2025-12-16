@@ -88,6 +88,10 @@ import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS } from '../prompt-library/s
 import type { FourOperationsFractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-four-operations-fractions';
 import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 import type { AreaOfTriangleTopicId } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
+import { P5_MATH_VOLUME_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_DECIMALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
+import type { DecimalsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
+import type { VolumeTopicId } from '../prompt-library/subjects/mathematics/primary/p5-volume';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -291,6 +295,16 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P5 Area of Triangle topics
     if (topicId.startsWith('p5-math-area-triangle-')) {
       const subtopic = P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS[topicId as AreaOfTriangleTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Volume topics
+    if (topicId.startsWith('p5-math-volume-')) {
+      const subtopic = P5_MATH_VOLUME_SUBTOPICS[topicId as VolumeTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Decimals topics
+    if (topicId.startsWith('p5-math-decimals-')) {
+      const subtopic = P5_MATH_DECIMALS_SUBTOPICS[topicId as DecimalsTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

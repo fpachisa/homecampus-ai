@@ -290,6 +290,19 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p5/math/area-of-triangle/BaseAndHeight': () => import('../notes/p5/math/area-of-triangle/BaseAndHeight'),
   'p5/math/area-of-triangle/AreaOfTriangle': () => import('../notes/p5/math/area-of-triangle/AreaOfTriangle'),
   'p5/math/area-of-triangle/CompositeTriangleFigures': () => import('../notes/p5/math/area-of-triangle/CompositeTriangleFigures'),
+  // P5 Math notes - Volume
+  'p5/math/volume/UnitCubes': () => import('../notes/p5/math/volume/UnitCubes'),
+  'p5/math/volume/CubicUnits': () => import('../notes/p5/math/volume/CubicUnits'),
+  'p5/math/volume/VolumeFormula': () => import('../notes/p5/math/volume/VolumeFormula'),
+  'p5/math/volume/VolumeLiquids': () => import('../notes/p5/math/volume/VolumeLiquids'),
+  'p5/math/volume/WordProblems': () => import('../notes/p5/math/volume/WordProblems'),
+  // P5 Math notes - Decimals
+  'p5/math/decimals/MultiplyingBy10_100_1000': () => import('../notes/p5/math/decimals/MultiplyingBy10_100_1000'),
+  'p5/math/decimals/MultiplyingByTensHundredsThousands': () => import('../notes/p5/math/decimals/MultiplyingByTensHundredsThousands'),
+  'p5/math/decimals/DividingBy10_100_1000': () => import('../notes/p5/math/decimals/DividingBy10_100_1000'),
+  'p5/math/decimals/DividingByTensHundredsThousands': () => import('../notes/p5/math/decimals/DividingByTensHundredsThousands'),
+  'p5/math/decimals/ConvertingMeasurements': () => import('../notes/p5/math/decimals/ConvertingMeasurements'),
+  'p5/math/decimals/WordProblems': () => import('../notes/p5/math/decimals/WordProblems'),
 };
 
 interface NotesCache {
