@@ -7265,6 +7265,148 @@ Two straight lines intersect. One of the angles is $65°$. Using both the vertic
     }
   },
 
+  /* ========================================
+   * P5 MATHEMATICS - PROPERTIES OF TRIANGLES
+   * ========================================
+   */
+  'p5-math-properties-triangles-types': {
+    speech: {
+      text: `Welcome to our exciting journey into triangles! Today we'll learn how to classify triangles in two different ways. First, we'll look at their sides. A triangle with three equal sides is called equilateral. One with two equal sides is isosceles. And one with no equal sides is scalene. Then we'll classify by angles. A triangle with all angles less than 90 degrees is acute. One with a 90 degree angle is right. And one with an angle greater than 90 degrees is obtuse. Let's start by identifying some triangles!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-triangles-types.mp3'
+    },
+    display: {
+      content: `# Types of Triangles
+
+### Classifying by Sides
+- **Equilateral**: 3 equal sides (marked with tick marks)
+- **Isosceles**: 2 equal sides
+- **Scalene**: No equal sides
+
+### Classifying by Angles
+- **Acute**: All angles less than 90°
+- **Right**: One angle equals 90° (marked with a square)
+- **Obtuse**: One angle greater than 90°
+
+### Combined Classification
+A triangle can be described using **both** classifications.
+Example: An "isosceles right triangle" has 2 equal sides AND a 90° angle.
+
+---
+
+### First Question
+
+Look at the triangle below. It has tick marks on two sides and all angles are less than 90°. What type of triangle is this?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "generalTriangle",
+      parameters: {
+        vertices: ["A", "B", "C"],
+        angles: [70, 70, 40],
+        showAngles: true,
+        equalSides: "a-c",
+        caption: "Classify this triangle by sides and angles"
+      },
+      caption: "Classify this triangle by sides and angles"
+    }
+  },
+
+  'p5-math-properties-triangles-angle-sum': {
+    speech: {
+      text: `Here's one of the most important properties of triangles. The angles inside any triangle always add up to exactly 180 degrees. This is true for every triangle, whether it's equilateral, isosceles, scalene, acute, right, or obtuse. This property is super useful because if you know two angles, you can always find the third. Let me show you how it works.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-triangles-angle-sum.mp3'
+    },
+    display: {
+      content: `# Angle Sum of a Triangle
+
+### Key Property
+**The sum of angles in any triangle = 180°**
+
+This is true for ALL triangles - equilateral, isosceles, scalene, acute, right, or obtuse.
+
+### Finding Unknown Angles
+If you know two angles, you can find the third:
+1. Add the two known angles
+2. Subtract from 180°
+
+### Example
+If angle A = 65° and angle B = 50°:
+$$\\text{Angle C} = 180° - 65° - 50° = 65°$$
+
+### Special Cases
+- **Equilateral triangle**: Each angle = 60° (because 180° ÷ 3 = 60°)
+- **Right triangle**: The two acute angles add up to 90°
+
+---
+
+### First Question
+
+In triangle PQR, angle P = 45° and angle Q = 80°. Find angle R.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "generalTriangle",
+      parameters: {
+        vertices: ["P", "Q", "R"],
+        angles: [45, 80, null],
+        angleLabels: ["45°", "80°", "?"],
+        showAngles: true,
+        equalSides: "none",
+        caption: "Find angle R using the angle sum property"
+      },
+      caption: "Find angle R using the angle sum property"
+    }
+  },
+
+  'p5-math-properties-triangles-finding-unknown': {
+    speech: {
+      text: `Now let's tackle more challenging problems! We'll use the exterior angle property, which says that an exterior angle of a triangle equals the sum of the two interior opposite angles. We'll also work with adjacent triangles that share a side. These problems often require using multiple properties together. The key is to work step by step and use what you know to find what you don't know. Let's try one!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-triangles-finding-unknown.mp3'
+    },
+    display: {
+      content: `# Finding Unknown Angles
+
+### Exterior Angle Property
+When a side of a triangle is extended:
+**Exterior angle = Sum of two interior opposite angles**
+
+### Adjacent Triangles
+When two triangles share a side:
+- Apply angle sum = 180° to each triangle separately
+- Use isosceles/equilateral properties when applicable
+- Information from one triangle helps solve the other
+
+### Problem-Solving Strategy
+1. Identify all triangles in the figure
+2. Note any special triangles (isosceles, equilateral)
+3. Look for exterior angles
+4. Apply properties one step at a time
+
+---
+
+### First Question
+
+In the figure, side BC of triangle ABC is extended to point D. If angle A = 50° and angle B = 65°, find the exterior angle ACD.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "extendedLineTriangle",
+      parameters: {
+        vertices: ["A", "B", "C"],
+        extendedSide: "BC",
+        extensionLabel: "D",
+        angles: [50, 65, null],
+        showExteriorAngle: true,
+        exteriorAngleLabel: "?",
+        caption: "BC extended to D. Find exterior angle ACD."
+      },
+      caption: "BC extended to D. Find exterior angle ACD."
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

@@ -98,6 +98,8 @@ import { P5_MATH_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { PercentageTopicId as P5PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
 import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 import type { P5AnglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-angles';
+import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
+import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -326,6 +328,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P5 Angles topics
     if (topicId.startsWith('p5-math-angles-')) {
       const subtopic = P5_MATH_ANGLES_SUBTOPICS[topicId as P5AnglesTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Properties of Triangles topics
+    if (topicId.startsWith('p5-math-properties-triangles-')) {
+      const subtopic = P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS[topicId as P5PropertiesOfTrianglesTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

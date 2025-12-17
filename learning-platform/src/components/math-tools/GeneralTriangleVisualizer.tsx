@@ -142,10 +142,8 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
     calcAngleC = angleC!;
   }
 
-  // Validate: ONLY angle A can be obtuse
-  if (calcAngleB > 90 || calcAngleC > 90) {
-    console.error('GeneralTriangleVisualizer: Only angle A can be obtuse. Angles B and C must be ≤ 90°.');
-  }
+  // Note: While angle A at the apex works best for obtuse angles,
+  // obtuse angles at B or C are now supported (creates a "leaning" triangle)
 
   // ============================================
   // TRIANGLE LAYOUT
@@ -202,8 +200,8 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
 
   // Scale arc radius based on angle size - smaller arcs for obtuse angles
   const arcRadiusA = calcAngleA > 90 ? 30 : 40;
-  const arcRadiusB = 40;
-  const arcRadiusC = 40;
+  const arcRadiusB = calcAngleB > 90 ? 30 : 40;
+  const arcRadiusC = calcAngleC > 90 ? 30 : 40;
 
   const labelOffset = 55; // For angle labels
   const vertexLabelOffset = 20; // For vertex labels
@@ -669,15 +667,19 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
             {/* Angle A (at vertex A) - between sides to B and C */}
             {(angleA !== null || angleA_label) && (() => {
               const labelPos = getAngleLabelPosition(vertexA, vertexC, vertexB, 55);
+              const isRightAngle = showRightAngleMarker && Math.abs(calcAngleA - 90) < 0.5;
               return (
                 <>
-                  <path
-                    d={createAngleArcBetweenPoints(vertexA, vertexC, vertexB, arcRadiusA, calcAngleA)}
-                    fill="none"
-                    stroke={getAngleColor('A')}
-                    strokeWidth="2.5"
-                    opacity="0.7"
-                  />
+                  {/* Skip arc if showing right angle marker for this angle */}
+                  {!isRightAngle && (
+                    <path
+                      d={createAngleArcBetweenPoints(vertexA, vertexC, vertexB, arcRadiusA, calcAngleA)}
+                      fill="none"
+                      stroke={getAngleColor('A')}
+                      strokeWidth="2.5"
+                      opacity="0.7"
+                    />
+                  )}
                   <foreignObject
                     x={labelPos.x - 30}
                     y={labelPos.y - 15}
@@ -702,15 +704,19 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
             {/* Angle B (at vertex B) - between sides to A and C */}
             {(angleB !== null || angleB_label) && (() => {
               const labelPos = getAngleLabelPosition(vertexB, vertexA, vertexC, 55);
+              const isRightAngle = showRightAngleMarker && Math.abs(calcAngleB - 90) < 0.5;
               return (
                 <>
-                  <path
-                    d={createAngleArcBetweenPoints(vertexB, vertexA, vertexC, arcRadiusB, calcAngleB)}
-                    fill="none"
-                    stroke={getAngleColor('B')}
-                    strokeWidth="2.5"
-                    opacity="0.7"
-                  />
+                  {/* Skip arc if showing right angle marker for this angle */}
+                  {!isRightAngle && (
+                    <path
+                      d={createAngleArcBetweenPoints(vertexB, vertexA, vertexC, arcRadiusB, calcAngleB)}
+                      fill="none"
+                      stroke={getAngleColor('B')}
+                      strokeWidth="2.5"
+                      opacity="0.7"
+                    />
+                  )}
                   <foreignObject
                     x={labelPos.x - 30}
                     y={labelPos.y - 15}
@@ -735,15 +741,19 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
             {/* Angle C (at vertex C) - between sides to B and A */}
             {(angleC !== null || angleC_label) && (() => {
               const labelPos = getAngleLabelPosition(vertexC, vertexB, vertexA, 55);
+              const isRightAngle = showRightAngleMarker && Math.abs(calcAngleC - 90) < 0.5;
               return (
                 <>
-                  <path
-                    d={createAngleArcBetweenPoints(vertexC, vertexB, vertexA, arcRadiusC, calcAngleC)}
-                    fill="none"
-                    stroke={getAngleColor('C')}
-                    strokeWidth="2.5"
-                    opacity="0.7"
-                  />
+                  {/* Skip arc if showing right angle marker for this angle */}
+                  {!isRightAngle && (
+                    <path
+                      d={createAngleArcBetweenPoints(vertexC, vertexB, vertexA, arcRadiusC, calcAngleC)}
+                      fill="none"
+                      stroke={getAngleColor('C')}
+                      strokeWidth="2.5"
+                      opacity="0.7"
+                    />
+                  )}
                   <foreignObject
                     x={labelPos.x - 30}
                     y={labelPos.y - 15}

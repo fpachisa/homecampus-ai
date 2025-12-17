@@ -53,6 +53,7 @@ import { P5_MATH_DECIMALS_SUBTOPICS } from '../prompt-library/subjects/mathemati
 import { P5_MATH_RATE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-rate';
 import { P5_MATH_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
 import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-angles';
+import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 
 export interface SubtopicContent {
   displayName: string;
@@ -122,6 +123,7 @@ class SubtopicContentLoader {
       ...P5_MATH_RATE_SUBTOPICS,
       ...P5_MATH_PERCENTAGE_SUBTOPICS,
       ...P5_MATH_ANGLES_SUBTOPICS,
+      ...P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS,
       // Future topics will be added here
     };
   }

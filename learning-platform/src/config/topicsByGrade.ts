@@ -138,6 +138,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 5',
       subject: 'Mathematics',
     },
+    {
+      id: 'p5-math-properties-of-triangles',
+      name: 'Properties of Triangles',
+      icon: '🔺',
+      description: 'Master types of triangles, angle sum property, exterior angles, and finding unknown angles in complex figures',
+      subtopicCount: 3,
+      isActive: true,
+      category: 'p5-math-properties-of-triangles',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
   ],
   'Primary 6': [
     {

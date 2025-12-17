@@ -582,8 +582,8 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
           {/* Vertex C */}
           <circle cx={posC.x} cy={posC.y} r="4" fill={colors.primary} />
           <text
-            x={posC.x + 15}
-            y={posC.y + 5}
+            x={posC.x + (extendedSide === 'BC' ? 0 : 15)}
+            y={posC.y + (extendedSide === 'BC' ? 20 : 5)}
             fill={theme.colors.textPrimary}
             fontSize="16"
             fontWeight="bold"
@@ -592,11 +592,23 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
             {vertexC}
           </text>
 
-          {/* Vertex D (extension point) */}
+          {/* Vertex D (extension point) - position based on extension direction */}
           <circle cx={posD.x} cy={posD.y} r="4" fill={colors.extension} />
           <text
-            x={posD.x + (extendedSide.includes('B') ? -15 : 15)}
-            y={posD.y + 5}
+            x={posD.x + (() => {
+              // When extending beyond apex (CA or BA), D is above - position label away from A
+              if (extendedSide === 'CA') return -20; // D is upper-left of A, label to the left
+              if (extendedSide === 'BA') return 20;  // D is upper-right of A, label to the right
+              // When extending along base
+              if (extendedSide === 'CB') return -15; // D is left of B
+              return 15; // BC, AB, AC - D is to the right
+            })()}
+            y={posD.y + (() => {
+              // When extending beyond apex, position label above the point
+              if (extendedSide === 'CA' || extendedSide === 'BA') return -10;
+              // When extending along base, position label below
+              return 20;
+            })()}
             fill={theme.colors.textPrimary}
             fontSize="16"
             fontWeight="bold"

@@ -318,6 +318,10 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/angles/VerticallyOppositeAngles': () => import('../notes/p5/math/angles/VerticallyOppositeAngles'),
   'p5/math/angles/AnglesAtPoint': () => import('../notes/p5/math/angles/AnglesAtPoint'),
   'p5/math/angles/FindingUnknownAngles': () => import('../notes/p5/math/angles/FindingUnknownAngles'),
+  // P5 Properties of Triangles notes (NEW - testing math tools)
+  'p5/math/properties-of-triangles/TypesOfTriangles': () => import('../notes/p5/math/properties-of-triangles/TypesOfTriangles'),
+  'p5/math/properties-of-triangles/AngleSumOfTriangle': () => import('../notes/p5/math/properties-of-triangles/AngleSumOfTriangle'),
+  'p5/math/properties-of-triangles/FindingUnknownAngles': () => import('../notes/p5/math/properties-of-triangles/FindingUnknownAngles'),
 };
 
 // Helper to organize notes by hierarchy

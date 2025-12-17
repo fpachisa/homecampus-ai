@@ -286,9 +286,9 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       sideA: "string (optional) - label for side a (opposite angle A)",
       sideB: "string (optional) - label for side b (opposite angle B)",
       sideC: "string (optional) - label for side c (opposite angle C)",
-      angleA: "number (30-150) | null - angle A in degrees. Only angleA can be obtuse (>90°).",
-      angleB: "number (30-80) | null - angle B in degrees.",
-      angleC: "number (30-80) | null - angle C in degrees",
+      angleA: "number (15-150) | null - angle A in degrees (at apex/top vertex). Best position for obtuse angles.",
+      angleB: "number (15-150) | null - angle B in degrees (at base-right vertex). Obtuse angles here create a leaning triangle.",
+      angleC: "number (15-150) | null - angle C in degrees (at base-left vertex). Obtuse angles here create a leaning triangle.",
       angleA_label: "string (optional) - custom label for angle A arc (e.g., 'θ', '$45^{\\circ}$')",
       angleB_label: "string (optional) - custom label for angle B arc",
       angleC_label: "string (optional) - custom label for angle C arc",
@@ -302,7 +302,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       triangleType: "'acute' | 'obtuse' | 'right' | 'auto' (default: 'auto')",
       showAmbiguousCase: "boolean (default: false) - NOT YET IMPLEMENTED - will show placeholder message",
       equalSides: "'none' | 'b-c' | 'a-b' | 'a-c' | 'all' (default: 'none') - Show tick marks on equal sides. Use 'b-c' for isosceles with sides b,c equal (adjacent to vertex A). Use 'all' for equilateral triangles.",
-      showRightAngleMarker: "boolean (default: false) - Show right angle square marker when any angle is 90°. Automatically detects which angle is 90°."
+      showRightAngleMarker: "boolean (default: false) - Show right angle square marker when any angle is 90°. IMPORTANT: For best visualization, put the 90° at angleC (base-left vertex) - this creates the classic right triangle shape."
     },
 
     exampleUsage: [
@@ -372,12 +372,25 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       },
       {
         scenario: "Right-angled triangle (P5)",
-        caption: "Right-angled triangle with 90° at vertex B",
+        caption: "Right-angled triangle with 90° at base-left vertex C",
         parameters: {
-          angleA: 45,
-          angleB: 90,
-          angleC: 45,
+          angleA: 35,
+          angleB: 55,
+          angleC: 90,
           showRightAngleMarker: true,
+          showAngles: true
+        }
+      },
+      {
+        scenario: "Obtuse triangle at base vertex (P5)",
+        caption: "Obtuse triangle with 115° at base-left vertex - creates leaning shape",
+        parameters: {
+          vertexA_label: "G",
+          vertexB_label: "H",
+          vertexC_label: "I",
+          angleA: 25,
+          angleB: 40,
+          angleC: 115,
           showAngles: true
         }
       }

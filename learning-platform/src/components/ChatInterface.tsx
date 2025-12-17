@@ -112,6 +112,8 @@ import { P5_MATH_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { PercentageTopicId as P5PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
 import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 import type { P5AnglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-angles';
+import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
+import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -321,6 +323,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P5 angles topic
   if (topicId.startsWith('p5-math-angles-')) {
     return P5_MATH_ANGLES_SUBTOPICS[topicId as P5AnglesTopicId];
+  }
+  // Check if it's a P5 properties of triangles topic
+  if (topicId.startsWith('p5-math-properties-triangles-')) {
+    return P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS[topicId as P5PropertiesOfTrianglesTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

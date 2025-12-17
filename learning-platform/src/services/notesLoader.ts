@@ -317,6 +317,10 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p5/math/angles/VerticallyOppositeAngles': () => import('../notes/p5/math/angles/VerticallyOppositeAngles'),
   'p5/math/angles/AnglesAtPoint': () => import('../notes/p5/math/angles/AnglesAtPoint'),
   'p5/math/angles/FindingUnknownAngles': () => import('../notes/p5/math/angles/FindingUnknownAngles'),
+  // P5 Properties of Triangles notes
+  'p5/math/properties-of-triangles/TypesOfTriangles': () => import('../notes/p5/math/properties-of-triangles/TypesOfTriangles'),
+  'p5/math/properties-of-triangles/AngleSumOfTriangle': () => import('../notes/p5/math/properties-of-triangles/AngleSumOfTriangle'),
+  'p5/math/properties-of-triangles/FindingUnknownAngles': () => import('../notes/p5/math/properties-of-triangles/FindingUnknownAngles'),
 };
 
 interface NotesCache {
