@@ -6818,6 +6818,453 @@ If a ribbon is 12.6 m long and you cut it into pieces of 0.3 m each, will you mu
     }
   },
 
+  /**
+   * ========================================
+   * P5 MATHEMATICS - RATE
+   * ========================================
+   */
+  'p5-math-rate-understanding': {
+    speech: {
+      text: `Welcome to the world of rate! Have you ever wondered how fast a printer can print pages, or how much someone earns per hour? These are examples of rate. Today, we'll discover what rate means and learn how to calculate it. The key word to remember is "per" which means "every" or "for each". For example, 50 pages per minute means 50 pages every minute. Let's start with a simple question to see if you understand this important concept.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-rate-understanding.mp3'
+    },
+    display: {
+      content: `# Understanding Rate
+
+Rate tells us **how much of one thing** there is for **every one unit** of another thing.
+
+### The Word "Per"
+- **"Per"** means **"every"** or **"for each"**
+- 50 pages **per minute** = 50 pages every minute
+- \\$15 **per hour** = \\$15 for each hour
+
+### Real-Life Examples of Rate
+- A printer prints 50 pages per minute
+- Mark earns \\$15 per hour
+- A car travels 80 km per hour
+- A tap fills 2 litres per minute
+
+---
+
+### First Question
+
+A photocopier can print 50 copies per minute. What does "per minute" mean?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-rate-word-problems': {
+    speech: {
+      text: `Great work on understanding rate! Now it's time to apply your skills to solve real-world problems. In this topic, we'll tackle word problems that involve rate tables and tiered rates. You'll learn how to read tables that show different charges for different amounts, and handle situations where the rate changes, like parking fees or utility bills. Let's start with a problem about reading a rate table.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-rate-word-problems.mp3'
+    },
+    display: {
+      content: `# Rate Word Problems
+
+Now let's apply rate concepts to solve real-world problems!
+
+### What You'll Learn
+1. **Table-Based Problems** - Reading and using rate tables
+2. **Tiered Rates** - When rates change at certain amounts
+3. **Multi-Step Problems** - Combining skills to solve complex problems
+
+### Key Skills
+- Understanding "up to" means less than or equal to
+- Splitting quantities when different rates apply
+- Breaking down problems into steps
+
+---
+
+### First Question
+
+A postage table shows:
+| Mass up to | Charge  |
+|------------|---------|
+| 50 g       | \\$2.65 |
+| 100 g      | \\$2.85 |
+
+If a letter weighs 75 g, which row should you use to find the charge?`,
+      showAfterSpeech: true
+    }
+  },
+
+  /**
+   * ========================================
+   * P5 MATHEMATICS - PERCENTAGE
+   * ========================================
+   */
+  'p5-math-percentage-per-cent': {
+    speech: {
+      text: `Welcome to the exciting world of percentage! Have you ever seen signs like 50 percent off or scored 90 percent on a test? Today, we'll discover what percent really means. The word percent comes from per cent which means out of one hundred. Think of it like dividing something into 100 equal parts. If you shade 25 squares out of 100, that's 25 percent. Let's see if you understand this concept with a quick question.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-percentage-per-cent.mp3'
+    },
+    display: {
+      content: `# Understanding Per Cent
+
+**Per cent** means **"out of 100"** or **"per hundred"**.
+
+### The Symbol %
+- The symbol **%** represents percent
+- 25% means 25 out of 100
+- 100% means all of something (100 out of 100)
+
+### Visualizing Percentages
+Imagine a 10 × 10 grid with 100 equal squares:
+- If 25 squares are shaded, that's **25%**
+- If 75 squares are shaded, that's **75%**
+- If all 100 squares are shaded, that's **100%**
+
+---
+
+### First Question
+
+A 10 × 10 grid has 100 equal squares. If 40 squares are shaded, what percentage of the grid is shaded?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "percentageGrid",
+      parameters: {
+        shadedCount: 40,
+        showPercentage: false,
+        showFraction: false
+      },
+      caption: "A 10×10 grid with 40 squares shaded"
+    }
+  },
+
+  'p5-math-percentage-conversions': {
+    speech: {
+      text: `Great job understanding what percent means! Now let's learn how percentages connect to fractions and decimals. These three are like cousins; they all represent parts of a whole. For example, 50 percent, one half, and 0.5 all mean the same thing! Being able to convert between them is super useful. Let's start by learning how to change a fraction into a percentage.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-percentage-conversions.mp3'
+    },
+    display: {
+      content: `# Converting Between Fractions, Decimals & Percentages
+
+Fractions, decimals, and percentages are different ways to show the **same value**!
+
+### The Conversion Triangle
+
+| From | To | Method |
+|------|-----|--------|
+| Fraction → % | Multiply by 100% | $\\frac{3}{4} \\times 100\\% = 75\\%$ |
+| % → Fraction | Divide by 100 | $75\\% = \\frac{75}{100} = \\frac{3}{4}$ |
+| Decimal → % | Multiply by 100 | $0.75 \\times 100 = 75\\%$ |
+| % → Decimal | Divide by 100 | $75\\% ÷ 100 = 0.75$ |
+
+### Quick Examples
+- $\\frac{1}{2} = 0.5 = 50\\%$
+- $\\frac{1}{4} = 0.25 = 25\\%$
+- $\\frac{3}{10} = 0.3 = 30\\%$
+
+---
+
+### First Question
+
+Convert $\\frac{3}{5}$ to a percentage.`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-percentage-part-of-whole': {
+    speech: {
+      text: `Now that you know how to convert between fractions, decimals, and percentages, let's put that skill to work! In this section, we'll learn to find what percentage one number is of another. For example, if you scored 18 out of 20 on a test, what percentage is that? We'll also learn to find a quantity when given the percentage. These skills are super useful in real life!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-percentage-part-of-whole.mp3'
+    },
+    display: {
+      content: `# Percentage as Part of a Whole
+
+### Finding "What Percentage?"
+
+**Formula:** $\\text{Percentage} = \\frac{\\text{Part}}{\\text{Whole}} \\times 100\\%$
+
+**Example:** What percentage is 18 out of 20?
+$\\frac{18}{20} \\times 100\\% = 90\\%$
+
+### Finding the Quantity
+
+**Formula:** $\\text{Quantity} = \\text{Percentage} \\times \\text{Whole}$
+
+**Example:** Find 25% of 80
+$25\\% \\times 80 = \\frac{25}{100} \\times 80 = 20$
+
+---
+
+### First Question
+
+In a class of 40 students, 12 are girls. What percentage of the class are girls?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p5-math-percentage-pie-charts': {
+    speech: {
+      text: `Let's use what you've learned to read pie charts! Pie charts are circular diagrams that show data as slices of a pie. Each slice represents a fraction or percentage of the whole. The complete pie always represents 100 percent. In this section, you'll learn to read pie chart data and convert between fractions and percentages in charts. Let's start with a question about reading a pie chart.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-percentage-pie-charts.mp3'
+    },
+    display: {
+      content: `# Percentage in Pie Charts
+
+Pie charts show data as **slices of a circle**.
+
+### Key Facts About Pie Charts
+- The **whole pie** = **100%**
+- Each slice shows a **fraction** or **percentage** of the whole
+- All slices must **add up to 100%**
+
+### Reading Pie Charts
+1. **Identify** what each slice represents
+2. **Read** the given values (fractions or percentages)
+3. **Calculate** missing values (remember: total = 100%)
+
+---
+
+### First Question
+
+A pie chart shows the favourite sports of 40 students:
+- Swimming: 25%
+- Football: 40%
+- Badminton: ?%
+
+What percentage of students chose Badminton?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "pieChart",
+      parameters: {
+        categories: ["Swimming", "Football", "Badminton"],
+        frequencies: [25, 40, 35],
+        title: "Favourite Sports",
+        showAngles: false,
+        displayMode: "none"
+      },
+      caption: "Find the missing percentage: 100% - 25% - 40% = ?"
+    }
+  },
+
+  'p5-math-percentage-gst-discount-interest': {
+    speech: {
+      text: `Time to apply percentages to real life! In Singapore, we pay G S T on most items we buy. Shops offer discounts during sales. Banks pay interest on savings. All these involve percentage calculations. In this section, you'll learn to calculate G S T, discounts, and simple interest. These are important life skills! Let's start with G S T, which is currently 9 percent in Singapore.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-percentage-gst-discount-interest.mp3'
+    },
+    display: {
+      content: `# GST, Discount and Annual Interest
+
+### GST (Goods and Services Tax)
+- Singapore GST = **9%**
+- **GST amount** = 9% × Price
+- **Total with GST** = Price + GST = 109% × Price
+
+### Discount
+- **Discount amount** = Discount% × Usual Price
+- **Selling price** = Usual Price − Discount
+- Or: Selling Price = (100% − Discount%) × Usual Price
+
+### Simple Interest
+- **Interest** = Interest Rate × Principal
+- **Total after 1 year** = Principal + Interest
+
+---
+
+### First Question
+
+A toy costs \\$50 before GST. If the GST rate is 9%, how much is the GST?`,
+      showAfterSpeech: true
+    }
+  },
+
+  /* ========================================
+   * P5 MATHEMATICS - ANGLES
+   * ========================================
+   */
+  'p5-math-angles-straight-line': {
+    speech: {
+      text: `Welcome to our lesson on angles! Today we'll explore a very useful property: angles on a straight line always add up to 180 degrees. Imagine drawing a straight line and then adding another line that meets it. The angles formed on one side of that point always sum to 180 degrees. This is called the angle sum property of a straight line. Let's see if you can apply this concept to find an unknown angle.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-angles-straight-line.mp3'
+    },
+    display: {
+      content: `# Angles on a Straight Line
+
+### Key Property
+**Angles on a straight line add up to 180°**
+
+When a line meets another line at a point, the angles formed on one side of that point always sum to **180 degrees**.
+
+### Why 180°?
+- A straight line forms a **straight angle**
+- A straight angle = 180°
+- Any angles that share this straight line must add up to 180°
+
+### Example
+If angle $a = 65°$ and angle $b$ is on the same straight line, then:
+$$a + b = 180°$$
+$$65° + b = 180°$$
+$$b = 180° - 65° = 115°$$
+
+---
+
+### First Question
+
+Look at the angles on the straight line below. If angle $p = 125°$, find angle $q$.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "anglesOnLine",
+      parameters: {
+        angles: [125, null],
+        labels: ["p", "q"],
+        showSum: false
+      },
+      caption: "Two angles p and q on a straight line. Find angle q."
+    }
+  },
+
+  'p5-math-angles-vertically-opposite': {
+    speech: {
+      text: `Now let's discover something amazing about intersecting lines! When two straight lines cross each other, they form four angles. The angles that are opposite each other, called vertically opposite angles, are always equal! This property is super useful because if you know one angle, you automatically know its opposite angle. Let me show you with an example.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-angles-vertically-opposite.mp3'
+    },
+    display: {
+      content: `# Vertically Opposite Angles
+
+### Key Property
+**Vertically opposite angles are equal**
+
+When two straight lines intersect (cross each other), they form **4 angles**.
+- The angles **opposite each other** are called **vertically opposite angles**
+- These opposite angles are **always equal**
+
+### How to Identify Them
+Looking at two intersecting lines:
+- Angles across from each other (not next to each other) are vertically opposite
+- There are **2 pairs** of vertically opposite angles
+
+### Example
+If angle $a = 72°$, then the angle directly opposite to $a$ is also $72°$.
+
+The other pair of angles would each be: $180° - 72° = 108°$
+
+---
+
+### First Question
+
+Two lines intersect as shown. If angle $x = 58°$, find angle $y$ which is vertically opposite to $x$.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "verticallyOppositeAngles",
+      parameters: {
+        angles: [58, 122, 58, 122],
+        labels: ["x", "", "y", ""],
+        highlight: 0
+      },
+      caption: "Two intersecting lines forming four angles. Find angle y."
+    }
+  },
+
+  'p5-math-angles-at-point': {
+    speech: {
+      text: `Here's another important angle property. When several lines meet at a single point, the angles around that point always add up to 360 degrees. Think of it like going around in a complete circle. A full turn is 360 degrees, so all the angles at a point must total 360 degrees. This is useful for finding missing angles when you know some of the angles at a point.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-angles-at-point.mp3'
+    },
+    display: {
+      content: `# Angles at a Point
+
+### Key Property
+**Angles at a point add up to 360°**
+
+When multiple lines meet at a single point, the angles formed around that point always sum to **360 degrees**.
+
+### Why 360°?
+- Going around a point completely = one full turn
+- One full turn = 360°
+- All angles around a point must add up to 360°
+
+### Finding Unknown Angles
+To find a missing angle at a point:
+1. Add all the known angles
+2. Subtract from 360°
+
+### Example
+If three angles at a point are $90°$, $120°$, and $85°$:
+$$\\text{Fourth angle} = 360° - (90° + 120° + 85°)$$
+$$= 360° - 295° = 65°$$
+
+---
+
+### First Question
+
+Four angles meet at a point. Three of them are $95°$, $75°$, and $110°$. Find the fourth angle.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "anglesAtPoint",
+      parameters: {
+        angles: [95, 75, 110, null],
+        labels: ["a", "b", "c", "d"],
+        showSum: false
+      },
+      caption: "Four angles meeting at a point. Find angle d."
+    }
+  },
+
+  'p5-math-angles-finding-unknown': {
+    speech: {
+      text: `Excellent progress! Now it's time to put all our angle properties together. In this section, we'll solve more challenging problems that combine angles on a straight line, vertically opposite angles, and angles at a point. Often, you'll need to use more than one property to find unknown angles. The key is to identify which property applies to each situation. Let's practice with a problem.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-angles-finding-unknown.mp3'
+    },
+    display: {
+      content: `# Finding Unknown Angles
+
+### Combining Angle Properties
+
+In complex diagrams, you may need to use **multiple properties** to find unknown angles:
+
+| Property | When to Use |
+|----------|-------------|
+| Angles on a straight line = 180° | When angles share a straight line |
+| Vertically opposite angles are equal | When two lines intersect |
+| Angles at a point = 360° | When angles surround a single point |
+
+### Problem-Solving Strategy
+1. **Identify** what information is given
+2. **Look for** straight lines, intersecting lines, or angles at a point
+3. **Apply** the correct property
+4. **Calculate** step by step
+
+### Example Strategy
+For intersecting lines where one angle is $50°$:
+- Vertically opposite angle = $50°$
+- Adjacent angles = $180° - 50° = 130°$ (angles on a straight line)
+
+---
+
+### First Question
+
+Two straight lines intersect. One of the angles is $65°$. Using both the vertically opposite property and the straight line property, find all four angles.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "verticallyOppositeAngles",
+      parameters: {
+        angles: [65, 115, 65, 115],
+        labels: ["a", "b", "c", "d"],
+        highlight: 0
+      },
+      caption: "Two intersecting lines. Angle a = 65°. Find angles b, c, and d."
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

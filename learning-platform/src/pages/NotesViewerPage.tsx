@@ -304,6 +304,20 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/volume/VolumeFormula': () => import('../notes/p5/math/volume/VolumeFormula'),
   'p5/math/volume/VolumeLiquids': () => import('../notes/p5/math/volume/VolumeLiquids'),
   'p5/math/volume/WordProblems': () => import('../notes/p5/math/volume/WordProblems'),
+  // P5 Rate notes
+  'p5/math/rate/UnderstandingRate': () => import('../notes/p5/math/rate/UnderstandingRate'),
+  'p5/math/rate/WordProblems': () => import('../notes/p5/math/rate/WordProblems'),
+  // P5 Percentage notes
+  'p5/math/percentage/PerCent': () => import('../notes/p5/math/percentage/PerCent'),
+  'p5/math/percentage/Conversions': () => import('../notes/p5/math/percentage/Conversions'),
+  'p5/math/percentage/PartOfWhole': () => import('../notes/p5/math/percentage/PartOfWhole'),
+  'p5/math/percentage/PieCharts': () => import('../notes/p5/math/percentage/PieCharts'),
+  'p5/math/percentage/GSTDiscountInterest': () => import('../notes/p5/math/percentage/GSTDiscountInterest'),
+  // P5 Angles notes
+  'p5/math/angles/AnglesOnStraightLine': () => import('../notes/p5/math/angles/AnglesOnStraightLine'),
+  'p5/math/angles/VerticallyOppositeAngles': () => import('../notes/p5/math/angles/VerticallyOppositeAngles'),
+  'p5/math/angles/AnglesAtPoint': () => import('../notes/p5/math/angles/AnglesAtPoint'),
+  'p5/math/angles/FindingUnknownAngles': () => import('../notes/p5/math/angles/FindingUnknownAngles'),
 };
 
 // Helper to organize notes by hierarchy

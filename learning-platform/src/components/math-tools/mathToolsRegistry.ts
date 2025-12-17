@@ -279,8 +279,8 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     technicalName: "generalTriangle",
     component: "GeneralTriangleVisualizer",
     category: "general",
-    description: "Visualizes any triangle (acute, obtuse, right) with labeled sides and angles. Use for sine rule, cosine rule, and area formula. IMPORTANT: Only ONE angle can be obtuse (>90°) at a time.",
-    whenToUse: "Use for non-right triangles, sine/cosine rule problems, or when teaching triangle area formula (Area = ½ab sin C). For obtuse triangles, ensure only ONE angle is > 90°.",
+    description: "Visualizes any triangle (acute, obtuse, right) with labeled sides and angles. Supports equal side marks for isosceles/equilateral triangles and right angle markers. Use for sine rule, cosine rule, area formula, and P5 triangle properties. IMPORTANT: Only ONE angle can be obtuse (>90°) at a time.",
+    whenToUse: "Use for non-right triangles, sine/cosine rule problems, teaching triangle area formula (Area = ½ab sin C), or P5 triangle type classification. For equilateral/isosceles triangles, use equalSides to show tick marks. For right-angled triangles, use showRightAngleMarker=true.",
 
     parameters: {
       sideA: "string (optional) - label for side a (opposite angle A)",
@@ -300,7 +300,9 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       showAngles: "boolean (default: true) - show angle arcs",
       showSides: "boolean (default: true) - show side labels",
       triangleType: "'acute' | 'obtuse' | 'right' | 'auto' (default: 'auto')",
-      showAmbiguousCase: "boolean (default: false) - NOT YET IMPLEMENTED - will show placeholder message"
+      showAmbiguousCase: "boolean (default: false) - NOT YET IMPLEMENTED - will show placeholder message",
+      equalSides: "'none' | 'b-c' | 'a-b' | 'a-c' | 'all' (default: 'none') - Show tick marks on equal sides. Use 'b-c' for isosceles with sides b,c equal (adjacent to vertex A). Use 'all' for equilateral triangles.",
+      showRightAngleMarker: "boolean (default: false) - Show right angle square marker when any angle is 90°. Automatically detects which angle is 90°."
     },
 
     exampleUsage: [
@@ -336,6 +338,48 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           showSides: true,
           triangleType: "obtuse"
         }
+      },
+      {
+        scenario: "Equilateral triangle (P5)",
+        caption: "Equilateral triangle DEF with all angles 60° and all sides equal",
+        parameters: {
+          vertexA_label: "D",
+          vertexB_label: "E",
+          vertexC_label: "F",
+          angleA: 60,
+          angleB: 60,
+          angleC: 60,
+          angleA_label: "60°",
+          angleB_label: "60°",
+          angleC_label: "60°",
+          equalSides: "all",
+          showAngles: true
+        }
+      },
+      {
+        scenario: "Isosceles triangle (P5)",
+        caption: "Isosceles triangle JKL with equal sides JK and JL, and equal base angles",
+        parameters: {
+          vertexA_label: "J",
+          vertexB_label: "K",
+          vertexC_label: "L",
+          angleA: 40,
+          angleB: 70,
+          angleC: 70,
+          equalSides: "b-c",
+          showAngles: true
+        }
+      },
+      {
+        scenario: "Right-angled triangle (P5)",
+        caption: "Right-angled triangle with 90° at vertex B",
+        parameters: {
+          angleA: 45,
+          angleB: 90,
+          angleC: 45,
+          showRightAngleMarker: true,
+          showAngles: true
+        }
       }
     ]
   },
@@ -344,37 +388,86 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     name: "Extended Line Triangle Visualizer",
     technicalName: "extendedLineTriangle",
     component: "ExtendedLineTriangleVisualizer",
-    category: "trigonometry",
-    description: "Triangle with one side extended beyond a vertex to show exterior angles and supplementary angle relationships.",
-    whenToUse: "Use for problems involving exterior angles, extended lines, or when teaching angle relationships in triangles.",
+    category: "primary-geometry",
+    description: "Triangle with one side extended beyond a vertex to form a straight line. Essential for P5 'Finding Unknown Angles' problems where students combine angle sum in triangle (180°) with angles on a straight line (180°).",
+    whenToUse: "Use for P5 Properties of Triangles when a triangle sits on a straight line, or when exterior angles are involved. Perfect for problems like 'BCD is a straight line, find angle x'.",
 
     parameters: {
-      sideA: "string - base side label",
-      sideB: "string - left side label",
-      sideC: "string - right side label",
-      angleA: "number (0-180) - interior angle at vertex A",
-      angleB: "number (0-180) - interior angle at vertex B",
-      angleC: "number (0-180) - interior angle at vertex C",
-      extendedSide: "'A' | 'B' | 'C' - which side to extend",
-      showExteriorAngle: "boolean (default: true) - show exterior angle",
-      highlightAngle: "'interior' | 'exterior' | 'none'"
+      vertexA: "string (default: 'A') - Apex vertex label (typically at top)",
+      vertexB: "string (default: 'B') - Base vertex 1 label",
+      vertexC: "string (default: 'C') - Base vertex 2 label",
+      vertexD: "string (default: 'D') - Extension point label",
+      extendedSide: "'BC' | 'CB' | 'AC' | 'CA' | 'AB' | 'BA' (default: 'BC') - Which side to extend and direction. Format: 'XY' extends side XY beyond vertex Y. E.g., 'BC' extends BC beyond C to D.",
+      angleA: "number | null - Interior angle at vertex A",
+      angleB: "number | null - Interior angle at vertex B",
+      angleC: "number | null - Interior angle at vertex C",
+      angleA_label: "string (optional) - Custom label for angle A (e.g., '72°', 'x')",
+      angleB_label: "string (optional) - Custom label for angle B",
+      angleC_label: "string (optional) - Custom label for angle C",
+      exteriorAngle_label: "string (optional) - Label for exterior angle at extension point (e.g., 'x', '120°')",
+      sideAB: "string (optional) - Label for side AB",
+      sideBC: "string (optional) - Label for side BC",
+      sideAC: "string (optional) - Label for side AC",
+      showAngleA: "boolean (default: true) - Show angle arc at A",
+      showAngleB: "boolean (default: true) - Show angle arc at B",
+      showAngleC: "boolean (default: true) - Show angle arc at C",
+      showExteriorAngle: "boolean (default: true) - Show exterior angle arc",
+      showRightAngleMarker: "boolean (default: true) - Show square marker for 90° angles",
+      highlightExteriorAngle: "boolean (default: false) - Highlight exterior angle in red",
+      extensionLength: "number (default: 70) - How far D extends beyond the vertex",
+      rotation: "number (default: 0) - Rotation angle for entire diagram",
+      caption: "string (optional) - Caption below diagram"
     },
 
-    exampleUsage: {
-      scenario: "Exterior angle theorem",
-      caption: "Triangle ABC with side BC extended showing exterior angle.",
-      parameters: {
-        sideA: "a",
-        sideB: "b",
-        sideC: "c",
-        angleA: 50,
-        angleB: 60,
-        angleC: 70,
-        extendedSide: "C",
-        showExteriorAngle: true,
-        highlightAngle: "exterior"
+    exampleUsage: [
+      {
+        scenario: "P5: Triangle on straight line (BCD straight)",
+        caption: "In the figure, BCD is a straight line. ∠DAC = 72°, ∠ADC = 48°. Find ∠x.",
+        parameters: {
+          vertexA: "A",
+          vertexB: "B",
+          vertexC: "C",
+          vertexD: "D",
+          extendedSide: "CB",
+          angleA: 72,
+          angleA_label: "72°",
+          angleC: 48,
+          angleC_label: "48°",
+          exteriorAngle_label: "x",
+          showExteriorAngle: true,
+          highlightExteriorAngle: true
+        }
+      },
+      {
+        scenario: "P5: Extend BC beyond C",
+        caption: "Triangle ABC with BC extended to D. Find exterior angle ACD.",
+        parameters: {
+          vertexA: "A",
+          vertexB: "B",
+          vertexC: "C",
+          vertexD: "D",
+          extendedSide: "BC",
+          angleA: 50,
+          angleB: 60,
+          angleA_label: "50°",
+          angleB_label: "60°",
+          showExteriorAngle: true,
+          exteriorAngle_label: "?"
+        }
+      },
+      {
+        scenario: "Right-angled triangle on straight line",
+        caption: "Triangle with right angle at B, side AB extended to D.",
+        parameters: {
+          extendedSide: "AB",
+          angleA: 40,
+          angleB: 90,
+          angleC: 50,
+          showRightAngleMarker: true,
+          showExteriorAngle: true
+        }
       }
-    }
+    ]
   },
 
   quadrilateral: {
@@ -2255,46 +2348,72 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       frequencies: "number[] - Counts for each category (must match categories length)",
       title: "string (optional) - Chart title displayed at top",
       showAngles: "boolean (optional, default: true) - Show sector angles in degrees",
-      showPercentages: "boolean (optional, default: true) - Show percentages for each sector",
+      displayMode: "string (optional, default: 'frequency') - What to display: 'frequency' (raw counts), 'percentage' (calculated %), or 'none' (slices only)",
       highlightSector: "number (optional, default: -1) - Index of sector to highlight (0-based, -1 for none)",
       showCalculations: "boolean (optional, default: false) - Show angle calculation steps below chart",
-      caption: "string (optional) - Explanation text below chart (supports LaTeX)"
+      caption: "string (optional) - Explanation text below chart (supports LaTeX)",
+      hiddenSlices: "number[] (optional) - Indices of slices to show '?' instead of frequency/percentage. Use for 'find the missing %' problems",
+      hiddenAngles: "number[] (optional) - Indices of slices to show '?' instead of angle. Use for 'find the angle' problems"
     },
 
     exampleUsage: [
       {
-        scenario: "Favorite ice cream flavors survey",
+        scenario: "Favorite ice cream flavors survey (showing frequencies)",
         caption: "Pie chart showing student preferences. Chocolate: (8÷20)×360° = 144°",
         parameters: {
           categories: ["Chocolate", "Vanilla", "Strawberry", "Mint"],
           frequencies: [8, 5, 4, 3],
           title: "Favorite Ice Cream Flavors",
           showAngles: true,
-          showPercentages: true,
+          displayMode: "frequency",
           showCalculations: false
         }
       },
       {
-        scenario: "Budget breakdown with calculations",
-        caption: "Family budget allocation. Showing how to calculate sector angles from frequencies.",
+        scenario: "Budget breakdown (showing percentages)",
+        caption: "Family budget allocation. Student must calculate the actual amounts from percentages.",
         parameters: {
           categories: ["Housing", "Food", "Transport", "Entertainment"],
           frequencies: [1200, 600, 400, 300],
           title: "Monthly Budget ($2500)",
           showAngles: true,
-          showPercentages: true,
+          displayMode: "percentage",
           showCalculations: true,
           highlightSector: 0
         }
       },
       {
-        scenario: "Simple proportions",
+        scenario: "Simple proportions (frequencies only)",
         caption: "Three categories with equal representation",
         parameters: {
           categories: ["A", "B", "C"],
           frequencies: [10, 10, 10],
           showAngles: true,
-          showPercentages: false
+          displayMode: "frequency"
+        }
+      },
+      {
+        scenario: "Find the missing percentage",
+        caption: "Three categories are known. Student calculates the missing percentage.",
+        parameters: {
+          categories: ["Sports", "Music", "Reading", "Gaming"],
+          frequencies: [30, 25, 20, 25],
+          displayMode: "percentage",
+          hiddenSlices: [2],
+          showAngles: false,
+          title: "Student Hobbies Survey"
+        }
+      },
+      {
+        scenario: "Find the missing angle",
+        caption: "Percentages shown, student calculates the sector angle.",
+        parameters: {
+          categories: ["Red", "Blue", "Green"],
+          frequencies: [40, 35, 25],
+          displayMode: "percentage",
+          showAngles: true,
+          hiddenAngles: [1],
+          title: "Favourite Colours"
         }
       }
     ]
@@ -4286,6 +4405,63 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  percentageGrid: {
+    name: "Percentage Grid Visualizer",
+    technicalName: "percentageGrid",
+    component: "PercentageGridVisualizer",
+    category: "general",
+    description: "10×10 grid (100 squares) for visualizing percentages. Each square represents 1%. Shows shaded portions to represent percentages, with optional fraction display. Perfect for teaching that percentage means 'out of 100'.",
+    whenToUse: "Use when teaching percentage concepts, showing what X% means visually, converting fractions with denominator 100 to percentages, or any problem involving 'parts out of 100'. Essential for P5 Percentage topic.",
+
+    parameters: {
+      shadedCount: "number (0-100) - Number of squares to shade. Each square = 1%.",
+      showPercentage: "boolean (optional, default: true) - Display percentage label below grid",
+      showFraction: "boolean (optional, default: false) - Display as fraction X/100",
+      highlightRow: "number (optional, 0-9) - Highlight a specific row (0 = top row)",
+      caption: "string (optional) - Additional explanation text",
+      shadedColor: "string (optional) - Custom color for shaded squares (CSS color)",
+      secondShadedCount: "number (optional) - For showing two different portions (e.g., adults and children)",
+      secondShadedColor: "string (optional) - Color for second shaded portion"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic percentage - 25%",
+        caption: "25 out of 100 squares are shaded, representing 25%",
+        parameters: {
+          shadedCount: 25,
+          showPercentage: true,
+          showFraction: true
+        }
+      },
+      {
+        scenario: "Showing 100% (fully shaded)",
+        caption: "All 100 squares shaded - this represents the whole or 100%",
+        parameters: {
+          shadedCount: 100,
+          showPercentage: true
+        }
+      },
+      {
+        scenario: "Two portions - adults and children",
+        caption: "62% adults (blue) and 38% children (green) at a concert",
+        parameters: {
+          shadedCount: 62,
+          secondShadedCount: 38,
+          showPercentage: true
+        }
+      },
+      {
+        scenario: "Finding unshaded percentage",
+        caption: "12% is shaded. What percentage is unshaded?",
+        parameters: {
+          shadedCount: 12,
+          showPercentage: true
+        }
+      }
+    ]
+  },
+
   // ============================================
   // PRIMARY MATH - BAR MODEL TOOLS
   // ============================================
@@ -4437,6 +4613,70 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           heightFoot: "H",
           shape: "acute",
           rotation: 270
+        }
+      }
+    ]
+  },
+
+  adjacentTriangles: {
+    name: "Adjacent Triangles Visualizer",
+    technicalName: "adjacentTriangles",
+    component: "AdjacentTrianglesVisualizer",
+    category: "primary-geometry",
+    description: "Visualizes two triangles that share a common side. Perfect for P5 problems involving equilateral/isosceles triangles adjacent to other triangles, where students must combine angle properties from both shapes.",
+    whenToUse: "Use for P5 Properties of Triangles when problems involve two triangles sharing a side. Essential for 'Find angle x' problems where the solution requires understanding both triangles' properties (e.g., equilateral + another triangle).",
+
+    parameters: {
+      triangle1: "object (REQUIRED) - First triangle config: { vertices: [string, string, string], angles?: [number|null, number|null, number|null], angleLabels?: [string|null, string|null, string|null], type?: 'equilateral'|'isosceles'|'right'|'general', showEqualSides?: boolean }",
+      triangle2: "object (REQUIRED) - Second triangle config with same structure as triangle1. Must share exactly 2 vertices with triangle1.",
+      sharedVertices: "[string, string] (REQUIRED) - The two vertex labels that form the shared side between triangles (e.g., ['Q', 'R'])",
+      layout: "'vertical' | 'horizontal' (default: 'vertical') - Arrangement of triangles",
+      triangle2Position: "'below' | 'above' | 'left' | 'right' (default: 'below') - Position of second triangle relative to first",
+      highlightAngle: "string (optional) - Vertex label where angle should be highlighted",
+      highlightSide: "[string, string] (optional) - Two vertex labels to highlight a side",
+      showAngles: "boolean (default: true) - Show angle arcs and labels",
+      showAllAngles: "boolean (default: false) - Show all angles even if not specified",
+      caption: "string (optional) - Caption below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Equilateral triangle PQR adjacent to triangle QRS",
+        caption: "PQR is equilateral. QRS is a triangle with ∠SQR = 130°. Find ∠PRT.",
+        parameters: {
+          triangle1: {
+            vertices: ["P", "Q", "R"],
+            type: "equilateral",
+            showEqualSides: true,
+            angleLabels: ["60°", "60°", "60°"]
+          },
+          triangle2: {
+            vertices: ["Q", "R", "S"],
+            angles: [130, null, null],
+            angleLabels: ["130°", null, null]
+          },
+          sharedVertices: ["Q", "R"],
+          layout: "vertical",
+          triangle2Position: "below"
+        }
+      },
+      {
+        scenario: "Isosceles triangle ABD with point C on extended line",
+        caption: "ABD is isosceles with AB = AD. ∠DBC = 64°. Find ∠BAD.",
+        parameters: {
+          triangle1: {
+            vertices: ["A", "B", "D"],
+            type: "isosceles",
+            showEqualSides: true,
+            angleLabels: [null, "64°", null]
+          },
+          triangle2: {
+            vertices: ["B", "C", "D"],
+            angles: [64, null, null],
+            angleLabels: ["64°", null, null]
+          },
+          sharedVertices: ["B", "D"],
+          highlightAngle: "A"
         }
       }
     ]

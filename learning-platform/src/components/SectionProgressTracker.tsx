@@ -92,6 +92,12 @@ import { P5_MATH_VOLUME_SUBTOPICS } from '../prompt-library/subjects/mathematics
 import { P5_MATH_DECIMALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
 import type { DecimalsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
 import type { VolumeTopicId } from '../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_RATE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-rate';
+import type { RateTopicId } from '../prompt-library/subjects/mathematics/primary/p5-rate';
+import { P5_MATH_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
+import type { PercentageTopicId as P5PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
+import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-angles';
+import type { P5AnglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -305,6 +311,21 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P5 Decimals topics
     if (topicId.startsWith('p5-math-decimals-')) {
       const subtopic = P5_MATH_DECIMALS_SUBTOPICS[topicId as DecimalsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Rate topics
+    if (topicId.startsWith('p5-math-rate-')) {
+      const subtopic = P5_MATH_RATE_SUBTOPICS[topicId as RateTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Percentage topics
+    if (topicId.startsWith('p5-math-percentage-')) {
+      const subtopic = P5_MATH_PERCENTAGE_SUBTOPICS[topicId as P5PercentageTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Angles topics
+    if (topicId.startsWith('p5-math-angles-')) {
+      const subtopic = P5_MATH_ANGLES_SUBTOPICS[topicId as P5AnglesTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

@@ -73,6 +73,9 @@ import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_SUBTOPICS, P5_FOUR_OPERATIONS_FRACTIO
 import { P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS, P5_AREA_OF_TRIANGLE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-area-of-triangle';
 import { P5_MATH_VOLUME_SUBTOPICS, P5_VOLUME_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-volume';
 import { P5_MATH_DECIMALS_SUBTOPICS, P5_DECIMALS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
+import { P5_MATH_RATE_SUBTOPICS, P5_RATE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-rate';
+import { P5_MATH_PERCENTAGE_SUBTOPICS, P5_PERCENTAGE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
+import { P5_MATH_ANGLES_SUBTOPICS, P5_ANGLES_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -170,6 +173,9 @@ function registerBrowserTopics() {
   registerTopics(P5_MATH_AREA_OF_TRIANGLE_SUBTOPICS, P5_AREA_OF_TRIANGLE_CONFIG);
   registerTopics(P5_MATH_VOLUME_SUBTOPICS, P5_VOLUME_CONFIG);
   registerTopics(P5_MATH_DECIMALS_SUBTOPICS, P5_DECIMALS_CONFIG);
+  registerTopics(P5_MATH_RATE_SUBTOPICS, P5_RATE_CONFIG);
+  registerTopics(P5_MATH_PERCENTAGE_SUBTOPICS, P5_PERCENTAGE_CONFIG);
+  registerTopics(P5_MATH_ANGLES_SUBTOPICS, P5_ANGLES_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

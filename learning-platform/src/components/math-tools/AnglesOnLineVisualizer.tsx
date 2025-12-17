@@ -66,18 +66,18 @@ const AnglesOnLineVisualizer: React.FC<AnglesOnLineVisualizerProps> = ({
   // SVG RENDERING
   // ============================================
   const width = 500;
-  const height = 250;
+  const height = 280;
 
-  // Central point on the line where angles meet
+  // Central point on the line where angles meet (bottom-aligned)
   const pointX = width / 2;
-  const pointY = height / 2;
+  const pointY = height - 50;  // Near the bottom
 
   // Line extends left and right
   const lineLeftX = 50;
   const lineRightX = width - 50;
 
-  // Ray length
-  const rayLength = 100;
+  // Ray length (taller rays)
+  const rayLength = 160;
 
   // Colors
   const lineColor = isDark ? '#9CA3AF' : '#4B5563';  // gray-400 : gray-600
@@ -147,7 +147,7 @@ const AnglesOnLineVisualizer: React.FC<AnglesOnLineVisualizerProps> = ({
     }
 
     // Draw arc for this angle (above the line)
-    const arcRadius = 45;
+    const arcRadius = 55;
     const startX = pointX + arcRadius * Math.cos((startAngle * Math.PI) / 180);
     const startY = pointY - arcRadius * Math.sin((startAngle * Math.PI) / 180);
     const endX = pointX + arcRadius * Math.cos((endAngle * Math.PI) / 180);
@@ -171,7 +171,7 @@ const AnglesOnLineVisualizer: React.FC<AnglesOnLineVisualizerProps> = ({
 
     // Label position (middle of arc, above the line)
     const midAngle = (startAngle + endAngle) / 2;
-    const labelRadius = arcRadius + 25;
+    const labelRadius = arcRadius + 30;
     const labelX = pointX + labelRadius * Math.cos((midAngle * Math.PI) / 180);
     const labelY = pointY - labelRadius * Math.sin((midAngle * Math.PI) / 180);
 

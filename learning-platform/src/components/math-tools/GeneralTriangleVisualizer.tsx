@@ -37,6 +37,14 @@ interface GeneralTriangleVisualizerProps {
   // Optional: Show ambiguous case (two possible triangles for SSA)
   showAmbiguousCase?: boolean;
 
+  // Equal side marks (tick marks) for isosceles/equilateral triangles
+  // 'none' = no marks, 'b-c' = sides b and c equal, 'a-b' = sides a and b equal,
+  // 'a-c' = sides a and c equal, 'all' = all sides equal (equilateral)
+  equalSides?: 'none' | 'b-c' | 'a-b' | 'a-c' | 'all';
+
+  // Show right angle marker (small square) when any angle is 90°
+  showRightAngleMarker?: boolean;
+
   caption?: string; // Optional caption explaining the diagram
 }
 
@@ -59,6 +67,8 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
   showSides = true,
   triangleType: _triangleType = 'auto',
   showAmbiguousCase = false,
+  equalSides = 'none',
+  showRightAngleMarker = false,
   caption
 }) => {
   const { theme } = useTheme();
@@ -377,6 +387,117 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
   const getAngleColor = (angle: 'A' | 'B' | 'C') =>
     highlightAngle === angle ? colors.highlight : colors.angle;
 
+  // ============================================
+  // EQUAL SIDE TICK MARKS HELPER
+  // ============================================
+  // Draw tick marks (small perpendicular lines) on a side to indicate equal lengths
+  const drawTickMarks = (
+    p1: { x: number; y: number },
+    p2: { x: number; y: number },
+    numTicks: number = 1
+  ): React.ReactNode => {
+    const midX = (p1.x + p2.x) / 2;
+    const midY = (p1.y + p2.y) / 2;
+
+    // Calculate perpendicular direction
+    const dx = p2.x - p1.x;
+    const dy = p2.y - p1.y;
+    const length = Math.sqrt(dx * dx + dy * dy);
+    const perpX = -dy / length;
+    const perpY = dx / length;
+
+    const tickLength = 8; // Half length of tick mark
+    const tickSpacing = 6; // Spacing between multiple ticks
+
+    const ticks: React.ReactNode[] = [];
+
+    for (let i = 0; i < numTicks; i++) {
+      // Offset along the side for multiple ticks
+      const offset = (i - (numTicks - 1) / 2) * tickSpacing;
+      const tickMidX = midX + (dx / length) * offset;
+      const tickMidY = midY + (dy / length) * offset;
+
+      ticks.push(
+        <line
+          key={`tick-${i}`}
+          x1={tickMidX + perpX * tickLength}
+          y1={tickMidY + perpY * tickLength}
+          x2={tickMidX - perpX * tickLength}
+          y2={tickMidY - perpY * tickLength}
+          stroke={colors.side}
+          strokeWidth="2"
+        />
+      );
+    }
+
+    return <g>{ticks}</g>;
+  };
+
+  // Determine which sides get tick marks based on equalSides prop
+  const getSideTickCount = (side: 'a' | 'b' | 'c'): number => {
+    if (equalSides === 'none') return 0;
+    if (equalSides === 'all') return 1; // Equilateral: all sides get 1 tick
+
+    // For isosceles triangles, equal sides get 1 tick each
+    if (equalSides === 'b-c' && (side === 'b' || side === 'c')) return 1;
+    if (equalSides === 'a-b' && (side === 'a' || side === 'b')) return 1;
+    if (equalSides === 'a-c' && (side === 'a' || side === 'c')) return 1;
+
+    return 0;
+  };
+
+  // ============================================
+  // RIGHT ANGLE MARKER HELPER
+  // ============================================
+  // Draw a small square at the vertex with a 90° angle
+  const drawRightAngleMarker = (
+    vertex: { x: number; y: number },
+    p1: { x: number; y: number },
+    p2: { x: number; y: number }
+  ): React.ReactNode => {
+    const size = 12; // Size of the right angle square
+
+    // Get unit vectors toward each adjacent vertex
+    const dx1 = p1.x - vertex.x;
+    const dy1 = p1.y - vertex.y;
+    const len1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
+    const ux1 = dx1 / len1;
+    const uy1 = dy1 / len1;
+
+    const dx2 = p2.x - vertex.x;
+    const dy2 = p2.y - vertex.y;
+    const len2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+    const ux2 = dx2 / len2;
+    const uy2 = dy2 / len2;
+
+    // Calculate the three corners of the right angle marker (plus vertex)
+    const corner1 = { x: vertex.x + ux1 * size, y: vertex.y + uy1 * size };
+    const corner2 = { x: vertex.x + ux2 * size, y: vertex.y + uy2 * size };
+    const innerCorner = {
+      x: vertex.x + ux1 * size + ux2 * size,
+      y: vertex.y + uy1 * size + uy2 * size
+    };
+
+    return (
+      <path
+        d={`M ${corner1.x} ${corner1.y} L ${innerCorner.x} ${innerCorner.y} L ${corner2.x} ${corner2.y}`}
+        fill="none"
+        stroke="#27AE60"
+        strokeWidth="2"
+      />
+    );
+  };
+
+  // Check which angle (if any) is 90° and should show the marker
+  const getRightAngleVertex = (): 'A' | 'B' | 'C' | null => {
+    if (!showRightAngleMarker) return null;
+    const tolerance = 0.5; // Allow small deviation from exactly 90
+    if (Math.abs(calcAngleA - 90) < tolerance) return 'A';
+    if (Math.abs(calcAngleB - 90) < tolerance) return 'B';
+    if (Math.abs(calcAngleC - 90) < tolerance) return 'C';
+    return null;
+  };
+
   return (
     <div
       style={{
@@ -426,6 +547,18 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
           stroke={getSideColor('c')}
           strokeWidth={highlightSide === 'c' ? 4 : 2}
         />
+
+        {/* ============================================ */}
+        {/* EQUAL SIDE TICK MARKS */}
+        {/* ============================================ */}
+        {/* Side a tick marks (B to C) */}
+        {getSideTickCount('a') > 0 && drawTickMarks(vertexB, vertexC, getSideTickCount('a'))}
+
+        {/* Side b tick marks (A to C) */}
+        {getSideTickCount('b') > 0 && drawTickMarks(vertexA, vertexC, getSideTickCount('b'))}
+
+        {/* Side c tick marks (A to B) */}
+        {getSideTickCount('c') > 0 && drawTickMarks(vertexA, vertexB, getSideTickCount('c'))}
 
         {/* ============================================ */}
         {/* SIDE LABELS */}
@@ -633,6 +766,23 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
             })()}
           </>
         )}
+
+        {/* ============================================ */}
+        {/* RIGHT ANGLE MARKER */}
+        {/* ============================================ */}
+        {(() => {
+          const rightAngleVertex = getRightAngleVertex();
+          if (!rightAngleVertex) return null;
+
+          if (rightAngleVertex === 'A') {
+            return drawRightAngleMarker(vertexA, vertexB, vertexC);
+          } else if (rightAngleVertex === 'B') {
+            return drawRightAngleMarker(vertexB, vertexA, vertexC);
+          } else if (rightAngleVertex === 'C') {
+            return drawRightAngleMarker(vertexC, vertexA, vertexB);
+          }
+          return null;
+        })()}
 
         {/* ============================================ */}
         {/* VERTEX LABELS */}

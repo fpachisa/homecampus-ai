@@ -15,10 +15,12 @@ interface PieChartVisualizerProps {
   frequencies: number[];             // Counts for each category
   title?: string;                    // Chart title
   showAngles?: boolean;              // Show sector angles (default: true)
-  showPercentages?: boolean;         // Show percentages (default: true)
+  displayMode?: 'frequency' | 'percentage' | 'none';  // What to display on labels (default: 'frequency')
   highlightSector?: number;          // Index of sector to highlight (default: -1, none)
   showCalculations?: boolean;        // Show angle calculation steps (default: false)
   caption?: string;                  // Optional caption below chart
+  hiddenSlices?: number[];           // Indices of slices to show "?" instead of value (for "find the missing %" problems)
+  hiddenAngles?: number[];           // Indices of slices to show "?" instead of angle (for "find the angle" problems)
 }
 
 const PieChartVisualizer: React.FC<PieChartVisualizerProps> = ({
@@ -26,10 +28,12 @@ const PieChartVisualizer: React.FC<PieChartVisualizerProps> = ({
   frequencies,
   title,
   showAngles = true,
-  showPercentages = true,
+  displayMode = 'frequency',
   highlightSector = -1,
   showCalculations = false,
-  caption
+  caption,
+  hiddenSlices,
+  hiddenAngles
 }) => {
   const { theme } = useTheme();
 
@@ -205,16 +209,22 @@ const PieChartVisualizer: React.FC<PieChartVisualizerProps> = ({
           {data.category}
         </text>
 
-        {/* Frequency and percentage */}
-        <text
-          x={labelPos.x}
-          y={labelPos.y + 5}
-          fontSize="12"
-          textAnchor={textAnchor}
-          fill={mutedColor}
-        >
-          {data.frequency} {showPercentages && `(${data.percentage.toFixed(1)}%)`}
-        </text>
+        {/* Value based on displayMode - hidden when 'none' */}
+        {displayMode !== 'none' && (
+          <text
+            x={labelPos.x}
+            y={labelPos.y + 5}
+            fontSize="12"
+            textAnchor={textAnchor}
+            fill={mutedColor}
+          >
+            {hiddenSlices?.includes(index)
+              ? '?'
+              : displayMode === 'frequency'
+                ? data.frequency
+                : `${data.percentage.toFixed(0)}%`}
+          </text>
+        )}
 
         {/* Angle if enabled */}
         {showAngles && (
@@ -226,7 +236,7 @@ const PieChartVisualizer: React.FC<PieChartVisualizerProps> = ({
             textAnchor={textAnchor}
             fill={mutedColor}
           >
-            {data.angle.toFixed(1)}°
+            {hiddenAngles?.includes(index) ? '?' : `${data.angle.toFixed(1)}°`}
           </text>
         )}
       </g>
@@ -259,39 +269,6 @@ const PieChartVisualizer: React.FC<PieChartVisualizerProps> = ({
 
         {/* Sectors and labels */}
         {sectors}
-
-        {/* Legend box */}
-        <g transform="translate(10, 60)">
-          <text
-            x={0}
-            y={0}
-            fontSize="12"
-            fontWeight="600"
-            fill={textColor}
-          >
-            Legend:
-          </text>
-          {dataWithAngles.map((data, index) => (
-            <g key={index} transform={`translate(0, ${20 + index * 25})`}>
-              <rect
-                x={0}
-                y={-10}
-                width={16}
-                height={16}
-                fill={data.color}
-                rx={2}
-              />
-              <text
-                x={22}
-                y={2}
-                fontSize="11"
-                fill={textColor}
-              >
-                {data.category}: {data.frequency}
-              </text>
-            </g>
-          ))}
-        </g>
       </svg>
 
       {/* Calculation steps */}
@@ -310,17 +287,23 @@ const PieChartVisualizer: React.FC<PieChartVisualizerProps> = ({
             </p>
             <p>Total frequency = {total}</p>
             <div className="mt-3 space-y-2">
-              {dataWithAngles.map((data, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div
-                    className="w-3 h-3 rounded"
-                    style={{ backgroundColor: data.color }}
-                  />
-                  <MathText>
-                    {`${data.category}: (${data.frequency} ÷ ${total}) × 360° = ${data.angle.toFixed(1)}°`}
-                  </MathText>
-                </div>
-              ))}
+              {dataWithAngles.map((data, index) => {
+                const freqHidden = hiddenSlices?.includes(index);
+                const angleHidden = hiddenAngles?.includes(index);
+                const freqDisplay = freqHidden ? '?' : data.frequency;
+                const angleDisplay = angleHidden ? '?' : `${data.angle.toFixed(1)}°`;
+                return (
+                  <div key={index} className="flex items-center gap-2">
+                    <div
+                      className="w-3 h-3 rounded"
+                      style={{ backgroundColor: data.color }}
+                    />
+                    <MathText>
+                      {`${data.category}: (${freqDisplay} ÷ ${total}) × 360° = ${angleDisplay}`}
+                    </MathText>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

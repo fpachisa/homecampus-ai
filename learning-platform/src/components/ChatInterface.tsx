@@ -106,6 +106,12 @@ import { P5_MATH_VOLUME_SUBTOPICS } from '../prompt-library/subjects/mathematics
 import { P5_MATH_DECIMALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
 import type { DecimalsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-decimals';
 import type { VolumeTopicId } from '../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_RATE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-rate';
+import type { RateTopicId } from '../prompt-library/subjects/mathematics/primary/p5-rate';
+import { P5_MATH_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
+import type { PercentageTopicId as P5PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p5-percentage';
+import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-angles';
+import type { P5AnglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -303,6 +309,18 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P5 decimals topic
   if (topicId.startsWith('p5-math-decimals-')) {
     return P5_MATH_DECIMALS_SUBTOPICS[topicId as DecimalsTopicId];
+  }
+  // Check if it's a P5 rate topic
+  if (topicId.startsWith('p5-math-rate-')) {
+    return P5_MATH_RATE_SUBTOPICS[topicId as RateTopicId];
+  }
+  // Check if it's a P5 percentage topic
+  if (topicId.startsWith('p5-math-percentage-')) {
+    return P5_MATH_PERCENTAGE_SUBTOPICS[topicId as P5PercentageTopicId];
+  }
+  // Check if it's a P5 angles topic
+  if (topicId.startsWith('p5-math-angles-')) {
+    return P5_MATH_ANGLES_SUBTOPICS[topicId as P5AnglesTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

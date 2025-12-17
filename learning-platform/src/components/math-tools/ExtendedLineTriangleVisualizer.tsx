@@ -1,10 +1,13 @@
 /**
  * Extended Line Triangle Visualizer
  *
- * Draws a triangle with one side extended beyond a vertex to show exterior angles.
- * Useful for problems involving exterior angles and their trigonometric ratios.
+ * Draws a triangle with one side extended beyond a vertex to form a straight line.
+ * Essential for P5 "Finding Unknown Angles" problems where students must combine:
+ * - Angle sum in triangle = 180°
+ * - Angles on a straight line = 180°
  *
- * Example: Triangle ABC with side BC extended to point D, forming exterior angle ∠ACD
+ * Example: Triangle ACD with line BCD being straight (D-C-B collinear)
+ * Student finds angle x using both properties.
  */
 
 import React from 'react';
@@ -12,37 +15,48 @@ import { useTheme } from '../../hooks/useTheme';
 import MathText from '../MathText';
 
 interface ExtendedLineTriangleVisualizerProps {
-  // Vertex labels (e.g., "A", "B", "C", "D")
-  vertexA?: string;
-  vertexB?: string;
-  vertexC?: string;
-  vertexD?: string; // Extended point
+  // Vertex labels for the triangle (required)
+  vertexA?: string;  // Apex vertex (typically at top)
+  vertexB?: string;  // Base vertex 1
+  vertexC?: string;  // Base vertex 2
 
-  // Side lengths as labels
-  sideAB?: string; // Side from A to B
-  sideBC?: string; // Side from B to C
-  sideAC?: string; // Side from A to C (hypotenuse if right triangle)
+  // The extended point label
+  vertexD?: string;
 
-  // Angles in degrees
-  angleAtA?: number; // Angle at vertex A
-  angleAtB?: number; // Angle at vertex B (often 90° for right triangle)
-  interiorAngleAtC?: number; // Interior angle BCA (θ)
+  // Which side to extend and in which direction
+  // Format: 'XY' means extend side XY beyond vertex Y
+  // Options: 'BC', 'CB', 'AC', 'CA', 'AB', 'BA'
+  extendedSide?: 'BC' | 'CB' | 'AC' | 'CA' | 'AB' | 'BA';
 
-  // Angle labels (override default degree display)
-  interiorAngleLabel?: string; // e.g., "θ" or "45°"
-  exteriorAngleLabel?: string; // e.g., "find this" or leave empty
+  // Angles at each vertex (in degrees)
+  angleA?: number | null;  // Angle at vertex A
+  angleB?: number | null;  // Angle at vertex B
+  angleC?: number | null;  // Angle at vertex C
+
+  // Custom angle labels (override calculated values)
+  angleA_label?: string;
+  angleB_label?: string;
+  angleC_label?: string;
+  exteriorAngle_label?: string;  // Label for the exterior angle at extension point
+
+  // Side labels
+  sideAB?: string;
+  sideBC?: string;
+  sideAC?: string;
 
   // Display options
-  showRightAngle?: boolean; // Show right angle marker at B
-  showInteriorAngle?: boolean; // Show interior angle at C
-  showExteriorAngle?: boolean; // Show exterior angle at C
-  highlightExteriorAngle?: boolean; // Highlight the exterior angle
+  showAngleA?: boolean;
+  showAngleB?: boolean;
+  showAngleC?: boolean;
+  showExteriorAngle?: boolean;
+  showRightAngleMarker?: boolean;  // Show square marker for 90° angles
+  highlightExteriorAngle?: boolean;
 
-  // Extension length
-  extensionLength?: number; // How far to extend the line (default: 60)
+  // Extension length (how far D extends beyond the vertex)
+  extensionLength?: number;
 
-  // Orientation
-  rotation?: number; // Rotation angle in degrees (0 = standard, 90 = rotated 90° clockwise, etc.)
+  // Rotation of entire diagram
+  rotation?: number;
 
   caption?: string;
 }
@@ -52,85 +66,129 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
   vertexB = 'B',
   vertexC = 'C',
   vertexD = 'D',
+  extendedSide = 'BC',
+  angleA = null,
+  angleB = null,
+  angleC = null,
+  angleA_label,
+  angleB_label,
+  angleC_label,
+  exteriorAngle_label,
   sideAB,
   sideBC,
   sideAC,
-  angleAtA,
-  angleAtB = 90, // Default to right angle at B
-  interiorAngleAtC,
-  interiorAngleLabel,
-  exteriorAngleLabel,
-  showRightAngle = true,
-  showInteriorAngle = true,
+  showAngleA = true,
+  showAngleB = true,
+  showAngleC = true,
   showExteriorAngle = true,
+  showRightAngleMarker = true,
   highlightExteriorAngle = false,
-  extensionLength = 60,
+  extensionLength = 70,
   rotation = 0,
   caption
 }) => {
   const { theme } = useTheme();
 
-  // ============================================
-  // CALCULATE TRIANGLE GEOMETRY
-  // ============================================
-
   // SVG dimensions
   const svgWidth = 500;
-  const svgHeight = 320;
-
-  // Center point for rotation
+  const svgHeight = 350;
   const centerX = svgWidth / 2;
   const centerY = svgHeight / 2;
 
-  // Calculate the third angle if not provided
-  let calcAngleAtA = angleAtA ?? 180 - angleAtB - (interiorAngleAtC ?? 60);
+  // Calculate angles - if not all provided, calculate from what we have
+  let calcAngleA = angleA ?? 60;
+  let calcAngleB = angleB ?? 60;
+  let calcAngleC = angleC ?? 60;
 
-  // Triangle base and height
-  const baseLength = 180; // Length of AB (base) - reduced for better fit
-  const triangleHeight = baseLength * Math.tan((calcAngleAtA * Math.PI) / 180);
+  // If two angles provided, calculate third
+  const providedCount = [angleA, angleB, angleC].filter(a => a !== null).length;
+  if (providedCount === 2) {
+    if (angleA === null) calcAngleA = 180 - (angleB ?? 60) - (angleC ?? 60);
+    else if (angleB === null) calcAngleB = 180 - (angleA ?? 60) - (angleC ?? 60);
+    else if (angleC === null) calcAngleC = 180 - (angleA ?? 60) - (angleB ?? 60);
+  }
 
-  // Position vertices CENTERED in canvas
-  // Calculate triangle center to position it in the middle
-  const triangleBaseY = centerY + 40; // Slight offset below center
-  const vertexBPos = { x: centerX - baseLength / 2, y: triangleBaseY };
-  const vertexAPos = { x: centerX + baseLength / 2, y: triangleBaseY };
+  // ============================================
+  // CALCULATE VERTEX POSITIONS
+  // ============================================
+  // Base triangle layout: A at top, B at bottom-left, C at bottom-right
+  const baseLength = 180;
+  const baseY = centerY + 60;
 
-  // C is above B, forming the right angle at B
-  const vertexCPos = {
-    x: vertexBPos.x,
-    y: vertexBPos.y - triangleHeight
+  // Calculate triangle height based on angles
+  const angleA_rad = (calcAngleA * Math.PI) / 180;
+  const angleB_rad = (calcAngleB * Math.PI) / 180;
+
+  // Position B and C on the base
+  const posB = { x: centerX - baseLength / 2, y: baseY };
+  const posC = { x: centerX + baseLength / 2, y: baseY };
+
+  // Calculate A position using angle B
+  // A is above the line BC
+  const heightFromB = baseLength * Math.sin(angleB_rad) * Math.sin(angleA_rad) / Math.sin(Math.PI - angleA_rad - angleB_rad);
+  const horizontalFromB = baseLength * Math.cos(angleB_rad) * Math.sin(angleA_rad) / Math.sin(Math.PI - angleA_rad - angleB_rad);
+
+  const posA = {
+    x: posB.x + horizontalFromB,
+    y: posB.y - Math.abs(heightFromB)
   };
 
-  // D is the extension of line BC beyond C
-  // Calculate direction from B to C
-  const bcDirX = vertexCPos.x - vertexBPos.x;
-  const bcDirY = vertexCPos.y - vertexBPos.y;
-  const bcLength = Math.sqrt(bcDirX * bcDirX + bcDirY * bcDirY);
-  const bcUnitX = bcDirX / bcLength;
-  const bcUnitY = bcDirY / bcLength;
+  // ============================================
+  // CALCULATE EXTENSION POINT D
+  // ============================================
+  let posD = { x: 0, y: 0 };
+  let extendFrom = { x: 0, y: 0 };
+  let extendTo = { x: 0, y: 0 };
 
-  // Extend from C to D
-  const vertexDPos = {
-    x: vertexCPos.x + bcUnitX * extensionLength,
-    y: vertexCPos.y + bcUnitY * extensionLength
+  // Determine which side to extend and direction
+  switch (extendedSide) {
+    case 'BC':
+      // Extend BC beyond C
+      extendFrom = posB;
+      extendTo = posC;
+      break;
+    case 'CB':
+      // Extend BC beyond B
+      extendFrom = posC;
+      extendTo = posB;
+      break;
+    case 'AC':
+      // Extend AC beyond C
+      extendFrom = posA;
+      extendTo = posC;
+      break;
+    case 'CA':
+      // Extend AC beyond A
+      extendFrom = posC;
+      extendTo = posA;
+      break;
+    case 'AB':
+      // Extend AB beyond B
+      extendFrom = posA;
+      extendTo = posB;
+      break;
+    case 'BA':
+      // Extend AB beyond A
+      extendFrom = posB;
+      extendTo = posA;
+      break;
+  }
+
+  // Calculate D position
+  const dirX = extendTo.x - extendFrom.x;
+  const dirY = extendTo.y - extendFrom.y;
+  const length = Math.sqrt(dirX * dirX + dirY * dirY);
+  const unitX = dirX / length;
+  const unitY = dirY / length;
+
+  posD = {
+    x: extendTo.x + unitX * extensionLength,
+    y: extendTo.y + unitY * extensionLength
   };
-
-  // Calculate actual side lengths for display
-  const _actualSideBC = Math.sqrt(
-    Math.pow(vertexCPos.x - vertexBPos.x, 2) +
-    Math.pow(vertexCPos.y - vertexBPos.y, 2)
-  );
-  void _actualSideBC; // Suppress unused variable warning
-  const _actualSideAC = Math.sqrt(
-    Math.pow(vertexCPos.x - vertexAPos.x, 2) +
-    Math.pow(vertexCPos.y - vertexAPos.y, 2)
-  );
-  void _actualSideAC; // Suppress unused variable warning
 
   // ============================================
   // HELPER FUNCTIONS
   // ============================================
-
   const ensureLatexWrapped = (text: string | undefined): string => {
     if (!text) return '';
     if (text.startsWith('$') && text.endsWith('$')) return text;
@@ -142,30 +200,27 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
     primary: theme.colors.brand,
     triangle: theme.colors.textPrimary,
     extension: theme.colors.textMuted,
-    interiorAngle: '#3498DB',
+    angle: '#3498DB',
     exteriorAngle: highlightExteriorAngle ? '#FF6B6B' : '#9B59B6',
     rightAngle: '#27AE60',
   };
 
-  // ============================================
-  // ANGLE ARC HELPERS
-  // ============================================
-
+  // Draw angle arc between two points from a vertex
   const createAngleArc = (
     vertex: { x: number; y: number },
-    startPoint: { x: number; y: number },
-    endPoint: { x: number; y: number },
-    radius: number = 35
+    point1: { x: number; y: number },
+    point2: { x: number; y: number },
+    radius: number = 30
   ): string => {
-    const startAngle = Math.atan2(startPoint.y - vertex.y, startPoint.x - vertex.x);
-    const endAngle = Math.atan2(endPoint.y - vertex.y, endPoint.x - vertex.x);
+    const angle1 = Math.atan2(point1.y - vertex.y, point1.x - vertex.x);
+    const angle2 = Math.atan2(point2.y - vertex.y, point2.x - vertex.x);
 
-    const startX = vertex.x + radius * Math.cos(startAngle);
-    const startY = vertex.y + radius * Math.sin(startAngle);
-    const endX = vertex.x + radius * Math.cos(endAngle);
-    const endY = vertex.y + radius * Math.sin(endAngle);
+    const startX = vertex.x + radius * Math.cos(angle1);
+    const startY = vertex.y + radius * Math.sin(angle1);
+    const endX = vertex.x + radius * Math.cos(angle2);
+    const endY = vertex.y + radius * Math.sin(angle2);
 
-    let deltaAngle = endAngle - startAngle;
+    let deltaAngle = angle2 - angle1;
     while (deltaAngle > Math.PI) deltaAngle -= 2 * Math.PI;
     while (deltaAngle < -Math.PI) deltaAngle += 2 * Math.PI;
 
@@ -176,11 +231,12 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
     return `M ${startX} ${startY} A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${endX} ${endY}`;
   };
 
+  // Get position for angle label
   const getAngleLabelPosition = (
     vertex: { x: number; y: number },
     point1: { x: number; y: number },
     point2: { x: number; y: number },
-    distance: number = 50
+    distance: number = 45
   ): { x: number; y: number } => {
     const angle1 = Math.atan2(point1.y - vertex.y, point1.x - vertex.x);
     const angle2 = Math.atan2(point2.y - vertex.y, point2.x - vertex.x);
@@ -195,6 +251,139 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
       x: vertex.x + distance * Math.cos(bisectorAngle),
       y: vertex.y + distance * Math.sin(bisectorAngle)
     };
+  };
+
+  // Draw right angle marker
+  const drawRightAngleMarker = (
+    vertex: { x: number; y: number },
+    p1: { x: number; y: number },
+    p2: { x: number; y: number }
+  ): string => {
+    const size = 12;
+
+    const dx1 = p1.x - vertex.x;
+    const dy1 = p1.y - vertex.y;
+    const len1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
+    const ux1 = dx1 / len1;
+    const uy1 = dy1 / len1;
+
+    const dx2 = p2.x - vertex.x;
+    const dy2 = p2.y - vertex.y;
+    const len2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+    const ux2 = dx2 / len2;
+    const uy2 = dy2 / len2;
+
+    const corner1 = { x: vertex.x + ux1 * size, y: vertex.y + uy1 * size };
+    const corner2 = { x: vertex.x + ux2 * size, y: vertex.y + uy2 * size };
+    const innerCorner = {
+      x: vertex.x + ux1 * size + ux2 * size,
+      y: vertex.y + uy1 * size + uy2 * size
+    };
+
+    return `M ${corner1.x} ${corner1.y} L ${innerCorner.x} ${innerCorner.y} L ${corner2.x} ${corner2.y}`;
+  };
+
+  // Check if angle is 90°
+  const isRightAngle = (angle: number | null): boolean => {
+    if (angle === null) return false;
+    return Math.abs(angle - 90) < 0.5;
+  };
+
+  // Get the two adjacent vertices for a given vertex
+  const getAdjacentVertices = (vertex: 'A' | 'B' | 'C'): [{ x: number; y: number }, { x: number; y: number }] => {
+    switch (vertex) {
+      case 'A': return [posB, posC];
+      case 'B': return [posA, posC];
+      case 'C': return [posA, posB];
+    }
+  };
+
+  // Get exterior angle adjacent points (for the vertex where extension happens)
+  const getExteriorAnglePoints = (): { vertex: { x: number; y: number }, p1: { x: number; y: number }, p2: { x: number; y: number } } | null => {
+    if (!showExteriorAngle) return null;
+
+    // The exterior angle is at the extension vertex, between the opposite side and the extension
+    switch (extendedSide) {
+      case 'BC':
+        // At C: between CA and CD
+        return { vertex: posC, p1: posA, p2: posD };
+      case 'CB':
+        // At B: between BA and BD
+        return { vertex: posB, p1: posA, p2: posD };
+      case 'AC':
+        // At C: between CB and CD
+        return { vertex: posC, p1: posB, p2: posD };
+      case 'CA':
+        // At A: between AB and AD
+        return { vertex: posA, p1: posB, p2: posD };
+      case 'AB':
+        // At B: between BC and BD
+        return { vertex: posB, p1: posC, p2: posD };
+      case 'BA':
+        // At A: between AC and AD
+        return { vertex: posA, p1: posC, p2: posD };
+      default:
+        return null;
+    }
+  };
+
+  // Render angle at a vertex
+  const renderAngle = (
+    vertex: 'A' | 'B' | 'C',
+    angle: number | null,
+    label: string | undefined,
+    show: boolean
+  ) => {
+    if (!show || (angle === null && !label)) return null;
+
+    const pos = vertex === 'A' ? posA : vertex === 'B' ? posB : posC;
+    const [p1, p2] = getAdjacentVertices(vertex);
+    const calcAngle = vertex === 'A' ? calcAngleA : vertex === 'B' ? calcAngleB : calcAngleC;
+    const isRight = isRightAngle(calcAngle);
+
+    return (
+      <g key={`angle-${vertex}`}>
+        {isRight && showRightAngleMarker ? (
+          <path
+            d={drawRightAngleMarker(pos, p1, p2)}
+            fill="none"
+            stroke={colors.rightAngle}
+            strokeWidth="2"
+          />
+        ) : (
+          <path
+            d={createAngleArc(pos, p1, p2, 28)}
+            fill="none"
+            stroke={colors.angle}
+            strokeWidth="2.5"
+            opacity="0.8"
+          />
+        )}
+        {(label || angle !== null) && (() => {
+          const labelPos = getAngleLabelPosition(pos, p1, p2, 45);
+          const displayLabel = label || (angle !== null ? `${angle}°` : '');
+          return (
+            <foreignObject
+              x={labelPos.x - 30}
+              y={labelPos.y - 12}
+              width="60"
+              height="24"
+            >
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: isRight ? colors.rightAngle : colors.angle,
+                fontSize: '14px',
+                fontWeight: 'bold'
+              }}>
+                <MathText>{ensureLatexWrapped(displayLabel)}</MathText>
+              </div>
+            </foreignObject>
+          );
+        })()}
+      </g>
+    );
   };
 
   return (
@@ -213,260 +402,208 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
         viewBox={`0 0 ${svgWidth} ${svgHeight}`}
         style={{ display: 'block', margin: '0 auto' }}
       >
-        {/* Apply rotation transform to entire triangle group */}
         <g transform={`rotate(${rotation}, ${centerX}, ${centerY})`}>
-        {/* ============================================ */}
-        {/* EXTENDED LINE (B → C → D) */}
-        {/* ============================================ */}
-        <line
-          x1={vertexBPos.x}
-          y1={vertexBPos.y}
-          x2={vertexDPos.x}
-          y2={vertexDPos.y}
-          stroke={colors.extension}
-          strokeWidth="2"
-          strokeDasharray="none"
-        />
+          {/* ============================================ */}
+          {/* EXTENDED LINE */}
+          {/* ============================================ */}
+          <line
+            x1={extendFrom.x}
+            y1={extendFrom.y}
+            x2={posD.x}
+            y2={posD.y}
+            stroke={colors.extension}
+            strokeWidth="2"
+          />
 
-        {/* ============================================ */}
-        {/* TRIANGLE SIDES */}
-        {/* ============================================ */}
-        {/* Side AB (base) */}
-        <line
-          x1={vertexAPos.x}
-          y1={vertexAPos.y}
-          x2={vertexBPos.x}
-          y2={vertexBPos.y}
-          stroke={colors.triangle}
-          strokeWidth="3"
-        />
+          {/* ============================================ */}
+          {/* TRIANGLE SIDES */}
+          {/* ============================================ */}
+          {/* Side AB */}
+          <line
+            x1={posA.x} y1={posA.y}
+            x2={posB.x} y2={posB.y}
+            stroke={colors.triangle}
+            strokeWidth="3"
+          />
+          {/* Side BC */}
+          <line
+            x1={posB.x} y1={posB.y}
+            x2={posC.x} y2={posC.y}
+            stroke={colors.triangle}
+            strokeWidth="3"
+          />
+          {/* Side AC */}
+          <line
+            x1={posA.x} y1={posA.y}
+            x2={posC.x} y2={posC.y}
+            stroke={colors.triangle}
+            strokeWidth="3"
+          />
 
-        {/* Side AC (hypotenuse) */}
-        <line
-          x1={vertexAPos.x}
-          y1={vertexAPos.y}
-          x2={vertexCPos.x}
-          y2={vertexCPos.y}
-          stroke={colors.triangle}
-          strokeWidth="3"
-        />
+          {/* ============================================ */}
+          {/* SIDE LABELS */}
+          {/* ============================================ */}
+          {sideAB && (
+            <foreignObject
+              x={(posA.x + posB.x) / 2 - 40}
+              y={(posA.y + posB.y) / 2 - 25}
+              width="80"
+              height="24"
+            >
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: colors.triangle,
+                fontSize: '14px',
+                fontWeight: 'bold'
+              }}>
+                <MathText>{ensureLatexWrapped(sideAB)}</MathText>
+              </div>
+            </foreignObject>
+          )}
+          {sideBC && (
+            <foreignObject
+              x={(posB.x + posC.x) / 2 - 40}
+              y={(posB.y + posC.y) / 2 + 10}
+              width="80"
+              height="24"
+            >
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: colors.triangle,
+                fontSize: '14px',
+                fontWeight: 'bold'
+              }}>
+                <MathText>{ensureLatexWrapped(sideBC)}</MathText>
+              </div>
+            </foreignObject>
+          )}
+          {sideAC && (
+            <foreignObject
+              x={(posA.x + posC.x) / 2 + 5}
+              y={(posA.y + posC.y) / 2 - 25}
+              width="80"
+              height="24"
+            >
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: colors.triangle,
+                fontSize: '14px',
+                fontWeight: 'bold'
+              }}>
+                <MathText>{ensureLatexWrapped(sideAC)}</MathText>
+              </div>
+            </foreignObject>
+          )}
 
-        {/* Side BC - already drawn as part of extended line, just make it bolder */}
-        <line
-          x1={vertexBPos.x}
-          y1={vertexBPos.y}
-          x2={vertexCPos.x}
-          y2={vertexCPos.y}
-          stroke={colors.triangle}
-          strokeWidth="3"
-        />
+          {/* ============================================ */}
+          {/* INTERIOR ANGLES */}
+          {/* ============================================ */}
+          {renderAngle('A', angleA, angleA_label, showAngleA)}
+          {renderAngle('B', angleB, angleB_label, showAngleB)}
+          {renderAngle('C', angleC, angleC_label, showAngleC)}
 
-        {/* ============================================ */}
-        {/* SIDE LABELS */}
-        {/* ============================================ */}
-        {sideAB && (
-          <foreignObject
-            x={(vertexAPos.x + vertexBPos.x) / 2 - 40}
-            y={vertexAPos.y + 15}
-            width="80"
-            height="30"
+          {/* ============================================ */}
+          {/* EXTERIOR ANGLE */}
+          {/* ============================================ */}
+          {(() => {
+            const extAngle = getExteriorAnglePoints();
+            if (!extAngle) return null;
+
+            return (
+              <g>
+                <path
+                  d={createAngleArc(extAngle.vertex, extAngle.p1, extAngle.p2, 40)}
+                  fill="none"
+                  stroke={colors.exteriorAngle}
+                  strokeWidth={highlightExteriorAngle ? 3.5 : 2.5}
+                  opacity="0.9"
+                />
+                {exteriorAngle_label && (() => {
+                  const labelPos = getAngleLabelPosition(extAngle.vertex, extAngle.p1, extAngle.p2, 55);
+                  return (
+                    <foreignObject
+                      x={labelPos.x - 35}
+                      y={labelPos.y - 12}
+                      width="70"
+                      height="24"
+                    >
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        color: colors.exteriorAngle,
+                        fontSize: '14px',
+                        fontWeight: 'bold'
+                      }}>
+                        <MathText>{ensureLatexWrapped(exteriorAngle_label)}</MathText>
+                      </div>
+                    </foreignObject>
+                  );
+                })()}
+              </g>
+            );
+          })()}
+
+          {/* ============================================ */}
+          {/* VERTEX LABELS */}
+          {/* ============================================ */}
+          {/* Vertex A */}
+          <circle cx={posA.x} cy={posA.y} r="4" fill={colors.primary} />
+          <text
+            x={posA.x}
+            y={posA.y - 12}
+            fill={theme.colors.textPrimary}
+            fontSize="16"
+            fontWeight="bold"
+            textAnchor="middle"
           >
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: colors.triangle,
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              <MathText>{ensureLatexWrapped(sideAB)}</MathText>
-            </div>
-          </foreignObject>
-        )}
+            {vertexA}
+          </text>
 
-        {sideBC && (
-          <foreignObject
-            x={vertexBPos.x - 60}
-            y={(vertexBPos.y + vertexCPos.y) / 2 - 15}
-            width="80"
-            height="30"
+          {/* Vertex B */}
+          <circle cx={posB.x} cy={posB.y} r="4" fill={colors.primary} />
+          <text
+            x={posB.x - 15}
+            y={posB.y + 5}
+            fill={theme.colors.textPrimary}
+            fontSize="16"
+            fontWeight="bold"
+            textAnchor="middle"
           >
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: colors.triangle,
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              <MathText>{ensureLatexWrapped(sideBC)}</MathText>
-            </div>
-          </foreignObject>
-        )}
+            {vertexB}
+          </text>
 
-        {sideAC && (
-          <foreignObject
-            x={(vertexAPos.x + vertexCPos.x) / 2 + 5}
-            y={(vertexAPos.y + vertexCPos.y) / 2 - 25}
-            width="80"
-            height="30"
+          {/* Vertex C */}
+          <circle cx={posC.x} cy={posC.y} r="4" fill={colors.primary} />
+          <text
+            x={posC.x + 15}
+            y={posC.y + 5}
+            fill={theme.colors.textPrimary}
+            fontSize="16"
+            fontWeight="bold"
+            textAnchor="middle"
           >
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: colors.triangle,
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              <MathText>{ensureLatexWrapped(sideAC)}</MathText>
-            </div>
-          </foreignObject>
-        )}
+            {vertexC}
+          </text>
 
-        {/* ============================================ */}
-        {/* RIGHT ANGLE MARKER AT B */}
-        {/* ============================================ */}
-        {showRightAngle && angleAtB === 90 && (
-          <>
-            <rect
-              x={vertexBPos.x}
-              y={vertexBPos.y - 15}
-              width="15"
-              height="15"
-              fill="none"
-              stroke={colors.rightAngle}
-              strokeWidth="2"
-            />
-          </>
-        )}
-
-        {/* ============================================ */}
-        {/* INTERIOR ANGLE AT C (θ) */}
-        {/* ============================================ */}
-        {showInteriorAngle && (
-          <>
-            <path
-              d={createAngleArc(vertexCPos, vertexBPos, vertexAPos, 35)}
-              fill="none"
-              stroke={colors.interiorAngle}
-              strokeWidth="2.5"
-              opacity="0.8"
-            />
-            {(() => {
-              const labelPos = getAngleLabelPosition(vertexCPos, vertexBPos, vertexAPos, 50);
-              return (
-                <foreignObject
-                  x={labelPos.x - 30}
-                  y={labelPos.y - 15}
-                  width="60"
-                  height="30"
-                >
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    color: colors.interiorAngle,
-                    fontSize: '15px',
-                    fontWeight: 'bold'
-                  }}>
-                    <MathText>
-                      {ensureLatexWrapped(interiorAngleLabel || `θ`)}
-                    </MathText>
-                  </div>
-                </foreignObject>
-              );
-            })()}
-          </>
-        )}
-
-        {/* ============================================ */}
-        {/* EXTERIOR ANGLE AT C */}
-        {/* ============================================ */}
-        {showExteriorAngle && (
-          <>
-            <path
-              d={createAngleArc(vertexCPos, vertexAPos, vertexDPos, 45)}
-              fill="none"
-              stroke={colors.exteriorAngle}
-              strokeWidth={highlightExteriorAngle ? 3.5 : 2.5}
-              opacity="0.9"
-            />
-            {exteriorAngleLabel && (() => {
-              const labelPos = getAngleLabelPosition(vertexCPos, vertexAPos, vertexDPos, 60);
-              return (
-                <foreignObject
-                  x={labelPos.x - 40}
-                  y={labelPos.y - 15}
-                  width="80"
-                  height="30"
-                >
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    color: colors.exteriorAngle,
-                    fontSize: '14px',
-                    fontWeight: 'bold'
-                  }}>
-                    <MathText>{ensureLatexWrapped(exteriorAngleLabel)}</MathText>
-                  </div>
-                </foreignObject>
-              );
-            })()}
-          </>
-        )}
-
-        {/* ============================================ */}
-        {/* VERTEX LABELS */}
-        {/* ============================================ */}
-        <circle cx={vertexAPos.x} cy={vertexAPos.y} r="4" fill={colors.primary} />
-        <text
-          x={vertexAPos.x}
-          y={vertexAPos.y + 20}
-          fill={theme.colors.textPrimary}
-          fontSize="18"
-          fontWeight="bold"
-          textAnchor="middle"
-        >
-          {vertexA}
-        </text>
-
-        <circle cx={vertexBPos.x} cy={vertexBPos.y} r="4" fill={colors.primary} />
-        <text
-          x={vertexBPos.x - 10}
-          y={vertexBPos.y + 20}
-          fill={theme.colors.textPrimary}
-          fontSize="18"
-          fontWeight="bold"
-          textAnchor="middle"
-        >
-          {vertexB}
-        </text>
-
-        <circle cx={vertexCPos.x} cy={vertexCPos.y} r="4" fill={colors.primary} />
-        <text
-          x={vertexCPos.x - 15}
-          y={vertexCPos.y}
-          fill={theme.colors.textPrimary}
-          fontSize="18"
-          fontWeight="bold"
-          textAnchor="middle"
-        >
-          {vertexC}
-        </text>
-
-        <circle cx={vertexDPos.x} cy={vertexDPos.y} r="4" fill={colors.extension} />
-        <text
-          x={vertexDPos.x - 10}
-          y={vertexDPos.y - 10}
-          fill={theme.colors.textPrimary}
-          fontSize="18"
-          fontWeight="bold"
-          textAnchor="middle"
-        >
-          {vertexD}
-        </text>
+          {/* Vertex D (extension point) */}
+          <circle cx={posD.x} cy={posD.y} r="4" fill={colors.extension} />
+          <text
+            x={posD.x + (extendedSide.includes('B') ? -15 : 15)}
+            y={posD.y + 5}
+            fill={theme.colors.textPrimary}
+            fontSize="16"
+            fontWeight="bold"
+            textAnchor="middle"
+          >
+            {vertexD}
+          </text>
         </g>
       </svg>
 

@@ -143,7 +143,7 @@ const PieChartsLineGraphs = () => {
                 frequencies={[30, 18, 12]}
                 title="Favorite Sports"
                 showAngles={true}
-                showPercentages={true}
+                displayMode="frequency"
               />
             </div>
           </div>
@@ -206,7 +206,7 @@ const PieChartsLineGraphs = () => {
                     frequencies={[15, 9, 6, 6]}
                     title="Favorite Seasons"
                     showAngles={true}
-                    showPercentages={true}
+                    displayMode="frequency"
                   />
                 </div>
               </div>

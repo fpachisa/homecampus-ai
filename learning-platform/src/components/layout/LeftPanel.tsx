@@ -97,6 +97,12 @@ import { P5_MATH_VOLUME_SUBTOPICS } from '../../prompt-library/subjects/mathemat
 import { P5_MATH_DECIMALS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-decimals';
 import type { DecimalsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-decimals';
 import type { VolumeTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-volume';
+import { P5_MATH_RATE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-rate';
+import type { RateTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-rate';
+import { P5_MATH_PERCENTAGE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-percentage';
+import type { PercentageTopicId as P5PercentageTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-percentage';
+import { P5_MATH_ANGLES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-angles';
+import type { P5AnglesTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-angles';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -145,6 +151,24 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('p5-math-decimals-')) {
     const icons = ['✖️', '🔢', '➗', '📊', '📏', '📝'];  // Multiply 10/100/1000, Multiply Tens, Divide 10/100/1000, Divide Tens, Measurements, Word Problems
     const index = Object.keys(P5_MATH_DECIMALS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Rate icons
+  if (topicId.startsWith('p5-math-rate-')) {
+    const icons = ['⏱️', '📝'];  // Understanding Rate, Word Problems
+    const index = Object.keys(P5_MATH_RATE_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Percentage icons
+  if (topicId.startsWith('p5-math-percentage-')) {
+    const icons = ['💯', '🔄', '🧮', '🥧', '💵'];  // Per Cent, Conversions, Part of Whole, Pie Charts, GST/Discount/Interest
+    const index = Object.keys(P5_MATH_PERCENTAGE_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Angles icons
+  if (topicId.startsWith('p5-math-angles-')) {
+    const icons = ['📏', '✖️', '⭕', '🔍'];  // Straight Line, Vertically Opposite, At Point, Finding Unknown
+    const index = Object.keys(P5_MATH_ANGLES_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
   // P6 Fractions icons
@@ -455,6 +479,9 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p5-math-area-triangle') return 'Area of Triangle';
   if (category === 'p5-math-volume') return 'Volume';
   if (category === 'p5-math-decimals') return 'Decimals';
+  if (category === 'p5-math-rate') return 'Rate';
+  if (category === 'p5-math-percentage') return 'Percentage';
+  if (category === 'p5-math-angles') return 'Angles';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -515,6 +542,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-area-triangle',
     'p5-math-volume',
     'p5-math-decimals',
+    'p5-math-rate',
+    'p5-math-percentage',
+    'p5-math-angles',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -926,6 +956,30 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-decimals') {
       return Object.entries(P5_MATH_DECIMALS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as DecimalsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-rate') {
+      return Object.entries(P5_MATH_RATE_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as RateTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-percentage') {
+      return Object.entries(P5_MATH_PERCENTAGE_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as P5PercentageTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-angles') {
+      return Object.entries(P5_MATH_ANGLES_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as P5AnglesTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
