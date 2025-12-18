@@ -105,6 +105,8 @@ import { P5_MATH_ANGLES_SUBTOPICS } from '../../prompt-library/subjects/mathemat
 import type { P5AnglesTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-angles';
 import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
+import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+import type { PropertiesOfQuadrilateralsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -177,6 +179,12 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('p5-math-properties-triangles-')) {
     const icons = ['🔺', '📐', '🔍'];  // Types, Angle Sum, Finding Unknown
     const index = Object.keys(P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P5 Properties of Quadrilaterals icons
+  if (topicId.startsWith('p5-math-properties-quadrilaterals-')) {
+    const icons = ['▱', '◇', '⏢', '🔍'];  // Parallelogram, Rhombus, Trapezium, Finding Unknown
+    const index = Object.keys(P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
   // P6 Fractions icons
@@ -491,6 +499,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p5-math-percentage') return 'Percentage';
   if (category === 'p5-math-angles') return 'Angles';
   if (category === 'p5-math-properties-of-triangles') return 'Properties of Triangles';
+  if (category === 'p5-math-properties-of-quadrilaterals') return 'Properties of Quadrilaterals';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -555,6 +564,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-percentage',
     'p5-math-angles',
     'p5-math-properties-of-triangles',
+    'p5-math-properties-of-quadrilaterals',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -998,6 +1008,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-properties-of-triangles') {
       return Object.entries(P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as P5PropertiesOfTrianglesTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p5-math-properties-of-quadrilaterals') {
+      return Object.entries(P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as PropertiesOfQuadrilateralsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

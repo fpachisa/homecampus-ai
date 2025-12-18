@@ -149,6 +149,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 5',
       subject: 'Mathematics',
     },
+    {
+      id: 'p5-math-properties-of-quadrilaterals',
+      name: 'Properties of Quadrilaterals',
+      icon: '⬜',
+      description: 'Master properties of parallelograms, rhombus, trapezium, and finding unknown angles using angle properties',
+      subtopicCount: 4,
+      isActive: true,
+      category: 'p5-math-properties-of-quadrilaterals',
+      grade: 'Primary 5',
+      subject: 'Mathematics',
+    },
   ],
   'Primary 6': [
     {

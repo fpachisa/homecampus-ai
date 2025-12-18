@@ -321,6 +321,11 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p5/math/properties-of-triangles/TypesOfTriangles': () => import('../notes/p5/math/properties-of-triangles/TypesOfTriangles'),
   'p5/math/properties-of-triangles/AngleSumOfTriangle': () => import('../notes/p5/math/properties-of-triangles/AngleSumOfTriangle'),
   'p5/math/properties-of-triangles/FindingUnknownAngles': () => import('../notes/p5/math/properties-of-triangles/FindingUnknownAngles'),
+  // P5 Properties of Quadrilaterals notes
+  'p5/math/properties-of-quadrilaterals/PropertiesOfParallelogram': () => import('../notes/p5/math/properties-of-quadrilaterals/PropertiesOfParallelogram'),
+  'p5/math/properties-of-quadrilaterals/PropertiesOfRhombus': () => import('../notes/p5/math/properties-of-quadrilaterals/PropertiesOfRhombus'),
+  'p5/math/properties-of-quadrilaterals/PropertiesOfTrapezium': () => import('../notes/p5/math/properties-of-quadrilaterals/PropertiesOfTrapezium'),
+  'p5/math/properties-of-quadrilaterals/FindingUnknownAngles': () => import('../notes/p5/math/properties-of-quadrilaterals/FindingUnknownAngles'),
 };
 
 interface NotesCache {

@@ -4909,6 +4909,210 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // P5 QUADRILATERAL ANGLES TOOLS
+  // ============================================
+
+  parallelogramAngles: {
+    name: "Parallelogram Angles Visualizer",
+    technicalName: "parallelogramAngles",
+    component: "ParallelogramAnglesVisualizer",
+    category: "geometry",
+
+    description: "CRITICAL PEDAGOGICAL TOOL: Displays a parallelogram with angle labels at vertices for teaching angle properties. Shows that opposite angles are equal and adjacent angles sum to 180°. Includes parallel side markers (arrows) and equal side markers (tick marks). Perfect for P5 students learning parallelogram properties.",
+
+    whenToUse: "Use when teaching parallelogram angle properties: opposite angles are equal, adjacent angles sum to 180°, identifying parallel sides and equal sides. Essential for 'Properties of Parallelogram' and 'Finding Unknown Angles' problems.",
+
+    parameters: {
+      vertexLabels: "[string, string, string, string] - Labels at corners [bottomLeft, bottomRight, topRight, topLeft]. Default: ['A', 'B', 'C', 'D']",
+      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '120°', 'x', '∠m', or null to hide. Same order as vertices.",
+      highlightAngles: "number[] - Indices (0-3) of angles to highlight in red. Useful for showing opposite pairs.",
+      showParallelMarkers: "boolean - Show arrow markers on parallel sides. Default: true",
+      showEqualSideMarkers: "boolean - Show tick marks on equal opposite sides. Default: false (use arrows only)",
+      skewAngle: "number - Skew angle of parallelogram (15-75 degrees). Default: 30",
+      caption: "string - Optional caption below the diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Identify parallelogram properties",
+        caption: "Identify the sides and angles of parallelogram WXYZ. Which sides are parallel?",
+        parameters: {
+          vertexLabels: ["W", "X", "Y", "Z"],
+          angles: [null, null, null, null],
+          showParallelMarkers: true
+        }
+      },
+      {
+        scenario: "Finding unknown angles - opposite angles equal",
+        caption: "EFGH is a parallelogram. ∠HEF = 120°. Find ∠j, ∠k and ∠m.",
+        parameters: {
+          vertexLabels: ["E", "F", "G", "H"],
+          angles: ["120°", "j", "k", "m"],
+          highlightAngles: [0, 2],
+          skewAngle: 35
+        }
+      },
+      {
+        scenario: "Finding unknown angles - adjacent angles sum to 180°",
+        caption: "ABCD is a parallelogram. ∠ABC = 118°. Find ∠m and ∠n.",
+        parameters: {
+          vertexLabels: ["A", "B", "C", "D"],
+          angles: ["m", "118°", "n", null],
+          highlightAngles: [0, 1]
+        }
+      },
+      {
+        scenario: "Properties demonstration - all four angles",
+        caption: "In a parallelogram: opposite angles are equal, and adjacent angles add up to 180°.",
+        parameters: {
+          vertexLabels: ["P", "Q", "R", "S"],
+          angles: ["70°", "110°", "70°", "110°"]
+        }
+      }
+    ]
+  },
+
+  rhombusAngles: {
+    name: "Rhombus Angles Visualizer",
+    technicalName: "rhombusAngles",
+    component: "RhombusAnglesVisualizer",
+    category: "geometry",
+
+    description: "CRITICAL PEDAGOGICAL TOOL: Displays a rhombus with ALL 4 sides marked equal (key rhombus property!) and angle labels at vertices. A rhombus is a special parallelogram with all sides equal. Shows opposite angles are equal and adjacent angles sum to 180°. Can display in 'diamond' (standing on corner) or 'tilted' (like parallelogram) orientation.",
+
+    whenToUse: "Use when teaching rhombus properties: all 4 sides equal (most important!), opposite angles equal, adjacent angles sum to 180°, two pairs of parallel sides. Essential for 'Properties of Rhombus' and 'Finding Unknown Angles' problems involving rhombuses.",
+
+    parameters: {
+      vertexLabels: "[string, string, string, string] - Labels at corners. For diamond: [top, right, bottom, left]. For tilted: [bottomLeft, bottomRight, topRight, topLeft]. Default: ['E', 'F', 'G', 'H']",
+      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '135°', 'e', '∠GHF', or null to hide.",
+      highlightAngles: "number[] - Indices (0-3) of angles to highlight in red.",
+      orientation: "'diamond' | 'tilted' - How to display the rhombus. 'diamond' stands on a corner (common in P5). Default: 'diamond'",
+      aspectRatio: "number - How stretched the rhombus is (0.3-1.0). Lower = more stretched. Default: 0.6",
+      showEqualSideMarkers: "boolean - Show tick marks on ALL 4 sides (key identifier!). Default: true",
+      showParallelMarkers: "boolean - Show arrow markers on parallel sides. Default: true",
+      caption: "string - Optional caption below the diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Identify rhombus properties - all sides equal",
+        caption: "A rhombus has 4 equal sides. EF = FG = GH = HE. The 2 pairs of opposite sides are parallel.",
+        parameters: {
+          vertexLabels: ["E", "F", "G", "H"],
+          orientation: "diamond"
+        }
+      },
+      {
+        scenario: "Finding unknown angles - opposite angles equal",
+        caption: "TUVW is a rhombus. ∠UVW = 135°. Find ∠e, ∠f and ∠g.",
+        parameters: {
+          vertexLabels: ["T", "U", "V", "W"],
+          angles: ["e", "f", "135°", "g"],
+          orientation: "diamond",
+          highlightAngles: [2, 0]
+        }
+      },
+      {
+        scenario: "Finding angles using 180° property",
+        caption: "EFGH is a rhombus. ∠HEF = 40°. Find ∠GHF.",
+        parameters: {
+          vertexLabels: ["E", "F", "G", "H"],
+          angles: ["40°", null, "∠GHF", null],
+          orientation: "diamond",
+          aspectRatio: 0.4
+        }
+      },
+      {
+        scenario: "Rhombus in tilted orientation",
+        caption: "PQRS is a rhombus. ∠RPQ = 55°. Find ∠x and ∠y.",
+        parameters: {
+          vertexLabels: ["P", "Q", "R", "S"],
+          angles: ["55°", "x", null, "y"],
+          orientation: "tilted"
+        }
+      }
+    ]
+  },
+
+  trapeziumAngles: {
+    name: "Trapezium Angles Visualizer",
+    technicalName: "trapeziumAngles",
+    component: "TrapeziumAnglesVisualizer",
+    category: "geometry",
+
+    description: "CRITICAL PEDAGOGICAL TOOL: Displays a trapezium (trapezoid) with angle labels at vertices for teaching angle properties. A trapezium has exactly ONE pair of parallel sides. Shows that angles between the parallel sides sum to 180° (co-interior angles). Supports isosceles trapezium with equal non-parallel sides.",
+
+    whenToUse: "Use when teaching trapezium angle properties: one pair of parallel sides, angles between parallel sides sum to 180° (∠P + ∠S = 180° and ∠Q + ∠R = 180°). Essential for 'Properties of Trapezium' and 'Finding Unknown Angles' problems.",
+
+    parameters: {
+      vertexLabels: "[string, string, string, string] - Labels at corners [bottomLeft, bottomRight, topRight, topLeft]. Default: ['S', 'R', 'Q', 'P']",
+      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '116°', 'x', '∠QRS', or null to hide.",
+      highlightAngles: "number[] - Indices (0-3) of angles to highlight in red.",
+      showParallelMarkers: "boolean - Show double-arrow markers on the ONE pair of parallel sides. Default: true",
+      showAngleSumAnnotation: "boolean - Show '= 180°' annotation beside angle pairs. Default: false",
+      topSideRatio: "number - Ratio of top to bottom side (0.3-0.9). Default: 0.5",
+      isIsosceles: "boolean - Whether the trapezium is isosceles (equal non-parallel sides). Default: false",
+      showEqualSideMarkers: "boolean - Show tick marks on equal non-parallel sides (for isosceles). Default: false",
+      caption: "string - Optional caption below the diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Identify trapezium properties - 180° angle sum",
+        caption: "A trapezium has one pair of parallel sides. The sum of angles between the parallel sides is 180°.",
+        parameters: {
+          vertexLabels: ["S", "R", "Q", "P"],
+          angles: ["z", "y", "x", "w"],
+          showParallelMarkers: true,
+          showAngleSumAnnotation: true
+        }
+      },
+      {
+        scenario: "Finding unknown angles using 180° property",
+        caption: "PQRS is a trapezium. PQ // RS. ∠P = 116°. Find ∠QRS.",
+        parameters: {
+          vertexLabels: ["S", "R", "Q", "P"],
+          angles: [null, "∠QRS", null, "116°"],
+          highlightAngles: [1, 3],
+          showParallelMarkers: true
+        }
+      },
+      {
+        scenario: "Two unknown angles",
+        caption: "WXYZ is a trapezium. WX // ZY. Find ∠a and ∠c.",
+        parameters: {
+          vertexLabels: ["Z", "Y", "X", "W"],
+          angles: ["78°", "c", "125°", "a"],
+          highlightAngles: [0, 3, 1, 2],
+          showParallelMarkers: true
+        }
+      },
+      {
+        scenario: "Isosceles trapezium",
+        caption: "ABCD is an isosceles trapezium. AB // DC. The non-parallel sides are equal.",
+        parameters: {
+          vertexLabels: ["D", "C", "B", "A"],
+          angles: ["74°", null, "100°", null],
+          isIsosceles: true,
+          showEqualSideMarkers: true,
+          showParallelMarkers: true,
+          topSideRatio: 0.6
+        }
+      },
+      {
+        scenario: "Trapezium with triangle inside",
+        caption: "RSTU is a trapezium. SUT is an isosceles triangle. RS // UT.",
+        parameters: {
+          vertexLabels: ["U", "T", "S", "R"],
+          angles: [null, "75°", "130°", null],
+          showParallelMarkers: true,
+          topSideRatio: 0.55
+        }
+      }
+    ]
   }
 };
 

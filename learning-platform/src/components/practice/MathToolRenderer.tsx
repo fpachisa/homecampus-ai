@@ -110,6 +110,11 @@ import ParallelogramVisualizer from '../math-tools/ParallelogramVisualizer';
 import TrapeziumVisualizer from '../math-tools/TrapeziumVisualizer';
 import CompositeShapeVisualizer from '../math-tools/CompositeShapeVisualizer';
 
+// P5 Quadrilateral Angles Tools
+import ParallelogramAnglesVisualizer from '../math-tools/ParallelogramAnglesVisualizer';
+import RhombusAnglesVisualizer from '../math-tools/RhombusAnglesVisualizer';
+import TrapeziumAnglesVisualizer from '../math-tools/TrapeziumAnglesVisualizer';
+
 
 interface MathToolRendererProps {
   toolName: string | null | undefined;
@@ -246,6 +251,11 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Primary Volume - P5 Volume
   unitCubeGrid: UnitCubeGridVisualizer,
   waterTank: WaterTankVisualizer,
+
+  // P5 Quadrilateral Angles Tools (Properties of Parallelogram, Rhombus, Trapezium)
+  parallelogramAngles: ParallelogramAnglesVisualizer,
+  rhombusAngles: RhombusAnglesVisualizer,
+  trapeziumAngles: TrapeziumAnglesVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

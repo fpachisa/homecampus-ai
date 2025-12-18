@@ -114,6 +114,8 @@ import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics
 import type { P5AnglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
+import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -327,6 +329,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P5 properties of triangles topic
   if (topicId.startsWith('p5-math-properties-triangles-')) {
     return P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS[topicId as P5PropertiesOfTrianglesTopicId];
+  }
+  // Check if it's a P5 properties of quadrilaterals topic
+  if (topicId.startsWith('p5-math-properties-quadrilaterals-')) {
+    return P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS[topicId as PropertiesOfQuadrilateralsTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

@@ -100,6 +100,8 @@ import { P5_MATH_ANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics
 import type { P5AnglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-angles';
 import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
+import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -333,6 +335,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P5 Properties of Triangles topics
     if (topicId.startsWith('p5-math-properties-triangles-')) {
       const subtopic = P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS[topicId as P5PropertiesOfTrianglesTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P5 Properties of Quadrilaterals topics
+    if (topicId.startsWith('p5-math-properties-quadrilaterals-')) {
+      const subtopic = P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS[topicId as PropertiesOfQuadrilateralsTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

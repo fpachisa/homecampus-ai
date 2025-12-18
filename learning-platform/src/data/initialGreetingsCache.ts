@@ -7407,6 +7407,189 @@ In the figure, side BC of triangle ABC is extended to point D. If angle A = 50°
     }
   },
 
+  /**
+   * ========================================
+   * P5 MATHEMATICS - PROPERTIES OF QUADRILATERALS
+   * (Parallelogram, Rhombus, Trapezium)
+   * ========================================
+   */
+  'p5-math-properties-quadrilaterals-parallelogram': {
+    speech: {
+      text: `Welcome to the world of parallelograms! A parallelogram is a special quadrilateral with two pairs of parallel sides. You can spot the parallel sides by looking for the arrow markers. The amazing thing about parallelograms is that their angles follow special patterns. Opposite angles are always equal to each other, and any two angles that are next to each other, called adjacent angles, always add up to one hundred eighty degrees. Let's explore these properties together!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-quadrilaterals-parallelogram.mp3'
+    },
+    display: {
+      content: `# Properties of Parallelogram
+
+A **parallelogram** is a quadrilateral with **2 pairs of parallel sides**.
+
+### Key Properties
+1. **Opposite sides are parallel** (marked with arrows)
+2. **Opposite sides are equal** in length
+3. **Opposite angles are equal**
+4. **Adjacent angles sum to 180°** (co-interior angles)
+
+---
+
+### First Question
+
+Look at parallelogram WXYZ below. The arrows show which sides are parallel.
+
+Which side is **parallel** to WX?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "parallelogramAngles",
+      parameters: {
+        vertexLabels: ["W", "X", "Y", "Z"],
+        angles: [null, null, null, null],
+        showParallelMarkers: true,
+        showEqualSideMarkers: false,
+        skewAngle: 30,
+        caption: "Parallelogram WXYZ - Notice the arrow markers showing parallel sides"
+      },
+      caption: "Parallelogram WXYZ - Notice the arrow markers showing parallel sides"
+    }
+  },
+
+  'p5-math-properties-quadrilaterals-rhombus': {
+    speech: {
+      text: `Now let's meet the rhombus! A rhombus is a very special parallelogram because all four of its sides are exactly the same length. You can spot this by looking for the tick marks on every side. Think of it like a tilted square or a diamond shape. Because a rhombus is a parallelogram, it has all the same angle properties. Opposite angles are equal, and adjacent angles add up to one hundred eighty degrees. The key difference is those four equal sides!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-quadrilaterals-rhombus.mp3'
+    },
+    display: {
+      content: `# Properties of Rhombus
+
+A **rhombus** is a parallelogram with **4 equal sides**.
+
+### Key Properties
+1. **All 4 sides are equal** (marked with tick marks)
+2. **2 pairs of parallel sides** (it's a parallelogram!)
+3. **Opposite angles are equal**
+4. **Adjacent angles sum to 180°**
+
+### Rhombus vs Parallelogram
+- Every rhombus IS a parallelogram
+- But NOT every parallelogram is a rhombus
+
+---
+
+### First Question
+
+Look at rhombus EFGH below. Notice the tick marks showing all sides are equal.
+
+If EF = 8 cm, what is the length of GH?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "rhombusAngles",
+      parameters: {
+        vertexLabels: ["E", "F", "G", "H"],
+        angles: [null, null, null, null],
+        orientation: "diamond",
+        showEqualSideMarkers: true,
+        showParallelMarkers: true,
+        caption: "Rhombus EFGH - All 4 sides are equal"
+      },
+      caption: "Rhombus EFGH - All 4 sides are equal"
+    }
+  },
+
+  'p5-math-properties-quadrilaterals-trapezium': {
+    speech: {
+      text: `Hello! Today we're learning about trapeziums. A trapezium is different from a parallelogram because it has only one pair of parallel sides, not two. You can see the parallel sides marked with arrows on the top and bottom. The special angle property for trapeziums is that angles on the same side between the parallel lines add up to one hundred eighty degrees. These are called co-interior angles. Let's practice identifying these angles!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-quadrilaterals-trapezium.mp3'
+    },
+    display: {
+      content: `# Properties of Trapezium
+
+A **trapezium** is a quadrilateral with exactly **1 pair of parallel sides**.
+
+### Key Property
+**Co-interior angles sum to 180°**
+
+The angles on the same side of the trapezium (between the parallel sides) add up to 180°.
+
+- Left side: $\\angle P + \\angle S = 180°$
+- Right side: $\\angle Q + \\angle R = 180°$
+
+### Trapezium vs Parallelogram
+- Trapezium: **1 pair** of parallel sides
+- Parallelogram: **2 pairs** of parallel sides
+
+---
+
+### First Question
+
+In trapezium PQRS below, PQ is parallel to SR.
+
+If $\\angle SPQ = 110°$, what is $\\angle PSR$?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "trapeziumAngles",
+      parameters: {
+        vertexLabels: ["S", "R", "Q", "P"],
+        angles: ["?", null, null, "110°"],
+        highlightAngles: [0, 3],
+        showParallelMarkers: true,
+        showAngleSumAnnotation: false,
+        topSideRatio: 0.5,
+        caption: "Trapezium PQRS with PQ // SR"
+      },
+      caption: "Trapezium PQRS with PQ // SR"
+    }
+  },
+
+  'p5-math-properties-quadrilaterals-finding-unknown': {
+    speech: {
+      text: `Great job learning all those properties! Now it's time to put everything together and solve angle problems. The key is to first identify the shape. Is it a parallelogram, a rhombus, or a trapezium? Then apply the correct property. For parallelograms and rhombuses, remember opposite angles are equal and adjacent angles sum to one hundred eighty degrees. For trapeziums, use the co-interior angles property. Let's practice choosing the right approach!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p5-math-properties-quadrilaterals-finding-unknown.mp3'
+    },
+    display: {
+      content: `# Finding Unknown Angles
+
+### Problem-Solving Strategy
+1. **Identify the shape** (parallelogram, rhombus, or trapezium)
+2. **Find parallel sides** (look for arrow markers)
+3. **Apply the correct property**
+4. **Check:** All angles should sum to 360°
+
+### Quick Reference
+| Shape | Property |
+|-------|----------|
+| Parallelogram | Opposite angles equal, Adjacent = 180° |
+| Rhombus | Same as parallelogram (it IS one!) |
+| Trapezium | Co-interior angles = 180° |
+
+---
+
+### First Question
+
+ABCD is a parallelogram. $\\angle ABC = 72°$.
+
+Find $\\angle BCD$.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: "parallelogramAngles",
+      parameters: {
+        vertexLabels: ["A", "B", "C", "D"],
+        angles: [null, "72°", "?", null],
+        highlightAngles: [1, 2],
+        showParallelMarkers: true,
+        showEqualSideMarkers: false,
+        skewAngle: 28,
+        caption: "Find ∠BCD"
+      },
+      caption: "Find ∠BCD"
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool
