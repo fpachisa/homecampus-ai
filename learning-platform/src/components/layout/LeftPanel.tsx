@@ -111,6 +111,8 @@ import { P6_FRACTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematic
 import type { P6FractionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-fractions';
 import { P6_RATIOS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-ratios';
 import type { P6RatiosTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-ratios';
+import { P6_PERCENTAGE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-percentage';
+import type { P6PercentageTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-percentage';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -207,6 +209,18 @@ function getTopicIcon(topicId: string): string {
       'p6-math-ratios-finding-new',
       'p6-math-ratios-fraction-ratio',
       'p6-math-ratios-word-problems'
+    ];
+    const index = subtopicIds.indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+  // P6 Percentage icons
+  if (topicId.startsWith('p6-math-percentage-')) {
+    const icons = ['💯', '📈', '📉', '📝'];  // Finding Whole, Increase, Decrease, Word Problems
+    const subtopicIds = [
+      'p6-math-percentage-finding-whole',
+      'p6-math-percentage-increase',
+      'p6-math-percentage-decrease',
+      'p6-math-percentage-word-problems'
     ];
     const index = subtopicIds.indexOf(topicId);
     return icons[index >= 0 ? index : 0];
@@ -522,6 +536,7 @@ function getCategoryDisplayName(category: string): string {
   // Primary 6 categories
   if (category === 'p6-math-fractions') return 'Fractions';
   if (category === 'p6-math-ratios') return 'Ratios';
+  if (category === 'p6-math-percentage') return 'Percentage';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -588,7 +603,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-properties-of-triangles',
     'p5-math-properties-of-quadrilaterals',
     // Primary 6 paths
-    'p6-math-fractions', 'p6-math-ratios',
+    'p6-math-fractions', 'p6-math-ratios', 'p6-math-percentage',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -1061,6 +1076,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
+    } else if (selectedCategory === 'p6-math-percentage') {
+      return Object.entries(P6_PERCENTAGE_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as P6PercentageTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
     }
     return [];
   }, [selectedCategory]);
@@ -1125,7 +1148,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         </button>
 
         {/* Topic Icons */}
-        {topicConfigs.slice(0, 3).map((topic) => (
+        {topicConfigs.map((topic) => (
           <button
             key={topic.id}
             onClick={() => handleTopicSelect(topic.id)}

@@ -184,6 +184,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 6',
       subject: 'Mathematics',
     },
+    {
+      id: 'p6-math-percentage',
+      name: 'Percentage',
+      icon: '💯',
+      description: 'Master percentage: finding the whole, percentage increase and decrease, GST, discount, interest, and complex word problems',
+      subtopicCount: 4,
+      isActive: true,
+      category: 'p6-math-percentage',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
   ],
   'Secondary 1': [
     {

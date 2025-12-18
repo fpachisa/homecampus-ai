@@ -5282,6 +5282,307 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // PERCENTAGE TOOLS (P6 Percentage Topic)
+  // ============================================
+
+  percentageBar: {
+    name: "Percentage Bar Visualizer",
+    technicalName: "percentageBar",
+    component: "PercentageBarVisualizer",
+    category: "general",
+    description: "Primary tool for P6 Percentage problems. Displays horizontal bars with percentage segments showing portions of a whole. Supports multiple bars for comparison (before/after, person A/B), percentage scale markers, reference lines for 100%, and brackets for totals, differences, or partial values. Essential for problems like 'Hassan spent 30% and had 70% left' or 'percentage increase/decrease comparisons'.",
+    whenToUse: "Use for ALL P6 Percentage bar-based problems including: finding the whole from part and percentage, percentage increase/decrease visualizations, before/after comparisons, money spent/left problems, discount/GST calculations, and any problem requiring visual representation of percentage portions.",
+
+    parameters: {
+      title: "string (optional) - Title above the diagram (e.g., 'Hassan\\'s Money', 'Before and After')",
+      bars: "array (REQUIRED) - Array of bars: [{ label: 'Hassan', segments: [{ percentage: 30, value: '$240', label: 'spent', color: 'yellow' }, { percentage: 70, label: 'left', color: 'green' }], totalValue?: '$800' }]",
+      showPercentageScale: "boolean (optional, default: true) - Show percentage markers on top (0%, 25%, 50%, 75%, 100%)",
+      percentageMarkers: "number[] (optional) - Custom percentage markers (e.g., [0, 30, 70, 100] for Hassan's money)",
+      referenceLine: "object (optional) - Dashed reference line: { percentage: 100, label: 'Original (100%)' }. Used for increase/decrease problems.",
+      partialBracket: "object (optional) - Bracket for percentage range: { barIndex: 0, fromPercent: 0, toPercent: 30, value: '$240', position: 'bottom' }",
+      partialBracket2: "object (optional) - Second partial bracket for complex problems",
+      totalBracket: "object (optional) - Bracket grouping bars: { barIndices: [0], value: '$800', label: 'Total', position: 'right' }",
+      differenceBracket: "object (optional) - Bracket showing difference: { barIndices: [0, 1], value: '40', label: 'increase' }",
+      showSegmentPercentages: "boolean (optional, default: true) - Show percentage labels inside segments",
+      showSegmentValues: "boolean (optional, default: true) - Show value labels inside segments",
+      caption: "string (optional) - Explanation text below the diagram",
+      annotation: "string (optional) - Additional annotation (e.g., '1% = $8')"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Finding the whole - Hassan's money (spent vs left)",
+        caption: "Hassan spent $240 and had 70% of his money left. How much did he have at first?",
+        parameters: {
+          title: "Hassan's Money",
+          bars: [{
+            label: "Hassan",
+            segments: [
+              { percentage: 30, value: "$240", label: "spent", color: "yellow" },
+              { percentage: 70, label: "left", color: "green" }
+            ]
+          }],
+          percentageMarkers: [0, 30, 70, 100],
+          totalBracket: { barIndices: [0], value: "?", position: "right" },
+          caption: "30% of Hassan's money = $240. Find 100%."
+        }
+      },
+      {
+        scenario: "Percentage increase - Buns sold Monday vs Tuesday",
+        caption: "Mr Lim sold 80 buns on Monday. On Tuesday, he sold 40 more. Find the percentage increase.",
+        parameters: {
+          title: "Buns Sold",
+          bars: [
+            { label: "Monday", segments: [{ percentage: 100, value: "80", color: "green" }] },
+            { label: "Tuesday", segments: [
+              { percentage: 100, value: "80", color: "green" },
+              { percentage: 50, value: "40", label: "increase", color: "yellow", highlight: true }
+            ]}
+          ],
+          referenceLine: { percentage: 100, label: "100%" },
+          differenceBracket: { barIndices: [0, 1], value: "40", label: "increase" },
+          caption: "Percentage increase = (40 ÷ 80) × 100% = 50%"
+        }
+      },
+      {
+        scenario: "Percentage decrease - Chess club membership",
+        caption: "A chess club had 280 members last year. 70 members remained this year. Find the percentage decrease.",
+        parameters: {
+          title: "Chess Club Membership",
+          bars: [
+            { label: "Last year", segments: [{ percentage: 100, value: "280", color: "green" }] },
+            { label: "This year", segments: [{ percentage: 25, value: "70", color: "blue" }] }
+          ],
+          percentageMarkers: [0, 25, 100],
+          differenceBracket: { barIndices: [0, 1], value: "210", label: "decrease" },
+          caption: "Decrease = 280 - 70 = 210. Percentage decrease = (210 ÷ 280) × 100% = 75%"
+        }
+      },
+      {
+        scenario: "Ali and Ben's money comparison",
+        caption: "Ali has 3 parts, Ben has 5 parts. Together they have $80.",
+        parameters: {
+          title: "Ali and Ben's Money",
+          bars: [
+            { label: "Ali", segments: [
+              { percentage: 20, color: "green" },
+              { percentage: 20, color: "green" },
+              { percentage: 20, color: "green" }
+            ]},
+            { label: "Ben", segments: [
+              { percentage: 12, color: "yellow" },
+              { percentage: 12, color: "yellow" },
+              { percentage: 12, color: "yellow" },
+              { percentage: 12, color: "yellow" },
+              { percentage: 12, color: "yellow" }
+            ]}
+          ],
+          showPercentageScale: false,
+          totalBracket: { barIndices: [0, 1], value: "$80", position: "right" },
+          caption: "8 parts = $80, so 1 part = $10"
+        }
+      },
+      {
+        scenario: "Finding original from percentage increase",
+        caption: "Tennis racket price increased by 20%. The increase was $32. Find the original price.",
+        parameters: {
+          title: "Tennis Racket Price",
+          bars: [{
+            label: "Price",
+            segments: [
+              { percentage: 100, value: "?", label: "original", color: "green" },
+              { percentage: 20, value: "$32", label: "increase", color: "yellow", highlight: true }
+            ]
+          }],
+          percentageMarkers: [0, 100, 120],
+          partialBracket: { barIndex: 0, fromPercent: 100, toPercent: 120, value: "$32", position: "bottom" },
+          annotation: "20% = $32, so 100% = $160"
+        }
+      }
+    ]
+  },
+
+  unitaryMethodTable: {
+    name: "Unitary Method Table",
+    technicalName: "unitaryMethodTable",
+    component: "UnitaryMethodTableVisualizer",
+    category: "general",
+    description: "Displays the Singapore Math unitary method for percentage calculations. Shows a two-column table (Percentage | Value) with operation arrows (×/÷) between rows. Critical for teaching 'find 1%, then find 100%' approach and percentage increase/decrease calculations.",
+    whenToUse: "Use when demonstrating step-by-step percentage calculations: finding the whole from a part (10% = 5, so 100% = 50), two-step via 1% (30% = $240 → 1% = $8 → 100% = $800), or percentage change calculations (original to percentage increase/decrease).",
+
+    parameters: {
+      title: "string (optional) - Title above the table (e.g., 'Finding the Whole')",
+      headers: "[string, string] (optional, default: ['Percentage', 'Value']) - Column headers",
+      rows: "array (REQUIRED) - Array of rows: [{ percentage: '10%', value: '5' }, { percentage: '100%', value: '50', highlight: true }]",
+      operations: "array (REQUIRED) - Operations between rows: [{ fromRow: 0, toRow: 1, leftOp: '×10', rightOp: '×10' }]",
+      showArrows: "boolean (optional, default: true) - Show operation arrows between rows",
+      caption: "string (optional) - Explanation text below the table",
+      annotation: "string (optional) - Result annotation (e.g., 'The number is 50.')",
+      swapColumns: "boolean (optional, default: false) - Swap column order (Value first, then Percentage)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Finding 100% from 10%",
+        caption: "10% of the number is 5. What is the number?",
+        parameters: {
+          title: "Finding the Whole",
+          headers: ["Percentage", "Value of number"],
+          rows: [
+            { percentage: "10%", value: "5" },
+            { percentage: "100%", value: "50", highlight: true }
+          ],
+          operations: [
+            { fromRow: 0, toRow: 1, leftOp: "×10", rightOp: "×10" }
+          ],
+          annotation: "The number is 50."
+        }
+      },
+      {
+        scenario: "Two-step calculation via 1% (Hassan's money)",
+        caption: "30% of Hassan's money = $240. How much did he have at first?",
+        parameters: {
+          title: "Finding Hassan's Total Money",
+          rows: [
+            { percentage: "30%", value: "$240" },
+            { percentage: "1%", value: "$8" },
+            { percentage: "100%", value: "$800", highlight: true }
+          ],
+          operations: [
+            { fromRow: 0, toRow: 1, leftOp: "÷30", rightOp: "÷30" },
+            { fromRow: 1, toRow: 2, leftOp: "×100", rightOp: "×100" }
+          ],
+          annotation: "Hassan had $800 at first."
+        }
+      },
+      {
+        scenario: "Percentage increase calculation (Medals)",
+        caption: "5 medals increased to 7 medals. What is the percentage increase?",
+        parameters: {
+          title: "Percentage Increase in Medals",
+          headers: ["Number of medals", "Percentage"],
+          rows: [
+            { percentage: "100%", value: "5" },
+            { percentage: "20%", value: "1" },
+            { percentage: "40%", value: "2", highlight: true }
+          ],
+          operations: [
+            { fromRow: 0, toRow: 1, leftOp: "÷5", rightOp: "÷5" },
+            { fromRow: 1, toRow: 2, leftOp: "×2", rightOp: "×2" }
+          ],
+          swapColumns: true,
+          annotation: "The percentage increase is 40%."
+        }
+      },
+      {
+        scenario: "Finding original from percentage decrease",
+        caption: "70% of spectators = 210. Find 100%.",
+        parameters: {
+          title: "Finding Original Number of Spectators",
+          rows: [
+            { percentage: "70%", value: "210" },
+            { percentage: "10%", value: "30" },
+            { percentage: "100%", value: "300", highlight: true }
+          ],
+          operations: [
+            { fromRow: 0, toRow: 1, leftOp: "÷7", rightOp: "÷7" },
+            { fromRow: 1, toRow: 2, leftOp: "×10", rightOp: "×10" }
+          ],
+          annotation: "There were 300 spectators at the start."
+        }
+      }
+    ]
+  },
+
+  percentageStackedBar: {
+    name: "Percentage Stacked Bar Visualizer",
+    technicalName: "percentageStackedBar",
+    component: "PercentageStackedBarVisualizer",
+    category: "general",
+    description: "Vertical stacked bar showing composition/distribution of a whole (100%). Perfect for problems like '2/5 of audience were adults, 25% were girls, rest were boys' or nested percentage problems like '70% of 80% are square-shaped'. Shows percentage scale on the side with colored segments stacked from 0% (bottom) to 100% (top).",
+    whenToUse: "Use for composition problems where a whole is divided into categories by percentage, part-to-whole visualization, nested percentages (percentage of a percentage), and problems combining fractions and percentages in distribution.",
+
+    parameters: {
+      title: "string (optional) - Title above the diagram (e.g., 'Concert Audience')",
+      segments: "array (REQUIRED) - Segments from bottom to top: [{ label: 'adults', percentage: 40, color: 'red', value?: '?', subLabel?: '(2/5)' }]",
+      showPercentageScale: "boolean (optional, default: true) - Show percentage markers on left side",
+      percentageMarkers: "number[] (optional) - Custom percentage markers (e.g., [0, 40, 65, 100])",
+      bracket: "object (optional) - Bracket for segment(s): { fromSegment: 2, toSegment: 2, value: '70', position: 'right' }",
+      bracket2: "object (optional) - Second bracket for complex problems",
+      totalValue: "object (optional) - Total annotation: { value: '200', label: 'Total', position: 'top' }",
+      showSegmentLabels: "boolean (optional, default: true) - Show category labels on bar",
+      showPercentageLabels: "boolean (optional, default: true) - Show percentage inside segments",
+      barWidth: "'narrow' | 'medium' | 'wide' (optional, default: 'medium') - Bar width",
+      caption: "string (optional) - Explanation text below the diagram",
+      annotation: "string (optional) - Additional annotation (e.g., '1% = 2 people')"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Concert audience - adults, girls, boys",
+        caption: "2/5 of the audience were adults, 25% were girls, rest were boys. There were 70 boys.",
+        parameters: {
+          title: "Concert Audience",
+          segments: [
+            { label: "adults", percentage: 40, color: "red", subLabel: "(2/5)" },
+            { label: "girls", percentage: 25, color: "yellow", subLabel: "(25%)" },
+            { label: "boys", percentage: 35, value: "70", color: "blue", highlight: true }
+          ],
+          percentageMarkers: [0, 40, 65, 100],
+          bracket: { fromSegment: 2, toSegment: 2, value: "70", position: "right" },
+          totalValue: { value: "200", label: "Total", position: "top" },
+          annotation: "35% = 70, so 1% = 2, and 100% = 200"
+        }
+      },
+      {
+        scenario: "Mrs Sim's buttons - nested percentages",
+        caption: "20% of buttons are red, 80% are blue. 70% of blue are square-shaped, rest are round.",
+        parameters: {
+          title: "Mrs Sim's Buttons",
+          segments: [
+            { label: "red", percentage: 20, color: "red" },
+            { label: "blue square", percentage: 56, color: "blue", subLabel: "(70% of 80%)" },
+            { label: "blue round", percentage: 24, value: "60", color: "purple", subLabel: "(30% of 80%)", highlight: true }
+          ],
+          percentageMarkers: [0, 20, 76, 100],
+          bracket: { fromSegment: 2, toSegment: 2, value: "60", position: "right" },
+          totalValue: { value: "250", position: "top" },
+          caption: "24% of total buttons = 60 round blue buttons. Total = 250 buttons."
+        }
+      },
+      {
+        scenario: "Budget allocation",
+        caption: "Family budget: 40% housing, 25% food, 15% transport, 20% savings.",
+        parameters: {
+          title: "Monthly Budget",
+          segments: [
+            { label: "housing", percentage: 40, color: "blue", value: "$800" },
+            { label: "food", percentage: 25, color: "green", value: "$500" },
+            { label: "transport", percentage: 15, color: "orange", value: "$300" },
+            { label: "savings", percentage: 20, color: "yellow", value: "$400" }
+          ],
+          percentageMarkers: [0, 40, 65, 80, 100],
+          totalValue: { value: "$2000", label: "Total income", position: "top" }
+        }
+      },
+      {
+        scenario: "Zoo visitors - finding total from part",
+        caption: "25% adults, 30% children left by noon (260 remain). How many at start?",
+        parameters: {
+          title: "Zoo Visitors",
+          segments: [
+            { label: "adults left", percentage: 25, color: "orange" },
+            { label: "children left", percentage: 30, color: "red" },
+            { label: "remaining", percentage: 45, value: "?", color: "green" }
+          ],
+          bracket: { fromSegment: 2, toSegment: 2, value: "260", label: "remaining", position: "right" },
+          annotation: "55% left, 45% = 260, so 100% = ?"
+        }
+      }
+    ]
   }
 };
 

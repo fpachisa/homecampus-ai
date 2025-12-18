@@ -39,11 +39,12 @@ export const Paywall: React.FC<PaywallProps> = ({
   };
 
   const features = [
-    'Full access to all subjects',
-    'AI-powered tutoring',
+    'Full access to everything',
+    'AI-powered personal tutoring',
     'Unlimited practice sessions',
     'Progress tracking',
     'Homework helper',
+    'and much more...',
   ];
 
   return (

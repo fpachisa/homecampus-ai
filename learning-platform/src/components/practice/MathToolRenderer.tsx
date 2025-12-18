@@ -88,6 +88,9 @@ import FractionCircleVisualizer from '../math-tools/FractionCircleVisualizer';
 import FractionDivisionVisualizer from '../math-tools/FractionDivisionVisualizer';
 import RatioBarModelVisualizer from '../math-tools/RatioBarModelVisualizer';
 import PercentageGridVisualizer from '../math-tools/PercentageGridVisualizer';
+import PercentageBarVisualizer from '../math-tools/PercentageBarVisualizer';
+import UnitaryMethodTableVisualizer from '../math-tools/UnitaryMethodTableVisualizer';
+import PercentageStackedBarVisualizer from '../math-tools/PercentageStackedBarVisualizer';
 
 // Primary Geometry - P5 Area of Triangle
 import TriangleIdentifyVisualizer from '../math-tools/TriangleIdentifyVisualizer';
@@ -246,6 +249,9 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   fractionDivision: FractionDivisionVisualizer,
   ratioBarModel: RatioBarModelVisualizer,
   percentageGrid: PercentageGridVisualizer,
+  percentageBar: PercentageBarVisualizer,
+  unitaryMethodTable: UnitaryMethodTableVisualizer,
+  percentageStackedBar: PercentageStackedBarVisualizer,
 
   // Primary Geometry - P5 Area of Triangle & Properties of Triangles
   triangleIdentify: TriangleIdentifyVisualizer,

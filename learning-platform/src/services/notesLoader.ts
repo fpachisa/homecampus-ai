@@ -338,6 +338,11 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p6/math/ratios/FindingNewRatios': () => import('../notes/p6/math/ratios/FindingNewRatios'),
   'p6/math/ratios/FractionAndRatio': () => import('../notes/p6/math/ratios/FractionAndRatio'),
   'p6/math/ratios/WordProblems': () => import('../notes/p6/math/ratios/WordProblems'),
+  // P6 Percentage notes
+  'p6/math/percentage/FindingTheWhole': () => import('../notes/p6/math/percentage/FindingTheWhole'),
+  'p6/math/percentage/PercentageIncrease': () => import('../notes/p6/math/percentage/PercentageIncrease'),
+  'p6/math/percentage/PercentageDecrease': () => import('../notes/p6/math/percentage/PercentageDecrease'),
+  'p6/math/percentage/WordProblems': () => import('../notes/p6/math/percentage/WordProblems'),
 };
 
 interface NotesCache {

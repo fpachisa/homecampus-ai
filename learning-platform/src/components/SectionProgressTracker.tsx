@@ -107,6 +107,8 @@ import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/p
 import type { P6FractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import type { P6RatiosTopicId } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
+import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
+import type { P6PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -355,6 +357,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P6 Ratios topics
     if (topicId.startsWith('p6-math-ratios-')) {
       const subtopic = P6_RATIOS_SUBTOPICS[topicId as P6RatiosTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P6 Percentage topics
+    if (topicId.startsWith('p6-math-percentage-')) {
+      const subtopic = P6_PERCENTAGE_SUBTOPICS[topicId as P6PercentageTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

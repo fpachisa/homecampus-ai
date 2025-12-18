@@ -8013,6 +8013,213 @@ How much money does each person have?
     }
   },
 
+  /**
+   * ========================================
+   * P6 MATHEMATICS - PERCENTAGE
+   * ========================================
+   */
+  'p6-math-percentage-finding-whole': {
+    speech: {
+      text: `Welcome to P6 Percentage! Today we are going to learn how to find the whole when we know a part and its percentage. This is like being a detective, working backwards from clues! If 20 percent of a number is 50, can we figure out what the whole number is? Of course we can! We will use the unitary method: find 1 percent first, then multiply by 100 to get the whole. Let us start with a simple example!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-percentage-finding-whole.mp3'
+    },
+    display: {
+      content: `# Finding the Whole Given a Part and Percentage
+
+When we know a **part** and its **percentage**, we can find the **whole** using the unitary method.
+
+---
+
+### The Unitary Method:
+
+1. **Find 1%** by dividing the part by its percentage
+2. **Find 100%** by multiplying 1% by 100
+
+**Example:**
+20% of a number is 50. What is the number?
+
+*What is the first step to find the whole?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'percentageBar',
+      parameters: {
+        title: 'Finding the Whole',
+        bars: [
+          {
+            label: 'Total',
+            segments: [
+              { percentage: 20, value: '50', label: '20%', highlight: true },
+              { percentage: 80, value: '?', label: '80%' }
+            ]
+          }
+        ],
+        showPercentageScale: true,
+        percentageMarkers: [0, 20, 100],
+        caption: '20% = 50, Find 100%'
+      },
+      caption: 'Finding the whole using the unitary method'
+    }
+  },
+
+  'p6-math-percentage-increase': {
+    speech: {
+      text: `Hello! Now we are going to learn about percentage increase. This happens when something grows or becomes more. Think about prices going up, or a plant growing taller! If your allowance increases by 20 percent, how do you calculate your new allowance? We will learn the formula and see how percentage bars help us visualize the increase. The new value is always more than 100 percent of the original!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-percentage-increase.mp3'
+    },
+    display: {
+      content: `# Percentage Increase
+
+When a value **increases** by a percentage, the new value is **more than 100%** of the original.
+
+---
+
+### Key Formulas:
+
+**Increase = Original × (Percentage ÷ 100)**
+
+**New Value = Original + Increase**
+
+OR
+
+**New Value = Original × (100% + Increase%)**
+
+**Example:**
+A shirt costs \\$40. The price increases by 25%.
+What is the new price?
+
+*What is 25% of \\$40?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'percentageBar',
+      parameters: {
+        title: 'Price Increase of 25%',
+        bars: [
+          {
+            label: 'New Price',
+            segments: [
+              { percentage: 100, value: '$40', label: 'Original (100%)' },
+              { percentage: 25, value: '?', label: '+25%', highlight: true }
+            ]
+          }
+        ],
+        showPercentageScale: true,
+        percentageMarkers: [0, 100, 125],
+        referenceLine: { percentage: 100, label: 'Original' },
+        caption: 'New price = 125% of original'
+      },
+      caption: 'Visualizing percentage increase'
+    }
+  },
+
+  'p6-math-percentage-decrease': {
+    speech: {
+      text: `Welcome back! Today we are learning about percentage decrease, which is the opposite of increase. This happens when something gets smaller, like when shops have sales and reduce their prices! If an item has a 30 percent discount, the new price is less than 100 percent of the original. We will use the same methods as percentage increase, but we subtract instead of add. Let us see how it works!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-percentage-decrease.mp3'
+    },
+    display: {
+      content: `# Percentage Decrease
+
+When a value **decreases** by a percentage, the new value is **less than 100%** of the original.
+
+---
+
+### Key Formulas:
+
+**Decrease = Original × (Percentage ÷ 100)**
+
+**New Value = Original - Decrease**
+
+OR
+
+**New Value = Original × (100% - Decrease%)**
+
+**Example:**
+A bag costs \\$80. It is on sale with a 30% discount.
+What is the sale price?
+
+*What is 30% of \\$80?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'percentageBar',
+      parameters: {
+        title: '30% Discount on $80 Bag',
+        bars: [
+          {
+            label: 'Price',
+            segments: [
+              { percentage: 70, value: '?', label: 'Sale Price (70%)' },
+              { percentage: 30, value: '$24', label: 'Discount (30%)', highlight: true }
+            ]
+          }
+        ],
+        showPercentageScale: true,
+        percentageMarkers: [0, 70, 100],
+        referenceLine: { percentage: 100, label: 'Original $80' },
+        caption: 'Sale price = 70% of original'
+      },
+      caption: 'Visualizing percentage decrease'
+    }
+  },
+
+  'p6-math-percentage-word-problems': {
+    speech: {
+      text: `Excellent progress! Now we are ready for the challenging part: percentage word problems! These problems combine everything we have learned: finding the whole, percentage increase and decrease, and even multiple percentages in one problem! The key is to read carefully, identify what we know and what we need to find, and choose the right method. We might see problems about GST, discounts, interest, or other real world situations. Let us tackle them together!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-percentage-word-problems.mp3'
+    },
+    display: {
+      content: `# Percentage Word Problems
+
+Real-world percentage problems include:
+- **GST (Goods & Services Tax)**: Usually 9% added to prices
+- **Discounts**: Percentage off the original price
+- **Interest**: Money earned on savings or owed on loans
+- **Multi-step problems**: Combining different percentage operations
+
+---
+
+### Problem-Solving Strategy:
+
+1. **Read** the problem carefully
+2. **Identify** what you know and what to find
+3. **Choose** the correct method
+4. **Calculate** step by step
+5. **Check** your answer makes sense
+
+**Example:**
+A laptop costs \\$1,200 before GST. If GST is 9%, what is the total price including GST?
+
+*What is 9% of \\$1,200?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'percentageBar',
+      parameters: {
+        title: 'Laptop Price with 9% GST',
+        bars: [
+          {
+            label: 'Total',
+            segments: [
+              { percentage: 100, value: '$1,200', label: 'Price (100%)' },
+              { percentage: 9, value: '?', label: 'GST (9%)', highlight: true }
+            ]
+          }
+        ],
+        showPercentageScale: true,
+        percentageMarkers: [0, 100, 109],
+        referenceLine: { percentage: 100, label: 'Before GST' },
+        caption: 'Total = 109% of original price'
+      },
+      caption: 'GST word problem visualization'
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

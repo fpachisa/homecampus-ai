@@ -80,6 +80,7 @@ import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS, P5_PROPERTIES_OF_TRIANGLES_C
 import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS, P5_PROPERTIES_OF_QUADRILATERALS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import { P6_FRACTIONS_SUBTOPICS, P6_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 import { P6_RATIOS_SUBTOPICS, P6_RATIOS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
+import { P6_PERCENTAGE_SUBTOPICS, P6_PERCENTAGE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -186,6 +187,7 @@ function registerBrowserTopics() {
   // Register P6 (Primary 6) topics
   registerTopics(P6_FRACTIONS_SUBTOPICS, P6_FRACTIONS_CONFIG);
   registerTopics(P6_RATIOS_SUBTOPICS, P6_RATIOS_CONFIG);
+  registerTopics(P6_PERCENTAGE_SUBTOPICS, P6_PERCENTAGE_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }
