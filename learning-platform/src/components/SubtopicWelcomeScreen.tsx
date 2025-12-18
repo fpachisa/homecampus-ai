@@ -102,6 +102,8 @@ import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/sub
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
+import type { P6FractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -223,6 +225,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS[topicId as P5PropertiesOfTrianglesTopicId];
   } else if (category === 'p5-math-properties-of-quadrilaterals') {
     topicConfig = P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS[topicId as PropertiesOfQuadrilateralsTopicId];
+  } else if (category === 'p6-math-fractions') {
+    topicConfig = P6_FRACTIONS_SUBTOPICS[topicId as P6FractionsTopicId];
   }
 
   if (!topicConfig) {

@@ -420,7 +420,8 @@ export function conversationStateFromFirestore(
         correctAnswers: conversation.sessionStats.correctAnswers,
         hintsProvided: conversation.sessionStats.hintsProvided,
         solutionsViewed: conversation.sessionStats.solutionsViewed || 0,
-        startTime: new Date()  // Start fresh for current session
+        startTime: new Date(),  // Start fresh for current session
+        previousTimeSpent: conversation.sessionStats.totalTimeSpent || 0  // Carry forward accumulated time
       },
       studentProfile: conversation.studentProfile
     },

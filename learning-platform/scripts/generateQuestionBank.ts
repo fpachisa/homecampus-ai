@@ -195,7 +195,7 @@ interface GeneratedQuestion {
  * Returns both questions and raw response for error handling
  */
 async function generateSectionQuestions(
-  gemini: GoogleGenerativeAI,
+  gemini: GoogleGenAI,
   topicConfig: any,
   sectionIndex: number,
   numQuestions: number
@@ -267,7 +267,7 @@ Generate ${numQuestions} problems now:`;
   console.log(`\n🤖 Generating ${numQuestions} questions for Section ${sectionIndex + 1}: ${section.title}...`);
 
   const result = await gemini.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-3-flash',
     contents: prompt
   });
   const response = result.text;

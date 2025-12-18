@@ -15,6 +15,7 @@ import {
   conversationStateFromFirestore,
   recordSectionMastery
 } from '../services/firestoreProgressService';
+import { sessionStorage } from '../services/sessionStorage';
 import { useAudioManager } from '../hooks/useAudioManager';
 import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
@@ -116,6 +117,8 @@ import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/sub
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
+import type { P6FractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -333,6 +336,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P5 properties of quadrilaterals topic
   if (topicId.startsWith('p5-math-properties-quadrilaterals-')) {
     return P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS[topicId as PropertiesOfQuadrilateralsTopicId];
+  }
+  // Check if it's a P6 fractions topic
+  if (topicId.startsWith('p6-math-fractions-')) {
+    return P6_FRACTIONS_SUBTOPICS[topicId as P6FractionsTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -558,6 +565,15 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
         await saveLearnProgress(effectiveUid, topicId, firestoreConv);
         console.log('✅ Progress auto-saved to Firestore for UID:', effectiveUid);
+
+        // Also save to localStorage for WhatsApp-style timestamp display in LeftPanel
+        sessionStorage.saveSession(
+          topicId,
+          stateWithProblem,
+          state.sessionStats.correctAnswers,
+          state.sessionStats.problemsAttempted,
+          false // subtopicComplete - will be set true when topic is fully mastered
+        );
       } catch (error) {
         console.error('Failed to auto-save progress:', error);
       }
@@ -2012,7 +2028,9 @@ const handleStudentSubmit = async (input: string) => {
 
         // Calculate session statistics for celebration
         const sessionStartTime = new Date(state.sessionStats.startTime);
-        const sessionDuration = Math.round((Date.now() - sessionStartTime.getTime()) / 1000);
+        const currentSessionDuration = Math.round((Date.now() - sessionStartTime.getTime()) / 1000);
+        const previousTimeSpent = state.sessionStats.previousTimeSpent || 0;
+        const totalTimeSpent = previousTimeSpent + currentSessionDuration; // Total across all sessions
         const totalCorrect = Object.values(sectionProgress.sectionHistory || {})
           .reduce((sum, entry) => sum + (entry.questionsCorrect || 0), 0);
         const totalAttempted = Object.values(sectionProgress.sectionHistory || {})
@@ -2021,19 +2039,33 @@ const handleStudentSubmit = async (input: string) => {
           ? Math.round((totalCorrect / totalAttempted) * 100)
           : 0;
 
-        // Format time spent
-        const hours = Math.floor(sessionDuration / 3600);
-        const minutes = Math.floor((sessionDuration % 3600) / 60);
+        // Format time spent (total across all sessions)
+        const hours = Math.floor(totalTimeSpent / 3600);
+        const minutes = Math.floor((totalTimeSpent % 3600) / 60);
         const timeSpentFormatted = hours > 0
           ? `${hours}h ${minutes}m`
           : `${minutes} minutes`;
 
+        // Calculate sections completed - account for React state timing
+        // When CELEBRATE fires, the last section may have just been mastered but state hasn't updated yet
+        // If advanceToNextSection is true, add 1 to account for the section that was just mastered
+        const currentSectionId = sectionProgress.currentSection;
+        const justMasteredSection = evaluatorOutput.advanceToNextSection &&
+          currentSectionId &&
+          !sectionProgress.masteredSections.includes(currentSectionId);
+        const actualSectionsCompleted = (sectionProgress.masteredSections?.length || 0) + (justMasteredSection ? 1 : 0);
+
+        // Build section details including the just-mastered section
+        const allMasteredSections = justMasteredSection
+          ? [...(sectionProgress.masteredSections || []), currentSectionId]
+          : (sectionProgress.masteredSections || []);
+
         const celebrationStats = {
           timeSpent: timeSpentFormatted,
-          problemsSolved: problemsCompleted,
-          sectionsCompleted: sectionProgress.masteredSections?.length || 0,
+          problemsSolved: totalCorrect, // Use totalCorrect from sectionHistory (persisted across sessions)
+          sectionsCompleted: actualSectionsCompleted,
           accuracy: `${accuracyRate}%`,
-          sectionDetails: sectionProgress.masteredSections?.join(', ') || ''
+          sectionDetails: allMasteredSections.join(', ') || ''
         };
 
         const celebrationResponse = await aiService.current.generateCelebration(

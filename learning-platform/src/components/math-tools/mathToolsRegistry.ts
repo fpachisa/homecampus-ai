@@ -5113,6 +5113,82 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // PRIMARY MATH - FRACTION DIVISION TOOLS
+  // ============================================
+
+  fractionDivision: {
+    name: "Fraction Division Visualizer",
+    technicalName: "fractionDivision",
+    component: "FractionDivisionVisualizer",
+    category: "general",
+    description: "Visualizes fraction division using bar models. Shows three types: (1) Fraction ÷ Whole Number - cutting a fraction into more pieces, (2) Whole Number ÷ Fraction - counting how many fractional pieces fit in wholes, (3) Fraction ÷ Fraction - counting how many of one fraction fit in another. Includes step-by-step workings and reciprocal rule explanation.",
+    whenToUse: "Use for P6 Fractions division problems. Essential for teaching the concept that 'dividing by a fraction is the same as multiplying by its reciprocal'. Perfect for visual counting models and showing why the reciprocal rule works.",
+
+    parameters: {
+      dividend: "string (REQUIRED) - The number being divided. Can be a fraction like '2/3', '1/2' or a whole number like '4', '6'",
+      divisor: "string (REQUIRED) - The number to divide by. Can be a fraction like '1/6', '1/4' or a whole number like '3', '2'",
+      showReciprocal: "boolean (optional, default: false) - Show the 'dividing by X is multiplying by reciprocal' rule box",
+      showSteps: "boolean (optional, default: false) - Never use this unless showing final solution.",
+      showResult: "boolean (optional, default: false) - Never use this unless need to show explicit answer.",
+      caption: "string (optional) - Additional explanation text below the visualization"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Fraction divided by whole number: 1/2 ÷ 3",
+        caption: "Share half a cake among 3 children. Each gets 1/6 of the cake.",
+        parameters: {
+          dividend: "1/2",
+          divisor: "3",
+          showReciprocal: false,
+          showSteps: false
+        }
+      },
+      {
+        scenario: "Whole number divided by unit fraction: 4 ÷ 1/3",
+        caption: "How many thirds are in 4 wholes? Count: 12 pieces.",
+        parameters: {
+          dividend: "4",
+          divisor: "1/3",
+          showReciprocal: false,
+          showSteps: false
+        }
+      },
+      {
+        scenario: "Whole number divided by non-unit fraction: 4 ÷ 2/3",
+        caption: "A group of children share 4 bars of chocolate. Each child gets 2/3 of a bar. How many children?",
+        parameters: {
+          dividend: "4",
+          divisor: "2/3",
+          showReciprocal: false,
+          showSteps: false
+        }
+      },
+      {
+        scenario: "Fraction divided by fraction: 2/3 ÷ 1/6",
+        caption: "How many sixths fit in two-thirds?",
+        parameters: {
+          dividend: "2/3",
+          divisor: "1/6",
+          showReciprocal: false,
+          showSteps: false
+        }
+      },
+      {
+        scenario: "Simple division without workings",
+        caption: "Quick check: What is 3/4 ÷ 3?",
+        parameters: {
+          dividend: "3/4",
+          divisor: "3",
+          showReciprocal: false,
+          showSteps: false,
+          showResult: false
+        }
+      }
+    ]
   }
 };
 

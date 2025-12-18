@@ -77,7 +77,7 @@ export const TrialBanner: React.FC<TrialBannerProps> = ({
             className="text-xs"
             style={{ color: theme.colors.textSecondary }}
           >
-            Subscribe now to keep learning without interruption
+        Subscribe now to keep excelling in Maths
           </p>
         </div>
       </div>

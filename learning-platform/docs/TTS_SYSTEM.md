@@ -33,7 +33,7 @@ Defines the contract for all TTS providers:
 #### 2. **GeminiTTSProvider** (`src/services/tts/GeminiTTSProvider.ts`)
 Primary provider using Gemini 2.5 Flash TTS:
 - Uses Gemini API with `response_modalities: ["AUDIO"]`
-- Model: `gemini-2.5-flash-preview-tts`
+- Model: `gemini-3-flash`
 - Converts emotion types to voice context prompts
 - Returns PCM audio (24kHz, mono, 16-bit) → converted to WAV
 - Supports 30+ prebuilt voices

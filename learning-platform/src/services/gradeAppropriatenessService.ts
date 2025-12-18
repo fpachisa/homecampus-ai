@@ -50,7 +50,7 @@ export class GradeAppropriatenessService {
     }
 
     this.ai = new GoogleGenAI({ apiKey });
-    this.modelName = 'gemini-2.5-flash';
+    this.modelName = 'gemini-3-flash';
     this.config = {
       temperature: 0.3,
       responseMimeType: "application/json",

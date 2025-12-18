@@ -327,6 +327,11 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   'p5/math/properties-of-quadrilaterals/PropertiesOfRhombus': () => import('../notes/p5/math/properties-of-quadrilaterals/PropertiesOfRhombus'),
   'p5/math/properties-of-quadrilaterals/PropertiesOfTrapezium': () => import('../notes/p5/math/properties-of-quadrilaterals/PropertiesOfTrapezium'),
   'p5/math/properties-of-quadrilaterals/FindingUnknownAngles': () => import('../notes/p5/math/properties-of-quadrilaterals/FindingUnknownAngles'),
+  // P6 Fractions notes (Division of Fractions)
+  'p6/math/fractions/DivideFractionByWhole': () => import('../notes/p6/math/fractions/DivideFractionByWhole'),
+  'p6/math/fractions/DivideWholeByFraction': () => import('../notes/p6/math/fractions/DivideWholeByFraction'),
+  'p6/math/fractions/DivideFractionByFraction': () => import('../notes/p6/math/fractions/DivideFractionByFraction'),
+  'p6/math/fractions/WordProblems': () => import('../notes/p6/math/fractions/WordProblems'),
 };
 
 // Helper to organize notes by hierarchy

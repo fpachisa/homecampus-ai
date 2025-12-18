@@ -102,6 +102,9 @@ import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/sub
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+// Primary 6 imports
+import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
+import type { P6FractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -340,6 +343,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P5 Properties of Quadrilaterals topics
     if (topicId.startsWith('p5-math-properties-quadrilaterals-')) {
       const subtopic = P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS[topicId as PropertiesOfQuadrilateralsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P6 Fractions topics
+    if (topicId.startsWith('p6-math-fractions-')) {
+      const subtopic = P6_FRACTIONS_SUBTOPICS[topicId as P6FractionsTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

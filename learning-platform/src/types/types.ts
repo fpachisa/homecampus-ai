@@ -39,6 +39,7 @@ export interface ConversationState {
     hintsProvided: number;
     solutionsViewed: number;
     startTime: Date;
+    previousTimeSpent?: number; // Accumulated time from previous sessions (seconds)
   };
   studentProfile: {
     strugglingWith: string[];

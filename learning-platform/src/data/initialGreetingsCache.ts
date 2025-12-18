@@ -7590,6 +7590,175 @@ Find $\\angle BCD$.`,
     }
   },
 
+  /**
+   * ========================================
+   * P6 MATHEMATICS - FRACTIONS (Division of Fractions)
+   * ========================================
+   */
+  'p6-math-fractions-divide-by-whole': {
+    speech: {
+      text: `Hello! Today we are going to learn about dividing fractions by whole numbers. Imagine you have half a pizza and you want to share it equally among three friends. What fraction does each friend get? When we divide a fraction by a whole number, the result is always smaller than what we started with. Let me show you how this works!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-fractions-divide-by-whole.mp3'
+    },
+    display: {
+      content: `# Dividing a Fraction by a Whole Number
+
+When you divide a fraction by a whole number, you are **cutting that fraction into more pieces**.
+
+---
+
+### Think About This:
+
+You have **half a cake** (1/2) and share it among **3 children**.
+
+Each child gets a **smaller piece** than 1/2!
+
+**1/2 ÷ 3 = ?**
+
+*What fraction of the whole cake does each child get?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'fractionDivision',
+      parameters: {
+        dividend: '1/2',
+        divisor: '3',
+        showReciprocal: false,
+        showSteps: false,
+        showResult: false,
+        caption: 'Half a cake shared among 3 children - each gets 1/6 of the whole cake'
+      },
+      caption: 'Half a cake shared among 3 children'
+    }
+  },
+
+  'p6-math-fractions-whole-by-fraction': {
+    speech: {
+      text: `Welcome! Now we are going to flip things around and learn about dividing whole numbers by fractions. Here is a fun question: if you have four chocolate bars and each friend gets one third of a bar, how many friends can share? The answer is more than four! When we divide by a fraction, our answer gets bigger. Let me show you why with some counting!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-fractions-whole-by-fraction.mp3'
+    },
+    display: {
+      content: `# Dividing a Whole Number by a Fraction
+
+When you divide a whole number by a fraction, you are asking: **"How many of these fractional pieces fit in the whole?"**
+
+---
+
+### Think About This:
+
+You have **4 chocolate bars** and give each friend **1/3** of a bar.
+
+**How many friends** can share?
+
+**4 ÷ 1/3 = ?**
+
+*Hint: How many thirds are in 4 wholes?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'fractionDivision',
+      parameters: {
+        dividend: '4',
+        divisor: '1/3',
+        showReciprocal: false,
+        showSteps: false,
+        showResult: false,
+        caption: '4 chocolate bars divided into thirds - 12 friends can share!'
+      },
+      caption: 'How many thirds fit in 4 wholes?'
+    }
+  },
+
+  'p6-math-fractions-fraction-by-fraction': {
+    speech: {
+      text: `Great job so far! Now for the final challenge: dividing a fraction by a fraction. Think about this: if you have two thirds of a pancake and cut it into pieces that are each one sixth of a pancake, how many pieces do you get? We can count how many of the smaller fraction fit into the larger one. There is also a really cool rule to help us: keep, change, flip!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-fractions-fraction-by-fraction.mp3'
+    },
+    display: {
+      content: `# Dividing a Fraction by a Fraction
+
+When you divide one fraction by another, you are asking: **"How many of the second fraction fit in the first?"**
+
+---
+
+### The Golden Rule:
+
+**Keep - Change - Flip!**
+
+1. **Keep** the first fraction
+2. **Change** division to multiplication
+3. **Flip** the second fraction
+
+**Example:** 2/3 ÷ 1/6 = 2/3 × 6/1 = ?
+
+*How many sixths fit in two-thirds?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'fractionDivision',
+      parameters: {
+        dividend: '2/3',
+        divisor: '1/6',
+        showReciprocal: false,
+        showSteps: false,
+        showResult: false,
+        caption: 'How many 1/6 pieces fit in 2/3?'
+      },
+      caption: 'How many sixths fit in two-thirds?'
+    }
+  },
+
+  'p6-math-fractions-word-problems': {
+    speech: {
+      text: `Excellent work learning all the fraction division rules! Now let us put everything together with word problems. The key is to first understand what the problem is asking. Look for clues like sharing, cutting, or how many fit. Draw a bar model to help visualize the problem. Then decide which type of division you need. Let us practice with some real world scenarios!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-fractions-word-problems.mp3'
+    },
+    display: {
+      content: `# Word Problems: Fraction Division
+
+### Problem-Solving Strategy
+
+1. **Read carefully** - What is the question asking?
+2. **Draw a bar model** - Visualize the problem
+3. **Identify the operation** - Is it division?
+4. **Solve step by step** - Show your working
+5. **Check your answer** - Does it make sense?
+
+---
+
+### Example Problem:
+
+Julie, Tom and Ben had a pizza. Julie ate 1/4 of the pizza. Tom and Ben shared the rest equally.
+
+*What fraction did Tom get?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'barModel',
+      parameters: {
+        title: 'Pizza Problem',
+        bars: [
+          {
+            label: 'Pizza',
+            segments: [
+              { value: 'Julie', units: 1, highlight: true },
+              { value: 'Tom & Ben', units: 3 }
+            ],
+            totalLabel: '1 whole',
+            bracketPosition: 'top'
+          }
+        ],
+        showUnitDividers: true,
+        caption: 'Julie ate 1/4. What fraction did Tom and Ben share?'
+      },
+      caption: 'Bar model showing pizza sharing problem'
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

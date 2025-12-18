@@ -90,7 +90,7 @@ def initialize_ai_provider(provider: str):
             import google.generativeai as genai_module
             genai = genai_module
             genai.configure(api_key=GEMINI_API_KEY)
-            print(f"✓ Initialized Gemini Flash 2.5 provider")
+            print(f"✓ Initialized Gemini Flash 3 provider")
         except ImportError:
             print("ERROR: google-generativeai package not installed. Install with: pip install google-generativeai")
             sys.exit(1)
@@ -235,7 +235,7 @@ def generate_questions_batch(exemplar: Dict[str, Any], count: int, node_number: 
             response_text = message.content[0].text.strip()
 
         elif provider == "gemini":
-            model = genai.GenerativeModel('gemini-2.5-flash-preview-09-2025')
+            model = genai.GenerativeModel('gemini-3-flash')
             response = model.generate_content(
                 prompt,
                 generation_config=genai.types.GenerationConfig(

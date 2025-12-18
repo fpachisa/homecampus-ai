@@ -107,6 +107,8 @@ import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../../prompt-library/
 import type { PropertiesOfTrianglesTopicId as P5PropertiesOfTrianglesTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-triangles';
 import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import type { PropertiesOfQuadrilateralsTopicId } from '../../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
+import { P6_FRACTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-fractions';
+import type { P6FractionsTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-fractions';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -188,10 +190,11 @@ function getTopicIcon(topicId: string): string {
     return icons[index >= 0 ? index : 0];
   }
   // P6 Fractions icons
-  if (topicId.includes('dividing-whole-numbers')) return '➗';
-  if (topicId.includes('whole-number-dividing')) return '🔢';
-  if (topicId.includes('fraction-dividing-fraction')) return '📏';
-  if (topicId.includes('word-problems')) return '📝';
+  if (topicId.startsWith('p6-math-fractions-')) {
+    const icons = ['🍕', '🔢', '➗', '📝'];  // Divide frac by whole, Divide whole by frac, Frac by frac, Word problems
+    const index = Object.keys(P6_FRACTIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
 
   // S1 Factors & Multiples icons
   if (topicId.includes('introduction')) return '🔢';
@@ -500,6 +503,8 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p5-math-angles') return 'Angles';
   if (category === 'p5-math-properties-of-triangles') return 'Properties of Triangles';
   if (category === 'p5-math-properties-of-quadrilaterals') return 'Properties of Quadrilaterals';
+  // Primary 6 categories
+  if (category === 'p6-math-fractions') return 'Fractions';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -565,6 +570,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-angles',
     'p5-math-properties-of-triangles',
     'p5-math-properties-of-quadrilaterals',
+    // Primary 6 paths
+    'p6-math-fractions',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -1016,6 +1023,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p5-math-properties-of-quadrilaterals') {
       return Object.entries(P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as PropertiesOfQuadrilateralsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p6-math-fractions') {
+      return Object.entries(P6_FRACTIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as P6FractionsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

@@ -24,10 +24,7 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { P5_PERCENTAGE_FIRESTORE_CONFIGS } from './p5-percentage-firestore-configs.js';
-import { P5_ANGLES_FIRESTORE_CONFIGS } from './p5-angles-firestore-configs.js';
-import { P5_PROPERTIES_OF_TRIANGLES_FIRESTORE_CONFIGS } from './p5-properties-of-triangles-firestore-configs.js';
-import { P5_PROPERTIES_OF_QUADRILATERALS_FIRESTORE_CONFIGS } from './p5-properties-of-quadrilaterals-firestore-configs.js';
+import { P6_FRACTIONS_FIRESTORE_CONFIGS } from './p6-fractions-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -97,10 +94,7 @@ const STANDARD_MODULES = {
 
 
 const ALL_CONFIGS = [
-  ...P5_PERCENTAGE_FIRESTORE_CONFIGS,
-  ...P5_ANGLES_FIRESTORE_CONFIGS,
-  ...P5_PROPERTIES_OF_TRIANGLES_FIRESTORE_CONFIGS,
-  ...P5_PROPERTIES_OF_QUADRILATERALS_FIRESTORE_CONFIGS
+  ...P6_FRACTIONS_FIRESTORE_CONFIGS
 ];
 
 /**
