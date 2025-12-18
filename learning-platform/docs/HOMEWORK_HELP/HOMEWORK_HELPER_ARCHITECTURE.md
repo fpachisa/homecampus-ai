@@ -299,7 +299,7 @@ HomeworkHelper (Container)
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │ SDK: @google/generative-ai                                      │
-│ Model: gemini-3-flash                                         │
+│ Model: gemini-3-flash-preview                                         │
 │ Validation: Zod schemas (src/schemas/homework.schemas.ts)       │
 │                                                                  │
 │ Use Case 1: Problem Analysis (Multimodal)                       │

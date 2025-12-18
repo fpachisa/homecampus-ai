@@ -7759,6 +7759,260 @@ Julie, Tom and Ben had a pizza. Julie ate 1/4 of the pizza. Tom and Ben shared t
     }
   },
 
+  /**
+   * ========================================
+   * P6 MATHEMATICS - RATIOS
+   * ========================================
+   */
+  'p6-math-ratios-introduction': {
+    speech: {
+      text: `Welcome to the world of ratios! A ratio is a way to compare two or more quantities. Think about it like this: if you have three yellow balloons and four green balloons, you can say the ratio of yellow to green is three to four. We write this as 3 colon 4. Today we will learn what ratios are, why the order matters, and how to use them to compare things. Let us start with a simple example!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-ratios-introduction.mp3'
+    },
+    display: {
+      content: `# Introduction to Ratios
+
+A **ratio** compares two or more quantities. We use the symbol **:** to write ratios.
+
+---
+
+### Think About This:
+
+You have **3 yellow balloons** and **4 green balloons**.
+
+The ratio of yellow balloons to green balloons is **3 : 4**
+
+We read this as "3 to 4" or "3 is to 4"
+
+*If I asked for the ratio of green to yellow, what would it be?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'ratioBarModel',
+      parameters: {
+        title: 'Yellow and Green Balloons',
+        bars: [
+          { label: 'Yellow', units: 3, color: 'yellow' },
+          { label: 'Green', units: 4, color: 'green' }
+        ],
+        showUnitDividers: true,
+        caption: 'Each box represents 1 balloon'
+      },
+      caption: 'Ratio of yellow to green balloons = 3 : 4'
+    }
+  },
+
+  'p6-math-ratios-equivalent-ratios': {
+    speech: {
+      text: `Hello! Now that you understand what ratios are, let us learn about equivalent ratios. Two ratios are equivalent if they represent the same comparison, just like equivalent fractions! For example, 1 to 2 and 2 to 4 are equivalent because they both mean one thing for every two things. We can find equivalent ratios by multiplying or dividing both parts by the same number. Let us explore this together!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-ratios-equivalent-ratios.mp3'
+    },
+    display: {
+      content: `# Equivalent Ratios
+
+**Equivalent ratios** are ratios that have the same value, just like equivalent fractions!
+
+---
+
+### The Key Rule:
+
+Multiply or divide **both parts** of a ratio by the **same number** to get an equivalent ratio.
+
+**Example:**
+
+1 : 2 = 2 : 4 = 3 : 6 = 4 : 8
+
+All these ratios are equivalent!
+
+*What is another ratio equivalent to 1 : 2?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'ratioBarModel',
+      parameters: {
+        title: 'Equivalent Ratios: 1:2 = 2:4',
+        bars: [
+          { label: '1:2', units: 2, color: 'blue' },
+          { label: '2:4', units: 4, color: 'green' }
+        ],
+        showUnitDividers: true,
+        caption: 'Both ratios show the same relationship: one part to two parts'
+      },
+      caption: 'Equivalent ratios have the same value'
+    }
+  },
+
+  'p6-math-ratios-finding-equivalent': {
+    speech: {
+      text: `Great progress! Now let us learn how to find equivalent ratios and simplify ratios to their simplest form. To simplify a ratio, we divide both parts by their highest common factor. This is just like simplifying fractions! For example, 6 to 9 can be simplified to 2 to 3 by dividing both by 3. We can also go the other way and multiply to make bigger equivalent ratios. Ready to practice?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-ratios-finding-equivalent.mp3'
+    },
+    display: {
+      content: `# Finding Equivalent Ratios
+
+To find equivalent ratios:
+- **Multiply** both parts by the same number (to scale up)
+- **Divide** both parts by the same number (to simplify)
+
+---
+
+### Simplifying Ratios:
+
+**6 : 9** → Divide both by 3 → **2 : 3**
+
+The HCF of 6 and 9 is 3, so we divide both by 3.
+
+*Can you simplify 8 : 12 to its simplest form?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'ratioBarModel',
+      parameters: {
+        title: 'Simplifying 6:9 to 2:3',
+        bars: [
+          { label: 'Original (6)', units: 6, color: 'blue' },
+          { label: 'Original (9)', units: 9, color: 'green' }
+        ],
+        showUnitDividers: true,
+        caption: 'Divide both by 3 to get 2:3'
+      },
+      caption: 'Finding the simplest form of a ratio'
+    }
+  },
+
+  'p6-math-ratios-finding-new-ratios': {
+    speech: {
+      text: `Excellent work! Now we are going to learn something really cool: combining two ratios into a three-term ratio! When two ratios share a common term, we can combine them. For example, if the ratio of apples to bananas is 2 to 3, and the ratio of apples to oranges is 4 to 5, we can find the ratio of apples to bananas to oranges. The trick is to make the common term equal in both ratios first!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-ratios-finding-new-ratios.mp3'
+    },
+    display: {
+      content: `# Finding New Ratios (Three-Term Ratios)
+
+When two ratios have a **common term**, we can combine them into a **three-term ratio**.
+
+---
+
+### The Strategy:
+
+1. Identify the **common term** in both ratios
+2. Make the common term **equal** in both ratios
+3. Combine into one three-term ratio
+
+**Example:**
+
+Ken : Suzy = 2 : 3 and Ken : Ming = 6 : 5
+
+*Find Ken : Suzy : Ming*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'ratioBarModel',
+      parameters: {
+        title: 'Ken : Suzy : Ming = 6 : 9 : 5',
+        bars: [
+          { label: 'Ken', units: 6, color: 'green' },
+          { label: 'Suzy', units: 9, color: 'yellow' },
+          { label: 'Ming', units: 5, color: 'blue' }
+        ],
+        showUnitDividers: true,
+        caption: 'Combined ratio after making Ken equal in both'
+      },
+      caption: 'Combining two ratios into a three-term ratio'
+    }
+  },
+
+  'p6-math-ratios-fraction-and-ratio': {
+    speech: {
+      text: `Welcome! Today we will explore the connection between fractions and ratios. They are closely related! If the ratio of boys to girls is 3 to 5, we can say boys are three eighths of the total class. Why eighths? Because 3 plus 5 equals 8 total parts! We can convert between ratios and fractions, which is very useful for solving problems. Let us see how this works!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-ratios-fraction-and-ratio.mp3'
+    },
+    display: {
+      content: `# Fraction and Ratio
+
+Ratios and fractions are closely related!
+
+---
+
+### From Ratio to Fraction:
+
+If **Boys : Girls = 3 : 5**
+
+Then:
+- Boys = **3/8** of the class (3 out of 3+5=8)
+- Girls = **5/8** of the class
+
+### From Fraction to Ratio:
+
+If boys are **2/5** of the class, girls are **3/5**.
+
+Boys : Girls = **2 : 3**
+
+*If red marbles are 1/4 of the total, what is the ratio of red to other marbles?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'ratioBarModel',
+      parameters: {
+        title: 'Boys : Girls = 3 : 5',
+        bars: [
+          { label: 'Boys', units: 3, color: 'blue' },
+          { label: 'Girls', units: 5, color: 'pink' }
+        ],
+        totalBracket: { barIndices: [0, 1], value: '8 parts total' },
+        showUnitDividers: true,
+        caption: 'Boys are 3/8 of the total, Girls are 5/8'
+      },
+      caption: 'Connecting ratios to fractions'
+    }
+  },
+
+  'p6-math-ratios-word-problems': {
+    speech: {
+      text: `Fantastic progress! Now we are ready to tackle word problems using ratios. The key is to read carefully, identify what quantities are being compared, and draw a bar model to visualize the problem. Bar models are super helpful for ratio problems because they show us the relationship between quantities clearly. Let us solve some real world problems together!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-ratios-word-problems.mp3'
+    },
+    display: {
+      content: `# Ratio Word Problems
+
+The key to solving ratio word problems:
+1. **Read carefully** - identify the quantities being compared
+2. **Draw a bar model** - visualize the ratio relationship
+3. **Find the value of 1 unit** - this unlocks all other values
+4. **Answer the question** - calculate what's asked
+
+---
+
+### Example Problem:
+
+The ratio of Ali's money to Ben's money is **3 : 5**.
+They have **$80** altogether.
+How much money does each person have?
+
+*What is the first step?*`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'ratioBarModel',
+      parameters: {
+        title: "Ali's and Ben's Money (3:5)",
+        bars: [
+          { label: 'Ali', units: 3, color: 'blue' },
+          { label: 'Ben', units: 5, color: 'green' }
+        ],
+        totalBracket: { barIndices: [0, 1], value: '$80' },
+        showUnitDividers: true,
+        unitValue: '8 units = $80, so 1 unit = $10'
+      },
+      caption: 'Bar model for ratio word problem'
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

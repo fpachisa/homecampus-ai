@@ -173,6 +173,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 6',
       subject: 'Mathematics',
     },
+    {
+      id: 'p6-math-ratios',
+      name: 'Ratios',
+      icon: '⚖️',
+      description: 'Master ratios: comparing quantities, equivalent ratios, simplifying, fraction-ratio connections, and word problems using bar models',
+      subtopicCount: 6,
+      isActive: true,
+      category: 'p6-math-ratios',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
   ],
   'Secondary 1': [
     {

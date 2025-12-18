@@ -5189,6 +5189,99 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // PRIMARY MATH - RATIO BAR MODEL TOOL
+  // ============================================
+
+  ratioBarModel: {
+    name: "Ratio Bar Model Visualizer",
+    technicalName: "ratioBarModel",
+    component: "RatioBarModelVisualizer",
+    category: "general",
+    description: "Specialized Singapore Math bar model for ratio word problems. Displays horizontal bars with labeled units for comparing quantities in ratios. Supports partial brackets (for showing value of subset of units), total brackets (grouping multiple bars), and difference brackets (comparing bar lengths). Designed for P6 Ratios topic - used in hints and solutions.",
+    whenToUse: "Use for P6 Ratios problems including: basic ratio visualization, equivalent ratios, finding values from totals or differences, three-term ratios, and fraction-ratio conversions. Essential for Singapore Math model method in ratio word problems.",
+
+    parameters: {
+      title: "string (optional) - Title above the diagram (e.g., 'Anna and Jill's Money')",
+      bars: "array (REQUIRED) - Array of bars: [{ label: 'Anna', units: 2, color?: 'green', unitLabel?: '?' }]. Up to 6 bars supported.",
+      partialBracket: "object (optional) - Bracket for subset of units: { barIndex: 0, fromUnit: 0, toUnit: 3, value: '21', position: 'bottom' }",
+      totalBracket: "object (optional) - Bracket grouping multiple bars: { barIndices: [0, 1], value: '$50', position?: 'right' }",
+      differenceBracket: "object (optional) - Bracket showing difference between two bars: { barIndices: [0, 1], value: '12' }",
+      partialBracket2: "object (optional) - Second partial bracket for complex problems",
+      unitValue: "string (optional) - Show unit value annotation (e.g., '1 unit = $10')",
+      caption: "string (optional) - Explanation text below the diagram",
+      showUnitDividers: "boolean (optional, default: true) - Show dashed dividers between units"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic ratio 2:3 - Anna and Jill share $50",
+        caption: "Anna and Jill share $50 in the ratio 2:3. How much does Jill have?",
+        parameters: {
+          bars: [
+            { label: "Anna", units: 2 },
+            { label: "Jill", units: 3 }
+          ],
+          totalBracket: { barIndices: [0, 1], value: "$50" },
+          unitValue: "5 units = $50, so 1 unit = $10"
+        }
+      },
+      {
+        scenario: "Difference problem - 12 more boys than girls",
+        caption: "Boys to girls ratio is 7:4. There are 12 more boys than girls.",
+        parameters: {
+          bars: [
+            { label: "Boys", units: 7 },
+            { label: "Girls", units: 4 }
+          ],
+          differenceBracket: { barIndices: [0, 1], value: "12" },
+          unitValue: "3 units = 12, so 1 unit = 4"
+        }
+      },
+      {
+        scenario: "Partial bracket - Ken has 21 coins (3 units of total)",
+        caption: "Ken:Hassan = 3:7. Ken has 21 coins. How many does Hassan have?",
+        parameters: {
+          bars: [
+            { label: "Ken", units: 3, color: "green" },
+            { label: "Hassan", units: 7, color: "yellow" }
+          ],
+          partialBracket: { barIndex: 0, fromUnit: 0, toUnit: 3, value: "21", position: "bottom" },
+          unitValue: "3 units = 21, so 1 unit = 7"
+        }
+      },
+      {
+        scenario: "Three-term ratio - Adults:Boys:Girls = 3:2:8",
+        caption: "Adults to boys ratio is 3:2. Boys to girls ratio is 1:4 (or 2:8). There are 30 boys.",
+        parameters: {
+          bars: [
+            { label: "Adults", units: 3, color: "green" },
+            { label: "Boys", units: 2, color: "yellow" },
+            { label: "Girls", units: 8, color: "pink" }
+          ],
+          partialBracket: { barIndex: 1, fromUnit: 0, toUnit: 2, value: "30", position: "bottom" },
+          totalBracket: { barIndices: [0, 1, 2], value: "?" }
+        }
+      },
+      {
+        scenario: "Concert tickets - Multiple bars of same type",
+        caption: "Adult:Child ticket price = 5:3. 2 adults and 3 children paid $76 total.",
+        parameters: {
+          title: "Ticket Prices",
+          bars: [
+            { label: "Adult 1", units: 5, color: "green" },
+            { label: "Adult 2", units: 5, color: "green" },
+            { label: "Child 1", units: 3, color: "yellow" },
+            { label: "Child 2", units: 3, color: "yellow" },
+            { label: "Child 3", units: 3, color: "yellow" }
+          ],
+          totalBracket: { barIndices: [0, 1, 2, 3, 4], value: "$76" },
+          caption: "Total = 10 + 9 = 19 units = $76"
+        }
+      }
+    ]
   }
 };
 

@@ -50,7 +50,7 @@ export class ProblemAnalysisService {
     }
 
     this.ai = new GoogleGenAI({ apiKey });
-    this.modelName = 'gemini-3-flash';
+    this.modelName = 'gemini-3-flash-preview';
     this.config = {
       temperature: 0.3,
       responseMimeType: "application/json",

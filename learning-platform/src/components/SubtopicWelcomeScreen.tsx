@@ -104,6 +104,8 @@ import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-librar
 import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 import type { P6FractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
+import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
+import type { P6RatiosTopicId } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -227,6 +229,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS[topicId as PropertiesOfQuadrilateralsTopicId];
   } else if (category === 'p6-math-fractions') {
     topicConfig = P6_FRACTIONS_SUBTOPICS[topicId as P6FractionsTopicId];
+  } else if (category === 'p6-math-ratios') {
+    topicConfig = P6_RATIOS_SUBTOPICS[topicId as P6RatiosTopicId];
   }
 
   if (!topicConfig) {

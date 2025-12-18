@@ -119,6 +119,8 @@ import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-librar
 import type { PropertiesOfQuadrilateralsTopicId } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
 import type { P6FractionsTopicId } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
+import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
+import type { P6RatiosTopicId } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -340,6 +342,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P6 fractions topic
   if (topicId.startsWith('p6-math-fractions-')) {
     return P6_FRACTIONS_SUBTOPICS[topicId as P6FractionsTopicId];
+  }
+  // Check if it's a P6 ratios topic
+  if (topicId.startsWith('p6-math-ratios-')) {
+    return P6_RATIOS_SUBTOPICS[topicId as P6RatiosTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -2161,6 +2167,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('p6-math-fractions-')) {
       return 'Master fractions step by step!';
     }
+    if (topicId.startsWith('p6-math-ratios-')) {
+      return 'Master ratios and proportions!';
+    }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       return 'Master trigonometry through practice!';
     }
@@ -2207,6 +2216,9 @@ const handleStudentSubmit = async (input: string) => {
   const getTopicIcon = () => {
     if (topicId.startsWith('p6-math-fractions-')) {
       return '➗';
+    }
+    if (topicId.startsWith('p6-math-ratios-')) {
+      return '⚖️';
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       return '📐';

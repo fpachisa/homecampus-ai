@@ -148,7 +148,7 @@ export class SolutionGeneratorService {
   constructor(apiKey: string) {
     this.provider = new GeminiProvider({
       apiKey,
-      model: 'gemini-3-flash', // Use Gemini 3 Flash as specified
+      model: 'gemini-3-flash-preview', // Use Gemini 3 Flash Preview as specified
       temperature: 0.3 // Lower temperature for more consistent, accurate solutions
     });
   }

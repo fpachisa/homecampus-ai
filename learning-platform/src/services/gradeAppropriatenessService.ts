@@ -50,7 +50,7 @@ export class GradeAppropriatenessService {
     }
 
     this.ai = new GoogleGenAI({ apiKey });
-    this.modelName = 'gemini-3-flash';
+    this.modelName = 'gemini-3-flash-preview';
     this.config = {
       temperature: 0.3,
       responseMimeType: "application/json",
@@ -66,7 +66,7 @@ export class GradeAppropriatenessService {
     studentGrade: number
   ): Promise<GradeAppropriatenessCheck> {
 
-      return this.aiBasedCheck(analysis, studentGrade);
+    return this.aiBasedCheck(analysis, studentGrade);
   }
 
 

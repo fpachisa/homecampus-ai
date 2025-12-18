@@ -1,6 +1,6 @@
 /**
  * Gemini TTS Provider
- * Uses Gemini 3 Flash with emotion-driven voice context control
+ * Uses Gemini 3 Flash Preview with emotion-driven voice context control
  *
  * Note: This uses REST API approach. For future enhancement, consider
  * migrating to @google/genai SDK (newer) which has native TTS support.
@@ -30,7 +30,7 @@ interface GeminiTTSResponse {
 
 /**
  * Gemini TTS Provider Implementation
- * Uses gemini-3-flash model with prompt-based voice control
+ * Uses gemini-3-flash-preview model with prompt-based voice control
  */
 export class GeminiTTSProvider implements TTSProvider {
   private apiKey: string;
@@ -46,7 +46,7 @@ export class GeminiTTSProvider implements TTSProvider {
     }
 
     this.apiKey = config.apiKey;
-    this.model = config.model || 'gemini-3-flash';
+    this.model = config.model || 'gemini-3-flash-preview';
     this.defaultSpeaker = (config.defaultSpeaker as GeminiSpeaker) || DEFAULT_SPEAKER;
     this.cacheExpiry = config.cacheExpiry || 1000 * 60 * 60; // 1 hour default
   }

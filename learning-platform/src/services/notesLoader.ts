@@ -331,6 +331,13 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p6/math/fractions/DivideWholeByFraction': () => import('../notes/p6/math/fractions/DivideWholeByFraction'),
   'p6/math/fractions/DivideFractionByFraction': () => import('../notes/p6/math/fractions/DivideFractionByFraction'),
   'p6/math/fractions/WordProblems': () => import('../notes/p6/math/fractions/WordProblems'),
+  // P6 Ratios notes
+  'p6/math/ratios/Introduction': () => import('../notes/p6/math/ratios/Introduction'),
+  'p6/math/ratios/EquivalentRatios': () => import('../notes/p6/math/ratios/EquivalentRatios'),
+  'p6/math/ratios/FindingEquivalent': () => import('../notes/p6/math/ratios/FindingEquivalent'),
+  'p6/math/ratios/FindingNewRatios': () => import('../notes/p6/math/ratios/FindingNewRatios'),
+  'p6/math/ratios/FractionAndRatio': () => import('../notes/p6/math/ratios/FractionAndRatio'),
+  'p6/math/ratios/WordProblems': () => import('../notes/p6/math/ratios/WordProblems'),
 };
 
 interface NotesCache {

@@ -267,15 +267,15 @@ Generate ${numQuestions} problems now:`;
   console.log(`\n🤖 Generating ${numQuestions} questions for Section ${sectionIndex + 1}: ${section.title}...`);
 
   const result = await gemini.models.generateContent({
-    model: 'gemini-3-flash',
+    model: 'gemini-3-flash-preview',
     contents: prompt
   });
   const response = result.text;
 
-  console.log('📥 Raw response length:', response.length);
+  console.log('📥 Raw response length:', response?.length);
 
   // Extract JSON from response (handle potential markdown wrappers)
-  let jsonText = response.trim();
+  let jsonText = (response || '').trim();
   if (jsonText.startsWith('```json')) {
     jsonText = jsonText.replace(/```json\n?/, '').replace(/\n?```$/, '');
   } else if (jsonText.startsWith('```')) {
@@ -292,13 +292,13 @@ Generate ${numQuestions} problems now:`;
 
     return {
       questions: questionsWithImages,
-      rawResponse: response
+      rawResponse: response || ''
     };
   } catch (error: any) {
     // Attach raw response to error for debugging
     error.rawResponse = response;
     console.error('❌ Failed to parse JSON response');
-    console.error('Response preview:', response.substring(0, 500));
+    console.error('Response preview:', (response || '').substring(0, 500));
     throw error;
   }
 }
