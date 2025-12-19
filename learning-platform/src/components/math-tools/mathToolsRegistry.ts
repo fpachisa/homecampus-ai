@@ -3925,6 +3925,88 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  p6Circle: {
+    name: "P6 Circle Visualizer",
+    technicalName: "p6Circle",
+    component: "P6CircleVisualizer",
+    category: "primary-geometry",
+
+    description: "Unified circle visualization for Primary 6 curriculum. Supports full circle, semicircle, quarter circle, and 3/4 circle with various orientations. Shows measurements without revealing answers or formulas.",
+
+    whenToUse: "Use for P6 circle problems involving parts of a circle, circumference, perimeter of semicircle/quarter circle, and area calculations. IMPORTANT: This tool is for problem visualization only - it does NOT show answers, formulas, or calculations.",
+
+    parameters: {
+      mode: "'full' | 'semicircle' | 'quarter' | 'three-quarter' - type of circle to display",
+      orientation: "For semicircle: 'top' | 'bottom' | 'left' | 'right'. For quarter: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'. For three-quarter: 'missing-top-right' | 'missing-top-left' | 'missing-bottom-right' | 'missing-bottom-left'",
+      givenValue: "string - dimension value to display (e.g., '7', '14', '5.5')",
+      givenType: "'radius' | 'diameter' - what dimension is given. Default: 'radius'",
+      unit: "string - unit for measurement (e.g., 'cm', 'm'). Default: 'cm'",
+      showCentre: "boolean - show centre point. Default: true",
+      showRadiusLine: "boolean - show radius line. Default: true",
+      showDiameterLine: "boolean - show diameter line. Default: false",
+      centreLabel: "string - label for centre point. Default: 'O'",
+      showShading: "boolean - shade the area for visual clarity. Default: false",
+      highlightArc: "boolean - highlight the curved edge. Default: false",
+      caption: "string - problem context caption (NOT answer)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Quarter circle with given radius",
+        caption: "A quarter circle has radius 7 cm. Find its perimeter.",
+        parameters: {
+          mode: "quarter",
+          orientation: "top-right",
+          givenValue: "7",
+          givenType: "radius",
+          unit: "cm",
+          showCentre: true,
+          showRadiusLine: true,
+          showShading: true
+        }
+      },
+      {
+        scenario: "Semicircle with given diameter",
+        caption: "Find the perimeter of the semicircle.",
+        parameters: {
+          mode: "semicircle",
+          orientation: "top",
+          givenValue: "10",
+          givenType: "diameter",
+          unit: "cm",
+          showCentre: true,
+          showDiameterLine: true,
+          highlightArc: true
+        }
+      },
+      {
+        scenario: "Full circle with radius",
+        caption: "The radius of a circle is 4 cm. Find its diameter.",
+        parameters: {
+          mode: "full",
+          givenValue: "4",
+          givenType: "radius",
+          unit: "cm",
+          showCentre: true,
+          showRadiusLine: true
+        }
+      },
+      {
+        scenario: "Three-quarter circle",
+        caption: "Find the perimeter of the figure. Radius = 14 cm.",
+        parameters: {
+          mode: "three-quarter",
+          orientation: "missing-bottom-right",
+          givenValue: "14",
+          givenType: "radius",
+          unit: "cm",
+          showCentre: true,
+          showRadiusLine: true
+        }
+      }
+    ]
+  },
+
   parallelogram: {
     name: "Parallelogram Visualizer",
     technicalName: "parallelogram",

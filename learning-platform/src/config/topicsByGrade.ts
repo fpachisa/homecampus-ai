@@ -195,6 +195,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 6',
       subject: 'Mathematics',
     },
+    {
+      id: 'p6-math-circles',
+      name: 'Circles',
+      icon: '⭕',
+      description: 'Master circles: parts of a circle, circumference, area, semicircles, quarter circles, and composite figures',
+      subtopicCount: 6,
+      isActive: true,
+      category: 'p6-math-circles',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
   ],
   'Secondary 1': [
     {

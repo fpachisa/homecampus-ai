@@ -108,6 +108,8 @@ import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/prim
 import type { P6RatiosTopicId } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import type { P6PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
+import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import type { P6CirclesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -235,6 +237,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P6_RATIOS_SUBTOPICS[topicId as P6RatiosTopicId];
   } else if (category === 'p6-math-percentage') {
     topicConfig = P6_PERCENTAGE_SUBTOPICS[topicId as P6PercentageTopicId];
+  } else if (category === 'p6-math-circles') {
+    topicConfig = P6_CIRCLES_SUBTOPICS[topicId as P6CirclesTopicId];
   }
 
   if (!topicConfig) {

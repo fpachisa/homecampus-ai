@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 280">
+  <!-- Background -->
+  <rect width="350" height="280" fill="#f8fafc"/>
+
+  <!-- Two touching circles with tangent lines -->
+  <!-- Circles have radius 60 (represents 10 cm) -->
+  <!-- Centers at (110, 140) and (230, 140), touching at (170, 140) -->
+
+  <!-- Shaded region BETWEEN the circles (rectangle minus two semicircles) -->
+  <!-- This is the area bounded by: top tangent, right semicircle (inner), bottom tangent, left semicircle (inner) -->
+  <path d="M 110 80
+           L 230 80
+           A 60 60 0 0 1 230 200
+           L 110 200
+           A 60 60 0 0 1 110 80 Z"
+        fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- Left circle (white/unfilled, just outline) -->
+  <circle cx="110" cy="140" r="60" fill="#f8fafc" stroke="#4338ca" stroke-width="2"/>
+
+  <!-- Right circle (white/unfilled, just outline) -->
+  <circle cx="230" cy="140" r="60" fill="#f8fafc" stroke="#4338ca" stroke-width="2"/>
+
+  <!-- Top tangent line -->
+  <line x1="110" y1="80" x2="230" y2="80" stroke="#4338ca" stroke-width="2"/>
+
+  <!-- Bottom tangent line -->
+  <line x1="110" y1="200" x2="230" y2="200" stroke="#4338ca" stroke-width="2"/>
+
+  <!-- Center markers -->
+  <circle cx="110" cy="140" r="3" fill="#4338ca"/>
+  <circle cx="230" cy="140" r="3" fill="#4338ca"/>
+
+  <!-- Radius dimension on left circle -->
+  <line x1="110" y1="140" x2="110" y2="80" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="95" y="110" text-anchor="end" font-size="14" fill="#334155" font-weight="bold">10 cm</text>
+
+</svg>

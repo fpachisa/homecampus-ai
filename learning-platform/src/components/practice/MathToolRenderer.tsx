@@ -111,6 +111,7 @@ import VerticallyOppositeAnglesVisualizer from '../math-tools/VerticallyOpposite
 import RectangleVisualizer from '../math-tools/RectangleVisualizer';
 import SquareVisualizer from '../math-tools/SquareVisualizer';
 import SemicircleVisualizer from '../math-tools/SemicircleVisualizer';
+import P6CircleVisualizer from '../math-tools/P6CircleVisualizer';
 import ParallelogramVisualizer from '../math-tools/ParallelogramVisualizer';
 import TrapeziumVisualizer from '../math-tools/TrapeziumVisualizer';
 import CompositeShapeVisualizer from '../math-tools/CompositeShapeVisualizer';
@@ -238,6 +239,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   rectangle: RectangleVisualizer,
   square: SquareVisualizer,
   semicircle: SemicircleVisualizer,
+  p6Circle: P6CircleVisualizer,
   parallelogram: ParallelogramVisualizer,
   trapezium: TrapeziumVisualizer,
   compositeShape: CompositeShapeVisualizer,

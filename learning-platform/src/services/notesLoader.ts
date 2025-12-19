@@ -343,6 +343,13 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p6/math/percentage/PercentageIncrease': () => import('../notes/p6/math/percentage/PercentageIncrease'),
   'p6/math/percentage/PercentageDecrease': () => import('../notes/p6/math/percentage/PercentageDecrease'),
   'p6/math/percentage/WordProblems': () => import('../notes/p6/math/percentage/WordProblems'),
+  // P6 Circles notes
+  'p6/math/circles/PartsOfCircle': () => import('../notes/p6/math/circles/PartsOfCircle'),
+  'p6/math/circles/Circumference': () => import('../notes/p6/math/circles/Circumference'),
+  'p6/math/circles/PerimeterSemiQuarter': () => import('../notes/p6/math/circles/PerimeterSemiQuarter'),
+  'p6/math/circles/AreaOfCircle': () => import('../notes/p6/math/circles/AreaOfCircle'),
+  'p6/math/circles/AreaSemiQuarter': () => import('../notes/p6/math/circles/AreaSemiQuarter'),
+  'p6/math/circles/CompositeFigures': () => import('../notes/p6/math/circles/CompositeFigures'),
 };
 
 interface NotesCache {

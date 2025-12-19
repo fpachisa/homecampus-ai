@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <!-- Background -->
+  <rect width="400" height="220" fill="#f8fafc"/>
+
+  <!-- Two semicircles forming a wave/bump shape -->
+  <!-- Left semicircle (facing UP) + Right semicircle (facing DOWN) -->
+  <!-- Diameter = 21 cm each, using 105px for diameter (radius = 52.5px) -->
+
+  <!-- Left semicircle (up) - pink fill -->
+  <path d="M 95 130
+           A 52.5 52.5 0 0 1 200 130"
+        fill="#fecdd3" stroke="#e11d48" stroke-width="2.5"/>
+
+  <!-- Right semicircle (down) - pink fill -->
+  <path d="M 200 130
+           A 52.5 52.5 0 0 0 305 130"
+        fill="#fecdd3" stroke="#e11d48" stroke-width="2.5"/>
+
+  <!-- Solid horizontal line connecting the two semicircles -->
+  <line x1="95" y1="130" x2="305" y2="130" stroke="#e11d48" stroke-width="2.5"/>
+
+  <!-- Center points of each semicircle -->
+  <circle cx="147.5" cy="130" r="3" fill="#e11d48"/>
+  <circle cx="252.5" cy="130" r="3" fill="#e11d48"/>
+
+  <!-- Join point -->
+  <circle cx="200" cy="130" r="4" fill="#e11d48"/>
+
+  <!-- Labels for each semicircle -->
+  <text x="147.5" y="105" text-anchor="middle" font-size="12" fill="#6b7280" font-style="italic">semicircle 1</text>
+  <text x="252.5" y="160" text-anchor="middle" font-size="12" fill="#6b7280" font-style="italic">semicircle 2</text>
+
+  <!-- Dimension - diameter for left semicircle -->
+  <line x1="95" y1="195" x2="200" y2="195" stroke="#334155" stroke-width="1"/>
+  <polygon points="95,195 103,191 103,199" fill="#334155"/>
+  <polygon points="200,195 192,191 192,199" fill="#334155"/>
+  <text x="147.5" y="212" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">21 cm</text>
+
+  <!-- Dimension - diameter for right semicircle -->
+  <line x1="200" y1="195" x2="305" y2="195" stroke="#334155" stroke-width="1"/>
+  <polygon points="200,195 208,191 208,199" fill="#334155"/>
+  <polygon points="305,195 297,191 297,199" fill="#334155"/>
+  <text x="252.5" y="212" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">21 cm</text>
+</svg>

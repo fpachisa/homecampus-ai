@@ -12,6 +12,7 @@ import { S1_MATH_PERIMETER_AREA_COMPOSITE_QUESTION_BANK } from '../data/learn/qu
 import { P5_MATH_FOUR_OPERATIONS_WORD_PROBLEMS_QUESTION_BANK } from '../data/learn/question-banks/p5-math-four-operations-word-problems.js';
 import { P5_MATH_FOUR_OPERATIONS_FRACTIONS_WORD_PROBLEMS_QUESTION_BANK } from '../data/learn/question-banks/p5-math-four-operations-fractions-word-problems.js';
 import { P5_MATH_AREA_TRIANGLE_COMPOSITE_QUESTION_BANK } from '../data/learn/question-banks/p5-math-area-triangle-composite.js';
+import { P6_MATH_CIRCLES_COMPOSITE_QUESTION_BANK } from '../data/learn/question-banks/p6-math-circles-composite.js';
 
 // Registry of all question banks with metadata
 const QUESTION_BANK_REGISTRY: Record<string, {
@@ -43,11 +44,17 @@ const QUESTION_BANK_REGISTRY: Record<string, {
     displayName: 'P5 Area of Triangle - Composite Figures',
     description: 'Composite figures involving triangles and rectangles',
     grade: 'Primary 5'
+  },
+  'p6-math-circles-composite': {
+    bank: P6_MATH_CIRCLES_COMPOSITE_QUESTION_BANK,
+    displayName: 'P6 Circles - Composite Figures',
+    description: 'Composite figures involving circles, semicircles, and quarter circles',
+    grade: 'Primary 6'
   }
 };
 
 export const QuestionBankViewer: React.FC = () => {
-  const [selectedBankId, setSelectedBankId] = useState<string>('p5-math-area-triangle-composite');
+  const [selectedBankId, setSelectedBankId] = useState<string>('p6-math-circles-composite');
 
   const selectedBankInfo = QUESTION_BANK_REGISTRY[selectedBankId];
   const questionBank = selectedBankInfo?.bank || [];

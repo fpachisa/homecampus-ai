@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380">
+  <!-- Background -->
+  <rect width="400" height="380" fill="#f8fafc"/>
+
+  <!-- Two semicircles + quarter circle - both semicircles bulge OUT -->
+  <!-- Quarter circle radius = 140 (14 cm), semicircle radius = 70 (7 cm) -->
+
+  <path d="M 100 80
+           A 70 70 0 0 1 240 80
+           A 140 140 0 0 1 100 220
+           A 70 70 0 0 0 100 80 Z"
+        fill="#fef08a" stroke="#ca8a04" stroke-width="2.5"/>
+
+  <!-- Dashed lines showing the baseline square -->
+  <line x1="100" y1="80" x2="240" y2="80" stroke="#ca8a04" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+  <line x1="100" y1="80" x2="100" y2="220" stroke="#ca8a04" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+
+  <!-- Labels -->
+  <text x="170" y="35" text-anchor="middle" font-size="13" fill="#666" font-style="italic">semicircle</text>
+
+  <text x="55" y="150" text-anchor="middle" font-size="13" fill="#666" font-style="italic">semicircle</text>
+
+  <text x="250" y="175" text-anchor="start" font-size="13" fill="#666" font-style="italic">quarter</text>
+  <text x="250" y="192" text-anchor="start" font-size="13" fill="#666" font-style="italic">circle</text>
+
+  <!-- Dimension: 14 cm -->
+  <line x1="100" y1="260" x2="240" y2="260" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="100,260 110,256 110,264" fill="#334155"/>
+  <polygon points="240,260 230,256 230,264" fill="#334155"/>
+  <text x="170" y="285" text-anchor="middle" font-size="16" fill="#334155" font-weight="bold">14 cm</text>
+</svg>

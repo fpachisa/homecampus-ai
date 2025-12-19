@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <!-- Background -->
+  <rect width="320" height="320" fill="#f8fafc"/>
+
+  <!-- Shape: Two quarter circles at top (concave V-indent), straight edges, semicircle at bottom -->
+  <!-- Radius = 14 cm, using 100px for radius -->
+
+  <!-- Main shape path -->
+  <!-- Start at top-left, quarter arc down to center, quarter arc up to top-right, -->
+  <!-- line down, semicircle across bottom, line up to start -->
+  <path d="M 60 60
+           A 100 100 0 0 1 160 160
+           A 100 100 0 0 1 260 60
+           L 260 160
+           A 100 100 0 0 1 60 160
+           L 60 60 Z"
+        fill="#d9f99d" stroke="#65a30d" stroke-width="2.5"/>
+
+  <!-- Left dimension arrow and label -->
+  <line x1="35" y1="60" x2="35" y2="160" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="35,60 31,70 39,70" fill="#334155"/>
+  <polygon points="35,160 31,150 39,150" fill="#334155"/>
+  <text x="20" y="115" text-anchor="end" font-size="14" fill="#334155" font-weight="bold">14 cm</text>
+
+  <!-- Right dimension arrow and label -->
+  <line x1="285" y1="60" x2="285" y2="160" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="285,60 281,70 289,70" fill="#334155"/>
+  <polygon points="285,160 281,150 289,150" fill="#334155"/>
+  <text x="300" y="115" text-anchor="start" font-size="14" fill="#334155" font-weight="bold">14 cm</text>
+</svg>

@@ -123,6 +123,8 @@ import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/prim
 import type { P6RatiosTopicId } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import type { P6PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
+import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import type { P6CirclesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -352,6 +354,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P6 percentage topic
   if (topicId.startsWith('p6-math-percentage-')) {
     return P6_PERCENTAGE_SUBTOPICS[topicId as P6PercentageTopicId];
+  }
+  // Check if it's a P6 circles topic
+  if (topicId.startsWith('p6-math-circles-')) {
+    return P6_CIRCLES_SUBTOPICS[topicId as P6CirclesTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -2179,6 +2185,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('p6-math-percentage-')) {
       return 'Master percentage calculations!';
     }
+    if (topicId.startsWith('p6-math-circles-')) {
+      return 'Master circles and composite figures!';
+    }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       return 'Master trigonometry through practice!';
     }
@@ -2231,6 +2240,9 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('p6-math-percentage-')) {
       return '💯';
+    }
+    if (topicId.startsWith('p6-math-circles-')) {
+      return '⭕';
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       return '📐';

@@ -57,7 +57,9 @@ import { P5_MATH_PROPERTIES_OF_TRIANGLES_SUBTOPICS } from '../prompt-library/sub
 import { P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p5-properties-of-quadrilaterals';
 // Primary 6 imports
 import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-fractions';
+import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
+import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 
 export interface SubtopicContent {
   displayName: string;
@@ -131,7 +133,9 @@ class SubtopicContentLoader {
       ...P5_MATH_PROPERTIES_OF_QUADRILATERALS_SUBTOPICS,
       // P6 Primary topics
       ...P6_FRACTIONS_SUBTOPICS,
+      ...P6_RATIOS_SUBTOPICS,
       ...P6_PERCENTAGE_SUBTOPICS,
+      ...P6_CIRCLES_SUBTOPICS,
       // Future topics will be added here
     };
   }

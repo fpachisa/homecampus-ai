@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200">
+  <!-- Background -->
+  <rect width="450" height="200" fill="#f8fafc"/>
+
+  <!-- Stadium/capsule shape: rectangle + two semicircles -->
+  <!-- From PDF page 15 -->
+
+  <!-- Main shape -->
+  <path d="M 100 50
+           L 350 50
+           A 50 50 0 0 1 350 150
+           L 100 150
+           A 50 50 0 0 1 100 50 Z" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+
+  <!-- Rectangle portion (lighter shade to show composition) -->
+  <rect x="100" y="50" width="250" height="100" fill="none" stroke="#16a34a" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Dimensions -->
+  <text x="225" y="30" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">100 m</text>
+  <text x="395" y="105" text-anchor="start" font-size="14" fill="#334155" font-weight="bold">48 m</text>
+
+  <!-- Dimension lines -->
+  <line x1="100" y1="40" x2="350" y2="40" stroke="#334155" stroke-width="1"/>
+  <polygon points="100,40 108,36 108,44" fill="#334155"/>
+  <polygon points="350,40 342,36 342,44" fill="#334155"/>
+
+  <!-- Height dimension -->
+  <line x1="385" y1="50" x2="385" y2="150" stroke="#334155" stroke-width="1"/>
+  <polygon points="385,50 381,58 389,58" fill="#334155"/>
+  <polygon points="385,150 381,142 389,142" fill="#334155"/>
+</svg>

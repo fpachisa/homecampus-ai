@@ -8220,6 +8220,242 @@ A laptop costs \\$1,200 before GST. If GST is 9%, what is the total price includ
     }
   },
 
+  /**
+   * ========================================
+   * P6 MATHEMATICS - CIRCLES
+   * ========================================
+   */
+  'p6-math-circles-parts': {
+    speech: {
+      text: `Welcome to the world of circles! Circles are everywhere around us: wheels, clocks, coins, pizzas, and even the moon! Today we will explore the special parts of a circle. Every circle has a centre, which is the exact middle point. From the centre, we can draw a radius to any point on the circle. And if we draw a straight line through the centre from one side to the other, that is called the diameter. Let us start by identifying these parts!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-circles-parts.mp3'
+    },
+    display: {
+      content: `# Parts of a Circle
+
+Circles are special shapes found everywhere in our world!
+
+**Key Parts:**
+- **Centre (O)**: The exact middle point of the circle
+- **Radius (r)**: A line from the centre to any point on the circle
+- **Diameter (d)**: A line through the centre, touching both sides
+
+**Important Relationship:**
+Diameter = 2 × Radius
+
+---
+
+### First Question:
+Look at the circle below. If the radius is 7 cm, what is the diameter?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'p6Circle',
+      parameters: {
+        mode: 'full',
+        givenValue: '7',
+        givenType: 'radius',
+        unit: 'cm',
+        showCentre: true,
+        showRadiusLine: true,
+        showDiameterLine: false
+      },
+      caption: 'A circle with radius 7 cm'
+    }
+  },
+
+  'p6-math-circles-circumference': {
+    speech: {
+      text: `Great work on learning the parts of a circle! Now let us discover something amazing about circles. If you roll a circle one complete turn, the distance it travels is called the circumference. Here is the magical part: for any circle, the circumference divided by the diameter always gives the same number, about 3.14. This special number is called pi! We use pi equals 3.14 or pi equals 22 over 7 to calculate circumference. Let us see how!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-circles-circumference.mp3'
+    },
+    display: {
+      content: `# Circumference of a Circle
+
+The **circumference** is the distance around a circle.
+
+**Key Discovery:**
+For ANY circle: Circumference ÷ Diameter ≈ 3.14
+
+This special number is called **π (pi)**!
+
+**Formulas:**
+- Circumference = π × Diameter
+- Circumference = 2 × π × Radius
+
+**Values of π:**
+- π = 3.14 (for decimals)
+- π = 22/7 (for fractions - use when divisible by 7)
+
+---
+
+### First Question:
+A circular garden has a diameter of 14 m. Find its circumference. (Take π = 22/7)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'p6Circle',
+      parameters: {
+        mode: 'full',
+        givenValue: '14',
+        givenType: 'diameter',
+        unit: 'm',
+        showCentre: true,
+        showDiameterLine: true,
+        highlightArc: true
+      },
+      caption: 'A circular garden with diameter 14 m'
+    }
+  },
+
+  'p6-math-circles-perimeter-semi-quarter': {
+    speech: {
+      text: `Excellent! You have mastered the circumference of a full circle. Now let us explore half circles and quarter circles! A semicircle is half a circle, and a quarter circle is one fourth of a circle. Finding their perimeter is fun because we need to add the curved arc part and the straight edges together. Remember, the arc of a semicircle is half the circumference, and a quarter circle arc is one fourth. Let us practise!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-circles-perimeter-semi-quarter.mp3'
+    },
+    display: {
+      content: `# Perimeter of Semicircle & Quarter Circle
+
+**Semicircle (Half Circle):**
+- Arc length = ½ × Circumference = ½ × π × d
+- Perimeter = Arc + Diameter
+
+**Quarter Circle:**
+- Arc length = ¼ × Circumference = ¼ × 2πr
+- Perimeter = Arc + Radius + Radius
+
+---
+
+### First Question:
+Find the perimeter of a semicircle with diameter 10 cm. (Take π = 3.14)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'p6Circle',
+      parameters: {
+        mode: 'semicircle',
+        orientation: 'top',
+        givenValue: '10',
+        givenType: 'diameter',
+        unit: 'cm',
+        showShading: true,
+        highlightArc: true
+      },
+      caption: 'A semicircle with diameter 10 cm'
+    }
+  },
+
+  'p6-math-circles-area': {
+    speech: {
+      text: `Now for something really exciting: the area of a circle! The area tells us how much space is inside the circle. The formula uses pi and the radius squared. That means radius times radius! So area equals pi times radius times radius. When we are given the diameter, we first find the radius by dividing by 2. Let us calculate some areas together!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-circles-area.mp3'
+    },
+    display: {
+      content: `# Area of a Circle
+
+The **area** is the space inside a circle.
+
+**Formula:**
+Area = π × r × r = π × r²
+
+**Steps:**
+1. Identify the radius (if given diameter, divide by 2)
+2. Square the radius (r × r)
+3. Multiply by π
+
+---
+
+### First Question:
+A circular plate has a radius of 7 cm. Find its area. (Take π = 22/7)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'p6Circle',
+      parameters: {
+        mode: 'full',
+        givenValue: '7',
+        givenType: 'radius',
+        unit: 'cm',
+        showCentre: true,
+        showRadiusLine: true,
+        showShading: true
+      },
+      caption: 'A circular plate with radius 7 cm'
+    }
+  },
+
+  'p6-math-circles-area-semi-quarter': {
+    speech: {
+      text: `You are doing amazing! Now let us find the area of semicircles and quarter circles. Just like with perimeter, we use fractions of the full circle area. A semicircle has half the area, so we divide by 2. A quarter circle has one fourth the area, so we divide by 4. First find the full circle area, then take the fraction. Let us practise!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-circles-area-semi-quarter.mp3'
+    },
+    display: {
+      content: `# Area of Semicircle & Quarter Circle
+
+**Semicircle (Half Circle):**
+- Area = ½ × π × r²
+
+**Quarter Circle:**
+- Area = ¼ × π × r²
+
+**Strategy:**
+1. Find the full circle area first
+2. Divide by 2 for semicircle, or 4 for quarter circle
+
+---
+
+### First Question:
+Find the area of a semicircle with diameter 42 cm. (Take π = 22/7)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'p6Circle',
+      parameters: {
+        mode: 'semicircle',
+        orientation: 'top',
+        givenValue: '42',
+        givenType: 'diameter',
+        unit: 'cm',
+        showShading: true
+      },
+      caption: 'A semicircle with diameter 42 cm'
+    }
+  },
+
+  'p6-math-circles-composite': {
+    speech: {
+      text: `Congratulations on reaching the final challenge: composite figures! These are shapes made by combining circles with squares, rectangles, or other circles. The secret is to break down the figure into simpler shapes. Sometimes we add areas together, sometimes we subtract. Think about what shapes you can see and whether they are being added or removed. You have got all the skills you need. Let us tackle these puzzles!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/p6-math-circles-composite.mp3'
+    },
+    display: {
+      content: `# Composite Figures
+
+Composite figures combine circles with other shapes.
+
+**Key Strategies:**
+1. **Addition**: Add areas/perimeters of shapes joined together
+2. **Subtraction**: Subtract the area/perimeter of shapes cut out
+3. **Simplify**: 2 semicircles = 1 circle, 4 quarter circles = 1 circle
+
+**Common Figures:**
+- Stadium shape (rectangle + 2 semicircles)
+- Quarter circle in a square
+- Overlapping circles
+
+---
+
+### First Question:
+The figure shows a square with side 14 cm. A quarter circle is cut from one corner. Find the area of the shaded region. (Take π = 22/7)`,
+      showAfterSpeech: true
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

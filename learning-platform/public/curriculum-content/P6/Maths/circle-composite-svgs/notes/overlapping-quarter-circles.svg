@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <!-- Background -->
+  <rect width="280" height="280" fill="#f8fafc"/>
+
+  <!-- Two overlapping quarter circles (leaf/eye shape) -->
+  <!-- From PDF page 14 -->
+
+  <!-- The leaf shape (intersection of two quarter circles) -->
+  <path d="M 40 140
+           A 140 140 0 0 1 180 0
+           A 140 140 0 0 1 40 140 Z" fill="#d8b4fe" stroke="#7c3aed" stroke-width="3" transform="translate(0, 70)"/>
+
+  <!-- Square outline (dashed) to show original context -->
+  <rect x="40" y="70" width="140" height="140" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Dimensions -->
+  <text x="110" y="240" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">7 cm</text>
+  <text x="200" y="140" text-anchor="start" font-size="14" fill="#334155" font-weight="bold">7 cm</text>
+
+  <!-- Dimension lines -->
+  <line x1="40" y1="225" x2="180" y2="225" stroke="#334155" stroke-width="1"/>
+  <polygon points="40,225 48,221 48,229" fill="#334155"/>
+  <polygon points="180,225 172,221 172,229" fill="#334155"/>
+</svg>

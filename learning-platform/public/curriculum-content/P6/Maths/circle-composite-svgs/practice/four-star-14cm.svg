@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#f8fafc"/>
+
+  <!-- Square with 4 quarter circles cut from corners = 4-point star -->
+  <!-- Square side = 14 cm, so radius of each quarter = 7 cm -->
+  <!-- Using 140px for square (radius = 70px) -->
+
+  <!-- Square base (shaded) -->
+  <rect x="80" y="80" width="140" height="140" fill="#e9d5ff" stroke="#9333ea" stroke-width="2"/>
+
+  <!-- Four quarter circles CUT OUT (white/background color) -->
+  <!-- Top-left quarter circle -->
+  <path d="M 80 80 L 80 150 A 70 70 0 0 0 150 80 L 80 80 Z" fill="#f8fafc" stroke="none"/>
+
+  <!-- Top-right quarter circle -->
+  <path d="M 220 80 L 150 80 A 70 70 0 0 0 220 150 L 220 80 Z" fill="#f8fafc" stroke="none"/>
+
+  <!-- Bottom-left quarter circle -->
+  <path d="M 80 220 L 150 220 A 70 70 0 0 0 80 150 L 80 220 Z" fill="#f8fafc" stroke="none"/>
+
+  <!-- Bottom-right quarter circle -->
+  <path d="M 220 220 L 220 150 A 70 70 0 0 0 150 220 L 220 220 Z" fill="#f8fafc" stroke="none"/>
+
+  <!-- Arc outlines (the curved edges of the star) -->
+  <path d="M 80 150 A 70 70 0 0 0 150 80" fill="none" stroke="#9333ea" stroke-width="2"/>
+  <path d="M 150 80 A 70 70 0 0 0 220 150" fill="none" stroke="#9333ea" stroke-width="2"/>
+  <path d="M 220 150 A 70 70 0 0 0 150 220" fill="none" stroke="#9333ea" stroke-width="2"/>
+  <path d="M 150 220 A 70 70 0 0 0 80 150" fill="none" stroke="#9333ea" stroke-width="2"/>
+
+  <!-- Square outline (dashed to show original square) -->
+  <rect x="80" y="80" width="140" height="140" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Dimension - square side -->
+  <line x1="80" y1="60" x2="220" y2="60" stroke="#334155" stroke-width="1"/>
+  <polygon points="80,60 88,56 88,64" fill="#334155"/>
+  <polygon points="220,60 212,56 212,64" fill="#334155"/>
+  <text x="150" y="50" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">14 cm</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#f8fafc"/>
+
+  <!-- Shape: Two quarter circles at top (concave), straight edges, semicircle at bottom -->
+  <!-- Radius = 100 (representing 21 cm), with straight edges of 100 (21 cm) -->
+
+  <!-- Main shape path -->
+  <!-- Start at top-left (100, 50), quarter arc down to center-top (200, 150), -->
+  <!-- quarter arc down to top-right (300, 50), line down to (300, 150), -->
+  <!-- semicircle to (100, 150), line up to start -->
+  <path d="M 100 50
+           A 100 100 0 0 1 200 150
+           A 100 100 0 0 1 300 50
+           L 300 150
+           A 100 100 0 0 1 100 150
+           L 100 50 Z"
+        fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Left dimension arrow and label (for height/radius) -->
+  <line x1="70" y1="50" x2="70" y2="150" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="70,50 66,60 74,60" fill="#334155"/>
+  <polygon points="70,150 66,140 74,140" fill="#334155"/>
+  <text x="55" y="105" text-anchor="end" font-size="16" fill="#334155" font-weight="bold">21 cm</text>
+
+  <!-- Right dimension arrow and label -->
+  <line x1="330" y1="50" x2="330" y2="150" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="330,50 326,60 334,60" fill="#334155"/>
+  <polygon points="330,150 326,140 334,140" fill="#334155"/>
+  <text x="345" y="105" text-anchor="start" font-size="16" fill="#334155" font-weight="bold">21 cm</text>
+</svg>

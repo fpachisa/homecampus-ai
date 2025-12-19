@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160">
+  <!-- Background -->
+  <rect width="400" height="160" fill="#f8fafc"/>
+
+  <!-- Stadium/capsule shape: rectangle + two semicircles -->
+  <!-- Rectangle is 70 × 28, scaled for SVG -->
+
+  <!-- Main shape -->
+  <path d="M 80 40
+           L 320 40
+           A 40 40 0 0 1 320 120
+           L 80 120
+           A 40 40 0 0 1 80 40 Z" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+
+  <!-- Rectangle portion (lighter shade to show composition) -->
+  <rect x="80" y="40" width="240" height="80" fill="none" stroke="#16a34a" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Dimensions -->
+  <text x="200" y="25" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">70 m</text>
+  <text x="370" y="85" text-anchor="start" font-size="14" fill="#334155" font-weight="bold">28 m</text>
+
+  <!-- Dimension lines -->
+  <line x1="80" y1="32" x2="320" y2="32" stroke="#334155" stroke-width="1"/>
+  <polygon points="80,32 88,28 88,36" fill="#334155"/>
+  <polygon points="320,32 312,28 312,36" fill="#334155"/>
+
+  <!-- Height dimension -->
+  <line x1="360" y1="40" x2="360" y2="120" stroke="#334155" stroke-width="1"/>
+  <polygon points="360,40 356,48 364,48" fill="#334155"/>
+  <polygon points="360,120 356,112 364,112" fill="#334155"/>
+</svg>

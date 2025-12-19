@@ -113,6 +113,8 @@ import { P6_RATIOS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/p
 import type { P6RatiosTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-ratios';
 import { P6_PERCENTAGE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-percentage';
 import type { P6PercentageTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-percentage';
+import { P6_CIRCLES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-circles';
+import type { P6CirclesTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-circles';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -221,6 +223,21 @@ function getTopicIcon(topicId: string): string {
       'p6-math-percentage-increase',
       'p6-math-percentage-decrease',
       'p6-math-percentage-word-problems'
+    ];
+    const index = subtopicIds.indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // P6 Circles icons
+  if (topicId.startsWith('p6-math-circles-')) {
+    const icons = ['⭕', '📏', '🔄', '📐', '🔵', '🧩'];  // Parts, Circumference, Perimeter Semi/Quarter, Area, Area Semi/Quarter, Composite
+    const subtopicIds = [
+      'p6-math-circles-parts',
+      'p6-math-circles-circumference',
+      'p6-math-circles-perimeter-semi-quarter',
+      'p6-math-circles-area',
+      'p6-math-circles-area-semi-quarter',
+      'p6-math-circles-composite'
     ];
     const index = subtopicIds.indexOf(topicId);
     return icons[index >= 0 ? index : 0];
@@ -537,6 +554,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p6-math-fractions') return 'Fractions';
   if (category === 'p6-math-ratios') return 'Ratios';
   if (category === 'p6-math-percentage') return 'Percentage';
+  if (category === 'p6-math-circles') return 'Circles';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -1079,6 +1097,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p6-math-percentage') {
       return Object.entries(P6_PERCENTAGE_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as P6PercentageTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p6-math-circles') {
+      return Object.entries(P6_CIRCLES_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as P6CirclesTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

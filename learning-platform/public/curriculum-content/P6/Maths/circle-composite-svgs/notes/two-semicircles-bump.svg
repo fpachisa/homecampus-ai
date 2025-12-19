@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200">
+  <!-- Background -->
+  <rect width="350" height="200" fill="#f8fafc"/>
+
+  <!-- Two semicircles forming a bump shape (from PDF page 16) -->
+  <!-- One semicircle up, one semicircle down -->
+
+  <!-- Base rectangle area (invisible, for reference) -->
+
+  <!-- Left semicircle (up) -->
+  <path d="M 50 130
+           A 70 70 0 0 1 190 130" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Right semicircle (down) -->
+  <path d="M 190 130
+           A 70 70 0 0 0 330 130" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Straight line connecting bottom -->
+  <line x1="50" y1="130" x2="330" y2="130" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Dimensions -->
+  <text x="120" y="170" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">14 cm</text>
+  <text x="260" y="170" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">14 cm</text>
+
+  <!-- Dimension lines -->
+  <line x1="50" y1="155" x2="190" y2="155" stroke="#334155" stroke-width="1"/>
+  <polygon points="50,155 58,151 58,159" fill="#334155"/>
+  <polygon points="190,155 182,151 182,159" fill="#334155"/>
+
+  <line x1="190" y1="155" x2="330" y2="155" stroke="#334155" stroke-width="1"/>
+  <polygon points="190,155 198,151 198,159" fill="#334155"/>
+  <polygon points="330,155 322,151 322,159" fill="#334155"/>
+</svg>
