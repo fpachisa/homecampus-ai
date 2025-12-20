@@ -3,10 +3,13 @@
  *
  * Handles problem generation and evaluation for path-based practice.
  * Uses AI to generate contextual problems based on node descriptors.
+ *
+ * SECURITY: Uses Cloud Functions in production (API keys on server)
  */
 
 import type { PathNode, PathProblem, EvaluationWithHistory, RelatedQuestionContext } from '../types/practice';
 import FallbackAIService from './fallbackAIService';
+import { shouldUseCloudFunctions, generateWithCloudFunction } from './cloudFunctionAIService';
 import {
   generatePracticeProblemsPrompt,
   evaluatePracticeAnswerWithHistoryPrompt,
@@ -16,26 +19,37 @@ import {
 import { safeParseJSON, extractPracticeJSON } from './utils/responseParser';
 
 class PathPracticeService {
-  private aiService: FallbackAIService;
+  private aiService: FallbackAIService | null = null;
+  private useCloudFunctions: boolean;
 
   constructor() {
-    // Initialize AI service with API keys from environment
-    const geminiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    const claudeKey = import.meta.env.VITE_CLAUDE_API_KEY;
+    this.useCloudFunctions = shouldUseCloudFunctions();
 
-    if (!geminiKey) {
-      throw new Error('VITE_GEMINI_API_KEY is required for practice mode');
+    if (this.useCloudFunctions) {
+      console.log('🔒 PathPracticeService: Using Cloud Functions (secure mode)');
+    } else {
+      // Development mode with direct API calls
+      console.warn('⚠️ PathPracticeService: Using direct API calls (development mode)');
+      const geminiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      const claudeKey = import.meta.env.VITE_CLAUDE_API_KEY;
+
+      if (!geminiKey) {
+        throw new Error('VITE_GEMINI_API_KEY is required for practice mode in direct API mode');
+      }
+
+      this.aiService = new FallbackAIService(geminiKey, claudeKey);
     }
-
-    this.aiService = new FallbackAIService(geminiKey, claudeKey);
   }
 
   /**
-   * Call AI provider directly without topicId-based prompt resolution
-   * This is used for practice mode which has its own custom prompts
+   * Call AI provider - routes through Cloud Functions in production
+   * or direct API in development
    */
   private async callAIDirectly(prompt: string): Promise<string> {
-    return this.aiService.generate(prompt);
+    if (this.useCloudFunctions) {
+      return generateWithCloudFunction(prompt);
+    }
+    return this.aiService!.generate(prompt);
   }
 
   /**

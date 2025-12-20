@@ -1,6 +1,6 @@
 /**
  * AI Campus Firebase Cloud Functions
- * Payment Gateway Integration
+ * Payment Gateway Integration + AI Proxy
  */
 
 // Child profile management
@@ -17,3 +17,9 @@ export { trialReminderJob } from './scheduled/trialReminder';
 
 // Admin functions
 export { extendTrial } from './admin/extendTrial';
+
+// AI Proxy functions (secure - API keys never exposed to client)
+export { generateContent, generateContentBatch } from './ai/generateContent';
+export { synthesizeSpeech } from './ai/synthesizeSpeech';
+export { synthesizeCloudTTS } from './ai/synthesizeCloudTTS';
+export { analyzeImage } from './ai/analyzeImage';

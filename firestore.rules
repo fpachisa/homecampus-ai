@@ -226,6 +226,12 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    // Rate limits - server-only (written by Cloud Functions)
+    // Clients cannot read or write rate limit data
+    match /rateLimits/{userId} {
+      allow read, write: if false;
+    }
+
     // Deny all other access by default
     match /{document=**} {
       allow read, write: if false;

@@ -4,6 +4,7 @@ import InputArea, { type InputAreaHandle } from './InputArea';
 import Avatar from './Avatar';
 import SolutionPrompt from './SolutionPrompt';
 import FallbackAIService from '../services/fallbackAIService';
+import { getCloudFunctionAIService, shouldUseCloudFunctions } from '../services/cloudFunctionAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
@@ -637,39 +638,46 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
     hasInitialized.current = true;
 
-    // Initialize AI service with fallback
-    const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    const claudeApiKey = import.meta.env.VITE_CLAUDE_API_KEY;
+    // Initialize AI service
+    // Use Cloud Functions in production (secure - API keys on server)
+    // Use direct API calls only in development with VITE_USE_DIRECT_AI=true
+    if (shouldUseCloudFunctions()) {
+      console.log('🔒 Using Cloud Function AI Service (secure mode)');
+      aiService.current = getCloudFunctionAIService();
+    } else {
+      // Development mode with direct API calls (for debugging only)
+      console.warn('⚠️ Using direct API calls (development mode only)');
+      const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      const claudeApiKey = import.meta.env.VITE_CLAUDE_API_KEY;
 
-    if (!geminiApiKey) {
-      console.error('Gemini API key not found in environment variables');
-      return;
+      if (!geminiApiKey) {
+        console.error('Gemini API key not found. Set VITE_GEMINI_API_KEY or use Cloud Functions.');
+        return;
+      }
+
+      // Callback to show fallback messages to user
+      const showFallbackMessage = (message: string) => {
+        setFallbackMessage(message);
+        setTimeout(() => setFallbackMessage(null), 3000);
+      };
+
+      aiService.current = new FallbackAIService(
+        geminiApiKey,
+        claudeApiKey,
+        {
+          maxRetries: 1,
+          retryDelay: 0,
+          exponentialBackoff: false,
+          showFallbackMessage: true
+        },
+        showFallbackMessage
+      );
+
+      console.log('AI Service initialized (direct mode):', {
+        primary: 'Gemini',
+        fallback: claudeApiKey ? 'Claude' : 'None'
+      });
     }
-
-    // Callback to show fallback messages to user
-    const showFallbackMessage = (message: string) => {
-      setFallbackMessage(message);
-      // Clear the message after a few seconds
-      setTimeout(() => setFallbackMessage(null), 3000);
-    };
-
-    aiService.current = new FallbackAIService(
-      geminiApiKey,
-      claudeApiKey, // optional - can be undefined
-      {
-        maxRetries: 1, // Fast fail - single attempt before Claude fallback
-        retryDelay: 0, // No delay when switching to Claude
-        exponentialBackoff: false, // No exponential backoff needed
-        showFallbackMessage: true
-      },
-      showFallbackMessage
-    );
-
-    console.log('AI Service initialized:', {
-      primary: 'Gemini',
-      fallback: claudeApiKey ? 'Claude' : 'None',
-      hasFallback: Boolean(claudeApiKey)
-    });
   }, []);
 
   // Check if notes are available for this topic

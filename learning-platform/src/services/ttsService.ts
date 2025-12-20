@@ -1,15 +1,19 @@
 /**
  * TTS Service with Provider Pattern
- * Supports multiple TTS providers: Google Cloud TTS (primary), Gemini TTS (fallback)
+ * Supports multiple TTS providers with Cloud Function as secure default
  *
- * PRODUCTION CONFIG: Always uses Cloud TTS as primary provider for reliability
+ * PRODUCTION: Uses CloudFunctionTTSProvider (API keys on server)
+ * DEVELOPMENT: Can use direct providers with VITE_USE_DIRECT_AI=true
  */
 
 import type { TTSProvider, TTSSynthesizeOptions, EmotionType } from './tts/TTSProvider';
 import { GeminiTTSProvider } from './tts/GeminiTTSProvider';
 import { CloudTTSProvider } from './tts/CloudTTSProvider';
+import { CloudFunctionTTSProvider } from './tts/CloudFunctionTTSProvider';
+import { CloudFunctionCloudTTSProvider } from './tts/CloudFunctionCloudTTSProvider';
+import { shouldUseCloudFunctions } from './cloudFunctionAIService';
 
-type TTSProviderType = 'gemini' | 'cloud';
+type TTSProviderType = 'gemini' | 'cloud' | 'cloudfunction' | 'cloudfunction-cloud';
 
 /**
  * TTS Service with automatic fallback
@@ -20,36 +24,60 @@ class TTSService {
   private fallbackProvider: TTSProvider | null = null;
 
   constructor(
-    providerType: TTSProviderType = 'gemini',
+    providerType: TTSProviderType = 'cloudfunction',
     geminiApiKey?: string,
     cloudApiKey?: string,
     defaultSpeaker?: string
   ) {
     // Initialize primary provider based on type
-    if (providerType === 'gemini' && geminiApiKey) {
+    if (providerType === 'cloudfunction-cloud') {
+      // Secure mode with Google Cloud TTS (Chirp HD) - faster
+      try {
+        this.primaryProvider = new CloudFunctionCloudTTSProvider({
+          speakingRate: 1.25
+        });
+        console.log('🔒 CloudFunction Cloud TTS (Chirp HD) initialized as primary provider (secure mode)');
+
+        // Add Gemini TTS as fallback
+        this.fallbackProvider = new CloudFunctionTTSProvider({
+          defaultSpeaker: defaultSpeaker || 'callirrhoe'
+        });
+        console.log('🔒 CloudFunction Gemini TTS initialized as fallback provider');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize CloudFunction Cloud TTS:', error);
+      }
+    } else if (providerType === 'cloudfunction') {
+      // Secure mode with Gemini TTS
+      try {
+        this.primaryProvider = new CloudFunctionTTSProvider({
+          defaultSpeaker: defaultSpeaker || 'callirrhoe'
+        });
+        console.log('🔒 CloudFunction Gemini TTS initialized as primary provider (secure mode)');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize CloudFunction TTS:', error);
+      }
+    } else if (providerType === 'gemini' && geminiApiKey) {
       try {
         this.primaryProvider = new GeminiTTSProvider({
           apiKey: geminiApiKey,
           defaultSpeaker: defaultSpeaker || 'callirrhoe'
         });
-        console.log('✅ Gemini TTS initialized as primary provider');
+        console.log('⚠️ Gemini TTS initialized as primary provider (direct API - dev only)');
       } catch (error) {
         console.warn('⚠️ Failed to initialize Gemini TTS:', error);
       }
-    }
-
-    if (providerType === 'cloud' && cloudApiKey) {
+    } else if (providerType === 'cloud' && cloudApiKey) {
       try {
         this.primaryProvider = new CloudTTSProvider({
           apiKey: cloudApiKey
         });
-        console.log('✅ Cloud TTS initialized as primary provider');
+        console.log('⚠️ Cloud TTS initialized as primary provider (direct API - dev only)');
       } catch (error) {
         console.warn('⚠️ Failed to initialize Cloud TTS:', error);
       }
     }
 
-    // Initialize fallback provider (opposite of primary)
+    // Initialize fallback provider (only for direct API modes)
     if (providerType === 'gemini' && cloudApiKey) {
       try {
         this.fallbackProvider = new CloudTTSProvider({
@@ -181,14 +209,16 @@ class TTSService {
   }
 }
 
-// Initialize TTS service - ALWAYS use Cloud TTS for production
-// Provider type is hardcoded to 'cloud' for reliable production behavior
-const providerType: TTSProviderType = 'cloud'; // Changed from env-based to hardcoded
+// Initialize TTS service
+// PRODUCTION: Uses CloudFunctionCloudTTSProvider (Chirp HD - faster) with Gemini fallback
+// DEVELOPMENT: Uses direct API with VITE_USE_DIRECT_AI=true
+const useCloudFunctions = shouldUseCloudFunctions();
+const providerType: TTSProviderType = useCloudFunctions ? 'cloudfunction-cloud' : 'cloud';
 const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const cloudApiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY;
 const defaultSpeaker = import.meta.env.VITE_TTS_SPEAKER || 'callirrhoe';
 
-console.log(`🔧 TTS Configuration: Provider=${providerType}, Speaker=${defaultSpeaker}`);
+console.log(`🔧 TTS Configuration: Provider=${providerType}, Speaker=${defaultSpeaker}, Secure=${useCloudFunctions}`);
 
 export const ttsService = new TTSService(
   providerType,

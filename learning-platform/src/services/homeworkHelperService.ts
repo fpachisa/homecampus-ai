@@ -2,35 +2,69 @@
  * Homework Helper Service
  * Manages Socratic tutoring sessions for uploaded problems
  * Uses structured output to guarantee valid JSON responses
+ *
+ * SECURITY: Uses Cloud Functions in production (API keys on server)
  */
 
 import { GoogleGenAI } from '@google/genai';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { HomeworkHelperResponseSchema } from '../schemas/homework.schemas';
 import HOMEWORK_HELPER_AGENT from '../prompt-library/core/agents/homeworkHelper';
+import { shouldUseCloudFunctions, generateWithCloudFunction } from './cloudFunctionAIService';
 import type {
   HomeworkHelperContext,
   HomeworkHelperResponse,
 } from '../types/homework';
 
 export class HomeworkHelperService {
-  private ai: GoogleGenAI;
-  private modelName: string;
+  private ai: GoogleGenAI | null = null;
+  private modelName: string = 'gemini-2.5-flash-preview-05-20';
   private config: any;
+  private useCloudFunctions: boolean;
+  private jsonSchemaInstruction: string;
 
   constructor() {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error('VITE_GEMINI_API_KEY not configured');
+    this.useCloudFunctions = shouldUseCloudFunctions();
+
+    // Store JSON schema as instruction for prompts
+    const schema = zodToJsonSchema(HomeworkHelperResponseSchema);
+    this.jsonSchemaInstruction = `\n\nYou MUST respond with valid JSON matching this schema:\n${JSON.stringify(schema, null, 2)}`;
+
+    if (this.useCloudFunctions) {
+      console.log('🔒 HomeworkHelperService: Using Cloud Functions (secure mode)');
+    } else {
+      console.warn('⚠️ HomeworkHelperService: Using direct API calls (development mode)');
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error('VITE_GEMINI_API_KEY not configured');
+      }
+
+      this.ai = new GoogleGenAI({ apiKey });
+      this.config = {
+        temperature: 0.3,
+        responseMimeType: 'application/json',
+        responseJsonSchema: schema,
+      };
+    }
+  }
+
+  /**
+   * Call AI - routes through Cloud Functions in production
+   */
+  private async callAI(prompt: string): Promise<string> {
+    if (this.useCloudFunctions) {
+      // Add JSON schema instruction to prompt for Cloud Functions
+      const promptWithSchema = prompt + this.jsonSchemaInstruction;
+      return generateWithCloudFunction(promptWithSchema);
     }
 
-    this.ai = new GoogleGenAI({ apiKey });
-    this.modelName = 'gemini-3-flash-preview';
-    this.config = {
-      temperature: 0.3,
-      responseMimeType: 'application/json',
-      responseJsonSchema: zodToJsonSchema(HomeworkHelperResponseSchema),
-    };
+    // Direct API call with structured output
+    const response = await this.ai!.models.generateContent({
+      model: this.modelName,
+      contents: prompt,
+      config: this.config
+    });
+    return response.text || '';
   }
 
   /**
@@ -43,22 +77,14 @@ export class HomeworkHelperService {
     // Build full prompt with system prompt and context
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${this.buildPrompt(context, studentInput)}`;
 
+    // Call AI (Cloud Function or direct)
+    const textResponse = await this.callAI(fullPrompt);
 
-    // Call Gemini with structured output
-    const response = await this.ai.models.generateContent({
-      model: this.modelName,
-      contents: fullPrompt,
-      config: this.config
-    });
-    console.log('[HomeworkHelper] 📥 Received response from Gemini');
-    console.log('[HomeworkHelper] Prompt:', fullPrompt);
-    const textResponse = response.text;
-    console.log('[HomeworkHelper] Response:', textResponse);
     if (!textResponse) {
-      throw new Error('No response from Gemini');
+      throw new Error('No response from AI');
     }
 
-    // Direct parse - guaranteed valid JSON from structured output
+    // Parse JSON response
     const parsed = JSON.parse(textResponse);
 
     // Validate with Zod schema for runtime type safety
@@ -122,34 +148,18 @@ Generate a warm, encouraging greeting that:
     // Build full prompt with system prompt
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${contextPrompt}`;
 
-    console.log('[HomeworkHelper] 📤 Generating initial greeting...');
-    console.log('[HomeworkHelper] Prompt:', fullPrompt);
-
-
-    // Call Gemini with structured output
-    const response = await this.ai.models.generateContent({
-      model: this.modelName,
-      contents: fullPrompt,
-      config: this.config
-    });
-
-    const textResponse = response.text;
-
-    console.log('[HomeworkHelper] Raw response:', textResponse);
+    // Call AI (Cloud Function or direct)
+    const textResponse = await this.callAI(fullPrompt);
 
     if (!textResponse) {
-      throw new Error('No response from Gemini');
+      throw new Error('No response from AI');
     }
 
-    // Direct parse - guaranteed valid JSON from structured output
+    // Parse JSON response
     const parsed = JSON.parse(textResponse);
 
     // Validate with Zod schema for runtime type safety
     const validated = HomeworkHelperResponseSchema.parse(parsed);
-
-    console.log('[HomeworkHelper] ✅ Initial greeting generated:', {
-      emotion: validated.speech.emotion
-    });
 
     return validated;
   }

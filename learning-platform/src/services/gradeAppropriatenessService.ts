@@ -2,11 +2,14 @@
  * Grade Appropriateness Service
  * Checks if uploaded problem matches student's grade-level curriculum
  * Uses structured output to guarantee valid JSON responses
+ *
+ * SECURITY: Uses Cloud Functions in production (API keys on server)
  */
 
 import { GoogleGenAI } from '@google/genai';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { GradeCheckSchema } from '../schemas/homework.schemas';
+import { shouldUseCloudFunctions, generateWithCloudFunction } from './cloudFunctionAIService';
 import type { ProblemAnalysis, GradeAppropriatenessCheck } from '../types/homework';
 
 const CHECK_PROMPT = `You are a curriculum expert for K-12 mathematics education.
@@ -39,23 +42,52 @@ SUGGESTION MESSAGE EXAMPLES:
 - too-basic: "This is a bit below your grade level, but reviewing basics never hurts!"`;
 
 export class GradeAppropriatenessService {
-  private ai: GoogleGenAI;
-  private modelName: string;
+  private ai: GoogleGenAI | null = null;
+  private modelName: string = 'gemini-2.5-flash-preview-05-20';
   private config: any;
+  private useCloudFunctions: boolean;
+  private jsonSchemaInstruction: string;
 
   constructor() {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error('VITE_GEMINI_API_KEY not configured');
+    this.useCloudFunctions = shouldUseCloudFunctions();
+
+    // Store JSON schema as instruction for prompts
+    const schema = zodToJsonSchema(GradeCheckSchema);
+    this.jsonSchemaInstruction = `\n\nYou MUST respond with valid JSON matching this schema:\n${JSON.stringify(schema, null, 2)}`;
+
+    if (this.useCloudFunctions) {
+      console.log('🔒 GradeAppropriatenessService: Using Cloud Functions (secure mode)');
+    } else {
+      console.warn('⚠️ GradeAppropriatenessService: Using direct API calls (development mode)');
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error('VITE_GEMINI_API_KEY not configured');
+      }
+
+      this.ai = new GoogleGenAI({ apiKey });
+      this.config = {
+        temperature: 0.3,
+        responseMimeType: "application/json",
+        responseJsonSchema: schema,
+      };
+    }
+  }
+
+  /**
+   * Call AI - routes through Cloud Functions in production
+   */
+  private async callAI(prompt: string): Promise<string> {
+    if (this.useCloudFunctions) {
+      const promptWithSchema = prompt + this.jsonSchemaInstruction;
+      return generateWithCloudFunction(promptWithSchema);
     }
 
-    this.ai = new GoogleGenAI({ apiKey });
-    this.modelName = 'gemini-3-flash-preview';
-    this.config = {
-      temperature: 0.3,
-      responseMimeType: "application/json",
-      responseJsonSchema: zodToJsonSchema(GradeCheckSchema),
-    };
+    const response = await this.ai!.models.generateContent({
+      model: this.modelName,
+      contents: prompt,
+      config: this.config
+    });
+    return response.text || '';
   }
 
   /**
@@ -87,36 +119,18 @@ export class GradeAppropriatenessService {
         .replace('{CONCEPTS}', analysis.keyMathConcepts.join(', '))
         .replace('{PROBLEM_TYPE}', analysis.problemType);
 
-      console.log('[GradeCheck] Prompt:', prompt);
-
-
-      // Call Gemini using SDK with structured output
-      const response = await this.ai.models.generateContent({
-        model: this.modelName,
-        contents: prompt,
-        config: this.config
-      });
-
-      const textResponse = response.text;
-
-      console.log('[GradeCheck] 📥 Received response from Gemini');
-      console.log('[GradeCheck] Raw response:', textResponse);
+      // Call AI (Cloud Function or direct)
+      const textResponse = await this.callAI(prompt);
 
       if (!textResponse) {
-        throw new Error('No response from Gemini');
+        throw new Error('No response from AI');
       }
 
-      // Direct parse - guaranteed valid JSON from structured output
+      // Parse JSON response
       const parsed = JSON.parse(textResponse);
 
       // Validate with Zod schema for runtime type safety
       const validated = GradeCheckSchema.parse(parsed);
-
-      console.log('[GradeCheck] ✅ Check complete:', {
-        isAppropriate: validated.isAppropriate,
-        recommendation: validated.recommendation,
-        requiredGrade: validated.requiredGradeLevel
-      });
 
       return {
         studentGrade,
@@ -124,7 +138,6 @@ export class GradeAppropriatenessService {
       };
     } catch (error) {
       console.error('[GradeCheck] ❌ Check failed:', error);
-      // Propagate error - don't fake a grade check result
       throw new Error(
         `Failed to check grade appropriateness: ${error instanceof Error ? error.message : 'Unknown error'}`
       );

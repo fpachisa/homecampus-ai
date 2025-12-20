@@ -2,12 +2,28 @@
  * Problem Analysis Service
  * Uses Gemini 2.5 Flash multimodal to analyze uploaded homework problems
  * Uses structured output to guarantee valid JSON responses
+ *
+ * SECURITY: Uses Cloud Functions in production (API keys on server)
  */
 
 import { GoogleGenAI } from '@google/genai';
+import { httpsCallable } from 'firebase/functions';
+import { functions } from './firebase';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { ProblemAnalysisSchema } from '../schemas/homework.schemas';
+import { shouldUseCloudFunctions } from './cloudFunctionAIService';
 import type { ProblemAnalysis, UploadedProblem } from '../types/homework';
+
+// Types for Cloud Function
+interface AnalyzeImageRequest {
+  prompt: string;
+  imageBase64: string;
+  mimeType: string;
+}
+
+interface AnalyzeImageResponse {
+  content: string;
+}
 
 const ANALYSIS_PROMPT = `You are an expert educational content analyzer specializing in K-12 mathematics.
 
@@ -39,23 +55,40 @@ PROBLEM TYPE CLASSIFICATION:
 If the image is unclear, blurry, or cut off, set analysisConfidence to "low" and list specific issues in clarificationNeeded.`;
 
 export class ProblemAnalysisService {
-  private ai: GoogleGenAI;
-  private modelName: string;
+  private ai: GoogleGenAI | null = null;
+  private modelName: string = 'gemini-2.5-flash-preview-05-20';
   private config: any;
+  private useCloudFunctions: boolean;
+  private jsonSchemaInstruction: string;
+  private analyzeImageFn: ReturnType<typeof httpsCallable<AnalyzeImageRequest, AnalyzeImageResponse>> | null = null;
 
   constructor() {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error('VITE_GEMINI_API_KEY not configured');
-    }
+    this.useCloudFunctions = shouldUseCloudFunctions();
 
-    this.ai = new GoogleGenAI({ apiKey });
-    this.modelName = 'gemini-3-flash-preview';
-    this.config = {
-      temperature: 0.3,
-      responseMimeType: "application/json",
-      responseJsonSchema: zodToJsonSchema(ProblemAnalysisSchema),
-    };
+    // Store JSON schema as instruction for prompts
+    const schema = zodToJsonSchema(ProblemAnalysisSchema);
+    this.jsonSchemaInstruction = `\n\nYou MUST respond with valid JSON matching this schema:\n${JSON.stringify(schema, null, 2)}`;
+
+    if (this.useCloudFunctions) {
+      console.log('🔒 ProblemAnalysisService: Using Cloud Functions (secure mode)');
+      this.analyzeImageFn = httpsCallable<AnalyzeImageRequest, AnalyzeImageResponse>(
+        functions,
+        'analyzeImage'
+      );
+    } else {
+      console.warn('⚠️ ProblemAnalysisService: Using direct API calls (development mode)');
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error('VITE_GEMINI_API_KEY not configured');
+      }
+
+      this.ai = new GoogleGenAI({ apiKey });
+      this.config = {
+        temperature: 0.3,
+        responseMimeType: "application/json",
+        responseJsonSchema: schema,
+      };
+    }
   }
 
   /**
@@ -66,45 +99,45 @@ export class ProblemAnalysisService {
       // Prepare image data
       const imageData = problem.imageData || await this.fetchImageData(problem.imageUrl);
       const mimeType = problem.fileType;
+      const promptWithSchema = ANALYSIS_PROMPT + this.jsonSchemaInstruction;
 
+      let textResponse: string;
 
-      // Call Gemini with multimodal input using SDK
-      // With structured output, Gemini guarantees valid JSON matching our schema
-      const response = await this.ai.models.generateContent({
-        model: this.modelName,
-        contents: [
-          ANALYSIS_PROMPT,
-          {
-            inlineData: {
-              mimeType: mimeType,
-              data: imageData.replace(/^data:[^;]+;base64,/, ''),
+      if (this.useCloudFunctions && this.analyzeImageFn) {
+        // Use Cloud Function for secure analysis
+        const result = await this.analyzeImageFn({
+          prompt: promptWithSchema,
+          imageBase64: imageData.replace(/^data:[^;]+;base64,/, ''),
+          mimeType: mimeType,
+        });
+        textResponse = result.data.content;
+      } else {
+        // Direct API call (development mode only)
+        const response = await this.ai!.models.generateContent({
+          model: this.modelName,
+          contents: [
+            ANALYSIS_PROMPT,
+            {
+              inlineData: {
+                mimeType: mimeType,
+                data: imageData.replace(/^data:[^;]+;base64,/, ''),
+              },
             },
-          },
-        ],
-        config: this.config
-      });
-
-      const textResponse = response.text;
-
-      console.log('[ProblemAnalysis] 📥 Received response from Gemini');
-      console.log('[ProblemAnalysis] Raw response:', textResponse);
-
-      if (!textResponse) {
-        throw new Error('No response from Gemini');
+          ],
+          config: this.config
+        });
+        textResponse = response.text || '';
       }
 
-      // Direct parse - guaranteed valid JSON from structured output
+      if (!textResponse) {
+        throw new Error('No response from AI');
+      }
+
+      // Parse JSON response
       const parsed = JSON.parse(textResponse);
 
       // Validate with Zod schema for runtime type safety
       const validated = ProblemAnalysisSchema.parse(parsed);
-
-      console.log('[ProblemAnalysis] ✅ Analysis complete:', {
-        topic: validated.topic,
-        subTopic: validated.subTopic,
-        difficulty: validated.difficulty,
-        confidence: validated.analysisConfidence
-      });
 
       // Type assertion for subject field (Zod schema uses string, TS type uses union)
       return validated as ProblemAnalysis;
