@@ -111,6 +111,10 @@ import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { P6PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 import type { P6CirclesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import type { P6AveragesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import type { P6AlgebraTopicId } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -369,6 +373,16 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // P6 Circles topics
     if (topicId.startsWith('p6-math-circles-')) {
       const subtopic = P6_CIRCLES_SUBTOPICS[topicId as P6CirclesTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P6 Averages topics
+    if (topicId.startsWith('p6-math-averages-')) {
+      const subtopic = P6_AVERAGES_SUBTOPICS[topicId as P6AveragesTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // P6 Algebra topics
+    if (topicId.startsWith('p6-math-algebra-')) {
+      const subtopic = P6_ALGEBRA_SUBTOPICS[topicId as P6AlgebraTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

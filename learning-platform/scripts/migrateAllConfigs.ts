@@ -24,10 +24,7 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { P6_FRACTIONS_FIRESTORE_CONFIGS } from './p6-fractions-firestore-configs.js';
-import { P6_RATIOS_FIRESTORE_CONFIGS } from './p6-ratios-firestore-configs.js';
-import { P6_PERCENTAGE_FIRESTORE_CONFIGS } from './p6-percentage-firestore-configs.js';
-import { P6_CIRCLES_FIRESTORE_CONFIGS } from './p6-circles-firestore-configs.js';
+import { P6_ALGEBRA_FIRESTORE_CONFIGS } from './p6-algebra-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -97,10 +94,7 @@ const STANDARD_MODULES = {
 
 
 const ALL_CONFIGS = [
-  ...P6_FRACTIONS_FIRESTORE_CONFIGS,
-  ...P6_RATIOS_FIRESTORE_CONFIGS,
-  ...P6_PERCENTAGE_FIRESTORE_CONFIGS,
-  ...P6_CIRCLES_FIRESTORE_CONFIGS
+  ...P6_ALGEBRA_FIRESTORE_CONFIGS
 ];
 
 /**

@@ -91,6 +91,7 @@ import PercentageGridVisualizer from '../math-tools/PercentageGridVisualizer';
 import PercentageBarVisualizer from '../math-tools/PercentageBarVisualizer';
 import UnitaryMethodTableVisualizer from '../math-tools/UnitaryMethodTableVisualizer';
 import PercentageStackedBarVisualizer from '../math-tools/PercentageStackedBarVisualizer';
+import AverageTowerVisualizer from '../math-tools/AverageTowerVisualizer';
 
 // Primary Geometry - P5 Area of Triangle
 import TriangleIdentifyVisualizer from '../math-tools/TriangleIdentifyVisualizer';
@@ -254,6 +255,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   percentageBar: PercentageBarVisualizer,
   unitaryMethodTable: UnitaryMethodTableVisualizer,
   percentageStackedBar: PercentageStackedBarVisualizer,
+  averageTowerVisualizer: AverageTowerVisualizer,
 
   // Primary Geometry - P5 Area of Triangle & Properties of Triangles
   triangleIdentify: TriangleIdentifyVisualizer,

@@ -1,6 +1,7 @@
 import React from 'react';
 import MathRenderer from './MathRenderer';
 import { marked } from 'marked';
+import parse, { type DOMNode, type Text as DOMText } from 'html-react-parser';
 
 interface MathTextProps {
   children: string;
@@ -130,57 +131,73 @@ const MathText: React.FC<MathTextProps> = ({ children, className = '' }) => {
     });
   }*/
 
-  // Step 4: Split HTML by math placeholders and render
-  const parts = renderedHtml.split(/(⟨⟨MATH\d+⟩⟩)/);
+  // Step 4: Parse HTML and replace math placeholders with React components
+  //
+  // CRITICAL FIX (January 2025): Using html-react-parser instead of string splitting
+  //
+  // PREVIOUS APPROACH (BROKEN):
+  // - Split HTML string by placeholders: ["<ul><li>Text: ", "⟨⟨MATH0⟩⟩", "</li></ul>"]
+  // - Wrap each part in <span dangerouslySetInnerHTML>
+  // - Browser "fixes" invalid HTML, breaking structure
+  // - Result: Math ends up OUTSIDE <li> tags, causing line breaks
+  //
+  // NEW APPROACH:
+  // - Parse HTML into proper DOM tree
+  // - Walk tree and replace placeholder TEXT NODES with MathRenderer components
+  // - Math stays INSIDE <li> tags where it belongs
+  // - Result: Valid HTML, correct CSS selectors, inline math rendering
+  //
+  // WHY THIS WORKS:
+  // html-react-parser properly maintains DOM structure while allowing React
+  // component insertion at the correct positions in the tree.
 
-  // CRITICAL FIX FOR LIST RENDERING WITH LATEX (Added: January 2025)
-  //
-  // PROBLEM: When markdown lists contain LaTeX math (e.g., "* Length = $15\text{ cm}$"),
-  // the marked.parse() function converts them to HTML <li> elements:
-  //   Input:  * Length (AB) = $15\text{ cm}$
-  //   Output: <li>Length (AB) = ⟨⟨MATH0⟩⟩</li>
-  //
-  // Browser default <li> styling causes:
-  //   - display: list-item (forces line break before/after)
-  //   - Extra margin/padding between items
-  //   - Result: LaTeX math appearing on separate line from text
-  //
-  // VISUAL BUG EXAMPLE:
-  //   • Length (AB) =
-  //     15 cm              ← LaTeX on new line (BAD)
-  //
-  // SOLUTION: Apply 'math-text-with-lists' class when block markdown is detected.
-  // This class (defined in index.css) provides compact list styling that keeps
-  // LaTeX math inline with text while maintaining readability.
-  //
-  // WHY NOT use parseInline()?
-  // - We need proper <ul>/<li> structure for accessibility and semantic HTML
-  // - The fix belongs in CSS presentation layer, not parsing logic
-  //
-  // DEBUGGING: Look for "🔍 MathText block markdown detected" in console to verify
-  // list detection and see the HTML output.
-  //
-  // TEST CASE: "* Length = $15\text{ cm}$\n* Width = $10\text{ m}$"
-  // Should render as compact list with math inline, not separate lines.
   const WrapperElement = hasBlockMarkdown ? 'div' : 'span';
+
+  // Parse options to replace math placeholders with MathRenderer components
+  const parserOptions = {
+    replace: (domNode: DOMNode) => {
+      // Only process text nodes that contain math placeholders
+      if (domNode.type !== 'text') return;
+
+      const textNode = domNode as DOMText;
+      const text = textNode.data;
+
+      // Skip if no math placeholders
+      if (!text.includes('⟨⟨MATH')) return;
+
+      // Split text by math placeholders
+      const parts = text.split(/(⟨⟨MATH\d+⟩⟩)/);
+
+      // If only one part (no placeholders found after split), return as-is
+      if (parts.length === 1) return;
+
+      // Render parts with MathRenderer for placeholders
+      return (
+        <>
+          {parts.map((part, index) => {
+            const mathMatch = part.match(/^⟨⟨MATH(\d+)⟩⟩$/);
+            if (mathMatch) {
+              const mathIndex = parseInt(mathMatch[1]);
+              const mathSegment = mathSegments[mathIndex];
+              if (mathSegment) {
+                return (
+                  <MathRenderer key={index} inline={mathSegment.inline}>
+                    {mathSegment.content}
+                  </MathRenderer>
+                );
+              }
+            }
+            // Return plain text (empty strings are ok)
+            return part || null;
+          }).filter(Boolean)}
+        </>
+      );
+    }
+  };
 
   return (
     <WrapperElement className={`${className} ${hasBlockMarkdown ? 'math-text-with-lists' : ''}`}>
-      {parts.map((part: string, index: number) => {
-        // Check if this part is a math placeholder
-        const mathMatch = part.match(/^⟨⟨MATH(\d+)⟩⟩$/);
-        if (mathMatch) {
-          const mathIndex = parseInt(mathMatch[1]);
-          const mathSegment = mathSegments[mathIndex];
-          return (
-            <MathRenderer key={index} inline={mathSegment.inline}>
-              {mathSegment.content}
-            </MathRenderer>
-          );
-        }
-        // Render HTML part
-        return <span key={index} dangerouslySetInnerHTML={{ __html: part }} />;
-      })}
+      {parse(renderedHtml, parserOptions)}
     </WrapperElement>
   );
 };

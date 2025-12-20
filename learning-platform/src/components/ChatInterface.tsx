@@ -125,6 +125,10 @@ import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { P6PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 import type { P6CirclesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import type { P6AveragesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import type { P6AlgebraTopicId } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -358,6 +362,14 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P6 circles topic
   if (topicId.startsWith('p6-math-circles-')) {
     return P6_CIRCLES_SUBTOPICS[topicId as P6CirclesTopicId];
+  }
+  // Check if it's a P6 averages topic
+  if (topicId.startsWith('p6-math-averages-')) {
+    return P6_AVERAGES_SUBTOPICS[topicId as P6AveragesTopicId];
+  }
+  // Check if it's a P6 algebra topic
+  if (topicId.startsWith('p6-math-algebra-')) {
+    return P6_ALGEBRA_SUBTOPICS[topicId as P6AlgebraTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -2188,6 +2200,12 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('p6-math-circles-')) {
       return 'Master circles and composite figures!';
     }
+    if (topicId.startsWith('p6-math-averages-')) {
+      return 'Master averages and problem solving!';
+    }
+    if (topicId.startsWith('p6-math-algebra-')) {
+      return 'Master algebra expressions and equations!';
+    }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       return 'Master trigonometry through practice!';
     }
@@ -2243,6 +2261,12 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('p6-math-circles-')) {
       return '⭕';
+    }
+    if (topicId.startsWith('p6-math-averages-')) {
+      return '📊';
+    }
+    if (topicId.startsWith('p6-math-algebra-')) {
+      return '✏️';
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       return '📐';

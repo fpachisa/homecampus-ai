@@ -60,6 +60,8 @@ import { P6_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/p
 import { P6_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 
 export interface SubtopicContent {
   displayName: string;
@@ -136,6 +138,8 @@ class SubtopicContentLoader {
       ...P6_RATIOS_SUBTOPICS,
       ...P6_PERCENTAGE_SUBTOPICS,
       ...P6_CIRCLES_SUBTOPICS,
+      ...P6_AVERAGES_SUBTOPICS,
+      ...P6_ALGEBRA_SUBTOPICS,
       // Future topics will be added here
     };
   }

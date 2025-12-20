@@ -206,6 +206,28 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 6',
       subject: 'Mathematics',
     },
+    {
+      id: 'p6-math-averages',
+      name: 'Averages',
+      icon: '📊',
+      description: 'Master averages: finding average, finding total from average, finding number of data, and word problems',
+      subtopicCount: 4,
+      isActive: true,
+      category: 'p6-math-averages',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
+    {
+      id: 'p6-math-algebra',
+      name: 'Algebra',
+      icon: '✏️',
+      description: 'Master algebra: writing expressions, simplifying, evaluating, and solving equations using bar models',
+      subtopicCount: 4,
+      isActive: true,
+      category: 'p6-math-algebra',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
   ],
   'Secondary 1': [
     {

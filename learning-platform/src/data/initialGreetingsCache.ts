@@ -8456,6 +8456,242 @@ The figure shows a square with side 14 cm. A quarter circle is cut from one corn
     }
   },
 
+  /**
+   * ========================================
+   * P6 MATHEMATICS - AVERAGES
+   * ========================================
+   */
+  'p6-math-averages-finding-average': {
+    speech: {
+      text: `Welcome to Averages! Imagine you have four towers of blocks, each with a different number of blocks. If you could move some blocks around so that all towers have the same height, that equal height is what we call the average! Today we will learn how to find the average of a set of numbers using a simple formula. The average tells us the typical or central value. Are you ready to discover how evening out works?`,
+      emotion: 'warm'
+    },
+    display: {
+      content: `# Finding the Average
+
+Welcome to **Averages**! Today we'll learn how to find the average of a set of numbers.
+
+**The Big Idea:**
+Average is what each value would be if we "evened out" all the values.
+
+**Key Formula:**
+$$\\text{Average} = \\text{Total Value} \\div \\text{Number of Data}$$
+
+---
+
+### First Question:
+Four towers have 3, 7, 6, and 4 cubes. If we even them out, how many cubes will each tower have?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      toolName: 'averageTowerVisualizer',
+      parameters: {
+        values: [3, 7, 6, 4],
+        showAverage: true,
+        showEvenedOut: false,
+        title: "Can you even out these towers?"
+      }
+    }
+  },
+
+  'p6-math-averages-finding-total': {
+    speech: {
+      text: `Great job learning to find averages! Now let us work backwards. If we know the average and how many items there are, can we find the total? This is like knowing each cup has 120 millilitres on average, and figuring out the total water in all cups. The formula is simple: Total equals Average times Number. Let us practice this reverse calculation!`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `# Finding Total Value
+
+Now let's learn to **find the total** when we know the average!
+
+**Key Formula:**
+$$\\text{Total Value} = \\text{Average} \\times \\text{Number of Data}$$
+
+**When to Use:**
+When you know the AVERAGE and NUMBER of items, and need to find TOTAL.
+
+---
+
+### First Question:
+The average number of stickers in 3 packets is 18. What is the total number of stickers in the 3 packets?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-averages-finding-number': {
+    speech: {
+      text: `You are doing really well! Here is the last piece of the puzzle. If someone tells you the total cost and the average cost per item, can you figure out how many items there are? This uses our third formula: Number equals Total divided by Average. Think of it like this: if you spent 45 dollars and each T shirt costs 9 dollars on average, how many T shirts did you buy? Let us practice!`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `# Finding Number of Data
+
+Let's complete the **average formula triangle**!
+
+**Key Formula:**
+$$\\text{Number of Data} = \\text{Total Value} \\div \\text{Average}$$
+
+**The Complete Triangle:**
+- Average = Total ÷ Number
+- Total = Average × Number
+- Number = Total ÷ Average
+
+---
+
+### First Question:
+Raju spent \\$45 on some T-shirts. The average cost of each T-shirt is \\$9. How many T-shirts did he buy?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-averages-word-problems': {
+    speech: {
+      text: `Now for the exciting part! We will use everything you have learned to solve real-world problems about averages. These problems might look tricky, but I will show you step by step strategies that make them much easier. The golden rule is: always find the total first, then work from there. Ready for some challenging puzzles?`,
+      emotion: 'supportive'
+    },
+    display: {
+      content: `# Average Word Problems
+
+Time for **Word Problems**! We'll combine all the average formulas to solve challenging real-world problems.
+
+**Golden Rule:**
+Always find the **TOTAL** first, then work from there!
+
+**Common Problem Types:**
+1. Finding missing values
+2. Bar graph problems
+3. Combined averages (boys + girls)
+4. New member joins group
+
+---
+
+### First Question:
+The average of 4 numbers is 20. The sum of 3 of the numbers is 69. What is the fourth number?`,
+      showAfterSpeech: true
+    }
+  },
+
+  // ========================================
+  // P6 ALGEBRA
+  // ========================================
+  'p6-math-algebra-writing-expressions': {
+    speech: {
+      text: `Welcome to Algebra! Today we are going to learn a powerful new way to write mathematics. Instead of always using specific numbers, we can use letters to represent unknown values. For example, if Sarah has some stickers and you do not know how many, we can call it n. If she gets 5 more, we write n plus 5. This is called an algebraic expression. Bar models will help us see exactly what these expressions mean. Here is your first challenge: If Tom has some marbles and gives away 7, how would you write that as an expression?`,
+      emotion: 'warm'
+    },
+    display: {
+      content: `# Writing Algebraic Expressions
+
+Welcome to **Algebra**! Today we'll learn to write mathematical expressions using letters and numbers.
+
+**The Big Idea:**
+- Letters (like *n*, *x*, *y*) represent unknown values
+- We can write expressions to describe situations
+- Bar models help us visualize what expressions mean
+
+**Examples:**
+- "5 more than a number" → $n + 5$
+- "3 less than a number" → $n - 3$
+- "4 times a number" → $4n$
+
+---
+
+### First Question:
+If Tom has some marbles and gives away 7, how would you write that as an expression?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-algebra-simplifying': {
+    speech: {
+      text: `Great work learning to write expressions! Now let us learn to simplify them. When you have 3 apples plus 2 apples, you get 5 apples, right? The same idea works with algebra. 3n plus 2n equals 5n because we are combining like terms. Think of n as a unit, just like apples or boxes. We can only combine things that are the same type. Here is a question for you: Can you simplify 4x plus 3x?`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `# Simplifying Expressions
+
+Now let's learn to **simplify** algebraic expressions by combining like terms!
+
+**The Big Idea:**
+- **Like terms** have the same variable (or no variable)
+- We can only combine like terms together
+- Think of the variable as a unit (like "apples" or "boxes")
+
+**Examples:**
+- $3n + 2n = 5n$ (combining n's)
+- $4x + 7 + 2x + 3 = 6x + 10$ (combine x's, combine numbers)
+- $5a + 3b$ (cannot simplify - different variables!)
+
+---
+
+### First Question:
+Can you simplify $4x + 3x$?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-algebra-evaluating': {
+    speech: {
+      text: `You are doing wonderfully! Now let us evaluate expressions. This means finding the actual value when we know what the letter represents. If n equals 4, then n plus 3 equals 4 plus 3, which equals 7. We substitute the number for the letter, then calculate. It is like filling in the blank and doing the arithmetic. Here is your challenge: If y equals 5, what is the value of 3y plus 2?`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `# Evaluating Expressions
+
+Now let's learn to **evaluate** expressions by substituting values!
+
+**The Big Idea:**
+- Replace the variable with its given value
+- Then calculate the answer
+- Follow the correct order of operations
+
+**Example:**
+If $n = 4$, evaluate $n + 3$:
+- $n + 3 = 4 + 3 = 7$
+
+**Order of Operations:**
+1. Brackets first
+2. Multiply and divide (left to right)
+3. Add and subtract (left to right)
+
+---
+
+### First Question:
+If $y = 5$, what is the value of $3y + 2$?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-algebra-solving': {
+    speech: {
+      text: `Now for the exciting part, solving equations! An equation has an equals sign, like a balanced scale. If we have n plus 3 equals 10, we need to find what n is. The secret is to do the same thing to both sides to keep the balance. We undo the plus 3 by subtracting 3 from both sides. So n equals 10 minus 3, which equals 7. Here is your first equation to solve: What is the value of n if n plus 5 equals 12?`,
+      emotion: 'supportive'
+    },
+    display: {
+      content: `# Solving Equations
+
+Time to **solve equations** and find the unknown value!
+
+**The Big Idea:**
+- An equation is like a balanced scale
+- Keep both sides equal by doing the same operation
+- Undo operations to isolate the variable
+
+**Example:**
+Solve $n + 3 = 10$:
+- Subtract 3 from both sides: $n + 3 - 3 = 10 - 3$
+- Result: $n = 7$
+
+**Check:** $7 + 3 = 10$ ✓
+
+---
+
+### First Question:
+What is the value of $n$ if $n + 5 = 12$?`,
+      showAfterSpeech: true
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

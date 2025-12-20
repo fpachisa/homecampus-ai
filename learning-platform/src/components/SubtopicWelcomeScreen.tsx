@@ -110,6 +110,10 @@ import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { P6PercentageTopicId } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 import type { P6CirclesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import type { P6AveragesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import type { P6AlgebraTopicId } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -239,6 +243,10 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P6_PERCENTAGE_SUBTOPICS[topicId as P6PercentageTopicId];
   } else if (category === 'p6-math-circles') {
     topicConfig = P6_CIRCLES_SUBTOPICS[topicId as P6CirclesTopicId];
+  } else if (category === 'p6-math-averages') {
+    topicConfig = P6_AVERAGES_SUBTOPICS[topicId as P6AveragesTopicId];
+  } else if (category === 'p6-math-algebra') {
+    topicConfig = P6_ALGEBRA_SUBTOPICS[topicId as P6AlgebraTopicId];
   }
 
   if (!topicConfig) {

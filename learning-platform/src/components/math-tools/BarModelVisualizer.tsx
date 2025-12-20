@@ -153,17 +153,22 @@ const BarModelVisualizer: React.FC<BarModelVisualizerProps> = ({
   // SVG dimensions
   const svgWidth = 500;
   // Check if any bar has a top bracket that needs extra space
-  const hasTopBracket = bars.some(bar => bar.bracketPosition === 'top' && bar.totalLabel);
+  // bracketPosition defaults to 'top' when not specified
+  const hasTopBracket = bars.some(bar => bar.bracketPosition !== 'bottom' && bar.totalLabel);
   const hasBottomBracket = bars.some(bar => bar.bracketPosition === 'bottom' && bar.totalLabel);
-  const topPadding = hasTopBracket ? 40 : 0; // Extra space for top bracket and label
-  const bottomPadding = hasBottomBracket ? 30 : 0; // Extra space for bottom bracket
-  const svgHeight = 60 + bars.length * 70 + (title ? 30 : 0) + (comparison ? 20 : 0) + topPadding + bottomPadding;
+  // Top bracket needs space for: bracket lines (15px) + label text (20px) + padding
+  const topPadding = hasTopBracket ? 45 : 20;
+  const bottomPadding = hasBottomBracket ? 30 : 20;
+  // Check if any bar has brackets that need extra spacing between bars
+  const hasBracketsBetweenBars = bars.some(bar => bar.totalLabel);
+  const barHeight = 40;
+  const barSpacing = hasBracketsBetweenBars ? 90 : 60; // More space when brackets exist
+  const svgHeight = bars.length * barSpacing + (comparison ? 20 : 0) + topPadding + bottomPadding;
   const labelWidth = 120;
   const barStartX = labelWidth + 10;
   const barMaxWidth = svgWidth - barStartX - 80; // Leave space for brackets
-  const barHeight = 40;
-  const barSpacing = 60;
-  const startY = (title ? 50 : 20) + topPadding;
+  // Start bars after the top padding (title is rendered outside SVG)
+  const startY = topPadding;
 
   // Render a single bar
   const renderBar = (bar: Bar, barIndex: number) => {

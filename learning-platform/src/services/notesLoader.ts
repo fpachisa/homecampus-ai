@@ -350,6 +350,16 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p6/math/circles/AreaOfCircle': () => import('../notes/p6/math/circles/AreaOfCircle'),
   'p6/math/circles/AreaSemiQuarter': () => import('../notes/p6/math/circles/AreaSemiQuarter'),
   'p6/math/circles/CompositeFigures': () => import('../notes/p6/math/circles/CompositeFigures'),
+  // P6 Averages notes
+  'p6/math/averages/FindingAverage': () => import('../notes/p6/math/averages/FindingAverage'),
+  'p6/math/averages/FindingTotal': () => import('../notes/p6/math/averages/FindingTotal'),
+  'p6/math/averages/FindingNumber': () => import('../notes/p6/math/averages/FindingNumber'),
+  'p6/math/averages/WordProblems': () => import('../notes/p6/math/averages/WordProblems'),
+  // P6 Algebra notes
+  'p6/math/algebra/WritingExpressions': () => import('../notes/p6/math/algebra/WritingExpressions'),
+  'p6/math/algebra/SimplifyingExpressions': () => import('../notes/p6/math/algebra/SimplifyingExpressions'),
+  'p6/math/algebra/EvaluatingExpressions': () => import('../notes/p6/math/algebra/EvaluatingExpressions'),
+  'p6/math/algebra/SolvingEquations': () => import('../notes/p6/math/algebra/SolvingEquations'),
 };
 
 interface NotesCache {

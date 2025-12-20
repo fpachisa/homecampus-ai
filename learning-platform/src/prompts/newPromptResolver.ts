@@ -82,6 +82,8 @@ import { P6_FRACTIONS_SUBTOPICS, P6_FRACTIONS_CONFIG } from '../prompt-library/s
 import { P6_RATIOS_SUBTOPICS, P6_RATIOS_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-ratios';
 import { P6_PERCENTAGE_SUBTOPICS, P6_PERCENTAGE_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-percentage';
 import { P6_CIRCLES_SUBTOPICS, P6_CIRCLES_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-circles';
+import { P6_AVERAGES_SUBTOPICS, P6_AVERAGES_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-averages';
+import { P6_ALGEBRA_SUBTOPICS, P6_ALGEBRA_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -190,6 +192,8 @@ function registerBrowserTopics() {
   registerTopics(P6_RATIOS_SUBTOPICS, P6_RATIOS_CONFIG);
   registerTopics(P6_PERCENTAGE_SUBTOPICS, P6_PERCENTAGE_CONFIG);
   registerTopics(P6_CIRCLES_SUBTOPICS, P6_CIRCLES_CONFIG);
+  registerTopics(P6_AVERAGES_SUBTOPICS, P6_AVERAGES_CONFIG);
+  registerTopics(P6_ALGEBRA_SUBTOPICS, P6_ALGEBRA_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

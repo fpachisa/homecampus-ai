@@ -13,6 +13,18 @@ import { useTheme } from '../hooks/useTheme';
 // Notes registry - extracted from notesLoader.ts
 const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
 
+  // P6 Algebra notes (NEW - testing)
+  'p6/math/algebra/WritingExpressions': () => import('../notes/p6/math/algebra/WritingExpressions'),
+  'p6/math/algebra/SimplifyingExpressions': () => import('../notes/p6/math/algebra/SimplifyingExpressions'),
+  'p6/math/algebra/EvaluatingExpressions': () => import('../notes/p6/math/algebra/EvaluatingExpressions'),
+  'p6/math/algebra/SolvingEquations': () => import('../notes/p6/math/algebra/SolvingEquations'),
+
+  // P6 Averages notes (NEW - testing math tools)
+  'p6/math/averages/FindingAverage': () => import('../notes/p6/math/averages/FindingAverage'),
+  'p6/math/averages/FindingTotal': () => import('../notes/p6/math/averages/FindingTotal'),
+  'p6/math/averages/FindingNumber': () => import('../notes/p6/math/averages/FindingNumber'),
+  'p6/math/averages/WordProblems': () => import('../notes/p6/math/averages/WordProblems'),
+
   // S2 Line Graphs notes
   's2/math/linear-graph/IntroToLineGraphs': () => import('../notes/s2/math/linear-graph/IntroToLinearGraphs'),
   's2/math/linear-graph/EquationOfLine': () => import('../notes/s2/math/linear-graph/EquationOfLine'),

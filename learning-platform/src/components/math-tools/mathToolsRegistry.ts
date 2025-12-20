@@ -5367,6 +5367,74 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
   },
 
   // ============================================
+  // AVERAGE TOOLS (P6 Averages Topic)
+  // ============================================
+
+  averageTowerVisualizer: {
+    name: "Average Tower Visualizer",
+    technicalName: "averageTowerVisualizer",
+    component: "AverageTowerVisualizer",
+    category: "statistics",
+    description: "Visualizes the concept of average as 'evening out' stacked blocks/towers. Shows how redistributing blocks creates towers of equal height (the average). Essential tool for P6 Averages topic. Displays values as stacked blocks with options to show average line and evened-out view. Does NOT show calculations or answers - suitable for practice mode.",
+    whenToUse: "Use for P6 Averages problems to demonstrate the 'evening out' concept. Perfect for introducing what average means visually, showing how values distribute. Use showAverage sparingly in practice mode to avoid giving away the answer.",
+
+    parameters: {
+      values: "number[] (REQUIRED) - Heights of each tower as integers (e.g., [3, 7, 6, 4]). Must be non-negative integers.",
+      labels: "string[] (optional) - Labels for each tower (e.g., ['Sep', 'Oct', 'Nov', 'Dec']). If omitted, shows 'Tower 1', 'Tower 2', etc.",
+      showAverage: "boolean (optional, default: false) - Show red dashed average line across towers. Use sparingly to avoid giving away answers.",
+      showEvenedOut: "boolean (optional, default: false) - Show towers 'evened out' at the average height (green blocks)",
+      title: "string (optional) - Title above visualization",
+      caption: "string (optional) - Caption below visualization",
+      blockColor: "string (optional) - Custom color for blocks (default: theme brand blue)",
+      evenedColor: "string (optional) - Color for evened-out blocks (default: theme success green)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic average concept - 4 towers (question mode)",
+        caption: "Show towers without revealing the average",
+        parameters: {
+          values: [3, 7, 6, 4],
+          title: "Evening Out the Towers",
+          caption: "How many cubes would each tower have if we redistribute equally?"
+        }
+      },
+      {
+        scenario: "Books read per month (showing average)",
+        caption: "Samad read 6, 11, 10, and 13 books over 4 months",
+        parameters: {
+          values: [6, 11, 10, 13],
+          labels: ["Sep", "Oct", "Nov", "Dec"],
+          showAverage: true,
+          title: "Number of Books Read",
+          caption: "The average is shown by the red dashed line"
+        }
+      },
+      {
+        scenario: "Evened out view showing result",
+        caption: "Show what happens after 'evening out'",
+        parameters: {
+          values: [3, 7, 6, 4],
+          showEvenedOut: true,
+          showAverage: true,
+          title: "After Evening Out",
+          caption: "Each tower now has 5 cubes - the average!"
+        }
+      },
+      {
+        scenario: "Quiz scores (question mode - no answer shown)",
+        caption: "Finding average of quiz scores: 24, 30, 12, 20",
+        parameters: {
+          values: [24, 30, 12, 20],
+          labels: ["Quiz 1", "Quiz 2", "Quiz 3", "Quiz 4"],
+          title: "Connie's Quiz Scores",
+          caption: "What is the average score?"
+        }
+      }
+    ]
+  },
+
+  // ============================================
   // PERCENTAGE TOOLS (P6 Percentage Topic)
   // ============================================
 
