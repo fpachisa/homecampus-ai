@@ -53,7 +53,13 @@ export const analyzeImage = onCall<AnalyzeImageRequest, Promise<AnalyzeImageResp
       throw new HttpsError('invalid-argument', 'Valid image mime type is required');
     }
 
-    // 3. Validate image size (max 4MB base64 = ~3MB original)
+    // 3. Validate prompt length (prevents abuse)
+    const MAX_PROMPT_LENGTH = 5000;  // Image analysis prompts shouldn't be huge
+    if (prompt.length > MAX_PROMPT_LENGTH) {
+      throw new HttpsError('invalid-argument', 'Prompt too long. Please shorten your message.');
+    }
+
+    // 3.1 Validate image size (max 4MB base64 = ~3MB original)
     if (imageBase64.length > 4 * 1024 * 1024) {
       throw new HttpsError('invalid-argument', 'Image too large. Maximum 3MB allowed.');
     }

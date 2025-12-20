@@ -368,7 +368,8 @@ export function conversationStateToFirestore(
       hintsProvided: state.sessionStats.hintsProvided,
       solutionsViewed: state.sessionStats.solutionsViewed || 0,
       startTime: Timestamp.fromDate(state.sessionStats.startTime),
-      totalTimeSpent: Math.floor((Date.now() - state.sessionStats.startTime.getTime()) / 1000)
+      totalTimeSpent: Math.floor((Date.now() - state.sessionStats.startTime.getTime()) / 1000),
+      totalProblemSolveTime: state.sessionStats.totalProblemSolveTime || 0  // Actual time solving problems
     },
     studentProfile: state.studentProfile,
     lastUpdated: Timestamp.now(),
@@ -421,7 +422,8 @@ export function conversationStateFromFirestore(
         hintsProvided: conversation.sessionStats.hintsProvided,
         solutionsViewed: conversation.sessionStats.solutionsViewed || 0,
         startTime: new Date(),  // Start fresh for current session
-        previousTimeSpent: conversation.sessionStats.totalTimeSpent || 0  // Carry forward accumulated time
+        previousTimeSpent: conversation.sessionStats.totalTimeSpent || 0,  // Carry forward accumulated session time
+        totalProblemSolveTime: conversation.sessionStats.totalProblemSolveTime || 0  // Carry forward accumulated problem time
       },
       studentProfile: conversation.studentProfile
     },

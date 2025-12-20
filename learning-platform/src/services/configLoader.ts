@@ -22,13 +22,9 @@ export class ConfigLoader {
     if (this.isCacheValid(subtopicId)) {
       const cached = this.cache.get(subtopicId);
       if (cached) {
-        console.log(`[ConfigLoader] Cache hit for ${subtopicId}`);
         return cached;
       }
     }
-
-    // Load from Firestore
-    console.log(`[ConfigLoader] Loading ${subtopicId} from Firestore`);
 
     const docRef = doc(firestore, 'subtopics', subtopicId);
     const docSnap = await getDoc(docRef);
@@ -44,7 +40,6 @@ export class ConfigLoader {
     this.cache.set(subtopicId, config);
     this.cacheTimestamps.set(subtopicId, Date.now());
 
-    console.log(`[ConfigLoader] ✅ Loaded from Firestore: ${subtopicId}`);
     return config;
   }
 
@@ -52,8 +47,6 @@ export class ConfigLoader {
    * Get all subtopics for a given topic
    */
   async getSubtopicsByTopic(topicId: string): Promise<SubtopicConfig[]> {
-    console.log(`[ConfigLoader] Loading subtopics for topic: ${topicId}`);
-
     const [grade, subject, topic] = topicId.split('-');
 
     const q = query(
@@ -85,7 +78,6 @@ export class ConfigLoader {
     grade: string,
     subject: string
   ): Promise<SubtopicConfig[]> {
-    console.log(`[ConfigLoader] Loading subtopics for ${grade}-${subject}`);
 
     const q = query(
       collection(firestore, 'subtopics'),
@@ -114,7 +106,6 @@ export class ConfigLoader {
   invalidateCache(subtopicId: string): void {
     this.cache.delete(subtopicId);
     this.cacheTimestamps.delete(subtopicId);
-    console.log(`[ConfigLoader] Cache invalidated for ${subtopicId}`);
   }
 
   /**
@@ -123,7 +114,6 @@ export class ConfigLoader {
   clearCache(): void {
     this.cache.clear();
     this.cacheTimestamps.clear();
-    console.log(`[ConfigLoader] Cache cleared`);
   }
 
   /**
@@ -160,8 +150,6 @@ export class ConfigLoader {
    * Preload configurations for performance
    */
   async preloadConfigs(subtopicIds: string[]): Promise<void> {
-    console.log(`[ConfigLoader] Preloading ${subtopicIds.length} configurations`);
-
     const promises = subtopicIds.map(id =>
       this.getSubtopicConfig(id).catch(err => {
         console.error(`[ConfigLoader] Failed to preload ${id}:`, err);
@@ -170,7 +158,6 @@ export class ConfigLoader {
     );
 
     await Promise.all(promises);
-    console.log(`[ConfigLoader] Preloading complete`);
   }
 }
 

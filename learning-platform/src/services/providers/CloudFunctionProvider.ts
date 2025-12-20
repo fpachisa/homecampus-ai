@@ -26,6 +26,7 @@ export interface CloudFunctionProviderConfig {
 // Types matching the Cloud Function
 interface GenerateContentRequest {
   prompt: string;
+  userInput?: string;  // Raw user input for server-side validation
   maxTokens?: number;
   temperature?: number;
   preferredProvider?: 'gemini' | 'claude';

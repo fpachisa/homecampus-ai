@@ -4,6 +4,7 @@ import InputArea, { type InputAreaHandle } from './InputArea';
 import Avatar from './Avatar';
 import SolutionPrompt from './SolutionPrompt';
 import FallbackAIService from '../services/fallbackAIService';
+import { getFriendlyMessage } from '../utils/errorMessages';
 import { getCloudFunctionAIService, shouldUseCloudFunctions } from '../services/cloudFunctionAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
@@ -525,7 +526,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const [showNotes, setShowNotes] = useState(false);
 
   // Error state
-  const [_error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   // Track when solution has been requested (to hide Show Solution button immediately)
   const [solutionRequested, setSolutionRequested] = useState(false);
@@ -601,7 +602,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
         );
 
         await saveLearnProgress(effectiveUid, topicId, firestoreConv);
-        console.log('✅ Progress auto-saved to Firestore for UID:', effectiveUid);
 
         // Also save to localStorage for WhatsApp-style timestamp display in LeftPanel
         sessionStorage.saveSession(
@@ -642,7 +642,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     // Use Cloud Functions in production (secure - API keys on server)
     // Use direct API calls only in development with VITE_USE_DIRECT_AI=true
     if (shouldUseCloudFunctions()) {
-      console.log('🔒 Using Cloud Function AI Service (secure mode)');
       aiService.current = getCloudFunctionAIService();
     } else {
       // Development mode with direct API calls (for debugging only)
@@ -672,11 +671,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
         },
         showFallbackMessage
       );
-
-      console.log('AI Service initialized (direct mode):', {
-        primary: 'Gemini',
-        fallback: claudeApiKey ? 'Claude' : 'None'
-      });
     }
   }, []);
 
@@ -689,11 +683,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   useEffect(() => {
     if (!aiService.current) return;
 
-    console.log('Loading session for topic:', topicId);
-
     // Update current topic ref
     currentTopicRef.current = topicId;
-    const loadingTopicId = topicId; // Capture for closure
 
     // Reset state completely when switching topics (including loading state)
     setLoadingState({ active: false, stage: null });
@@ -724,7 +715,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
     // Cleanup function - runs when topicId changes or component unmounts
     return () => {
-      console.log('Cleaning up topic:', loadingTopicId);
       // Stop any playing audio when switching topics
       stopSpeaking();
       // Clear loading state when switching topics
@@ -785,7 +775,6 @@ const scrollToBottom = () => {
     const restoreTopicId = currentTopicRef.current; // Capture current topic
 
     if (!user?.uid) {
-      console.log('No authenticated user, starting new conversation');
       initializeConversation();
       return;
     }
@@ -795,7 +784,6 @@ const scrollToBottom = () => {
 
       if (!savedConversation || savedConversation.messages.length === 0) {
         // No saved data, start new conversation
-        console.log('No saved conversation found, starting new');
         if (currentTopicRef.current === restoreTopicId) {
           initializeConversation();
         }
@@ -804,7 +792,6 @@ const scrollToBottom = () => {
 
       // Check if topic hasn't changed
       if (currentTopicRef.current !== restoreTopicId) {
-        console.log('Topic changed during restore, aborting');
         return;
       }
 
@@ -825,9 +812,6 @@ const scrollToBottom = () => {
 
       // Note: currentScore and problemsCompleted are derived from sessionStats
       // No need to restore them separately
-
-      console.log('✅ Session restored from Firestore:', topicId, 'with', restoredState.messages.length, 'messages');
-      console.log('📍 Restored section:', restoredSection.currentSection);
     } catch (error) {
       console.error('Failed to restore session from Firestore:', error);
       // Fallback to new conversation
@@ -847,8 +831,6 @@ const initializeConversation = async () => {
     try {
       // Initialize section progress for new session
       const topicConfig = getTopicConfig(topicId);
-      console.log('Topic config for', topicId, ':', topicConfig);
-      console.log('Has progressionStructure?', topicConfig?.progressionStructure);
 
       if (!topicConfig) {
         throw new Error(`No topic configuration found for: ${topicId}`);
@@ -870,7 +852,6 @@ const initializeConversation = async () => {
           }]
         };
         setSectionProgress(initialSectionProgress);
-        console.log(`📍 Initialized section progression starting at: ${firstSection.id}`);
       }
 
       // Get initial greeting and first problem
@@ -880,8 +861,6 @@ const initializeConversation = async () => {
 
       if (usePreGenerated) {
         // Load first question from pre-generated question bank
-        console.log('🏦 Using PRE-GENERATED question bank flow');
-
         // Check if there's an intro section (sectionIndex: -1)
         const introQuestion = preGeneratedQuestionsService.getQuestionByIndex(
           topicId,
@@ -893,13 +872,11 @@ const initializeConversation = async () => {
 
         if (introQuestion) {
           // Use intro question and cached greeting
-          console.log('📚 Found intro section (sectionIndex: -1), loading intro question first');
           targetSectionIndex = -1;
 
           // Try to get cached greeting for better intro experience
           const greetingCache = getCachedGreeting(topicId);
           if (greetingCache) {
-            console.log('⚡ Using cached greeting with intro question');
             cachedGreeting = greetingCache;
             // Combine cached greeting speech with intro question display
             response = {
@@ -916,7 +893,6 @@ const initializeConversation = async () => {
           }
         } else {
           // No intro section, load Section 1 as usual
-          console.log('📖 No intro section found, loading Section 1 directly');
           const sectionIndex = getSectionIndex(topicId, firstSection.id);
           const section1Question = preGeneratedQuestionsService.getQuestionByIndex(
             topicId,
@@ -951,17 +927,14 @@ const initializeConversation = async () => {
         cachedGreeting = getCachedGreeting(topicId);
 
         if (cachedGreeting) {
-          console.log('⚡ Using cached initial greeting (instant load)');
           response = cachedGreeting;
         } else {
-          console.log('🤖 No cached greeting found, generating with AI...');
           response = await aiService.current.generateInitialGreetingWithProblem(topicId);
         }
       }
 
       // Check if topic hasn't changed while we were waiting
       if (currentTopicRef.current !== initTopicId) {
-        console.log('Topic changed during initialization, aborting');
         return;
       }
 
@@ -971,7 +944,6 @@ const initializeConversation = async () => {
       const preGeneratedAudioUrl = cachedGreeting?.speech.preGeneratedAudioUrl;
 
       if (preGeneratedAudioUrl) {
-        console.log('🎵 Using pre-generated audio (zero TTS delay)');
         speakTextWithAudio(response.speech.text, preGeneratedAudioUrl, response.speech.emotion, () => {
           // Check again before updating state
           if (currentTopicRef.current !== initTopicId) return;
@@ -999,7 +971,6 @@ const initializeConversation = async () => {
           }, 300);
         });
       } else {
-        console.log('🔊 Generating TTS audio on-the-fly');
         speakText(response.speech.text, response.speech.emotion, () => {
         // Check again before updating state
         if (currentTopicRef.current !== initTopicId) return;
@@ -1032,7 +1003,8 @@ const initializeConversation = async () => {
 
     } catch (error) {
       console.error('Failed to initialize conversation:', error);
-      throw error;
+      // Show friendly error message instead of crashing
+      setError(getFriendlyMessage(error));
     } finally {
       if (currentTopicRef.current === initTopicId) {
         setLoadingState({ active: false, stage: null });
@@ -1066,9 +1038,6 @@ const initializeConversation = async () => {
       visualization
     };
 
-    console.log(`📝 Adding ${role} message to section: ${messageSectionId}`);
-
-
     setState(prev => ({
       ...prev,
       messages: [...prev.messages, newMessage]
@@ -1081,11 +1050,8 @@ const initializeConversation = async () => {
 
     // Don't do anything if clicking current section
     if (sectionId === sectionProgress.currentSection) {
-      console.log('Already on this section:', sectionId);
       return;
     }
-
-    console.log(`🔀 Jumping to section: ${sectionId}`);
 
     // Update current section
     setSectionProgress(prev => ({
@@ -1098,8 +1064,6 @@ const initializeConversation = async () => {
 
     if (sectionMessages.length > 0) {
       // Resume existing conversation - generate summary and continue
-      console.log(`📚 Resuming section ${sectionId} with ${sectionMessages.length} messages`);
-
       const sectionStats = sectionProgress.sectionHistory.find(e => e.sectionId === sectionId);
       if (!sectionStats) {
         console.error('Section stats not found for resume');
@@ -1116,8 +1080,6 @@ const initializeConversation = async () => {
           // Load current question from question bank
           const sectionIndex = getSectionIndex(topicId, sectionId);
           const currentQuestionIndex = sectionStats.currentQuestionIndex ?? 0;
-
-          console.log(`🏦 Loading pre-generated question at index ${currentQuestionIndex} for resume`);
 
           preGeneratedQuestion = preGeneratedQuestionsService.getQuestionByIndex(
             topicId,
@@ -1160,7 +1122,7 @@ const initializeConversation = async () => {
 
       } catch (error) {
         console.error('Failed to generate section resume:', error);
-        setError('Failed to resume section. Please try again.');
+        setError(getFriendlyMessage(error));
       } finally {
         setLoadingState({ active: false, stage: null });
       }
@@ -1168,7 +1130,6 @@ const initializeConversation = async () => {
     }
 
     // New section - need to initialize and generate first question
-    console.log(`🆕 Starting new section: ${sectionId}`);
 
     // Initialize section stats if not already present
     const existingEntry = sectionProgress.sectionHistory.find(e => e.sectionId === sectionId);
@@ -1198,9 +1159,7 @@ const initializeConversation = async () => {
 
       if (usePreGenerated) {
         // Load first question from pre-generated question bank for this section
-        console.log(`🏦 Loading first pre-generated question for section: ${sectionId}`);
         const sectionIndex = getSectionIndex(topicId, sectionId);
-        console.log(`📊 Section index for ${sectionId}:`, sectionIndex);
 
         const firstQuestion = preGeneratedQuestionsService.getQuestionByIndex(
           topicId,
@@ -1213,7 +1172,6 @@ const initializeConversation = async () => {
         }
 
         preGeneratedQuestion = firstQuestion;
-        console.log(`✅ Pre-generated question loaded:`, preGeneratedQuestion.questionId);
 
         // Update section progress to set currentQuestionIndex to 0 for this section
         setSectionProgress(prev => ({
@@ -1225,8 +1183,6 @@ const initializeConversation = async () => {
           )
         }));
       }
-
-      console.log(`📤 Calling generateSectionStartQuestion with preGenQ:`, preGeneratedQuestion ? `YES (${preGeneratedQuestion.questionId})` : 'NO');
 
       // Generate section start question (with or without pre-generated question)
       // If pre-generated question is provided, AI generates speech only
@@ -1251,7 +1207,7 @@ const initializeConversation = async () => {
 
     } catch (error) {
       console.error('Failed to generate section start question:', error);
-      setError('Failed to start new section. Please try again.');
+      setError(getFriendlyMessage(error));
     } finally {
       setLoadingState({ active: false, stage: null });
     }
@@ -1286,12 +1242,6 @@ const handleStudentSubmit = async (input: string) => {
         currentStudentMessage // Include the message we just added
       ].slice(-6);
 
-      console.log('=== SEQUENTIAL AGENT FLOW START ===');
-      console.log('Recent History Messages:', recentHistory.length);
-      console.log('Recent History (formatted):', recentHistory.map(m => `${m.role}: ${m.content.substring(0, 50)}`));
-      console.log('Problem State:', problemState);
-      console.log('Student Response:', input);
-
       // CRITICAL: Increment attempts BEFORE evaluator sees the state
       // This ensures evaluator receives attemptCount = 1 on first submission
       const updatedProblemState = {
@@ -1309,8 +1259,6 @@ const handleStudentSubmit = async (input: string) => {
 
       if (usePreGenerated) {
         // PRE-GENERATED QUESTION FLOW
-        console.log('🏦 Using PRE-GENERATED question bank flow');
-
         // Get current section stats to find current question index
         const currentSectionStats = sectionProgress.sectionHistory.find(
           entry => entry.sectionId === sectionProgress.currentSection
@@ -1336,7 +1284,6 @@ const handleStudentSubmit = async (input: string) => {
         let sectionIndex: number;
         if (currentQuestionIndex === -1) {
           // We're in intro section, use special sectionIndex -1
-          console.log('📚 Currently in intro section (sectionIndex: -1)');
           sectionIndex = -1;
         } else {
           // Normal section, find index in progression structure
@@ -1359,15 +1306,12 @@ const handleStudentSubmit = async (input: string) => {
           throw new Error('Current question not found in bank');
         }
 
-        console.log(`📖 Using question ${currentQuestionIndex} from bank:`, currentQuestion.questionId);
-
         // Peek at next question for intelligent transition speech
         let nextQuestion: PreGeneratedQuestion | null = null;
         let isLastQuestionInSection = false;
 
         if (sectionIndex === -1) {
           // In intro section, peek at first question of Section 1 (sectionIndex 0)
-          console.log('📚 Intro section: Peeking at Section 1, Question 1');
           nextQuestion = preGeneratedQuestionsService.getQuestionByIndex(topicId, 0, 0);
           isLastQuestionInSection = false; // Intro transitions to Section 1
         } else {
@@ -1382,8 +1326,6 @@ const handleStudentSubmit = async (input: string) => {
           const totalQuestions = preGeneratedQuestionsService.getTotalQuestions(topicId, sectionIndex);
           isLastQuestionInSection = (currentQuestionIndex === totalQuestions - 1);
         }
-
-        console.log(`📊 Next question preview: ${nextQuestion?.questionId || 'none'}, isLast: ${isLastQuestionInSection}`);
 
         // Determine previous action from last tutor message's messageType
         const lastTutorMessage = [...state.messages].reverse().find(m => m.role === 'tutor');
@@ -1406,9 +1348,6 @@ const handleStudentSubmit = async (input: string) => {
           isLastQuestionInSection,  // Pass last question flag
           previousAction  // Pass previous action for decision matrix
         );
-
-        console.log('Pre-Gen Evaluator output:', preGenEvaluatorOutput);
-        console.log('Action:', preGenEvaluatorOutput.action);
 
         // Update loading stage based on evaluator's decision
         const stageMap: Record<string, LoadingStage> = {
@@ -1436,20 +1375,26 @@ const handleStudentSubmit = async (input: string) => {
           const newProblemsCompleted = problemsCompleted + 1;
           setProblemsCompleted(newProblemsCompleted);
 
+          // Accumulate problem solve time when problem is completed
           setState(prev => ({
             ...prev,
             sessionStats: {
               ...prev.sessionStats,
-              correctAnswers: newProblemsCompleted
+              correctAnswers: newProblemsCompleted,
+              totalProblemSolveTime: (prev.sessionStats.totalProblemSolveTime || 0) + timeSpentOnProblem
             }
           }));
-
-          console.log(`⏱️ Problem completed in ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
         }
 
-        // Log timing for solution requests
+        // Also accumulate time when solution is requested (problem ends without correct answer)
         if (preGenEvaluatorOutput.action === "GIVE_SOLUTION") {
-          console.log(`⏱️ Solution requested after ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
+          setState(prev => ({
+            ...prev,
+            sessionStats: {
+              ...prev.sessionStats,
+              totalProblemSolveTime: (prev.sessionStats.totalProblemSolveTime || 0) + timeSpentOnProblem
+            }
+          }));
         }
 
         // STEP 2.4: Update section stats for current section
@@ -1475,7 +1420,6 @@ const handleStudentSubmit = async (input: string) => {
               return entry;
             })
           }));
-          console.log(`📊 Updated section stats for ${currentSectionId}: attempted ${preGenEvaluatorOutput.action === "NEW_PROBLEM" ? '+1' : '0'}, correct: ${preGenEvaluatorOutput.answerCorrect ? '+1' : '0'}, hints: ${preGenEvaluatorOutput.action === "GIVE_HINT" ? '+1' : '0'}`);
         }
 
         // STEP 2.4.1: Update session-wide stats for hints
@@ -1487,7 +1431,6 @@ const handleStudentSubmit = async (input: string) => {
               hintsProvided: prev.sessionStats.hintsProvided + 1
             }
           }));
-          console.log('📊 Session-wide hints provided incremented');
         }
 
         // STEP 2.4.2: Update session-wide stats for solutions viewed
@@ -1499,7 +1442,6 @@ const handleStudentSubmit = async (input: string) => {
               solutionsViewed: (prev.sessionStats.solutionsViewed || 0) + 1
             }
           }));
-          console.log('📊 Session-wide solutions viewed incremented');
         }
 
         // STEP 2.5: Section progression
@@ -1515,27 +1457,21 @@ const handleStudentSubmit = async (input: string) => {
           // SPECIAL CASE: Last question in section
           // Play celebration speech but don't load another question
           if (isLastQuestionInSection) {
-            console.log('🎉 SECTION COMPLETE! Last question answered correctly.');
-
             const celebrationText = preGenEvaluatorOutput.speech.text;
             const emotion = preGenEvaluatorOutput.speech.emotion || 'celebratory';
 
             speakText(celebrationText, emotion);
 
-            console.log('=== SECTION COMPLETE - USER CAN ADVANCE VIA SECTION PILLS ===');
             return; // Don't load another question
           }
 
           // NORMAL CASE: Load next question
-          console.log('🎯 Getting next question from question bank');
-
           // Special handling: Transition from intro section (-1) to Section 1 (0)
           let targetSectionIndex = sectionIndex;
           let targetQuestionIndex = currentQuestionIndex;
 
           if (sectionIndex === -1) {
             // We're in the intro section, transition to Section 1
-            console.log('🎓 Transitioning from intro section to Section 1');
             targetSectionIndex = 0;  // Section 1
             targetQuestionIndex = -1;  // Will become 0 after calculation
           }
@@ -1554,8 +1490,6 @@ const handleStudentSubmit = async (input: string) => {
           // Calculate the next index (cycles through questions)
           const totalQuestions = preGeneratedQuestionsService.getTotalQuestions(topicId, targetSectionIndex);
           const nextQuestionIndex = targetQuestionIndex === -1 ? 0 : (targetQuestionIndex + 1) % totalQuestions;
-
-          console.log(`📖 Next question: ${nextQuestion.questionId} (section ${targetSectionIndex}, index ${nextQuestionIndex})`);
 
           // Update currentQuestionIndex in section progress
           setSectionProgress(prev => ({
@@ -1600,8 +1534,6 @@ const handleStudentSubmit = async (input: string) => {
 
         } else if (preGenEvaluatorOutput.action === "GIVE_HINT") {
           // Use speech/display directly from evaluator (no Tutor agent)
-          console.log('💭 Using direct hint from Pre-Gen Evaluator');
-
           if (!preGenEvaluatorOutput.speech || !preGenEvaluatorOutput.display) {
             console.error('Missing speech or display in Pre-Gen Evaluator output');
             throw new Error('Incomplete evaluator output');
@@ -1631,8 +1563,6 @@ const handleStudentSubmit = async (input: string) => {
 
         } else if (preGenEvaluatorOutput.action === "GIVE_SOLUTION") {
           // Use speech/display directly from evaluator (no Solution agent, no nested solution object)
-          console.log('📝 Using direct solution from Pre-Gen Evaluator');
-
           if (!preGenEvaluatorOutput.speech || !preGenEvaluatorOutput.display) {
             console.error('Missing speech or display in Pre-Gen Evaluator output');
             throw new Error('Incomplete evaluator output for GIVE_SOLUTION');
@@ -1670,10 +1600,6 @@ const handleStudentSubmit = async (input: string) => {
           };
         }
 
-        console.log('=== PRE-GENERATED QUESTION FLOW COMPLETE ===');
-        console.log('Final state - Problems completed:', problemsCompleted);
-        console.log('Action taken:', preGenEvaluatorOutput.action);
-
         // Exit early - pre-generated flow complete
         return;
       }
@@ -1681,8 +1607,6 @@ const handleStudentSubmit = async (input: string) => {
       // ========================================
       // REGULAR FLOW (AI-Generated Questions)
       // ========================================
-      console.log('🤖 Using REGULAR AI-generated question flow');
-
       // STEP 1: Evaluator Agent - Evaluate answer and decide action
       const evaluatorOutput = await aiService.current.evaluateAnswer(
         input,
@@ -1691,10 +1615,6 @@ const handleStudentSubmit = async (input: string) => {
         topicId,
         sectionProgress
       );
-
-      console.log('Evaluator output:', evaluatorOutput);
-      console.log('Action:', evaluatorOutput.action);
-      console.log('Advance to next section:', evaluatorOutput.advanceToNextSection);
 
       // Stage 2: Update loading stage based on evaluator's decision
       const stageMap: Record<string, LoadingStage> = {
@@ -1720,20 +1640,26 @@ const handleStudentSubmit = async (input: string) => {
         const newProblemsCompleted = problemsCompleted + 1;
         setProblemsCompleted(newProblemsCompleted);
 
+        // Accumulate problem solve time when problem is completed
         setState(prev => ({
           ...prev,
           sessionStats: {
             ...prev.sessionStats,
-            correctAnswers: newProblemsCompleted
+            correctAnswers: newProblemsCompleted,
+            totalProblemSolveTime: (prev.sessionStats.totalProblemSolveTime || 0) + timeSpentOnProblem
           }
         }));
-
-        console.log(`⏱️ Problem completed in ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
       }
 
-      // Log timing for solution requests (student gave up)
+      // Also accumulate time when solution is requested (problem ends without correct answer)
       if (evaluatorOutput.action === "GIVE_SOLUTION") {
-        console.log(`⏱️ Solution requested after ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
+        setState(prev => ({
+          ...prev,
+          sessionStats: {
+            ...prev.sessionStats,
+            totalProblemSolveTime: (prev.sessionStats.totalProblemSolveTime || 0) + timeSpentOnProblem
+          }
+        }));
       }
 
       // STEP 2.4: Update section stats for current section
@@ -1763,7 +1689,6 @@ const handleStudentSubmit = async (input: string) => {
             return entry;
           })
         }));
-        console.log(`📊 Updated section stats for ${currentSectionId}: attempted ${evaluatorOutput.action === "NEW_PROBLEM" ? '+1' : '0'}, correct: ${evaluatorOutput.answerCorrect ? '+1' : '0'}, hints: ${evaluatorOutput.action === "GIVE_HINT" ? '+1' : '0'}`);
       }
 
       // STEP 2.4.1: Update session-wide stats for hints
@@ -1775,7 +1700,6 @@ const handleStudentSubmit = async (input: string) => {
             hintsProvided: prev.sessionStats.hintsProvided + 1
           }
         }));
-        console.log('📊 Session-wide hints provided incremented');
       }
 
       // STEP 2.4.2: Update session-wide stats for solutions viewed
@@ -1787,12 +1711,10 @@ const handleStudentSubmit = async (input: string) => {
             solutionsViewed: (prev.sessionStats.solutionsViewed || 0) + 1
           }
         }));
-        console.log('📊 Session-wide solutions viewed incremented');
       }
 
       // STEP 2.5: Handle section mastery and progression
       if (evaluatorOutput.advanceToNextSection && currentSectionId && !sectionProgress.masteredSections.includes(currentSectionId)) {
-        console.log(`✅ Section mastered: ${currentSectionId}`);
 
         const newMasteredSections = [...sectionProgress.masteredSections, currentSectionId];
 
@@ -1833,7 +1755,6 @@ const handleStudentSubmit = async (input: string) => {
           const currentIndex = sections.findIndex((s: any) => s.id === currentSectionId);
           if (currentIndex >= 0 && currentIndex < sections.length - 1) {
             newCurrentSection = sections[currentIndex + 1].id;
-            console.log(`📍 Section transition: ${currentSectionId} → ${newCurrentSection}`);
           }
         }
 
@@ -1858,7 +1779,6 @@ const handleStudentSubmit = async (input: string) => {
               currentQuestionIndex: -1  // Initialize for consistency (used by pre-generated topics)
             };
             updatedSectionHistory = [...updatedSectionHistory, newSectionEntry];
-            console.log(`📊 Initialized stats for new section: ${newCurrentSection}`);
           }
         }
 
@@ -1869,15 +1789,11 @@ const handleStudentSubmit = async (input: string) => {
         };
 
         setSectionProgress(updatedSectionProgress);
-
-        // Note: Auto-save to Firestore will trigger via useEffect (debounced)
-        console.log(`✨ Section progress updated with ${newMasteredSections.length} mastered sections`);
       }
 
       // Check for subtopic completion (trust evaluator's CELEBRATE action only)
       if (evaluatorOutput.action === "CELEBRATE") {
         setSubtopicComplete(true);
-        console.log('🎉 SUBTOPIC COMPLETED! Evaluator determined mastery achieved.');
       }
 
       // STEP 3: Use current problem type for execution
@@ -1892,7 +1808,6 @@ const handleStudentSubmit = async (input: string) => {
       if (evaluatorOutput.action === "GIVE_SOLUTION" && problemState?.currentProblemText) {
         // Use Solution Agent for all solutions (generates step-by-step text)
         // Single LLM call generates: solution text + optional mathTool
-        console.log(`🎨 Using Solution Agent for solution`);
         try {
           structuredVisualizationData = await aiService.current.generateSolution(
             problemState.currentProblemText,
@@ -1904,7 +1819,6 @@ const handleStudentSubmit = async (input: string) => {
             undefined, // No solutionInstruction in new architecture
             sectionProgress.currentSection
           );
-          console.log('Solution Agent data:', structuredVisualizationData);
 
           // Extract tutor response from structured data
           if (structuredVisualizationData) {
@@ -1922,7 +1836,6 @@ const handleStudentSubmit = async (input: string) => {
       } else if (evaluatorOutput.action === "NEW_PROBLEM") {
         // NEW_PROBLEM: Use generateQuestion directly (1 LLM call)
         // This returns both celebration speech AND the new problem
-        console.log('🎯 Using Question Generation for NEW_PROBLEM (1 LLM call)');
         try {
           // Format recent history properly before passing to AI (filtered by current section)
           const { formatConversationHistory } = await import('../services/utils/responseParser');
@@ -1942,8 +1855,6 @@ const handleStudentSubmit = async (input: string) => {
               advanceToNextSection: evaluatorOutput.advanceToNextSection
             }
           );
-
-          console.log('Question response:', questionResponse);
 
           // Speak the celebration, then show the problem
           const emotion = questionResponse.speech.emotion || 'celebratory';
@@ -1974,8 +1885,6 @@ const handleStudentSubmit = async (input: string) => {
         }
       } else if (evaluatorOutput.action === "CLARIFY_CONCEPT") {
         // CLARIFY_CONCEPT: Use Concept Clarifier Agent (direct explanations)
-        console.log('💡 Using Concept Clarifier Agent for CLARIFY_CONCEPT');
-
         if (!problemState?.currentProblemText) {
           console.error('No current problem text for concept clarifier agent');
           throw new Error('No current problem available');
@@ -1990,8 +1899,6 @@ const handleStudentSubmit = async (input: string) => {
           evaluatorOutput.reasoning,
           sectionProgress.currentSection
         );
-
-        console.log('Concept Clarifier response:', clarificationResponse);
 
         // Extract and validate mathTool if present
         const mathTool = validateMathTool(clarificationResponse.mathTool);
@@ -2021,8 +1928,6 @@ const handleStudentSubmit = async (input: string) => {
         }
       } else if (evaluatorOutput.action === "GIVE_HINT") {
         // GIVE_HINT: Use Hint Agent (Socratic scaffolding)
-        console.log('🎯 Using Hint Agent for GIVE_HINT');
-
         if (!problemState?.currentProblemText) {
           console.error('No current problem text for hint agent');
           throw new Error('No current problem available');
@@ -2037,8 +1942,6 @@ const handleStudentSubmit = async (input: string) => {
           topicId,
           sectionProgress.currentSection
         );
-
-        console.log('Hint Agent response:', hintResponse);
 
         // Extract and validate mathTool if present
         const mathTool = validateMathTool(hintResponse.mathTool);
@@ -2068,8 +1971,6 @@ const handleStudentSubmit = async (input: string) => {
         }
       } else if (evaluatorOutput.action === "CELEBRATE") {
         // CELEBRATE: Use Celebration Agent (with stats and learning summary)
-        console.log('🎉 Using Celebration Agent for CELEBRATE');
-
         // Calculate session statistics for celebration
         const sessionStartTime = new Date(state.sessionStats.startTime);
         const currentSessionDuration = Math.round((Date.now() - sessionStartTime.getTime()) / 1000);
@@ -2119,8 +2020,6 @@ const handleStudentSubmit = async (input: string) => {
           celebrationStats
         );
 
-        console.log('Celebration Agent response:', celebrationResponse);
-
         // STEP 5a: Speak the celebration via avatar
         if (celebrationResponse.speech && celebrationResponse.speech.text) {
           const emotion = celebrationResponse.speech.emotion || 'celebratory';
@@ -2163,8 +2062,6 @@ const handleStudentSubmit = async (input: string) => {
 
         if (structuredVisualizationData) {
           // New format: {speech, display, mathTool (optional)} per INTERACTION_PROTOCOL
-          console.log('📝 Displaying solution with speech and optional mathTool');
-
           // Speak the intro speech, then show the solution
           const speechText = structuredVisualizationData.speech?.text || "Let me show you how to solve this.";
           const emotion = structuredVisualizationData.speech?.emotion || 'supportive';
@@ -2183,13 +2080,10 @@ const handleStudentSubmit = async (input: string) => {
       // NEW_PROBLEM and GIVE_SOLUTION are now handled in the speech callback above
       // No additional logic needed here
 
-      console.log('=== SEQUENTIAL AGENT FLOW COMPLETE ===');
-      console.log('Final state - Problems completed:', problemsCompleted);
-      console.log('Evaluator action taken:', evaluatorOutput.action);
-
     } catch (error) {
       console.error('Failed to process sequential agent flow:', error);
-      throw error;
+      // Show friendly error message instead of crashing
+      setError(getFriendlyMessage(error));
     } finally {
       // Clear loading state
       setLoadingState({ active: false, stage: null });
@@ -2509,6 +2403,38 @@ const handleStudentSubmit = async (input: string) => {
                 size={80}
                 audioDuration={audioDuration}
               />
+            </div>
+          )}
+
+          {/* Friendly Error Display */}
+          {error && (
+            <div
+              className="mx-auto max-w-md p-4 rounded-2xl text-center"
+              style={{
+                backgroundColor: 'rgba(255, 200, 150, 0.15)',
+                border: '1px solid rgba(255, 180, 120, 0.3)'
+              }}
+            >
+              <div className="text-2xl mb-2">😅</div>
+              <p className="text-sm" style={{ color: theme.colors.textPrimary }}>
+                {error}
+              </p>
+              <button
+                onClick={() => {
+                  setError(null);
+                  // Retry the last action if possible
+                  if (state.messages.length === 0) {
+                    restoreFromSession();
+                  }
+                }}
+                className="mt-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                style={{
+                  backgroundColor: theme.colors.brand,
+                  color: 'white'
+                }}
+              >
+                Try Again
+              </button>
             </div>
           )}
 

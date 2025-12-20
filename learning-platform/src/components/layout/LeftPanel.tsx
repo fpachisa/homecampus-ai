@@ -685,9 +685,6 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         : pathId.split('-').slice(0, 3).join('-'))  // Extract category from subtopic
     : '';
 
-  console.log('[LeftPanel] pathId from URL:', pathId);
-  console.log('[LeftPanel] derived selectedCategory:', selectedCategory);
-
   const [selectedTopic, setSelectedTopic] = useState<string>('');
 
   // Handle topic selection - navigate to learn mode with category and topic
@@ -710,7 +707,6 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
 
   // Dynamically get topic configs based on selected category
   const topicConfigs = useMemo(() => {
-    console.log('[LeftPanel] selectedCategory:', selectedCategory);
     // OLD: Fractions not migrated - commented out
     // if (selectedCategory === 'fractions') {
     //   return Object.entries(P6_MATH_FRACTIONS).map(([topicId, config]) => ({
@@ -978,17 +974,13 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         description: config.topicName,
       }));
     } else if (selectedCategory === 's4-math-differential-calculus') {
-      console.log('[LeftPanel] Differential Calculus matched!');
-      console.log('[LeftPanel] DIFFERENTIAL_CALCULUS_SUBTOPICS keys:', Object.keys(DIFFERENTIAL_CALCULUS_SUBTOPICS));
-      const entries = Object.entries(DIFFERENTIAL_CALCULUS_SUBTOPICS).map(([topicId, config]) => ({
+      return Object.entries(DIFFERENTIAL_CALCULUS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
         description: config.topicName,
       }));
-      console.log('[LeftPanel] Mapped entries:', entries);
-      return entries;
     } else if (selectedCategory === 's4-math-integration') {
       return Object.entries(S4_MATH_INTEGRATION_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId,

@@ -19,6 +19,7 @@ import { checkRateLimit, validateInput, DEFAULT_RATE_LIMITS } from '../utils/rat
 // Request/Response types
 export interface GenerateContentRequest {
   prompt: string;
+  userInput?: string;  // Optional: raw user input for validation (separate from full prompt)
   maxTokens?: number;
   temperature?: number;
   preferredProvider?: 'gemini' | 'claude';
@@ -53,14 +54,27 @@ export const generateContent = onCall<GenerateContentRequest, Promise<GenerateCo
     const uid = request.auth.uid;
 
     // 2. Validate request data
-    const { prompt, maxTokens, temperature, preferredProvider } = request.data;
+    const { prompt, userInput, maxTokens, temperature, preferredProvider } = request.data;
 
     if (!prompt) {
       throw new HttpsError('invalid-argument', 'Prompt is required');
     }
 
-    // 3. Validate input (length + spam detection)
-    validateInput(prompt, DEFAULT_RATE_LIMITS);
+    // 3. Validate user input (if provided separately for stricter validation)
+    if (userInput) {
+      validateInput(userInput, DEFAULT_RATE_LIMITS);
+    }
+
+    // 3.1 SECURITY: Always validate prompt length as fallback (prevents malicious bypass)
+    // Max prompt length = system prompt (~5000) + context (~3000) + user input (1000) = ~10000
+    // We use 15000 to be safe but still catch abuse
+    const MAX_PROMPT_LENGTH = 15000;
+    if (prompt.length > MAX_PROMPT_LENGTH) {
+      throw new HttpsError(
+        'invalid-argument',
+        `Request too large. Please shorten your message.`
+      );
+    }
 
     // 4. Check rate limits
     await checkRateLimit(uid, DEFAULT_RATE_LIMITS);
@@ -215,7 +229,7 @@ export const generateContentBatch = onCall<
     // Process sequentially to avoid rate limits
     for (const { id, prompt } of prompts) {
       try {
-        validateInput(prompt);
+        // Skip validation for batch prompts (system-generated)
         const content = await generateWithGemini(geminiClient, prompt);
         results.push({ id, content });
       } catch (error: any) {

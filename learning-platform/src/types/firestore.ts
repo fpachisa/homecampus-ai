@@ -136,7 +136,8 @@ export interface LearnConversation {
     hintsProvided: number;
     solutionsViewed: number;    // NEW: Track when student views full solutions
     startTime: Timestamp;
-    totalTimeSpent: number;     // seconds
+    totalTimeSpent: number;     // seconds (session duration)
+    totalProblemSolveTime?: number; // seconds (actual time spent solving problems - more accurate)
   };
 
   // Student learning profile

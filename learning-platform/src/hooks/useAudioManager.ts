@@ -55,7 +55,6 @@ export const useAudioManager = (): UseAudioManagerReturn => {
       await silentAudio.play();
 
       setIsAudioUnlocked(true);
-      console.log('✅ Audio unlocked for iOS');
 
       // Store in sessionStorage so we don't ask again
       sessionStorage.setItem('audio_unlocked', 'true');
@@ -95,9 +94,6 @@ export const useAudioManager = (): UseAudioManagerReturn => {
         return;
       }
 
-      console.log('🔊 Speaking:', item.text);
-      console.log('🎭 Emotion:', item.emotion || 'neutral');
-
       // Set avatar to speaking state (but no subtitle yet - waiting for audio to start)
       setAvatarState('speaking');
       setIsPlaying(true);
@@ -121,17 +117,14 @@ export const useAudioManager = (): UseAudioManagerReturn => {
       // Get audio duration when metadata loads
       audio.onloadedmetadata = () => {
         setAudioDuration(audio.duration);
-        console.log(`🎵 Audio duration: ${audio.duration}s`);
       };
 
       // Show subtitle only when audio actually starts playing (natural sync)
       audio.onplay = () => {
-        console.log('🎬 Audio started, showing subtitle');
         setCurrentSubtitle(item.text);
       };
 
       audio.onended = () => {
-        console.log('✅ Speech completed');
         setIsPlaying(false);
         setAvatarState('idle');
         setCurrentSubtitle('');
@@ -219,13 +212,10 @@ export const useAudioManager = (): UseAudioManagerReturn => {
   const speakTextWithAudio = useCallback(async (
     text: string,
     audioUrl: string,
-    emotion?: AudioQueueItem['emotion'],
+    _emotion?: AudioQueueItem['emotion'],  // Reserved for future emotion-based audio selection
     onComplete?: () => void
   ) => {
     try {
-      console.log('🎵 Playing pre-generated audio:', audioUrl);
-      console.log('🎭 Emotion:', emotion || 'neutral');
-
       // Set avatar to speaking state
       setAvatarState('speaking');
       setIsPlaying(true);
@@ -237,17 +227,14 @@ export const useAudioManager = (): UseAudioManagerReturn => {
       // Get audio duration when metadata loads
       audio.onloadedmetadata = () => {
         setAudioDuration(audio.duration);
-        console.log(`🎵 Audio duration: ${audio.duration}s`);
       };
 
       // Show subtitle when audio starts playing
       audio.onplay = () => {
-        console.log('🎬 Audio started, showing subtitle');
         setCurrentSubtitle(text);
       };
 
       audio.onended = () => {
-        console.log('✅ Speech completed');
         setIsPlaying(false);
         setAvatarState('idle');
         setCurrentSubtitle('');

@@ -3,6 +3,9 @@ import { useTheme } from '../hooks/useTheme';
 import { useKeyboardHeight } from '../hooks/useKeyboardHeight';
 import MathInputToolbar from './MathInputToolbar';
 
+// Maximum input length to prevent abuse
+const MAX_INPUT_LENGTH = 1000;
+
 interface Props {
   onSubmit: (input: string) => void;
   disabled: boolean;
@@ -18,7 +21,12 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
   const { keyboardHeight } = useKeyboardHeight(); // Mobile keyboard detection
   const [input, setInput] = useState('');
   const [showMathToolbar, setShowMathToolbar] = useState(false);
+  const [showLengthWarning, setShowLengthWarning] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Check if input is too long
+  const isOverLimit = input.length > MAX_INPUT_LENGTH;
+  const isNearLimit = input.length > MAX_INPUT_LENGTH * 0.8; // Show warning at 80%
 
   // Expose focus method to parent
   useImperativeHandle(ref, () => ({
@@ -48,6 +56,13 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
   }, [input, adjustHeight]);
 
   const handleSubmit = () => {
+    // Prevent submission if over limit
+    if (isOverLimit) {
+      setShowLengthWarning(true);
+      setTimeout(() => setShowLengthWarning(false), 3000);
+      return;
+    }
+
     if (input.trim() && !disabled) {
       onSubmit(input);
       setInput('');
@@ -136,48 +151,66 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
           </button>
 
           {/* Input field - textarea for multiline support with auto-resize */}
-          <textarea
-            ref={inputRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            disabled={disabled}
-            placeholder="Type your answer or ask for help... (Ctrl+Enter to send)"
-            rows={1}
-            className="flex-1 px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed resize-none"
-            style={{
-              color: theme.colors.textPrimary,
-              fontSize: '16px', // Prevent iOS zoom on focus
-              lineHeight: '1.5',
-              overflow: 'hidden', // Changed dynamically by adjustHeight
-              ...(disabled && {
-                color: theme.colors.textMuted,
-              }),
-            }}
-            inputMode="text"
-          />
+          <div className="flex-1 relative">
+            <textarea
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              disabled={disabled}
+              maxLength={MAX_INPUT_LENGTH + 100} // Allow slight overflow for better UX
+              placeholder="Type your answer or ask for help... (Ctrl+Enter to send)"
+              rows={1}
+              className="w-full px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed resize-none"
+              style={{
+                color: theme.colors.textPrimary,
+                fontSize: '16px', // Prevent iOS zoom on focus
+                lineHeight: '1.5',
+                overflow: 'hidden', // Changed dynamically by adjustHeight
+                ...(disabled && {
+                  color: theme.colors.textMuted,
+                }),
+                ...(isOverLimit && {
+                  color: '#ef4444', // Red when over limit
+                }),
+              }}
+              inputMode="text"
+            />
+            {/* Character counter - shows when near limit */}
+            {(isNearLimit || showLengthWarning) && (
+              <div
+                className="absolute bottom-1 right-2 text-xs"
+                style={{
+                  color: isOverLimit ? '#ef4444' : theme.colors.textMuted,
+                }}
+              >
+                {input.length}/{MAX_INPUT_LENGTH}
+                {isOverLimit && ' (too long)'}
+              </div>
+            )}
+          </div>
 
           <button
             onClick={handleSubmit}
-            disabled={disabled || !input.trim()}
+            disabled={disabled || !input.trim() || isOverLimit}
             className="px-4 sm:px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 min-w-[44px] min-h-[44px]"
             style={{
-              background: disabled || !input.trim() ? theme.colors.interactive : theme.gradients.brand,
-              color: disabled || !input.trim() ? theme.colors.textMuted : '#ffffff',
-              cursor: disabled || !input.trim() ? 'not-allowed' : 'pointer',
+              background: disabled || !input.trim() || isOverLimit ? theme.colors.interactive : theme.gradients.brand,
+              color: disabled || !input.trim() || isOverLimit ? theme.colors.textMuted : '#ffffff',
+              cursor: disabled || !input.trim() || isOverLimit ? 'not-allowed' : 'pointer',
               touchAction: 'manipulation', // Prevent 300ms delay on mobile
-              ...(!(disabled || !input.trim()) && {
+              ...(!(disabled || !input.trim() || isOverLimit) && {
                 boxShadow: theme.shadows.glow,
               }),
             }}
             onMouseEnter={(e) => {
-              if (!(disabled || !input.trim())) {
+              if (!(disabled || !input.trim() || isOverLimit)) {
                 e.currentTarget.style.transform = 'scale(1.05)';
                 e.currentTarget.style.boxShadow = theme.shadows.xl;
               }
             }}
             onMouseLeave={(e) => {
-              if (!(disabled || !input.trim())) {
+              if (!(disabled || !input.trim() || isOverLimit)) {
                 e.currentTarget.style.transform = 'scale(1)';
                 e.currentTarget.style.boxShadow = theme.shadows.glow;
               }

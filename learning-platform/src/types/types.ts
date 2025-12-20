@@ -40,6 +40,7 @@ export interface ConversationState {
     solutionsViewed: number;
     startTime: Date;
     previousTimeSpent?: number; // Accumulated time from previous sessions (seconds)
+    totalProblemSolveTime?: number; // Accumulated time spent solving problems (seconds) - more accurate than session time
   };
   studentProfile: {
     strugglingWith: string[];
