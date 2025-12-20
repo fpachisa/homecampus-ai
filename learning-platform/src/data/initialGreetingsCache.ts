@@ -8692,6 +8692,101 @@ What is the value of $n$ if $n + 5 = 12$?`,
     }
   },
 
+  // ========================================
+  // P6 VOLUME OF CUBE AND CUBOID
+  // ========================================
+  'p6-math-volume-finding-side': {
+    speech: {
+      text: `Welcome to Volume of Cube and Cuboid! Today we will explore 3D shapes and learn to find their dimensions. You already know that volume is the amount of space a solid occupies. The exciting part is learning to work backwards. Given the volume, can we find the length, breadth, or height? We will also discover cube roots. If a cube has a volume of 27, what is the length of one edge? Let us find out together!`,
+      emotion: 'warm'
+    },
+    display: {
+      content: `# Finding the Side of Cube or Cuboid
+
+Welcome to **Volume of Cube and Cuboid**! We'll learn to find unknown dimensions.
+
+**Key Formulas:**
+- Volume of cube = Side × Side × Side = Side³
+- Volume of cuboid = Length × Breadth × Height
+
+**Finding Unknown Dimensions:**
+- Height = Volume ÷ (Length × Breadth)
+- Edge of cube = ∛Volume (cube root)
+
+**Example:**
+If Volume = 24 cm³, Length = 4 cm, Breadth = 3 cm:
+- Height = 24 ÷ (4 × 3) = 24 ÷ 12 = 2 cm
+
+---
+
+### First Question:
+A cuboid has a volume of 48 cm³. Its length is 4 cm and breadth is 3 cm. What is its height?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-volume-face-area': {
+    speech: {
+      text: `Great progress on volume! Now let us explore the relationship between volume and face area. A cuboid has 6 faces, and each face is a rectangle. Here is the key insight: Volume equals Base Area times Height. So if you know the volume and height, you can find the base area by dividing. For cubes, we need two steps: first find the edge using cube root, then calculate face area. Ready to explore these relationships?`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `# Finding the Area of One Face
+
+Let's explore the relationship between **volume and face area**!
+
+**Key Relationships:**
+- Volume = Base Area × Height
+- Base Area = Volume ÷ Height
+- Face Area = Volume ÷ perpendicular dimension
+
+**For a Cube:**
+- Step 1: Find edge = ∛Volume
+- Step 2: Face Area = Edge × Edge = Edge²
+
+**Example:**
+If Volume = 960 m³ and Height = 8 m:
+- Base Area = 960 ÷ 8 = 120 m²
+
+---
+
+### First Question:
+A rectangular container has a volume of 750 cm³ and height of 5 cm. What is its base area?`,
+      showAfterSpeech: true
+    }
+  },
+
+  'p6-math-volume-word-problems': {
+    speech: {
+      text: `Now for the exciting applications! We will solve word problems about containers, tanks, and water. Here is the most important conversion to remember: 1 litre equals 1000 cubic centimeters. This is essential for water tank problems. We will calculate water levels, find how much water is needed to fill a tank, and even solve problems where water is transferred between containers. These are practical skills you will use in real life!`,
+      emotion: 'supportive'
+    },
+    display: {
+      content: `# Word Problems: Volume
+
+Time to apply volume skills to **real-world problems**!
+
+**Essential Conversion:**
+$$1 \\text{ litre} = 1000 \\text{ cm}^3$$
+
+**Water Tank Formulas:**
+- Water height = Volume of water ÷ Base Area
+- Volume to fill = Tank capacity - Current water volume
+
+**Problem Types:**
+1. Finding water level height
+2. Volume needed to fill a tank
+3. Fractional fill problems
+4. Water transfer between containers
+
+---
+
+### First Question:
+A rectangular tank measures 40 cm by 25 cm by 60 cm. It contains 30 litres of water. What is the height of the water level?`,
+      showAfterSpeech: true
+    }
+  },
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

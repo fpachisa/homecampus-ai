@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 interface WaterTankVisualizerProps {
   length: number;         // Tank length in specified unit
@@ -21,29 +21,55 @@ const WaterTankVisualizer: React.FC<WaterTankVisualizerProps> = ({
   showWaterHeight = true,
   caption
 }) => {
-  // SVG dimensions
-  const svgWidth = 500;
-  const svgHeight = 400;
-
   // Clamp water height to tank height
   const clampedWaterHeight = Math.max(0, Math.min(waterHeight, height));
 
-  // Calculate proportional dimensions for display
-  const maxDim = Math.max(length, width, height);
-  const scaleFactor = 150 / maxDim;
+  // Calculate dimensions dynamically based on the actual proportions
+  const dimensions = useMemo(() => {
+    const maxDim = Math.max(length, width, height);
+    const baseScale = 120;
+    const scaleFactor = baseScale / maxDim;
 
-  const tankLength = length * scaleFactor;  // Left-right (front edge)
-  const tankWidth = width * scaleFactor;    // Front-back (depth)
-  const tankHeight = height * scaleFactor;  // Up-down
-  const waterH = clampedWaterHeight * scaleFactor;
+    // Calculate proportional dimensions (clamped for reasonable display)
+    const tankLength = Math.max(60, Math.min(200, length * scaleFactor));
+    const tankWidth = Math.max(40, Math.min(150, width * scaleFactor));
+    const tankHeight = Math.max(50, Math.min(180, height * scaleFactor));
+    const waterH = (clampedWaterHeight / height) * tankHeight;
 
-  // Isometric angles
-  const depthOffsetX = tankWidth * 0.5;
-  const depthOffsetY = tankWidth * 0.25;
+    // Isometric angles
+    const depthOffsetX = tankWidth * 0.5;
+    const depthOffsetY = tankWidth * 0.25;
 
-  // Starting position (front-bottom-left corner)
-  const startX = 100;
-  const startY = 320;
+    // Calculate total dimensions needed
+    const totalWidth = tankLength + depthOffsetX;
+    const totalHeight = tankHeight + depthOffsetY;
+
+    // Padding for labels
+    const padding = { left: 60, right: 70, top: 20, bottom: 45 };
+
+    // SVG dimensions - fit to content
+    const svgWidth = totalWidth + padding.left + padding.right;
+    const svgHeight = totalHeight + padding.top + padding.bottom;
+
+    // Starting position (front-bottom-left corner)
+    const startX = padding.left;
+    const startY = svgHeight - padding.bottom;
+
+    return {
+      tankLength,
+      tankWidth,
+      tankHeight,
+      waterH,
+      depthOffsetX,
+      depthOffsetY,
+      svgWidth,
+      svgHeight,
+      startX,
+      startY
+    };
+  }, [length, width, height, clampedWaterHeight]);
+
+  const { tankLength, tankWidth, tankHeight, waterH, depthOffsetX, depthOffsetY, svgWidth, svgHeight, startX, startY } = dimensions;
 
   // Tank vertices
   // Front face (visible)
@@ -289,38 +315,40 @@ const WaterTankVisualizer: React.FC<WaterTankVisualizerProps> = ({
         {/* Water height label */}
         {showWaterHeight && clampedWaterHeight > 0 && clampedWaterHeight < height && (
           <>
-            {/* Water height dimension line on right side */}
+            {/* Water height dimension line - at back bottom right corner going up to water level */}
             <line
-              x1={backBottomRight.x + 20}
-              y1={frontBottomRight.y}
+              x1={backBottomRight.x + 15}
+              y1={backBottomRight.y}
+              x2={backBottomRight.x + 15}
+              y2={waterBackRight.y}
+              stroke={waterColor}
+              strokeWidth={1.5}
+            />
+            {/* Bottom tick at back bottom right */}
+            <line
+              x1={backBottomRight.x + 10}
+              y1={backBottomRight.y}
               x2={backBottomRight.x + 20}
-              y2={waterFrontRight.y}
+              y2={backBottomRight.y}
               stroke={waterColor}
-              strokeWidth={1}
+              strokeWidth={1.5}
             />
+            {/* Top tick at water level (back right) */}
             <line
-              x1={backBottomRight.x + 15}
-              y1={frontBottomRight.y}
-              x2={backBottomRight.x + 25}
-              y2={frontBottomRight.y}
+              x1={backBottomRight.x + 10}
+              y1={waterBackRight.y}
+              x2={backBottomRight.x + 20}
+              y2={waterBackRight.y}
               stroke={waterColor}
-              strokeWidth={1}
-            />
-            <line
-              x1={backBottomRight.x + 15}
-              y1={waterFrontRight.y}
-              x2={backBottomRight.x + 25}
-              y2={waterFrontRight.y}
-              stroke={waterColor}
-              strokeWidth={1}
+              strokeWidth={1.5}
             />
             <text
-              x={backBottomRight.x + 35}
-              y={(frontBottomRight.y + waterFrontRight.y) / 2 + 5}
+              x={backBottomRight.x + 28}
+              y={(backBottomRight.y + waterBackRight.y) / 2 + 5}
               textAnchor="start"
               fill={waterColor}
               fontSize="13"
-              fontWeight="500"
+              fontWeight="600"
             >
               {clampedWaterHeight} {unit}
             </text>

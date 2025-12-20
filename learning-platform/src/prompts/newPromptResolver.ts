@@ -84,6 +84,7 @@ import { P6_PERCENTAGE_SUBTOPICS, P6_PERCENTAGE_CONFIG } from '../prompt-library
 import { P6_CIRCLES_SUBTOPICS, P6_CIRCLES_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 import { P6_AVERAGES_SUBTOPICS, P6_AVERAGES_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-averages';
 import { P6_ALGEBRA_SUBTOPICS, P6_ALGEBRA_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import { P6_VOLUME_CUBE_CUBOID_SUBTOPICS, P6_VOLUME_CUBE_CUBOID_CONFIG } from '../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -194,6 +195,7 @@ function registerBrowserTopics() {
   registerTopics(P6_CIRCLES_SUBTOPICS, P6_CIRCLES_CONFIG);
   registerTopics(P6_AVERAGES_SUBTOPICS, P6_AVERAGES_CONFIG);
   registerTopics(P6_ALGEBRA_SUBTOPICS, P6_ALGEBRA_CONFIG);
+  registerTopics(P6_VOLUME_CUBE_CUBOID_SUBTOPICS, P6_VOLUME_CUBE_CUBOID_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

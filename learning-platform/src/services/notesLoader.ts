@@ -360,6 +360,10 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   'p6/math/algebra/SimplifyingExpressions': () => import('../notes/p6/math/algebra/SimplifyingExpressions'),
   'p6/math/algebra/EvaluatingExpressions': () => import('../notes/p6/math/algebra/EvaluatingExpressions'),
   'p6/math/algebra/SolvingEquations': () => import('../notes/p6/math/algebra/SolvingEquations'),
+  // P6 Volume of Cube and Cuboid notes
+  'p6/math/volume-cube-cuboid/FindingSide': () => import('../notes/p6/math/volume-cube-cuboid/FindingSide'),
+  'p6/math/volume-cube-cuboid/FaceArea': () => import('../notes/p6/math/volume-cube-cuboid/FaceArea'),
+  'p6/math/volume-cube-cuboid/WordProblems': () => import('../notes/p6/math/volume-cube-cuboid/WordProblems'),
 };
 
 interface NotesCache {

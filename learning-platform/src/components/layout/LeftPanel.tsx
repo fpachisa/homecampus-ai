@@ -119,6 +119,8 @@ import { P6_AVERAGES_SUBTOPICS } from '../../prompt-library/subjects/mathematics
 import type { P6AveragesTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-averages';
 import { P6_ALGEBRA_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-algebra';
 import type { P6AlgebraTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-algebra';
+import { P6_VOLUME_CUBE_CUBOID_SUBTOPICS } from '../../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
+import type { P6VolumeCubeCuboidTopicId } from '../../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -268,6 +270,18 @@ function getTopicIcon(topicId: string): string {
       'p6-math-algebra-simplifying',
       'p6-math-algebra-evaluating',
       'p6-math-algebra-solving'
+    ];
+    const index = subtopicIds.indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // P6 Volume of Cube and Cuboid icons
+  if (topicId.startsWith('p6-math-volume-')) {
+    const icons = ['📐', '🔲', '💧'];  // Finding Side, Face Area, Word Problems
+    const subtopicIds = [
+      'p6-math-volume-finding-side',
+      'p6-math-volume-face-area',
+      'p6-math-volume-word-problems'
     ];
     const index = subtopicIds.indexOf(topicId);
     return icons[index >= 0 ? index : 0];
@@ -587,6 +601,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'p6-math-circles') return 'Circles';
   if (category === 'p6-math-averages') return 'Averages';
   if (category === 'p6-math-algebra') return 'Algebra';
+  if (category === 'p6-math-volume-cube-cuboid') return 'Volume of Cube and Cuboid';
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
@@ -653,7 +668,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     'p5-math-properties-of-triangles',
     'p5-math-properties-of-quadrilaterals',
     // Primary 6 paths
-    'p6-math-fractions', 'p6-math-ratios', 'p6-math-percentage', 'p6-math-circles', 'p6-math-averages', 'p6-math-algebra',
+    'p6-math-fractions', 'p6-math-ratios', 'p6-math-percentage', 'p6-math-circles', 'p6-math-averages', 'p6-math-algebra', 'p6-math-volume-cube-cuboid',
     // Secondary 1 paths
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
@@ -1153,6 +1168,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 'p6-math-algebra') {
       return Object.entries(P6_ALGEBRA_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as P6AlgebraTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 'p6-math-volume-cube-cuboid') {
+      return Object.entries(P6_VOLUME_CUBE_CUBOID_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as P6VolumeCubeCuboidTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

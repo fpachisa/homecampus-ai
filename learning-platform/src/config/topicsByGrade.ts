@@ -228,6 +228,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Primary 6',
       subject: 'Mathematics',
     },
+    {
+      id: 'p6-math-volume-cube-cuboid',
+      name: 'Volume of Cube and Cuboid',
+      icon: '📦',
+      description: 'Master volume: finding unknown dimensions, face area calculations, and word problems with water tanks',
+      subtopicCount: 3,
+      isActive: true,
+      category: 'p6-math-volume-cube-cuboid',
+      grade: 'Primary 6',
+      subject: 'Mathematics',
+    },
   ],
   'Secondary 1': [
     {

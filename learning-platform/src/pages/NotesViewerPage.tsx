@@ -13,6 +13,11 @@ import { useTheme } from '../hooks/useTheme';
 // Notes registry - extracted from notesLoader.ts
 const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
 
+  // P6 Volume of Cube and Cuboid notes (NEW - testing)
+  'p6/math/volume-cube-cuboid/FindingSide': () => import('../notes/p6/math/volume-cube-cuboid/FindingSide'),
+  'p6/math/volume-cube-cuboid/FaceArea': () => import('../notes/p6/math/volume-cube-cuboid/FaceArea'),
+  'p6/math/volume-cube-cuboid/WordProblems': () => import('../notes/p6/math/volume-cube-cuboid/WordProblems'),
+
   // P6 Algebra notes (NEW - testing)
   'p6/math/algebra/WritingExpressions': () => import('../notes/p6/math/algebra/WritingExpressions'),
   'p6/math/algebra/SimplifyingExpressions': () => import('../notes/p6/math/algebra/SimplifyingExpressions'),

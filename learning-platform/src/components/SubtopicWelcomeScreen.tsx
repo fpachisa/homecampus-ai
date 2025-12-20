@@ -114,6 +114,8 @@ import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/pr
 import type { P6AveragesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-averages';
 import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 import type { P6AlgebraTopicId } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import { P6_VOLUME_CUBE_CUBOID_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
+import type { P6VolumeCubeCuboidTopicId } from '../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -247,6 +249,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = P6_AVERAGES_SUBTOPICS[topicId as P6AveragesTopicId];
   } else if (category === 'p6-math-algebra') {
     topicConfig = P6_ALGEBRA_SUBTOPICS[topicId as P6AlgebraTopicId];
+  } else if (category === 'p6-math-volume-cube-cuboid') {
+    topicConfig = P6_VOLUME_CUBE_CUBOID_SUBTOPICS[topicId as P6VolumeCubeCuboidTopicId];
   }
 
   if (!topicConfig) {

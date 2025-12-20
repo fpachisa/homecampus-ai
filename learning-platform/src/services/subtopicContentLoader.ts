@@ -62,6 +62,7 @@ import { P6_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import { P6_CIRCLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-circles';
 import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-averages';
 import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import { P6_VOLUME_CUBE_CUBOID_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
 
 export interface SubtopicContent {
   displayName: string;
@@ -140,6 +141,7 @@ class SubtopicContentLoader {
       ...P6_CIRCLES_SUBTOPICS,
       ...P6_AVERAGES_SUBTOPICS,
       ...P6_ALGEBRA_SUBTOPICS,
+      ...P6_VOLUME_CUBE_CUBOID_SUBTOPICS,
       // Future topics will be added here
     };
   }

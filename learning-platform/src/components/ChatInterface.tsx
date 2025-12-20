@@ -129,6 +129,8 @@ import { P6_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/pr
 import type { P6AveragesTopicId } from '../prompt-library/subjects/mathematics/primary/p6-averages';
 import { P6_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
 import type { P6AlgebraTopicId } from '../prompt-library/subjects/mathematics/primary/p6-algebra';
+import { P6_VOLUME_CUBE_CUBOID_SUBTOPICS } from '../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
+import type { P6VolumeCubeCuboidTopicId } from '../prompt-library/subjects/mathematics/primary/p6-volume-cube-cuboid';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -370,6 +372,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's a P6 algebra topic
   if (topicId.startsWith('p6-math-algebra-')) {
     return P6_ALGEBRA_SUBTOPICS[topicId as P6AlgebraTopicId];
+  }
+  // Check if it's a P6 volume topic
+  if (topicId.startsWith('p6-math-volume-')) {
+    return P6_VOLUME_CUBE_CUBOID_SUBTOPICS[topicId as P6VolumeCubeCuboidTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

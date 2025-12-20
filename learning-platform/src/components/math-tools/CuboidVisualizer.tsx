@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import MathText from '../MathText';
 
@@ -13,6 +13,7 @@ interface CuboidVisualizerProps {
   showSpaceDiagonal?: boolean; // Show diagonal through the body
   diagonalFace?: 'front' | 'side' | 'top' | 'bottom'; // Which face to show diagonal on
   showVertexLabels?: boolean; // Show vertex labels A, B, C, D, E, F, G, H
+  shadedFace?: 'front' | 'top' | 'side' | 'none'; // Which face to shade/highlight
   caption?: string;
 }
 
@@ -27,13 +28,10 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
   showSpaceDiagonal = false,
   diagonalFace = 'bottom',
   showVertexLabels = false,
+  shadedFace = 'none',
   caption
 }) => {
   const { theme } = useTheme();
-
-  // SVG dimensions
-  const svgWidth = 500;
-  const svgHeight = 400;
 
   // Extract numeric values from dimension strings (e.g., "5cm" -> 5, "12" -> 12)
   const parseNumeric = (value: string): number => {
@@ -45,23 +43,56 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
   const lengthNum = length ? parseNumeric(length) : 1;
   const heightNum = height ? parseNumeric(height) : 1;
 
-  // Find the maximum dimension to use as reference for scaling
-  const maxDim = Math.max(widthNum, lengthNum, heightNum);
+  // Calculate dimensions dynamically based on the actual proportions
+  const dimensions = useMemo(() => {
+    // Find the maximum dimension to use as reference for scaling
+    const maxDim = Math.max(widthNum, lengthNum, heightNum);
 
-  // Scale factor to fit nicely in the SVG
-  const scaleFactor = 150 / maxDim;
+    // Base scale - larger shapes get more pixels
+    const baseScale = 120;
+    const scaleFactor = baseScale / maxDim;
 
-  // Calculate proportional dimensions
-  const baseWidth = widthNum * scaleFactor; // Width (left-right)
-  const baseLength = lengthNum * scaleFactor; // Depth (front-back)
-  const baseHeight = heightNum * scaleFactor; // Height (up-down)
+    // Calculate proportional dimensions (clamped for reasonable display)
+    const baseWidth = Math.max(60, Math.min(200, widthNum * scaleFactor));
+    const baseLength = Math.max(40, Math.min(150, lengthNum * scaleFactor));
+    const baseHeight = Math.max(50, Math.min(180, heightNum * scaleFactor));
 
-  // Isometric angles for pseudo-3D effect
-  const depthOffsetX = baseLength * 0.5; // X offset for depth
-  const depthOffsetY = baseLength * 0.25; // Y offset for depth (creates 3D effect)
+    // Isometric angles for pseudo-3D effect
+    const depthOffsetX = baseLength * 0.5;
+    const depthOffsetY = baseLength * 0.25;
+
+    // Calculate total dimensions needed
+    const totalWidth = baseWidth + depthOffsetX;
+    const totalHeight = baseHeight + depthOffsetY;
+
+    // Padding for labels
+    const padding = { left: 55, right: 55, top: 30, bottom: 50 };
+
+    // SVG dimensions - fit to content
+    const svgWidth = totalWidth + padding.left + padding.right;
+    const svgHeight = totalHeight + padding.top + padding.bottom;
+
+    // Position the cuboid (front-bottom-left corner)
+    const originX = padding.left;
+    const originY = svgHeight - padding.bottom;
+
+    return {
+      baseWidth,
+      baseLength,
+      baseHeight,
+      depthOffsetX,
+      depthOffsetY,
+      svgWidth,
+      svgHeight,
+      originX,
+      originY
+    };
+  }, [widthNum, lengthNum, heightNum]);
+
+  const { baseWidth, baseHeight, depthOffsetX, depthOffsetY, svgWidth, svgHeight, originX, originY } = dimensions;
 
   // Bottom face vertices (front rectangle)
-  const frontBottomLeft = { x: 100, y: 300 }; // A
+  const frontBottomLeft = { x: originX, y: originY }; // A
   const frontBottomRight = { x: frontBottomLeft.x + baseWidth, y: frontBottomLeft.y }; // B
   const frontTopRight = { x: frontBottomRight.x, y: frontBottomRight.y - baseHeight }; // C
   const frontTopLeft = { x: frontBottomLeft.x, y: frontBottomLeft.y - baseHeight }; // D
@@ -72,11 +103,12 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
   const backTopRight = { x: frontTopRight.x + depthOffsetX, y: frontTopRight.y - depthOffsetY }; // G
   const backTopLeft = { x: frontTopLeft.x + depthOffsetX, y: frontTopLeft.y - depthOffsetY }; // H
 
-  // Colors
+  // Colors - single color scheme for consistency (important for shaded part questions)
   const defaultColor = theme.colors.textSecondary || '#666';
   const highlightColor = '#ef4444';
-  const faceColor = '#e0e7ff'; // Light blue for faces
-  const edgeColor = '#475569'; // Dark gray for edges
+  const edgeColor = '#334155'; // Darker edge color for contrast
+  const faceColor = '#dbeafe'; // Very light blue - unshaded faces
+  const shadedColor = '#3b82f6'; // Bright blue - clearly shaded face
 
   // Determine stroke color and width
   const getStrokeColor = (element: string) => {
@@ -87,14 +119,17 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
     return highlightElement === element ? 3 : 2;
   };
 
+  // Generate unique gradient IDs for this instance
+  const gradientId = useMemo(() => Math.random().toString(36).substr(2, 9), []);
+
   return (
     <div className="my-4">
-      <svg width={svgWidth} height={svgHeight} className="mx-auto">
+      <svg width={svgWidth} height={svgHeight} className="mx-auto" style={{ maxWidth: '100%' }}>
         <defs>
-          {/* Gradient for 3D effect on faces */}
-          <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: faceColor, stopOpacity: 0.8 }} />
-            <stop offset="100%" style={{ stopColor: faceColor, stopOpacity: 0.4 }} />
+          {/* Single gradient for all faces - varying opacity for 3D depth effect */}
+          <linearGradient id={`faceGradient-${gradientId}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: faceColor, stopOpacity: 0.9 }} />
+            <stop offset="100%" style={{ stopColor: faceColor, stopOpacity: 0.7 }} />
           </linearGradient>
         </defs>
 
@@ -102,37 +137,37 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
         {/* Back face */}
         <polygon
           points={`${backBottomLeft.x},${backBottomLeft.y} ${backBottomRight.x},${backBottomRight.y} ${backTopRight.x},${backTopRight.y} ${backTopLeft.x},${backTopLeft.y}`}
-          fill="url(#faceGradient)"
+          fill={faceColor}
           stroke={edgeColor}
           strokeWidth={1}
-          opacity={0.6}
+          opacity={0.4}
         />
 
         {/* Top face */}
         <polygon
           points={`${frontTopLeft.x},${frontTopLeft.y} ${frontTopRight.x},${frontTopRight.y} ${backTopRight.x},${backTopRight.y} ${backTopLeft.x},${backTopLeft.y}`}
-          fill="url(#faceGradient)"
+          fill={shadedFace === 'top' ? shadedColor : faceColor}
           stroke={edgeColor}
-          strokeWidth={1}
-          opacity={0.7}
+          strokeWidth={shadedFace === 'top' ? 2.5 : 1.5}
+          opacity={shadedFace === 'top' ? 0.85 : 0.6}
         />
 
-        {/* Right face */}
+        {/* Right/Side face */}
         <polygon
           points={`${frontBottomRight.x},${frontBottomRight.y} ${backBottomRight.x},${backBottomRight.y} ${backTopRight.x},${backTopRight.y} ${frontTopRight.x},${frontTopRight.y}`}
-          fill="url(#faceGradient)"
+          fill={shadedFace === 'side' ? shadedColor : faceColor}
           stroke={edgeColor}
-          strokeWidth={1}
-          opacity={0.7}
+          strokeWidth={shadedFace === 'side' ? 2.5 : 1.5}
+          opacity={shadedFace === 'side' ? 0.85 : 0.5}
         />
 
         {/* Front face (main face, most visible) */}
         <polygon
           points={`${frontBottomLeft.x},${frontBottomLeft.y} ${frontBottomRight.x},${frontBottomRight.y} ${frontTopRight.x},${frontTopRight.y} ${frontTopLeft.x},${frontTopLeft.y}`}
-          fill="url(#faceGradient)"
+          fill={shadedFace === 'front' ? shadedColor : faceColor}
           stroke={edgeColor}
-          strokeWidth={2}
-          opacity={0.5}
+          strokeWidth={shadedFace === 'front' ? 2.5 : 2}
+          opacity={shadedFace === 'front' ? 0.85 : 0.7}
         />
 
         {/* Edges - draw all 12 edges of the cuboid */}

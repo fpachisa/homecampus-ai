@@ -548,7 +548,8 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       showFaceDiagonal: "boolean (default: false) - show diagonal on face. Set true for base diagonal problems.",
       showSpaceDiagonal: "boolean (default: false) - show body diagonal",
       diagonalFace: "'bottom' | 'front' | 'side' | 'top' (default: 'bottom') - which face for diagonal",
-      showVertexLabels: "boolean (default: false) - show vertex labels A-H"
+      showVertexLabels: "boolean (default: false) - show vertex labels A-H",
+      shadedFace: "'front' | 'top' | 'side' | 'none' (default: 'none') - highlight a specific face with shading for 'shaded face area' problems"
     },
 
     exampleUsage: {

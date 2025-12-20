@@ -25,6 +25,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { P6_ALGEBRA_FIRESTORE_CONFIGS } from './p6-algebra-firestore-configs.js';
+import { P6_VOLUME_FIRESTORE_CONFIGS } from './p6-volume-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -94,7 +95,8 @@ const STANDARD_MODULES = {
 
 
 const ALL_CONFIGS = [
-  ...P6_ALGEBRA_FIRESTORE_CONFIGS
+  ...P6_ALGEBRA_FIRESTORE_CONFIGS,
+  ...P6_VOLUME_FIRESTORE_CONFIGS
 ];
 
 /**
