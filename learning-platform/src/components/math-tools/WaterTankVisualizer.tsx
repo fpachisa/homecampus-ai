@@ -69,7 +69,7 @@ const WaterTankVisualizer: React.FC<WaterTankVisualizerProps> = ({
     };
   }, [length, width, height, clampedWaterHeight]);
 
-  const { tankLength, tankWidth, tankHeight, waterH, depthOffsetX, depthOffsetY, svgWidth, svgHeight, startX, startY } = dimensions;
+  const { tankLength, tankHeight, waterH, depthOffsetX, depthOffsetY, svgWidth, svgHeight, startX, startY } = dimensions;
 
   // Tank vertices
   // Front face (visible)
