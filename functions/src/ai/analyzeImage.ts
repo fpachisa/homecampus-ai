@@ -95,7 +95,7 @@ export const analyzeImage = onCall<AnalyzeImageRequest, Promise<AnalyzeImageResp
         }
       };
 
-      const model = 'gemini-2.5-flash-preview-05-20';
+      const model = 'gemini-3-flash-preview';
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
       const response = await fetch(url, {

@@ -540,20 +540,34 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         [currentProblem.id]: updatedProblemSession,
       };
 
+      // Calculate time spent on this problem (for all attempts)
+      const timeSpent = Math.floor((new Date().getTime() - problemStartTime.getTime()) / 1000);
+
+      // CRITICAL: Pre-calculate newAttempts BEFORE speakText callback to avoid stale closure bug
+      // This is needed because the callback runs after speech finishes, but session.attempts may be stale
+      // Record attempt if correct OR if this is the 3rd (final) attempt
+      const shouldRecordAttempt = result.isCorrect || updatedProblemSession.attemptCount >= 3;
+      const newAttemptsForCallback = shouldRecordAttempt ? [...session.attempts, {
+        problemId: currentProblem.id,
+        nodeId: node.id,
+        studentAnswer,
+        isCorrect: result.isCorrect,
+        hintsUsed: updatedProblemSession.attemptCount - 1,
+        attemptedAt: new Date(),
+        timeSpentSeconds: timeSpent,
+      }] : session.attempts;
+
       // Speak the avatar speech with auto-advance callback for correct answers
       speakText(
         result.avatarSpeech,
         undefined,
         result.isCorrect ? () => {
           // Auto-advance to next problem after speech finishes (only for correct answers)
-          // Pass updatedProblemSessions to avoid stale closure bug
+          // Pass updatedProblemSessions and newAttempts to avoid stale closure bug
           console.log('✓ Avatar speech complete, auto-advancing to next problem...');
-          handleNextProblem(true, updatedProblemSessionsForCallback);
+          handleNextProblem(true, updatedProblemSessionsForCallback, newAttemptsForCallback);
         } : undefined
       );
-
-      // Calculate time spent on this problem (for all attempts)
-      const timeSpent = Math.floor((new Date().getTime() - problemStartTime.getTime()) / 1000);
 
       // CRITICAL: Update unified progress on FIRST attempt (to show "in progress") 
       // OR when correct (to count as solved)
@@ -594,25 +608,14 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       }
 
       // If correct or last attempt, record for session history
-      if (result.isCorrect || updatedProblemSession.attemptCount >= 3) {
-        const attempt: ProblemAttempt = {
-          problemId: currentProblem.id,
-          nodeId: node.id,
-          studentAnswer,
-          isCorrect: result.isCorrect,
-          hintsUsed: updatedProblemSession.attemptCount - 1,
-          attemptedAt: new Date(),
-          timeSpentSeconds: timeSpent,  // ✅ NOW TRACKS ACTUAL TIME
-        };
-
-        const newAttempts = [...session.attempts, attempt];
-
+      // Use newAttemptsForCallback which was pre-calculated above to avoid stale closure
+      if (shouldRecordAttempt) {
         // Use the same updatedProblemSessions created earlier for the callback
         const updatedProblemSessions = updatedProblemSessionsForCallback;
 
         setSession(prev => ({
           ...prev,
-          attempts: newAttempts,
+          attempts: newAttemptsForCallback,
           currentProblemSession: updatedProblemSession,
           problemSessions: updatedProblemSessions,
         }));
@@ -622,10 +625,10 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           nodeId: node.id,
           problems: session.problems,
           currentIndex: session.currentIndex,
-          attempts: newAttempts,
+          attempts: newAttemptsForCallback,
           problemSessions: updatedProblemSessions,
         });
-        console.log(`💾 Saved attempt (${result.isCorrect ? 'correct' : 'incorrect'}): ${newAttempts.length} total attempts, current index: ${session.currentIndex}`);
+        console.log(`💾 Saved attempt (${result.isCorrect ? 'correct' : 'incorrect'}): ${newAttemptsForCallback.length} total attempts, current index: ${session.currentIndex}`);
       } else {
         // For incorrect attempts that can retry, also save the session state
         const updatedProblemSessions = {
@@ -719,7 +722,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     }
   };
 
-  const handleNextProblem = (skipAvatarSpeech = false, existingProblemSessions?: Record<string, ProblemSessionState>) => {
+  const handleNextProblem = (skipAvatarSpeech = false, existingProblemSessions?: Record<string, ProblemSessionState>, existingAttempts?: ProblemAttempt[]) => {
     const nextIndex = session.currentIndex + 1;
 
     if (nextIndex >= session.problems.length) {
@@ -776,11 +779,12 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       setSolution(null);
 
       // Save progress with updated problem sessions
+      // CRITICAL: Use existingAttempts if provided (to avoid stale closure bug)
       const sessionData = {
         nodeId: node.id,
         problems: session.problems,
         currentIndex: nextIndex,
-        attempts: session.attempts,
+        attempts: existingAttempts || session.attempts,
         problemSessions: updatedProblemSessions, // Use updated version
       };
       saveSessionToStorage(sessionData);
@@ -926,7 +930,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
   if (session.loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ background: theme.gradients.panel }}>
         <div className="text-center">
           {/* Animated book icon */}
           <div className="text-6xl mb-4 animate-bounce">📚</div>
@@ -990,7 +994,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
   if (session.error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ background: theme.gradients.panel }}>
         <div className="text-center max-w-md">
           <div className="text-6xl mb-4">⚠️</div>
           <div className="text-xl text-red-600 font-semibold mb-4">{session.error}</div>
@@ -1006,86 +1010,91 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   }
 
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-blue-50 to-indigo-100 pb-safe-b">
-      {/* Header */}
-      <div className="bg-white shadow-md border-b-2 border-blue-200 pt-safe-t">
+    <div className="min-h-[100dvh] pb-safe-b" style={{ background: theme.gradients.panel }}>
+      {/* Header - fixed to stay visible while scrolling */}
+      <div
+        className="shadow-md border-b-2 pt-safe-t fixed top-0 left-0 right-0 z-50"
+        style={{
+          backgroundColor: theme.colors.surface,
+          borderColor: theme.colors.border,
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          {/* Top Row: Back button + Title + Progress */}
-          <div className="flex items-center justify-between gap-3 mb-3">
-            <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+          {/* Single Row: Back + Title | Pills | Progress */}
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
+            {/* Left: Back button + Title */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <BackButton onClick={onBack} />
-              <div className="flex-1 min-w-0">
-                <h1 className="text-base sm:text-xl font-bold text-gray-800 truncate">{node.title}</h1>
-              </div>
+              <h1 className="text-sm sm:text-lg font-bold truncate max-w-[120px] sm:max-w-[200px] lg:max-w-none" style={{ color: theme.colors.textPrimary }}>{node.title}</h1>
             </div>
+
+            {/* Center: Problem Navigation Pills */}
+            <div className="flex items-center justify-center gap-1 sm:gap-1.5 overflow-x-auto flex-1 px-2 py-1">
+              {session.problems.map((problem, index) => {
+                const isAttempted = session.attempts.some(a => a.problemId === problem.id);
+                const hasVisited = session.problemSessions[problem.id] !== undefined;
+                const isCurrent = index === session.currentIndex;
+                const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
+
+                const pillStyle = isAttempted
+                  ? { backgroundColor: theme.colors.success, color: '#ffffff' }
+                  : isCurrent
+                    ? { backgroundColor: theme.colors.brand, color: '#ffffff', boxShadow: theme.shadows.md }
+                    : hasVisited || index < session.currentIndex
+                      ? { backgroundColor: theme.colors.brandHover, color: '#ffffff' }
+                      : { backgroundColor: theme.colors.interactive, color: theme.colors.textMuted, opacity: 0.6 };
+
+                return (
+                  <button
+                    key={problem.id}
+                    onClick={() => canClick && handleNavigateToProblem(index)}
+                    disabled={!canClick}
+                    className={`w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 rounded-full font-semibold transition-all text-xs sm:text-sm ${
+                      isAttempted || hasVisited || index < session.currentIndex ? 'cursor-pointer' : 'cursor-not-allowed'
+                    } ${isCurrent ? 'scale-110' : ''}`}
+                    style={{
+                      ...pillStyle,
+                      ...(isCurrent && isAttempted ? { boxShadow: `0 0 0 3px ${theme.colors.brand}40` } : {}),
+                    }}
+                    onMouseEnter={(e) => {
+                      if (canClick && !isCurrent) {
+                        e.currentTarget.style.transform = 'scale(1.1)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isCurrent) {
+                        e.currentTarget.style.transform = 'scale(1)';
+                      }
+                    }}
+                    title={
+                      isCurrent && isAttempted
+                        ? `Current problem ${index + 1} (attempted)`
+                        : isCurrent
+                          ? `Current problem ${index + 1}`
+                          : isAttempted
+                            ? `Navigate to problem ${index + 1} (completed)`
+                            : hasVisited || index < session.currentIndex
+                              ? `Navigate to problem ${index + 1} (visited)`
+                              : `Problem ${index + 1} (not reached yet)`
+                    }
+                  >
+                    {index + 1}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right: Progress */}
             <div className="text-right flex-shrink-0">
-              <div className="text-xs sm:text-sm text-gray-600">Progress</div>
-              <div className="text-base sm:text-lg font-bold text-gray-800">{progressPercent}%</div>
+              <div className="text-xs" style={{ color: theme.colors.textSecondary }}>Progress</div>
+              <div className="text-sm sm:text-base font-bold" style={{ color: theme.colors.textPrimary }}>{progressPercent}%</div>
             </div>
-          </div>
-
-          {/* Bottom Row: Problem Navigation Pills */}
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto py-2 -mx-1 px-1">
-            {session.problems.map((problem, index) => {
-              const isAttempted = session.attempts.some(a => a.problemId === problem.id);
-              const hasVisited = session.problemSessions[problem.id] !== undefined;
-              const isCurrent = index === session.currentIndex;
-              // Can click if: attempted, current, has visited session, or any problem up to current index
-              const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
-
-              // Compute pill styles based on state
-              const pillStyle = isAttempted
-                ? { backgroundColor: theme.colors.success, color: '#ffffff' }
-                : isCurrent
-                  ? { backgroundColor: theme.colors.brand, color: '#ffffff', boxShadow: theme.shadows.lg }
-                  : hasVisited || index < session.currentIndex
-                    ? { backgroundColor: theme.colors.brandHover, color: '#ffffff' }
-                    : { backgroundColor: theme.colors.interactive, color: theme.colors.textMuted, opacity: 0.6 };
-
-              return (
-                <button
-                  key={problem.id}
-                  onClick={() => canClick && handleNavigateToProblem(index)}
-                  disabled={!canClick}
-                  className={`min-w-[44px] min-h-[44px] w-11 h-11 flex-shrink-0 rounded-full font-semibold transition-all text-sm sm:text-base ${
-                    isAttempted || hasVisited || index < session.currentIndex ? 'cursor-pointer' : 'cursor-not-allowed'
-                  } ${isCurrent ? 'scale-105 sm:scale-110' : ''} ${isCurrent && isAttempted ? 'ring-2 sm:ring-4' : ''}`}
-                  style={{
-                    ...pillStyle,
-                    ...(isCurrent && isAttempted ? { boxShadow: `0 0 0 4px ${theme.colors.brand}40` } : {}),
-                  }}
-                  onMouseEnter={(e) => {
-                    if (canClick && !isCurrent) {
-                      e.currentTarget.style.transform = 'scale(1.05)';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isCurrent) {
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }
-                  }}
-                  title={
-                    isCurrent && isAttempted
-                      ? `Current problem ${index + 1} (attempted)`
-                      : isCurrent
-                        ? `Current problem ${index + 1}`
-                        : isAttempted
-                          ? `Navigate to problem ${index + 1} (completed)`
-                          : hasVisited || index < session.currentIndex
-                            ? `Navigate to problem ${index + 1} (visited)`
-                            : `Problem ${index + 1} (not reached yet)`
-                  }
-                >
-                  {index + 1}
-                </button>
-              );
-            })}
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      {/* Main Content - pt-20 accounts for fixed header height */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-6 sm:pb-8">
         {/* Avatar Component - Fixed Position (stays visible during scroll) */}
         {(isPlaying || currentSubtitle) && (
           <div style={{

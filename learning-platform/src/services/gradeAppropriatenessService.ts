@@ -43,7 +43,7 @@ SUGGESTION MESSAGE EXAMPLES:
 
 export class GradeAppropriatenessService {
   private ai: GoogleGenAI | null = null;
-  private modelName: string = 'gemini-2.5-flash-preview-05-20';
+  private modelName: string = 'gemini-3-flash-preview';
   private config: any;
   private useCloudFunctions: boolean;
   private jsonSchemaInstruction: string;

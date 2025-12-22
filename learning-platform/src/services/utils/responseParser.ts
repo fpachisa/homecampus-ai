@@ -3,6 +3,8 @@
  * Centralized JSON parsing and validation for AI service responses
  */
 
+import { AIServiceError, AIErrorType } from '../aiService';
+
 /**
  * Clean markdown code fences from AI response text
  * Handles both ```json ... ``` and ``` ... ``` formats
@@ -400,9 +402,25 @@ export function safeParseJSON<T>(
   } catch (error1) {
     console.error('❌ SafeParseJSON: Both Stage 0 and Stage 3 failed!', (error1 as Error).message);
 
-    // Use fallback if provided
+    // Check if response appears to be truncated (doesn't end with valid JSON terminator)
+    const trimmedText = jsonText.trim();
+    const looksLikeTruncated = !trimmedText.endsWith('}') && !trimmedText.endsWith(']') && !trimmedText.endsWith('"');
+
+    if (looksLikeTruncated) {
+      console.error('🔄 SafeParseJSON: Response appears truncated, triggering retry/fallback');
+      console.error('Last 100 chars:', trimmedText.slice(-100));
+      // Throw a retryable error that will trigger Claude fallback
+      throw new AIServiceError(
+        AIErrorType.TRUNCATED_RESPONSE,
+        error1 as Error,
+        true, // retryable
+        'AI response was truncated mid-JSON. Trying backup service...'
+      );
+    }
+
+    // Not truncated - use fallback if provided for other parsing errors
     if (fallbackResponse) {
-      console.log('⚠️ SafeParseJSON: Using fallback response');
+      console.log('⚠️ SafeParseJSON: Using fallback response for non-truncation parse error');
       return fallbackResponse as T;
     }
 

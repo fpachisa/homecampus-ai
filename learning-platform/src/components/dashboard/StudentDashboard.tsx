@@ -75,7 +75,7 @@ export const StudentDashboard: React.FC = () => {
       <div
         className="min-h-screen flex items-center justify-center"
         style={{
-          background: theme.gradients.panel,
+          background: 'transparent',
           color: theme.colors.textPrimary,
         }}
       >

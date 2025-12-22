@@ -111,9 +111,6 @@ const FractionBarVisualizer: React.FC<FractionBarVisualizerProps> = ({
               />
             ))}
           </div>
-          <div className="text-sm font-mono" style={{ color: theme.colors.textSecondary }}>
-            {filledSegments}/{segments}
-          </div>
         </div>
       </div>
     );
@@ -180,12 +177,6 @@ const FractionBarVisualizer: React.FC<FractionBarVisualizerProps> = ({
       {!frac2 && (
         <div>
           {renderFractionBar(frac1, '#3b82f6')}
-          <div className="mt-2 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20">
-            <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
-              The bar is divided into <strong>{frac1.denominator}</strong> equal parts.
-              <strong className="ml-1">{frac1.numerator}</strong> {frac1.numerator === 1 ? 'part is' : 'parts are'} shaded.
-            </p>
-          </div>
         </div>
       )}
 

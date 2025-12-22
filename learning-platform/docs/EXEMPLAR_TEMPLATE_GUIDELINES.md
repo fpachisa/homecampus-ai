@@ -29,7 +29,7 @@ An **exemplar template** is the DNA blueprint for AI-generated practice question
 
 ---
 
-## The 4-Step Workflow
+## The 5-Step Workflow
 
 ### Step 1: Extract Sections from .ts Config File
 
@@ -130,6 +130,120 @@ INVALID Parameters (DON'T USE):
 
 **Key Insight:** Parameter names in the exemplar must EXACTLY match React component prop names. No transformations happen in the data flow!
 
+---
+
+### Step 3: Review Notes Files for Sample Problems
+
+**⚠️ CRITICAL STEP: Do not skip this!** The notes files contain curriculum-aligned content that serves as the foundation for exemplar problems.
+
+#### Locate Notes Files
+
+**Location Pattern:** `learning-platform/src/notes/[level]/[subject]/[topic-folder]/`
+
+**Examples:**
+- Primary 5 Fractions: `learning-platform/src/notes/p5/math/fractions-divisions/`
+- Secondary 3 Trigonometry: `learning-platform/src/notes/s3/math/trigonometry/`
+
+```bash
+# Find notes files for a topic
+ls learning-platform/src/notes/p5/math/fractions-divisions/
+# Output: DivisionAsFractions.tsx, FractionsAsDecimals.tsx
+```
+
+#### What to Extract from Notes Files
+
+Read each notes file **diligently** and extract:
+
+1. **Sample Problems with Solutions**
+   - Practice problems shown in the notes
+   - Worked examples with step-by-step solutions
+   - These become your `exemplarProblems`
+
+2. **Key Concepts and Formulas**
+   - Core rules (e.g., "a ÷ b = a/b")
+   - Common patterns students must learn
+   - These inform your `learningFocus` and `variationRules`
+
+3. **Problem Contexts and Scenarios**
+   - Real-world applications (pizza sharing, rope cutting, etc.)
+   - Word problem setups used in the curriculum
+   - These provide variety for question generation
+
+4. **Progression of Difficulty**
+   - How concepts build from simple to complex
+   - Helps ensure exemplars match section progression
+
+#### Example: Extracting from DivisionAsFractions.tsx
+
+```
+From the notes file, I found:
+
+**Section: division-as-sharing**
+Sample Problems:
+  - "1 pizza is shared equally among 3 children. What fraction does each child get?" → 1/3
+  - "1 ÷ 4 = ?" → 1/4
+
+Key Concepts:
+  - a ÷ b = a/b
+  - Numerator = what's being shared
+  - Denominator = number of people sharing
+
+Contexts:
+  - Pizza sharing
+  - Cake cutting
+  - Chocolate bars
+
+**Section: dividing-multiple-items**
+Sample Problems:
+  - "2 pizzas are shared equally among 3 children" → 2/3
+  - "4 ÷ 6 = 4/6 = 2/3" (with simplification)
+
+Key Concepts:
+  - m ÷ n = m/n
+  - Simplify fractions to lowest terms
+```
+
+#### Create a Problem Inventory
+
+For each section, create an inventory:
+
+```
+Section: [section-id]
+━━━━━━━━━━━━━━━━━━━━
+Sample Problems from Notes:
+  1. [Problem text] → [Answer]
+  2. [Problem text] → [Answer]
+  3. [Problem text] → [Answer]
+
+Key Concepts:
+  - [Concept 1]
+  - [Concept 2]
+
+Contexts for Variation:
+  - [Context 1: e.g., pizza, cake]
+  - [Context 2: e.g., rope, ribbon]
+  - [Context 3: e.g., water, juice]
+
+Visual Aids Used:
+  - [Any diagrams or visuals shown in notes]
+```
+
+#### Why This Step Matters
+
+⚠️ **Without reviewing notes files:**
+- Exemplar problems may not align with curriculum
+- Question difficulty may be inappropriate for the level
+- Important concepts may be missed
+- Generated questions may lack pedagogical coherence
+
+✅ **With thorough notes review:**
+- Exemplar problems match curriculum expectations
+- Difficulty progression is appropriate
+- All key concepts are covered
+- Questions use familiar contexts from learning materials
+
+---
+
 #### ⚠️ CRITICAL: Complex Parameter Structures
 
 For parameters with complex structures (arrays of objects, nested objects, etc.):
@@ -157,9 +271,9 @@ For parameters with complex structures (arrays of objects, nested objects, etc.)
 
 ---
 
-### Step 3: Map Curriculum Questions to Sections
+### Step 4: Map Curriculum Questions to Sections
 
-**Location:** `curriculum-content/S3-[Topic-Name].pdf`
+**Location:** `curriculum-content/S3-[Topic-Name].pdf` (and notes files from Step 3)
 
 #### Process
 
@@ -199,7 +313,7 @@ For each question, ensure:
 
 ---
 
-### Step 4: Create Self-Sufficient Exemplar
+### Step 5: Create Self-Sufficient Exemplar
 
 The exemplar must be **completely self-sufficient** because the AI generation script only receives this file and a prompt.
 
@@ -429,13 +543,22 @@ Before running the generation script, verify:
 - [ ] No invalid/non-existent parameters used
 - [ ] Context-specific parameters included (e.g., setName)
 
-### Step 3 Checks: Question Mapping
+### Step 3 Checks: Notes Files Review
+- [ ] Located all notes files for the topic
+- [ ] Read each notes file diligently
+- [ ] Extracted sample problems with solutions
+- [ ] Identified key concepts and formulas
+- [ ] Noted problem contexts and real-world scenarios
+- [ ] Created problem inventory for each section
+
+### Step 4 Checks: Question Mapping
 - [ ] All sections have representative question types
 - [ ] Each problem asks ONE question (or max TWO if dependent)
 - [ ] No multi-part questions with independent answers
 
-### Step 4 Checks: Self-Sufficient Exemplar
+### Step 5 Checks: Self-Sufficient Exemplar
 - [ ] All required fields present (nodeId, section, learningFocus, etc.)
+- [ ] Exemplar problems sourced from notes files (Step 3)
 - [ ] Variation rules provide sufficient diversity (6+ options)
 - [ ] Generation guidelines are explicit and clear
 - [ ] MathTool decision made per question type
@@ -833,20 +956,22 @@ grep -A 20 "interface.*Props" learning-platform/src/components/math-tools/Histog
 
 ---
 
-## Summary: The 4-Step Checklist
+## Summary: The 5-Step Checklist
 
 - [ ] **Step 1:** Extracted all section IDs from .ts config, created checklist
 - [ ] **Step 2:** Researched math tools, created parameter reference sheet
-- [ ] **Step 3:** Mapped curriculum questions to sections, applied question count rule
-- [ ] **Step 4:** Created self-sufficient exemplar with complete annotations
+- [ ] **Step 3:** Reviewed notes files, created problem inventory with sample problems
+- [ ] **Step 4:** Mapped curriculum questions to sections, applied question count rule
+- [ ] **Step 5:** Created self-sufficient exemplar with complete annotations
 
 **Remember:** Perfect the exemplar once, generate perfect questions forever.
 
 ---
 
-**Document Version:** 2.1
-**Last Updated:** Added Critical Lessons from Production Issues (January 2025)
+**Document Version:** 2.2
+**Last Updated:** Added Step 3 - Notes Files Review (December 2025)
 **Changelog:**
+- v2.2: Added Step 3 "Review Notes Files for Sample Problems" - workflow now has 5 steps. Notes files are the primary source for exemplar problems and contexts.
 - v2.1: Added "Critical Lessons from Production Issues" section documenting histogram parameter issue and best practices for complex mathTool structures
 - v2.0: Complete restructure around 4-step workflow, reduced length by ~55%
 - v1.1: Added Ground Rules for Section Coverage and Question Count

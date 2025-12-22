@@ -258,6 +258,7 @@ export const AIErrorType = {
   TIMEOUT: 'timeout',
   AUTHENTICATION: 'authentication',
   NETWORK: 'network',
+  TRUNCATED_RESPONSE: 'truncated_response',
   UNKNOWN: 'unknown'
 } as const;
 
@@ -292,6 +293,11 @@ export const AI_ERROR_MESSAGES: Record<AIErrorType, { title: string; message: st
     title: 'Connection Lost',
     message: 'Unable to reach the AI service. Please check your internet connection.',
     action: 'Check connection and retry'
+  },
+  truncated_response: {
+    title: 'Still Working',
+    message: 'Still generating your response... trying backup service.',
+    action: 'Please wait a moment'
   },
   unknown: {
     title: 'Something Went Wrong',

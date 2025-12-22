@@ -1,0 +1,576 @@
+# P5 Math Fractions Divisions - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: division-node-1
+  nodeNumber: 1
+  title: Understanding Division as Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionCircle
+    preWrittenQuestions:
+    - problemText: 1 pizza is shared equally among 4 children. What fraction of the pizza does each child get?
+      avatarIntro: Welcome! Today we are learning how to turn division sharing into fractions. Let's see how one whole item
+        is split up among friends.
+      mathTool:
+        toolName: fractionCircle
+        parameters:
+          numerator: 1
+          denominator: 4
+          caption: The circle shows 1 whole divided into 4 equal parts. Each part represents one share.
+      finalAnswer: $\frac{1}{4}$
+      stepByStepGuideline:
+      - 'Step 1: Identify what is being shared. Here, we have 1 whole pizza.'
+      - 'Step 2: Identify the number of sharers. There are 4 children.'
+      - 'Step 3: Write the division as a fraction. The 1 whole item becomes the numerator, and the 4 sharers become the denominator,
+        giving us $\frac{1}{4}$.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: Express 1 ÷ 7 as a fraction.
+      finalAnswer: $\frac{1}{7}$
+      stepByStepGuideline:
+      - 'Step 1: Understand that the division symbol (÷) can be replaced by a fraction bar.'
+      - 'Step 2: The number being divided (1) is the numerator (top number).'
+      - 'Step 3: The number you are dividing by (7) is the denominator (bottom number).'
+      - 'Step 4: Combine them to write the fraction $\frac{1}{7}$.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: If 1 chocolate bar is shared equally among 6 siblings, what fraction of the bar does each sibling get?
+      mathTool:
+        toolName: fractionCircle
+        parameters:
+          numerator: 1
+          denominator: 6
+          caption: The circle shows 1 whole divided into 6 equal parts.
+      finalAnswer: $\frac{1}{6}$
+      stepByStepGuideline:
+      - 'Step 1: The amount being shared is 1 chocolate bar. This is our numerator.'
+      - 'Step 2: The number of people sharing it is 6 siblings. This is our denominator.'
+      - 'Step 3: Each sibling gets 1 part out of 6, which is expressed as $\frac{1}{6}$.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Write 1 ÷ 10 as a fraction.
+      finalAnswer: $\frac{1}{10}$
+      stepByStepGuideline:
+      - 'Step 1: Recognize that 1 ÷ 10 means 1 whole divided into 10 equal parts.'
+      - 'Step 2: In fraction notation, the dividend (1) goes on top.'
+      - 'Step 3: The divisor (10) goes on the bottom.'
+      - 'Step 4: The result is $\frac{1}{10}$.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: 1 watermelon is shared equally among 8 family members. What fraction of the watermelon does each person
+        get?
+      mathTool:
+        toolName: fractionCircle
+        parameters:
+          numerator: 1
+          denominator: 8
+          caption: The circle shows 1 whole divided into 8 equal parts.
+      finalAnswer: $\frac{1}{8}$
+      stepByStepGuideline:
+      - 'Step 1: Start with the 1 whole watermelon as the numerator.'
+      - 'Step 2: Use the 8 family members as the denominator because that is how many equal pieces we need.'
+      - 'Step 3: Each person''s share is 1 divided by 8, written as the fraction $\frac{1}{8}$.'
+      id: q1-5
+      questionGroup: q1
+- id: division-node-2
+  nodeNumber: 2
+  title: Dividing Multiple Items Equally
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: 3 cakes are divided equally among 5 friends. What fraction of a cake does each friend get?
+      avatarIntro: Hi! Today we are learning how to represent sharing multiple items as fractions. It is a very useful skill
+        for everyday life!
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 3/5
+          caption: Each bar shows one whole. The shaded parts show each person's share.
+      finalAnswer: 3/5
+      stepByStepGuideline:
+      - 'Step 1: Identify the number of items being shared and the number of people. Here, we have 3 cakes and 5 friends.'
+      - 'Step 2: To find the share for each person, divide the number of items by the number of people. This is written as
+        3 ÷ 5.'
+      - 'Step 3: Express the division as a fraction. The number being divided (3) becomes the numerator, and the number of
+        people (5) becomes the denominator: $\frac{3}{5}$.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Express 5 ÷ 8 as a fraction.
+      finalAnswer: 5/8
+      stepByStepGuideline:
+      - 'Step 1: Recognize that the division symbol ÷ can be represented by a fraction bar.'
+      - 'Step 2: The first number, 5, is the dividend. In a fraction, the dividend becomes the numerator (the top number).'
+      - 'Step 3: The second number, 8, is the divisor. In a fraction, the divisor becomes the denominator (the bottom number).'
+      - 'Step 4: Write the numbers in fraction form: $\frac{5}{8}$.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: 4 pizzas are shared equally among 6 children. What fraction of a pizza does each child get? Give your answer
+        in simplest form.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 4/6
+          caption: Each bar shows one whole. The shaded parts show each person's share.
+      finalAnswer: 2/3
+      stepByStepGuideline:
+      - 'Step 1: Determine the sharing expression. 4 pizzas shared among 6 children is 4 ÷ 6.'
+      - 'Step 2: Write this as a fraction: $\frac{4}{6}$.'
+      - 'Step 3: Simplify the fraction by finding the greatest common factor of 4 and 6, which is 2.'
+      - 'Step 4: Divide both the numerator and the denominator by 2: $\frac{4 ÷ 2}{6 ÷ 2} = \frac{2}{3}$.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Write 6 ÷ 8 as a fraction in simplest form.
+      finalAnswer: 3/4
+      stepByStepGuideline:
+      - 'Step 1: Convert the division expression 6 ÷ 8 into the fraction $\frac{6}{8}$.'
+      - 'Step 2: Identify a common factor for 6 and 8. Both are even numbers, so they can be divided by 2.'
+      - 'Step 3: Divide the numerator (6) by 2 to get 3. Divide the denominator (8) by 2 to get 4.'
+      - 'Step 4: The simplified fraction is $\frac{3}{4}$.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: 2 pies are shared equally among 7 guests. What fraction of a pie does each guest get?
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/7
+          caption: Each bar shows one whole. The shaded parts show each person's share.
+      finalAnswer: 2/7
+      stepByStepGuideline:
+      - 'Step 1: We are sharing 2 items among 7 people.'
+      - 'Step 2: Set up the division as 2 ÷ 7.'
+      - 'Step 3: Write the result as a proper fraction, where 2 is the numerator and 7 is the denominator: $\frac{2}{7}$.'
+      id: q2-5
+      questionGroup: q2
+- id: division-node-3
+  nodeNumber: 3
+  title: Improper Fractions and Mixed Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 13 chocolate bars are divided equally among 4 siblings. How many chocolate bars does each sibling get?
+        Express your answer as a mixed number.
+      avatarIntro: Welcome! Today we are learning how to handle division when there are more items than people. Let's practice
+        turning these into mixed numbers.
+      mathTool: null
+      finalAnswer: 3 1/4
+      stepByStepGuideline:
+      - 'Step 1: Set up the division based on the problem. We are dividing 13 items among 4 people, which is 13 ÷ 4.'
+      - 'Step 2: Express the division as an improper fraction, which is $\frac{13}{4}$.'
+      - 'Step 3: Divide the numerator (13) by the denominator (4). 4 goes into 13 three times ($4 \times 3 = 12$) with a remainder
+        of 1.'
+      - 'Step 4: Write the result as a mixed number. The quotient (3) is the whole number, the remainder (1) is the new numerator,
+        and the denominator stays the same (4). This gives us 3 1/4.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: Express 19 ÷ 6 as a mixed number.
+      mathTool: null
+      finalAnswer: 3 1/6
+      stepByStepGuideline:
+      - 'Step 1: Identify the numerator and denominator. In 19 ÷ 6, the numerator is 19 and the denominator is 6.'
+      - 'Step 2: Divide 19 by 6 to find how many whole parts there are. $6 \times 3 = 18$, so the whole number is 3.'
+      - 'Step 3: Find the remainder. $19 - 18 = 1$.'
+      - 'Step 4: Combine the whole number and the remainder over the original denominator to get the mixed number: 3 1/6.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: Convert the improper fraction $\frac{23}{7}$ to a mixed number.
+      mathTool: null
+      finalAnswer: 3 2/7
+      stepByStepGuideline:
+      - 'Step 1: Divide the numerator (23) by the denominator (7).'
+      - 'Step 2: Calculate how many times 7 fits into 23. $7 \times 3 = 21$, so the whole number part is 3.'
+      - 'Step 3: Calculate the remainder: $23 - 21 = 2$.'
+      - 'Step 4: Place the remainder over the original denominator to form the fraction part. The final mixed number is 3
+        2/7.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: 14 pies are shared equally among 5 family members. How many pies does each family member get? Express your
+        answer as a mixed number.
+      mathTool: null
+      finalAnswer: 2 4/5
+      stepByStepGuideline:
+      - 'Step 1: Represent the sharing problem as a division: 14 ÷ 5.'
+      - 'Step 2: Perform the division. 5 goes into 14 two times ($5 \times 2 = 10$).'
+      - 'Step 3: Subtract to find the remainder: $14 - 10 = 4$.'
+      - 'Step 4: Write the answer as a mixed number using the quotient (2) as the whole number and the remainder (4) over
+        the denominator (5). The answer is 2 4/5.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: Express 7 ÷ 3 as a mixed number.
+      mathTool: null
+      finalAnswer: 2 1/3
+      stepByStepGuideline:
+      - 'Step 1: Determine the whole number part by dividing 7 by 3. 3 goes into 7 two times ($3 \times 2 = 6$).'
+      - 'Step 2: Calculate the remainder: $7 - 6 = 1$.'
+      - 'Step 3: Write the mixed number by placing the remainder (1) over the divisor (3).'
+      - 'Step 4: The result is 2 1/3.'
+      id: q3-5
+      questionGroup: q3
+- id: division-node-4
+  nodeNumber: 4
+  title: 'Word Problems: Division as Fractions'
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 5 pies are shared equally among 9 friends. What fraction of a pie does each friend get?
+      avatarIntro: Let's practice turning division word problems into fractions! It's a great way to show exact amounts when
+        sharing things.
+      mathTool: null
+      finalAnswer: 5/9
+      stepByStepGuideline:
+      - 'Step 1: Identify the total number of items being shared (5 pies) and the number of people sharing them (9 friends).'
+      - 'Step 2: Set up the division as a fraction where the number of items is the numerator and the number of people is
+        the denominator: $\frac{5}{9}$.'
+      - 'Step 3: Since the fraction cannot be simplified further, each friend gets $\frac{5}{9}$ of a pie.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: A ribbon is 9 metres long. It is cut into 12 equal pieces. What is the length of each piece? Give your
+        answer in simplest form.
+      mathTool: null
+      finalAnswer: 3/4 metre
+      stepByStepGuideline:
+      - 'Step 1: Identify the total length (9 metres) and the number of pieces (12).'
+      - 'Step 2: Express the division as a fraction: $\frac{9}{12}$.'
+      - 'Step 3: Simplify the fraction by dividing both the numerator and the denominator by their greatest common factor,
+        which is 3.'
+      - 'Step 4: $\frac{9 \div 3}{12 \div 3} = \frac{3}{4}$. The length of each piece is $\frac{3}{4}$ metre.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: 11 kg of sugar is divided equally into 4 bags. How many kilograms of sugar are in each bag? Give your answer
+        as a mixed number.
+      mathTool: null
+      finalAnswer: 2 3/4 kg
+      stepByStepGuideline:
+      - 'Step 1: Identify the total mass (11 kg) and the number of bags (4).'
+      - 'Step 2: Write the division as an improper fraction: $\frac{11}{4}$.'
+      - 'Step 3: Convert the improper fraction to a mixed number by dividing 11 by 4.'
+      - 'Step 4: $11 \div 4 = 2$ with a remainder of 3. This is written as $2 \frac{3}{4}$.'
+      - 'Step 5: Include the unit in your final answer: $2 \frac{3}{4}$ kg.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: A piece of string is 7 metres long. It is cut into 4 equal lengths. What is the length of each length of
+        string? Give your answer as a mixed number.
+      mathTool: null
+      finalAnswer: 1 3/4 metres
+      stepByStepGuideline:
+      - 'Step 1: Identify the total length (7 metres) and the number of pieces (4).'
+      - 'Step 2: Express the division as a fraction: $\frac{7}{4}$.'
+      - 'Step 3: Convert the improper fraction to a mixed number by dividing 7 by 4.'
+      - 'Step 4: $7 \div 4 = 1$ with a remainder of 3. This gives $1 \frac{3}{4}$.'
+      - 'Step 5: The length of each piece is $1 \frac{3}{4}$ metres.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: 4 kg of flour is shared equally among 6 bakers. How many kilograms of flour does each baker get? Give your
+        answer in simplest form.
+      mathTool: null
+      finalAnswer: 2/3 kg
+      stepByStepGuideline:
+      - 'Step 1: Identify the total mass (4 kg) and the number of bakers (6).'
+      - 'Step 2: Set up the fraction: $\frac{4}{6}$.'
+      - 'Step 3: Simplify the fraction by dividing both the numerator and the denominator by 2.'
+      - 'Step 4: $\frac{4 \div 2}{6 \div 2} = \frac{2}{3}$. Each baker gets $\frac{2}{3}$ kg of flour.'
+      id: q4-5
+      questionGroup: q4
+- id: decimals-node-1
+  nodeNumber: 5
+  title: Tenths and Hundredths as Decimals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Express $\frac{9}{10}$ as a decimal.
+      avatarIntro: Welcome! Today we are going to learn how to convert fractions into decimals by looking at their place values.
+        Let's start with tenths!
+      mathTool: null
+      finalAnswer: '0.9'
+      stepByStepGuideline:
+      - 'Step 1: Look at the denominator of the fraction $\frac{9}{10}$. The denominator is 10, which represents the tenths
+        place value.'
+      - 'Step 2: In a decimal, the first digit to the right of the decimal point is the tenths place.'
+      - 'Step 3: Place the numerator, 9, into the tenths place. This gives us 0.9.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: Express $\frac{26}{100}$ as a decimal.
+      mathTool: null
+      finalAnswer: '0.26'
+      stepByStepGuideline:
+      - 'Step 1: Look at the denominator of the fraction $\frac{26}{100}$. The denominator is 100, which represents the hundredths
+        place value.'
+      - 'Step 2: A denominator of 100 means the decimal will have two decimal places (tenths and hundredths).'
+      - 'Step 3: Place the numerator, 26, into these places so that the last digit is in the hundredths place. This gives
+        us 0.26.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: Convert $\frac{5}{10}$ to a decimal.
+      mathTool: null
+      finalAnswer: '0.5'
+      stepByStepGuideline:
+      - 'Step 1: The fraction $\frac{5}{10}$ has a denominator of 10, which refers to the tenths place.'
+      - 'Step 2: On a place value chart, the tenths place is the first position after the decimal point.'
+      - 'Step 3: Write the numerator 5 in the tenths place to get the decimal 0.5.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: Write $\frac{3}{100}$ as a decimal.
+      mathTool: null
+      finalAnswer: '0.03'
+      stepByStepGuideline:
+      - 'Step 1: The denominator is 100, which means we are looking at hundredths. This requires two decimal places.'
+      - 'Step 2: The numerator is 3. To represent 3 hundredths, we must place the 3 in the hundredths place (the second decimal
+        place).'
+      - 'Step 3: Use a zero as a placeholder in the tenths place. This results in 0.03.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: Express $\frac{78}{100}$ as a decimal.
+      mathTool: null
+      finalAnswer: '0.78'
+      stepByStepGuideline:
+      - 'Step 1: Identify that the denominator 100 indicates two decimal places are needed.'
+      - 'Step 2: The numerator 78 represents 7 tenths and 8 hundredths.'
+      - 'Step 3: Place these values after the decimal point to get 0.78.'
+      id: q5-5
+      questionGroup: q5
+- id: decimals-node-2
+  nodeNumber: 6
+  title: Using Equivalent Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A recipe calls for $\frac{4}{5}$ of a kilogram of flour. Express $\frac{4}{5}$ as a decimal.
+      avatarIntro: Let's practice converting fractions to decimals by finding an equivalent fraction with a denominator of
+        10 or 100!
+      mathTool: null
+      finalAnswer: '0.8'
+      stepByStepGuideline:
+      - 'Step 1: Identify the denominator of the fraction $\frac{4}{5}$, which is 5.'
+      - 'Step 2: Find a number to multiply the denominator by to make it 10. Since $5 \times 2 = 10$, the multiplier is 2.'
+      - 'Step 3: Multiply both the numerator and the denominator by 2 to find the equivalent fraction: $\frac{4 \times 2}{5
+        \times 2} = \frac{8}{10}$.'
+      - 'Step 4: Convert the fraction $\frac{8}{10}$ to a decimal. 8 tenths is written as 0.8.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A container is $\frac{1}{4}$ full of water. Convert $\frac{1}{4}$ to a decimal.
+      mathTool: null
+      finalAnswer: '0.25'
+      stepByStepGuideline:
+      - 'Step 1: Identify the denominator of the fraction $\frac{1}{4}$, which is 4.'
+      - 'Step 2: Find a number to multiply the denominator by to make it 100. Since $4 \times 25 = 100$, the multiplier is
+        25.'
+      - 'Step 3: Multiply both the numerator and the denominator by 25 to find the equivalent fraction: $\frac{1 \times 25}{4
+        \times 25} = \frac{25}{100}$.'
+      - 'Step 4: Convert the fraction $\frac{25}{100}$ to a decimal. 25 hundredths is written as 0.25.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: Jamie answered $\frac{7}{20}$ of the quiz questions correctly. Write $\frac{7}{20}$ as a decimal.
+      mathTool: null
+      finalAnswer: '0.35'
+      stepByStepGuideline:
+      - 'Step 1: Identify the denominator of the fraction $\frac{7}{20}$, which is 20.'
+      - 'Step 2: Find a number to multiply the denominator by to make it 100. Since $20 \times 5 = 100$, the multiplier is
+        5.'
+      - 'Step 3: Multiply both the numerator and the denominator by 5 to find the equivalent fraction: $\frac{7 \times 5}{20
+        \times 5} = \frac{35}{100}$.'
+      - 'Step 4: Convert the fraction $\frac{35}{100}$ to a decimal. 35 hundredths is written as 0.35.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: In a survey, $\frac{3}{25}$ of the students said their favorite color is green. Express $\frac{3}{25}$
+        as a decimal.
+      mathTool: null
+      finalAnswer: '0.12'
+      stepByStepGuideline:
+      - 'Step 1: Identify the denominator of the fraction $\frac{3}{25}$, which is 25.'
+      - 'Step 2: Find a number to multiply the denominator by to make it 100. Since $25 \times 4 = 100$, the multiplier is
+        4.'
+      - 'Step 3: Multiply both the numerator and the denominator by 4 to find the equivalent fraction: $\frac{3 \times 4}{25
+        \times 4} = \frac{12}{100}$.'
+      - 'Step 4: Convert the fraction $\frac{12}{100}$ to a decimal. 12 hundredths is written as 0.12.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A small bag of rice weighs $\frac{1}{2}$ kg. Convert $\frac{1}{2}$ to a decimal.
+      mathTool: null
+      finalAnswer: '0.5'
+      stepByStepGuideline:
+      - 'Step 1: Identify the denominator of the fraction $\frac{1}{2}$, which is 2.'
+      - 'Step 2: Find a number to multiply the denominator by to make it 10. Since $2 \times 5 = 10$, the multiplier is 5.'
+      - 'Step 3: Multiply both the numerator and the denominator by 5 to find the equivalent fraction: $\frac{1 \times 5}{2
+        \times 5} = \frac{5}{10}$.'
+      - 'Step 4: Convert the fraction $\frac{5}{10}$ to a decimal. 5 tenths is written as 0.5.'
+      id: q6-5
+      questionGroup: q6
+- id: decimals-node-3
+  nodeNumber: 7
+  title: Using Long Division
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A carpenter has a piece of timber that is $\frac{13}{4}$ metres long. Use long division to express this
+        length as a decimal.
+      avatarIntro: Let's practice our long division skills by converting fractions into decimals step-by-step! This is a great
+        way to see how fractions and decimals are related.
+      mathTool: null
+      finalAnswer: '3.25'
+      stepByStepGuideline:
+      - 'Step 1: Set up the long division by dividing the numerator (13) by the denominator (4).'
+      - 'Step 2: Divide 13 by 4. $13 \div 4 = 3$ with a remainder of 1.'
+      - 'Step 3: Place a decimal point after the 3 in your quotient and add a decimal point and a zero after 13 to make it
+        13.0.'
+      - 'Step 4: Bring down the zero to make the remainder 10. Divide 10 by 4. $10 \div 4 = 2$ with a remainder of 2.'
+      - 'Step 5: Add another zero to the dividend and bring it down to make the remainder 20. Divide 20 by 4. $20 \div 4 =
+        5$ with a remainder of 0.'
+      - 'Step 6: The final decimal value is 3.25.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A bag contains $\frac{5}{8}$ kilograms of coffee beans. Convert $\frac{5}{8}$ to a decimal.
+      mathTool: null
+      finalAnswer: '0.625'
+      stepByStepGuideline:
+      - 'Step 1: Set up the division $5 \div 8$. Since 5 is less than 8, place a 0 and a decimal point in the quotient.'
+      - 'Step 2: Add a zero to the 5 to make it 50. Divide 50 by 8. $50 \div 8 = 6$ with a remainder of 2.'
+      - 'Step 3: Add another zero to the remainder to make it 20. Divide 20 by 8. $20 \div 8 = 2$ with a remainder of 4.'
+      - 'Step 4: Add one more zero to the remainder to make it 40. Divide 40 by 8. $40 \div 8 = 5$ with a remainder of 0.'
+      - 'Step 5: The resulting decimal is 0.625.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A lawnmower's fuel tank holds $\frac{7}{5}$ litres of petrol. Express $\frac{7}{5}$ as a decimal using
+        division.
+      mathTool: null
+      finalAnswer: '1.4'
+      stepByStepGuideline:
+      - 'Step 1: Divide the numerator (7) by the denominator (5).'
+      - 'Step 2: $7 \div 5 = 1$ with a remainder of 2.'
+      - 'Step 3: Place a decimal point after the 1 and add a zero to the remainder to make it 20.'
+      - 'Step 4: Divide 20 by 5. $20 \div 5 = 4$ with a remainder of 0.'
+      - 'Step 5: Combining these gives the decimal 1.4.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: Sarah spent $\frac{3}{8}$ of an hour finishing her math assignment. Use long division to express $\frac{3}{8}$
+        as a decimal.
+      mathTool: null
+      finalAnswer: '0.375'
+      stepByStepGuideline:
+      - 'Step 1: Set up the division $3 \div 8$. Because 3 is smaller than 8, the first digit is 0 followed by a decimal point.'
+      - 'Step 2: Add a zero to 3 to make it 30. Divide 30 by 8. $30 \div 8 = 3$ with a remainder of 6.'
+      - 'Step 3: Add a zero to the remainder to make it 60. Divide 60 by 8. $60 \div 8 = 7$ with a remainder of 4.'
+      - 'Step 4: Add another zero to the remainder to make it 40. Divide 40 by 8. $40 \div 8 = 5$ with a remainder of 0.'
+      - 'Step 5: The final answer is 0.375.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: A hiking trail is $\frac{13}{8}$ kilometres long. Convert $\frac{13}{8}$ to a decimal.
+      mathTool: null
+      finalAnswer: '1.625'
+      stepByStepGuideline:
+      - 'Step 1: Set up the long division $13 \div 8$.'
+      - 'Step 2: Divide 13 by 8. $13 \div 8 = 1$ with a remainder of 5.'
+      - 'Step 3: Place a decimal point and add a zero to the remainder to make it 50.'
+      - 'Step 4: Divide 50 by 8. $50 \div 8 = 6$ with a remainder of 2.'
+      - 'Step 5: Add a zero to the remainder to make it 20. Divide 20 by 8. $20 \div 8 = 2$ with a remainder of 4.'
+      - 'Step 6: Add another zero to the remainder to make it 40. Divide 40 by 8. $40 \div 8 = 5$ with a remainder of 0.'
+      - 'Step 7: The complete decimal is 1.625.'
+      id: q7-5
+      questionGroup: q7
+- id: decimals-node-4
+  nodeNumber: 8
+  title: Rounding Decimals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A student spends $\frac{2}{7}$ of their weekly pocket money on snacks. Express $\frac{2}{7}$ as a decimal
+        correct to 1 decimal place.
+      avatarIntro: Hi there! Today we are going to practice converting fractions into decimals and rounding them to a specific
+        number of decimal places. Remember to look at the next digit to decide whether to round up or down.
+      mathTool: null
+      finalAnswer: '0.3'
+      stepByStepGuideline:
+      - 'Step 1: Perform the division $2 \div 7$ to find the decimal value. $2 \div 7 = 0.285714...$'
+      - 'Step 2: Identify the digit in the first decimal place, which is 2.'
+      - 'Step 3: Look at the digit in the second decimal place to determine how to round. The digit is 8.'
+      - 'Step 4: Since 8 is 5 or greater, round the first decimal place up from 2 to 3.'
+      - 'Step 5: The decimal correct to 1 decimal place is 0.3.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: In a board game, the probability of landing on a specific square is $\frac{1}{6}$. Convert $\frac{1}{6}$
+        to a decimal correct to 2 decimal places.
+      mathTool: null
+      finalAnswer: '0.17'
+      stepByStepGuideline:
+      - 'Step 1: Divide 1 by 6 to express the fraction as a decimal. $1 \div 6 = 0.1666...$'
+      - 'Step 2: Identify the digit in the second decimal place, which is 6.'
+      - 'Step 3: Look at the digit in the third decimal place to determine the rounding. The digit is 6.'
+      - 'Step 4: Since 6 is 5 or greater, round the second decimal place up from 6 to 7.'
+      - 'Step 5: The decimal correct to 2 decimal places is 0.17.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: An athlete's total workout time was $\frac{11}{3}$ hours. Write $\frac{11}{3}$ as a decimal rounded to
+        1 decimal place.
+      mathTool: null
+      finalAnswer: '3.7'
+      stepByStepGuideline:
+      - 'Step 1: Divide 11 by 3 to find the decimal value. $11 \div 3 = 3.666...$'
+      - 'Step 2: Identify the digit in the first decimal place, which is 6.'
+      - 'Step 3: Look at the digit in the second decimal place to decide if you should round up. The digit is 6.'
+      - 'Step 4: Since 6 is 5 or greater, round the first decimal place up from 6 to 7.'
+      - 'Step 5: The decimal rounded to 1 decimal place is 3.7.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: A basketball player successfully made $\frac{7}{9}$ of their shots during a season. Express $\frac{7}{9}$
+        as a decimal correct to 2 decimal places.
+      mathTool: null
+      finalAnswer: '0.78'
+      stepByStepGuideline:
+      - 'Step 1: Divide 7 by 9 to get the decimal form. $7 \div 9 = 0.7777...$'
+      - 'Step 2: Identify the digit in the second decimal place, which is 7.'
+      - 'Step 3: Look at the digit in the third decimal place, which is also 7.'
+      - 'Step 4: Since 7 is 5 or greater, round the second decimal place up from 7 to 8.'
+      - 'Step 5: The decimal correct to 2 decimal places is 0.78.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: The area of a small flower bed is $\frac{17}{6}$ square metres. Convert $\frac{17}{6}$ to a decimal correct
+        to 2 decimal places.
+      mathTool: null
+      finalAnswer: '2.83'
+      stepByStepGuideline:
+      - 'Step 1: Divide 17 by 6 to calculate the decimal value. $17 \div 6 = 2.8333...$'
+      - 'Step 2: Identify the digit in the second decimal place, which is 3.'
+      - 'Step 3: Look at the digit in the third decimal place to determine the rounding. The digit is 3.'
+      - 'Step 4: Since 3 is less than 5, keep the digit in the second decimal place as it is (round down).'
+      - 'Step 5: The decimal correct to 2 decimal places is 2.83.'
+      id: q8-5
+      questionGroup: q8

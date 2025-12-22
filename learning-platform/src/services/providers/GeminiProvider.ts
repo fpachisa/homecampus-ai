@@ -33,6 +33,18 @@ export class GeminiProvider implements AIProvider {
         'Gemini API request timed out after 120 seconds'
       );
 
+      // Debug logging to diagnose truncation issues
+      console.log('🔍 Gemini Response Debug:', {
+        hasText: !!response.text,
+        textLength: response.text?.length,
+        // Log any finish reason or safety info from the response
+        finishReason: (response as any).candidates?.[0]?.finishReason,
+        safetyRatings: (response as any).candidates?.[0]?.safetyRatings,
+        usageMetadata: (response as any).usageMetadata,
+        // Check if response might be truncated
+        textEndsCleanly: response.text?.trim().endsWith('}') || response.text?.trim().endsWith('"'),
+      });
+
       const text = response.text?.trim() || '';
 
       if (!text) {

@@ -374,16 +374,19 @@
 
   @media (min-width: 1024px) {
     .grid-layout-responsive {
-      grid-template-columns: 60% 40%;
-      /* Desktop: side-by-side */
+      grid-template-columns: 58% 1fr;
+      /* Desktop: problem column takes 58%, scratch pad is fixed positioned */
       align-items: start;
     }
 
     .scratch-pad-column {
-      position: sticky;
-      top: 1rem;
-      max-height: calc(100vh - 200px);
+      position: fixed;
+      top: 6rem; /* Account for fixed header height (96px) */
+      right: max(1rem, calc((100vw - 80rem) / 2 + 1rem)); /* Align with max-w-7xl container */
+      width: min(38%, 480px); /* 38% width with max cap */
+      max-height: calc(100vh - 8rem);
       overflow-y: auto;
+      z-index: 40;
     }
   }
 

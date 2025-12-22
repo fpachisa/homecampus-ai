@@ -225,7 +225,7 @@ ${FORMATTING_DECISION_TREE}
   - LaTeX: Use $...$ delimiters only for math expressions (fractions, complex formulas)
   - JSON escaping: Use ONE backslash for LaTeX commands
     - Correct: {"text": "$\\frac{1}{2}$"} ← parses to $\frac{1}{2}$ ← KaTeX renders ½
-    - Wrong: {"text": "$\\\\frac{1}{2}$"} ← parses to $\\frac{1}{2}$ ← breaks
+    - Wrong: {"text": "$\frac{1}{2}$"} ← parses to $frac{1}{2}$ ← breaks
 
 
 **CRITICAL: Return ONLY valid JSON. Use the correct format based on whether the answer is correct or incorrect:**

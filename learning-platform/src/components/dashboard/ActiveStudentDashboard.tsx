@@ -49,7 +49,7 @@ export const ActiveStudentDashboard: React.FC = () => {
       <div
         className="min-h-screen flex items-center justify-center"
         style={{
-          background: theme.gradients.panel,
+          background: 'transparent',
           color: theme.colors.textPrimary,
         }}
       >
@@ -126,7 +126,7 @@ export const ActiveStudentDashboard: React.FC = () => {
     <div
       className="min-h-screen"
       style={{
-        background: theme.gradients.panel,
+        background: 'transparent',
         color: theme.colors.textPrimary,
       }}
     >

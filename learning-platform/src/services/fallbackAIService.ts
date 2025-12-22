@@ -75,14 +75,17 @@ class FallbackAIService implements AIService {
       error.errorType === AIErrorType.SERVICE_UNAVAILABLE ||
       error.errorType === AIErrorType.RATE_LIMIT ||
       error.errorType === AIErrorType.TIMEOUT ||
-      error.errorType === AIErrorType.NETWORK
+      error.errorType === AIErrorType.NETWORK ||
+      error.errorType === AIErrorType.TRUNCATED_RESPONSE
     );
   }
 
-  private notifyFallback(service: 'claude' | 'error'): void {
+  private notifyFallback(service: 'claude' | 'error' | 'truncated'): void {
     if (this.fallbackMessageCallback && this.config.showFallbackMessage) {
       if (service === 'claude') {
         this.fallbackMessageCallback('Still thinking... switching to backup system...');
+      } else if (service === 'truncated') {
+        this.fallbackMessageCallback('Still generating your response... please wait...');
       } else {
         this.fallbackMessageCallback('Having trouble connecting. Please try again.');
       }
@@ -127,7 +130,12 @@ class FallbackAIService implements AIService {
     if (lastError && this.shouldFallback(lastError)) {
       try {
         console.log(`${operationName}: Switching to fallback service (Claude)`);
-        this.notifyFallback('claude');
+        // Show appropriate message based on error type
+        if (lastError.errorType === AIErrorType.TRUNCATED_RESPONSE) {
+          this.notifyFallback('truncated');
+        } else {
+          this.notifyFallback('claude');
+        }
 
         return await operation(this.fallbackService!);
       } catch (fallbackError) {

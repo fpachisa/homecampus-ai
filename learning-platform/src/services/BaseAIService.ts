@@ -466,19 +466,12 @@ Return ONLY a JSON object with this structure:
       }
 
       // Parse JSON response using safeParseJSON (tries direct parsing first, prevents double-escaping LaTeX)
+      // NOTE: No fallback provided - if parsing fails (including truncation), let the error propagate
+      // so FallbackAIService can try Claude instead of showing an irrelevant fallback problem
       const parsedResponse = safeParseJSON<QuestionGenerationResponse>(
         text,
-        ['speech', 'display'],
-        {
-          speech: {
-            text: "Let's try another problem!",
-            emotion: 'encouraging'
-          },
-          display: {
-            content: "Sarah has 2/3 of a pizza and wants to share it equally among 4 friends. How much pizza does each friend get?",
-            showAfterSpeech: true
-          }
-        }
+        ['speech', 'display']
+        // No fallback - errors will trigger Claude fallback via FallbackAIService
       );
 
       // Validate response structure
