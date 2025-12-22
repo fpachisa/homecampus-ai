@@ -1,0 +1,35 @@
+<svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- P23: Wall 800cm x 600cm, 200cm² tiles at $3 each -->
+
+  <text x="30" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">Wall Tiling</text>
+
+  <!-- Wall rectangle -->
+  <rect x="30" y="35" width="200" height="100" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" rx="2"/>
+
+  <!-- Dimension labels -->
+  <text x="130" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">800 cm</text>
+  <text x="15" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle" transform="rotate(-90, 15, 88)">600 cm</text>
+
+  <!-- Grid lines (representing tiles) -->
+  <line x1="70" y1="35" x2="70" y2="135" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="110" y1="35" x2="110" y2="135" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="150" y1="35" x2="150" y2="135" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="190" y1="35" x2="190" y2="135" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+
+  <line x1="30" y1="60" x2="230" y2="60" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="30" y1="85" x2="230" y2="85" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="30" y1="110" x2="230" y2="110" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Tile label -->
+  <rect x="35" y="40" width="30" height="15" fill="#93c5fd" stroke="#3b82f6" stroke-width="1" rx="1"/>
+  <text x="50" y="52" font-family="system-ui, sans-serif" font-size="8" fill="#374151" text-anchor="middle">tile</text>
+
+  <!-- Calculation -->
+  <text x="260" y="45" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Wall area</text>
+  <text x="260" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 800 x 600</text>
+  <text x="260" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 480,000 cm²</text>
+  <text x="260" y="95" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Tiles needed</text>
+  <text x="260" y="110" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 480,000 / 200</text>
+  <text x="260" y="125" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 2400 tiles</text>
+  <text x="260" y="145" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Cost = 2400 x $3 = $7200</text>
+</svg>

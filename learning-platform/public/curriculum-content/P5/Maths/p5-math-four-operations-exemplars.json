@@ -1,0 +1,745 @@
+{
+  "multiply-node-1": {
+    "nodeId": "multiply-node-1",
+    "title": "Multiplying by 10",
+    "section": "multiply-by-10",
+    "learningFocus": [
+      "Understanding that multiplying by 10 adds one zero",
+      "Digits shift one place to the left",
+      "Mental math strategy for quick calculation"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 47 x 10",
+        "correctAnswer": "470"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 235 x 10?",
+        "correctAnswer": "2350"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the product: 89 x 10",
+        "correctAnswer": "890"
+      }
+    ],
+    "variationRules": {
+      "numbersToMultiply": {
+        "singleDigit": [3, 5, 7, 8, 9],
+        "twoDigit": [12, 23, 34, 45, 56, 67, 78, 89, 91, 47],
+        "threeDigit": [123, 245, 356, 467, 578, 689, 728, 890, 912]
+      },
+      "questionTypes": [
+        "Calculate X x 10",
+        "What is X x 10?",
+        "Find the product: X x 10",
+        "Multiply X by 10"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - students should visualize digit shift mentally",
+      "Vary between single-digit, 2-digit, and 3-digit numbers",
+      "Emphasize the pattern: add one zero to the end",
+      "Keep numbers reasonable (no decimals)",
+      "Use multiplication symbol x not *"
+    ]
+  },
+
+  "multiply-node-2": {
+    "nodeId": "multiply-node-2",
+    "title": "Multiplying by 100 and 1000",
+    "section": "multiply-by-100-1000",
+    "learningFocus": [
+      "Multiplying by 100 adds two zeros",
+      "Multiplying by 1000 adds three zeros",
+      "Understanding 100 = 10 x 10 and 1000 = 10 x 10 x 10"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 27 x 100",
+        "correctAnswer": "2700"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 45 x 1000?",
+        "correctAnswer": "45000"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the product: 165 x 100",
+        "correctAnswer": "16500"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Multiply 8 x 1000",
+        "correctAnswer": "8000"
+      }
+    ],
+    "variationRules": {
+      "numbersToMultiply": {
+        "singleDigit": [3, 5, 7, 8, 9],
+        "twoDigit": [12, 27, 35, 48, 56, 63, 74, 85, 92],
+        "threeDigit": [123, 245, 356, 467, 165, 278, 389]
+      },
+      "multipliers": [100, 1000],
+      "questionTypes": [
+        "Calculate X x Y",
+        "What is X x Y?",
+        "Find the product: X x Y",
+        "Multiply X by Y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - students should count zeros mentally",
+      "Mix questions with x 100 and x 1000",
+      "Emphasize patterns: x 100 adds 2 zeros, x 1000 adds 3 zeros",
+      "Use a variety of number sizes",
+      "Ensure answers don't exceed 7 digits"
+    ]
+  },
+
+  "multiply-node-3": {
+    "nodeId": "multiply-node-3",
+    "title": "Multiplying by Tens (20, 30, ...90)",
+    "section": "multiply-by-tens",
+    "learningFocus": [
+      "Factor method: 43 x 20 = 43 x 2 x 10",
+      "Breaking tens into single digit x 10",
+      "Mental math strategy using place value"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 43 x 20",
+        "correctAnswer": "860"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 25 x 30?",
+        "correctAnswer": "750"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the product: 12 x 50",
+        "correctAnswer": "600"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Multiply 15 x 40",
+        "correctAnswer": "600"
+      }
+    ],
+    "variationRules": {
+      "numbersToMultiply": [12, 15, 18, 21, 24, 25, 32, 35, 43, 45, 52, 55, 64, 72, 75, 84],
+      "tensMultipliers": [20, 30, 40, 50, 60, 70, 80, 90],
+      "questionTypes": [
+        "Calculate X x Y",
+        "What is X x Y?",
+        "Find the product: X x Y",
+        "Multiply X by Y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - mental math exercise",
+      "Use the factor method: X x 20 = X x 2 x 10",
+      "Choose numbers that result in manageable products (under 10000)",
+      "Vary the tens multipliers (20, 30, 40, etc.)",
+      "Include numbers that multiply nicely (like 25 x 40 = 1000)"
+    ]
+  },
+
+  "multiply-node-4": {
+    "nodeId": "multiply-node-4",
+    "title": "Multiplying by Hundreds and Thousands",
+    "section": "multiply-by-hundreds-thousands",
+    "learningFocus": [
+      "Factor method: 12 x 400 = 12 x 4 x 100",
+      "Breaking hundreds/thousands into components",
+      "Handling larger products confidently"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 12 x 400",
+        "correctAnswer": "4800"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 25 x 300?",
+        "correctAnswer": "7500"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the product: 8 x 3000",
+        "correctAnswer": "24000"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Multiply 15 x 2000",
+        "correctAnswer": "30000"
+      }
+    ],
+    "variationRules": {
+      "numbersToMultiply": [5, 8, 9, 12, 15, 18, 20, 24, 25, 32, 35, 45],
+      "hundredsMultipliers": [200, 300, 400, 500, 600, 700, 800, 900],
+      "thousandsMultipliers": [2000, 3000, 4000, 5000],
+      "questionTypes": [
+        "Calculate X x Y",
+        "What is X x Y?",
+        "Find the product: X x Y",
+        "Multiply X by Y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - mental math exercise",
+      "Mix questions with hundreds (200-900) and thousands (2000-5000)",
+      "Use factor method: X x 400 = X x 4 x 100",
+      "Keep answers reasonable (under 100,000)",
+      "Choose multiplications that work out to whole numbers"
+    ]
+  },
+
+  "divide-node-1": {
+    "nodeId": "divide-node-1",
+    "title": "Dividing by 10",
+    "section": "divide-by-10",
+    "learningFocus": [
+      "Understanding that dividing by 10 removes one zero",
+      "Digits shift one place to the right",
+      "Division as inverse of multiplication"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 470 / 10",
+        "correctAnswer": "47"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 2350 / 10?",
+        "correctAnswer": "235"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the quotient: 8900 / 10",
+        "correctAnswer": "890"
+      }
+    ],
+    "variationRules": {
+      "numbersToDivide": [30, 50, 70, 80, 90, 120, 230, 340, 450, 560, 670, 780, 890, 1200, 2350, 4560, 7890, 8900, 12340],
+      "questionTypes": [
+        "Calculate X / 10",
+        "What is X / 10?",
+        "Find the quotient: X / 10",
+        "Divide X by 10"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - students should visualize digit shift",
+      "ONLY use numbers that end in zero (divisible by 10)",
+      "Emphasize: remove one zero from the end",
+      "Vary between 2-digit, 3-digit, and 4-digit numbers",
+      "Use division symbol / not the division sign"
+    ]
+  },
+
+  "divide-node-2": {
+    "nodeId": "divide-node-2",
+    "title": "Dividing by 100 and 1000",
+    "section": "divide-by-100-1000",
+    "learningFocus": [
+      "Dividing by 100 removes two zeros",
+      "Dividing by 1000 removes three zeros",
+      "Division as inverse of multiplication by 100/1000"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 2700 / 100",
+        "correctAnswer": "27"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 45000 / 1000?",
+        "correctAnswer": "45"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the quotient: 165000 / 1000",
+        "correctAnswer": "165"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Divide 8000 / 100",
+        "correctAnswer": "80"
+      }
+    ],
+    "variationRules": {
+      "numbersForDiv100": [300, 500, 700, 900, 1200, 2700, 3500, 4800, 5600, 16500, 24500, 36700],
+      "numbersForDiv1000": [3000, 5000, 8000, 12000, 45000, 78000, 165000, 234000, 567000],
+      "divisors": [100, 1000],
+      "questionTypes": [
+        "Calculate X / Y",
+        "What is X / Y?",
+        "Find the quotient: X / Y",
+        "Divide X by Y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - students should count zeros mentally",
+      "ONLY use numbers divisible by the divisor (ending in 00 or 000)",
+      "Mix questions with / 100 and / 1000",
+      "Emphasize: / 100 removes 2 zeros, / 1000 removes 3 zeros",
+      "Ensure clean division (no remainders)"
+    ]
+  },
+
+  "divide-node-3": {
+    "nodeId": "divide-node-3",
+    "title": "Dividing by Tens (20, 30, ...90)",
+    "section": "divide-by-tens",
+    "learningFocus": [
+      "Factor method: 60 / 20 = 60 / 10 / 2",
+      "Breaking tens divisors into components",
+      "Choosing efficient order of operations"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 60 / 20",
+        "correctAnswer": "3"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 240 / 30?",
+        "correctAnswer": "8"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the quotient: 350 / 50",
+        "correctAnswer": "7"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Divide 720 / 80",
+        "correctAnswer": "9"
+      }
+    ],
+    "variationRules": {
+      "divisionPairs": [
+        {"dividend": 60, "divisor": 20, "answer": 3},
+        {"dividend": 80, "divisor": 40, "answer": 2},
+        {"dividend": 120, "divisor": 30, "answer": 4},
+        {"dividend": 240, "divisor": 30, "answer": 8},
+        {"dividend": 350, "divisor": 50, "answer": 7},
+        {"dividend": 420, "divisor": 60, "answer": 7},
+        {"dividend": 560, "divisor": 70, "answer": 8},
+        {"dividend": 720, "divisor": 80, "answer": 9},
+        {"dividend": 810, "divisor": 90, "answer": 9},
+        {"dividend": 1200, "divisor": 40, "answer": 30}
+      ],
+      "questionTypes": [
+        "Calculate X / Y",
+        "What is X / Y?",
+        "Find the quotient: X / Y",
+        "Divide X by Y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - mental math exercise",
+      "CRITICAL: Use the exact division pairs provided to ensure clean division",
+      "Use factor method: X / 20 = X / 10 / 2 or X / 2 / 10",
+      "All answers must be whole numbers (no remainders)",
+      "Vary the tens divisors (20, 30, 40, etc.)"
+    ]
+  },
+
+  "divide-node-4": {
+    "nodeId": "divide-node-4",
+    "title": "Dividing by Hundreds and Thousands",
+    "section": "divide-by-hundreds-thousands",
+    "learningFocus": [
+      "Factor method: 2400 / 400 = 2400 / 100 / 4",
+      "Breaking hundreds/thousands divisors",
+      "Handling larger dividends confidently"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate 2400 / 400",
+        "correctAnswer": "6"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is 7500 / 300?",
+        "correctAnswer": "25"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the quotient: 24000 / 3000",
+        "correctAnswer": "8"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Divide 30000 / 5000",
+        "correctAnswer": "6"
+      }
+    ],
+    "variationRules": {
+      "divisionPairs": [
+        {"dividend": 1200, "divisor": 200, "answer": 6},
+        {"dividend": 2400, "divisor": 400, "answer": 6},
+        {"dividend": 3500, "divisor": 500, "answer": 7},
+        {"dividend": 4200, "divisor": 600, "answer": 7},
+        {"dividend": 5600, "divisor": 700, "answer": 8},
+        {"dividend": 7200, "divisor": 800, "answer": 9},
+        {"dividend": 7500, "divisor": 300, "answer": 25},
+        {"dividend": 12000, "divisor": 2000, "answer": 6},
+        {"dividend": 24000, "divisor": 3000, "answer": 8},
+        {"dividend": 30000, "divisor": 5000, "answer": 6},
+        {"dividend": 45000, "divisor": 9000, "answer": 5}
+      ],
+      "questionTypes": [
+        "Calculate X / Y",
+        "What is X / Y?",
+        "Find the quotient: X / Y",
+        "Divide X by Y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - mental math exercise",
+      "CRITICAL: Use the exact division pairs provided to ensure clean division",
+      "Mix questions with hundreds (200-900) and thousands (2000-9000) divisors",
+      "All answers must be whole numbers (no remainders)",
+      "Use factor method to explain: X / 400 = X / 100 / 4"
+    ]
+  },
+
+  "order-node-1": {
+    "nodeId": "order-node-1",
+    "title": "Addition and Subtraction Left to Right",
+    "section": "add-subtract-left-to-right",
+    "learningFocus": [
+      "+ and - have equal priority",
+      "Evaluate strictly from left to right",
+      "Show step-by-step working"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Evaluate: 25 + 17 - 9",
+        "correctAnswer": "33"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate: 100 - 35 + 20",
+        "correctAnswer": "85"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the value: 48 - 12 + 25 - 8",
+        "correctAnswer": "53"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Work out: 67 + 23 - 45 + 15",
+        "correctAnswer": "60"
+      }
+    ],
+    "variationRules": {
+      "numbers": {
+        "small": [5, 8, 9, 12, 15, 17, 20, 23, 25],
+        "medium": [30, 35, 40, 45, 48, 50, 55, 60, 67, 70, 75, 80],
+        "large": [85, 90, 95, 100]
+      },
+      "termCount": [3, 4],
+      "questionTypes": [
+        "Evaluate: expression",
+        "Calculate: expression",
+        "Find the value: expression",
+        "Work out: expression"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - pure calculation exercise",
+      "Use 3-4 terms per expression",
+      "CRITICAL: Ensure no negative intermediate results",
+      "Include expressions starting with subtraction (e.g., 100 - 35 + 20)",
+      "Work left to right: (25 + 17) - 9 = 42 - 9 = 33",
+      "Use unicode minus sign - not hyphen"
+    ]
+  },
+
+  "order-node-2": {
+    "nodeId": "order-node-2",
+    "title": "Multiplication and Division Left to Right",
+    "section": "multiply-divide-left-to-right",
+    "learningFocus": [
+      "x and / have equal priority",
+      "Evaluate strictly from left to right",
+      "Show step-by-step working"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Evaluate: 24 / 4 x 3",
+        "correctAnswer": "18"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate: 5 x 8 / 2",
+        "correctAnswer": "20"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the value: 36 / 6 x 5 / 3",
+        "correctAnswer": "10"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Work out: 8 x 9 / 6 x 2",
+        "correctAnswer": "24"
+      }
+    ],
+    "variationRules": {
+      "expressionPairs": [
+        {"expression": "24 / 4 x 3", "answer": 18},
+        {"expression": "5 x 8 / 2", "answer": 20},
+        {"expression": "36 / 6 x 5", "answer": 30},
+        {"expression": "42 / 7 x 4", "answer": 24},
+        {"expression": "9 x 4 / 6", "answer": 6},
+        {"expression": "48 / 8 x 5", "answer": 30},
+        {"expression": "7 x 6 / 3", "answer": 14},
+        {"expression": "56 / 7 x 3", "answer": 24},
+        {"expression": "8 x 9 / 6", "answer": 12},
+        {"expression": "45 / 9 x 8", "answer": 40}
+      ],
+      "questionTypes": [
+        "Evaluate: expression",
+        "Calculate: expression",
+        "Find the value: expression",
+        "Work out: expression"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - pure calculation exercise",
+      "CRITICAL: Use the exact expression pairs to ensure clean division (no remainders)",
+      "Work left to right: 24 / 4 x 3 = 6 x 3 = 18",
+      "All intermediate and final results must be whole numbers",
+      "Mix x and / operations (2-4 operations per expression)"
+    ]
+  },
+
+  "order-node-3": {
+    "nodeId": "order-node-3",
+    "title": "Mixed Operations (x, / before +, -)",
+    "section": "mixed-operations",
+    "learningFocus": [
+      "x and / come BEFORE + and -",
+      "Do all multiplications/divisions first",
+      "Then do additions/subtractions left to right"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Evaluate: 6 + 8 x 3",
+        "correctAnswer": "30"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate: 15 - 9 / 3",
+        "correctAnswer": "12"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the value: 20 + 16 / 4 x 2",
+        "correctAnswer": "28"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Work out: 48 / 8 + 5 x 9 - 27",
+        "correctAnswer": "24"
+      }
+    ],
+    "variationRules": {
+      "expressionPairs": [
+        {"expression": "6 + 8 x 3", "answer": 30},
+        {"expression": "15 - 9 / 3", "answer": 12},
+        {"expression": "20 + 16 / 4", "answer": 24},
+        {"expression": "40 - 3 x 5", "answer": 25},
+        {"expression": "7 x 4 + 12", "answer": 40},
+        {"expression": "36 / 6 - 2", "answer": 4},
+        {"expression": "20 + 16 / 4 x 2", "answer": 28},
+        {"expression": "48 / 8 + 5 x 9 - 27", "answer": 24},
+        {"expression": "100 - 8 x 10 + 15", "answer": 35},
+        {"expression": "45 / 9 + 7 x 3", "answer": 26},
+        {"expression": "50 - 24 / 6 + 8", "answer": 54},
+        {"expression": "9 x 5 - 36 / 4", "answer": 36}
+      ],
+      "questionTypes": [
+        "Evaluate: expression",
+        "Calculate: expression",
+        "Find the value: expression",
+        "Work out: expression"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - pure calculation exercise",
+      "CRITICAL: Use the exact expression pairs to ensure correct answers",
+      "Emphasize: Do x and / FIRST, then + and - left to right",
+      "Example: 6 + 8 x 3 = 6 + 24 = 30 (NOT 14 x 3 = 42)",
+      "Mix expressions with 3-5 operations",
+      "All results must be positive whole numbers"
+    ]
+  },
+
+  "brackets-node-1": {
+    "nodeId": "brackets-node-1",
+    "title": "Brackets Come First",
+    "section": "brackets-first",
+    "learningFocus": [
+      "Brackets have HIGHEST priority",
+      "Always calculate inside brackets first",
+      "Order: BRACKETS -> x / -> + -"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Evaluate: (6 + 8) x 3",
+        "correctAnswer": "42"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate: (16 - 4) / 2",
+        "correctAnswer": "6"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the value: 5 x (12 - 7)",
+        "correctAnswer": "25"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Work out: (40 + 20) / (15 - 5)",
+        "correctAnswer": "6"
+      }
+    ],
+    "variationRules": {
+      "expressionPairs": [
+        {"expression": "(6 + 8) x 3", "answer": 42},
+        {"expression": "(16 - 4) / 2", "answer": 6},
+        {"expression": "5 x (12 - 7)", "answer": 25},
+        {"expression": "(20 + 10) / 5", "answer": 6},
+        {"expression": "8 x (9 - 4)", "answer": 40},
+        {"expression": "(45 - 15) / 6", "answer": 5},
+        {"expression": "(7 + 5) x (10 - 6)", "answer": 48},
+        {"expression": "(40 + 20) / (15 - 5)", "answer": 6},
+        {"expression": "100 - (25 + 35)", "answer": 40},
+        {"expression": "(8 x 5) - (6 x 4)", "answer": 16},
+        {"expression": "50 / (2 + 3)", "answer": 10},
+        {"expression": "(100 - 40) / (3 + 2)", "answer": 12}
+      ],
+      "questionTypes": [
+        "Evaluate: expression",
+        "Calculate: expression",
+        "Find the value: expression",
+        "Work out: expression"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - pure calculation exercise",
+      "CRITICAL: Use the exact expression pairs to ensure correct answers",
+      "Emphasize: ALWAYS do brackets FIRST",
+      "Show contrast: (6 + 8) x 3 = 14 x 3 = 42 vs 6 + 8 x 3 = 6 + 24 = 30",
+      "Include expressions with brackets on both sides: (X + Y) / (A - B)",
+      "All results must be positive whole numbers"
+    ]
+  },
+
+  "brackets-node-2": {
+    "nodeId": "brackets-node-2",
+    "title": "Word Problems with Brackets",
+    "section": "word-problems-with-brackets",
+    "learningFocus": [
+      "Identifying when brackets are needed",
+      "Translating word problems into expressions",
+      "Using brackets to group operations correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Amy has 12 apples. She gives away 4 apples, then divides the rest equally among 2 friends. How many apples does each friend get?",
+        "correctAnswer": "4"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Tom buys 5 books at $8 each and 3 magazines at $4 each. What is the total cost?",
+        "correctAnswer": "52"
+      },
+      {
+        "id": "ex3",
+        "problemText": "A bakery has 60 cupcakes. They sell 12 in the morning and divide the rest equally into 8 boxes. How many cupcakes are in each box?",
+        "correctAnswer": "6"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Sarah has $50. She buys 3 pens at $6 each. How much money does she have left?",
+        "correctAnswer": "32"
+      }
+    ],
+    "variationRules": {
+      "problemContexts": [
+        "apples/fruits and sharing",
+        "books/items and total cost",
+        "cupcakes/items and boxes",
+        "money and purchases",
+        "stickers and friends",
+        "cookies and plates"
+      ],
+      "operationPatterns": [
+        "(total - used) / groups",
+        "price1 x qty1 + price2 x qty2",
+        "total - (price x quantity)",
+        "(a + b) x c",
+        "total / (parts)"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - word problem solving",
+      "Use age-appropriate contexts (school, shopping, sharing)",
+      "Ensure the problem requires correct order of operations",
+      "Answer should be a single number (whole, positive)",
+      "Keep numbers manageable for Primary 5 mental math",
+      "Problem should naturally require brackets when written as expression"
+    ]
+  }
+}

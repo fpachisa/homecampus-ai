@@ -191,7 +191,7 @@ nodes:
       - 'Step 5: Combine the groups: ''Two million, thirty thousand, four hundred and five''.'
       id: q3-3
       questionGroup: q3
-    - problemText: The annual budget for a new high-speed rail project is $9,001,020. Write 9,001,020 in expanded form.
+    - problemText: The annual budget for a new high-speed rail project is \$9,001,020. Write 9,001,020 in expanded form.
       mathTool: null
       finalAnswer: 9,000,000 + 1,000 + 20
       stepByStepGuideline:
@@ -572,16 +572,16 @@ nodes:
         1,000,010, 1,000,100.'
       id: q8-3
       questionGroup: q8
-    - problemText: 'An investment firm is reviewing the annual revenue of four startup companies: $3,000,000, $3,100,000,
-        $2,900,000, and $3,010,000. Arrange these revenue amounts in descending order.'
+    - problemText: 'An investment firm is reviewing the annual revenue of four startup companies: \$3,000,000, \$3,100,000,
+        \$2,900,000, and \$3,010,000. Arrange these revenue amounts in descending order.'
       mathTool: null
       finalAnswer: 3,100,000, 3,010,000, 3,000,000, 2,900,000
       stepByStepGuideline:
-      - 'Step 1: Compare the millions place. Three companies have $3 million and one has $2 million. The $2,900,000 amount
+      - 'Step 1: Compare the millions place. Three companies have \$3 million and one has \$2 million. The \$2,900,000 amount
         is the smallest.'
-      - 'Step 2: Compare the hundred thousands place for the $3 million values: 3,100,000 (1 in hundred thousands), 3,000,000
+      - 'Step 2: Compare the hundred thousands place for the \$3 million values: 3,100,000 (1 in hundred thousands), 3,000,000
         (0 in hundred thousands), and 3,010,000 (0 in hundred thousands).'
-      - 'Step 3: The largest is $3,100,000 because 1 is the largest digit in the hundred thousands place.'
+      - 'Step 3: The largest is \$3,100,000 because 1 is the largest digit in the hundred thousands place.'
       - 'Step 4: Compare the remaining two: 3,000,000 and 3,010,000. Look at the ten thousands place. 3,010,000 has a ''1''
         and 3,000,000 has a ''0''. So, 3,010,000 is larger than 3,000,000.'
       - 'Step 5: Arrange in descending order: 3,100,000, 3,010,000, 3,000,000, 2,900,000.'

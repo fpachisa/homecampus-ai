@@ -1329,16 +1329,20 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                     }
                     className="w-full px-4 py-3 focus:outline-none text-lg disabled:cursor-not-allowed resize-y min-h-[120px]"
                     style={{
-                      background: theme.glass.background,
+                      background: (submitting ||
+                        (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                        (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)))
+                        ? theme.colors.interactive
+                        : theme.glass.background,
                       border: `1px solid ${theme.glass.border}`,
                       backdropFilter: theme.glass.backdrop,
                       borderRadius: theme.radius.lg,
                       color: theme.colors.textPrimary,
-                      ...(submitting ||
+                      opacity: (submitting ||
                         (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
-                        (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect))
-                        ? { backgroundColor: theme.colors.interactive, opacity: 0.7 }
-                        : {}),
+                        (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)))
+                        ? 0.7
+                        : 1,
                     }}
                     placeholder={
                       session.currentProblemSession && !session.currentProblemSession.canRetry
@@ -1475,6 +1479,20 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                   }}
                 >
                   <div className="font-semibold mb-3" style={{ color: theme.colors.brand }}>Solution:</div>
+                  {/* Bar Model / Solution Diagram (shown only with solution) */}
+                  {currentProblem?.solutionDiagramSvg && (
+                    <div className="my-4 p-4 bg-white rounded-lg border-2 border-gray-200">
+                      <div className="text-sm font-medium text-gray-600 mb-2">Bar Model:</div>
+                      <div className="flex justify-center">
+                        <img
+                          src={currentProblem.solutionDiagramSvg}
+                          alt="Solution diagram"
+                          className="max-w-full h-auto"
+                          style={{ maxHeight: '400px' }}
+                        />
+                      </div>
+                    </div>
+                  )}
                   <div className="space-y-2">
                     {solution.steps.map((step, index) => (
                       <div key={index} style={{ color: theme.colors.textSecondary }}>

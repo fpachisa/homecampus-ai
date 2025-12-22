@@ -233,7 +233,7 @@ const SettingsPage: React.FC = () => {
   }
 
   const gradeOptions = [
-    'Primary 1', 'Primary 2', 'Primary 3', 'Primary 4', 'Primary 5', 'Primary 6',
+    'Primary 5', 'Primary 6',
     'Secondary 1', 'Secondary 2', 'Secondary 3', 'Secondary 4',
   ];
 
@@ -484,85 +484,7 @@ const SettingsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Appearance Section */}
-        <div
-          className="p-6 rounded-2xl"
-          style={{
-            background: theme.glass.background,
-            border: `1px solid ${theme.glass.border}`,
-            backdropFilter: theme.glass.backdrop,
-            boxShadow: theme.shadows.md,
-          }}
-        >
-          <div className="flex items-center space-x-3 mb-6">
-            <div
-              className="w-10 h-10 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: theme.colors.brand }}
-            >
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-              </svg>
-            </div>
-            <div>
-              <h2 className="text-xl font-semibold" style={{ color: theme.colors.textPrimary }}>
-                Appearance
-              </h2>
-              <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-                Customize how the app looks
-              </p>
-            </div>
-          </div>
 
-          <div>
-            <label
-              className="block text-sm font-medium mb-3"
-              style={{ color: theme.colors.textPrimary }}
-            >
-              Theme
-            </label>
-            <div className="flex space-x-4">
-              {/* Light Theme */}
-              <button
-                type="button"
-                onClick={() => setSelectedTheme('light')}
-                className="flex-1 p-4 rounded-lg border-2 transition-all duration-200"
-                style={{
-                  backgroundColor: selectedTheme === 'light' ? theme.colors.interactive : 'transparent',
-                  borderColor: selectedTheme === 'light' ? theme.colors.brand : theme.colors.border,
-                }}
-              >
-                <div className="flex items-center justify-center space-x-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: theme.colors.textPrimary }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                  <span className="font-medium" style={{ color: theme.colors.textPrimary }}>
-                    Light
-                  </span>
-                </div>
-              </button>
-
-              {/* Dark Theme */}
-              <button
-                type="button"
-                onClick={() => setSelectedTheme('dark')}
-                className="flex-1 p-4 rounded-lg border-2 transition-all duration-200"
-                style={{
-                  backgroundColor: selectedTheme === 'dark' ? theme.colors.interactive : 'transparent',
-                  borderColor: selectedTheme === 'dark' ? theme.colors.brand : theme.colors.border,
-                }}
-              >
-                <div className="flex items-center justify-center space-x-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: theme.colors.textPrimary }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                  </svg>
-                  <span className="font-medium" style={{ color: theme.colors.textPrimary }}>
-                    Dark
-                  </span>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">

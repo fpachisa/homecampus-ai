@@ -1,0 +1,32 @@
+<svg viewBox="0 0 480 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- P20: Wendy 20 clips + packet, shared with 4 friends, each gets 28 -->
+
+  <text x="30" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">Hair Clips Sharing (5 people)</text>
+
+  <!-- Wendy -->
+  <text x="55" y="50" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Wendy</text>
+  <rect x="62" y="37" width="70" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="97" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">28</text>
+
+  <!-- Friends -->
+  <text x="55" y="80" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Friend 1</text>
+  <rect x="62" y="67" width="70" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="97" y="85" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">28</text>
+
+  <text x="55" y="110" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Friend 2</text>
+  <rect x="62" y="97" width="70" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <text x="55" y="140" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">...</text>
+  <rect x="62" y="127" width="70" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <!-- Total bracket -->
+  <path d="M137,37 L145,37 L145,155 L137,155" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="160" y="100" font-family="system-ui, sans-serif" font-size="11" fill="#374151">5 x 28</text>
+  <text x="160" y="115" font-family="system-ui, sans-serif" font-size="11" fill="#374151">= 140</text>
+
+  <!-- Calculation -->
+  <text x="250" y="50" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Total shared = 5 x 28 = 140</text>
+  <text x="250" y="68" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Wendy had 20 at start</text>
+  <text x="250" y="86" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Packet = 140 - 20</text>
+  <text x="250" y="104" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 120 hair clips</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- P18: Bus $1.50 first km, 10 cents per 200m after, 5km ride -->
+
+  <text x="30" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">5 km Bus Ride</text>
+
+  <!-- First 1km -->
+  <rect x="30" y="40" width="60" height="40" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="60" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">1st km</text>
+  <text x="60" y="70" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">$1.50</text>
+
+  <!-- Remaining 4km -->
+  <rect x="90" y="40" width="30" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="105" y="62" font-family="system-ui, sans-serif" font-size="8" fill="#374151" text-anchor="middle">200m</text>
+
+  <rect x="120" y="40" width="30" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="150" y="40" width="30" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <text x="195" y="62" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">...</text>
+
+  <rect x="210" y="40" width="30" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="240" y="40" width="30" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <!-- Bracket -->
+  <path d="M90,85 L90,92 L270,92 L270,85" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="180" y="107" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">4km = 20 x 200m @ 10c = $2</text>
+
+  <!-- Calculation -->
+  <text x="300" y="45" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Remaining = 5-1 = 4 km</text>
+  <text x="300" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 4000m / 200m = 20</text>
+  <text x="300" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">20 x 10c = $2.00</text>
+  <text x="300" y="90" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Total = $1.50 + $2.00</text>
+  <text x="300" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= $3.50</text>
+</svg>

@@ -11,6 +11,28 @@ const PracticeSessionView = lazy(() => import('../components/practice/PracticeSe
 const OLevelTopicSelector = lazy(() => import('../components/practice/OLevelTopicSelector'));
 const OLevelNodeSelector = lazy(() => import('../components/practice/OLevelNodeSelector'));
 
+// Reusable loading component for practice pages
+const PracticeLoadingScreen = ({ message = 'Loading...' }: { message?: string }) => (
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+    <div className="text-center">
+      <div className="text-6xl mb-4 animate-bounce">📚</div>
+      <div className="text-xl text-gray-700 font-semibold flex items-center justify-center gap-1">
+        <span>{message}</span>
+        <span className="flex gap-1">
+          <span className="animate-pulse" style={{ animationDelay: '0ms' }}>.</span>
+          <span className="animate-pulse" style={{ animationDelay: '200ms' }}>.</span>
+          <span className="animate-pulse" style={{ animationDelay: '400ms' }}>.</span>
+        </span>
+      </div>
+      <div className="mt-4 flex justify-center gap-2">
+        <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+        <div className="w-3 h-3 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+        <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+      </div>
+    </div>
+  </div>
+);
+
 /**
  * PracticeRouter handles all /practice/* routes
  *
@@ -37,11 +59,7 @@ const PathMapView = () => {
 
   // InteractivePathView now reads pathId from URL params internally
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading...</p>
-      </div>
-    }>
+    <Suspense fallback={<PracticeLoadingScreen message="Loading topic map" />}>
       <InteractivePathView />
     </Suspense>
   );
@@ -77,19 +95,11 @@ const PracticeSession = () => {
   }
 
   if (loading || !node) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading...</p>
-      </div>
-    );
+    return <PracticeLoadingScreen message="Loading practice session" />;
   }
 
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading...</p>
-      </div>
-    }>
+    <Suspense fallback={<PracticeLoadingScreen message="Preparing your questions" />}>
       <PracticeSessionView
         category={pathId}
         difficulty="easy"
@@ -104,11 +114,7 @@ const PracticeSession = () => {
 // O-Level topic selector
 const OLevelOverview = () => {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading O-Level topics...</p>
-      </div>
-    }>
+    <Suspense fallback={<PracticeLoadingScreen message="Loading O-Level topics" />}>
       <OLevelTopicSelector />
     </Suspense>
   );
@@ -123,11 +129,7 @@ const OLevelPathView = () => {
   }
 
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading questions...</p>
-      </div>
-    }>
+    <Suspense fallback={<PracticeLoadingScreen message="Loading questions" />}>
       <OLevelNodeSelector />
     </Suspense>
   );
@@ -175,21 +177,18 @@ const OLevelSession = () => {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading questions...</p>
-      </div>
-    );
+    return <PracticeLoadingScreen message="Loading exam questions" />;
   }
 
   if (nodes.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <div className="text-center">
-          <p className="mb-4">No questions available for this topic.</p>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center bg-white p-8 rounded-xl shadow-lg">
+          <div className="text-5xl mb-4">📋</div>
+          <p className="text-gray-700 mb-4">No questions available for this topic.</p>
           <button
             onClick={() => navigate('/practice/olevel')}
-            className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Back to Topics
           </button>
@@ -211,11 +210,7 @@ const OLevelSession = () => {
   };
 
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <p>Loading...</p>
-      </div>
-    }>
+    <Suspense fallback={<PracticeLoadingScreen message="Preparing your questions" />}>
       <PracticeSessionView
         category={`olevel-${topicId}-${paper}`}
         difficulty="easy"

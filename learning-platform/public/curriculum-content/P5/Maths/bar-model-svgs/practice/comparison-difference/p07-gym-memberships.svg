@@ -1,0 +1,26 @@
+<svg viewBox="0 0 520 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- P07: Amy and Bob gym, $108 total, Bob 8 more months, $24 more -->
+
+  <!-- Amy bar -->
+  <text x="50" y="45" font-family="system-ui, sans-serif" font-size="13" fill="#374151" text-anchor="end">Amy</text>
+  <rect x="60" y="30" width="140" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="130" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">? months</text>
+
+  <!-- Bob bar (longer by 8 months / $24) -->
+  <text x="50" y="105" font-family="system-ui, sans-serif" font-size="13" fill="#374151" text-anchor="end">Bob</text>
+  <rect x="60" y="90" width="140" height="40" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <rect x="200" y="90" width="70" height="40" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="235" y="108" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">+8 mths</text>
+  <text x="235" y="122" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">+$24</text>
+
+  <!-- Bracket showing difference -->
+  <path d="M275,90 L282,90 L282,130 L275,130" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="295" y="115" font-family="system-ui, sans-serif" font-size="11" fill="#374151">$24 extra</text>
+
+  <!-- Calculations -->
+  <text x="350" y="35" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Cost/month = $24/8 = $3</text>
+  <text x="350" y="53" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Equal parts = $108-$24 = $84</text>
+  <text x="350" y="71" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Amy's cost = $84/2 = $42</text>
+  <text x="350" y="89" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Amy's months = $42/$3</text>
+  <text x="350" y="107" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 14 months</text>
+</svg>

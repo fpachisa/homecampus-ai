@@ -1,0 +1,29 @@
+<svg viewBox="0 0 520 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- P06: Jar 300g + 15 boxes (10g each + candy) = 4050g total -->
+
+  <!-- Total bar -->
+  <text x="45" y="35" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Total</text>
+
+  <!-- Jar section -->
+  <rect x="55" y="20" width="50" height="40" fill="#d1d5db" stroke="#9ca3af" stroke-width="2" rx="2"/>
+  <text x="80" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Jar</text>
+  <text x="80" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">300g</text>
+
+  <!-- 15 boxes section -->
+  <rect x="105" y="20" width="200" height="40" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="205" y="38" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">15 boxes with candy</text>
+  <text x="205" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">4050g - 300g = 3750g</text>
+
+  <!-- Each box breakdown -->
+  <text x="45" y="95" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">1 box</text>
+  <rect x="55" y="80" width="30" height="30" fill="#d1d5db" stroke="#9ca3af" stroke-width="2" rx="2"/>
+  <text x="70" y="100" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">10g</text>
+
+  <rect x="85" y="80" width="100" height="30" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="135" y="100" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Candy: ?</text>
+
+  <!-- Calculations -->
+  <text x="340" y="30" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">15 boxes = 3750g</text>
+  <text x="340" y="48" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">1 box = 3750 / 15 = 250g</text>
+  <text x="340" y="66" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Candy = 250 - 10 = 240g</text>
+</svg>

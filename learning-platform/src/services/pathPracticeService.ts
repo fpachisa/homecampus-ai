@@ -117,6 +117,7 @@ class PathPracticeService {
         caption: ''  // Caption not provided in pre-written questions
       } : undefined,  // Use mathTool if provided, otherwise rely on diagramSvg
       diagramSvg: q.diagramSvg,
+      solutionDiagramSvg: q.solutionDiagramSvg,  // Bar models shown with solution
       tableData: q.tableData,  // Pass through table data
       questionTable: q.questionTable,  // Pass through structured table
       questionGroup: q.questionGroup,  // Preserve question group for multi-part questions

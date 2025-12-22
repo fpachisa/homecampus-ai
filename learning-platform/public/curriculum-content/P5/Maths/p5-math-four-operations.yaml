@@ -1,0 +1,1141 @@
+# P5 Math Four Operations - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: multiply-node-1
+  nodeNumber: 1
+  title: Multiplying by 10
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Multiply 5 by 10
+      avatarIntro: 'Welcome! Let''s practice a fundamental mental math strategy: multiplying by ten. Shifting digits is a
+        key skill for efficiency in your calculations.'
+      mathTool: null
+      finalAnswer: '50'
+      stepByStepGuideline:
+      - 'Step 1: Identify the single-digit number, which is 5.'
+      - 'Step 2: When multiplying by 10, the digit shifts one place to the left from the ones place to the tens place.'
+      - 'Step 3: Add one zero to the end of the number to represent this shift, resulting in 50.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: Calculate 78 x 10
+      mathTool: null
+      finalAnswer: '780'
+      stepByStepGuideline:
+      - 'Step 1: Start with the two-digit number 78.'
+      - 'Step 2: Apply the pattern for multiplying by 10, where every digit shifts one place value higher.'
+      - 'Step 3: Append a zero to the end of 78 to find the product: 780.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: What is 245 x 10?
+      mathTool: null
+      finalAnswer: '2450'
+      stepByStepGuideline:
+      - 'Step 1: Look at the three-digit number 245.'
+      - 'Step 2: Multiplying by 10 shifts the hundreds to thousands, tens to hundreds, and ones to tens.'
+      - 'Step 3: Place a 0 at the end of 245 to show this shift, giving you 2450.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'Find the product: 91 x 10'
+      mathTool: null
+      finalAnswer: '910'
+      stepByStepGuideline:
+      - 'Step 1: To find the product of 91 and 10, use the mental math strategy of adding a zero.'
+      - 'Step 2: Shift the digits of 91 one place to the left.'
+      - 'Step 3: The new number after adding the zero is 910.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: Multiply 689 by 10
+      mathTool: null
+      finalAnswer: '6890'
+      stepByStepGuideline:
+      - 'Step 1: Identify the number being multiplied, which is 689.'
+      - 'Step 2: Recognize that multiplying any whole number by 10 simply adds one zero to the end of that number.'
+      - 'Step 3: Attach a zero to 689 to arrive at the final answer: 6890.'
+      id: q1-5
+      questionGroup: q1
+- id: multiply-node-2
+  nodeNumber: 2
+  title: Multiplying by 100 and 1000
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Multiply 7 by 1000
+      avatarIntro: Hi! Let's practice multiplying by 100 and 1000. It is as simple as counting the zeros and adding them to
+        the end of your number!
+      mathTool: null
+      finalAnswer: '7000'
+      stepByStepGuideline:
+      - 'Step 1: Identify the number you are starting with, which is 7, and the multiplier, which is 1000.'
+      - 'Step 2: Since 1000 has three zeros, multiplying by 1000 means adding three zeros to the end of the original number.'
+      - 'Step 3: Attach three zeros to 7 to get the final result: 7,000.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Calculate 56 x 100
+      mathTool: null
+      finalAnswer: '5600'
+      stepByStepGuideline:
+      - 'Step 1: Look at the number 56 and the multiplier 100.'
+      - 'Step 2: Multiplying a whole number by 100 is the same as placing two zeros at the end of that number.'
+      - 'Step 3: Add two zeros to the end of 56 to reach the product: 5,600.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: What is 356 x 1000?
+      mathTool: null
+      finalAnswer: '356000'
+      stepByStepGuideline:
+      - 'Step 1: Identify the starting number 356 and the multiplier 1000.'
+      - 'Step 2: Recall the pattern that multiplying by 1000 adds three zeros to the end of the number because 1000 = 10 x
+        10 x 10.'
+      - 'Step 3: Place three zeros after 356 to get the final answer: 356,000.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'Find the product: 92 x 1000'
+      mathTool: null
+      finalAnswer: '92000'
+      stepByStepGuideline:
+      - 'Step 1: Identify the number 92 and the multiplier 1000.'
+      - 'Step 2: Multiplying by 1000 is equivalent to shifting the number''s place value or simply appending three zeros.'
+      - 'Step 3: Write 92 and add three zeros to the end to get 92,000.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Multiply 165 by 100
+      mathTool: null
+      finalAnswer: '16500'
+      stepByStepGuideline:
+      - 'Step 1: Start with the number 165 and the multiplier 100.'
+      - 'Step 2: Multiplying by 100 means the value increases by two powers of ten, which we represent by adding two zeros.'
+      - 'Step 3: Append two zeros to the end of 165 to find the product: 16,500.'
+      id: q2-5
+      questionGroup: q2
+- id: multiply-node-3
+  nodeNumber: 3
+  title: Multiplying by Tens (20, 30, ...90)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate 18 x 30
+      avatarIntro: Ready to boost your mental math skills? We are going to use the factor method to make multiplying by tens
+        quick and easy!
+      mathTool: null
+      finalAnswer: '540'
+      stepByStepGuideline:
+      - 'Step 1: Use the factor method to break down 30 into 3 x 10. The problem becomes 18 x 3 x 10.'
+      - 'Step 2: Multiply 18 by 3. 10 x 3 = 30 and 8 x 3 = 24. So, 30 + 24 = 54.'
+      - 'Step 3: Multiply the result by 10. 54 x 10 = 540.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: What is 25 x 40?
+      mathTool: null
+      finalAnswer: '1000'
+      stepByStepGuideline:
+      - 'Step 1: Use the factor method to break down 40 into 4 x 10. The problem is now 25 x 4 x 10.'
+      - 'Step 2: Multiply 25 by 4. Since 25 + 25 + 25 + 25 = 100, the product is 100.'
+      - 'Step 3: Multiply 100 by 10 by shifting the digits one place to the left, which gives 1000.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Find the product: 32 x 50'
+      mathTool: null
+      finalAnswer: '1600'
+      stepByStepGuideline:
+      - 'Step 1: Break 50 into the factors 5 x 10. The calculation is 32 x 5 x 10.'
+      - 'Step 2: Multiply 32 by 5. 30 x 5 = 150 and 2 x 5 = 10. Adding them together gives 160.'
+      - 'Step 3: Multiply 160 by 10 to get the final product of 1600.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: Multiply 15 by 60
+      mathTool: null
+      finalAnswer: '900'
+      stepByStepGuideline:
+      - 'Step 1: Use the factor method to rewrite 60 as 6 x 10. The expression is 15 x 6 x 10.'
+      - 'Step 2: Multiply 15 by 6. You can think of this as 15 x 2 x 3, which is 30 x 3 = 90.'
+      - 'Step 3: Multiply 90 by 10, which results in 900.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: Calculate 84 x 20
+      mathTool: null
+      finalAnswer: '1680'
+      stepByStepGuideline:
+      - 'Step 1: Rewrite the multiplier 20 as 2 x 10. The problem is 84 x 2 x 10.'
+      - 'Step 2: Double the number 84 (multiply by 2). 80 x 2 = 160 and 4 x 2 = 8, so 160 + 8 = 168.'
+      - 'Step 3: Multiply 168 by 10 to find the final answer of 1680.'
+      id: q3-5
+      questionGroup: q3
+- id: multiply-node-4
+  nodeNumber: 4
+  title: Multiplying by Hundreds and Thousands
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Multiply 18 by 700
+      avatarIntro: Let's practice breaking down large numbers to make multiplication easier! Using factors can help you solve
+        these problems quickly in your head.
+      mathTool: null
+      finalAnswer: '12600'
+      stepByStepGuideline:
+      - 'Step 1: Break the number 700 into its factors: 7 and 100.'
+      - 'Step 2: Multiply the first number by the single digit: 18 × 7 = 126.'
+      - 'Step 3: Multiply that result by 100 by adding two zeros to the end: 126 × 100 = 12,600.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: What is 32 x 2000?
+      mathTool: null
+      finalAnswer: '64000'
+      stepByStepGuideline:
+      - 'Step 1: Identify that 2000 can be broken down into 2 × 1000.'
+      - 'Step 2: Multiply 32 by 2 to get 64.'
+      - 'Step 3: Multiply 64 by 1000 by adding three zeros to the end to get 64,000.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'Find the product: 45 x 300'
+      mathTool: null
+      finalAnswer: '13500'
+      stepByStepGuideline:
+      - 'Step 1: Use the factor method to break 300 into 3 × 100.'
+      - 'Step 2: Calculate 45 × 3. Since 40 × 3 = 120 and 5 × 3 = 15, the result is 135.'
+      - 'Step 3: Multiply 135 by 100 to find the final product of 13,500.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Calculate 24 x 4000
+      mathTool: null
+      finalAnswer: '96000'
+      stepByStepGuideline:
+      - 'Step 1: View 4000 as 4 × 1000 to simplify the calculation.'
+      - 'Step 2: Multiply 24 by 4. (20 × 4 = 80 and 4 × 4 = 16, so 80 + 16 = 96).'
+      - 'Step 3: Multiply 96 by 1000 by attaching three zeros, resulting in 96,000.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: What is 35 x 800?
+      mathTool: null
+      finalAnswer: '28000'
+      stepByStepGuideline:
+      - 'Step 1: Break 800 into the components 8 and 100.'
+      - 'Step 2: Multiply 35 by 8. (30 × 8 = 240 and 5 × 8 = 40, so 240 + 40 = 280).'
+      - 'Step 3: Multiply 280 by 100 to get the final answer of 28,000.'
+      id: q4-5
+      questionGroup: q4
+- id: divide-node-1
+  nodeNumber: 5
+  title: Dividing by 10
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate 30 / 10
+      avatarIntro: Welcome! Today we are looking at how numbers change when we divide them by 10. It is as simple as shifting
+        digits one place to the right.
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - Identify the number being divided, which is 30.
+      - When dividing a number that ends in zero by 10, we shift the digits one place to the right.
+      - This is equivalent to removing one zero from the end of the number.
+      - Removing the zero from 30 gives us the final result of 3.
+      id: q5-1
+      questionGroup: q5
+    - problemText: What is 230 / 10?
+      mathTool: null
+      finalAnswer: '23'
+      stepByStepGuideline:
+      - Start with the number 230.
+      - Division by 10 can be visualized as moving the decimal point one place to the left or shifting digits one place to
+        the right.
+      - For a whole number ending in zero, simply remove the zero at the end.
+      - Removing the zero from 230 results in 23.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'Find the quotient: 4560 / 10'
+      mathTool: null
+      finalAnswer: '456'
+      stepByStepGuideline:
+      - The term 'quotient' refers to the result of a division problem.
+      - To find the quotient of 4560 divided by 10, look at the last digit of 4560.
+      - Since the number ends in zero, dividing by 10 removes that last digit.
+      - Shifting the digits of 4560 one place to the right gives 456.
+      id: q5-3
+      questionGroup: q5
+    - problemText: Divide 12340 by 10
+      mathTool: null
+      finalAnswer: '1234'
+      stepByStepGuideline:
+      - Take the 5-digit number 12340.
+      - Dividing by 10 is the inverse of multiplying by 10.
+      - Remove one zero from the end of 12340 to perform the division.
+      - The final answer after removing the zero is 1234.
+      id: q5-4
+      questionGroup: q5
+    - problemText: What is 890 / 10?
+      mathTool: null
+      finalAnswer: '89'
+      stepByStepGuideline:
+      - Identify the number 890.
+      - To divide by 10, shift every digit one place to the right.
+      - The 0 in the ones place is removed, and the 9 in the tens place moves to the ones place.
+      - The result is 89.
+      id: q5-5
+      questionGroup: q5
+- id: divide-node-2
+  nodeNumber: 6
+  title: Dividing by 100 and 1000
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate 36700 / 100
+      avatarIntro: Welcome! Today we are learning a quick trick for division. When you divide by 100 or 1000, you can simply
+        remove zeros from the end of the number!
+      mathTool: null
+      finalAnswer: '367'
+      stepByStepGuideline:
+      - 'Step 1: Identify the divisor. In this problem, we are dividing by 100.'
+      - 'Step 2: Remember the rule: dividing by 100 is the same as removing two zeros from the end of the number.'
+      - 'Step 3: Look at 36700. Remove the two zeros at the end to get 367.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: What is 234000 / 1000?
+      mathTool: null
+      finalAnswer: '234'
+      stepByStepGuideline:
+      - 'Step 1: Identify the divisor. We are dividing by 1000.'
+      - 'Step 2: Remember the rule: dividing by 1000 is the same as removing three zeros from the end of the number.'
+      - 'Step 3: Look at 234000. Remove the three zeros at the end to get 234.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'Find the quotient: 5600 / 100'
+      mathTool: null
+      finalAnswer: '56'
+      stepByStepGuideline:
+      - 'Step 1: The term ''quotient'' means the result of a division. We need to divide 5600 by 100.'
+      - 'Step 2: Since we are dividing by 100, we can remove two zeros from the end of 5600.'
+      - 'Step 3: Removing the two zeros from 5600 leaves us with 56.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Divide 45000 by 1000
+      mathTool: null
+      finalAnswer: '45'
+      stepByStepGuideline:
+      - 'Step 1: Set up the division: 45000 ÷ 1000.'
+      - 'Step 2: Dividing by 1000 is the inverse of multiplying by 1000. It removes three zeros from the dividend.'
+      - 'Step 3: Take 45000 and remove the last three zeros to find the answer: 45.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: What is 16500 / 100?
+      mathTool: null
+      finalAnswer: '165'
+      stepByStepGuideline:
+      - 'Step 1: Observe the divisor, which is 100. This divisor has two zeros.'
+      - 'Step 2: To divide by 100, remove two zeros from the end of 16500.'
+      - 'Step 3: After removing the two zeros, the remaining number is 165.'
+      id: q6-5
+      questionGroup: q6
+- id: divide-node-3
+  nodeNumber: 7
+  title: Dividing by Tens (20, 30, ...90)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate 120 / 30
+      avatarIntro: Let's practice dividing by multiples of ten using the factor method. It is a great way to simplify larger
+        numbers by breaking the divisor down into smaller parts!
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - 'Step 1: Break the divisor 30 into its factors: 10 and 3.'
+      - 'Step 2: Divide the dividend 120 by 10 first: 120 / 10 = 12.'
+      - 'Step 3: Now, divide that result by the remaining factor 3: 12 / 3 = 4.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: What is 420 / 60?
+      mathTool: null
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Step 1: Express 60 as 10 × 6 to use the factor method.'
+      - 'Step 2: Divide 420 by 10 to simplify the problem: 420 / 10 = 42.'
+      - 'Step 3: Divide the result 42 by 6: 42 / 6 = 7.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'Find the quotient: 560 / 70'
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: Think of dividing by 70 as dividing by 10 and then dividing by 7.'
+      - 'Step 2: Start with 560 / 10, which equals 56.'
+      - 'Step 3: Finish by dividing 56 by 7 to get 8.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: Divide 810 by 90
+      mathTool: null
+      finalAnswer: '9'
+      stepByStepGuideline:
+      - 'Step 1: Break the divisor 90 into 10 and 9.'
+      - 'Step 2: First, divide 810 by 10: 810 / 10 = 81.'
+      - 'Step 3: Next, divide 81 by 9: 81 / 9 = 9.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Calculate 1200 / 40
+      mathTool: null
+      finalAnswer: '30'
+      stepByStepGuideline:
+      - 'Step 1: Use the factor method by breaking 40 into 10 and 4.'
+      - 'Step 2: Divide 1200 by 10 to get 120.'
+      - 'Step 3: Finally, divide 120 by 4 to find the answer: 120 / 4 = 30.'
+      id: q7-5
+      questionGroup: q7
+- id: divide-node-4
+  nodeNumber: 8
+  title: Dividing by Hundreds and Thousands
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate 1200 / 200
+      avatarIntro: To divide by hundreds or thousands, we can use the factor method by breaking the divisor into smaller parts
+        to make the mental math much easier!
+      mathTool: null
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'Step 1: Break the divisor 200 into its factors: 100 and 2.'
+      - 'Step 2: Divide the dividend by 100 first: 1200 ÷ 100 = 12.'
+      - 'Step 3: Now, divide that result by the remaining factor 2: 12 ÷ 2 = 6.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: What is 45000 / 9000?
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Step 1: Use the factor method by breaking 9000 into 1000 and 9.'
+      - 'Step 2: Divide 45000 by 1000 to simplify the number: 45000 ÷ 1000 = 45.'
+      - 'Step 3: Divide the result by 9: 45 ÷ 9 = 5.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'Find the quotient: 7500 / 300'
+      mathTool: null
+      finalAnswer: '25'
+      stepByStepGuideline:
+      - 'Step 1: Break down the divisor 300 into the factors 100 and 3.'
+      - 'Step 2: Divide 7500 by 100 to remove the zeros: 7500 ÷ 100 = 75.'
+      - 'Step 3: Finally, divide 75 by 3 to find the quotient: 75 ÷ 3 = 25.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Divide 24000 by 3000
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: We can split the division 24000 ÷ 3000 into two steps: 24000 ÷ 1000 ÷ 3.'
+      - 'Step 2: First, handle the thousands by dividing 24000 by 1000, which gives us 24.'
+      - 'Step 3: Next, divide 24 by 3 to get the final answer: 24 ÷ 3 = 8.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: Calculate 5600 / 700
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: Rewrite the problem using factors: 5600 ÷ 100 ÷ 7.'
+      - 'Step 2: Divide 5600 by 100 to simplify the calculation: 5600 ÷ 100 = 56.'
+      - 'Step 3: Divide 56 by 7 to reach the final quotient: 56 ÷ 7 = 8.'
+      id: q8-5
+      questionGroup: q8
+- id: order-node-1
+  nodeNumber: 9
+  title: Addition and Subtraction Left to Right
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Evaluate: 85 − 30 + 17'
+      avatarIntro: Hi there! Today we're going to practice solving expressions with addition and subtraction by working through
+        them from left to right.
+      mathTool: null
+      finalAnswer: '72'
+      stepByStepGuideline:
+      - 'Step 1: Perform the first operation from the left, which is 85 − 30.'
+      - 85 − 30 = 55
+      - 'Step 2: Add the remaining number to the result: 55 + 17.'
+      - 55 + 17 = 72
+      id: q9-1
+      questionGroup: q9
+    - problemText: 'Calculate: 25 + 45 − 12 + 8'
+      mathTool: null
+      finalAnswer: '66'
+      stepByStepGuideline:
+      - 'Step 1: Perform the first operation from the left, which is 25 + 45.'
+      - 25 + 45 = 70
+      - 'Step 2: Subtract the next number from the result: 70 − 12.'
+      - 70 − 12 = 58
+      - 'Step 3: Add the final number to the result: 58 + 8.'
+      - 58 + 8 = 66
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'Find the value: 75 + 25 − 40'
+      mathTool: null
+      finalAnswer: '60'
+      stepByStepGuideline:
+      - 'Step 1: Evaluate the first operation from the left: 75 + 25.'
+      - 75 + 25 = 100
+      - 'Step 2: Subtract the remaining number from the result: 100 − 40.'
+      - 100 − 40 = 60
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'Work out: 100 − 55 + 20 − 15'
+      mathTool: null
+      finalAnswer: '50'
+      stepByStepGuideline:
+      - 'Step 1: Evaluate the first operation from the left: 100 − 55.'
+      - 100 − 55 = 45
+      - 'Step 2: Add the next number to the result: 45 + 20.'
+      - 45 + 20 = 65
+      - 'Step 3: Subtract the final number from the result: 65 − 15.'
+      - 65 − 15 = 50
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'Evaluate: 80 − 40 + 15 − 9'
+      mathTool: null
+      finalAnswer: '46'
+      stepByStepGuideline:
+      - 'Step 1: Perform the first operation from the left: 80 − 40.'
+      - 80 − 40 = 40
+      - 'Step 2: Add the next number to the result: 40 + 15.'
+      - 40 + 15 = 55
+      - 'Step 3: Subtract the final number from the result: 55 − 9.'
+      - 55 − 9 = 46
+      id: q9-5
+      questionGroup: q9
+- id: order-node-2
+  nodeNumber: 10
+  title: Multiplication and Division Left to Right
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Evaluate: 24 / 4 x 3'
+      avatarIntro: Welcome! When we have multiplication and division in an expression, we treat them with equal priority and
+        solve from left to right. Let's practice!
+      mathTool: null
+      finalAnswer: '18'
+      stepByStepGuideline:
+      - 'Step 1: Identify that multiplication and division have equal priority, so we work from left to right.'
+      - 'Step 2: Perform the first operation on the left, which is division: 24 / 4 = 6.'
+      - 'Step 3: Multiply the result by the next number: 6 x 3 = 18.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'Calculate: 5 x 8 / 2'
+      mathTool: null
+      finalAnswer: '20'
+      stepByStepGuideline:
+      - 'Step 1: Multiplication and division are equal in the order of operations, so evaluate from left to right.'
+      - 'Step 2: Start with the multiplication on the left: 5 x 8 = 40.'
+      - 'Step 3: Divide the result by 2: 40 / 2 = 20.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'Find the value: 36 / 6 x 5 / 3'
+      mathTool: null
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'Step 1: Evaluate the expression strictly from left to right as all operations are multiplication or division.'
+      - 'Step 2: Divide 36 by 6: 36 / 6 = 6.'
+      - 'Step 3: Multiply the result by 5: 6 x 5 = 30.'
+      - 'Step 4: Finally, divide that result by 3: 30 / 3 = 10.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'Work out: 8 x 9 / 6 x 2'
+      mathTool: null
+      finalAnswer: '24'
+      stepByStepGuideline:
+      - 'Step 1: Work from left to right, starting with the first multiplication: 8 x 9 = 72.'
+      - 'Step 2: Move to the next operation, which is division: 72 / 6 = 12.'
+      - 'Step 3: Perform the final operation, multiplication: 12 x 2 = 24.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'Evaluate: 45 / 9 x 8'
+      mathTool: null
+      finalAnswer: '40'
+      stepByStepGuideline:
+      - 'Step 1: Since multiplication and division have the same priority, solve from left to right.'
+      - 'Step 2: Perform the division first: 45 / 9 = 5.'
+      - 'Step 3: Multiply the result by 8: 5 x 8 = 40.'
+      id: q10-5
+      questionGroup: q10
+- id: order-node-3
+  nodeNumber: 11
+  title: Mixed Operations (x, / before +, -)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Evaluate: 45 / 9 + 7 x 3'
+      avatarIntro: Hi there! Let's practice mixed operations. Remember to always do multiplication and division before addition
+        and subtraction!
+      mathTool: null
+      finalAnswer: '26'
+      stepByStepGuideline:
+      - 'Step 1: Identify the multiplication and division parts. We need to calculate 45 / 9 and 7 x 3 first.'
+      - 'Step 2: Perform the division: 45 / 9 = 5.'
+      - 'Step 3: Perform the multiplication: 7 x 3 = 21.'
+      - 'Step 4: Add the results together: 5 + 21 = 26.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: 'Calculate: 100 - 8 x 10 + 15'
+      mathTool: null
+      finalAnswer: '35'
+      stepByStepGuideline:
+      - 'Step 1: Order of operations states we must multiply before adding or subtracting. Calculate 8 x 10 first.'
+      - 'Step 2: 8 x 10 = 80.'
+      - 'Step 3: Now we have 100 - 80 + 15. Perform addition and subtraction from left to right.'
+      - 'Step 4: 100 - 80 = 20.'
+      - 'Step 5: 20 + 15 = 35.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'Find the value: 20 + 16 / 4 x 2'
+      mathTool: null
+      finalAnswer: '28'
+      stepByStepGuideline:
+      - 'Step 1: Look for multiplication and division. These should be done before addition.'
+      - 'Step 2: Since division and multiplication are together (16 / 4 x 2), perform them from left to right.'
+      - 'Step 3: First, 16 / 4 = 4.'
+      - 'Step 4: Next, multiply that result by 2: 4 x 2 = 8.'
+      - 'Step 5: Finally, add the result to 20: 20 + 8 = 28.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'Work out: 50 - 24 / 6 + 8'
+      mathTool: null
+      finalAnswer: '54'
+      stepByStepGuideline:
+      - 'Step 1: Start with the division operation: 24 / 6.'
+      - 'Step 2: 24 / 6 = 4.'
+      - 'Step 3: Substitute the result back into the expression: 50 - 4 + 8.'
+      - 'Step 4: Perform the remaining operations from left to right. First, 50 - 4 = 46.'
+      - 'Step 5: Then, 46 + 8 = 54.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: 'Evaluate: 9 x 5 - 36 / 4'
+      mathTool: null
+      finalAnswer: '36'
+      stepByStepGuideline:
+      - 'Step 1: Perform all multiplication and division operations first.'
+      - 'Step 2: Calculate the multiplication: 9 x 5 = 45.'
+      - 'Step 3: Calculate the division: 36 / 4 = 9.'
+      - 'Step 4: Finally, subtract the results: 45 - 9 = 36.'
+      id: q11-5
+      questionGroup: q11
+- id: brackets-node-1
+  nodeNumber: 12
+  title: Brackets Come First
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Evaluate: (6 + 8) x 3'
+      avatarIntro: Welcome! Today we are focusing on why brackets are the most important part of an expression. Always remember
+        to calculate what is inside the brackets before doing anything else!
+      mathTool: null
+      finalAnswer: '42'
+      stepByStepGuideline:
+      - 'Step 1: Identify the brackets in the expression. According to the order of operations, we must calculate the part
+        inside the brackets first.'
+      - 'Step 2: Add the numbers inside the brackets: 6 + 8 = 14.'
+      - 'Step 3: Now multiply this result by the remaining number: 14 x 3 = 42.'
+      - 'Comparison: Notice that if we didn''t have brackets, 6 + 8 x 3 would be 6 + 24 = 30. The brackets change the order
+        and the result!'
+      id: q12-1
+      questionGroup: q12
+    - problemText: 'Calculate: 50 / (2 + 3)'
+      mathTool: null
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'Step 1: Look for brackets. Even though division usually comes before addition, the brackets give the addition priority.'
+      - 'Step 2: Solve the operation inside the brackets: 2 + 3 = 5.'
+      - 'Step 3: Now perform the division using the result: 50 / 5 = 10.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: 'Find the value: (7 + 5) x (10 - 6)'
+      mathTool: null
+      finalAnswer: '48'
+      stepByStepGuideline:
+      - 'Step 1: This expression has two sets of brackets. We must solve both before multiplying.'
+      - 'Step 2: Calculate the first bracket: 7 + 5 = 12.'
+      - 'Step 3: Calculate the second bracket: 10 - 6 = 4.'
+      - 'Step 4: Finally, multiply the two results together: 12 x 4 = 48.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: 'Work out: 100 - (25 + 35)'
+      mathTool: null
+      finalAnswer: '40'
+      stepByStepGuideline:
+      - 'Step 1: Identify the operation inside the brackets. Brackets always have the highest priority.'
+      - 'Step 2: Add the numbers inside the brackets: 25 + 35 = 60.'
+      - 'Step 3: Subtract this result from 100: 100 - 60 = 40.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'Evaluate: (100 - 40) / (3 + 2)'
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: Solve the operations inside both sets of brackets first.'
+      - 'Step 2: For the first bracket, calculate 100 - 40 = 60.'
+      - 'Step 3: For the second bracket, calculate 3 + 2 = 5.'
+      - 'Step 4: Divide the first result by the second result: 60 / 5 = 12.'
+      id: q12-5
+      questionGroup: q12
+- id: brackets-node-2
+  nodeNumber: 13
+  title: Word Problems with Brackets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Leo has 45 stickers. He sets aside 5 stickers for his sister and divides the remaining stickers equally
+        among 8 friends. How many stickers does each friend receive?
+      avatarIntro: Hi there! Let's practice solving word problems by using brackets to group our operations. This helps us
+        make sure we calculate everything in the right order!
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Step 1: Identify that we need to find the number of stickers left after Leo gives some to his sister. This is the
+        ''remaining'' amount: 45 - 5.'
+      - 'Step 2: Use brackets to group this subtraction so it happens first: (45 - 5).'
+      - 'Step 3: Divide that result by the 8 friends: (45 - 5) ÷ 8.'
+      - 'Step 4: Calculate the values: 40 ÷ 8 = 5.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: A student buys 4 notebooks at $6 each and 3 pens at $7 each. What is the total cost of these items?
+      mathTool: null
+      finalAnswer: '45'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the cost of the notebooks: 4 × 6 = 24.'
+      - 'Step 2: Calculate the cost of the pens: 3 × 7 = 21.'
+      - 'Step 3: Add the two costs together to find the total: 24 + 21.'
+      - 'Step 4: The final answer is 45.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: There are 5 plates on a table. Each plate has 12 chocolate cookies and 8 strawberry cookies. How many cookies
+        are there in total?
+      mathTool: null
+      finalAnswer: '100'
+      stepByStepGuideline:
+      - 'Step 1: First, find the total number of cookies on a single plate by adding the chocolate and strawberry cookies:
+        12 + 8.'
+      - 'Step 2: Use brackets to ensure this addition happens before multiplying by the number of plates: (12 + 8) × 5.'
+      - 'Step 3: Calculate the sum inside the brackets: 20.'
+      - 'Step 4: Multiply the sum by the 5 plates: 20 × 5 = 100.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: Sara has $100. She buys 9 movie tickets for her friends, and each ticket costs $8. How much money does
+        she have left?
+      mathTool: null
+      finalAnswer: '28'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total cost of the movie tickets: 9 × 8 = 72.'
+      - 'Step 2: Subtract the total cost from the amount of money Sara started with: 100 - 72.'
+      - 'Step 3: The result of the subtraction is 28.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A bakery has 84 cupcakes. They want to pack them into boxes that contain 4 vanilla cupcakes and 3 chocolate
+        cupcakes each. How many boxes can they fill completely?
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: Determine how many cupcakes are in each box by adding the vanilla and chocolate cupcakes: 4 + 3.'
+      - 'Step 2: Use brackets to group this addition so we find the total per box first: (4 + 3).'
+      - 'Step 3: Divide the total number of cupcakes by the number of cupcakes per box: 84 ÷ (4 + 3).'
+      - 'Step 4: Calculate the values: 84 ÷ 7 = 12.'
+      id: q13-5
+      questionGroup: q13
+
+# =====================================================
+# WORD PROBLEMS - Bar Model Visualizations (7 Nodes)
+# =====================================================
+
+- id: word-problems-node-1
+  nodeNumber: 14
+  title: Ratio Comparison Problems
+  layer: integration
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A jacket costs \$25 and a pair of pants costs 3 times as much. If Ben is left with \$30 after paying for the jacket and the pants, how much money had he at first?
+      avatarIntro: Welcome to word problems! These require you to visualize the problem using bar models. Ratio comparison problems help us see how quantities relate to each other.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/ratio-comparison/p01-jacket-pants.svg
+      mathTool: null
+      finalAnswer: '130'
+      stepByStepGuideline:
+      - 'Step 1: Draw a bar model showing the jacket costs \$25 (1 unit) and pants costs 3 times as much (3 units).'
+      - 'Step 2: Find cost of pants: 3 × \$25 = \$75.'
+      - 'Step 3: Find total cost of jacket and pants: \$25 + \$75 = \$100 (or 4 units × \$25 = \$100).'
+      - 'Step 4: Add the money left to find starting amount: \$100 + \$30 = \$130.'
+      id: p01
+      questionGroup: wp1
+    - problemText: David bought a toy car at \$6 off. He also bought a puzzle and paid \$42 altogether. What was the original price of the toy car, if, before discount, it cost 5 times as much as the puzzle?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/ratio-comparison/p02-toycar-puzzle.svg
+      mathTool: null
+      finalAnswer: '40'
+      stepByStepGuideline:
+      - 'Step 1: The toy car with discount plus puzzle = \$42. Without discount, toy car = 5 times puzzle.'
+      - 'Step 2: Find original total (before discount): \$42 + \$6 = \$48.'
+      - 'Step 3: Toy car = 5 units, Puzzle = 1 unit, so 6 units = \$48.'
+      - 'Step 4: Find value of 1 unit: \$48 ÷ 6 = \$8.'
+      - 'Step 5: Find original toy car price (5 units): 5 × \$8 = \$40.'
+      id: p02
+      questionGroup: wp1
+    - problemText: Emma and Finn have savings of \$9000 together. If Finn has \$1500 in savings, how many times as much savings as Finn does Emma have?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/ratio-comparison/p03-savings-accounts.svg
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Step 1: Draw a bar model showing total savings of \$9000 with Finn''s portion being \$1500.'
+      - 'Step 2: Find Emma''s savings: \$9000 - \$1500 = \$7500.'
+      - 'Step 3: Find how many times more: \$7500 ÷ \$1500 = 5.'
+      id: p03
+      questionGroup: wp1
+
+- id: word-problems-node-2
+  nodeNumber: 15
+  title: Part-Whole Problems
+  layer: integration
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Grace had \$18. After paying for 4 erasers and some rulers, she had \$2 left. If each eraser cost \$2 and each ruler cost \$1, find the number of rulers she bought.
+      avatarIntro: Part-whole problems help us understand how a total is broken into parts. Let's use bar models to visualize the relationship between the whole and its parts.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/part-whole/p04-erasers-rulers.svg
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: Find total spent: \$18 - \$2 = \$16.'
+      - 'Step 2: Find cost of 4 erasers: 4 × \$2 = \$8.'
+      - 'Step 3: Find cost of rulers: \$16 - \$8 = \$8.'
+      - 'Step 4: Find number of rulers: \$8 ÷ \$1 = 8 rulers.'
+      id: p04
+      questionGroup: wp2
+    - problemText: Each month Kim pays bills for phone and internet. If she pays \$45 a month for phone, and \$840 a year for phone and internet together, find the amount of money she pays for internet each month.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/part-whole/p05-phone-internet.svg
+      mathTool: null
+      finalAnswer: '25'
+      stepByStepGuideline:
+      - 'Step 1: Find monthly total: \$840 ÷ 12 = \$70.'
+      - 'Step 2: Find monthly internet bill: \$70 - \$45 = \$25.'
+      id: p05
+      questionGroup: wp2
+    - problemText: The total mass of a jar containing 15 boxes of candy is 4050 g. The mass of the jar is 300 g. If each empty box has a mass of 10 g, what is the mass of candy inside each box?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/part-whole/p06-jar-candy.svg
+      mathTool: null
+      finalAnswer: '240'
+      stepByStepGuideline:
+      - 'Step 1: Find mass of 15 boxes with candy: 4050 - 300 = 3750 g.'
+      - 'Step 2: Find mass of each box with candy: 3750 ÷ 15 = 250 g.'
+      - 'Step 3: Find mass of candy per box: 250 - 10 = 240 g.'
+      id: p06
+      questionGroup: wp2
+
+- id: word-problems-node-3
+  nodeNumber: 16
+  title: Comparison-Difference Problems
+  layer: integration
+  problemsRequired: 2
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Amy and Bob bought gym memberships and paid \$108 altogether for the year. If Bob subscribed for 8 more months than Amy and paid \$24 more than her, find the number of months that Amy subscribed for.
+      avatarIntro: Comparison-difference problems involve finding the difference between quantities. The bar model helps us see both the difference and the relationship clearly.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/comparison-difference/p07-gym-memberships.svg
+      mathTool: null
+      finalAnswer: '14'
+      stepByStepGuideline:
+      - 'Step 1: Find cost per month: \$24 ÷ 8 = \$3 (8 extra months cost \$24 more).'
+      - 'Step 2: Remove the extra \$24 to make amounts equal: \$108 - \$24 = \$84.'
+      - 'Step 3: Find 2 equal parts: \$84 ÷ 2 = \$42 (2 units = \$84, so 1 unit = \$42).'
+      - 'Step 4: Find number of months Amy subscribed: \$42 ÷ \$3 = 14 months.'
+      id: p07
+      questionGroup: wp3
+    - problemText: Alex, Beth and Chris had a total of \$160. Beth had \$8 more than Alex. Chris had 5 times as much money as Beth. How much money had Alex?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/comparison-difference/p08-siblings-savings.svg
+      mathTool: null
+      finalAnswer: '16'
+      stepByStepGuideline:
+      - 'Step 1: If Alex had \$8 more, all would be multiples of Beth: \$160 + \$8 = \$168.'
+      - 'Step 2: Alex = 1 unit, Beth = 1 unit, Chris = 5 units = 7 units total.'
+      - 'Step 3: Find value of 1 unit (Beth): \$168 ÷ 7 = \$24.'
+      - 'Step 4: Alex = Beth - \$8: \$24 - \$8 = \$16.'
+      id: p08
+      questionGroup: wp3
+
+- id: word-problems-node-4
+  nodeNumber: 17
+  title: Before-After Problems
+  layer: integration
+  problemsRequired: 4
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Lily had 2 times as many marbles as Maya. After borrowing some marbles from Maya, Lily now has 5 times as many marbles as Maya. If they have 180 marbles altogether, how many marbles did Lily borrow from Maya?
+      avatarIntro: Before-after problems compare quantities at two different points in time. Drawing bar models for BOTH the before and after situations helps us solve these tricky problems.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/before-after/p09-marbles-friends.svg
+      mathTool: null
+      finalAnswer: '30'
+      stepByStepGuideline:
+      - 'Step 1: BEFORE: Lily = 2 units, Maya = 1 unit, Total = 3 units. So 1 unit = 180 ÷ 3 = 60 marbles.'
+      - 'Step 2: Maya had 60 marbles at first (1 × 60).'
+      - 'Step 3: AFTER: Lily = 5 units, Maya = 1 unit, Total = 6 units. So 1 unit now = 180 ÷ 6 = 30 marbles.'
+      - 'Step 4: Maya has 30 marbles left (1 × 30).'
+      - 'Step 5: Marbles borrowed: 60 - 30 = 30 marbles.'
+      id: p09
+      questionGroup: wp4
+    - problemText: Noah had 3 times as many trading cards as Olivia while Peter had 4 times as many cards as Olivia. After Noah gave 12 cards away and Peter gave 36 cards to Olivia, they each had the same number of cards. How many cards had Peter at first?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/before-after/p10-trading-cards.svg
+      mathTool: null
+      finalAnswer: '96'
+      stepByStepGuideline:
+      - 'Step 1: After transfers, Noah has 3u - 12, Peter has 4u - 36, Olivia has 1u + 36.'
+      - 'Step 2: For Noah and Peter to be equal after transfers: 3u - 12 = 4u - 36.'
+      - 'Step 3: Find 1 unit: 36 - 12 = 24 (difference in what they gave).'
+      - 'Step 4: Peter at first = 4 units: 4 × 24 = 96 cards.'
+      id: p10
+      questionGroup: wp4
+    - problemText: Quinn had 3 times as much money as Rachel. After Quinn bought a tablet for \$185 and Rachel bought a book for \$20, Rachel had 2 times as much money as Quinn. How much money had Quinn at first?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/before-after/p11-shopping-purchases.svg
+      mathTool: null
+      finalAnswer: '210'
+      stepByStepGuideline:
+      - 'Step 1: BEFORE: Quinn = 3 units, Rachel = 1 unit (ratio 3:1).'
+      - 'Step 2: AFTER: Quinn left = 3u - \$185, Rachel left = 1u - \$20, ratio 1:2.'
+      - 'Step 3: Set up equation: 1u - 20 = 2(3u - 185), so 1u - 20 = 6u - 370.'
+      - 'Step 4: Solve: 5u = 350, so 1 unit = \$70.'
+      - 'Step 5: Quinn at first = 3 units: 3 × \$70 = \$210.'
+      id: p11
+      questionGroup: wp4
+    - problemText: A father is 4 times as old as his daughter. 8 years later, the father will be 3 times as old as his daughter. How old is the daughter now?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/before-after/p12-father-daughter-age.svg
+      mathTool: null
+      finalAnswer: '16'
+      stepByStepGuideline:
+      - 'Step 1: NOW: Father = 4 units, Daughter = 1 unit (ratio 4:1).'
+      - 'Step 2: IN 8 YEARS: Father = 4u + 8, Daughter = 1u + 8.'
+      - 'Step 3: New ratio is 3:1, so Father = 3 × Daughter: 4u + 8 = 3(1u + 8).'
+      - 'Step 4: Solve: 4u + 8 = 3u + 24, so 1u = 16 years.'
+      id: p12
+      questionGroup: wp4
+
+- id: word-problems-node-5
+  nodeNumber: 18
+  title: Sequential-Units Problems
+  layer: integration
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: An ice cream shop is having a promotion. Ice creams are normally priced at \$6 each. If Sam buys 3 ice creams and gets 1 free, how much does he save on each ice cream in this promotion?
+      avatarIntro: Sequential-units problems involve repeated groups or patterns. The bar model shows each unit clearly so we can calculate totals, rates, or savings.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p13-icecream-promo.svg
+      mathTool: null
+      finalAnswer: '1.50'
+      stepByStepGuideline:
+      - 'Step 1: Sam pays for 3 ice creams but gets 4: 3 × \$6 = \$18.'
+      - 'Step 2: Effective price per ice cream: \$18 ÷ 4 = \$4.50.'
+      - 'Step 3: Savings per ice cream: \$6 - \$4.50 = \$1.50.'
+      id: p13
+      questionGroup: wp5
+    - problemText: Tina had 65 m of ribbon that she divided into pieces of 4 m each. She sold each 4-m piece for \$7 and the leftover at a discount. She collected \$115 altogether. How much did she sell the leftover ribbon for?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p14-ribbon-cutting.svg
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Step 1: Divide ribbon into 4m pieces: 65 ÷ 4 = 16 remainder 1 (16 pieces, 1m leftover).'
+      - 'Step 2: Revenue from 4m pieces: 16 × \$7 = \$112.'
+      - 'Step 3: Revenue from leftover: \$115 - \$112 = \$3.'
+      id: p14
+      questionGroup: wp5
+    - problemText: A craftsman made some bracelets. He gave away 18 defective bracelets and sold the rest at 6 for \$8. If he received \$400, how many bracelets had he made?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p15-bracelets-selling.svg
+      mathTool: null
+      finalAnswer: '318'
+      stepByStepGuideline:
+      - 'Step 1: Find number of sets sold: \$400 ÷ \$8 = 50 sets.'
+      - 'Step 2: Find total bracelets sold: 50 × 6 = 300 bracelets.'
+      - 'Step 3: Add defective bracelets: 300 + 18 = 318 bracelets.'
+      id: p15
+      questionGroup: wp5
+    - problemText: A box contains 108 pencils. A shop owner bought 25 boxes of pencils and divided the pencils into packs of 9. If he sold each pack for \$4 and the remaining pencils for 50 cents each, find the sum of money that the shop owner got.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p16-pencil-packs.svg
+      mathTool: null
+      finalAnswer: '1200'
+      stepByStepGuideline:
+      - 'Step 1: Find total pencils: 25 × 108 = 2700 pencils.'
+      - 'Step 2: Divide into packs of 9: 2700 ÷ 9 = 300 packs (0 remaining).'
+      - 'Step 3: Revenue from packs: 300 × \$4 = \$1200.'
+      - 'Step 4: No remaining pencils, so total revenue = \$1200.'
+      id: p16
+      questionGroup: wp5
+    - problemText: Uma paid \$6000 upfront for a motorcycle priced at \$78,000. She will pay the remaining sum of money by monthly instalments of \$500 each. How many years will it take Uma to pay off all the instalments?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p17-motorcycle-payments.svg
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: Find remaining amount: \$78,000 - \$6,000 = \$72,000.'
+      - 'Step 2: Find number of months: \$72,000 ÷ \$500 = 144 months.'
+      - 'Step 3: Convert to years: 144 ÷ 12 = 12 years.'
+      id: p17
+      questionGroup: wp5
+    - problemText: A bus charges \$1.50 for the first 1 km and 10 cents for every 200 m after that. How much do you pay for a 5-km ride?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p18-bus-fare.svg
+      mathTool: null
+      finalAnswer: '3.50'
+      stepByStepGuideline:
+      - 'Step 1: First 1 km costs \$1.50.'
+      - 'Step 2: Remaining distance: 5 km - 1 km = 4 km = 4000 m.'
+      - 'Step 3: Number of 200m segments: 4000 ÷ 200 = 20 segments.'
+      - 'Step 4: Cost for remaining distance: 20 × 10¢ = 200¢ = \$2.'
+      - 'Step 5: Total fare: \$1.50 + \$2 = \$3.50.'
+      id: p18
+      questionGroup: wp5
+    - problemText: Victor reads at a speed of 35 words a minute. If he took 24 minutes to read a chapter, how many words did the chapter have?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/sequential-units/p19-reading-speed.svg
+      mathTool: null
+      finalAnswer: '840'
+      stepByStepGuideline:
+      - 'Step 1: Words per minute × minutes = total words.'
+      - 'Step 2: 35 × 24 = 840 words.'
+      id: p19
+      questionGroup: wp5
+
+- id: word-problems-node-6
+  nodeNumber: 19
+  title: Stacked-Ratio Problems
+  layer: integration
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Wendy had 20 hair clips before she found a packet containing some hair clips. She and her 4 friends then shared the hair clips equally among themselves. If Wendy has 28 hair clips now, how many hair clips did the packet have?
+      avatarIntro: Stacked-ratio problems involve multiple groups or layers that need to be combined. The bar model stacks these layers to show the total relationship.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/stacked-ratio/p20-hairclips-sharing.svg
+      mathTool: null
+      finalAnswer: '120'
+      stepByStepGuideline:
+      - 'Step 1: Total people sharing: Wendy + 4 friends = 5 people.'
+      - 'Step 2: Each person gets 28, find total: 28 × 5 = 140.'
+      - 'Step 3: Subtract Wendy''s original hair clips: 140 - 20 = 120.'
+      id: p20
+      questionGroup: wp6
+    - problemText: 145 children and 105 adults visited an amusement park. If a child ticket cost \$8 and an adult ticket cost \$15, how much money was collected by the amusement park?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/stacked-ratio/p21-amusement-park.svg
+      mathTool: null
+      finalAnswer: '2735'
+      stepByStepGuideline:
+      - 'Step 1: Revenue from children: 145 × \$8 = \$1160.'
+      - 'Step 2: Revenue from adults: 105 × \$15 = \$1575.'
+      - 'Step 3: Total revenue: \$1160 + \$1575 = \$2735.'
+      id: p21
+      questionGroup: wp6
+    - problemText: 'The table shows the number of visitors to a store last week: Mon=820, Tue=560, Wed=640, Thu=1200, Fri=?, Sat=?, Sun=?, Total=14,000. There were twice as many visitors on Saturday as on Sunday and twice as many on Friday as on Saturday. How many visitors came on Friday?'
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/stacked-ratio/p22-store-visitors.svg
+      mathTool: null
+      finalAnswer: '6160'
+      stepByStepGuideline:
+      - 'Step 1: Find Mon-Thu total: 820 + 560 + 640 + 1200 = 3220.'
+      - 'Step 2: Find Fri-Sun total: 14,000 - 3,220 = 10,780.'
+      - 'Step 3: Set up ratio: Sun = 1 unit, Sat = 2 units, Fri = 4 units. Total = 7 units.'
+      - 'Step 4: Find 1 unit: 10,780 ÷ 7 = 1540.'
+      - 'Step 5: Friday = 4 units: 4 × 1540 = 6160 visitors.'
+      id: p22
+      questionGroup: wp6
+
+- id: word-problems-node-7
+  nodeNumber: 20
+  title: Area-Grid Problems
+  layer: integration
+  problemsRequired: 1
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A wall measuring 800 cm by 600 cm is being tiled using 200-cm² tiles. If each 200-cm² tile costs \$3, how much will it cost to tile the wall?
+      avatarIntro: Area-grid problems combine multiplication (for area) with division (for number of tiles or sections). The bar model shows the grid layout.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/practice/area-grid/p23-wall-tiles.svg
+      mathTool: null
+      finalAnswer: '7200'
+      stepByStepGuideline:
+      - 'Step 1: Find wall area: 800 × 600 = 480,000 cm².'
+      - 'Step 2: Find number of tiles needed: 480,000 ÷ 200 = 2400 tiles.'
+      - 'Step 3: Find total cost: 2400 × \$3 = \$7200.'
+      id: p23
+      questionGroup: wp7

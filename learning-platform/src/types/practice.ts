@@ -26,7 +26,8 @@ export interface PreWrittenQuestion {
   id: string;                     // Unique identifier (e.g., "q26-a", "q26-b")
   problemText: string;            // The actual question text
   avatarIntro?: string;           // Optional intro speech (typically for first question only)
-  diagramSvg?: string;            // Optional path to pre-built SVG diagram
+  diagramSvg?: string;            // Optional path to pre-built SVG diagram (shown with question)
+  solutionDiagramSvg?: string;    // Optional path to diagram shown only with solution (e.g., bar models)
   questionGroup?: string;         // Group identifier for multi-part questions (e.g., "q26", "q27")
 
   // NEW: Math tool for interactive visualizations (alternative to diagramSvg)
@@ -233,7 +234,8 @@ export interface PathProblem {
   };
 
   // NEW: For pre-written questions with pre-built diagrams
-  diagramSvg?: string;             // Path to pre-built SVG diagram
+  diagramSvg?: string;             // Path to pre-built SVG diagram (shown with question)
+  solutionDiagramSvg?: string;     // Path to diagram shown only with solution (e.g., bar models)
 
   // NEW: Table data for questions with tabular information
   tableData?: {

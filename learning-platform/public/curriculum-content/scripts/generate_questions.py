@@ -210,6 +210,14 @@ Return a JSON array with exactly {count} questions:
 - mathTool.toolName must exactly match specification
 - Ensure MAXIMUM diversity - use ALL available variation options
 
+**CRITICAL FORMATTING - CURRENCY & LATEX**:
+- CURRENCY: For money amounts, use \\$ (backslash-dollar) so it renders as $
+  - WRONG: "costs $25" ← unescaped $ triggers LaTeX mode, garbles text
+  - CORRECT: "costs \\$25" ← renders properly as: costs $25
+- LATEX: Use $...$ ONLY for complex math expressions (fractions, square roots)
+  - For fractions: $\\frac{{1}}{{2}}$ renders as ½
+  - Simple symbols: Use Unicode instead (×, ÷, °, θ, π)
+
 Generate {count} diverse questions now:"""
 
     return prompt

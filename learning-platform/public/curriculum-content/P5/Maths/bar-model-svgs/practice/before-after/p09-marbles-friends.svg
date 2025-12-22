@@ -1,0 +1,40 @@
+<svg viewBox="0 0 550 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- P09: Lily 2x Maya before, 5x Maya after, 180 total -->
+
+  <!-- BEFORE Section -->
+  <text x="30" y="20" font-family="system-ui, sans-serif" font-size="14" fill="#374151" font-weight="bold">BEFORE</text>
+
+  <text x="50" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Maya</text>
+  <rect x="60" y="40" width="60" height="35" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="90" y="62" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">1 unit</text>
+
+  <text x="50" y="100" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Lily</text>
+  <rect x="60" y="85" width="60" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="120" y="85" width="60" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="120" y="107" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">2 units</text>
+
+  <text x="200" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">3 units = 180</text>
+  <text x="200" y="90" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">1 unit = 60</text>
+
+  <!-- Arrow -->
+  <path d="M250,90 L280,140" fill="none" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="265" y="120" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">borrow</text>
+
+  <!-- AFTER Section -->
+  <text x="30" y="145" font-family="system-ui, sans-serif" font-size="14" fill="#374151" font-weight="bold">AFTER</text>
+
+  <text x="50" y="180" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Maya</text>
+  <rect x="60" y="165" width="40" height="35" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="80" y="187" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">1u</text>
+
+  <text x="50" y="215" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Lily</text>
+  <rect x="60" y="200" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="100" y="200" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="140" y="200" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="180" y="200" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="220" y="200" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <text x="300" y="180" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">6 units = 180</text>
+  <text x="300" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">1 unit = 30</text>
+  <text x="300" y="215" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Borrowed = 60-30 = 30</text>
+</svg>

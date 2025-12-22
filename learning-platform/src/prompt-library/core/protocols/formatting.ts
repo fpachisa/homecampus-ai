@@ -247,6 +247,15 @@ export const FORMATTING_RULES: FormattingRules = {
  * Quick Decision Tree for AI
  */
 export const FORMATTING_DECISION_TREE = `
+┌─────────────────────────────────────────────────────────────────┐
+│ CRITICAL FIRST CHECK: Is it a currency/money amount?           │
+│ ($25, $1,500, $10,000)                                          │
+│   └─→ YES: ALWAYS escape with backslash: \\$25, \\$1,500        │
+│       - Wrong: "costs $25" ← garbled output                     │
+│       - Correct: "costs \\$25" ← shows $25                      │
+└─────────────────────────────────────────────────────────────────┘
+              │
+              ↓
 ┌─────────────────────────────────────────┐
 │ Do I need to write a math expression?  │
 └─────────────┬───────────────────────────┘
@@ -260,7 +269,8 @@ export const FORMATTING_DECISION_TREE = `
               │   └─→ NO: Continue ↓
               │
               └─→ Is it a complex expression? (custom fractions, nested operations)
-                  └─→ YES: Use LaTeX with $...$ delimiters
+                   └─→ YES: Use LaTeX with $...$ delimiters
+                        Use ONE backslash: $\\frac{1}{2}$
 `;
 
 /**

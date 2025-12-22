@@ -218,11 +218,14 @@ ${studentAnswer}
 **FORMATTING DECISION TREE:**
 ${FORMATTING_DECISION_TREE}
 
-** CRITICAL FORMATTING RULES:**
-  - All LaTeX must be wrapped in $...$ delimiters
-  - In JSON, backslashes must be doubled for proper escaping, Use TWO backslashes.
-  - Wrong: {"text": "$\\frac{1}{2}$"}  ← will break
-  - Correct: {"text": "$\\\\frac{1}{2}$"} ← parses to $\\frac{1}{2}$
+**CRITICAL FORMATTING RULES:**
+  - CURRENCY: Always escape dollar signs for money amounts with backslash: \\$25, \\$1,500, \\$10,000
+    - Wrong: "costs $25" ← $ starts LaTeX mode, text gets garbled
+    - Correct: "costs \\$25" ← renders as $25
+  - LaTeX: Use $...$ delimiters only for math expressions (fractions, complex formulas)
+  - JSON escaping: Use ONE backslash for LaTeX commands
+    - Correct: {"text": "$\\frac{1}{2}$"} ← parses to $\frac{1}{2}$ ← KaTeX renders ½
+    - Wrong: {"text": "$\\\\frac{1}{2}$"} ← parses to $\\frac{1}{2}$ ← breaks
 
 
 **CRITICAL: Return ONLY valid JSON. Use the correct format based on whether the answer is correct or incorrect:**

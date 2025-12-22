@@ -1,0 +1,44 @@
+<svg viewBox="0 0 550 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- P10: Noah 3x, Peter 4x Olivia. Noah -12, Peter -36 to Olivia. All equal after. -->
+
+  <!-- BEFORE -->
+  <text x="30" y="18" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">BEFORE</text>
+
+  <text x="48" y="45" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Olivia</text>
+  <rect x="55" y="32" width="40" height="28" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="75" y="50" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">1u</text>
+
+  <text x="48" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Noah</text>
+  <rect x="55" y="65" width="40" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="95" y="65" width="40" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="135" y="65" width="40" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="115" y="83" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">3u</text>
+
+  <text x="48" y="111" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Peter</text>
+  <rect x="55" y="98" width="40" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="95" y="98" width="40" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="135" y="98" width="40" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <rect x="175" y="98" width="40" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="135" y="116" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">4u</text>
+
+  <!-- AFTER -->
+  <text x="280" y="18" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">AFTER (all equal)</text>
+
+  <text x="298" y="45" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Olivia</text>
+  <rect x="305" y="32" width="100" height="28" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="355" y="50" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">1u + 36</text>
+
+  <text x="298" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Noah</text>
+  <rect x="305" y="65" width="100" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="355" y="83" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">3u - 12</text>
+
+  <text x="298" y="111" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Peter</text>
+  <rect x="305" y="98" width="100" height="28" fill="#f472b6" stroke="#ec4899" stroke-width="2" rx="2"/>
+  <text x="355" y="116" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">4u - 36</text>
+
+  <!-- Solution -->
+  <text x="55" y="145" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Noah and Peter equal after:</text>
+  <text x="55" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">3u - 12 = 4u - 36</text>
+  <text x="55" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">1u = 24</text>
+  <text x="55" y="190" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Peter = 4 x 24 = 96 cards</text>
+</svg>

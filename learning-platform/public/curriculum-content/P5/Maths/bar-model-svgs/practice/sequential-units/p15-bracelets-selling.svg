@@ -1,0 +1,25 @@
+<svg viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- P15: Bracelets, 18 defective, 6 for $8, received $400 -->
+
+  <text x="30" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">Bracelets Made</text>
+
+  <!-- Defective section -->
+  <rect x="30" y="35" width="60" height="40" fill="#fecaca" stroke="#ef4444" stroke-width="2" rx="2"/>
+  <text x="60" y="50" font-family="system-ui, sans-serif" font-size="10" fill="#ef4444" text-anchor="middle">18</text>
+  <text x="60" y="64" font-family="system-ui, sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">defective</text>
+
+  <!-- Sold section -->
+  <rect x="90" y="35" width="180" height="40" fill="#86efac" stroke="#22c55e" stroke-width="2" rx="2"/>
+  <text x="180" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">Sold: ? bracelets</text>
+  <text x="180" y="70" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">6 for $8</text>
+
+  <!-- Total bracket -->
+  <path d="M30,80 L30,87 L270,87 L270,80" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="150" y="102" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">Total made: ?</text>
+
+  <!-- Calculation -->
+  <text x="295" y="40" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Sets sold = $400 / $8</text>
+  <text x="295" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= 50 sets</text>
+  <text x="295" y="70" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Bracelets sold = 50 x 6 = 300</text>
+  <text x="295" y="85" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Total = 300 + 18 = 318</text>
+</svg>

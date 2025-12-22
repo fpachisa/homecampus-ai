@@ -1,0 +1,28 @@
+<svg viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg">
+  <!-- P16: 25 boxes x 108 pencils, packs of 9 at $4 -->
+
+  <text x="30" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#374151" font-weight="bold">25 boxes x 108 pencils = 2700</text>
+
+  <!-- Pencil packs -->
+  <rect x="30" y="40" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="50" y="62" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">9</text>
+
+  <rect x="70" y="40" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="110" y="40" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <text x="165" y="62" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">...</text>
+
+  <rect x="185" y="40" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <rect x="225" y="40" width="40" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+
+  <!-- Pack label -->
+  <path d="M30,80 L30,87 L265,87 L265,80" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="147" y="102" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">300 packs x $4 = $1200</text>
+
+  <!-- Calculation -->
+  <text x="290" y="40" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Total = 25 x 108 = 2700</text>
+  <text x="290" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Packs = 2700 / 9 = 300</text>
+  <text x="290" y="70" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">(no remainder)</text>
+  <text x="290" y="90" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">Revenue = 300 x $4</text>
+  <text x="290" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#6b7280">= $1200</text>
+</svg>
