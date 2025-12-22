@@ -1,0 +1,554 @@
+{
+  "numbers-node-1": {
+    "nodeId": "numbers-node-1",
+    "title": "Understanding One Million",
+    "section": "understanding-one-million",
+    "learningFocus": [
+      "Understanding that 10 hundred thousands equal 1 million",
+      "Counting by hundred thousands to reach 1 million",
+      "Recognizing that 1 million has 7 digits (1 followed by 6 zeros)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "How many hundred thousands make 1 million?",
+        "correctAnswer": "10"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Complete the counting pattern: 700,000, 800,000, 900,000, ___. What number comes next?",
+        "correctAnswer": "1,000,000 (one million)"
+      },
+      {
+        "id": "ex3",
+        "problemText": "How many zeros are there after the 1 in one million?",
+        "correctAnswer": "6 zeros"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Is it true that 1 million equals 1,000 thousands?",
+        "correctAnswer": "Yes, 1,000 × 1,000 = 1,000,000"
+      }
+    ],
+    "variationRules": {
+      "countingPatterns": [
+        "100,000, 200,000, 300,000, ... what comes after 900,000?",
+        "500,000, 600,000, 700,000, 800,000, 900,000, ___",
+        "Count from 800,000 by hundred thousands to reach 1 million"
+      ],
+      "factQuestions": [
+        "How many hundred thousands make 1 million?",
+        "How many zeros are in one million?",
+        "How many digits does one million have?",
+        "Is 1 million equal to 1,000 thousands?",
+        "Is 1 million equal to 10 hundred thousands?"
+      ],
+      "realWorldContexts": [
+        "A city has a population of 1 million. How many groups of 100,000 people is that?",
+        "A library wants to collect 1 million books. They already have 900,000. How many more books do they need?",
+        "If you count by hundred thousands, how many steps does it take to reach 1 million from zero?"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Focus on conceptual understanding of one million as 10 hundred thousands",
+      "DO NOT include mathTool - these are fact-based and conceptual questions",
+      "Use simple, age-appropriate language for Primary 5 students (10-11 years old)",
+      "Include real-world contexts like population, money, or distances when appropriate",
+      "Vary between counting patterns, fact questions, and true/false questions",
+      "Ensure answers are clear and unambiguous"
+    ]
+  },
+
+  "numbers-node-2": {
+    "nodeId": "numbers-node-2",
+    "title": "Place Value Chart with Millions",
+    "section": "place-value-chart-millions",
+    "learningFocus": [
+      "Naming place values from ones to millions",
+      "Identifying the place value of any digit in a 7-digit number",
+      "Determining the value of a digit based on its position"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In the number 5,432,167, what is the value of the digit 4?",
+        "correctAnswer": "400,000 (four hundred thousand)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What digit is in the millions place of 3,256,789?",
+        "correctAnswer": "3"
+      },
+      {
+        "id": "ex3",
+        "problemText": "In 7,890,123, in which place is the digit 8?",
+        "correctAnswer": "Hundred thousands place"
+      },
+      {
+        "id": "ex4",
+        "problemText": "In the number 6,543,210, what is the value of the digit 5?",
+        "correctAnswer": "500,000 (five hundred thousand)"
+      }
+    ],
+    "variationRules": {
+      "sevenDigitNumbers": [
+        1234567, 2345678, 3456789, 4567890, 5678901,
+        6789012, 7890123, 8901234, 9012345, 1357924,
+        2468135, 3692581, 4815926, 5739264, 6284173
+      ],
+      "digitsToAsk": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "placeValues": [
+        "millions",
+        "hundred thousands",
+        "ten thousands",
+        "thousands",
+        "hundreds",
+        "tens",
+        "ones"
+      ],
+      "questionTypes": [
+        "What is the value of the digit X in the number Y?",
+        "What digit is in the Z place of the number Y?",
+        "In which place is the digit X in the number Y?",
+        "The digit X in the number Y represents what value?"
+      ]
+    },
+    "mathTool": {
+      "toolName": "placeValueChart",
+      "parameters": {
+        "number": 5432167,
+        "highlightPlace": "hundredThousands"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool with appropriate highlightPlace to help students visualize",
+      "Set highlightPlace to match the place value being asked about",
+      "Keep showNumber, showExpandedForm, showWords, and showColumnValues as false (defaults) to avoid revealing answers",
+      "Use a variety of 7-digit numbers with different digit patterns",
+      "Ask about all place values, not just millions",
+      "Ensure the digit being asked about appears only once in the number (avoid ambiguity)"
+    ]
+  },
+
+  "numbers-node-3": {
+    "nodeId": "numbers-node-3",
+    "title": "Reading Large Numbers",
+    "section": "reading-large-numbers",
+    "learningFocus": [
+      "Reading 7-digit numbers aloud using correct number words",
+      "Grouping digits into millions, thousands, and ones when reading",
+      "Writing numbers in expanded form"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Write the number 4,523,100 in words.",
+        "correctAnswer": "Four million, five hundred and twenty-three thousand, one hundred"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Write 7,006,050 in expanded form.",
+        "correctAnswer": "7,000,000 + 6,000 + 50"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Write the number 3,090,008 in words.",
+        "correctAnswer": "Three million, ninety thousand and eight"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Write 5,400,320 in expanded form.",
+        "correctAnswer": "5,000,000 + 400,000 + 300 + 20"
+      }
+    ],
+    "variationRules": {
+      "numbersForWords": [
+        4523100, 7006050, 3090008, 5400320, 8125000,
+        2030405, 9000001, 6780900, 1005060, 4300007
+      ],
+      "numbersForExpanded": [
+        1234567, 5000300, 7080009, 3456000, 9001020,
+        2600040, 8005006, 4090700, 6000089, 1700050
+      ],
+      "questionTypes": [
+        "Write the number X in words",
+        "Write X in expanded form",
+        "Read the number X and write it in words"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - showWords and showExpandedForm would reveal the answer",
+      "Include numbers with internal zeros (e.g., 3,005,020) to test proper handling",
+      "For word form: use 'and' before tens and ones (e.g., 'three hundred AND forty-five')",
+      "For expanded form: only include non-zero place values",
+      "Skip zeros in word form (don't say 'zero hundred')",
+      "Ensure mathematical correctness in all generated values"
+    ]
+  },
+
+  "numbers-node-4": {
+    "nodeId": "numbers-node-4",
+    "title": "Number Discs Representation",
+    "section": "number-discs-representation",
+    "learningFocus": [
+      "Understanding that number discs represent place values",
+      "Counting discs in each column to find the digit",
+      "Calculating the total value by adding place values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "There are 2 million discs, 4 hundred thousand discs, 3 ten thousand discs, 0 thousand discs, 0 hundred discs, 0 ten discs, and 5 one discs. What number do these discs represent?",
+        "correctAnswer": "2,430,005"
+      },
+      {
+        "id": "ex2",
+        "problemText": "How many hundred thousand discs do you need to show the number 3,500,000?",
+        "correctAnswer": "5"
+      },
+      {
+        "id": "ex3",
+        "problemText": "You have 1 million disc, 0 hundred thousand discs, 5 ten thousand discs, 2 thousand discs, 0 hundred discs, 0 ten discs, and 3 one discs. What is the number?",
+        "correctAnswer": "1,052,003"
+      },
+      {
+        "id": "ex4",
+        "problemText": "To represent 4,200,600, how many million discs and how many hundred discs do you need?",
+        "correctAnswer": "4 million discs and 6 hundred discs"
+      }
+    ],
+    "variationRules": {
+      "discCombinations": [
+        {"millions": 2, "hundredThousands": 4, "tenThousands": 3, "thousands": 0, "hundreds": 0, "tens": 0, "ones": 5},
+        {"millions": 1, "hundredThousands": 0, "tenThousands": 5, "thousands": 2, "hundreds": 0, "tens": 0, "ones": 3},
+        {"millions": 5, "hundredThousands": 3, "tenThousands": 0, "thousands": 0, "hundreds": 7, "tens": 0, "ones": 0},
+        {"millions": 3, "hundredThousands": 0, "tenThousands": 0, "thousands": 8, "hundreds": 0, "tens": 4, "ones": 0}
+      ],
+      "questionTypes": [
+        "Given disc counts, find the number",
+        "Given a number, find how many X discs are needed",
+        "Given partial disc information, identify specific disc counts"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - disc representation is a mental exercise",
+      "Clearly state the count for each place value (including zeros)",
+      "Use consistent language: 'million disc', 'hundred thousand disc', etc.",
+      "Include problems with zeros in various positions",
+      "Ask both directions: discs to number and number to disc counts",
+      "Keep numbers within the 7-digit range (up to 9,999,999)"
+    ]
+  },
+
+  "numbers-node-5": {
+    "nodeId": "numbers-node-5",
+    "title": "Words to Numerals",
+    "section": "words-to-numerals",
+    "learningFocus": [
+      "Converting number words to standard numeral form",
+      "Recognizing 'million' and 'thousand' as position indicators",
+      "Placing zeros correctly for unmentioned place values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Write 'Five million, two hundred thousand and seven' as a numeral.",
+        "correctAnswer": "5,200,007"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Write 'Eight million and forty-three' as a numeral.",
+        "correctAnswer": "8,000,043"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Write 'Three million, five hundred and two' as a numeral.",
+        "correctAnswer": "3,000,502"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Write 'Nine million, two hundred and thirty thousand, three hundred and sixty-four' as a numeral.",
+        "correctAnswer": "9,230,364"
+      }
+    ],
+    "variationRules": {
+      "wordForms": [
+        "Five million, two hundred thousand and seven",
+        "Eight million and forty-three",
+        "Three million, five hundred and two",
+        "Nine million, two hundred and thirty thousand, three hundred and sixty-four",
+        "Two million, five thousand",
+        "Seven million, eight hundred thousand",
+        "One million, four hundred and fifty thousand, six hundred and twelve",
+        "Six million and ninety",
+        "Four million, three hundred thousand and eight"
+      ],
+      "difficultyLevels": {
+        "simple": ["X million", "X million and Y"],
+        "medium": ["X million, Y thousand", "X million, Y hundred"],
+        "complex": ["X million, Y hundred thousand, Z"]
+      }
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - this is a conversion exercise",
+      "Include numbers with internal zeros to test proper zero placement",
+      "Use 'and' consistently before tens and ones (British English convention)",
+      "Vary complexity: some with all place values, some with missing place values",
+      "Watch out for tricky cases like 'eight million, forty' (8,000,040) where there are no thousands or hundreds",
+      "Ensure the answer includes commas for readability"
+    ]
+  },
+
+  "numbers-node-6": {
+    "nodeId": "numbers-node-6",
+    "title": "Numerals to Words",
+    "section": "numerals-to-words",
+    "learningFocus": [
+      "Converting standard numerals to word form",
+      "Grouping digits into millions, thousands, and ones sections",
+      "Skipping zero places in word form"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Write 3,005,020 in words.",
+        "correctAnswer": "Three million, five thousand and twenty"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Write 9,600,400 in words.",
+        "correctAnswer": "Nine million, six hundred thousand, four hundred"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Write 1,503,080 in words.",
+        "correctAnswer": "One million, five hundred and three thousand and eighty"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Write 7,000,009 in words.",
+        "correctAnswer": "Seven million and nine"
+      }
+    ],
+    "variationRules": {
+      "numeralsToConvert": [
+        3005020, 9600400, 1503080, 7000009, 4672100,
+        8005040, 3900009, 5230418, 2060700, 6000050
+      ],
+      "zeroPatterns": {
+        "noZeros": [1234567, 2345678, 3456789],
+        "someZeros": [1005020, 3400500, 5060007],
+        "manyZeros": [7000009, 8000040, 9000001]
+      }
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - showWords would reveal the answer",
+      "Include numbers with various zero patterns to test proper handling",
+      "Skip zeros in word form: 3,005,020 is 'three million, five thousand and twenty' (not 'zero hundred')",
+      "Use 'and' before the final tens/ones group",
+      "Accept common spelling variants (e.g., 'forty' not 'fourty')",
+      "Ensure proper comma usage in word form for millions and thousands"
+    ]
+  },
+
+  "numbers-node-7": {
+    "nodeId": "numbers-node-7",
+    "title": "Comparing Large Numbers",
+    "section": "comparing-large-numbers",
+    "learningFocus": [
+      "Using <, >, and = symbols correctly",
+      "Comparing numbers by starting from the highest place value",
+      "Identifying the first different digit to determine which is greater"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Compare using <, >, or =: 4,567,890 ___ 4,576,890",
+        "correctAnswer": "<"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Which is greater: 8,000,001 or 7,999,999?",
+        "correctAnswer": "8,000,001"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Compare using <, >, or =: 3,456,789 ___ 3,456,789",
+        "correctAnswer": "="
+      },
+      {
+        "id": "ex4",
+        "problemText": "Compare using <, >, or =: 5,234,567 ___ 5,243,567",
+        "correctAnswer": "<"
+      }
+    ],
+    "variationRules": {
+      "numberPairs": [
+        {"num1": 4567890, "num2": 4576890, "answer": "<"},
+        {"num1": 8000001, "num2": 7999999, "answer": ">"},
+        {"num1": 3456789, "num2": 3456789, "answer": "="},
+        {"num1": 5234567, "num2": 5243567, "answer": "<"},
+        {"num1": 6000000, "num2": 5999999, "answer": ">"},
+        {"num1": 2345678, "num2": 2345679, "answer": "<"},
+        {"num1": 9100000, "num2": 9010000, "answer": ">"}
+      ],
+      "questionTypes": [
+        "Compare using <, >, or =",
+        "Which is greater?",
+        "Which is smaller?",
+        "Fill in the blank with <, >, or ="
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - comparison is a mental exercise",
+      "Include pairs that differ at various place values (not just millions)",
+      "Include equal number pairs to test = usage",
+      "Include tricky cases like 8,000,001 vs 7,999,999 where digit count matters",
+      "Use consistent symbol format: < means 'less than', > means 'greater than'",
+      "Memory trick for students: the crocodile always eats the bigger number"
+    ]
+  },
+
+  "numbers-node-8": {
+    "nodeId": "numbers-node-8",
+    "title": "Ordering Numbers",
+    "section": "ordering-numbers",
+    "learningFocus": [
+      "Understanding ascending order (smallest to largest)",
+      "Understanding descending order (largest to smallest)",
+      "Ordering 4-5 numbers systematically"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Arrange in ascending order: 2,340,500, 2,345,000, 2,345,001",
+        "correctAnswer": "2,340,500, 2,345,000, 2,345,001"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Arrange in descending order: 5,000,000, 4,999,999, 5,000,001",
+        "correctAnswer": "5,000,001, 5,000,000, 4,999,999"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Arrange in ascending order: 4,567,890, 4,576,890, 4,567,980, 4,567,809",
+        "correctAnswer": "4,567,809, 4,567,890, 4,567,980, 4,576,890"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Arrange in descending order: 3,000,000, 3,100,000, 2,900,000, 3,010,000",
+        "correctAnswer": "3,100,000, 3,010,000, 3,000,000, 2,900,000"
+      }
+    ],
+    "variationRules": {
+      "numberSets": {
+        "threeNumbers": [
+          [2340500, 2345000, 2345001],
+          [5000000, 4999999, 5000001],
+          [1234567, 1234576, 1234657]
+        ],
+        "fourNumbers": [
+          [4567890, 4576890, 4567980, 4567809],
+          [3000000, 3100000, 2900000, 3010000],
+          [7654321, 7654312, 7654123, 7651234]
+        ],
+        "fiveNumbers": [
+          [1000000, 1000001, 999999, 1000010, 1000100],
+          [5555555, 5555556, 5555554, 5555565, 5555545]
+        ]
+      },
+      "orderTypes": ["ascending", "descending"]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - ordering is a mental comparison exercise",
+      "Use 3-5 numbers per problem (not too many to be overwhelming)",
+      "Include numbers that are close in value to test careful comparison",
+      "Clearly state whether ascending (smallest to largest) or descending (largest to smallest)",
+      "Include tricky cases where numbers differ only in lower place values",
+      "Ensure the correct answer lists numbers in the requested order with commas"
+    ]
+  },
+
+  "numbers-node-9": {
+    "nodeId": "numbers-node-9",
+    "title": "Rounding Large Numbers",
+    "section": "rounding-large-numbers",
+    "learningFocus": [
+      "Applying the rounding rule (0-4 round down, 5-9 round up)",
+      "Identifying the correct digit to examine when rounding",
+      "Rounding to nearest 10, 1000, 100000, and million"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Round 3,456,789 to the nearest million.",
+        "correctAnswer": "3,000,000"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Round 7,849,521 to the nearest hundred thousand.",
+        "correctAnswer": "7,800,000"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Round 4,950,000 to the nearest million.",
+        "correctAnswer": "5,000,000"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Round 6,385,472 to the nearest ten thousand.",
+        "correctAnswer": "6,390,000"
+      }
+    ],
+    "variationRules": {
+      "numbersToRound": [
+        3456789, 7849521, 4950000, 6385472, 2134567,
+        8765432, 5500000, 1234999, 9876543, 3050678
+      ],
+      "roundingPlaces": [
+        "nearest ten",
+        "nearest hundred",
+        "nearest thousand",
+        "nearest ten thousand",
+        "nearest hundred thousand",
+        "nearest million"
+      ],
+      "edgeCases": {
+        "roundUp": [4950000, 5500000, 7849521],
+        "roundDown": [3456789, 2134567, 1234999]
+      }
+    },
+    "mathTool": {
+      "toolName": "placeValueChart",
+      "parameters": {
+        "number": 3456789,
+        "highlightPlace": "millions"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool to help visualize the number and the rounding place",
+      "Set highlightPlace to the place value being rounded TO (e.g., 'millions' for rounding to nearest million)",
+      "Keep showNumber, showExpandedForm, showWords as false - student must identify the number from the chart",
+      "Include both round-up and round-down cases",
+      "Include edge cases like X,500,000 where the 5 causes rounding up",
+      "Ensure students understand they look at the digit ONE PLACE to the right of the rounding place",
+      "All digits to the right of the rounding place become zeros"
+    ]
+  }
+}

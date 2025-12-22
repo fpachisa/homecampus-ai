@@ -227,7 +227,7 @@ def generate_questions_batch(exemplar: Dict[str, Any], count: int, node_number: 
 
         if provider == "claude":
             message = anthropic_client.messages.create(
-                model="claude-sonnet-4-20250514",
+                model="claude-sonnet-4-5-20250929",
                 max_tokens=8000,  # Increased for batch
                 temperature=0.8,  # Higher for diversity
                 messages=[{"role": "user", "content": prompt}]

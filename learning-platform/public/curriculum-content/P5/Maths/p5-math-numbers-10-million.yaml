@@ -1,0 +1,706 @@
+# P5 Math Numbers 10 Million - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: numbers-node-1
+  nodeNumber: 1
+  title: Understanding One Million
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: How many digits does the number one million have in total?
+      avatarIntro: Hello! Let's explore the number one million. It is a very large number, and today we will learn exactly
+        how it is built!
+      mathTool: null
+      finalAnswer: 7 digits
+      stepByStepGuideline:
+      - 'Step 1: Write down the number one million in its numerical form: 1,000,000.'
+      - 'Step 2: Count the number of zeros. There are 6 zeros.'
+      - 'Step 3: Add the digit ''1'' at the beginning to the total count. 6 zeros + 1 leading digit = 7 digits.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: 'Complete the counting pattern by hundred thousands: 500,000, 600,000, 700,000, 800,000, 900,000, ___.'
+      mathTool: null
+      finalAnswer: 1,000,000 (one million)
+      stepByStepGuideline:
+      - 'Step 1: Identify the rule of the pattern. Each number increases by 100,000.'
+      - 'Step 2: Take the last number in the sequence, which is 900,000.'
+      - 'Step 3: Add 100,000 to 900,000. 900,000 + 100,000 = 1,000,000.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: A city has a population of 1 million people. If the city is divided into districts where each district
+        contains exactly 100,000 people, how many districts are there?
+      mathTool: null
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'Step 1: Understand that 1 million is the same as 1,000,000.'
+      - 'Step 2: Recall that 10 hundred thousands make 1 million.'
+      - 'Step 3: Since each district has 100,000 (one hundred thousand) people, it takes 10 districts to reach 1,000,000.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Is it true that 1 million is equal to 1,000 thousands?
+      mathTool: null
+      finalAnswer: 'Yes'
+      stepByStepGuideline:
+      - 'Step 1: Write ''one thousand'' as a number: 1,000.'
+      - 'Step 2: To find ''1,000 thousands'', multiply 1,000 by 1,000.'
+      - 'Step 3: 1,000 x 1,000 = 1,000,000. Since 1,000,000 is one million, the statement is true.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A library wants to collect 1 million books. They already have 900,000 books. If they add books in groups
+        of 100,000, how many more groups do they need to reach their goal?
+      mathTool: null
+      finalAnswer: 1 group
+      stepByStepGuideline:
+      - 'Step 1: Determine the goal, which is 1,000,000 books.'
+      - 'Step 2: Subtract the current number of books from the goal: 1,000,000 - 900,000 = 100,000.'
+      - 'Step 3: Since they add books in groups of 100,000, they need exactly 1 more group to reach 1,000,000.'
+      id: q1-5
+      questionGroup: q1
+- id: numbers-node-2
+  nodeNumber: 2
+  title: Place Value Chart with Millions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: placeValueChart
+    preWrittenQuestions:
+    - problemText: In the number 3,456,789, what is the value of the digit 4?
+      avatarIntro: Hi there! Let's explore the world of large numbers by looking at how digits change their value based on
+        where they sit in a place value chart.
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 3456789
+          highlightPlace: hundredThousands
+      finalAnswer: 400,000 (four hundred thousand)
+      stepByStepGuideline:
+      - 'Step 1: Locate the digit 4 in the number 3,456,789.'
+      - 'Step 2: Identify the place value of the column containing the digit 4. Counting from the right (ones, tens, hundreds,
+        thousands, ten thousands), we find that 4 is in the hundred thousands place.'
+      - 'Step 3: Calculate the value by multiplying the digit by its place value: 4 × 100,000 = 400,000.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: What digit is in the millions place of the number 6,284,173?
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 6284173
+          highlightPlace: millions
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'Step 1: Look at the number 6,284,173 and identify the different place value positions.'
+      - 'Step 2: In a 7-digit number, the millions place is the seventh digit from the right (or the first digit from the
+        left).'
+      - 'Step 3: Identify the digit sitting in that specific millions column.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: In which place is the digit 7 in the number 1,357,924?
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 1357924
+          highlightPlace: thousands
+      finalAnswer: Thousands place
+      stepByStepGuideline:
+      - 'Step 1: Find the digit 7 in the number 1,357,924.'
+      - 'Step 2: Count the positions starting from the rightmost digit (the ones place).'
+      - 'Step 3: The digit 4 is in the ones, 2 is in the tens, 9 is in the hundreds, and 7 is in the next position, which
+        is the thousands place.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: The digit 3 in the number 5,739,264 represents what value?
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 5739264
+          highlightPlace: tenThousands
+      finalAnswer: 30,000 (thirty thousand)
+      stepByStepGuideline:
+      - 'Step 1: Locate the digit 3 within the number 5,739,264.'
+      - 'Step 2: Determine its place value position. It is five places from the right, which is the ten thousands place.'
+      - 'Step 3: Multiply the digit 3 by its position value (10,000) to find what it represents: 3 × 10,000 = 30,000.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: In the number 2,468,135, what is the value of the digit 1?
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 2468135
+          highlightPlace: hundreds
+      finalAnswer: 100 (one hundred)
+      stepByStepGuideline:
+      - 'Step 1: Identify the position of the digit 1 in the number 2,468,135.'
+      - 'Step 2: The digit 1 is in the third position from the right, which corresponds to the hundreds place.'
+      - 'Step 3: Since the digit is 1 and it is in the hundreds place, its value is 1 × 100 = 100.'
+      id: q2-5
+      questionGroup: q2
+- id: numbers-node-3
+  nodeNumber: 3
+  title: Reading Large Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A major city has a population of 8,125,000 people. Write the number 8,125,000 in words.
+      avatarIntro: Let's practice reading and writing large numbers! Understanding how to break down millions, thousands,
+        and ones makes it much easier to handle big values.
+      mathTool: null
+      finalAnswer: Eight million, one hundred and twenty-five thousand
+      stepByStepGuideline:
+      - 'Step 1: Divide the number into groups of three digits (periods): Millions (8), Thousands (125), and Ones (000).'
+      - 'Step 2: Write the millions group as ''Eight million''.'
+      - 'Step 3: Write the thousands group. Since 125 is ''one hundred and twenty-five'', this part becomes ''one hundred
+        and twenty-five thousand''.'
+      - 'Step 4: Since the ones group is zero, we do not add any more words. Combine the parts: ''Eight million, one hundred
+        and twenty-five thousand''.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: A satellite is orbiting at a distance of 7,080,009 meters. Write 7,080,009 in expanded form.
+      mathTool: null
+      finalAnswer: 7,000,000 + 80,000 + 9
+      stepByStepGuideline:
+      - 'Step 1: Identify the place value of each non-zero digit in the number 7,080,009.'
+      - 'Step 2: The digit 7 is in the millions place, so its value is 7,000,000.'
+      - 'Step 3: The digit 8 is in the ten-thousands place, so its value is 80,000.'
+      - 'Step 4: The digit 9 is in the ones place, so its value is 9.'
+      - 'Step 5: Write the values as a sum, skipping any places that contain a zero: 7,000,000 + 80,000 + 9.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: An educational video has reached 2,030,405 views online. Read the number 2,030,405 and write it in words.
+      mathTool: null
+      finalAnswer: Two million, thirty thousand, four hundred and five
+      stepByStepGuideline:
+      - 'Step 1: Group the digits into periods: Millions (2), Thousands (030), and Ones (405).'
+      - 'Step 2: Read the millions group: ''Two million''.'
+      - 'Step 3: Read the thousands group: ''thirty thousand''. We skip the hundred-thousands place because it is zero.'
+      - 'Step 4: Read the ones group: ''four hundred and five''. Use ''and'' before the five because there is no tens digit.'
+      - 'Step 5: Combine the groups: ''Two million, thirty thousand, four hundred and five''.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: The annual budget for a new high-speed rail project is $9,001,020. Write 9,001,020 in expanded form.
+      mathTool: null
+      finalAnswer: 9,000,000 + 1,000 + 20
+      stepByStepGuideline:
+      - 'Step 1: Identify the non-zero digits and their positions in the number 9,001,020.'
+      - 'Step 2: The digit 9 is in the millions place, which equals 9,000,000.'
+      - 'Step 3: The digit 1 is in the thousands place, which equals 1,000.'
+      - 'Step 4: The digit 2 is in the tens place, which equals 20.'
+      - 'Step 5: Combine these values into an addition expression: 9,000,000 + 1,000 + 20.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: A tech company manufactured 4,300,007 microchips this month. Write the number 4,300,007 in words.
+      mathTool: null
+      finalAnswer: Four million, three hundred thousand and seven
+      stepByStepGuideline:
+      - 'Step 1: Separate the number into periods: Millions (4), Thousands (300), and Ones (007).'
+      - 'Step 2: The millions group is ''Four million''.'
+      - 'Step 3: The thousands group is ''three hundred thousand''.'
+      - 'Step 4: The ones group contains only a 7 in the ones place, so it is ''seven''.'
+      - 'Step 5: Combine the parts, using ''and'' to connect the last non-zero group: ''Four million, three hundred thousand
+        and seven''.'
+      id: q3-5
+      questionGroup: q3
+- id: numbers-node-4
+  nodeNumber: 4
+  title: Number Discs Representation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A warehouse manager uses number discs to track the stock of computer parts. There are 5 million discs,
+        3 hundred thousand discs, 0 ten thousand discs, 0 thousand discs, 7 hundred discs, 0 ten discs, and 0 one discs. What
+        total number of parts do these discs represent?
+      avatarIntro: Let's explore how we can represent large numbers using discs for each place value. This will help you visualize
+        the structure of millions and thousands!
+      mathTool: null
+      finalAnswer: 5,300,700
+      stepByStepGuideline:
+      - 'Step 1: Identify the digit for each place value based on the number of discs: Millions = 5, Hundred Thousands = 3,
+        Ten Thousands = 0, Thousands = 0, Hundreds = 7, Tens = 0, and Ones = 0.'
+      - 'Step 2: Write the digits in order from largest place value to smallest: 5, 3, 0, 0, 7, 0, 0.'
+      - 'Step 3: Place commas correctly to separate the periods: 5,300,700.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: During a charity gala, points are represented by number discs. The current score shows 3 million discs,
+        0 hundred thousand discs, 0 ten thousand discs, 8 thousand discs, 0 hundred discs, 4 ten discs, and 0 one discs. What
+        total score does this represent?
+      mathTool: null
+      finalAnswer: 3,008,040
+      stepByStepGuideline:
+      - 'Step 1: List the digits according to the discs provided: Millions (3), Hundred Thousands (0), Ten Thousands (0),
+        Thousands (8), Hundreds (0), Tens (4), and Ones (0).'
+      - 'Step 2: Combine the digits into a single number: 3008040.'
+      - 'Step 3: Insert commas every three digits from the right to represent the number as 3,008,040.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: A scientist is representing a colony of 1,052,003 micro-organisms using number discs. If she uses 1 million
+        disc, 0 hundred thousand discs, 5 ten thousand discs, 2 thousand discs, 0 hundred discs, and 0 ten discs, how many
+        one discs does she need to complete the representation?
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Step 1: Look at the number 1,052,003 and identify the value of the digit in the ones place.'
+      - 'Step 2: The digit in the ones place is 3.'
+      - 'Step 3: Therefore, the scientist needs 3 one discs to represent the total count accurately.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: A bank vault audit uses a disc system to represent large currency values. If the vault contains 7,500,000
+        dollars, how many hundred thousand discs are required to represent the hundred thousands place in this total?
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Step 1: Identify the hundred thousands place in the number 7,500,000.'
+      - 'Step 2: Find the digit located in that specific place. In 7,500,000, the digit in the hundred thousands place is
+        5.'
+      - 'Step 3: The number of discs required matches the digit in that place value, which is 5.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: A software company is tracking 8,400,900 app downloads using number discs. How many million discs and how
+        many hundred discs are needed to show this specific value?
+      mathTool: null
+      finalAnswer: 8 million discs and 9 hundred discs
+      stepByStepGuideline:
+      - 'Step 1: Determine the digit in the millions place of 8,400,900, which is 8.'
+      - 'Step 2: Determine the digit in the hundreds place of 8,400,900, which is 9.'
+      - 'Step 3: State the counts for both: 8 million discs are needed for the millions place and 9 hundred discs are needed
+        for the hundreds place.'
+      id: q4-5
+      questionGroup: q4
+- id: numbers-node-5
+  nodeNumber: 5
+  title: Words to Numerals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A top-ranked player in an online strategy game has accumulated a score of 'Eight million and forty-three'
+        points. Write this score as a numeral.
+      avatarIntro: Welcome! Today we are practicing how to turn large number words into numerals. Pay close attention to where
+        the zeros go when certain place values aren't mentioned.
+      mathTool: null
+      finalAnswer: 8,000,043
+      stepByStepGuideline:
+      - 'Step 1: Identify the ''million'' part. Here it is ''Eight million'', which is 8 followed by six place values.'
+      - 'Step 2: Look for the ''thousand'' part. Since ''thousand'' is not mentioned, the thousands period must be filled
+        with zeros (000).'
+      - 'Step 3: Look for the remaining part. ''Forty-three'' means there are 0 hundreds, 4 tens, and 3 ones (043).'
+      - 'Step 4: Combine the parts with commas: 8 in the millions place, 000 in the thousands place, and 043 in the units
+        place to get 8,000,043.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: An environmental study found that a specific forest region contains 'Seven million, eight hundred thousand'
+        trees. Express this number as a numeral.
+      mathTool: null
+      finalAnswer: 7,800,000
+      stepByStepGuideline:
+      - 'Step 1: Identify the millions place value. ''Seven million'' gives us a 7 in the millions position.'
+      - 'Step 2: Identify the thousands period. ''Eight hundred thousand'' means we write 800 in the thousands place.'
+      - 'Step 3: Check for hundreds, tens, and ones. Since none are mentioned after the thousands, we use zeros for the remaining
+        three places (000).'
+      - 'Step 4: Combine the segments using commas for readability: 7,800,000.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: The total land area of a large nature reserve is 'One million, four hundred and fifty thousand, six hundred
+        and twelve' square meters. Write this area as a numeral.
+      mathTool: null
+      finalAnswer: 1,450,612
+      stepByStepGuideline:
+      - 'Step 1: Start with the millions. ''One million'' is 1.'
+      - 'Step 2: Move to the thousands period. ''Four hundred and fifty thousand'' translates to 450.'
+      - 'Step 3: Look at the final part. ''Six hundred and twelve'' translates to 612.'
+      - 'Step 4: Place them together in order: 1 in the millions, 450 in the thousands, and 612 in the units. The numeral
+        is 1,450,612.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: A telescope detects a star that is 'Two million, five thousand' light-years away from Earth. Represent
+        this distance in numeral form.
+      mathTool: null
+      finalAnswer: 2,005,000
+      stepByStepGuideline:
+      - 'Step 1: Identify the millions digit. ''Two million'' gives us 2.'
+      - 'Step 2: Identify the thousands period. ''Five thousand'' means there are 0 hundred thousands, 0 ten thousands, and
+        5 thousands. This is written as 005.'
+      - 'Step 3: Check the units period (hundreds, tens, and ones). Since nothing is mentioned after ''thousand'', we fill
+        these places with zeros (000).'
+      - 'Step 4: Combine the groups: 2,005,000.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: A multinational corporation reported a quarterly profit of 'Four million, three hundred thousand and eight'
+        dollars. Write this amount as a numeral.
+      mathTool: null
+      finalAnswer: 4,300,008
+      stepByStepGuideline:
+      - 'Step 1: Identify the ''million'' indicator. ''Four million'' means the leading digit is 4.'
+      - 'Step 2: Look at the ''thousand'' indicator. ''Three hundred thousand'' means we put 300 in the thousands period.'
+      - 'Step 3: Look at the final part. ''And eight'' means there are 0 hundreds and 0 tens, with 8 in the ones place. This
+        is written as 008.'
+      - 'Step 4: Combine all parts with commas: 4,300,008.'
+      id: q5-5
+      questionGroup: q5
+- id: numbers-node-6
+  nodeNumber: 6
+  title: Numerals to Words
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A national election committee recorded a total of 9,000,001 valid votes in the latest district poll. Write
+        the number 9,000,001 in words.
+      avatarIntro: Welcome! Today we are practicing how to turn large numbers into words by grouping them into millions, thousands,
+        and ones. Let's look at how to handle numbers with many zeros.
+      mathTool: null
+      finalAnswer: Nine million and one
+      stepByStepGuideline:
+      - 'Step 1: Group the digits into periods of three from the right: 9,000,001. This gives us 9 in the millions period,
+        000 in the thousands period, and 001 in the ones period.'
+      - 'Step 2: Write the millions part: ''Nine million''.'
+      - 'Step 3: Look at the thousands period. Since it is ''000'', we skip the thousands section entirely in word form.'
+      - 'Step 4: Look at the ones period. It contains only ''1''. According to the rules, we add ''and'' before the final
+        ones/tens group if the preceding thousands or hundreds are skipped or if we are finishing the number.'
+      - 'Step 5: Combine the parts to get ''Nine million and one''.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A national archive contains 2,345,678 historical documents dating back to the 18th century. Express the
+        number 2,345,678 in word form.
+      mathTool: null
+      finalAnswer: Two million, three hundred and forty-five thousand, six hundred and seventy-eight
+      stepByStepGuideline:
+      - 'Step 1: Group the number into periods: 2 (millions), 345 (thousands), and 678 (ones).'
+      - 'Step 2: Write the millions part: ''Two million''.'
+      - 'Step 3: Write the thousands part: ''three hundred and forty-five thousand''. Note the use of ''and'' after the word
+        ''hundred''.'
+      - 'Step 4: Write the ones part: ''six hundred and seventy-eight''. Again, use ''and'' after the word ''hundred''.'
+      - 'Step 5: Combine the parts using commas to separate the periods: ''Two million, three hundred and forty-five thousand,
+        six hundred and seventy-eight''.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A large desalination plant processed 5,060,007 liters of seawater in a single day. Write this volume in
+        words.
+      mathTool: null
+      finalAnswer: Five million, sixty thousand and seven
+      stepByStepGuideline:
+      - 'Step 1: Divide the number 5,060,007 into its periods: 5 (millions), 060 (thousands), and 007 (ones).'
+      - 'Step 2: The millions part is ''Five million''.'
+      - 'Step 3: The thousands part is ''060'', which is ''sixty thousand''. Since the hundred-thousands place is zero, we
+        skip it.'
+      - 'Step 4: The ones part is ''007'', which is just ''seven''. Because there are no hundreds or tens, we use ''and''
+        to connect it.'
+      - 'Step 5: Combine the sections: ''Five million, sixty thousand and seven''.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: An automobile manufacturer has produced 4,672,100 vehicles since the factory first opened. Write the numeral
+        4,672,100 in word form.
+      mathTool: null
+      finalAnswer: Four million, six hundred and seventy-two thousand, one hundred
+      stepByStepGuideline:
+      - 'Step 1: Separate the number 4,672,100 into its groupings: 4 (millions), 672 (thousands), and 100 (ones).'
+      - 'Step 2: Convert the millions grouping to ''Four million''.'
+      - 'Step 3: Convert the thousands grouping to ''six hundred and seventy-two thousand''.'
+      - 'Step 4: Convert the ones grouping to ''one hundred''. Since there are no tens or ones following the hundred, we do
+        not need an ''and'' at the end.'
+      - 'Step 5: Join the parts with commas: ''Four million, six hundred and seventy-two thousand, one hundred''.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A marathon runner's fitness app shows that she has taken a career total of 8,005,040 steps. Write 8,005,040
+        in words.
+      mathTool: null
+      finalAnswer: Eight million, five thousand and forty
+      stepByStepGuideline:
+      - 'Step 1: Group the digits of 8,005,040 into periods: 8 (millions), 005 (thousands), and 040 (ones).'
+      - 'Step 2: Identify the millions period as ''Eight million''.'
+      - 'Step 3: Identify the thousands period ''005'' as ''five thousand''. We skip the hundred-thousands and ten-thousands
+        places because they are zero.'
+      - 'Step 4: Identify the ones period ''040'' as ''forty''. We skip the hundreds place because it is zero and add ''and''
+        before the tens.'
+      - 'Step 5: Combine the results: ''Eight million, five thousand and forty''.'
+      id: q6-5
+      questionGroup: q6
+- id: numbers-node-7
+  nodeNumber: 7
+  title: Comparing Large Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A social media influencer has 4,567,890 followers on one platform and 4,576,890 followers on another.
+        Fill in the blank with <, >, or = to compare these two follower counts: 4,567,890 ___ 4,576,890.'
+      avatarIntro: Hello! Today we are going to learn how to compare very large numbers by looking at their place values.
+        Remember, the crocodile always eats the bigger number!
+      mathTool: null
+      finalAnswer: <
+      stepByStepGuideline:
+      - 'Step 1: Align the two numbers by their place values, starting from the millions place.'
+      - 'Step 2: Compare the digits from left to right. Both numbers have a 4 in the millions place and a 5 in the hundred-thousands
+        place.'
+      - 'Step 3: Look at the ten-thousands place. The first number has a 6 and the second number has a 7.'
+      - 'Step 4: Since 6 is less than 7, the first number is smaller than the second. Therefore, 4,567,890 < 4,576,890.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A national library is cataloging its digital archives. Between Archive ID 8,000,001 and Archive ID 7,999,999,
+        which is greater?
+      mathTool: null
+      finalAnswer: 8,000,001
+      stepByStepGuideline:
+      - 'Step 1: Compare the highest place value, which is the millions place.'
+      - 'Step 2: The first number has an 8 in the millions place, while the second number has a 7 in the millions place.'
+      - 'Step 3: Since 8 is greater than 7, the entire number 8,000,001 is greater than 7,999,999.'
+      - 'Step 4: Even though the second number has many 9s, the value is determined by the highest place value first.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'Two different data centers processed the exact same amount of requests during a stress test. Compare the
+        number of requests using <, >, or =: 3,456,789 ___ 3,456,789.'
+      mathTool: null
+      finalAnswer: '='
+      stepByStepGuideline:
+      - 'Step 1: Line up the numbers and compare each digit starting from the millions place.'
+      - 'Step 2: Observe that every single digit in every place value (millions, hundred-thousands, ten-thousands, thousands,
+        hundreds, tens, and ones) is identical.'
+      - 'Step 3: Because all digits are exactly the same, the two numbers are equal.'
+      - 'Step 4: Use the = symbol to show they are the same value.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: In a scientific study of coastal erosion, Sample A contains 5,234,567 grains of sediment and Sample B contains
+        5,243,567 grains. Which number is smaller?
+      mathTool: null
+      finalAnswer: 5,234,567
+      stepByStepGuideline:
+      - 'Step 1: Compare the numbers starting from the millions place. Both have 5 in the millions place.'
+      - 'Step 2: Move to the hundred-thousands place. Both have 2.'
+      - 'Step 3: Move to the ten-thousands place. Sample A has a 3 and Sample B has a 4.'
+      - 'Step 4: Since 3 is less than 4, Sample A (5,234,567) is the smaller number.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A large industrial plant recorded its total energy consumption over two years. In the first year, it used
+        9,100,000 units, and in the second year, it used 9,010,000 units. Fill in the blank with <, >, or =: 9,100,000 ___
+        9,010,000.'
+      mathTool: null
+      finalAnswer: '>'
+      stepByStepGuideline:
+      - 'Step 1: Compare the digits starting from the highest place value (millions). Both numbers have a 9.'
+      - 'Step 2: Compare the next place value (hundred-thousands). The first number has a 1 and the second number has a 0.'
+      - 'Step 3: Since 1 is greater than 0, 9,100,000 is greater than 9,010,000.'
+      - 'Step 4: Use the > symbol to indicate that the first number is greater than the second.'
+      id: q7-5
+      questionGroup: q7
+- id: numbers-node-8
+  nodeNumber: 8
+  title: Ordering Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A researcher is comparing the populations of three different cities. The populations are 2,340,500, 2,345,001,
+        and 2,345,000. Arrange these population figures in ascending order.
+      avatarIntro: Let's practice comparing large numbers by looking at city populations. We'll arrange them from smallest
+        to largest to see the order clearly!
+      mathTool: null
+      finalAnswer: 2,340,500, 2,345,000, 2,345,001
+      stepByStepGuideline:
+      - 'Step 1: Compare the numbers starting from the largest place value (millions). All three numbers have ''2'' in the
+        millions place.'
+      - 'Step 2: Compare the hundred thousands and ten thousands places. All three numbers have ''3'' and ''4'' in these places
+        (2,34...).'
+      - 'Step 3: Compare the thousands place. 2,340,500 has ''0'' in the thousands place, while the others have ''5''. This
+        makes 2,340,500 the smallest.'
+      - 'Step 4: Compare the remaining two numbers: 2,345,000 and 2,345,001. Since 0 is less than 1 in the ones place, 2,345,000
+        comes next.'
+      - 'Step 5: Arrange them in ascending order: 2,340,500, 2,345,000, 2,345,001.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'An astronomer is tracking the distance of four meteoroids from a space station in kilometers: 7,654,321,
+        7,654,312, 7,654,123, and 7,651,234. Arrange these distances in descending order.'
+      mathTool: null
+      finalAnswer: 7,654,321, 7,654,312, 7,654,123, 7,651,234
+      stepByStepGuideline:
+      - 'Step 1: Identify that descending order means arranging from the largest to the smallest.'
+      - 'Step 2: Compare the first four digits of each number. Three numbers start with 7,654... and one starts with 7,651...
+        Since 4 > 1 in the thousands place, 7,651,234 is the smallest and will be last.'
+      - 'Step 3: Compare the hundreds place of the remaining three: 7,654,321, 7,654,312, and 7,654,123. The first two have
+        ''3'' in the hundreds place, and the third has ''1''. So, 7,654,123 is the next smallest.'
+      - 'Step 4: Compare the tens place of the last two: 7,654,321 (2 in the tens) and 7,654,312 (1 in the tens). Since 2
+        > 1, 7,654,321 is the largest.'
+      - 'Step 5: List them from largest to smallest: 7,654,321, 7,654,312, 7,654,123, 7,651,234.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: A biology lab is counting the number of cells in five different culture samples. The counts are 1,000,000,
+        1,000,001, 999,999, 1,000,010, and 1,000,100. Arrange these cell counts in ascending order.
+      mathTool: null
+      finalAnswer: 999,999, 1,000,000, 1,000,001, 1,000,010, 1,000,100
+      stepByStepGuideline:
+      - 'Step 1: Identify the number with the fewest digits. 999,999 has six digits, while the others have seven. This makes
+        999,999 the smallest.'
+      - 'Step 2: Compare the remaining seven-digit numbers. They all start with 1,000,0... except for 1,000,100 which has
+        a ''1'' in the hundreds place.'
+      - 'Step 3: Among the numbers starting with 1,000,0..., compare the tens and ones places: 1,000,000 (0 tens, 0 ones),
+        1,000,001 (0 tens, 1 one), and 1,000,010 (1 ten, 0 ones).'
+      - 'Step 4: Order these three: 1,000,000 < 1,000,001 < 1,000,010.'
+      - 'Step 5: Place the smallest (999,999) at the start and the largest (1,000,100) at the end: 999,999, 1,000,000, 1,000,001,
+        1,000,010, 1,000,100.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'An investment firm is reviewing the annual revenue of four startup companies: $3,000,000, $3,100,000,
+        $2,900,000, and $3,010,000. Arrange these revenue amounts in descending order.'
+      mathTool: null
+      finalAnswer: 3,100,000, 3,010,000, 3,000,000, 2,900,000
+      stepByStepGuideline:
+      - 'Step 1: Compare the millions place. Three companies have $3 million and one has $2 million. The $2,900,000 amount
+        is the smallest.'
+      - 'Step 2: Compare the hundred thousands place for the $3 million values: 3,100,000 (1 in hundred thousands), 3,000,000
+        (0 in hundred thousands), and 3,010,000 (0 in hundred thousands).'
+      - 'Step 3: The largest is $3,100,000 because 1 is the largest digit in the hundred thousands place.'
+      - 'Step 4: Compare the remaining two: 3,000,000 and 3,010,000. Look at the ten thousands place. 3,010,000 has a ''1''
+        and 3,000,000 has a ''0''. So, 3,010,000 is larger than 3,000,000.'
+      - 'Step 5: Arrange in descending order: 3,100,000, 3,010,000, 3,000,000, 2,900,000.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'For a ''guess the number of grains'' contest, five jars contain the following amounts of sand: 5,555,555,
+        5,555,556, 5,555,554, 5,555,565, and 5,555,545. Arrange these totals in ascending order.'
+      mathTool: null
+      finalAnswer: 5,555,545, 5,555,554, 5,555,555, 5,555,556, 5,555,565
+      stepByStepGuideline:
+      - 'Step 1: Observe that all numbers start with 5,555,5... (millions through hundreds places are the same).'
+      - 'Step 2: Focus on the last two digits (tens and ones): 55, 56, 54, 65, and 45.'
+      - 'Step 3: Compare these two-digit values: 45 is the smallest, followed by 54, then 55, then 56, and 65 is the largest.'
+      - 'Step 4: Re-attach the common prefix (5,555,5) to these values.'
+      - 'Step 5: The final ascending order is: 5,555,545, 5,555,554, 5,555,555, 5,555,556, 5,555,565.'
+      id: q8-5
+      questionGroup: q8
+- id: numbers-node-9
+  nodeNumber: 9
+  title: Rounding Large Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: placeValueChart
+    preWrittenQuestions:
+    - problemText: A major metropolitan museum recorded that its annual ticket sales reached 3,456,789. Using the place value
+        chart, round this number to the nearest million.
+      avatarIntro: Welcome! Today we are going to practice rounding very large numbers. Remember, the key is to look at the
+        digit exactly one place to the right of your target rounding place.
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 3456789
+          highlightPlace: millions
+          showNumber: false
+          showExpandedForm: false
+          showWords: false
+      finalAnswer: 3,000,000
+      stepByStepGuideline:
+      - 'Step 1: Identify the digit in the millions place, which is 3, and the digit to its immediate right in the hundred
+        thousands place, which is 4.'
+      - 'Step 2: Apply the rounding rule. Since the digit to the right is 4 (less than 5), we round down. This means the digit
+        in the millions place stays as 3.'
+      - 'Step 3: Change all the digits to the right of the millions place to zeros to get 3,000,000.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A hardware supplier is preparing a bulk shipment containing 9,876,543 individual components. Round the
+        total number of components to the nearest thousand.
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 9876543
+          highlightPlace: thousands
+          showNumber: false
+          showExpandedForm: false
+          showWords: false
+      finalAnswer: 9,877,000
+      stepByStepGuideline:
+      - 'Step 1: Locate the digit in the thousands place (6) and the digit in the hundreds place (5) immediately to its right.'
+      - 'Step 2: Since the digit to the right is 5, the rule is to round up. We add 1 to the digit in the thousands place,
+        changing 6 to 7.'
+      - 'Step 3: Set all digits to the right of the thousands place to zero. The rounded number is 9,877,000.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A large cargo ship is carrying 4,950,000 kilograms of goods. Round the total weight to the nearest hundred
+        thousand.
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 4950000
+          highlightPlace: hundred thousands
+          showNumber: false
+          showExpandedForm: false
+          showWords: false
+      finalAnswer: 5,000,000
+      stepByStepGuideline:
+      - 'Step 1: Identify the digit in the hundred thousands place (9) and the digit in the ten thousands place (5) immediately
+        to its right.'
+      - 'Step 2: Because the digit to the right is 5, we round up. Adding 1 to the hundred thousands place (9) makes it 10.'
+      - 'Step 3: Since the hundred thousands place becomes 10, we write 0 in that place and carry the 1 over to the millions
+        place (4 becomes 5). Filling the remaining places with zeros gives us 5,000,000.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A factory inventory system shows there are 2,134,567 screws currently in stock. Round this inventory count
+        to the nearest ten thousand.
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 2134567
+          highlightPlace: ten thousands
+          showNumber: false
+          showExpandedForm: false
+          showWords: false
+      finalAnswer: 2,130,000
+      stepByStepGuideline:
+      - 'Step 1: Find the digit in the ten thousands place, which is 3, and the digit to its right in the thousands place,
+        which is 4.'
+      - 'Step 2: The digit 4 is less than 5, so we round down. The digit in the ten thousands place remains 3.'
+      - 'Step 3: Replace all digits to the right of the ten thousands place with zeros. The result is 2,130,000.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Over the last decade, a school district has printed a total of 5,500,000 pages of educational material.
+        Round this total to the nearest million.
+      mathTool:
+        toolName: placeValueChart
+        parameters:
+          number: 5500000
+          highlightPlace: millions
+          showNumber: false
+          showExpandedForm: false
+          showWords: false
+      finalAnswer: 6,000,000
+      stepByStepGuideline:
+      - 'Step 1: Locate the digit in the millions place (5) and the digit in the hundred thousands place (5) to its right.'
+      - 'Step 2: According to the rounding rule, a 5 in the next place means we round up. Increase the millions digit by 1,
+        changing 5 to 6.'
+      - 'Step 3: Change all digits after the millions place to zeros. The rounded total is 6,000,000.'
+      id: q9-5
+      questionGroup: q9

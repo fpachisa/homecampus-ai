@@ -104,7 +104,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const [submitting, setSubmitting] = useState(false);
   const [loadingSolution, setLoadingSolution] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState<{ current: number; total: number } | null>(null);
-  const [showMathToolbar, setShowMathToolbar] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
+  const [showMathToolbar, setShowMathToolbar] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-resize textarea when content changes
@@ -1399,7 +1399,15 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                             e.currentTarget.style.boxShadow = (!studentAnswer.trim() || submitting) ? 'none' : theme.shadows.glow;
                           }}
                         >
-                          {submitting ? 'Checking...' : 'Submit Answer'}
+                          {submitting ? 'Checking...' : (
+                            <span className="flex items-center gap-1.5">
+                              <span>Submit Answer</span>
+                              <span className="hidden lg:inline-flex items-center gap-0.5 text-xs opacity-50">
+                                <span>Ctrl</span>
+                                <span>↵</span>
+                              </span>
+                            </span>
+                          )}
                         </button>
                       ) : (
                         /* After 3 failed attempts, show solution and next buttons */

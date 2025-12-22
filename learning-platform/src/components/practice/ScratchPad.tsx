@@ -290,7 +290,7 @@ const ScratchPad: React.FC<ScratchPadProps> = ({
               <textarea
                 value={textContent}
                 onChange={handleTextChange}
-                placeholder="Show your work here... Write calculations, notes, or steps to solve the problem."
+                placeholder="Use this space to write calculations, notes, or steps to solve the problem."
                 className="w-full h-64 p-4 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none resize-none text-lined-bg font-mono text-base"
                 style={{ lineHeight: '25px' }}
               />
@@ -304,13 +304,6 @@ const ScratchPad: React.FC<ScratchPadProps> = ({
                 tool={tool}
               />
             )}
-          </div>
-
-          {/* Helper Text */}
-          <div className="mt-2 text-xs text-gray-500 text-center">
-            {mode === 'text'
-              ? 'Type your calculations, notes, or step-by-step solution here'
-              : 'Draw diagrams, sketches, or visual representations to help solve the problem'}
           </div>
         </div>
       )}
