@@ -173,6 +173,8 @@ export const generateContent = onCall<GenerateContentRequest, Promise<GenerateCo
       fallbackUsed,
       promptLength: prompt.length,
       responseLength: content.length,
+      contentEndsCleanly: content.trim().endsWith('}') || content.trim().endsWith('"'),
+      last50Chars: content.slice(-50), // Help diagnose truncation
     });
 
     return {

@@ -70,6 +70,28 @@ export async function generateWithGemini(
     'Gemini API request timed out'
   );
 
+  // Debug logging to diagnose truncation issues
+  const responseAny = response as any;
+  const finishReason = responseAny.candidates?.[0]?.finishReason;
+  const textLength = response.text?.length || 0;
+  const textEndsCleanly = response.text?.trim().endsWith('}') || response.text?.trim().endsWith('"');
+
+  console.log('🔍 Gemini Response Debug:', {
+    hasText: !!response.text,
+    textLength,
+    finishReason,
+    textEndsCleanly,
+    usageMetadata: responseAny.usageMetadata,
+  });
+
+  // Check for truncated response (JSON that doesn't end properly)
+  if (!textEndsCleanly && textLength > 0) {
+    console.warn('⚠️ Gemini response appears truncated! Finish reason:', finishReason);
+    console.warn('Last 100 chars:', response.text?.slice(-100));
+    // Throw error to trigger Claude fallback
+    throw new Error(`Gemini response truncated (finish reason: ${finishReason}). Triggering fallback.`);
+  }
+
   const text = response.text?.trim() || '';
   if (!text) {
     throw new Error('Empty response from Gemini API');

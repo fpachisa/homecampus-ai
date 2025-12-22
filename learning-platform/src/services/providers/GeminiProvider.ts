@@ -13,7 +13,7 @@ export class GeminiProvider implements AIProvider {
 
   constructor(config: AIProviderConfig) {
     this.ai = new GoogleGenAI({ apiKey: config.apiKey });
-    this.modelName = config.model || 'gemini-flash-latest';
+    this.modelName = config.model || 'gemini-3-flash-preview';
     this.temperature = config.temperature ?? 0.5;
   }
 
