@@ -1,0 +1,1381 @@
+# P5 Math Volume - Unified Practice Path
+# Comprehensive volume practice covering unit cubes, cubic units, formulas, liquids, and word problems
+# All problems are original - different contexts and numbers from Notes/Learn module
+
+nodes:
+# ============================================
+# SUBTOPIC 1: Understanding Volume with Unit Cubes
+# ============================================
+
+- id: volume-node-1
+  nodeNumber: 1
+  title: What is Volume?
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: What does volume measure?
+      avatarIntro: Hello! Today we're going to explore a very important idea in mathematics called volume. Let's discover what it means together!
+      mathTool: null
+      finalAnswer: Volume measures the amount of space inside a solid (3D object).
+      stepByStepGuideline:
+      - "Step 1: Think about objects around you like boxes, balls, or cubes."
+      - "Step 2: These are all 3D objects (also called solids) - they have length, breadth, and height."
+      - "Step 3: Volume tells us how much space is inside these 3D objects."
+      - "Step 4: Volume measures the amount of space a solid takes up."
+      id: q1-1
+      questionGroup: q1
+    - problemText: Which of these has volume - a square drawn on paper or a cardboard box?
+      mathTool: null
+      finalAnswer: The cardboard box has volume.
+      stepByStepGuideline:
+      - "Step 1: A square drawn on paper is flat - it only has length and breadth (2D)."
+      - "Step 2: A cardboard box has length, breadth, and height (3D)."
+      - "Step 3: Only 3D objects (solids) have volume because they take up space."
+      - "Step 4: The cardboard box has volume; the square does not."
+      id: q1-2
+      questionGroup: q1
+    - problemText: True or False - A flat circle has volume.
+      mathTool: null
+      finalAnswer: "False"
+      stepByStepGuideline:
+      - "Step 1: A flat circle is a 2D shape - it has no height or depth."
+      - "Step 2: Volume only applies to 3D objects (solids)."
+      - "Step 3: Since a flat circle is not 3D, it does not have volume."
+      - "Step 4: The statement is False."
+      id: q1-3
+      questionGroup: q1
+    - problemText: Name two objects in a classroom that have volume.
+      mathTool: null
+      finalAnswer: Examples - a pencil case and a bookshelf (or any two 3D objects)
+      stepByStepGuideline:
+      - "Step 1: Look for objects that are 3D (have length, breadth, and height)."
+      - "Step 2: Examples include pencil case, bookshelf, eraser, water bottle, desk."
+      - "Step 3: All these objects take up space, so they have volume."
+      - "Step 4: Any two 3D classroom objects are correct answers."
+      id: q1-4
+      questionGroup: q1
+    - problemText: Why can't we measure the volume of a triangle drawn on a whiteboard?
+      mathTool: null
+      finalAnswer: Because a triangle on a whiteboard is a flat 2D shape, not a 3D solid.
+      stepByStepGuideline:
+      - "Step 1: A triangle drawn on a whiteboard is flat."
+      - "Step 2: It only has length and breadth - no height or depth."
+      - "Step 3: This makes it a 2D shape, not a 3D solid."
+      - "Step 4: Volume can only be measured for 3D objects that take up space."
+      id: q1-5
+      questionGroup: q1
+
+- id: volume-node-2
+  nodeNumber: 2
+  title: Unit Cubes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-1
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCubeGrid
+    preWrittenQuestions:
+    - problemText: What is a unit cube?
+      avatarIntro: Great job understanding volume! Now let's learn about a special tool we use to measure volume - the unit cube.
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 1
+          cubesDeep: 1
+          cubesHigh: 1
+          caption: "A single unit cube"
+      finalAnswer: A unit cube is a cube where each edge is 1 unit long, and it has a volume of 1 cubic unit.
+      stepByStepGuideline:
+      - "Step 1: A cube is a 3D shape where all sides are equal."
+      - "Step 2: A unit cube has each edge measuring exactly 1 unit."
+      - "Step 3: Because all edges are 1 unit, the volume is 1 cubic unit."
+      - "Step 4: We use unit cubes as building blocks to measure volume."
+      id: q2-1
+      questionGroup: q2
+    - problemText: If a unit cube has edges of 1 cm each, what is its volume?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 1
+          cubesDeep: 1
+          cubesHigh: 1
+          caption: "A 1-cm unit cube"
+      finalAnswer: 1 cubic centimetre (1 cm³)
+      stepByStepGuideline:
+      - "Step 1: The cube has edges of 1 cm each."
+      - "Step 2: A cube with 1 cm edges has a volume of 1 cm × 1 cm × 1 cm."
+      - "Step 3: This equals 1 cubic centimetre."
+      - "Step 4: We write this as 1 cm³."
+      id: q2-2
+      questionGroup: q2
+    - problemText: Why do we use unit cubes to measure volume?
+      mathTool: null
+      finalAnswer: Unit cubes are used because they are a standard size that can fill up and measure any 3D space.
+      stepByStepGuideline:
+      - "Step 1: Unit cubes all have the same size (1 unit on each edge)."
+      - "Step 2: They can be stacked and arranged to fill any 3D shape."
+      - "Step 3: By counting how many unit cubes fit inside, we find the volume."
+      - "Step 4: This gives us a standard way to measure and compare volumes."
+      id: q2-3
+      questionGroup: q2
+    - problemText: A toy block is made of 1 unit cube. What is its volume?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 1
+          cubesDeep: 1
+          cubesHigh: 1
+          caption: "1 unit cube toy block"
+      finalAnswer: 1 cubic unit
+      stepByStepGuideline:
+      - "Step 1: The toy block is made of exactly 1 unit cube."
+      - "Step 2: Each unit cube has a volume of 1 cubic unit."
+      - "Step 3: So the toy block has a volume of 1 cubic unit."
+      id: q2-4
+      questionGroup: q2
+    - problemText: True or False - All unit cubes have the same volume.
+      mathTool: null
+      finalAnswer: "True"
+      stepByStepGuideline:
+      - "Step 1: A unit cube always has edges of 1 unit each."
+      - "Step 2: Whether the unit is cm, m, or any other measure, the cube is 1 × 1 × 1."
+      - "Step 3: This means all unit cubes have a volume of 1 cubic unit."
+      - "Step 4: The statement is True."
+      id: q2-5
+      questionGroup: q2
+
+- id: volume-node-3
+  nodeNumber: 3
+  title: Counting Unit Cubes to Find Volume
+  layer: foundation
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-2
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCubeGrid
+    preWrittenQuestions:
+    - problemText: A solid is made of 7 unit cubes arranged in a row. What is its volume?
+      avatarIntro: Excellent! Now let's practice counting unit cubes to find volume. Remember - the number of unit cubes tells us the volume!
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 7
+          cubesDeep: 1
+          cubesHigh: 1
+          caption: "7 unit cubes in a row"
+      finalAnswer: 7 cubic units
+      stepByStepGuideline:
+      - "Step 1: Count the unit cubes in the solid."
+      - "Step 2: There are 7 unit cubes arranged in a row."
+      - "Step 3: Each unit cube has a volume of 1 cubic unit."
+      - "Step 4: Total volume = 7 cubic units."
+      id: q3-1
+      questionGroup: q3
+    - problemText: A rectangular solid has 5 cubes along its length, 2 cubes along its depth, and 1 layer. What is its volume?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 5
+          cubesDeep: 2
+          cubesHigh: 1
+          caption: "5 × 2 × 1 cuboid"
+      finalAnswer: 10 cubic units
+      stepByStepGuideline:
+      - "Step 1: Count the cubes in one row - there are 5 cubes."
+      - "Step 2: There are 2 rows of 5 cubes each."
+      - "Step 3: Total cubes = 5 × 2 = 10 unit cubes."
+      - "Step 4: Volume = 10 cubic units."
+      id: q3-2
+      questionGroup: q3
+    - problemText: A cuboid has 3 cubes along the length, 3 cubes along the depth, and 2 layers. Find its volume.
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 3
+          cubesDeep: 3
+          cubesHigh: 2
+          caption: "3 × 3 × 2 cuboid"
+      finalAnswer: 18 cubic units
+      stepByStepGuideline:
+      - "Step 1: Count cubes in the bottom layer - 3 × 3 = 9 cubes."
+      - "Step 2: There are 2 layers."
+      - "Step 3: Total cubes = 9 × 2 = 18 unit cubes."
+      - "Step 4: Volume = 18 cubic units."
+      id: q3-3
+      questionGroup: q3
+    - problemText: A stack of cubes has 4 cubes along the length, 2 cubes along the depth, and 3 layers. What is the volume?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 4
+          cubesDeep: 2
+          cubesHigh: 3
+          caption: "4 × 2 × 3 cuboid"
+      finalAnswer: 24 cubic units
+      stepByStepGuideline:
+      - "Step 1: Count cubes in the bottom layer - 4 × 2 = 8 cubes."
+      - "Step 2: There are 3 layers of 8 cubes each."
+      - "Step 3: Total cubes = 8 × 3 = 24 unit cubes."
+      - "Step 4: Volume = 24 cubic units."
+      id: q3-4
+      questionGroup: q3
+    - problemText: A toy building has 6 cubes along the length, 3 cubes along the depth, and 4 layers. Find its volume.
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 6
+          cubesDeep: 3
+          cubesHigh: 4
+          caption: "6 × 3 × 4 toy building"
+      finalAnswer: 72 cubic units
+      stepByStepGuideline:
+      - "Step 1: Count cubes in one layer - 6 × 3 = 18 cubes."
+      - "Step 2: There are 4 layers."
+      - "Step 3: Total cubes = 18 × 4 = 72 unit cubes."
+      - "Step 4: Volume = 72 cubic units."
+      id: q3-5
+      questionGroup: q3
+    - problemText: A rectangular prism is made of 2 rows of 5 cubes each, stacked 2 layers high. What is its volume?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 5
+          cubesDeep: 2
+          cubesHigh: 2
+          caption: "5 × 2 × 2 rectangular prism"
+      finalAnswer: 20 cubic units
+      stepByStepGuideline:
+      - "Step 1: Count cubes in one layer - 5 × 2 = 10 cubes."
+      - "Step 2: There are 2 layers."
+      - "Step 3: Total cubes = 10 × 2 = 20 unit cubes."
+      - "Step 4: Volume = 20 cubic units."
+      id: q3-6
+      questionGroup: q3
+
+- id: volume-node-4
+  nodeNumber: 4
+  title: Comparing Volumes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-3
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCubeGrid
+    preWrittenQuestions:
+    - problemText: Solid A is made of 15 unit cubes. Solid B is made of 11 unit cubes. Which solid has the greater volume?
+      avatarIntro: Now that you can count unit cubes, let's compare volumes! The solid with more unit cubes has the greater volume.
+      mathTool: null
+      finalAnswer: Solid A has the greater volume.
+      stepByStepGuideline:
+      - "Step 1: Solid A has 15 unit cubes, so its volume is 15 cubic units."
+      - "Step 2: Solid B has 11 unit cubes, so its volume is 11 cubic units."
+      - "Step 3: Compare 15 cubic units > 11 cubic units."
+      - "Step 4: Solid A has the greater volume."
+      id: q4-1
+      questionGroup: q4
+    - problemText: Box P has 4 cubes along, 3 deep, and 2 layers. Box Q has 5 cubes along, 2 deep, and 3 layers. Which has greater volume?
+      mathTool: null
+      finalAnswer: Box Q has the greater volume.
+      stepByStepGuideline:
+      - "Step 1: Box P volume = 4 × 3 × 2 = 24 cubic units."
+      - "Step 2: Box Q volume = 5 × 2 × 3 = 30 cubic units."
+      - "Step 3: Compare 24 cubic units < 30 cubic units."
+      - "Step 4: Box Q has the greater volume."
+      id: q4-2
+      questionGroup: q4
+    - problemText: Container X has a volume of 36 cubic units. Container Y has a volume of 36 cubic units. What can you say about their volumes?
+      mathTool: null
+      finalAnswer: Container X and Container Y have the same volume (equal volumes).
+      stepByStepGuideline:
+      - "Step 1: Container X has 36 cubic units."
+      - "Step 2: Container Y has 36 cubic units."
+      - "Step 3: Both containers have 36 cubic units."
+      - "Step 4: They have equal volumes, even though they might have different shapes."
+      id: q4-3
+      questionGroup: q4
+    - problemText: Solid M is 6 × 2 × 2 cubes. Solid N is 3 × 4 × 2 cubes. Do they have the same volume?
+      mathTool: null
+      finalAnswer: "Yes, they have the same volume (24 cubic units each)."
+      stepByStepGuideline:
+      - "Step 1: Solid M volume = 6 × 2 × 2 = 24 cubic units."
+      - "Step 2: Solid N volume = 3 × 4 × 2 = 24 cubic units."
+      - "Step 3: Both have 24 cubic units."
+      - "Step 4: Yes, they have the same volume even with different dimensions."
+      id: q4-4
+      questionGroup: q4
+    - problemText: Arrange these volumes in order from smallest to largest - 28 cubic units, 19 cubic units, 32 cubic units.
+      mathTool: null
+      finalAnswer: 19 cubic units, 28 cubic units, 32 cubic units
+      stepByStepGuideline:
+      - "Step 1: Compare the three volumes - 28, 19, and 32 cubic units."
+      - "Step 2: Find the smallest - 19 cubic units."
+      - "Step 3: Find the middle value - 28 cubic units."
+      - "Step 4: Find the largest - 32 cubic units."
+      - "Step 5: Order from smallest to largest - 19, 28, 32 cubic units."
+      id: q4-5
+      questionGroup: q4
+
+# ============================================
+# SUBTOPIC 2: Volume in cm³ and m³
+# ============================================
+
+- id: volume-node-5
+  nodeNumber: 5
+  title: The Cubic Centimetre
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-4
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCubeGrid
+    preWrittenQuestions:
+    - problemText: What is a cubic centimetre?
+      avatarIntro: Now that you understand unit cubes, let's learn about a real-world unit of volume - the cubic centimetre, written as cm³!
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 1
+          cubesDeep: 1
+          cubesHigh: 1
+          caption: "A 1 cm cube = 1 cm³"
+      finalAnswer: A cubic centimetre (cm³) is the volume of a cube with edges of 1 cm each.
+      stepByStepGuideline:
+      - "Step 1: A cubic centimetre is a standard unit for measuring small volumes."
+      - "Step 2: It is the volume of a cube where each edge is 1 centimetre."
+      - "Step 3: We write it as cm³ (said as 'cubic centimetre')."
+      - "Step 4: Small objects like erasers and dice are measured in cm³."
+      id: q5-1
+      questionGroup: q5
+    - problemText: A small gift box is made from 18 one-centimetre cubes. What is its volume in cm³?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 3
+          cubesDeep: 3
+          cubesHigh: 2
+          caption: "Gift box made of 18 cm cubes"
+      finalAnswer: 18 cm³
+      stepByStepGuideline:
+      - "Step 1: The box is made of 18 cubes, each 1 cm on every side."
+      - "Step 2: Each 1-cm cube has a volume of 1 cm³."
+      - "Step 3: Total volume = 18 × 1 cm³ = 18 cm³."
+      id: q5-2
+      questionGroup: q5
+    - problemText: A pencil sharpener is made of 12 one-centimetre cubes. Express its volume in cubic centimetres.
+      mathTool: null
+      finalAnswer: 12 cm³
+      stepByStepGuideline:
+      - "Step 1: The sharpener is made of 12 one-cm cubes."
+      - "Step 2: Each cube has a volume of 1 cm³."
+      - "Step 3: Total volume = 12 cm³."
+      id: q5-3
+      questionGroup: q5
+    - problemText: A solid made of 1-cm cubes has 4 cubes along, 5 cubes deep, and 2 layers. What is its volume?
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 4
+          cubesDeep: 5
+          cubesHigh: 2
+          caption: "4 × 5 × 2 solid in cm³"
+      finalAnswer: 40 cm³
+      stepByStepGuideline:
+      - "Step 1: Count cubes in one layer - 4 × 5 = 20 cubes."
+      - "Step 2: There are 2 layers."
+      - "Step 3: Total cubes = 20 × 2 = 40 cubes."
+      - "Step 4: Since each cube is 1 cm³, total volume = 40 cm³."
+      id: q5-4
+      questionGroup: q5
+    - problemText: Which unit would you use to measure the volume of an ice cube - cm³ or m³?
+      mathTool: null
+      finalAnswer: cm³ (cubic centimetres)
+      stepByStepGuideline:
+      - "Step 1: An ice cube is a small object."
+      - "Step 2: cm³ is used for small objects."
+      - "Step 3: m³ is used for large objects like rooms."
+      - "Step 4: We would use cm³ for an ice cube."
+      id: q5-5
+      questionGroup: q5
+
+- id: volume-node-6
+  nodeNumber: 6
+  title: The Cubic Metre
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-5
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: What is a cubic metre?
+      avatarIntro: For larger objects like rooms and swimming pools, we need a bigger unit - the cubic metre (m³). Let's explore this!
+      mathTool: null
+      finalAnswer: A cubic metre (m³) is the volume of a cube with edges of 1 metre each.
+      stepByStepGuideline:
+      - "Step 1: A cubic metre is a large unit of volume."
+      - "Step 2: It is the volume of a cube where each edge is 1 metre."
+      - "Step 3: We write it as m³ (said as 'cubic metre')."
+      - "Step 4: Large objects like rooms and pools are measured in m³."
+      id: q6-1
+      questionGroup: q6
+    - problemText: How many cm³ are in 1 m³?
+      mathTool: null
+      finalAnswer: 1,000,000 cm³
+      stepByStepGuideline:
+      - "Step 1: 1 metre = 100 centimetres."
+      - "Step 2: A 1 m³ cube has edges of 100 cm each."
+      - "Step 3: Volume = 100 × 100 × 100 = 1,000,000 cm³."
+      - "Step 4: So 1 m³ = 1,000,000 cm³ (one million cubic centimetres)."
+      id: q6-2
+      questionGroup: q6
+    - problemText: A warehouse storage space is made of 45 one-metre cubes stacked together. What is its volume?
+      mathTool: null
+      finalAnswer: 45 m³
+      stepByStepGuideline:
+      - "Step 1: The space is made of 45 one-metre cubes."
+      - "Step 2: Each cube has a volume of 1 m³."
+      - "Step 3: Total volume = 45 × 1 m³ = 45 m³."
+      id: q6-3
+      questionGroup: q6
+    - problemText: A cargo container has 8 cubes along, 3 cubes deep, and 3 cubes high (each cube is 1 m). Find its volume.
+      mathTool: null
+      finalAnswer: 72 m³
+      stepByStepGuideline:
+      - "Step 1: Count cubes in one layer - 8 × 3 = 24 cubes."
+      - "Step 2: There are 3 layers."
+      - "Step 3: Total cubes = 24 × 3 = 72 cubes."
+      - "Step 4: Since each cube is 1 m³, total volume = 72 m³."
+      id: q6-4
+      questionGroup: q6
+    - problemText: Which unit would you use to measure the volume of a classroom - cm³ or m³?
+      mathTool: null
+      finalAnswer: m³ (cubic metres)
+      stepByStepGuideline:
+      - "Step 1: A classroom is a large space."
+      - "Step 2: cm³ is too small for large spaces."
+      - "Step 3: m³ is the appropriate unit for rooms and large spaces."
+      - "Step 4: We would use m³ for a classroom."
+      id: q6-5
+      questionGroup: q6
+
+- id: volume-node-7
+  nodeNumber: 7
+  title: Choosing Appropriate Units
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-6
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Would you measure the volume of a matchbox in cm³ or m³?
+      avatarIntro: Now let's practice choosing the right unit! Remember - cm³ for small objects, m³ for large ones.
+      mathTool: null
+      finalAnswer: cm³ (cubic centimetres)
+      stepByStepGuideline:
+      - "Step 1: A matchbox is a small object."
+      - "Step 2: Small objects are measured in cm³."
+      - "Step 3: m³ would be too large a unit for a matchbox."
+      - "Step 4: We use cm³ for a matchbox."
+      id: q7-1
+      questionGroup: q7
+    - problemText: Would you measure the volume of a swimming pool in cm³ or m³?
+      mathTool: null
+      finalAnswer: m³ (cubic metres)
+      stepByStepGuideline:
+      - "Step 1: A swimming pool is a very large space."
+      - "Step 2: Large spaces are measured in m³."
+      - "Step 3: Using cm³ would give a very large, hard-to-read number."
+      - "Step 4: We use m³ for a swimming pool."
+      id: q7-2
+      questionGroup: q7
+    - problemText: A toy car or a bedroom - which would be measured in m³?
+      mathTool: null
+      finalAnswer: The bedroom
+      stepByStepGuideline:
+      - "Step 1: A toy car is a small object - measured in cm³."
+      - "Step 2: A bedroom is a large space - measured in m³."
+      - "Step 3: Only the bedroom would be measured in m³."
+      id: q7-3
+      questionGroup: q7
+    - problemText: Sort these into cm³ or m³ - a dice, a shipping container, a tissue box, a gymnasium.
+      mathTool: null
+      finalAnswer: "cm³: dice, tissue box. m³: shipping container, gymnasium."
+      stepByStepGuideline:
+      - "Step 1: Identify small objects - dice and tissue box are small."
+      - "Step 2: Identify large objects - shipping container and gymnasium are large."
+      - "Step 3: cm³ for dice and tissue box."
+      - "Step 4: m³ for shipping container and gymnasium."
+      id: q7-4
+      questionGroup: q7
+    - problemText: Why is it better to measure a room in m³ rather than cm³?
+      mathTool: null
+      finalAnswer: Using m³ gives a smaller, easier-to-read number. Using cm³ would give millions, which is hard to work with.
+      stepByStepGuideline:
+      - "Step 1: A room is a large space."
+      - "Step 2: 1 m³ = 1,000,000 cm³."
+      - "Step 3: If a room is 50 m³, that equals 50,000,000 cm³."
+      - "Step 4: 50 m³ is much easier to read and work with than 50,000,000 cm³."
+      id: q7-5
+      questionGroup: q7
+
+# ============================================
+# SUBTOPIC 3: Volume of Cubes and Cuboids
+# ============================================
+
+- id: volume-node-8
+  nodeNumber: 8
+  title: Discovering the Volume Formula
+  layer: foundation
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-7
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: unitCubeGrid
+    preWrittenQuestions:
+    - problemText: A cuboid has 5 cubes along, 3 cubes deep, and 2 layers. How can we find its volume using multiplication instead of counting?
+      avatarIntro: Instead of counting every single cube, let's discover a faster way to find volume - using a formula!
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 5
+          cubesDeep: 3
+          cubesHigh: 2
+          caption: "5 × 3 × 2 cuboid"
+      finalAnswer: Volume = Length ×Breadth ×Height = 5 × 3 × 2 = 30 cubic units
+      stepByStepGuideline:
+      - "Step 1: Length = 5 cubes, Breadth = 3 cubes, Height = 2 layers."
+      - "Step 2: Instead of counting all 30 cubes one by one..."
+      - "Step 3: We can multiply Length ×Breadth ×Height."
+      - "Step 4: Volume = 5 × 3 × 2 = 30 cubic units."
+      id: q8-1
+      questionGroup: q8
+    - problemText: What is the formula for the volume of a cuboid?
+      mathTool: null
+      finalAnswer: Volume = Length ×Breadth ×Height (V = L ×B ×H)
+      stepByStepGuideline:
+      - "Step 1: A cuboid has 3 dimensions - length, breadth, and height."
+      - "Step 2: To find volume, we multiply all three dimensions."
+      - "Step 3: Volume = Length ×Breadth ×Height."
+      - "Step 4: This is often written as V = L ×B ×H."
+      id: q8-2
+      questionGroup: q8
+    - problemText: A box has length 6 cubes, breadth 4 cubes, and height 3 cubes. Use the formula to find its volume.
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 6
+          cubesDeep: 4
+          cubesHigh: 3
+          caption: "6 × 4 × 3 box"
+      finalAnswer: 72 cubic units
+      stepByStepGuideline:
+      - "Step 1: Identify the dimensions - L = 6, B = 4, H = 3."
+      - "Step 2: Apply the formula V = L ×B ×H."
+      - "Step 3: V = 6 × 4 × 3."
+      - "Step 4: V = 24 × 3 = 72 cubic units."
+      id: q8-3
+      questionGroup: q8
+    - problemText: A rectangular solid has dimensions 7 × 2 × 4 cubes. What is its volume?
+      mathTool: null
+      finalAnswer: 56 cubic units
+      stepByStepGuideline:
+      - "Step 1: Use the formula V = L ×B ×H."
+      - "Step 2: V = 7 × 2 × 4."
+      - "Step 3: V = 14 × 4 = 56 cubic units."
+      id: q8-4
+      questionGroup: q8
+    - problemText: Why does multiplying length ×breadth ×height give us the volume?
+      mathTool: null
+      finalAnswer: Length ×breadth gives cubes in one layer, then multiplying by height gives total cubes in all layers.
+      stepByStepGuideline:
+      - "Step 1: Length ×breadth = number of cubes in one layer (the base)."
+      - "Step 2: Height = number of layers."
+      - "Step 3: Base cubes ×layers = total cubes."
+      - "Step 4: So L ×B ×H gives the total volume."
+      id: q8-5
+      questionGroup: q8
+    - problemText: A storage bin is 3 cubes long, 3 cubes wide, and 5 cubes tall. Find its volume.
+      mathTool:
+        toolName: unitCubeGrid
+        parameters:
+          cubesAlong: 3
+          cubesDeep: 3
+          cubesHigh: 5
+          caption: "3 × 3 × 5 storage bin"
+      finalAnswer: 45 cubic units
+      stepByStepGuideline:
+      - "Step 1: L = 3, B = 3, H = 5."
+      - "Step 2: V = L ×B ×H = 3 × 3 × 5."
+      - "Step 3: V = 9 × 5 = 45 cubic units."
+      id: q8-6
+      questionGroup: q8
+
+- id: volume-node-9
+  nodeNumber: 9
+  title: Volume of Cuboids
+  layer: foundation
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-8
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A toolbox measures 25 cm by 12 cm by 8 cm. Find its volume.
+      avatarIntro: Let's apply the volume formula to real objects with centimetre measurements!
+      mathTool: null
+      finalAnswer: 2,400 cm³
+      stepByStepGuideline:
+      - "Step 1: Identify dimensions - L = 25 cm, B = 12 cm, H = 8 cm."
+      - "Step 2: Apply V = L ×B ×H."
+      - "Step 3: V = 25 × 12 × 8."
+      - "Step 4: V = 300 × 8 = 2,400 cm³."
+      id: q9-1
+      questionGroup: q9
+    - problemText: A fish tank measures 40 cm by 20 cm by 25 cm. What is its volume?
+      mathTool: null
+      finalAnswer: 20,000 cm³
+      stepByStepGuideline:
+      - "Step 1: L = 40 cm, B = 20 cm, H = 25 cm."
+      - "Step 2: V = L ×B ×H = 40 × 20 × 25."
+      - "Step 3: V = 800 × 25 = 20,000 cm³."
+      id: q9-2
+      questionGroup: q9
+    - problemText: A jewelry box is 15 cm long, 10 cm wide, and 6 cm high. Calculate its volume.
+      mathTool: null
+      finalAnswer: 900 cm³
+      stepByStepGuideline:
+      - "Step 1: L = 15 cm, B = 10 cm, H = 6 cm."
+      - "Step 2: V = 15 × 10 × 6."
+      - "Step 3: V = 150 × 6 = 900 cm³."
+      id: q9-3
+      questionGroup: q9
+    - problemText: A classroom measures 9 m by 7 m by 3 m. Find its volume in cubic metres.
+      mathTool: null
+      finalAnswer: 189 m³
+      stepByStepGuideline:
+      - "Step 1: L = 9 m, B = 7 m, H = 3 m."
+      - "Step 2: V = L ×B ×H = 9 × 7 × 3."
+      - "Step 3: V = 63 × 3 = 189 m³."
+      id: q9-4
+      questionGroup: q9
+    - problemText: A shipping container is 12 m long, 4 m wide, and 3 m tall. What is its volume?
+      mathTool: null
+      finalAnswer: 144 m³
+      stepByStepGuideline:
+      - "Step 1: L = 12 m, B = 4 m, H = 3 m."
+      - "Step 2: V = 12 × 4 × 3."
+      - "Step 3: V = 48 × 3 = 144 m³."
+      id: q9-5
+      questionGroup: q9
+    - problemText: A lunchbox is 18 cm by 14 cm by 7 cm. Find its volume.
+      mathTool: null
+      finalAnswer: 1,764 cm³
+      stepByStepGuideline:
+      - "Step 1: L = 18 cm, B = 14 cm, H = 7 cm."
+      - "Step 2: V = 18 × 14 × 7."
+      - "Step 3: V = 252 × 7 = 1,764 cm³."
+      id: q9-6
+      questionGroup: q9
+
+- id: volume-node-10
+  nodeNumber: 10
+  title: Volume of Cubes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-9
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: What is special about finding the volume of a cube?
+      avatarIntro: A cube is a special cuboid where all edges are equal. This makes finding volume even easier!
+      mathTool: null
+      finalAnswer: All edges are equal, so Volume = side ×side ×side (or side cubed).
+      stepByStepGuideline:
+      - "Step 1: A cube has all edges the same length."
+      - "Step 2: If the edge is 's', then L = B = H = s."
+      - "Step 3: Volume = s ×s ×s = s3 (s cubed)."
+      - "Step 4: We only need to know one measurement!"
+      id: q10-1
+      questionGroup: q10
+    - problemText: A cube has edges of 5 cm. Find its volume.
+      mathTool: null
+      finalAnswer: 125 cm³
+      stepByStepGuideline:
+      - "Step 1: Edge length = 5 cm."
+      - "Step 2: Volume = 5 × 5 × 5."
+      - "Step 3: V = 25 × 5 = 125 cm³."
+      id: q10-2
+      questionGroup: q10
+    - problemText: A dice has edges of 2 cm each. What is its volume?
+      mathTool: null
+      finalAnswer: 8 cm³
+      stepByStepGuideline:
+      - "Step 1: Edge = 2 cm."
+      - "Step 2: V = 2 × 2 × 2."
+      - "Step 3: V = 4 × 2 = 8 cm³."
+      id: q10-3
+      questionGroup: q10
+    - problemText: A storage cube has edges of 4 m. Calculate its volume.
+      mathTool: null
+      finalAnswer: 64 m³
+      stepByStepGuideline:
+      - "Step 1: Edge = 4 m."
+      - "Step 2: V = 4 × 4 × 4."
+      - "Step 3: V = 16 × 4 = 64 m³."
+      id: q10-4
+      questionGroup: q10
+    - problemText: A rubik's cube toy has 3 cm edges. Find its volume.
+      mathTool: null
+      finalAnswer: 27 cm³
+      stepByStepGuideline:
+      - "Step 1: Edge = 3 cm."
+      - "Step 2: V = 3 × 3 × 3."
+      - "Step 3: V = 9 × 3 = 27 cm³."
+      id: q10-5
+      questionGroup: q10
+
+- id: volume-node-11
+  nodeNumber: 11
+  title: Finding Unknown Dimensions
+  layer: foundation
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-10
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A cuboid has volume 180 cm³. Its length is 9 cm and breadth is 5 cm. Find its height.
+      avatarIntro: Sometimes we know the volume and need to find a missing dimension. Let's work backwards using division!
+      mathTool: null
+      finalAnswer: 4 cm
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H, so 180 = 9 × 5 ×H."
+      - "Step 2: 180 = 45 ×H."
+      - "Step 3: H = 180 / 45 = 4."
+      - "Step 4: Height = 4 cm."
+      id: q11-1
+      questionGroup: q11
+    - problemText: A box has volume 240 cm³. Its length is 10 cm and height is 6 cm. Find the breadth.
+      mathTool: null
+      finalAnswer: 4 cm
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H, so 240 = 10 ×B × 6."
+      - "Step 2: 240 = 60 ×B."
+      - "Step 3: B = 240 / 60 = 4."
+      - "Step 4: Breadth = 4 cm."
+      id: q11-2
+      questionGroup: q11
+    - problemText: A container has volume 360 cm³, breadth 6 cm, and height 5 cm. What is its length?
+      mathTool: null
+      finalAnswer: 12 cm
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H, so 360 = L × 6 × 5."
+      - "Step 2: 360 = L × 30."
+      - "Step 3: L = 360 / 30 = 12."
+      - "Step 4: Length = 12 cm."
+      id: q11-3
+      questionGroup: q11
+    - problemText: A cube has volume 343 cm³. What is the length of each edge?
+      mathTool: null
+      finalAnswer: 7 cm
+      stepByStepGuideline:
+      - "Step 1: For a cube, V = edge ×edge ×edge."
+      - "Step 2: We need to find what number multiplied by itself 3 times gives 343."
+      - "Step 3: 7 × 7 × 7 = 49 × 7 = 343."
+      - "Step 4: Edge = 7 cm."
+      id: q11-4
+      questionGroup: q11
+    - problemText: A rectangular tank has volume 480 m³. Its length is 10 m and breadth is 8 m. Find the height.
+      mathTool: null
+      finalAnswer: 6 m
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H, so 480 = 10 × 8 ×H."
+      - "Step 2: 480 = 80 ×H."
+      - "Step 3: H = 480 / 80 = 6."
+      - "Step 4: Height = 6 m."
+      id: q11-5
+      questionGroup: q11
+    - problemText: A cuboid has volume 270 cm³. Its breadth is 5 cm and height is 9 cm. Find the length.
+      mathTool: null
+      finalAnswer: 6 cm
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H, so 270 = L × 5 × 9."
+      - "Step 2: 270 = L × 45."
+      - "Step 3: L = 270 / 45 = 6."
+      - "Step 4: Length = 6 cm."
+      id: q11-6
+      questionGroup: q11
+
+# ============================================
+# SUBTOPIC 4: Volume of Liquids
+# ============================================
+
+- id: volume-node-12
+  nodeNumber: 12
+  title: Litres and Millilitres
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-11
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: How many millilitres are in 1 litre?
+      avatarIntro: Now let's learn about measuring the volume of liquids! We use litres and millilitres for water, juice, and other liquids.
+      mathTool: null
+      finalAnswer: 1,000 ml
+      stepByStepGuideline:
+      - "Step 1: A litre is a unit for measuring liquid volume."
+      - "Step 2: Millilitre means 'one-thousandth of a litre'."
+      - "Step 3: 1 litre = 1,000 millilitres."
+      - "Step 4: We write this as 1 l = 1,000 ml."
+      id: q12-1
+      questionGroup: q12
+    - problemText: Convert 3 litres to millilitres.
+      mathTool: null
+      finalAnswer: 3,000 ml
+      stepByStepGuideline:
+      - "Step 1: 1 litre = 1,000 ml."
+      - "Step 2: 3 litres = 3 × 1,000 ml."
+      - "Step 3: 3 litres = 3,000 ml."
+      id: q12-2
+      questionGroup: q12
+    - problemText: Convert 5,500 ml to litres and millilitres.
+      mathTool: null
+      finalAnswer: 5 l 500 ml
+      stepByStepGuideline:
+      - "Step 1: 1,000 ml = 1 litre."
+      - "Step 2: 5,500 ml = 5,000 ml + 500 ml."
+      - "Step 3: 5,000 ml = 5 litres."
+      - "Step 4: So 5,500 ml = 5 l 500 ml."
+      id: q12-3
+      questionGroup: q12
+    - problemText: A bottle contains 2 l 350 ml of juice. Express this in millilitres.
+      mathTool: null
+      finalAnswer: 2,350 ml
+      stepByStepGuideline:
+      - "Step 1: Convert 2 litres to ml - 2 × 1,000 = 2,000 ml."
+      - "Step 2: Add the remaining 350 ml."
+      - "Step 3: Total = 2,000 + 350 = 2,350 ml."
+      id: q12-4
+      questionGroup: q12
+    - problemText: Express 8,750 ml in litres and millilitres.
+      mathTool: null
+      finalAnswer: 8 l 750 ml
+      stepByStepGuideline:
+      - "Step 1: Divide 8,750 by 1,000 to find litres."
+      - "Step 2: 8,750 = 8,000 + 750."
+      - "Step 3: 8,000 ml = 8 litres."
+      - "Step 4: Remaining 750 ml stays as ml."
+      - "Step 5: Answer = 8 l 750 ml."
+      id: q12-5
+      questionGroup: q12
+
+- id: volume-node-13
+  nodeNumber: 13
+  title: Connecting ml to cm³
+  layer: foundation
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-12
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: What is the relationship between 1 ml and 1 cm³?
+      avatarIntro: Here's an amazing connection - 1 millilitre equals exactly 1 cubic centimetre! This links solid and liquid volumes.
+      mathTool: null
+      finalAnswer: 1 ml = 1 cm³ (they are equal)
+      stepByStepGuideline:
+      - "Step 1: A millilitre is a unit for liquid volume."
+      - "Step 2: A cubic centimetre is a unit for solid volume."
+      - "Step 3: They measure the same amount of space."
+      - "Step 4: 1 ml = 1 cm³ exactly."
+      id: q13-1
+      questionGroup: q13
+    - problemText: Express 85 cm³ in millilitres.
+      mathTool: null
+      finalAnswer: 85 ml
+      stepByStepGuideline:
+      - "Step 1: 1 cm³ = 1 ml."
+      - "Step 2: 85 cm³ = 85 ml."
+      - "Step 3: The number stays the same."
+      id: q13-2
+      questionGroup: q13
+    - problemText: Convert 4.5 litres to cubic centimetres.
+      mathTool: null
+      finalAnswer: 4,500 cm³
+      stepByStepGuideline:
+      - "Step 1: First convert litres to ml - 4.5 l = 4,500 ml."
+      - "Step 2: Since 1 ml = 1 cm³..."
+      - "Step 3: 4,500 ml = 4,500 cm³."
+      id: q13-3
+      questionGroup: q13
+    - problemText: How many cm³ are in 1 litre?
+      mathTool: null
+      finalAnswer: 1,000 cm³
+      stepByStepGuideline:
+      - "Step 1: 1 litre = 1,000 ml."
+      - "Step 2: 1 ml = 1 cm³."
+      - "Step 3: So 1 litre = 1,000 cm³."
+      id: q13-4
+      questionGroup: q13
+    - problemText: A container has a volume of 2,500 cm³. Express this in litres and millilitres.
+      mathTool: null
+      finalAnswer: 2 l 500 ml
+      stepByStepGuideline:
+      - "Step 1: 2,500 cm³ = 2,500 ml (since 1 cm³ = 1 ml)."
+      - "Step 2: 2,500 ml = 2,000 ml + 500 ml."
+      - "Step 3: 2,000 ml = 2 litres."
+      - "Step 4: Answer = 2 l 500 ml."
+      id: q13-5
+      questionGroup: q13
+
+- id: volume-node-14
+  nodeNumber: 14
+  title: Volume of Containers
+  layer: foundation
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-13
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A rectangular container measures 12 cm by 8 cm by 10 cm and is completely filled with water. What is the volume of water in cm³?
+      avatarIntro: When a container is filled with liquid, the volume of liquid equals the volume of the container!
+      mathTool: null
+      finalAnswer: 960 cm³
+      stepByStepGuideline:
+      - "Step 1: Volume of container = L ×B ×H."
+      - "Step 2: V = 12 × 8 × 10."
+      - "Step 3: V = 96 × 10 = 960 cm³."
+      - "Step 4: Volume of water = 960 cm³."
+      id: q14-1
+      questionGroup: q14
+    - problemText: A tank measuring 25 cm by 16 cm by 20 cm is filled to the brim with juice. Find the volume of juice in ml.
+      mathTool: null
+      finalAnswer: 8,000 ml
+      stepByStepGuideline:
+      - "Step 1: V = 25 × 16 × 20 = 8,000 cm³."
+      - "Step 2: Since 1 cm³ = 1 ml..."
+      - "Step 3: Volume of juice = 8,000 ml."
+      id: q14-2
+      questionGroup: q14
+    - problemText: A fish tank is 50 cm long, 30 cm wide, and 40 cm high. If filled completely, how many litres of water would it hold?
+      mathTool: null
+      finalAnswer: 60 litres
+      stepByStepGuideline:
+      - "Step 1: V = 50 × 30 × 40 = 60,000 cm³."
+      - "Step 2: 60,000 cm³ = 60,000 ml."
+      - "Step 3: 60,000 ml = 60,000 / 1,000 = 60 litres."
+      id: q14-3
+      questionGroup: q14
+    - problemText: A rectangular container measures 15 cm by 12 cm by 8 cm. Express its capacity in litres and millilitres.
+      mathTool: null
+      finalAnswer: 1 l 440 ml
+      stepByStepGuideline:
+      - "Step 1: V = 15 × 12 × 8 = 1,440 cm³."
+      - "Step 2: 1,440 cm³ = 1,440 ml."
+      - "Step 3: 1,440 ml = 1,000 ml + 440 ml."
+      - "Step 4: = 1 l 440 ml."
+      id: q14-4
+      questionGroup: q14
+    - problemText: A cubical tank has edges of 10 cm. Find its capacity in litres.
+      mathTool: null
+      finalAnswer: 1 litre
+      stepByStepGuideline:
+      - "Step 1: V = 10 × 10 × 10 = 1,000 cm³."
+      - "Step 2: 1,000 cm³ = 1,000 ml."
+      - "Step 3: 1,000 ml = 1 litre."
+      id: q14-5
+      questionGroup: q14
+    - problemText: A paint can measures 14 cm by 14 cm by 25 cm. How many litres of paint can it hold?
+      mathTool: null
+      finalAnswer: 4.9 litres (or 4 l 900 ml)
+      stepByStepGuideline:
+      - "Step 1: V = 14 × 14 × 25."
+      - "Step 2: V = 196 × 25 = 4,900 cm³."
+      - "Step 3: 4,900 cm³ = 4,900 ml."
+      - "Step 4: 4,900 ml = 4 l 900 ml = 4.9 litres."
+      id: q14-6
+      questionGroup: q14
+
+- id: volume-node-15
+  nodeNumber: 15
+  title: Water Level Problems
+  layer: foundation
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-14
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A tank is 24 cm long, 18 cm wide, and 20 cm high. Water fills it to a height of 15 cm. What is the volume of water?
+      avatarIntro: When a tank is partially filled, we use the water height (not the tank height) to calculate the volume of water!
+      mathTool: null
+      finalAnswer: 6,480 cm³
+      stepByStepGuideline:
+      - "Step 1: Use water height, not tank height."
+      - "Step 2: Water volume = L ×B ×water height."
+      - "Step 3: V = 24 × 18 × 15."
+      - "Step 4: V = 432 × 15 = 6,480 cm³."
+      id: q15-1
+      questionGroup: q15
+    - problemText: A rectangular tank is 30 cm by 20 cm by 25 cm. It is filled with water to a depth of 18 cm. Find the volume of water in ml.
+      mathTool: null
+      finalAnswer: 10,800 ml
+      stepByStepGuideline:
+      - "Step 1: Water volume = L ×B ×water depth."
+      - "Step 2: V = 30 × 20 × 18."
+      - "Step 3: V = 600 × 18 = 10,800 cm³."
+      - "Step 4: 10,800 cm³ = 10,800 ml."
+      id: q15-2
+      questionGroup: q15
+    - problemText: A tank 40 cm by 25 cm by 30 cm has water at 22 cm height. How many litres of water are in the tank?
+      mathTool: null
+      finalAnswer: 22 litres
+      stepByStepGuideline:
+      - "Step 1: V = 40 × 25 × 22."
+      - "Step 2: V = 1,000 × 22 = 22,000 cm³."
+      - "Step 3: 22,000 cm³ = 22,000 ml."
+      - "Step 4: 22,000 ml = 22 litres."
+      id: q15-3
+      questionGroup: q15
+    - problemText: A container 35 cm by 20 cm by 24 cm has water filled to 16 cm. How much more water (in cm³) can be added to fill it?
+      mathTool: null
+      finalAnswer: 5,600 cm³
+      stepByStepGuideline:
+      - "Step 1: Empty height = 24 - 16 = 8 cm."
+      - "Step 2: Volume to fill = L ×B ×empty height."
+      - "Step 3: V = 35 × 20 × 8."
+      - "Step 4: V = 700 × 8 = 5,600 cm³."
+      id: q15-4
+      questionGroup: q15
+    - problemText: A fish tank is 45 cm long, 28 cm wide, and 35 cm high. The water level is at 25 cm. Find the volume of water in litres.
+      mathTool: null
+      finalAnswer: 31.5 litres (or 31 l 500 ml)
+      stepByStepGuideline:
+      - "Step 1: V = 45 × 28 × 25."
+      - "Step 2: V = 1,260 × 25 = 31,500 cm³."
+      - "Step 3: 31,500 cm³ = 31,500 ml."
+      - "Step 4: 31,500 ml = 31 l 500 ml = 31.5 litres."
+      id: q15-5
+      questionGroup: q15
+    - problemText: A tank 50 cm by 40 cm by 36 cm is half-filled with water. What is the volume of water?
+      mathTool: null
+      finalAnswer: 36,000 cm³ (or 36 litres)
+      stepByStepGuideline:
+      - "Step 1: Half-filled means water height = 36 / 2 = 18 cm."
+      - "Step 2: V = 50 × 40 × 18."
+      - "Step 3: V = 2,000 × 18 = 36,000 cm³."
+      - "Step 4: 36,000 cm³ = 36 litres."
+      id: q15-6
+      questionGroup: q15
+
+# ============================================
+# SUBTOPIC 5: Word Problems on Volume
+# ============================================
+
+- id: volume-node-16
+  nodeNumber: 16
+  title: Basic Volume Word Problems
+  layer: word-problems
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-15
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Mr Tan's fish tank is 48 cm long, 32 cm wide, and 28 cm high. The water level is at 20 cm. What is the volume of water in the tank?
+      avatarIntro: Now let's apply everything you've learned to solve real-world word problems about volume!
+      mathTool: null
+      finalAnswer: 30,720 cm³ (or 30 l 720 ml)
+      stepByStepGuideline:
+      - "Step 1: Identify the dimensions - L = 48 cm, B = 32 cm."
+      - "Step 2: Use water height, not tank height - water height = 20 cm."
+      - "Step 3: V = 48 × 32 × 20."
+      - "Step 4: V = 1,536 × 20 = 30,720 cm³."
+      - "Step 5: 30,720 cm³ = 30 l 720 ml."
+      id: q16-1
+      questionGroup: q16
+    - problemText: A rectangular storage box is 35 cm long, 25 cm wide, and 18 cm high. What is the volume of the box in litres?
+      mathTool: null
+      finalAnswer: 15.75 litres (or 15 l 750 ml)
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H = 35 × 25 × 18."
+      - "Step 2: V = 875 × 18 = 15,750 cm³."
+      - "Step 3: 15,750 cm³ = 15,750 ml."
+      - "Step 4: 15,750 ml = 15 l 750 ml = 15.75 litres."
+      id: q16-2
+      questionGroup: q16
+    - problemText: A school swimming pool is 25 m long, 12 m wide, and 2 m deep. If the pool is filled to the brim, what is the volume of water in the pool?
+      mathTool: null
+      finalAnswer: 600 m³
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H = 25 × 12 × 2."
+      - "Step 2: V = 300 × 2 = 600 m³."
+      id: q16-3
+      questionGroup: q16
+    - problemText: A living room is 6 m long, 5 m wide, and 3 m high. Find the volume of air in the room.
+      mathTool: null
+      finalAnswer: 90 m³
+      stepByStepGuideline:
+      - "Step 1: V = L ×B ×H = 6 × 5 × 3."
+      - "Step 2: V = 30 × 3 = 90 m³."
+      id: q16-4
+      questionGroup: q16
+    - problemText: A rectangular water tank is 42 cm long, 30 cm wide, and 25 cm high. Mei fills it completely using a 1.5-litre bottle. How many bottles does she need?
+      mathTool: null
+      finalAnswer: 21 bottles
+      stepByStepGuideline:
+      - "Step 1: V = 42 × 30 × 25 = 31,500 cm³."
+      - "Step 2: 31,500 cm³ = 31,500 ml = 31.5 litres."
+      - "Step 3: Number of bottles = 31.5 / 1.5 = 21 bottles."
+      id: q16-5
+      questionGroup: q16
+
+- id: volume-node-17
+  nodeNumber: 17
+  title: Water Transfer Problems
+  layer: word-problems
+  problemsRequired: 5
+  prerequisites:
+    - volume-node-16
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Container A is 28 cm by 24 cm by 20 cm and is filled with water to a height of 15 cm. All the water is poured into Container B which is 35 cm by 20 cm by 18 cm. What is the height of water in Container B?
+      avatarIntro: Water transfer problems involve pouring water from one container to another. The volume of water stays the same!
+      mathTool: null
+      finalAnswer: 14.4 cm
+      stepByStepGuideline:
+      - "Step 1: Volume in A = 28 × 24 × 15 = 10,080 cm³."
+      - "Step 2: This water goes into Container B."
+      - "Step 3: Base area of B = 35 × 20 = 700 cm2."
+      - "Step 4: Height in B = Volume / Base area = 10,080 / 700 = 14.4 cm."
+      id: q17-1
+      questionGroup: q17
+    - problemText: Tank P (40 cm by 30 cm by 25 cm) is filled with 18 litres of water. Some water is poured into Tank Q (25 cm by 20 cm by 15 cm) until it is full. How much water is left in Tank P?
+      mathTool: null
+      finalAnswer: 10,500 cm³ (or 10 l 500 ml)
+      stepByStepGuideline:
+      - "Step 1: Water in P = 18 litres = 18,000 cm³."
+      - "Step 2: Capacity of Q = 25 × 20 × 15 = 7,500 cm³."
+      - "Step 3: Water left in P = 18,000 - 7,500 = 10,500 cm³."
+      - "Step 4: = 10 l 500 ml."
+      id: q17-2
+      questionGroup: q17
+    - problemText: A jug holds 2.4 litres of water. How many times must the jug be emptied into a tank measuring 36 cm by 20 cm by 30 cm to fill the tank completely?
+      mathTool: null
+      finalAnswer: 9 times
+      stepByStepGuideline:
+      - "Step 1: Tank volume = 36 × 20 × 30 = 21,600 cm³ = 21.6 litres."
+      - "Step 2: Number of jugs = 21.6 / 2.4 = 9."
+      - "Step 3: The jug must be emptied 9 times."
+      id: q17-3
+      questionGroup: q17
+    - problemText: Ahmad uses buckets that hold 4.5 litres each to fill a fish tank 54 cm by 40 cm by 30 cm. How many full buckets does he need?
+      mathTool: null
+      finalAnswer: 15 buckets (14.4, rounded up to 15)
+      stepByStepGuideline:
+      - "Step 1: Tank volume = 54 × 40 × 30 = 64,800 cm³ = 64.8 litres."
+      - "Step 2: Number of buckets = 64.8 / 4.5 = 14.4."
+      - "Step 3: He needs 15 full buckets (can't use a partial bucket)."
+      id: q17-4
+      questionGroup: q17
+    - problemText: A tank 45 cm by 32 cm by 28 cm contains water at 20 cm height. 12 litres of water is poured out. What is the new water height?
+      mathTool: null
+      finalAnswer: 11.67 cm (approximately 11.7 cm)
+      stepByStepGuideline:
+      - "Step 1: Original water = 45 × 32 × 20 = 28,800 cm³."
+      - "Step 2: Water poured out = 12 litres = 12,000 cm³."
+      - "Step 3: Water remaining = 28,800 - 12,000 = 16,800 cm³."
+      - "Step 4: Base area = 45 × 32 = 1,440 cm2."
+      - "Step 5: New height = 16,800 / 1,440 = 11.67 cm."
+      id: q17-5
+      questionGroup: q17
+
+- id: volume-node-18
+  nodeNumber: 18
+  title: Fractional Fill Problems
+  layer: word-problems
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-17
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A rectangular tank 36 cm by 24 cm by 20 cm is $\\frac{3}{4}$ full of water. What is the volume of water in the tank?
+      avatarIntro: When a tank is partially filled with a fraction, we find the water height by multiplying the fraction by the tank height!
+      mathTool: null
+      finalAnswer: 12,960 cm³
+      stepByStepGuideline:
+      - "Step 1: Water height = $\\frac{3}{4}$ × 20 = 15 cm."
+      - "Step 2: Water volume = 36 × 24 × 15."
+      - "Step 3: V = 864 × 15 = 12,960 cm³."
+      id: q18-1
+      questionGroup: q18
+    - problemText: A tank 40 cm by 30 cm by 24 cm is $\\frac{1}{2}$ full of water. How many litres of water are in the tank?
+      mathTool: null
+      finalAnswer: 14.4 litres
+      stepByStepGuideline:
+      - "Step 1: Water height = $\\frac{1}{2}$ × 24 = 12 cm."
+      - "Step 2: V = 40 × 30 × 12 = 14,400 cm³."
+      - "Step 3: 14,400 cm³ = 14,400 ml = 14.4 litres."
+      id: q18-2
+      questionGroup: q18
+    - problemText: A container 48 cm by 32 cm by 27 cm is $\\frac{2}{3}$ full of juice. How many litres of juice are there?
+      mathTool: null
+      finalAnswer: 27.648 litres (or about 27 l 648 ml)
+      stepByStepGuideline:
+      - "Step 1: Juice height = $\\frac{2}{3}$ × 27 = 18 cm."
+      - "Step 2: V = 48 × 32 × 18 = 27,648 cm³."
+      - "Step 3: 27,648 cm³ = 27.648 litres."
+      id: q18-3
+      questionGroup: q18
+    - problemText: A tank 50 cm by 40 cm by 30 cm is $\\frac{2}{5}$ full. How much more water is needed to fill it completely?
+      mathTool: null
+      finalAnswer: 36,000 cm³ (or 36 litres)
+      stepByStepGuideline:
+      - "Step 1: Current water height = $\\frac{2}{5}$ × 30 = 12 cm."
+      - "Step 2: Empty height = 30 - 12 = 18 cm."
+      - "Step 3: Volume to fill = 50 × 40 × 18 = 36,000 cm³."
+      - "Step 4: = 36 litres needed."
+      id: q18-4
+      questionGroup: q18
+    - problemText: A tank 45 cm by 36 cm by 25 cm is $\\frac{4}{5}$ full. Then 8.1 litres of water is removed. What fraction of the tank is now filled?
+      mathTool: null
+      finalAnswer: $\\frac{3}{5}$ (or 60%)
+      stepByStepGuideline:
+      - "Step 1: Original water height = $\\frac{4}{5}$ × 25 = 20 cm."
+      - "Step 2: Original volume = 45 × 36 × 20 = 32,400 cm³."
+      - "Step 3: Water removed = 8.1 l = 8,100 cm³."
+      - "Step 4: Remaining = 32,400 - 8,100 = 24,300 cm³."
+      - "Step 5: Tank capacity = 45 × 36 × 25 = 40,500 cm³."
+      - "Step 6: Fraction filled = 24,300 ÷ 40,500 = $\\frac{3}{5}$."
+      id: q18-5
+      questionGroup: q18
+    - problemText: Tank A (30 cm by 25 cm by 24 cm) is $\\frac{5}{6}$ full. Tank B (36 cm by 20 cm by 20 cm) is $\\frac{3}{4}$ full. Which tank has more water?
+      mathTool: null
+      finalAnswer: Tank A has more water (15,000 cm³ vs 10,800 cm³)
+      stepByStepGuideline:
+      - "Step 1: Tank A water height = $\\frac{5}{6}$ × 24 = 20 cm."
+      - "Step 2: Tank A water = 30 × 25 × 20 = 15,000 cm³."
+      - "Step 3: Tank B water height = $\\frac{3}{4}$ × 20 = 15 cm."
+      - "Step 4: Tank B water = 36 × 20 × 15 = 10,800 cm³."
+      - "Step 5: 15,000 > 10,800, so Tank A has more water."
+      id: q18-6
+      questionGroup: q18
+
+- id: volume-node-19
+  nodeNumber: 19
+  title: Multi-Step Volume Problems
+  layer: word-problems
+  problemsRequired: 6
+  prerequisites:
+    - volume-node-18
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A rainwater tank 80 cm by 60 cm by 50 cm had 72 litres of water. After a storm, it was $\\frac{3}{4}$ full. How many litres of rainwater was collected?
+      avatarIntro: Let's solve challenging multi-step problems that combine different volume concepts!
+      mathTool: null
+      finalAnswer: 108 litres
+      stepByStepGuideline:
+      - "Step 1: Initial water = 72 litres = 72,000 cm³."
+      - "Step 2: After storm, water height = $\\frac{3}{4}$ × 50 = 37.5 cm."
+      - "Step 3: Final water = 80 × 60 × 37.5 = 180,000 cm³ = 180 litres."
+      - "Step 4: Rain collected = 180 - 72 = 108 litres."
+      id: q19-1
+      questionGroup: q19
+    - problemText: A tank 55 cm by 44 cm by 40 cm is $\\frac{1}{4}$ full of water. Water is added until it is $\\frac{3}{4}$ full. Then 15.4 litres is removed. How many litres remain?
+      mathTool: null
+      finalAnswer: 57.2 litres
+      stepByStepGuideline:
+      - "Step 1: Tank capacity = 55 × 44 × 40 = 96,800 cm³."
+      - "Step 2: At $\\frac{3}{4}$ full, water = $\\frac{3}{4}$ × 96,800 = 72,600 cm³ = 72.6 litres."
+      - "Step 3: Water removed = 15.4 litres."
+      - "Step 4: Remaining = 72.6 - 15.4 = 57.2 litres."
+      id: q19-2
+      questionGroup: q19
+    - problemText: Container A (42 cm by 35 cm by 30 cm) is completely filled with water. The water is poured equally into 3 identical Container Bs. If each Container B is 35 cm by 28 cm and the water reaches exactly to the brim, what is the height of each Container B?
+      mathTool: null
+      finalAnswer: 15 cm
+      stepByStepGuideline:
+      - "Step 1: Water in A = 42 × 35 × 30 = 44,100 cm³."
+      - "Step 2: Water per Container B = 44,100 / 3 = 14,700 cm³."
+      - "Step 3: Base area of B = 35 × 28 = 980 cm2."
+      - "Step 4: Height of B = 14,700 / 980 = 15 cm."
+      id: q19-3
+      questionGroup: q19
+    - problemText: A tank 60 cm by 45 cm by 40 cm contains water at 25 cm height. The water is shared equally among 5 smaller containers. How many litres does each smaller container receive?
+      mathTool: null
+      finalAnswer: 13.5 litres
+      stepByStepGuideline:
+      - "Step 1: Water in tank = 60 × 45 × 25 = 67,500 cm³."
+      - "Step 2: Water per container = 67,500 / 5 = 13,500 cm³."
+      - "Step 3: = 13,500 ml = 13.5 litres each."
+      id: q19-4
+      questionGroup: q19
+    - problemText: A cubical tank of edge 30 cm is $\\frac{2}{3}$ full. Water is added until it overflows. How many litres of water was added?
+      mathTool: null
+      finalAnswer: 9 litres
+      stepByStepGuideline:
+      - "Step 1: Tank capacity = 30 × 30 × 30 = 27,000 cm³."
+      - "Step 2: At $\\frac{2}{3}$ full, water = $\\frac{2}{3}$ × 27,000 = 18,000 cm³."
+      - "Step 3: Space remaining = 27,000 - 18,000 = 9,000 cm³."
+      - "Step 4: Water added = 9,000 cm³ = 9 litres."
+      id: q19-5
+      questionGroup: q19
+    - problemText: Mrs Lee has a rectangular pond 5 m by 4 m by 2 m that is $\\frac{1}{4}$ full of water. She adds 20 m³ of water. What fraction of the pond is now filled?
+      mathTool: null
+      finalAnswer: $\\frac{3}{4}$
+      stepByStepGuideline:
+      - "Step 1: Pond capacity = 5 × 4 × 2 = 40 m³."
+      - "Step 2: Initial water = $\\frac{1}{4}$ × 40 = 10 m³."
+      - "Step 3: After adding water = 10 + 20 = 30 m³."
+      - "Step 4: Fraction filled = 30 ÷ 40 = $\\frac{3}{4}$."
+      id: q19-6
+      questionGroup: q19

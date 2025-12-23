@@ -19,6 +19,9 @@ export class GeminiProvider implements AIProvider {
 
   async generateContent(prompt: string, _maxTokens?: number): Promise<string> {
     try {
+      // Default to 10000 tokens for response
+      const outputTokens = _maxTokens ?? 10000;
+
       // Add 2-minute timeout (increased for batch generation with theory content)
       const response = await this.withTimeout(
         this.ai.models.generateContent({
@@ -26,12 +29,27 @@ export class GeminiProvider implements AIProvider {
           contents: prompt,
           config: {
             temperature: this.temperature,
-            ...(_maxTokens && { maxOutputTokens: _maxTokens })
+            maxOutputTokens: outputTokens,
+            thinkingConfig: {
+              thinkingLevel: 'MEDIUM'  // Balanced reasoning without excessive tokens
+            } as any
           }
         }),
         120000, // 120 seconds (2 minutes)
         'Gemini API request timed out after 120 seconds'
       );
+
+      // Check for truncation BEFORE processing response
+      const finishReason = (response as any).candidates?.[0]?.finishReason;
+      if (finishReason === 'MAX_TOKENS') {
+        console.warn('⚠️ Gemini response truncated! Finish reason: MAX_TOKENS');
+        throw new AIServiceError(
+          AIErrorType.TRUNCATED_RESPONSE,
+          null,
+          true,  // retryable - triggers Claude fallback
+          'Gemini response truncated due to token limit'
+        );
+      }
 
       // Debug logging to diagnose truncation issues
       console.log('🔍 Gemini Response Debug:', {

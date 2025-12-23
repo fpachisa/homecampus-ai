@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "P5/Maths/p5-math-volume.yaml",
+      "displayName": "P5 Volume",
+      "category": "p5-math-volume"
+    },
+    {
       "filename": "S1/Maths/s1-math-angles-parallel-lines.yaml",
       "displayName": "Angles & Parallel Lines",
       "category": "s1-math-angles-parallel-lines"
