@@ -447,6 +447,44 @@ section: "adding-fractions-same-denominator"  # Exact match
 2. Path starts with `/curriculum-content/`
 3. Filename matches exactly (case-sensitive)
 
+### Pitfall 7: Duplicate Content (Plagiarism)
+
+**Problem:** Problems are direct copies from the notes files.
+
+**Solution:** 
+- Use notes only for inspiration and structure.
+- **MUST** change context, numbers, and names.
+- Ensure problems are unique to the practice module.
+
+### Pitfall 8: Currency Symbol Rendering
+
+**Problem:** Currency `$` renders as LaTeX delimiter, causing jumbled text.
+
+**Wrong:**
+```yaml
+problemText: "Cost is $5.00"  # Interpreted as math start
+```
+
+**Correct:**
+```yaml
+problemText: "Cost is \\$5.00"  # Escaped dollar sign
+```
+
+### Pitfall 9: SVG Visibility
+
+**Problem:** SVG diagrams are only visible in the solution, not the question.
+
+**Wrong:** `solutionDiagramSvg` (Hidden until solution shown)
+**Correct:** `diagramSvg` (Visible with question)
+
+**Rule:** If the diagram is needed to SOLVE the problem, use `diagramSvg`.
+
+### Pitfall 10: Missing Avatar Intro
+
+**Problem:** Questions lack engagement and guidance.
+
+**Rule:** The FIRST question of EVERY node **MUST** have an `avatarIntro` field.
+
 ---
 
 ## Example: Complete Node
@@ -543,5 +581,6 @@ section: "adding-fractions-same-denominator"  # Exact match
 - v3.0: Complete rewrite - Direct YAML creation workflow (no AI generation scripts)
 - v2.2: Added Step 3 - Notes Files Review
 - v2.1: Added complex parameter lessons
+- v2.449: Added new pitfalls for content uniqueness, currency symbols, SVG visibility, and avatar intro.
 - v2.0: 4-step workflow with exemplar templates
 - v1.0: Initial version

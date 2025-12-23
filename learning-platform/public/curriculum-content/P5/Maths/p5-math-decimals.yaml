@@ -1,0 +1,1068 @@
+# P5 Mathematics - Decimals Practice Module
+# Covers: Multiplying/Dividing by 10, 100, 1000 and multiples, Unit Conversions, Word Problems
+# Total: 14 nodes, ~78 pre-written questions
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Multiplying by 10, 100, 1000
+  # ============================================
+
+  - id: decimals-multiply-10
+    nodeNumber: 1
+    title: "Multiplying Decimals by 10"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "multiply-by-10"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Multiply decimals by 10 by moving the decimal point 1 place to the right"
+        - "Focus on understanding the place value pattern"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "m10-q1"
+          problemText: "Calculate: $0.3 \\times 10$"
+          avatarIntro: "Let's learn how to multiply decimals by 10! There's a simple pattern - watch what happens to the decimal point."
+          finalAnswer: "$3$"
+          stepByStepGuideline:
+            - "When we multiply by 10, the decimal point moves 1 place to the RIGHT"
+            - "0.3 has the decimal point after the 0"
+            - "Move it 1 place right: 0.3 becomes 3.0 which is just 3"
+            - "Answer: $3$"
+
+        - id: "m10-q2"
+          problemText: "Calculate: $1.25 \\times 10$"
+          finalAnswer: "$12.5$"
+          stepByStepGuideline:
+            - "Multiply by 10 = move decimal 1 place to the RIGHT"
+            - "1.25 → the decimal moves from after the 1 to after the 2"
+            - "1.25 becomes 12.5"
+            - "Answer: $12.5$"
+
+        - id: "m10-q3"
+          problemText: "Calculate: $0.07 \\times 10$"
+          finalAnswer: "$0.7$"
+          stepByStepGuideline:
+            - "Multiply by 10 = move decimal 1 place to the RIGHT"
+            - "0.07 → move the decimal point 1 place right"
+            - "0.07 becomes 0.7"
+            - "Answer: $0.7$"
+
+        - id: "m10-q4"
+          problemText: "Calculate: $5.6 \\times 10$"
+          finalAnswer: "$56$"
+          stepByStepGuideline:
+            - "Multiply by 10 = move decimal 1 place to the RIGHT"
+            - "5.6 → the decimal moves from after the 5 to after the 6"
+            - "5.6 becomes 56.0 which is just 56"
+            - "Answer: $56$"
+
+        - id: "m10-q5"
+          problemText: "Calculate: $0.485 \\times 10$"
+          finalAnswer: "$4.85$"
+          stepByStepGuideline:
+            - "Multiply by 10 = move decimal 1 place to the RIGHT"
+            - "0.485 → move the decimal point 1 place right"
+            - "0.485 becomes 4.85"
+            - "Answer: $4.85$"
+
+  - id: decimals-multiply-100-1000
+    nodeNumber: 2
+    title: "Multiplying Decimals by 100 and 1000"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - decimals-multiply-10
+    descriptor:
+      section: "multiply-by-100-1000"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Multiply decimals by 100 (2 places right) and 1000 (3 places right)"
+        - "Add zeros when decimal places run out"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "m100-q1"
+          problemText: "Calculate: $1.25 \\times 100$"
+          avatarIntro: "Now let's try multiplying by 100. The pattern is similar - we just move the decimal point more places!"
+          finalAnswer: "$125$"
+          stepByStepGuideline:
+            - "Multiply by 100 = move decimal 2 places to the RIGHT"
+            - "100 has 2 zeros, so we move 2 places"
+            - "1.25 → 12.5 → 125"
+            - "Answer: $125$"
+
+        - id: "m100-q2"
+          problemText: "Calculate: $0.41 \\times 100$"
+          finalAnswer: "$41$"
+          stepByStepGuideline:
+            - "Multiply by 100 = move decimal 2 places to the RIGHT"
+            - "0.41 → 4.1 → 41"
+            - "Answer: $41$"
+
+        - id: "m100-q3"
+          problemText: "Calculate: $1.25 \\times 1000$"
+          finalAnswer: "$1250$"
+          stepByStepGuideline:
+            - "Multiply by 1000 = move decimal 3 places to the RIGHT"
+            - "1000 has 3 zeros, so we move 3 places"
+            - "1.25 → 12.5 → 125 → 1250 (add a zero)"
+            - "Answer: $1250$"
+
+        - id: "m100-q4"
+          problemText: "Calculate: $0.41 \\times 1000$"
+          finalAnswer: "$410$"
+          stepByStepGuideline:
+            - "Multiply by 1000 = move decimal 3 places to the RIGHT"
+            - "0.41 → 4.1 → 41 → 410 (add a zero)"
+            - "We add a zero because we only had 2 decimal digits"
+            - "Answer: $410$"
+
+        - id: "m100-q5"
+          problemText: "Calculate: $2.002 \\times 100$"
+          finalAnswer: "$200.2$"
+          stepByStepGuideline:
+            - "Multiply by 100 = move decimal 2 places to the RIGHT"
+            - "2.002 → 20.02 → 200.2"
+            - "Notice the zeros stay in place!"
+            - "Answer: $200.2$"
+
+        - id: "m100-q6"
+          problemText: "Calculate: $0.058 \\times 1000$"
+          finalAnswer: "$58$"
+          stepByStepGuideline:
+            - "Multiply by 1000 = move decimal 3 places to the RIGHT"
+            - "0.058 → 0.58 → 5.8 → 58"
+            - "Answer: $58$"
+
+  # ============================================
+  # SUBTOPIC 2: Multiplying by Tens, Hundreds, Thousands
+  # ============================================
+
+  - id: decimals-decomposition-multiply
+    nodeNumber: 3
+    title: "Breaking Down Multipliers (Decomposition)"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - decimals-multiply-100-1000
+    descriptor:
+      section: "decomposition-strategy"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand how to break down multipliers like 20, 300, 5000"
+        - "Recognize that 20 = 2 x 10, 300 = 3 x 100, etc."
+      contexts:
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "decomp-q1"
+          problemText: "Break down the number 20 into a single digit times a power of 10."
+          avatarIntro: "Before we multiply by numbers like 20 or 300, let's learn a clever trick - breaking them down into simpler parts!"
+          finalAnswer: "$20 = 2 \\times 10$"
+          stepByStepGuideline:
+            - "Look at 20 - what single digit and power of 10 make it?"
+            - "20 = 2 × 10"
+            - "This means: to multiply by 20, we can multiply by 2, then by 10"
+            - "Answer: $20 = 2 \\times 10$"
+
+        - id: "decomp-q2"
+          problemText: "Break down the number 300 into a single digit times a power of 10."
+          finalAnswer: "$300 = 3 \\times 100$"
+          stepByStepGuideline:
+            - "Look at 300 - what single digit and power of 10 make it?"
+            - "300 = 3 × 100"
+            - "This means: to multiply by 300, we can multiply by 3, then by 100"
+            - "Answer: $300 = 3 \\times 100$"
+
+        - id: "decomp-q3"
+          problemText: "Break down the number 5000 into a single digit times a power of 10."
+          finalAnswer: "$5000 = 5 \\times 1000$"
+          stepByStepGuideline:
+            - "Look at 5000 - what single digit and power of 10 make it?"
+            - "5000 = 5 × 1000"
+            - "This means: to multiply by 5000, we can multiply by 5, then by 1000"
+            - "Answer: $5000 = 5 \\times 1000$"
+
+        - id: "decomp-q4"
+          problemText: "Break down the number 60 into a single digit times a power of 10."
+          finalAnswer: "$60 = 6 \\times 10$"
+          stepByStepGuideline:
+            - "Look at 60 - what single digit and power of 10 make it?"
+            - "60 = 6 × 10"
+            - "Answer: $60 = 6 \\times 10$"
+
+        - id: "decomp-q5"
+          problemText: "Break down the number 4000 into a single digit times a power of 10."
+          finalAnswer: "$4000 = 4 \\times 1000$"
+          stepByStepGuideline:
+            - "Look at 4000 - what single digit and power of 10 make it?"
+            - "4000 = 4 × 1000"
+            - "Answer: $4000 = 4 \\times 1000$"
+
+  - id: decimals-multiply-tens-hundreds
+    nodeNumber: 4
+    title: "Multiplying by Tens and Hundreds"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - decimals-decomposition-multiply
+    descriptor:
+      section: "multiply-by-tens-hundreds"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply the two-step method: multiply by digit, then by 10 or 100"
+        - "Calculate decimal × 20, 30, 40, 200, 300, 600, etc."
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "mth-q1"
+          problemText: "Calculate: $2.3 \\times 20$"
+          avatarIntro: "Now let's use our decomposition trick! To multiply by 20, we'll multiply by 2 first, then by 10."
+          finalAnswer: "$46$"
+          stepByStepGuideline:
+            - "Step 1: Break down 20 = 2 × 10"
+            - "Step 2: First multiply 2.3 × 2 = 4.6"
+            - "Step 3: Then multiply 4.6 × 10 = 46"
+            - "Answer: $46$"
+
+        - id: "mth-q2"
+          problemText: "Calculate: $3.12 \\times 30$"
+          finalAnswer: "$93.6$"
+          stepByStepGuideline:
+            - "Step 1: Break down 30 = 3 × 10"
+            - "Step 2: First multiply 3.12 × 3 = 9.36"
+            - "Step 3: Then multiply 9.36 × 10 = 93.6"
+            - "Answer: $93.6$"
+
+        - id: "mth-q3"
+          problemText: "Calculate: $1.9 \\times 200$"
+          finalAnswer: "$380$"
+          stepByStepGuideline:
+            - "Step 1: Break down 200 = 2 × 100"
+            - "Step 2: First multiply 1.9 × 2 = 3.8"
+            - "Step 3: Then multiply 3.8 × 100 = 380"
+            - "Answer: $380$"
+
+        - id: "mth-q4"
+          problemText: "Calculate: $4.15 \\times 600$"
+          finalAnswer: "$2490$"
+          stepByStepGuideline:
+            - "Step 1: Break down 600 = 6 × 100"
+            - "Step 2: First multiply 4.15 × 6 = 24.9"
+            - "Step 3: Then multiply 24.9 × 100 = 2490"
+            - "Answer: $2490$"
+
+        - id: "mth-q5"
+          problemText: "Calculate: $0.63 \\times 20$"
+          finalAnswer: "$12.6$"
+          stepByStepGuideline:
+            - "Step 1: Break down 20 = 2 × 10"
+            - "Step 2: First multiply 0.63 × 2 = 1.26"
+            - "Step 3: Then multiply 1.26 × 10 = 12.6"
+            - "Answer: $12.6$"
+
+        - id: "mth-q6"
+          problemText: "Calculate: $5.1 \\times 40$"
+          finalAnswer: "$204$"
+          stepByStepGuideline:
+            - "Step 1: Break down 40 = 4 × 10"
+            - "Step 2: First multiply 5.1 × 4 = 20.4"
+            - "Step 3: Then multiply 20.4 × 10 = 204"
+            - "Answer: $204$"
+
+  - id: decimals-multiply-thousands
+    nodeNumber: 5
+    title: "Multiplying by Thousands"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - decimals-multiply-tens-hundreds
+    descriptor:
+      section: "multiply-by-thousands"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply the two-step method with thousands: multiply by digit, then by 1000"
+        - "Calculate decimal × 2000, 3000, 5000, etc."
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "mthou-q1"
+          problemText: "Calculate: $5.7 \\times 3000$"
+          avatarIntro: "Now let's try multiplying by thousands! Same method - break it down first."
+          finalAnswer: "$17100$"
+          stepByStepGuideline:
+            - "Step 1: Break down 3000 = 3 × 1000"
+            - "Step 2: First multiply 5.7 × 3 = 17.1"
+            - "Step 3: Then multiply 17.1 × 1000 = 17100"
+            - "Answer: $17100$"
+
+        - id: "mthou-q2"
+          problemText: "Calculate: $8.25 \\times 5000$"
+          finalAnswer: "$41250$"
+          stepByStepGuideline:
+            - "Step 1: Break down 5000 = 5 × 1000"
+            - "Step 2: First multiply 8.25 × 5 = 41.25"
+            - "Step 3: Then multiply 41.25 × 1000 = 41250"
+            - "Answer: $41250$"
+
+        - id: "mthou-q3"
+          problemText: "Calculate: $0.732 \\times 3000$"
+          finalAnswer: "$2196$"
+          stepByStepGuideline:
+            - "Step 1: Break down 3000 = 3 × 1000"
+            - "Step 2: First multiply 0.732 × 3 = 2.196"
+            - "Step 3: Then multiply 2.196 × 1000 = 2196"
+            - "Answer: $2196$"
+
+        - id: "mthou-q4"
+          problemText: "Calculate: $12.52 \\times 7000$"
+          finalAnswer: "$87640$"
+          stepByStepGuideline:
+            - "Step 1: Break down 7000 = 7 × 1000"
+            - "Step 2: First multiply 12.52 × 7 = 87.64"
+            - "Step 3: Then multiply 87.64 × 1000 = 87640"
+            - "Answer: $87640$"
+
+        - id: "mthou-q5"
+          problemText: "Calculate: $2.08 \\times 4000$"
+          finalAnswer: "$8320$"
+          stepByStepGuideline:
+            - "Step 1: Break down 4000 = 4 × 1000"
+            - "Step 2: First multiply 2.08 × 4 = 8.32"
+            - "Step 3: Then multiply 8.32 × 1000 = 8320"
+            - "Answer: $8320$"
+
+  # ============================================
+  # SUBTOPIC 3: Dividing by 10, 100, 1000
+  # ============================================
+
+  - id: decimals-divide-10-100-1000
+    nodeNumber: 6
+    title: "Dividing Decimals by 10, 100, and 1000"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - decimals-multiply-thousands
+    descriptor:
+      section: "divide-by-10-100-1000"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Divide decimals by 10 (1 place left), 100 (2 places left), 1000 (3 places left)"
+        - "Add leading zeros when needed"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "d10-q1"
+          problemText: "Calculate: $12.4 \\div 10$"
+          avatarIntro: "Now let's learn about dividing! When we divide by 10, 100, or 1000, the decimal point moves to the LEFT instead of the right."
+          finalAnswer: "$1.24$"
+          stepByStepGuideline:
+            - "Divide by 10 = move decimal 1 place to the LEFT"
+            - "12.4 → move decimal 1 place left"
+            - "12.4 becomes 1.24"
+            - "Answer: $1.24$"
+
+        - id: "d10-q2"
+          problemText: "Calculate: $12.4 \\div 100$"
+          finalAnswer: "$0.124$"
+          stepByStepGuideline:
+            - "Divide by 100 = move decimal 2 places to the LEFT"
+            - "12.4 → 1.24 → 0.124"
+            - "We need to add a leading zero"
+            - "Answer: $0.124$"
+
+        - id: "d10-q3"
+          problemText: "Calculate: $1.3 \\div 10$"
+          finalAnswer: "$0.13$"
+          stepByStepGuideline:
+            - "Divide by 10 = move decimal 1 place to the LEFT"
+            - "1.3 → move decimal 1 place left"
+            - "1.3 becomes 0.13 (add a leading zero)"
+            - "Answer: $0.13$"
+
+        - id: "d10-q4"
+          problemText: "Calculate: $45.6 \\div 10$"
+          finalAnswer: "$4.56$"
+          stepByStepGuideline:
+            - "Divide by 10 = move decimal 1 place to the LEFT"
+            - "45.6 → move decimal 1 place left"
+            - "45.6 becomes 4.56"
+            - "Answer: $4.56$"
+
+        - id: "d10-q5"
+          problemText: "Calculate: $7.5 \\div 100$"
+          finalAnswer: "$0.075$"
+          stepByStepGuideline:
+            - "Divide by 100 = move decimal 2 places to the LEFT"
+            - "7.5 → 0.75 → 0.075"
+            - "We need to add leading zeros"
+            - "Answer: $0.075$"
+
+        - id: "d10-q6"
+          problemText: "Calculate: $234 \\div 1000$"
+          finalAnswer: "$0.234$"
+          stepByStepGuideline:
+            - "Divide by 1000 = move decimal 3 places to the LEFT"
+            - "234 = 234.0 → 23.4 → 2.34 → 0.234"
+            - "We add a leading zero before the decimal"
+            - "Answer: $0.234$"
+
+  # ============================================
+  # SUBTOPIC 4: Dividing by Tens, Hundreds, Thousands
+  # ============================================
+
+  - id: decimals-decomposition-divide
+    nodeNumber: 7
+    title: "Breaking Down Divisors for Division"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - decimals-divide-10-100-1000
+    descriptor:
+      section: "division-decomposition"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Understand how to break down divisors like 20, 400, 8000 for division"
+        - "Plan the two-step division process"
+      contexts:
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "ddec-q1"
+          problemText: "To divide by 20, what two simpler divisions can we do?"
+          avatarIntro: "Just like we broke down numbers for multiplication, we can do the same for division! Let's learn the strategy."
+          finalAnswer: "Divide by 2, then divide by 10"
+          stepByStepGuideline:
+            - "20 = 2 × 10"
+            - "So to divide by 20, we can:"
+            - "Step 1: Divide by 2"
+            - "Step 2: Then divide by 10"
+            - "Answer: Divide by 2, then divide by 10"
+
+        - id: "ddec-q2"
+          problemText: "To divide by 400, what two simpler divisions can we do?"
+          finalAnswer: "Divide by 4, then divide by 100"
+          stepByStepGuideline:
+            - "400 = 4 × 100"
+            - "So to divide by 400, we can:"
+            - "Step 1: Divide by 4"
+            - "Step 2: Then divide by 100"
+            - "Answer: Divide by 4, then divide by 100"
+
+        - id: "ddec-q3"
+          problemText: "To divide by 8000, what two simpler divisions can we do?"
+          finalAnswer: "Divide by 8, then divide by 1000"
+          stepByStepGuideline:
+            - "8000 = 8 × 1000"
+            - "So to divide by 8000, we can:"
+            - "Step 1: Divide by 8"
+            - "Step 2: Then divide by 1000"
+            - "Answer: Divide by 8, then divide by 1000"
+
+        - id: "ddec-q4"
+          problemText: "To divide by 50, what two simpler divisions can we do?"
+          finalAnswer: "Divide by 5, then divide by 10"
+          stepByStepGuideline:
+            - "50 = 5 × 10"
+            - "So to divide by 50, we can:"
+            - "Step 1: Divide by 5"
+            - "Step 2: Then divide by 10"
+            - "Answer: Divide by 5, then divide by 10"
+
+        - id: "ddec-q5"
+          problemText: "To divide by 6000, what two simpler divisions can we do?"
+          finalAnswer: "Divide by 6, then divide by 1000"
+          stepByStepGuideline:
+            - "6000 = 6 × 1000"
+            - "So to divide by 6000, we can:"
+            - "Step 1: Divide by 6"
+            - "Step 2: Then divide by 1000"
+            - "Answer: Divide by 6, then divide by 1000"
+
+  - id: decimals-divide-tens-hundreds-thousands
+    nodeNumber: 8
+    title: "Dividing by Tens, Hundreds, and Thousands"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - decimals-decomposition-divide
+    descriptor:
+      section: "divide-by-tens-hundreds-thousands"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply the two-step method: divide by digit, then by 10, 100, or 1000"
+        - "Calculate decimal ÷ 20, 30, 400, 600, 2000, 8000, etc."
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "dth-q1"
+          problemText: "Calculate: $6.3 \\div 30$"
+          avatarIntro: "Now let's put our division decomposition into practice! Remember: divide by the digit first, then divide by 10, 100, or 1000."
+          finalAnswer: "$0.21$"
+          stepByStepGuideline:
+            - "Step 1: Break down 30 = 3 × 10"
+            - "Step 2: First divide 6.3 ÷ 3 = 2.1"
+            - "Step 3: Then divide 2.1 ÷ 10 = 0.21"
+            - "Answer: $0.21$"
+
+        - id: "dth-q2"
+          problemText: "Calculate: $8.16 \\div 20$"
+          finalAnswer: "$0.408$"
+          stepByStepGuideline:
+            - "Step 1: Break down 20 = 2 × 10"
+            - "Step 2: First divide 8.16 ÷ 2 = 4.08"
+            - "Step 3: Then divide 4.08 ÷ 10 = 0.408"
+            - "Answer: $0.408$"
+
+        - id: "dth-q3"
+          problemText: "Calculate: $100.4 \\div 400$"
+          finalAnswer: "$0.251$"
+          stepByStepGuideline:
+            - "Step 1: Break down 400 = 4 × 100"
+            - "Step 2: First divide 100.4 ÷ 4 = 25.1"
+            - "Step 3: Then divide 25.1 ÷ 100 = 0.251"
+            - "Answer: $0.251$"
+
+        - id: "dth-q4"
+          problemText: "Calculate: $72 \\div 600$"
+          finalAnswer: "$0.12$"
+          stepByStepGuideline:
+            - "Step 1: Break down 600 = 6 × 100"
+            - "Step 2: First divide 72 ÷ 6 = 12"
+            - "Step 3: Then divide 12 ÷ 100 = 0.12"
+            - "Answer: $0.12$"
+
+        - id: "dth-q5"
+          problemText: "Calculate: $208 \\div 8000$"
+          finalAnswer: "$0.026$"
+          stepByStepGuideline:
+            - "Step 1: Break down 8000 = 8 × 1000"
+            - "Step 2: First divide 208 ÷ 8 = 26"
+            - "Step 3: Then divide 26 ÷ 1000 = 0.026"
+            - "Answer: $0.026$"
+
+        - id: "dth-q6"
+          problemText: "Calculate: $188 \\div 40$"
+          finalAnswer: "$4.7$"
+          stepByStepGuideline:
+            - "Step 1: Break down 40 = 4 × 10"
+            - "Step 2: First divide 188 ÷ 4 = 47"
+            - "Step 3: Then divide 47 ÷ 10 = 4.7"
+            - "Answer: $4.7$"
+
+  # ============================================
+  # SUBTOPIC 5: Converting Measurements
+  # ============================================
+
+  - id: decimals-length-conversions
+    nodeNumber: 9
+    title: "Length Conversions (m, cm, km)"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - decimals-divide-tens-hundreds-thousands
+    descriptor:
+      section: "length-conversions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Convert between metres and centimetres (1 m = 100 cm)"
+        - "Convert between kilometres and metres (1 km = 1000 m)"
+        - "Handle mixed units"
+      contexts:
+        - "length measurements"
+      preWrittenQuestions:
+        - id: "len-q1"
+          problemText: "Convert 0.9 m to centimetres."
+          avatarIntro: "Now let's apply our decimal skills to real measurements! Remember: 1 m = 100 cm and 1 km = 1000 m."
+          finalAnswer: "90 cm"
+          stepByStepGuideline:
+            - "We're converting from metres to centimetres"
+            - "1 m = 100 cm, so we multiply by 100"
+            - "0.9 × 100 = 90"
+            - "Answer: 90 cm"
+
+        - id: "len-q2"
+          problemText: "Convert 3 m 28 cm to centimetres."
+          finalAnswer: "328 cm"
+          stepByStepGuideline:
+            - "First convert the metres: 3 m = 3 × 100 = 300 cm"
+            - "Then add the centimetres: 300 + 28 = 328 cm"
+            - "Answer: 328 cm"
+
+        - id: "len-q3"
+          problemText: "Convert 285 cm to metres and centimetres."
+          finalAnswer: "2 m 85 cm"
+          stepByStepGuideline:
+            - "We're converting from centimetres to metres"
+            - "1 m = 100 cm, so we divide by 100"
+            - "285 ÷ 100 = 2 remainder 85"
+            - "Answer: 2 m 85 cm"
+
+        - id: "len-q4"
+          problemText: "Convert 1.8 km to metres."
+          finalAnswer: "1800 m"
+          stepByStepGuideline:
+            - "We're converting from kilometres to metres"
+            - "1 km = 1000 m, so we multiply by 1000"
+            - "1.8 × 1000 = 1800"
+            - "Answer: 1800 m"
+
+        - id: "len-q5"
+          problemText: "Convert 4008 m to kilometres and metres."
+          finalAnswer: "4 km 8 m"
+          stepByStepGuideline:
+            - "We're converting from metres to kilometres"
+            - "1 km = 1000 m, so we divide by 1000"
+            - "4008 ÷ 1000 = 4 remainder 8"
+            - "Answer: 4 km 8 m"
+
+        - id: "len-q6"
+          problemText: "Convert 2 km 315 m to metres."
+          finalAnswer: "2315 m"
+          stepByStepGuideline:
+            - "First convert the kilometres: 2 km = 2 × 1000 = 2000 m"
+            - "Then add the metres: 2000 + 315 = 2315 m"
+            - "Answer: 2315 m"
+
+  - id: decimals-mass-volume-conversions
+    nodeNumber: 10
+    title: "Mass and Volume Conversions"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - decimals-length-conversions
+    descriptor:
+      section: "mass-volume-conversions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Convert between kilograms and grams (1 kg = 1000 g)"
+        - "Convert between litres and millilitres (1 ℓ = 1000 ml)"
+        - "Handle mixed units"
+      contexts:
+        - "mass and volume measurements"
+      preWrittenQuestions:
+        - id: "mass-q1"
+          problemText: "Convert 5 kg 82 g to grams."
+          avatarIntro: "Let's practice with mass and volume! Remember: 1 kg = 1000 g and 1 litre = 1000 ml."
+          finalAnswer: "5082 g"
+          stepByStepGuideline:
+            - "First convert the kilograms: 5 kg = 5 × 1000 = 5000 g"
+            - "Then add the grams: 5000 + 82 = 5082 g"
+            - "Answer: 5082 g"
+
+        - id: "mass-q2"
+          problemText: "Convert 3109 g to kilograms and grams."
+          finalAnswer: "3 kg 109 g"
+          stepByStepGuideline:
+            - "We're converting from grams to kilograms"
+            - "1 kg = 1000 g, so we divide by 1000"
+            - "3109 ÷ 1000 = 3 remainder 109"
+            - "Answer: 3 kg 109 g"
+
+        - id: "mass-q3"
+          problemText: "Convert 2 ℓ 5 ml to millilitres."
+          finalAnswer: "2005 ml"
+          stepByStepGuideline:
+            - "First convert the litres: 2 ℓ = 2 × 1000 = 2000 ml"
+            - "Then add the millilitres: 2000 + 5 = 2005 ml"
+            - "Answer: 2005 ml"
+
+        - id: "mass-q4"
+          problemText: "Convert 4625 ml to litres and millilitres."
+          finalAnswer: "4 ℓ 625 ml"
+          stepByStepGuideline:
+            - "We're converting from millilitres to litres"
+            - "1 ℓ = 1000 ml, so we divide by 1000"
+            - "4625 ÷ 1000 = 4 remainder 625"
+            - "Answer: 4 ℓ 625 ml"
+
+        - id: "mass-q5"
+          problemText: "Convert 7250 ml to litres and millilitres."
+          finalAnswer: "7 ℓ 250 ml"
+          stepByStepGuideline:
+            - "We're converting from millilitres to litres"
+            - "7250 ÷ 1000 = 7 remainder 250"
+            - "Answer: 7 ℓ 250 ml"
+
+        - id: "mass-q6"
+          problemText: "Convert 8 kg 45 g to grams."
+          finalAnswer: "8045 g"
+          stepByStepGuideline:
+            - "First convert the kilograms: 8 kg = 8 × 1000 = 8000 g"
+            - "Then add the grams: 8000 + 45 = 8045 g"
+            - "Answer: 8045 g"
+
+  - id: decimals-decimal-unit-conversions
+    nodeNumber: 11
+    title: "Decimal Unit Conversions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - decimals-mass-volume-conversions
+    descriptor:
+      section: "decimal-unit-conversions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Convert decimal values between units"
+        - "Apply multiplication and division by 10, 100, 1000 to conversions"
+      contexts:
+        - "decimal measurements"
+      preWrittenQuestions:
+        - id: "dconv-q1"
+          problemText: "Convert 2.5 kg to grams."
+          avatarIntro: "Now let's combine our decimal skills with unit conversions! These use multiplication and division by 10, 100, and 1000."
+          finalAnswer: "2500 g"
+          stepByStepGuideline:
+            - "We're converting from kilograms to grams"
+            - "1 kg = 1000 g, so we multiply by 1000"
+            - "2.5 × 1000 = 2500"
+            - "Answer: 2500 g"
+
+        - id: "dconv-q2"
+          problemText: "Convert 0.45 m to centimetres."
+          finalAnswer: "45 cm"
+          stepByStepGuideline:
+            - "We're converting from metres to centimetres"
+            - "1 m = 100 cm, so we multiply by 100"
+            - "0.45 × 100 = 45"
+            - "Answer: 45 cm"
+
+        - id: "dconv-q3"
+          problemText: "Convert 3500 ml to litres."
+          finalAnswer: "3.5 ℓ"
+          stepByStepGuideline:
+            - "We're converting from millilitres to litres"
+            - "1 ℓ = 1000 ml, so we divide by 1000"
+            - "3500 ÷ 1000 = 3.5"
+            - "Answer: 3.5 ℓ"
+
+        - id: "dconv-q4"
+          problemText: "Convert 14.085 kg to grams."
+          finalAnswer: "14085 g"
+          stepByStepGuideline:
+            - "We're converting from kilograms to grams"
+            - "1 kg = 1000 g, so we multiply by 1000"
+            - "14.085 × 1000 = 14085"
+            - "Answer: 14085 g"
+
+        - id: "dconv-q5"
+          problemText: "Convert 3.5 ℓ to millilitres."
+          finalAnswer: "3500 ml"
+          stepByStepGuideline:
+            - "We're converting from litres to millilitres"
+            - "1 ℓ = 1000 ml, so we multiply by 1000"
+            - "3.5 × 1000 = 3500"
+            - "Answer: 3500 ml"
+
+  # ============================================
+  # SUBTOPIC 6: Word Problems (word-problems layer)
+  # ============================================
+
+  - id: decimals-single-step-wp
+    nodeNumber: 12
+    title: "Single-Step Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - decimals-decimal-unit-conversions
+    descriptor:
+      section: "single-step-problems"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Solve single-step decimal word problems"
+        - "Identify the correct operation (multiplication or division)"
+      contexts:
+        - "shopping"
+        - "cooking"
+        - "measurements"
+      preWrittenQuestions:
+        - id: "wp1-q1"
+          problemText: "Mrs Tan buys 3 packets of rice. Each packet weighs 2.5 kg. What is the total mass of the rice?"
+          avatarIntro: "Let's solve some real-world problems with decimals! Read carefully to figure out which operation to use."
+          finalAnswer: "7.5 kg"
+          stepByStepGuideline:
+            - "What do we need to find? Total mass of rice"
+            - "We have 3 packets, each weighing 2.5 kg"
+            - "Operation: Multiplication (3 groups of 2.5)"
+            - "3 × 2.5 = 7.5"
+            - "Answer: 7.5 kg"
+
+        - id: "wp1-q2"
+          problemText: "A ribbon is 4.8 m long. It is cut into 6 equal pieces. How long is each piece?"
+          finalAnswer: "0.8 m"
+          stepByStepGuideline:
+            - "What do we need to find? Length of each piece"
+            - "Total length 4.8 m divided into 6 equal parts"
+            - "Operation: Division (sharing equally)"
+            - "4.8 ÷ 6 = 0.8"
+            - "Answer: 0.8 m"
+
+        - id: "wp1-q3"
+          problemText: "A bottle contains 1.25 ℓ of juice. Mr Lee buys 4 bottles. How much juice does he have in total?"
+          finalAnswer: "5 ℓ"
+          stepByStepGuideline:
+            - "What do we need to find? Total amount of juice"
+            - "Each bottle has 1.25 ℓ, he buys 4 bottles"
+            - "Operation: Multiplication (4 groups of 1.25)"
+            - "1.25 × 4 = 5"
+            - "Answer: 5 ℓ"
+
+        - id: "wp1-q4"
+          problemText: "A bag of flour weighs 0.75 kg. How much do 8 bags weigh?"
+          finalAnswer: "6 kg"
+          stepByStepGuideline:
+            - "What do we need to find? Total mass of 8 bags"
+            - "Each bag weighs 0.75 kg"
+            - "Operation: Multiplication (8 groups of 0.75)"
+            - "0.75 × 8 = 6"
+            - "Answer: 6 kg"
+
+        - id: "wp1-q5"
+          problemText: "A piece of wire is 15.6 m long. It is cut into 4 equal pieces. How long is each piece?"
+          finalAnswer: "3.9 m"
+          stepByStepGuideline:
+            - "What do we need to find? Length of each piece"
+            - "Total length 15.6 m divided into 4 equal parts"
+            - "Operation: Division (sharing equally)"
+            - "15.6 ÷ 4 = 3.9"
+            - "Answer: 3.9 m"
+
+  - id: decimals-multi-step-wp
+    nodeNumber: 13
+    title: "Multi-Step Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - decimals-single-step-wp
+    descriptor:
+      section: "multi-step-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve multi-step decimal word problems requiring 2-3 operations"
+        - "Break complex problems into logical steps"
+      contexts:
+        - "shopping"
+        - "cooking"
+        - "measurements"
+      preWrittenQuestions:
+        - id: "wp2-q1"
+          problemText: "Mrs Wong had 5.1 kg of sugar. She bought another 2.34 kg. She then packed all the sugar equally into 8 containers. What is the mass of sugar in each container?"
+          avatarIntro: "These problems need more than one step! Let's break them down carefully."
+          finalAnswer: "0.93 kg"
+          stepByStepGuideline:
+            - "Step 1: Find total sugar"
+            - "5.1 + 2.34 = 7.44 kg"
+            - "Step 2: Divide equally into 8 containers"
+            - "7.44 ÷ 8 = 0.93 kg"
+            - "Answer: 0.93 kg per container"
+
+        - id: "wp2-q2"
+          problemText: "Mr Lim bought 6 notebooks at \\$2.45 each. He paid with a \\$20 note. How much change did he receive?"
+          finalAnswer: "\\$5.30"
+          stepByStepGuideline:
+            - "Step 1: Find total cost of notebooks"
+            - "6 × $2.45 = $14.70"
+            - "Step 2: Find the change"
+            - "$20 - $14.70 = $5.30"
+            - "Answer: $5.30"
+
+        - id: "wp2-q3"
+          problemText: "A tank contains 45.6 ℓ of water. 12.8 ℓ is used for cooking. The remaining water is poured equally into 8 bottles. How much water is in each bottle?"
+          finalAnswer: "4.1 ℓ"
+          stepByStepGuideline:
+            - "Step 1: Find remaining water"
+            - "45.6 - 12.8 = 32.8 ℓ"
+            - "Step 2: Divide equally into 8 bottles"
+            - "32.8 ÷ 8 = 4.1 ℓ"
+            - "Answer: 4.1 ℓ per bottle"
+
+        - id: "wp2-q4"
+          problemText: "Sarah has 3 pieces of ribbon. Each piece is 2.4 m long. She uses 1.5 m to wrap a present. How much ribbon does she have left?"
+          finalAnswer: "5.7 m"
+          stepByStepGuideline:
+            - "Step 1: Find total length of ribbon"
+            - "3 × 2.4 = 7.2 m"
+            - "Step 2: Subtract the ribbon used"
+            - "7.2 - 1.5 = 5.7 m"
+            - "Answer: 5.7 m"
+
+        - id: "wp2-q5"
+          problemText: "A baker uses 0.35 kg of flour for each cake. He bakes 20 cakes in the morning and 15 cakes in the afternoon. How much flour did he use in total?"
+          finalAnswer: "12.25 kg"
+          stepByStepGuideline:
+            - "Step 1: Find total number of cakes"
+            - "20 + 15 = 35 cakes"
+            - "Step 2: Find total flour used"
+            - "35 × 0.35 = 12.25 kg"
+            - "Answer: 12.25 kg"
+
+  - id: decimals-unit-conversion-wp
+    nodeNumber: 14
+    title: "Word Problems with Unit Conversions"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - decimals-multi-step-wp
+    descriptor:
+      section: "unit-conversion-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve word problems requiring unit conversion as part of solution"
+        - "Convert units within problems and give answers in requested units"
+      contexts:
+        - "measurements"
+        - "shopping"
+        - "cooking"
+      preWrittenQuestions:
+        - id: "wp3-q1"
+          problemText: "Mrs Wong had 5.1 kg of sugar and 2.34 kg of flour. She packed all the ingredients equally into 8 containers. What is the mass of ingredients in each container in grams?"
+          avatarIntro: "Sometimes we need to convert units as part of solving the problem. Watch for what unit the answer should be in!"
+          finalAnswer: "930 g"
+          stepByStepGuideline:
+            - "Step 1: Find total mass"
+            - "5.1 + 2.34 = 7.44 kg"
+            - "Step 2: Divide into 8 containers"
+            - "7.44 ÷ 8 = 0.93 kg"
+            - "Step 3: Convert to grams"
+            - "0.93 × 1000 = 930 g"
+            - "Answer: 930 g"
+
+        - id: "wp3-q2"
+          problemText: "A rope is 150 m long. Tom cuts off 73.6 m. He then divides the remaining rope into 40 equal pieces. What is the length of each piece in centimetres?"
+          finalAnswer: "191 cm"
+          stepByStepGuideline:
+            - "Step 1: Find remaining rope"
+            - "150 - 73.6 = 76.4 m"
+            - "Step 2: Divide into 40 pieces"
+            - "76.4 ÷ 40 = 1.91 m"
+            - "Step 3: Convert to centimetres"
+            - "1.91 × 100 = 191 cm"
+            - "Answer: 191 cm"
+
+        - id: "wp3-q3"
+          problemText: "Mrs Lee bought 3 packets of rice at 2.5 kg each and 5 packets of flour at 820 g each. What is the total mass in kilograms?"
+          finalAnswer: "11.6 kg"
+          stepByStepGuideline:
+            - "Step 1: Find mass of rice"
+            - "3 × 2.5 = 7.5 kg"
+            - "Step 2: Find mass of flour (convert to kg)"
+            - "5 × 820 = 4100 g = 4.1 kg"
+            - "Step 3: Add together"
+            - "7.5 + 4.1 = 11.6 kg"
+            - "Answer: 11.6 kg"
+
+        - id: "wp3-q4"
+          problemText: "A water tank contains 8.5 ℓ of water. 2350 ml is used. How much water is left in litres?"
+          finalAnswer: "6.15 ℓ"
+          stepByStepGuideline:
+            - "Step 1: Convert 2350 ml to litres"
+            - "2350 ÷ 1000 = 2.35 ℓ"
+            - "Step 2: Subtract from total"
+            - "8.5 - 2.35 = 6.15 ℓ"
+            - "Answer: 6.15 ℓ"
+
+        - id: "wp3-q5"
+          problemText: "A roll of wire is 12 m long. Mary cuts off 450 cm. How much wire is left in metres?"
+          finalAnswer: "7.5 m"
+          stepByStepGuideline:
+            - "Step 1: Convert 450 cm to metres"
+            - "450 ÷ 100 = 4.5 m"
+            - "Step 2: Subtract from total"
+            - "12 - 4.5 = 7.5 m"
+            - "Answer: 7.5 m"
+
+  - id: decimals-challenging-wp
+    nodeNumber: 15
+    title: "Challenging Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - decimals-unit-conversion-wp
+    descriptor:
+      section: "challenging-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve challenging word problems including comparison and bar model problems"
+        - "Work systematically through complex scenarios"
+      contexts:
+        - "shopping"
+        - "geometry"
+        - "comparison"
+      preWrittenQuestions:
+        - id: "wp4-q1"
+          problemText: "The perimeter of a rectangle is 56.8 cm. Its length is 3 times its breadth. Find the length of the rectangle."
+          avatarIntro: "These are our toughest problems! Think carefully about how the values relate to each other."
+          finalAnswer: "21.3 cm"
+          stepByStepGuideline:
+            - "Let breadth = 1 unit"
+            - "Then length = 3 units"
+            - "Perimeter = 2 × (length + breadth) = 2 × 4 units = 8 units"
+            - "8 units = 56.8 cm"
+            - "1 unit = 56.8 ÷ 8 = 7.1 cm"
+            - "Length = 3 units = 3 × 7.1 = 21.3 cm"
+            - "Answer: 21.3 cm"
+
+        - id: "wp4-q2"
+          problemText: "9 pencils cost \\$13.05. 6 glue sticks cost \\$12.90. What is the total cost of 2 pencils and 3 glue sticks?"
+          finalAnswer: "\\$9.35"
+          stepByStepGuideline:
+            - "Step 1: Find cost of 1 pencil"
+            - "$13.05 ÷ 9 = $1.45"
+            - "Step 2: Find cost of 1 glue stick"
+            - "$12.90 ÷ 6 = $2.15"
+            - "Step 3: Find cost of 2 pencils + 3 glue sticks"
+            - "2 × $1.45 + 3 × $2.15 = $2.90 + $6.45 = $9.35"
+            - "Answer: $9.35"
+
+        - id: "wp4-q3"
+          problemText: "Ahmad has \\$25.60. He has \\$8.40 more than Bala. How much do they have altogether?"
+          finalAnswer: "\\$42.80"
+          stepByStepGuideline:
+            - "Ahmad has $25.60"
+            - "Bala has $8.40 less than Ahmad"
+            - "Bala has $25.60 - $8.40 = $17.20"
+            - "Total = $25.60 + $17.20 = $42.80"
+            - "Answer: $42.80"
+
+        - id: "wp4-q4"
+          problemText: "A book costs \\$3.10 more than a pen. Mrs Tan bought 3 books and 3 pens for \\$46.80. What is the cost of 1 book?"
+          finalAnswer: "\\$9.35"
+          stepByStepGuideline:
+            - "Let cost of 1 pen = 1 unit"
+            - "Then cost of 1 book = 1 unit + $3.10"
+            - "3 books + 3 pens = 3(1 unit + $3.10) + 3(1 unit)"
+            - "= 6 units + $9.30 = $46.80"
+            - "6 units = $46.80 - $9.30 = $37.50"
+            - "1 unit = $37.50 ÷ 6 = $6.25 (cost of pen)"
+            - "1 book = $6.25 + $3.10 = $9.35"
+            - "Answer: $9.35"
+
+        - id: "wp4-q5"
+          problemText: "Container A has 1.6 ℓ more water than Container B. The total amount of water in both containers is 9.6 ℓ. How much water is in Container A?"
+          finalAnswer: "5.6 ℓ"
+          stepByStepGuideline:
+            - "Let's use the unitary method"
+            - "A has 1.6 ℓ more than B"
+            - "If we remove 1.6 ℓ from A, both containers would be equal"
+            - "Total would then be 9.6 - 1.6 = 8 ℓ"
+            - "Each container would have 8 ÷ 2 = 4 ℓ"
+            - "So B = 4 ℓ"
+            - "A = B + 1.6 = 4 + 1.6 = 5.6 ℓ"
+            - "Check: 5.6 + 4 = 9.6 ℓ ✓"
+            - "Answer: 5.6 ℓ"

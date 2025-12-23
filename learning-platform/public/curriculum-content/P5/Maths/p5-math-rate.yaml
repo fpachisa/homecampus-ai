@@ -1,0 +1,441 @@
+nodes:
+  # ============================================
+  # UNDERSTANDING RATE - Foundation Layer
+  # ============================================
+
+  - id: rate-foundation-intro
+    title: "Introduction to Rate"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 3
+    descriptor:
+      section: "intro-to-rate"
+      problemDescription:
+        - "Understand what rate means"
+        - "Interpret 'per' as 'every' or 'for each'"
+        - "Identify rates in real-world contexts"
+      contexts:
+        - "daily life examples"
+      preWrittenQuestions:
+        - id: "rf-intro-q1"
+          avatarIntro: "Welcome to Rate! Let's start by understanding what the special word 'per' means in mathematics."
+          problemText: "The term **'per'** in a rate (like 'metres per second') means:"
+          finalAnswer: "Every"
+          stepByStepGuideline:
+            - "In rate, 'per' means 'every' or 'for each unit'."
+            - "Example: '10 metres per second' means '10 metres every second'."
+          questionTable: null
+
+        - id: "rf-intro-q2"
+          problemText: "A heart beats 72 times **per minute**. This means it beats 72 times:"
+          finalAnswer: "Every minute"
+          stepByStepGuideline:
+            - "Rate connects the number of beats to the time unit."
+            - "'Per minute' means 'for every distinct minute'."
+          questionTable: null
+
+        - id: "rf-intro-q3"
+          problemText: |
+            Which of the following describes a rate?
+            
+            A) 50 metres
+            B) 10 seconds
+            C) 50 metres per second
+          finalAnswer: "50 metres per second"
+          stepByStepGuideline:
+            - "A rate relates two different quantities (distance and time)."
+            - "Option A is just distance."
+            - "Option B is just time."
+            - "Option C relates distance per unit time."
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: rate-foundation-unit-rate
+    title: "Finding the Unit Rate"
+    layer: foundation
+    prerequisites:
+      - rate-foundation-intro
+    problemsRequired: 5
+    descriptor:
+      section: "finding-unit-rate"
+      problemDescription:
+        - "Calculate unit rate using division"
+        - "Find rate per 1 unit"
+      contexts:
+        - "baking"
+        - "speed"
+        - "wflow"
+      preWrittenQuestions:
+        - id: "rf-unit-q1"
+          avatarIntro: "To compare rates fairly, we often need to find the value for just 1 unit. This is called the Unit Rate!"
+          problemText: "A baker bakes 120 muffins in 3 hours. Find the baking rate in muffins per hour."
+          finalAnswer: "40 muffins per hour"
+          stepByStepGuideline:
+            - "Divide the total muffins by the number of hours."
+            - "Calculation: $120 \\div 3 = 40$"
+            - "Answer: 40 muffins per hour"
+          questionTable: null
+
+        - id: "rf-unit-q2"
+          problemText: "A turtle crawls 450 cm in 9 minutes. What is its speed in cm per minute?"
+          finalAnswer: "50 cm per minute"
+          stepByStepGuideline:
+            - "Divide the distance by the time."
+            - "Calculation: $450 \\div 9 = 50$"
+            - "Answer: 50 cm per minute"
+          questionTable: null
+
+        - id: "rf-unit-q3"
+          problemText: "Ali is paid \\$84 for working 7 hours. What is his hourly pay rate?"
+          finalAnswer: "\\$12 per hour"
+          stepByStepGuideline:
+            - "Divide total pay by total hours worked."
+            - "Calculation: \\$84 \\div 7 = 12$"
+            - "Answer: \\$12 per hour"
+          questionTable: null
+
+        - id: "rf-unit-q4"
+          problemText: "A hose fills a 60-litre tank in 5 minutes. Find the flow rate in litres per minute."
+          finalAnswer: "12 litres per minute"
+          stepByStepGuideline:
+            - "Divide the volume by the time taken."
+            - "Calculation: $60 \\div 5 = 12$"
+            - "Answer: 12 litres per minute"
+          questionTable: null
+
+        - id: "rf-unit-q5"
+          problemText: "A factory produces 480 toys in 8 hours. How many toys does it produce per hour?"
+          finalAnswer: "60 toys per hour"
+          stepByStepGuideline:
+            - "Divide total production by number of hours."
+            - "Calculation: $480 \\div 8 = 60$"
+            - "Answer: 60 toys per hour"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: rate-foundation-using-rate
+    title: "Using Rate to Calculate"
+    layer: foundation
+    prerequisites:
+      - rate-foundation-unit-rate
+    problemsRequired: 4
+    descriptor:
+      section: "using-rate"
+      problemDescription:
+        - "Multiply unit rate to find total amount"
+        - "Given rate per 1, find for N"
+      contexts:
+        - "wages"
+        - "travel"
+        - "reading"
+      preWrittenQuestions:
+        - id: "rf-using-q1"
+          avatarIntro: "Now that you can find the Unit Rate, let's use it to calculate larger amounts!"
+          problemText: "Raju earns \\$12 per hour. How much does he earn in 8 hours?"
+          finalAnswer: "\\$96"
+          stepByStepGuideline:
+            - "Multiply the hourly rate by the number of hours."
+            - "Calculation: \\$12 \\times 8 = 96$"
+            - "Answer: \\$96"
+          questionTable: null
+
+        - id: "rf-using-q2"
+          problemText: "A train travels at 90 km per hour. What distance does it cover in 4 hours?"
+          finalAnswer: "360 km"
+          stepByStepGuideline:
+            - "Multiply speed by time."
+            - "Calculation: $90 \\times 4 = 360$"
+            - "Answer: 360 km"
+          questionTable: null
+
+        - id: "rf-using-q3"
+          problemText: "Ribbon is sold at \\$2 per metre. Find the cost of 25 metres of ribbon."
+          finalAnswer: "\\$50"
+          stepByStepGuideline:
+            - "Multiply cost per metre by length."
+            - "Calculation: \\$2 \\times 25 = 50$"
+            - "Answer: \\$50"
+          questionTable: null
+
+        - id: "rf-using-q4"
+          problemText: "Jane reads at a rate of 30 pages per hour. How many pages can she read in 3 hours?"
+          finalAnswer: "90 pages"
+          stepByStepGuideline:
+            - "Multiply reading rate by time."
+            - "Calculation: $30 \\times 3 = 90$"
+            - "Answer: 90 pages"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # INTERMEDIATE LAYER
+  # ============================================
+
+  - id: rate-intermediate-two-step
+    title: "Two-Step Rate Problems"
+    layer: foundation
+    prerequisites:
+      - rate-foundation-using-rate
+    problemsRequired: 4
+    descriptor:
+      section: "two-step-rate"
+      problemDescription:
+        - "Find unit rate first, then find target amount"
+        - "Divide then multiply"
+      contexts:
+        - "rotation"
+        - "printing"
+        - "pricing"
+      preWrittenQuestions:
+        - id: "ri-two-q1"
+          avatarIntro: "Sometimes we need two steps: First find the rate for 1 unit, then use it to find the new amount."
+          problemText: "A fan spins 300 times in 5 minutes. How many times does it spin in 2 minutes?"
+          finalAnswer: "120 times"
+          stepByStepGuideline:
+            - "**Step 1:** Find unit rate (spins per minute)."
+            - "$300 \\div 5 = 60$ spins/min"
+            - "**Step 2:** Find spins in 2 minutes."
+            - "$60 \\times 2 = 120$"
+            - "Answer: 120 times"
+          questionTable: null
+
+        - id: "ri-two-q2"
+          problemText: "A printer prints 400 flyers in 8 minutes. How many flyers does it print in 20 minutes?"
+          finalAnswer: "1000 flyers"
+          stepByStepGuideline:
+            - "**Step 1:** Find rate per minute."
+            - "$400 \\div 8 = 50$ flyers/min"
+            - "**Step 2:** Find flyers in 20 minutes."
+            - "$50 \\times 20 = 1000$"
+            - "Answer: 1000 flyers"
+          questionTable: null
+
+        - id: "ri-two-q3"
+          problemText: "A bus travels 240 km in 4 hours. How long will it take to travel 420 km at the same speed?"
+          finalAnswer: "7 hours"
+          stepByStepGuideline:
+            - "**Step 1:** Find speed (km per hour)."
+            - "$240 \\div 4 = 60$ km/h"
+            - "**Step 2:** Find time for 420 km."
+            - "$420 \\div 60 = 7$"
+            - "Answer: 7 hours"
+          questionTable: null
+
+        - id: "ri-two-q4"
+          problemText: "5 kg of cherries cost \\$60. How much does 3 kg of cherries cost?"
+          finalAnswer: "\\$36"
+          stepByStepGuideline:
+            - "**Step 1:** Find cost of 1 kg."
+            - "\\$60 \\div 5 = 12$"
+            - "**Step 2:** Find cost of 3 kg."
+            - "\\$12 \\times 3 = 36$"
+            - "Answer: \\$36"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # WORD PROBLEMS LAYER
+  # ============================================
+
+  - id: rate-word-table
+    title: "Table-Based Rate Problems"
+    layer: word-problems
+    prerequisites:
+      - rate-intermediate-two-step
+    problemsRequired: 4
+    descriptor:
+      section: "table-rate-problems"
+      problemDescription:
+        - "Interpret rate tables"
+        - "Understand 'up to' weights"
+      contexts:
+        - "postage"
+        - "courier"
+      preWrittenQuestions:
+        - id: "rw-table-q1"
+          avatarIntro: "In the real world, rates are often shown in tables. Let's learn how to read them!"
+          problemText: "Using the table, how much does it cost to send a letter weighing 40 g?"
+          finalAnswer: "\\$2.50"
+          questionTable:
+            headers: ["Mass up to", "Postage Rate"]
+            rows:
+              - ["20 g", "\\$2.00"]
+              - ["50 g", "\\$2.50"]
+              - ["100 g", "\\$3.00"]
+          stepByStepGuideline:
+            - "Check the mass: 40 g"
+            - "It is more than 20 g but less than 50 g."
+            - "Use the 'Mass up to 50 g' row."
+            - "Answer: \\$2.50"
+
+        - id: "rw-table-q2"
+          problemText: "Using the courier table, find the cost to send a parcel of mass 3.5 kg."
+          finalAnswer: "\\$40"
+          questionTable:
+            headers: ["Mass up to", "Charges"]
+            rows:
+              - ["2 kg", "\\$20"]
+              - ["5 kg", "\\$40"]
+              - ["8 kg", "\\$55"]
+          stepByStepGuideline:
+            - "Check the mass: 3.5 kg"
+            - "It is more than 2 kg but less than 5 kg."
+            - "Use the 'Mass up to 5 kg' row."
+            - "Answer: \\$40"
+
+        - id: "rw-table-q3"
+          problemText: "Using the table, calculate the cost to send a 150 g document."
+          finalAnswer: "\\$4.50"
+          questionTable:
+            headers: ["Mass up to", "Rate"]
+            rows:
+              - ["100 g", "\\$3.50"]
+              - ["250 g", "\\$4.50"]
+              - ["500 g", "\\$6.00"]
+          stepByStepGuideline:
+            - "Check mass: 150 g"
+            - "It is more than 100 g but less than 250 g."
+            - "Use 'Mass up to 250 g'."
+            - "Answer: \\$4.50"
+
+        - id: "rw-table-q4"
+          problemText: "Find the total cost to send two letters: one 15 g and one 80 g."
+          finalAnswer: "\\$5.00"
+          questionTable:
+            headers: ["Mass up to", "Postage Rate"]
+            rows:
+              - ["20 g", "\\$2.00"]
+              - ["50 g", "\\$2.50"]
+              - ["100 g", "\\$3.00"]
+          stepByStepGuideline:
+            - "**Step 1:** Cost for 15 g."
+            - "Less than 20 g → \\$2.00"
+            - "**Step 2:** Cost for 80 g."
+            - "More than 50 g, up to 100 g → \\$3.00"
+            - "**Step 3:** Total cost."
+            - "\\$2.00 + 3.00 = 5.00$"
+            - "Answer: \\$5.00"
+      aiGeneratedQuestions: false
+
+  - id: rate-word-tiered
+    title: "Tiered Rate Problems"
+    layer: word-problems
+    prerequisites:
+      - rate-word-table
+    problemsRequired: 4
+    descriptor:
+      section: "tiered-rate-problems"
+      problemDescription:
+        - "Solve problems with different rates for different portions"
+        - "Time-based or usage-based tiers"
+      contexts:
+        - "rental"
+        - "utilities"
+        - "taxi"
+      preWrittenQuestions:
+        - id: "rw-tiered-q1"
+          avatarIntro: "Watch out! Some services charge different rates for the first hour versus later hours. We call this a 'Tiered Rate'."
+          problemText: "Bike rental charges: First hour \\$5.00, Every subsequent ½ hour \\$2.00. How much to rent for 2 hours?"
+          finalAnswer: "\\$9.00"
+          stepByStepGuideline:
+            - "Rent duration: 2 hours."
+            - "**First portion:** 1st hour = \\$5.00"
+            - "**Remaining:** 1 hour = 2 half-hours."
+            - "**Second portion:** \\$2.00 \\times 2 = 4.00$"
+            - "**Total:** \\$5.00 + 4.00 = 9.00$"
+            - "Answer: \\$9.00"
+          questionTable: null
+
+        - id: "rw-tiered-q2"
+          problemText: "Electricity charges: First 100 units at \\$0.20 per unit, Above 100 units at \\$0.30 per unit. A household uses 150 units. Calculate the bill."
+          finalAnswer: "\\$35.00"
+          stepByStepGuideline:
+            - "Split usage: 150 = 100 + 50"
+            - "**First portion:** \\$100 \\times 0.20 = 20.00$"
+            - "**Second portion:** \\$50 \\times 0.30 = 15.00$"
+            - "**Total:** \\$20.00 + 15.00 = 35.00$"
+            - "Answer: \\$35.00"
+          questionTable: null
+
+        - id: "rw-tiered-q3"
+          problemText: "Indoor playground: 1st hour \\$10, subsequent ½ hour \\$4. Find the cost for playing from 3:00 pm to 5:30 pm."
+          finalAnswer: "\\$22"
+          diagramSvg: "/curriculum-content/P5/Maths/bar-model-svgs/rate/playground-timeline.svg"
+          stepByStepGuideline:
+            - "Find duration: 3:00 pm to 5:30 pm is 2 hours 30 mins."
+            - "**First portion:** 1st hour (3:00-4:00) = \\$10"
+            - "**Remaining:** 1 hour 30 mins (4:00-5:30) = 3 half-hours."
+            - "**Second portion:** \\$4 \\times 3 = 12$"
+            - "**Total:** \\$10 + 12 = 22$"
+            - "Answer: \\$22"
+          questionTable: null
+
+        - id: "rw-tiered-q4"
+          problemText: "Taxi flag-down fare (1st km) is \\$4.00. Every additional 500 m is \\$0.30. Find the fare for a 6 km trip."
+          finalAnswer: "\\$7.00"
+          stepByStepGuideline:
+            - "Split distance: 6 km = 1 km + 5 km"
+            - "**First portion:** 1 km = \\$4.00"
+            - "**Remaining:** 5 km = 5000 m."
+            - "How many 500 m blocks? \\$5000 \\div 500 = 10$"
+            - "**Second portion:** \\$10 \\times 0.30 = 3.00$"
+            - "**Total:** \\$4.00 + 3.00 = 7.00$"
+            - "Answer: \\$7.00"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: rate-word-multistep
+    title: "Multi-Step Word Problems"
+    layer: word-problems
+    prerequisites:
+      - rate-word-tiered
+    problemsRequired: 3
+    descriptor:
+      section: "multi-step-problems"
+      problemDescription:
+        - "Complex scenarios"
+        - "Graph interpretation"
+        - "Combining concepts"
+      contexts:
+        - "water"
+        - "area"
+        - "combined"
+      preWrittenQuestions:
+        - id: "rw-multi-q1"
+          avatarIntro: "Let's put everything together! We'll use graphs and multiple steps to solve these tricky problems."
+          problemText: "Using the graph below, which shows water filling a tank, calculate how much water flows in 1 hour."
+          finalAnswer: "1920 litres"
+          diagramSvg: "/curriculum-content/P5/Maths/bar-model-svgs/rate/water-tank-graph.svg"
+          stepByStepGuideline:
+            - "From graph: 320 litres in 10 minutes."
+            - "**Step 1:** Find unit rate (litres per minute)."
+            - "$320 \\div 10 = 32$ L/min"
+            - "**Step 2:** Find total for 60 minutes (1 hour)."
+            - "$32 \\times 60 = 1920$"
+            - "Answer: 1920 litres"
+          questionTable: null
+
+        - id: "rw-multi-q2"
+          problemText: "A lawn mower cuts 20 m² of grass every 5 minutes. What area does it cut in 45 minutes?"
+          finalAnswer: "180 m²"
+          stepByStepGuideline:
+            - "**Step 1:** Find rate per minute."
+            - "$20 \\div 5 = 4$ m² per minute"
+            - "**Step 2:** Find area in 45 minutes."
+            - "$4 \\times 45 = 180$"
+            - "Answer: 180 m²"
+          questionTable: null
+
+        - id: "rw-multi-q3"
+          problemText: "Send 2 parcels: 4 kg and 7 kg. Courier charges: Up to 5kg (\\$40), Up to 8kg (\\$55). Calculate total cost."
+          finalAnswer: "\\$95"
+          stepByStepGuideline:
+            - "**Step 1:** Cost for 4 kg parcel."
+            - "Up to 5 kg → \\$40"
+            - "**Step 2:** Cost for 7 kg parcel."
+            - "Up to 8 kg → \\$55"
+            - "**Step 3:** Total cost."
+            - "\\$40 + 55 = 95$"
+            - "Answer: \\$95"
+          questionTable: null
+      aiGeneratedQuestions: false

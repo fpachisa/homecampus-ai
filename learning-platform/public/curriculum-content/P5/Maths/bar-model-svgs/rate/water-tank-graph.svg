@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 250">
+  <!-- Title -->
+  <text x="175" y="20" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial">Water Tank Level</text>
+
+  <!-- Grid Lines (Horizontal) -->
+  <g stroke="#E0E0E0" stroke-width="1">
+    <line x1="50" y1="200" x2="300" y2="200" /> <!-- 0 -->
+    <line x1="50" y1="160" x2="300" y2="160" /> <!-- 80 -->
+    <line x1="50" y1="120" x2="300" y2="120" /> <!-- 160 -->
+    <line x1="50" y1="80" x2="300" y2="80" />  <!-- 240 -->
+    <line x1="50" y1="40" x2="300" y2="40" />   <!-- 320 -->
+  </g>
+
+  <!-- Grid Lines (Vertical) -->
+  <g stroke="#E0E0E0" stroke-width="1">
+    <line x1="50" y1="200" x2="50" y2="40" />
+    <line x1="100" y1="200" x2="100" y2="40" />
+    <line x1="150" y1="200" x2="150" y2="40" />
+    <line x1="200" y1="200" x2="200" y2="40" />
+    <line x1="250" y1="200" x2="250" y2="40" />
+    <line x1="300" y1="200" x2="300" y2="40" />
+  </g>
+
+  <!-- Axes -->
+  <line x1="50" y1="200" x2="320" y2="200" stroke="#333" stroke-width="2" /> <!-- X-axis -->
+  <line x1="50" y1="200" x2="50" y2="30" stroke="#333" stroke-width="2" />  <!-- Y-axis -->
+
+  <!-- Line Graph Data -->
+  <!-- 0 min = 0 L -->
+  <!-- 10 min = 320 L -->
+  <!-- Y scale: 40px = 80 L => 320 L = 160px height => y = 200 - 160 = 40 -->
+  <line x1="50" y1="200" x2="300" y2="40" stroke="#0288D1" stroke-width="3" />
+
+  <!-- Y-axis Labels -->
+  <g font-family="Arial" font-size="12" fill="#333" text-anchor="end">
+    <text x="45" y="205">0</text>
+    <text x="45" y="165">80</text>
+    <text x="45" y="125">160</text>
+    <text x="45" y="85">240</text>
+    <text x="45" y="45">320</text>
+  </g>
+
+  <!-- X-axis Labels -->
+  <g font-family="Arial" font-size="12" fill="#333" text-anchor="middle">
+    <text x="50" y="220">0</text>
+    <text x="100" y="220">2</text>
+    <text x="150" y="220">4</text>
+    <text x="200" y="220">6</text>
+    <text x="250" y="220">8</text>
+    <text x="300" y="220">10</text>
+  </g>
+
+  <!-- Axis Titles -->
+  <text x="185" y="240" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold">Time (min)</text>
+  <text x="15" y="120" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" transform="rotate(-90, 15, 120)">Volume (Litres)</text>
+</svg>
