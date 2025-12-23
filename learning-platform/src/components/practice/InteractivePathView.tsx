@@ -324,8 +324,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   }), [nodes]);
 
   // Memoize layer boundaries
-  const { foundationEnd, integrationEnd } = useMemo(() => ({
-    foundationEnd: nodesByLayer.foundation.length - 1,
+  const { integrationEnd } = useMemo(() => ({
     integrationEnd: nodesByLayer.foundation.length - 1 + nodesByLayer.integration.length,
   }), [nodesByLayer]);
 
