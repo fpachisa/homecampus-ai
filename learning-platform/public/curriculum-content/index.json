@@ -196,9 +196,19 @@
       "category": "s4-math-vectors"
     },
     {
-      "filename": "P5/Maths/p5-math-placeholder.yaml",
-      "displayName": "Primary 5 Mathematics",
-      "category": "p5-math-placeholder"
+      "filename": "P5/Maths/p5-math-area-triangle.yaml",
+      "displayName": "P5 Area of Triangle",
+      "category": "p5-math-area-triangle"
+    },
+    {
+      "filename": "P5/Maths/p5-math-four-operations-fractions.yaml",
+      "displayName": "P5 Four Operations of Fractions",
+      "category": "p5-math-four-operations-fractions"
+    },
+    {
+      "filename": "P5/Maths/p5-math-four-operations.yaml",
+      "displayName": "P5 Four Operations of Whole Numbers",
+      "category": "p5-math-four-operations"
     },
     {
       "filename": "P6/Maths/p6-math-placeholder.yaml",

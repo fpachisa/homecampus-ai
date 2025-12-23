@@ -40,6 +40,7 @@ export const MilestoneMarker: React.FC<MilestoneMarkerProps> = ({
         integration: { icon: '💎', color: '#5865F2' },
         application: { icon: '🎯', color: '#10B981' },
         examPractice: { icon: '👑', color: '#EB459E' },
+        'word-problems': { icon: '📝', color: '#8B5CF6' },
       };
       const config = layerConfig[layer!] || layerConfig.foundation;
       return {
@@ -56,6 +57,7 @@ export const MilestoneMarker: React.FC<MilestoneMarkerProps> = ({
       integration: '#5865F2',
       application: '#10B981',
       examPractice: '#EB459E',
+      'word-problems': '#8B5CF6',
     };
     return {
       icon: '📦',

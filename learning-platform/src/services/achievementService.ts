@@ -147,14 +147,22 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     check: (p, _streak) => p.layerProgress.application.completed === p.layerProgress.application.total && p.layerProgress.application.total > 0,
   },
   {
+    id: 'word-problems-complete',
+    title: 'Word Problem Wizard',
+    description: 'Complete all Word Problems',
+    icon: '📝',
+    xpReward: 300,
+    check: (p, _streak) => p.layerProgress['word-problems'].completed === p.layerProgress['word-problems'].total && p.layerProgress['word-problems'].total > 0,
+  },
+  {
     id: 'path-complete',
     title: 'Path Champion',
     description: 'Complete the entire path',
     icon: '🏆',
     xpReward: 500,
     check: (p, _streak) => {
-      const totalNodes = p.layerProgress.foundation.total + p.layerProgress.integration.total + p.layerProgress.application.total;
-      const completedNodes = p.layerProgress.foundation.completed + p.layerProgress.integration.completed + p.layerProgress.application.completed;
+      const totalNodes = p.layerProgress.foundation.total + p.layerProgress.integration.total + p.layerProgress.application.total + p.layerProgress['word-problems'].total;
+      const completedNodes = p.layerProgress.foundation.completed + p.layerProgress.integration.completed + p.layerProgress.application.completed + p.layerProgress['word-problems'].completed;
       return totalNodes > 0 && completedNodes === totalNodes;
     },
   },

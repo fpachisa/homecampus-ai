@@ -807,7 +807,7 @@ nodes:
 - id: word-problems-node-1
   nodeNumber: 14
   title: Ratio Comparison Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 3
   prerequisites: []
   descriptor:
@@ -853,7 +853,7 @@ nodes:
 - id: word-problems-node-2
   nodeNumber: 15
   title: Part-Whole Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 3
   prerequisites: []
   descriptor:
@@ -896,7 +896,7 @@ nodes:
 - id: word-problems-node-3
   nodeNumber: 16
   title: Comparison-Difference Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 2
   prerequisites: []
   descriptor:
@@ -931,7 +931,7 @@ nodes:
 - id: word-problems-node-4
   nodeNumber: 17
   title: Before-After Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 4
   prerequisites: []
   descriptor:
@@ -990,7 +990,7 @@ nodes:
 - id: word-problems-node-5
   nodeNumber: 18
   title: Sequential-Units Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 5
   prerequisites: []
   descriptor:
@@ -1075,7 +1075,7 @@ nodes:
 - id: word-problems-node-6
   nodeNumber: 19
   title: Stacked-Ratio Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 3
   prerequisites: []
   descriptor:
@@ -1120,7 +1120,7 @@ nodes:
 - id: word-problems-node-7
   nodeNumber: 20
   title: Area-Grid Problems
-  layer: integration
+  layer: word-problems
   problemsRequired: 1
   prerequisites: []
   descriptor:

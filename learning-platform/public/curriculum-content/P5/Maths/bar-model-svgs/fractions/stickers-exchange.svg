@@ -1,0 +1,31 @@
+<svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stickers: 360 total, Amy has 2/5, gives 24 to Ben, Ben then has 2× Amy -->
+
+  <!-- Before -->
+  <text x="55" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="end">Before</text>
+  <text x="55" y="40" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Amy</text>
+  <rect x="65" y="25" width="96" height="24" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="2" rx="2"/>
+  <text x="113" y="41" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">144 (2/5)</text>
+
+  <text x="55" y="65" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Ben</text>
+  <rect x="65" y="50" width="144" height="24" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="137" y="66" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">216 (3/5)</text>
+
+  <!-- Transfer arrow -->
+  <text x="240" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#374151">→ Amy gives 24 →</text>
+
+  <!-- After -->
+  <text x="340" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="start">After</text>
+  <text x="340" y="40" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="start">Amy</text>
+  <rect x="365" y="25" width="80" height="24" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="2" rx="2"/>
+  <text x="405" y="41" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">120</text>
+
+  <text x="340" y="65" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="start">Ben</text>
+  <rect x="365" y="50" width="160" height="24" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="445" y="66" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">240 = 2 × 120</text>
+
+  <!-- Calculation -->
+  <text x="240" y="100" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Amy: 2T/5 - 24, Ben: 3T/5 + 24</text>
+  <text x="240" y="118" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Ben = 2×Amy: 3T/5 + 24 = 2(2T/5 - 24)</text>
+  <text x="240" y="136" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Solving: T/5 = 72, so T = 360 stickers</text>
+</svg>

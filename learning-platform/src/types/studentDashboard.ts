@@ -218,6 +218,10 @@ export interface PracticePathDetail {
     completed: number;
     total: number;
   };
+  wordProblemsNodes: {
+    completed: number;
+    total: number;
+  };
 
   // Performance
   accuracy: number;
@@ -234,7 +238,7 @@ export interface PracticeNodeDetail {
   nodeId: string;
   nodeNumber: number;
   title: string;
-  layer: 'foundation' | 'integration' | 'application' | 'examPractice';
+  layer: 'foundation' | 'integration' | 'application' | 'examPractice' | 'word-problems';
   status: 'locked' | 'current' | 'completed';
 
   problemsAttempted: number;

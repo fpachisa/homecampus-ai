@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Barn-Shaped Sign</text>
+
+  <!-- Triangle (roof) - height 5m = 100px at 20px/m scale -->
+  <polygon points="80,140 200,40 320,140" fill="#BBDEFB" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Rectangle (base) - 12m x 7m = 240px x 140px -->
+  <rect x="80" y="140" width="240" height="140" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Height line for triangle -->
+  <line x1="200" y1="40" x2="200" y2="140" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Dimensions -->
+  <!-- Rectangle base -->
+  <line x1="80" y1="295" x2="320" y2="295" stroke="#333" stroke-width="1"/>
+  <line x1="80" y1="290" x2="80" y2="300" stroke="#333" stroke-width="1"/>
+  <line x1="320" y1="290" x2="320" y2="300" stroke="#333" stroke-width="1"/>
+  <text x="200" y="310" text-anchor="middle" font-size="12" fill="#333">12 m</text>
+
+  <!-- Rectangle height -->
+  <line x1="335" y1="140" x2="335" y2="280" stroke="#333" stroke-width="1"/>
+  <line x1="330" y1="140" x2="340" y2="140" stroke="#333" stroke-width="1"/>
+  <line x1="330" y1="280" x2="340" y2="280" stroke="#333" stroke-width="1"/>
+  <text x="360" y="215" text-anchor="middle" font-size="12" fill="#333">7 m</text>
+
+  <!-- Triangle height -->
+  <text x="215" y="95" font-size="12" fill="#E91E63">5 m</text>
+
+  <!-- Labels -->
+  <text x="200" y="220" text-anchor="middle" font-size="11" fill="#1565C0">Rectangle</text>
+  <text x="200" y="100" text-anchor="middle" font-size="11" fill="#1565C0">Triangle</text>
+</svg>

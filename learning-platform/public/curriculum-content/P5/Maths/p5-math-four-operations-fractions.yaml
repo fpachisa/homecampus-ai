@@ -1,0 +1,994 @@
+# P5 Math Four Operations of Fractions - Practice Path
+# All nodes use pre-written questions for quality control
+# Covers: Addition/Subtraction of Mixed Numbers, Multiplying Fractions
+
+nodes:
+# =====================================================
+# SUBTOPIC 1: Addition and Subtraction of Mixed Numbers
+# =====================================================
+
+- id: add-sub-node-1
+  nodeNumber: 1
+  title: Adding and Subtracting Fractions with Unlike Denominators
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $\frac{2}{3} + \frac{1}{5}$
+      avatarIntro: Welcome! Let's practise adding fractions with different denominators. Remember, we need to find a common denominator first!
+      mathTool: null
+      finalAnswer: 13/15
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 3 and 5. The LCD is 15.'
+      - 'Step 2: Convert 2/3 to 10/15 (multiply top and bottom by 5).'
+      - 'Step 3: Convert 1/5 to 3/15 (multiply top and bottom by 3).'
+      - 'Step 4: Add the numerators: 10/15 + 3/15 = 13/15.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: Calculate $\frac{5}{6} - \frac{3}{4}$
+      mathTool: null
+      finalAnswer: 1/12
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 6 and 4. The LCD is 12.'
+      - 'Step 2: Convert 5/6 to 10/12 (multiply top and bottom by 2).'
+      - 'Step 3: Convert 3/4 to 9/12 (multiply top and bottom by 3).'
+      - 'Step 4: Subtract the numerators: 10/12 - 9/12 = 1/12.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: What is $\frac{3}{8} + \frac{1}{6}$?
+      mathTool: null
+      finalAnswer: 13/24
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 8 and 6. The LCD is 24.'
+      - 'Step 2: Convert 3/8 to 9/24 (multiply top and bottom by 3).'
+      - 'Step 3: Convert 1/6 to 4/24 (multiply top and bottom by 4).'
+      - 'Step 4: Add the numerators: 9/24 + 4/24 = 13/24.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Find the value of $\frac{7}{10} - \frac{2}{5}$
+      mathTool: null
+      finalAnswer: 3/10
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 10 and 5. The LCD is 10.'
+      - 'Step 2: 7/10 already has denominator 10.'
+      - 'Step 3: Convert 2/5 to 4/10 (multiply top and bottom by 2).'
+      - 'Step 4: Subtract the numerators: 7/10 - 4/10 = 3/10.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: Work out $\frac{4}{9} + \frac{1}{3}$
+      mathTool: null
+      finalAnswer: 7/9
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 9 and 3. The LCD is 9.'
+      - 'Step 2: 4/9 already has denominator 9.'
+      - 'Step 3: Convert 1/3 to 3/9 (multiply top and bottom by 3).'
+      - 'Step 4: Add the numerators: 4/9 + 3/9 = 7/9.'
+      id: q1-5
+      questionGroup: q1
+
+- id: add-sub-node-2
+  nodeNumber: 2
+  title: Adding Mixed Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $1\frac{1}{2} + 1\frac{1}{3}$
+      avatarIntro: Now let's add mixed numbers! Add the whole numbers first, then add the fractions using a common denominator.
+      mathTool: null
+      finalAnswer: 2 5/6
+      stepByStepGuideline:
+      - 'Step 1: Add the whole numbers: 1 + 1 = 2.'
+      - 'Step 2: Find the LCD of 2 and 3. The LCD is 6.'
+      - 'Step 3: Add the fractions: 1/2 + 1/3 = 3/6 + 2/6 = 5/6.'
+      - 'Step 4: Combine: 2 + 5/6 = 2 5/6.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: What is $2\frac{3}{4} + 1\frac{1}{2}$?
+      mathTool: null
+      finalAnswer: 4 1/4
+      stepByStepGuideline:
+      - 'Step 1: Add the whole numbers: 2 + 1 = 3.'
+      - 'Step 2: Find the LCD of 4 and 2. The LCD is 4.'
+      - 'Step 3: Add the fractions: 3/4 + 2/4 = 5/4 = 1 1/4.'
+      - 'Step 4: Add the extra whole: 3 + 1 1/4 = 4 1/4.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Find $3\frac{2}{5} + 2\frac{3}{4}$
+      mathTool: null
+      finalAnswer: 6 3/20
+      stepByStepGuideline:
+      - 'Step 1: Add the whole numbers: 3 + 2 = 5.'
+      - 'Step 2: Find the LCD of 5 and 4. The LCD is 20.'
+      - 'Step 3: Add the fractions: 8/20 + 15/20 = 23/20 = 1 3/20.'
+      - 'Step 4: Add the extra whole: 5 + 1 3/20 = 6 3/20.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Calculate $4\frac{1}{6} + 2\frac{2}{3}$
+      mathTool: null
+      finalAnswer: 6 5/6
+      stepByStepGuideline:
+      - 'Step 1: Add the whole numbers: 4 + 2 = 6.'
+      - 'Step 2: Find the LCD of 6 and 3. The LCD is 6.'
+      - 'Step 3: Add the fractions: 1/6 + 4/6 = 5/6.'
+      - 'Step 4: Combine: 6 + 5/6 = 6 5/6.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Add $1\frac{5}{8} + 2\frac{3}{4}$
+      mathTool: null
+      finalAnswer: 4 3/8
+      stepByStepGuideline:
+      - 'Step 1: Add the whole numbers: 1 + 2 = 3.'
+      - 'Step 2: Find the LCD of 8 and 4. The LCD is 8.'
+      - 'Step 3: Add the fractions: 5/8 + 6/8 = 11/8 = 1 3/8.'
+      - 'Step 4: Add the extra whole: 3 + 1 3/8 = 4 3/8.'
+      id: q2-5
+      questionGroup: q2
+
+- id: add-sub-node-3
+  nodeNumber: 3
+  title: Subtracting Mixed Numbers (with Regrouping)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $3\frac{1}{4} - 1\frac{5}{8}$
+      avatarIntro: Subtracting mixed numbers can be tricky when the fraction part we're subtracting is larger. We may need to regroup by borrowing 1 from the whole number!
+      mathTool: null
+      finalAnswer: 1 5/8
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 4 and 8. The LCD is 8.'
+      - 'Step 2: Convert: 3 1/4 = 3 2/8. We need to subtract 1 5/8.'
+      - 'Step 3: Since 2/8 < 5/8, regroup: 3 2/8 = 2 + 8/8 + 2/8 = 2 10/8.'
+      - 'Step 4: Subtract: 2 10/8 - 1 5/8 = 1 5/8.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: What is $5 - 1\frac{3}{7}$?
+      mathTool: null
+      finalAnswer: 3 4/7
+      stepByStepGuideline:
+      - 'Step 1: We need to subtract a mixed number from a whole number.'
+      - 'Step 2: Regroup 5 as 4 7/7.'
+      - 'Step 3: Subtract: 4 7/7 - 1 3/7 = 3 4/7.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: Find $4\frac{5}{12} - 1\frac{1}{6}$
+      mathTool: null
+      finalAnswer: 3 1/4
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 12 and 6. The LCD is 12.'
+      - 'Step 2: Convert: 4 5/12 - 1 2/12.'
+      - 'Step 3: Since 5/12 > 2/12, no regrouping needed.'
+      - 'Step 4: Subtract: 4 5/12 - 1 2/12 = 3 3/12 = 3 1/4.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: Calculate $7\frac{1}{10} - 3\frac{1}{2}$
+      mathTool: null
+      finalAnswer: 3 3/5
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 10 and 2. The LCD is 10.'
+      - 'Step 2: Convert: 7 1/10 - 3 5/10.'
+      - 'Step 3: Since 1/10 < 5/10, regroup: 7 1/10 = 6 11/10.'
+      - 'Step 4: Subtract: 6 11/10 - 3 5/10 = 3 6/10 = 3 3/5.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: Subtract $2\frac{3}{5}$ from $6\frac{1}{4}$
+      mathTool: null
+      finalAnswer: 3 13/20
+      stepByStepGuideline:
+      - 'Step 1: Find the LCD of 4 and 5. The LCD is 20.'
+      - 'Step 2: Convert: 6 5/20 - 2 12/20.'
+      - 'Step 3: Since 5/20 < 12/20, regroup: 6 5/20 = 5 25/20.'
+      - 'Step 4: Subtract: 5 25/20 - 2 12/20 = 3 13/20.'
+      id: q3-5
+      questionGroup: q3
+
+# =====================================================
+# SUBTOPIC 2: Multiplying a Fraction and a Whole Number
+# =====================================================
+
+- id: mult-frac-whole-node-1
+  nodeNumber: 4
+  title: Finding a Fraction OF a Whole Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find $\frac{3}{4}$ of 12.
+      avatarIntro: "When we say 'fraction OF a number', we multiply! Let's learn the bar model method: divide into denominator parts, take numerator parts."
+      mathTool: null
+      finalAnswer: '9'
+      stepByStepGuideline:
+      - 'Step 1: "3/4 of 12" means 3/4 × 12.'
+      - 'Step 2: Divide 12 into 4 equal parts: 12 ÷ 4 = 3 (each part is worth 3).'
+      - 'Step 3: Take 3 of those parts: 3 × 3 = 9.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: What is $\frac{2}{5}$ of 15?
+      mathTool: null
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'Step 1: "2/5 of 15" means 2/5 × 15.'
+      - 'Step 2: Divide 15 into 5 equal parts: 15 ÷ 5 = 3.'
+      - 'Step 3: Take 2 of those parts: 2 × 3 = 6.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: Calculate $\frac{3}{7}$ of 28.
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: "3/7 of 28" means 3/7 × 28.'
+      - 'Step 2: Divide 28 into 7 equal parts: 28 ÷ 7 = 4.'
+      - 'Step 3: Take 3 of those parts: 3 × 4 = 12.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Find $\frac{5}{8}$ of 24.
+      mathTool: null
+      finalAnswer: '15'
+      stepByStepGuideline:
+      - 'Step 1: "5/8 of 24" means 5/8 × 24.'
+      - 'Step 2: Divide 24 into 8 equal parts: 24 ÷ 8 = 3.'
+      - 'Step 3: Take 5 of those parts: 5 × 3 = 15.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: What is $\frac{4}{9}$ of 27?
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: "4/9 of 27" means 4/9 × 27.'
+      - 'Step 2: Divide 27 into 9 equal parts: 27 ÷ 9 = 3.'
+      - 'Step 3: Take 4 of those parts: 4 × 3 = 12.'
+      id: q4-5
+      questionGroup: q4
+
+- id: mult-frac-whole-node-2
+  nodeNumber: 5
+  title: Multiplying Fraction × Whole Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $\frac{2}{5} \times 12$
+      avatarIntro: Now let's multiply fractions by whole numbers! Multiply the numerator by the whole number, keep the denominator, and convert to a mixed number if needed.
+      mathTool: null
+      finalAnswer: 4 4/5
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerator by whole: 2 × 12 = 24.'
+      - 'Step 2: Keep denominator: 24/5.'
+      - 'Step 3: Convert to mixed number: 24 ÷ 5 = 4 remainder 4, so 4 4/5.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: What is $20 \times \frac{7}{10}$?
+      mathTool: null
+      finalAnswer: '14'
+      stepByStepGuideline:
+      - 'Step 1: Multiply: 20 × 7 = 140.'
+      - 'Step 2: Divide by denominator: 140 ÷ 10 = 14.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: Find $3 \times \frac{3}{10}$
+      mathTool: null
+      finalAnswer: 9/10
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerator by whole: 3 × 3 = 9.'
+      - 'Step 2: Keep denominator: 9/10.'
+      - 'Step 3: 9/10 is already a proper fraction in simplest form.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: Calculate $\frac{5}{6} \times 9$
+      mathTool: null
+      finalAnswer: 7 1/2
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerator by whole: 5 × 9 = 45.'
+      - 'Step 2: Keep denominator: 45/6.'
+      - 'Step 3: Simplify: 45/6 = 15/2 = 7 1/2.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: Multiply $\frac{4}{7}$ by 21
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerator by whole: 4 × 21 = 84.'
+      - 'Step 2: Divide by denominator: 84 ÷ 7 = 12.'
+      id: q5-5
+      questionGroup: q5
+
+- id: mult-frac-whole-node-3
+  nodeNumber: 6
+  title: 'Word Problems: Fraction of a Whole Number'
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A ribbon is 18 metres long. Sarah uses $\frac{2}{3}$ of the ribbon. How many metres of ribbon does she use?
+      avatarIntro: Let's solve word problems involving fractions! Look for the word 'of' - it tells us to multiply.
+      mathTool: null
+      finalAnswer: 12 metres
+      stepByStepGuideline:
+      - 'Step 1: "2/3 of 18" means 2/3 × 18.'
+      - 'Step 2: Divide 18 into 3 parts: 18 ÷ 3 = 6.'
+      - 'Step 3: Take 2 parts: 2 × 6 = 12 metres.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: There are 35 apples in a basket. $\frac{4}{5}$ of them are red. How many red apples are there?
+      mathTool: null
+      finalAnswer: 28 apples
+      stepByStepGuideline:
+      - 'Step 1: "4/5 of 35" means 4/5 × 35.'
+      - 'Step 2: Divide 35 into 5 parts: 35 ÷ 5 = 7.'
+      - 'Step 3: Take 4 parts: 4 × 7 = 28 apples.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A water tank holds 24 litres. $\frac{5}{8}$ of the tank is filled with water. How many litres of water are in the tank?
+      mathTool: null
+      finalAnswer: 15 litres
+      stepByStepGuideline:
+      - 'Step 1: "5/8 of 24" means 5/8 × 24.'
+      - 'Step 2: Divide 24 into 8 parts: 24 ÷ 8 = 3.'
+      - 'Step 3: Take 5 parts: 5 × 3 = 15 litres.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Tom has 42 stickers. He gives $\frac{3}{7}$ of them to his friend. How many stickers does he give away?
+      mathTool: null
+      finalAnswer: 18 stickers
+      stepByStepGuideline:
+      - 'Step 1: "3/7 of 42" means 3/7 × 42.'
+      - 'Step 2: Divide 42 into 7 parts: 42 ÷ 7 = 6.'
+      - 'Step 3: Take 3 parts: 3 × 6 = 18 stickers.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A bag contains 30 marbles. $\frac{2}{5}$ of them are blue. How many marbles are NOT blue?
+      mathTool: null
+      finalAnswer: 18 marbles
+      stepByStepGuideline:
+      - 'Step 1: Find blue marbles: 2/5 × 30 = 12.'
+      - 'Step 2: Find non-blue: 30 - 12 = 18 marbles.'
+      - 'Or use: 3/5 × 30 = 18 (since 3/5 are not blue).'
+      id: q6-5
+      questionGroup: q6
+
+# =====================================================
+# SUBTOPIC 3: Multiplying Two Fractions
+# =====================================================
+
+- id: mult-two-frac-node-1
+  nodeNumber: 7
+  title: Understanding Fraction × Fraction
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: What is $\frac{1}{3}$ of $\frac{1}{2}$?
+      avatarIntro: "Fraction of a fraction? When you take 1/3 of a half, you're dividing the half into 3 equal parts and taking 1 of them. Let's see how this works!"
+      mathTool: null
+      finalAnswer: 1/6
+      stepByStepGuideline:
+      - 'Step 1: "1/3 of 1/2" means 1/3 × 1/2.'
+      - 'Step 2: Multiply numerators: 1 × 1 = 1.'
+      - 'Step 3: Multiply denominators: 3 × 2 = 6.'
+      - 'Step 4: Answer: 1/6.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Find $\frac{1}{4}$ of $\frac{1}{3}$.
+      mathTool: null
+      finalAnswer: 1/12
+      stepByStepGuideline:
+      - 'Step 1: "1/4 of 1/3" means 1/4 × 1/3.'
+      - 'Step 2: Multiply numerators: 1 × 1 = 1.'
+      - 'Step 3: Multiply denominators: 4 × 3 = 12.'
+      - 'Step 4: Answer: 1/12.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Calculate $\frac{1}{2}$ of $\frac{1}{5}$.
+      mathTool: null
+      finalAnswer: 1/10
+      stepByStepGuideline:
+      - 'Step 1: "1/2 of 1/5" means 1/2 × 1/5.'
+      - 'Step 2: Multiply numerators: 1 × 1 = 1.'
+      - 'Step 3: Multiply denominators: 2 × 5 = 10.'
+      - 'Step 4: Answer: 1/10.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: What is $\frac{1}{2}$ of $\frac{1}{4}$?
+      mathTool: null
+      finalAnswer: 1/8
+      stepByStepGuideline:
+      - 'Step 1: "1/2 of 1/4" means 1/2 × 1/4.'
+      - 'Step 2: Multiply numerators: 1 × 1 = 1.'
+      - 'Step 3: Multiply denominators: 2 × 4 = 8.'
+      - 'Step 4: Answer: 1/8.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Find $\frac{1}{3}$ of $\frac{1}{5}$.
+      mathTool: null
+      finalAnswer: 1/15
+      stepByStepGuideline:
+      - 'Step 1: "1/3 of 1/5" means 1/3 × 1/5.'
+      - 'Step 2: Multiply numerators: 1 × 1 = 1.'
+      - 'Step 3: Multiply denominators: 3 × 5 = 15.'
+      - 'Step 4: Answer: 1/15.'
+      id: q7-5
+      questionGroup: q7
+
+- id: mult-two-frac-node-2
+  nodeNumber: 8
+  title: 'Multiplying Two Fractions: Algorithm'
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $\frac{1}{3} \times \frac{5}{4}$
+      avatarIntro: To multiply two fractions, multiply the numerators together and multiply the denominators together. Then simplify if possible!
+      mathTool: null
+      finalAnswer: 5/12
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerators: 1 × 5 = 5.'
+      - 'Step 2: Multiply denominators: 3 × 4 = 12.'
+      - 'Step 3: Answer: 5/12 (already in simplest form).'
+      id: q8-1
+      questionGroup: q8
+    - problemText: What is $\frac{3}{4} \times \frac{8}{7}$?
+      mathTool: null
+      finalAnswer: 6/7
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerators: 3 × 8 = 24.'
+      - 'Step 2: Multiply denominators: 4 × 7 = 28.'
+      - 'Step 3: Simplify: 24/28 = 6/7 (divide by 4).'
+      id: q8-2
+      questionGroup: q8
+    - problemText: Find $\frac{2}{5} \times \frac{9}{5}$
+      mathTool: null
+      finalAnswer: 18/25
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerators: 2 × 9 = 18.'
+      - 'Step 2: Multiply denominators: 5 × 5 = 25.'
+      - 'Step 3: Answer: 18/25 (already in simplest form).'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Calculate $\frac{7}{6} \times \frac{2}{3}$
+      mathTool: null
+      finalAnswer: 7/9
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerators: 7 × 2 = 14.'
+      - 'Step 2: Multiply denominators: 6 × 3 = 18.'
+      - 'Step 3: Simplify: 14/18 = 7/9 (divide by 2).'
+      id: q8-4
+      questionGroup: q8
+    - problemText: Multiply $\frac{5}{8} \times \frac{4}{3}$
+      mathTool: null
+      finalAnswer: 5/6
+      stepByStepGuideline:
+      - 'Step 1: Multiply numerators: 5 × 4 = 20.'
+      - 'Step 2: Multiply denominators: 8 × 3 = 24.'
+      - 'Step 3: Simplify: 20/24 = 5/6 (divide by 4).'
+      id: q8-5
+      questionGroup: q8
+
+- id: mult-two-frac-node-3
+  nodeNumber: 9
+  title: Cancellation (Simplifying Before Multiplying)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $\frac{5}{6} \times \frac{9}{10}$ using cancellation.
+      avatarIntro: Cancellation makes multiplication easier! Before multiplying, look for common factors between any numerator and any denominator, and divide them out.
+      mathTool: null
+      finalAnswer: 3/4
+      stepByStepGuideline:
+      - 'Step 1: Look for common factors: 5 and 10 share factor 5, 9 and 6 share factor 3.'
+      - 'Step 2: Cancel: 5/6 × 9/10 → 1/2 × 3/2.'
+      - 'Step 3: Multiply: 1 × 3 = 3, 2 × 2 = 4.'
+      - 'Step 4: Answer: 3/4.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Use cancellation to find $\frac{4}{9} \times \frac{3}{8}$.
+      mathTool: null
+      finalAnswer: 1/6
+      stepByStepGuideline:
+      - 'Step 1: Look for common factors: 4 and 8 share factor 4, 3 and 9 share factor 3.'
+      - 'Step 2: Cancel: 4/9 × 3/8 → 1/3 × 1/2.'
+      - 'Step 3: Multiply: 1 × 1 = 1, 3 × 2 = 6.'
+      - 'Step 4: Answer: 1/6.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Calculate $\frac{5}{12} \times \frac{8}{15}$ by simplifying first.
+      mathTool: null
+      finalAnswer: 2/9
+      stepByStepGuideline:
+      - 'Step 1: Look for common factors: 5 and 15 share factor 5, 8 and 12 share factor 4.'
+      - 'Step 2: Cancel: 5/12 × 8/15 → 1/3 × 2/3.'
+      - 'Step 3: Multiply: 1 × 2 = 2, 3 × 3 = 9.'
+      - 'Step 4: Answer: 2/9.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Find $\frac{7}{10} \times \frac{5}{14}$ using cancellation.
+      mathTool: null
+      finalAnswer: 1/4
+      stepByStepGuideline:
+      - 'Step 1: Look for common factors: 7 and 14 share factor 7, 5 and 10 share factor 5.'
+      - 'Step 2: Cancel: 7/10 × 5/14 → 1/2 × 1/2.'
+      - 'Step 3: Multiply: 1 × 1 = 1, 2 × 2 = 4.'
+      - 'Step 4: Answer: 1/4.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Calculate $\frac{6}{7} \times \frac{14}{15}$ using cancellation.
+      mathTool: null
+      finalAnswer: 4/5
+      stepByStepGuideline:
+      - 'Step 1: Look for common factors: 6 and 15 share factor 3, 14 and 7 share factor 7.'
+      - 'Step 2: Cancel: 6/7 × 14/15 → 2/1 × 2/5.'
+      - 'Step 3: Multiply: 2 × 2 = 4, 1 × 5 = 5.'
+      - 'Step 4: Answer: 4/5.'
+      id: q9-5
+      questionGroup: q9
+
+# =====================================================
+# SUBTOPIC 4: Multiplying Mixed Number × Whole Number
+# =====================================================
+
+- id: mult-mixed-node-1
+  nodeNumber: 10
+  title: Multiplying Mixed Number × Whole Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate $1\frac{1}{2} \times 3$
+      avatarIntro: To multiply a mixed number by a whole number, first convert the mixed number to an improper fraction, multiply, then convert back to a mixed number!
+      mathTool: null
+      finalAnswer: 4 1/2
+      stepByStepGuideline:
+      - 'Step 1: Convert 1 1/2 to improper: (1 × 2 + 1)/2 = 3/2.'
+      - 'Step 2: Multiply: 3/2 × 3 = 9/2.'
+      - 'Step 3: Convert back: 9 ÷ 2 = 4 R1, so 4 1/2.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: What is $6 \times 1\frac{2}{9}$?
+      mathTool: null
+      finalAnswer: 7 1/3
+      stepByStepGuideline:
+      - 'Step 1: Convert 1 2/9 to improper: (1 × 9 + 2)/9 = 11/9.'
+      - 'Step 2: Multiply: 6 × 11/9 = 66/9.'
+      - 'Step 3: Simplify and convert: 66/9 = 22/3 = 7 1/3.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: Find $4 \times 2\frac{1}{5}$
+      mathTool: null
+      finalAnswer: 8 4/5
+      stepByStepGuideline:
+      - 'Step 1: Convert 2 1/5 to improper: (2 × 5 + 1)/5 = 11/5.'
+      - 'Step 2: Multiply: 4 × 11/5 = 44/5.'
+      - 'Step 3: Convert back: 44 ÷ 5 = 8 R4, so 8 4/5.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: Calculate $5 \times 2\frac{3}{4}$
+      mathTool: null
+      finalAnswer: 13 3/4
+      stepByStepGuideline:
+      - 'Step 1: Convert 2 3/4 to improper: (2 × 4 + 3)/4 = 11/4.'
+      - 'Step 2: Multiply: 5 × 11/4 = 55/4.'
+      - 'Step 3: Convert back: 55 ÷ 4 = 13 R3, so 13 3/4.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: Multiply $8 \times 3\frac{1}{6}$
+      mathTool: null
+      finalAnswer: 25 1/3
+      stepByStepGuideline:
+      - 'Step 1: Convert 3 1/6 to improper: (3 × 6 + 1)/6 = 19/6.'
+      - 'Step 2: Multiply: 8 × 19/6 = 152/6.'
+      - 'Step 3: Simplify and convert: 152/6 = 76/3 = 25 1/3.'
+      id: q10-5
+      questionGroup: q10
+
+- id: mult-mixed-node-2
+  nodeNumber: 11
+  title: Visualizing Mixed Number × Whole Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Draw a model to show $1\frac{1}{2} \times 3$ and find the answer.
+      avatarIntro: Let's visualize mixed number multiplication! Think of it as making groups - 3 groups of 1 and a half.
+      mathTool: null
+      finalAnswer: 4 1/2
+      stepByStepGuideline:
+      - 'Step 1: Draw 3 groups, each showing 1 1/2 (one whole and one half).'
+      - 'Step 2: Count the wholes: 3 wholes.'
+      - 'Step 3: Count the halves: 3 halves = 1 1/2 wholes.'
+      - 'Step 4: Total: 3 + 1 1/2 = 4 1/2.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: Use a visual model to calculate $2\frac{1}{4} \times 2$.
+      mathTool: null
+      finalAnswer: 4 1/2
+      stepByStepGuideline:
+      - 'Step 1: Draw 2 groups, each showing 2 1/4 (two wholes and one quarter).'
+      - 'Step 2: Count the wholes: 4 wholes.'
+      - 'Step 3: Count the quarters: 2 quarters = 1/2.'
+      - 'Step 4: Total: 4 + 1/2 = 4 1/2.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: Show how to find $1\frac{1}{3} \times 3$ using a diagram.
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - 'Step 1: Draw 3 groups, each showing 1 1/3 (one whole and one third).'
+      - 'Step 2: Count the wholes: 3 wholes.'
+      - 'Step 3: Count the thirds: 3 thirds = 1 whole.'
+      - 'Step 4: Total: 3 + 1 = 4.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: Draw groups to show $1\frac{3}{4} \times 2$ and find the answer.
+      mathTool: null
+      finalAnswer: 3 1/2
+      stepByStepGuideline:
+      - 'Step 1: Draw 2 groups, each showing 1 3/4 (one whole and three quarters).'
+      - 'Step 2: Count the wholes: 2 wholes.'
+      - 'Step 3: Count the quarters: 6 quarters = 1 2/4 = 1 1/2.'
+      - 'Step 4: Total: 2 + 1 1/2 = 3 1/2.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: Use a visual model to calculate $2\frac{1}{2} \times 4$.
+      mathTool: null
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'Step 1: Draw 4 groups, each showing 2 1/2 (two wholes and one half).'
+      - 'Step 2: Count the wholes: 8 wholes.'
+      - 'Step 3: Count the halves: 4 halves = 2 wholes.'
+      - 'Step 4: Total: 8 + 2 = 10.'
+      id: q11-5
+      questionGroup: q11
+
+- id: mult-mixed-node-3
+  nodeNumber: 12
+  title: 'Word Problems: Mixed Number × Whole Number'
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Each piece of string is $2\frac{1}{5}$ metres long. What is the total length of 4 pieces of string?
+      avatarIntro: Let's apply mixed number multiplication to real-world problems! Remember to include units in your answer.
+      mathTool: null
+      finalAnswer: 8 4/5 metres
+      stepByStepGuideline:
+      - 'Step 1: Convert 2 1/5 to improper: 11/5.'
+      - 'Step 2: Multiply: 4 × 11/5 = 44/5.'
+      - 'Step 3: Convert back: 44 ÷ 5 = 8 R4, so 8 4/5 metres.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A recipe uses $1\frac{1}{2}$ cups of flour. How much flour is needed for 3 batches?
+      mathTool: null
+      finalAnswer: 4 1/2 cups
+      stepByStepGuideline:
+      - 'Step 1: Convert 1 1/2 to improper: 3/2.'
+      - 'Step 2: Multiply: 3 × 3/2 = 9/2.'
+      - 'Step 3: Convert back: 9 ÷ 2 = 4 R1, so 4 1/2 cups.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: Each bottle contains $1\frac{3}{8}$ litres of juice. How much juice is in 6 bottles?
+      mathTool: null
+      finalAnswer: 8 1/4 litres
+      stepByStepGuideline:
+      - 'Step 1: Convert 1 3/8 to improper: 11/8.'
+      - 'Step 2: Multiply: 6 × 11/8 = 66/8 = 33/4.'
+      - 'Step 3: Convert back: 33 ÷ 4 = 8 R1, so 8 1/4 litres.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: A bag of sand weighs $2\frac{2}{3}$ kg. What is the total weight of 9 bags?
+      mathTool: null
+      finalAnswer: 24 kg
+      stepByStepGuideline:
+      - 'Step 1: Convert 2 2/3 to improper: 8/3.'
+      - 'Step 2: Multiply: 9 × 8/3 = 72/3.'
+      - 'Step 3: Simplify: 72 ÷ 3 = 24 kg.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: Each wooden plank is $3\frac{1}{4}$ metres long. What is the total length of 5 planks?
+      mathTool: null
+      finalAnswer: 16 1/4 metres
+      stepByStepGuideline:
+      - 'Step 1: Convert 3 1/4 to improper: 13/4.'
+      - 'Step 2: Multiply: 5 × 13/4 = 65/4.'
+      - 'Step 3: Convert back: 65 ÷ 4 = 16 R1, so 16 1/4 metres.'
+      id: q12-5
+      questionGroup: q12
+
+# =====================================================
+# SUBTOPIC 5: Word Problems (New Layer: word-problems)
+# =====================================================
+
+- id: fractions-word-problems-node-1
+  nodeNumber: 13
+  title: Simple Addition and Subtraction Problems
+  layer: word-problems
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A pitcher contained $\frac{1}{6}$ litre of lemon juice. Maria added $\frac{4}{5}$ litre of water to make lemonade. What was the total volume of the lemonade? Give your answer as a mixed number.
+      avatarIntro: Welcome to fraction word problems! Let's use bar models to help visualize these problems. Remember to find the LCD when adding fractions with unlike denominators!
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/lemonade-mixture.svg
+      mathTool: null
+      finalAnswer: 29/30 litre
+      stepByStepGuideline:
+      - 'Step 1: Find LCD of 6 and 5. LCD = 30.'
+      - 'Step 2: Convert fractions: 1/6 = 5/30, 4/5 = 24/30.'
+      - 'Step 3: Add the fractions: 5/30 + 24/30 = 29/30.'
+      - 'Step 4: 29/30 litre (already less than 1, not a mixed number).'
+      id: wp1-1
+      questionGroup: wp1
+    - problemText: Stick A is $\frac{5}{6}$ m long. It is $\frac{1}{4}$ m longer than Stick B. What is the length of Stick B?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/sticks-comparison.svg
+      mathTool: null
+      finalAnswer: 7/12 m
+      stepByStepGuideline:
+      - 'Step 1: Stick A = Stick B + 1/4, so Stick B = Stick A - 1/4.'
+      - 'Step 2: Find LCD of 6 and 4. LCD = 12.'
+      - 'Step 3: Convert: 5/6 = 10/12, 1/4 = 3/12.'
+      - 'Step 4: Subtract: 10/12 - 3/12 = 7/12 m.'
+      id: wp1-2
+      questionGroup: wp1
+    - problemText: Mrs Chen bought 1 kg of flour. She used $\frac{3}{8}$ kg for cookies and $\frac{1}{4}$ kg for a cake. How much flour was left? Express your answer in simplest form.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/flour-usage.svg
+      mathTool: null
+      finalAnswer: 3/8 kg
+      stepByStepGuideline:
+      - 'Step 1: Find total used: 3/8 + 1/4 (LCD = 8).'
+      - 'Step 2: Convert and add: 3/8 + 2/8 = 5/8 kg used.'
+      - 'Step 3: Subtract from total: 1 - 5/8 = 8/8 - 5/8 = 3/8 kg left.'
+      id: wp1-3
+      questionGroup: wp1
+
+- id: fractions-word-problems-node-2
+  nodeNumber: 14
+  title: Comparison Problems (More Than/Less Than)
+  layer: word-problems
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Box X has a mass of $9\frac{1}{4}$ kg. Box X is $2\frac{1}{3}$ kg less than Box Y. Box Y is $1\frac{1}{2}$ kg more than Box Z. What is the mass of Box Z?
+      avatarIntro: Comparison problems with 'more than' and 'less than' require careful reading! Drawing bar models helps us see the relationships between quantities.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/three-boxes.svg
+      mathTool: null
+      finalAnswer: 10 1/12 kg
+      stepByStepGuideline:
+      - 'Step 1: Box Y = Box X + 2 1/3 = 9 1/4 + 2 1/3 (LCD = 12).'
+      - 'Step 2: Convert: 9 3/12 + 2 4/12 = 11 7/12 kg.'
+      - 'Step 3: Box Z = Box Y - 1 1/2 = 11 7/12 - 1 6/12.'
+      - 'Step 4: Subtract: 11 7/12 - 1 6/12 = 10 1/12 kg.'
+      id: wp2-1
+      questionGroup: wp2
+    - problemText: A jug contained some juice. Lily drank $1\frac{1}{4}$ litres. She then added $1\frac{5}{8}$ litres of water. There were 3 litres of liquid in the jug finally. How much juice was in the jug at first?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/jug-before-after.svg
+      mathTool: null
+      finalAnswer: 2 5/8 litres
+      stepByStepGuideline:
+      - 'Step 1: Let original = x. Then x - 1 1/4 + 1 5/8 = 3.'
+      - 'Step 2: Find net change: 1 5/8 - 1 1/4 = 1 5/8 - 1 2/8 = 3/8 (net gain).'
+      - 'Step 3: Original + 3/8 = 3, so Original = 3 - 3/8.'
+      - 'Step 4: Calculate: 24/8 - 3/8 = 21/8 = 2 5/8 litres.'
+      id: wp2-2
+      questionGroup: wp2
+    - problemText: A book has 360 pages. Ryan read $\frac{2}{5}$ of the book on Monday and $\frac{1}{4}$ of the book on Tuesday. How many more pages did he read on Monday than on Tuesday?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/book-reading.svg
+      mathTool: null
+      finalAnswer: 54 pages
+      stepByStepGuideline:
+      - 'Step 1: Pages on Monday: 2/5 × 360 = 144 pages.'
+      - 'Step 2: Pages on Tuesday: 1/4 × 360 = 90 pages.'
+      - 'Step 3: Difference: 144 - 90 = 54 more pages on Monday.'
+      id: wp2-3
+      questionGroup: wp2
+
+- id: fractions-word-problems-node-3
+  nodeNumber: 15
+  title: Fraction of a Total
+  layer: word-problems
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: medium
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: There are 180 people at a school fair. $\frac{5}{9}$ of them are adults and the rest are children. (a) How many adults are there? (b) How many children are there?
+      avatarIntro: "Fraction of total problems are solved by dividing the total into equal parts! The denominator tells you how many parts, and the numerator tells you how many parts to take."
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/school-fair.svg
+      mathTool: null
+      finalAnswer: (a) 100 adults, (b) 80 children
+      stepByStepGuideline:
+      - 'Step 1: Adults = 5/9 × 180.'
+      - 'Step 2: Divide 180 into 9 parts: 180 ÷ 9 = 20.'
+      - 'Step 3: Adults = 5 × 20 = 100.'
+      - 'Step 4: Children = 180 - 100 = 80 (or 4/9 × 180 = 80).'
+      id: wp3-1
+      questionGroup: wp3
+    - problemText: Mrs Lim had $\frac{5}{6}$ kg of sugar. She used $\frac{2}{5}$ of the sugar to bake muffins. (a) How much sugar did she use? (b) How much sugar was left? Give your answers as fractions in the simplest form.
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/sugar-baking.svg
+      mathTool: null
+      finalAnswer: (a) 1/3 kg, (b) 1/2 kg
+      stepByStepGuideline:
+      - 'Step 1: Sugar used = 2/5 × 5/6 = 10/30 = 1/3 kg.'
+      - 'Step 2: Sugar left = 5/6 - 1/3 (LCD = 6).'
+      - 'Step 3: Convert: 5/6 - 2/6 = 3/6 = 1/2 kg.'
+      id: wp3-2
+      questionGroup: wp3
+    - problemText: A baker made 72 cupcakes. $\frac{1}{3}$ of them were chocolate flavour and $\frac{5}{8}$ of the remainder were vanilla. The rest were strawberry. How many strawberry cupcakes were there?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/cupcakes-flavours.svg
+      mathTool: null
+      finalAnswer: 18 cupcakes
+      stepByStepGuideline:
+      - 'Step 1: Chocolate = 1/3 × 72 = 24 cupcakes.'
+      - 'Step 2: Remainder = 72 - 24 = 48 cupcakes.'
+      - 'Step 3: Vanilla = 5/8 × 48 = 30 cupcakes.'
+      - 'Step 4: Strawberry = 48 - 30 = 18 cupcakes.'
+      id: wp3-3
+      questionGroup: wp3
+
+- id: fractions-word-problems-node-4
+  nodeNumber: 16
+  title: Fraction of a Fraction (Two-Step)
+  layer: word-problems
+  problemsRequired: 3
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: There are 360 teachers in a school. $\frac{5}{6}$ of the teachers are female. $\frac{1}{5}$ of the female teachers wear glasses. How many female teachers wear glasses?
+      avatarIntro: Two-step problems involve finding a fraction OF a fraction. This means multiplying the fractions together!
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/teachers-glasses.svg
+      mathTool: null
+      finalAnswer: 60 teachers
+      stepByStepGuideline:
+      - 'Step 1: Female teachers = 5/6 × 360 = 300.'
+      - 'Step 2: Female teachers with glasses = 1/5 × 300 = 60.'
+      - 'Alternative: 1/5 × 5/6 × 360 = 1/6 × 360 = 60.'
+      id: wp4-1
+      questionGroup: wp4
+    - problemText: James had 120 marbles. He gave $\frac{3}{8}$ of them to his brother. He then gave $\frac{2}{3}$ of the remaining marbles to his sister. How many marbles did James have left?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/marbles-sharing.svg
+      mathTool: null
+      finalAnswer: 25 marbles
+      stepByStepGuideline:
+      - 'Step 1: Given to brother = 3/8 × 120 = 45 marbles.'
+      - 'Step 2: Remaining = 120 - 45 = 75 marbles.'
+      - 'Step 3: Given to sister = 2/3 × 75 = 50 marbles.'
+      - 'Step 4: Left with James = 75 - 50 = 25 marbles.'
+      id: wp4-2
+      questionGroup: wp4
+    - problemText: A farmer had 480 animals. $\frac{2}{5}$ of them were cows. $\frac{3}{4}$ of the remaining animals were sheep. The rest were goats. How many goats were there?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/farm-animals.svg
+      mathTool: null
+      finalAnswer: 72 goats
+      stepByStepGuideline:
+      - 'Step 1: Cows = 2/5 × 480 = 192.'
+      - 'Step 2: Remaining = 480 - 192 = 288.'
+      - 'Step 3: Sheep = 3/4 × 288 = 216.'
+      - 'Step 4: Goats = 288 - 216 = 72 goats.'
+      id: wp4-3
+      questionGroup: wp4
+
+- id: fractions-word-problems-node-5
+  nodeNumber: 17
+  title: Complex Multi-Step Problems
+  layer: word-problems
+  problemsRequired: 4
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: hard
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Mrs Wong had a bag of beads. $\frac{1}{5}$ of the beads were red and $\frac{1}{4}$ of the beads were yellow. $\frac{1}{3}$ of the remaining beads were green. The rest of the beads were purple. There were 22 more purple beads than green beads. (a) What fraction of the beads were green? (b) How many beads did Mrs Wong have altogether?
+      avatarIntro: Complex multi-step problems require us to break down the information carefully. Let's use bar models to organize our thinking!
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/coloured-beads.svg
+      mathTool: null
+      finalAnswer: (a) 11/60, (b) 120 beads
+      stepByStepGuideline:
+      - 'Step 1: Remaining after red and yellow = 1 - 1/5 - 1/4 = 20/20 - 4/20 - 5/20 = 11/20.'
+      - 'Step 2: Green = 1/3 × 11/20 = 11/60 of total.'
+      - 'Step 3: Purple = 2/3 × 11/20 = 22/60 of total.'
+      - 'Step 4: Purple - Green = 22/60 - 11/60 = 11/60 of total = 22 beads.'
+      - 'Step 5: If 11/60 of total = 22, then 1/60 = 2, so total = 120 beads.'
+      - 'Verify: Red = 24, Yellow = 30, Green = 22, Purple = 44. Total = 120 ✓'
+      id: wp5-1
+      questionGroup: wp5
+    - problemText: There were some vegetables in a basket. $\frac{2}{5}$ of them were carrots and $\frac{3}{4}$ of the remainder were potatoes. The rest of them were onions. There were 42 more potatoes than onions. How many vegetables were there in the basket?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/vegetables-basket.svg
+      mathTool: null
+      finalAnswer: 140 vegetables
+      stepByStepGuideline:
+      - 'Step 1: Remainder (not carrots) = 1 - 2/5 = 3/5 of total.'
+      - 'Step 2: Potatoes = 3/4 × 3/5 = 9/20 of total.'
+      - 'Step 3: Onions = 1/4 × 3/5 = 3/20 of total.'
+      - 'Step 4: Potatoes - Onions = 9/20 - 3/20 = 6/20 = 3/10 of total.'
+      - 'Step 5: 3/10 of total = 42, so total = 42 × 10/3 = 140 vegetables.'
+      - 'Verify: Carrots = 56, Potatoes = 63, Onions = 21. Diff = 42 ✓'
+      id: wp5-2
+      questionGroup: wp5
+    - problemText: At a carnival, $\frac{3}{5}$ of the visitors were adults. $\frac{1}{3}$ of the children were boys. There were 168 more adults than boys. How many visitors were there at the carnival?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/carnival-visitors.svg
+      mathTool: null
+      finalAnswer: 360 visitors
+      stepByStepGuideline:
+      - 'Step 1: Adults = 3/5 of total.'
+      - 'Step 2: Children = 2/5 of total.'
+      - 'Step 3: Boys = 1/3 × 2/5 = 2/15 of total.'
+      - 'Step 4: Adults = 3/5 = 9/15 of total.'
+      - 'Step 5: Adults - Boys = 9/15 - 2/15 = 7/15 of total = 168.'
+      - 'Step 6: Total = 168 × 15/7 = 360 visitors.'
+      - 'Verify: Adults = 216, Children = 144, Boys = 48. 216 - 48 = 168 ✓'
+      id: wp5-3
+      questionGroup: wp5
+    - problemText: Amy and Ben had some stickers altogether. Amy had $\frac{2}{5}$ of the stickers. After Amy gave 24 stickers to Ben, Ben had twice as many stickers as Amy. How many stickers did they have altogether?
+      solutionDiagramSvg: /curriculum-content/P5/Maths/bar-model-svgs/fractions/stickers-exchange.svg
+      mathTool: null
+      finalAnswer: 360 stickers
+      stepByStepGuideline:
+      - 'Step 1: Let total = T. Amy had 2T/5, Ben had 3T/5.'
+      - 'Step 2: After transfer: Amy has 2T/5 - 24, Ben has 3T/5 + 24.'
+      - 'Step 3: Ben = 2 × Amy: 3T/5 + 24 = 2(2T/5 - 24).'
+      - 'Step 4: 3T/5 + 24 = 4T/5 - 48.'
+      - 'Step 5: 72 = 4T/5 - 3T/5 = T/5.'
+      - 'Step 6: T = 360 stickers.'
+      - 'Verify: Amy had 144, Ben had 216. After: Amy = 120, Ben = 240. 240 = 2 × 120 ✓'
+      id: wp5-4
+      questionGroup: wp5

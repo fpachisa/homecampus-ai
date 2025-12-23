@@ -74,6 +74,7 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
     integration: nodes.filter(n => n.layer === 'integration'),
     application: nodes.filter(n => n.layer === 'application'),
     examPractice: nodes.filter(n => n.layer === 'examPractice'),
+    'word-problems': nodes.filter(n => n.layer === 'word-problems'),
   };
 
   // Layer metadata
@@ -105,6 +106,13 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
       color: '#EB459E',
       colorLight: '#EB459E20',
       description: 'Exam-style questions and practice',
+    },
+    'word-problems': {
+      title: 'Word Problems',
+      icon: '📝',
+      color: '#8B5CF6',
+      colorLight: '#8B5CF620',
+      description: 'Applied word problems with bar models',
     },
   };
 
@@ -207,7 +215,7 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
 
           {/* Layer Progress Summary - Clickable to jump to sections */}
           <div className="mt-4 grid grid-cols-3 gap-3">
-            {(['foundation', 'integration', 'application'] as PathLayer[]).map((layer) => {
+            {(['foundation', 'word-problems', 'examPractice'] as PathLayer[]).filter(layer => nodesByLayer[layer].length > 0).map((layer) => {
               const completed = progress.layerProgress[layer].completed;
               const total = progress.layerProgress[layer].total;
               const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
@@ -249,13 +257,13 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
 
       {/* Single Vertical Path */}
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Layers */}
-        {(['foundation', 'integration', 'application'] as PathLayer[]).map((layer, layerIndex) => {
+        {/* Layers - only render layers that have nodes */}
+        {(['foundation', 'word-problems', 'examPractice'] as PathLayer[]).filter(layer => nodesByLayer[layer].length > 0).map((layer, layerIndex, filteredLayers) => {
           const layerNodes = nodesByLayer[layer];
           const meta = layerMetadata[layer];
 
-          // Calculate display number offset (count of all nodes in previous layers)
-          const displayNumberOffset = (['foundation', 'integration', 'application'] as PathLayer[])
+          // Calculate display number offset (count of all nodes in previous rendered layers)
+          const displayNumberOffset = filteredLayers
             .slice(0, layerIndex)
             .reduce((sum, prevLayer) => sum + nodesByLayer[prevLayer].length, 0);
 

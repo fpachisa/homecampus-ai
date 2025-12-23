@@ -117,6 +117,7 @@ const QuestionPreviewPage: React.FC = () => {
     integration: questions.filter((q) => q.layer === 'integration').length,
     application: questions.filter((q) => q.layer === 'application').length,
     examPractice: questions.filter((q) => q.layer === 'examPractice').length,
+    'word-problems': questions.filter((q) => q.layer === 'word-problems').length,
   };
 
   return (
@@ -240,6 +241,16 @@ const QuestionPreviewPage: React.FC = () => {
                     }`}
                   >
                     Exam Practice ({layerCounts.examPractice})
+                  </button>
+                  <button
+                    onClick={() => setLayerFilter('word-problems')}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      layerFilter === 'word-problems'
+                        ? 'bg-violet-600 text-white'
+                        : 'bg-violet-100 text-violet-800 hover:bg-violet-200'
+                    }`}
+                  >
+                    Word Problems ({layerCounts['word-problems']})
                   </button>
                 </div>
               </div>

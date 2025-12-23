@@ -27,6 +27,7 @@ const QuestionPreviewCard: React.FC<QuestionPreviewCardProps> = ({
     integration: { bg: 'bg-orange-100', text: 'text-orange-800' },
     application: { bg: 'bg-green-100', text: 'text-green-800' },
     examPractice: { bg: 'bg-purple-100', text: 'text-purple-800' },
+    'word-problems': { bg: 'bg-violet-100', text: 'text-violet-800' },
   };
 
   const layerColor = layerColors[layer];

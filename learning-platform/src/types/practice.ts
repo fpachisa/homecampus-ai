@@ -12,7 +12,7 @@ import type { QuestionTable } from './examQuestions';
 // ============================================
 
 export type PathDifficulty = 'easy' | 'medium' | 'hard'; // Deprecated, keeping for backward compatibility
-export type PathLayer = 'foundation' | 'integration' | 'application' | 'examPractice';
+export type PathLayer = 'foundation' | 'integration' | 'application' | 'examPractice' | 'word-problems';
 
 // ============================================
 // NODE STRUCTURE
@@ -168,10 +168,11 @@ export interface PathProgress {
 
   // Layer-based progress tracking
   layerProgress: {
-    foundation: { completed: number; total: number };    // e.g., 5/7
-    integration: { completed: number; total: number };   // e.g., 2/4
-    application: { completed: number; total: number };   // e.g., 0/4
-    examPractice: { completed: number; total: number };  // e.g., 0/18
+    foundation: { completed: number; total: number };      // e.g., 5/7
+    integration: { completed: number; total: number };     // e.g., 2/4
+    application: { completed: number; total: number };     // e.g., 0/4
+    examPractice: { completed: number; total: number };    // e.g., 0/18
+    'word-problems': { completed: number; total: number }; // e.g., 0/5
   };
 
   totalProblemsAttempted: number;

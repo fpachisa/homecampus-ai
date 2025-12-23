@@ -202,6 +202,7 @@ export interface PracticeProgress {
     integration: { completed: number; total: number };
     application: { completed: number; total: number };
     examPractice: { completed: number; total: number };
+    'word-problems': { completed: number; total: number };
   };
 
   // Gamification
@@ -232,7 +233,7 @@ export interface PracticeNodeProgress {
   nodeId: string;
   nodeNumber: number;
   title: string;
-  layer: 'foundation' | 'integration' | 'application' | 'examPractice';
+  layer: 'foundation' | 'integration' | 'application' | 'examPractice' | 'word-problems';
   problemsAttempted: number;
   problemsCorrect: number;
   status: 'locked' | 'current' | 'completed';

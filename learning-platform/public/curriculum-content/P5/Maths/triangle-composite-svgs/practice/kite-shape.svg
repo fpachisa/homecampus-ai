@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Kite (Two Triangles)</text>
+
+  <!-- Left triangle -->
+  <polygon points="200,40 110,150 200,260" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+
+  <!-- Right triangle -->
+  <polygon points="200,40 290,150 200,260" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Vertical center line (shared base) -->
+  <line x1="200" y1="40" x2="200" y2="260" stroke="#333" stroke-width="2"/>
+
+  <!-- Height lines -->
+  <line x1="110" y1="150" x2="200" y2="150" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="200" y1="150" x2="290" y2="150" stroke="#1976D2" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Dimensions -->
+  <!-- Vertical line (base of both triangles) -->
+  <line x1="215" y1="40" x2="215" y2="260" stroke="#333" stroke-width="1"/>
+  <text x="230" y="155" font-size="12" fill="#333">20 cm</text>
+
+  <!-- Left triangle height -->
+  <text x="150" y="145" font-size="12" fill="#4CAF50">9 cm</text>
+
+  <!-- Right triangle height -->
+  <text x="240" y="145" font-size="12" fill="#1976D2">9 cm</text>
+
+  <!-- Labels -->
+  <text x="145" y="180" text-anchor="middle" font-size="11" fill="#388E3C">Left</text>
+  <text x="255" y="180" text-anchor="middle" font-size="11" fill="#1565C0">Right</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 420 130" xmlns="http://www.w3.org/2000/svg">
+  <!-- School Fair: 180 people, 5/9 adults, rest children -->
+
+  <text x="55" y="35" font-family="system-ui, sans-serif" font-size="13" fill="#374151" text-anchor="end">People</text>
+
+  <!-- 9 units bar -->
+  <!-- Adults (5 units) -->
+  <rect x="65" y="20" width="30" height="30" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="1"/>
+  <rect x="95" y="20" width="30" height="30" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="1"/>
+  <rect x="125" y="20" width="30" height="30" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="1"/>
+  <rect x="155" y="20" width="30" height="30" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="1"/>
+  <rect x="185" y="20" width="30" height="30" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="1"/>
+
+  <!-- Children (4 units) -->
+  <rect x="215" y="20" width="30" height="30" fill="#fde047" stroke="#eab308" stroke-width="1.5" rx="1"/>
+  <rect x="245" y="20" width="30" height="30" fill="#fde047" stroke="#eab308" stroke-width="1.5" rx="1"/>
+  <rect x="275" y="20" width="30" height="30" fill="#fde047" stroke="#eab308" stroke-width="1.5" rx="1"/>
+  <rect x="305" y="20" width="30" height="30" fill="#fde047" stroke="#eab308" stroke-width="1.5" rx="1"/>
+
+  <!-- Labels -->
+  <text x="140" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Adults (5/9)</text>
+  <text x="275" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Children</text>
+
+  <!-- Total bracket -->
+  <path d="M65,60 L65,67 L335,67 L335,60" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="200" y="82" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">180 people (9 units)</text>
+
+  <!-- Answer -->
+  <text x="200" y="105" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">1 unit = 20 → Adults = 100, Children = 80</text>
+</svg>

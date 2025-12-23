@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Yacht Club Swallowtail Flag</text>
+
+  <!-- Full rectangle (original flag shape) -->
+  <rect x="60" y="50" width="200" height="130" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Swallowtail cutout (triangle from bottom) -->
+  <polygon points="130,180 260,180 195,130" fill="#FFEBEE" stroke="#E91E63" stroke-width="2"/>
+  <line x1="130" y1="180" x2="260" y2="180" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Height line for cutout -->
+  <line x1="195" y1="130" x2="195" y2="180" stroke="#E91E63" stroke-width="2" stroke-dasharray="3,2"/>
+
+  <!-- Dimensions -->
+  <!-- Rectangle width -->
+  <line x1="60" y1="200" x2="260" y2="200" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="195" x2="60" y2="205" stroke="#333" stroke-width="1"/>
+  <line x1="260" y1="195" x2="260" y2="205" stroke="#333" stroke-width="1"/>
+  <text x="160" y="215" text-anchor="middle" font-size="12" fill="#333">90 cm</text>
+
+  <!-- Rectangle height -->
+  <line x1="275" y1="50" x2="275" y2="180" stroke="#333" stroke-width="1"/>
+  <line x1="270" y1="50" x2="280" y2="50" stroke="#333" stroke-width="1"/>
+  <line x1="270" y1="180" x2="280" y2="180" stroke="#333" stroke-width="1"/>
+  <text x="300" y="120" text-anchor="middle" font-size="12" fill="#333">60 cm</text>
+
+  <!-- Cutout dimensions -->
+  <text x="195" y="195" text-anchor="middle" font-size="11" fill="#E91E63">60 cm base</text>
+  <text x="210" y="158" font-size="11" fill="#E91E63">25 cm h</text>
+
+  <!-- Labels -->
+  <text x="160" y="100" text-anchor="middle" font-size="11" fill="#1565C0">Fabric needed</text>
+  <text x="195" y="165" text-anchor="middle" font-size="10" fill="#C62828">Cut out</text>
+</svg>

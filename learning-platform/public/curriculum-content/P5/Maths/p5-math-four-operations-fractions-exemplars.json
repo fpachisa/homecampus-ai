@@ -1,0 +1,727 @@
+{
+  "add-sub-node-1": {
+    "nodeId": "add-sub-node-1",
+    "title": "Adding and Subtracting Fractions with Unlike Denominators",
+    "section": "recall-unlike-denominators",
+    "learningFocus": [
+      "Find the least common denominator (LCD)",
+      "Convert fractions to equivalent fractions with common denominator",
+      "Add and subtract fractions with unlike denominators",
+      "Simplify answers to lowest terms"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $\\frac{2}{3} + \\frac{1}{5}$",
+        "correctAnswer": "$\\frac{13}{15}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate $\\frac{5}{6} - \\frac{3}{4}$",
+        "correctAnswer": "$\\frac{1}{12}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "What is $\\frac{3}{8} + \\frac{1}{6}$?",
+        "correctAnswer": "$\\frac{13}{24}$"
+      }
+    ],
+    "variationRules": {
+      "operationTypes": ["addition", "subtraction"],
+      "denominatorPairs": [
+        {"d1": 2, "d2": 3, "lcd": 6},
+        {"d1": 3, "d2": 4, "lcd": 12},
+        {"d1": 3, "d2": 5, "lcd": 15},
+        {"d1": 4, "d2": 5, "lcd": 20},
+        {"d1": 5, "d2": 6, "lcd": 30},
+        {"d1": 6, "d2": 8, "lcd": 24},
+        {"d1": 4, "d2": 6, "lcd": 12},
+        {"d1": 8, "d2": 10, "lcd": 40}
+      ],
+      "numeratorRanges": {
+        "small": [1, 2, 3],
+        "medium": [3, 4, 5, 7]
+      },
+      "questionFormats": [
+        "Calculate {fraction1} + {fraction2}",
+        "Calculate {fraction1} - {fraction2}",
+        "What is {fraction1} + {fraction2}?",
+        "Find the value of {fraction1} - {fraction2}",
+        "Work out {fraction1} + {fraction2}"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute mentally or on paper",
+      "Ensure numerator is always less than denominator (proper fractions)",
+      "For subtraction, ensure minuend is greater than subtrahend to get positive result",
+      "Use proper LaTeX formatting: $\\frac{a}{b}$",
+      "Include variety in question phrasing (Calculate, What is, Find, Work out)",
+      "Ensure answers can be simplified - include some that simplify and some that don't",
+      "Avoid fractions that are already in simplest form when LCD is used"
+    ]
+  },
+
+  "add-sub-node-2": {
+    "nodeId": "add-sub-node-2",
+    "title": "Adding Mixed Numbers",
+    "section": "adding-mixed-numbers",
+    "learningFocus": [
+      "Add whole number parts first",
+      "Add fractional parts using common denominator",
+      "Convert improper fractions to mixed numbers when sum exceeds 1",
+      "Combine whole and fractional parts for final answer"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $1\\frac{1}{2} + 1\\frac{1}{3}$",
+        "correctAnswer": "$2\\frac{5}{6}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is $2\\frac{3}{4} + 1\\frac{1}{2}$?",
+        "correctAnswer": "$4\\frac{1}{4}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find $3\\frac{2}{5} + 2\\frac{3}{4}$",
+        "correctAnswer": "$6\\frac{3}{20}$"
+      }
+    ],
+    "variationRules": {
+      "wholeNumberRanges": {
+        "small": [1, 2, 3],
+        "medium": [2, 3, 4, 5]
+      },
+      "denominatorPairs": [
+        {"d1": 2, "d2": 3, "lcd": 6},
+        {"d1": 2, "d2": 5, "lcd": 10},
+        {"d1": 3, "d2": 4, "lcd": 12},
+        {"d1": 4, "d2": 5, "lcd": 20},
+        {"d1": 3, "d2": 5, "lcd": 15},
+        {"d1": 4, "d2": 6, "lcd": 12}
+      ],
+      "questionFormats": [
+        "Calculate {mixed1} + {mixed2}",
+        "What is {mixed1} + {mixed2}?",
+        "Find {mixed1} + {mixed2}",
+        "Add {mixed1} and {mixed2}"
+      ],
+      "includeCarryOver": ["yes", "no"]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute on paper",
+      "Use LaTeX for mixed numbers: $a\\frac{b}{c}$",
+      "Generate mix of problems: some where fraction sum < 1, some where sum > 1 (requires carry)",
+      "When fractions sum to more than 1, student must convert improper fraction and add to whole",
+      "Ensure all final answers are in simplest form",
+      "Avoid same denominators - focus on unlike denominators"
+    ]
+  },
+
+  "add-sub-node-3": {
+    "nodeId": "add-sub-node-3",
+    "title": "Subtracting Mixed Numbers (with Regrouping)",
+    "section": "subtracting-mixed-numbers",
+    "learningFocus": [
+      "Recognize when regrouping (renaming) is needed",
+      "Regroup by converting 1 whole to equivalent fraction",
+      "Subtract mixed numbers after regrouping",
+      "Express answer in simplest form"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $3\\frac{1}{4} - 1\\frac{5}{8}$",
+        "correctAnswer": "$1\\frac{5}{8}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is $5 - 1\\frac{3}{7}$?",
+        "correctAnswer": "$3\\frac{4}{7}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find $4\\frac{5}{12} - 1\\frac{1}{6}$",
+        "correctAnswer": "$3\\frac{1}{4}$"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Calculate $7\\frac{1}{10} - 3\\frac{1}{2}$",
+        "correctAnswer": "$3\\frac{3}{5}$"
+      }
+    ],
+    "variationRules": {
+      "problemTypes": [
+        "mixed minus mixed (no regrouping needed)",
+        "mixed minus mixed (regrouping needed)",
+        "whole minus mixed"
+      ],
+      "wholeNumberRanges": {
+        "minuend": [3, 4, 5, 6, 7, 8],
+        "subtrahend": [1, 2, 3]
+      },
+      "denominatorPairs": [
+        {"d1": 4, "d2": 8, "lcd": 8},
+        {"d1": 3, "d2": 6, "lcd": 6},
+        {"d1": 2, "d2": 5, "lcd": 10},
+        {"d1": 6, "d2": 12, "lcd": 12},
+        {"d1": 5, "d2": 10, "lcd": 10},
+        {"d1": 3, "d2": 4, "lcd": 12}
+      ],
+      "questionFormats": [
+        "Calculate {mixed1} - {mixed2}",
+        "What is {mixed1} - {mixed2}?",
+        "Find {mixed1} - {mixed2}",
+        "Subtract {mixed2} from {mixed1}"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute on paper",
+      "CRITICAL: Include problems that REQUIRE regrouping (fractional part of minuend < subtrahend)",
+      "Also include some problems that don't require regrouping for variety",
+      "Include 'whole minus mixed' type (e.g., 5 - 1 3/7)",
+      "Use LaTeX for mixed numbers: $a\\frac{b}{c}$",
+      "Ensure all final answers are positive and in simplest form"
+    ]
+  },
+
+  "mult-frac-whole-node-1": {
+    "nodeId": "mult-frac-whole-node-1",
+    "title": "Finding a Fraction OF a Whole Number",
+    "section": "fraction-of-whole-number",
+    "learningFocus": [
+      "Understand 'fraction OF' means multiplication",
+      "Use bar model: divide into denominator parts, select numerator parts",
+      "Calculate using multiplication: (numerator × whole) ÷ denominator",
+      "Verify answer is reasonable (less than whole for proper fractions)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find $\\frac{3}{4}$ of 12.",
+        "correctAnswer": "9"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is $\\frac{2}{5}$ of 15?",
+        "correctAnswer": "6"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Calculate $\\frac{3}{7}$ of 28.",
+        "correctAnswer": "12"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Find $\\frac{5}{8}$ of 24.",
+        "correctAnswer": "15"
+      }
+    ],
+    "variationRules": {
+      "fractionDenominators": [2, 3, 4, 5, 6, 7, 8, 10],
+      "wholeNumbersForCleanDivision": {
+        "denominator2": [8, 10, 12, 14, 16, 18, 20],
+        "denominator3": [9, 12, 15, 18, 21, 24, 27],
+        "denominator4": [8, 12, 16, 20, 24, 28, 32],
+        "denominator5": [10, 15, 20, 25, 30, 35, 40],
+        "denominator6": [12, 18, 24, 30, 36, 42],
+        "denominator7": [14, 21, 28, 35, 42, 49],
+        "denominator8": [16, 24, 32, 40, 48, 56],
+        "denominator10": [20, 30, 40, 50, 60, 70]
+      },
+      "questionFormats": [
+        "Find {fraction} of {whole}.",
+        "What is {fraction} of {whole}?",
+        "Calculate {fraction} of {whole}."
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - it would reveal the answer by showing parts",
+      "CRITICAL: Choose whole numbers that divide evenly by the denominator",
+      "Use proper fractions only (numerator < denominator)",
+      "Answers should always be whole numbers for this section",
+      "Use LaTeX for fractions: $\\frac{a}{b}$",
+      "Emphasize the word 'of' in the question format"
+    ]
+  },
+
+  "mult-frac-whole-node-2": {
+    "nodeId": "mult-frac-whole-node-2",
+    "title": "Multiplying Fraction × Whole Number",
+    "section": "multiply-fraction-by-whole",
+    "learningFocus": [
+      "Multiply numerator by whole number, keep denominator",
+      "Convert improper fraction results to mixed numbers",
+      "Recognize commutative property: a/b × n = n × a/b",
+      "Simplify when possible"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $\\frac{2}{5} \\times 12$",
+        "correctAnswer": "$4\\frac{4}{5}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is $20 \\times \\frac{7}{10}$?",
+        "correctAnswer": "14"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find $3 \\times \\frac{3}{10}$",
+        "correctAnswer": "$\\frac{9}{10}$"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Calculate $\\frac{5}{6} \\times 9$",
+        "correctAnswer": "$7\\frac{1}{2}$"
+      }
+    ],
+    "variationRules": {
+      "fractionDenominators": [3, 4, 5, 6, 8, 10, 12],
+      "wholeNumbers": [3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 18, 20],
+      "resultTypes": [
+        "proper fraction (result < 1)",
+        "whole number (divides evenly)",
+        "mixed number (result > 1, needs conversion)"
+      ],
+      "questionFormats": [
+        "Calculate {fraction} × {whole}",
+        "What is {whole} × {fraction}?",
+        "Find {fraction} × {whole}",
+        "Multiply {fraction} by {whole}"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute on paper",
+      "Include variety: some results as proper fractions, some as whole numbers, some as mixed numbers",
+      "Mix the order: sometimes fraction × whole, sometimes whole × fraction",
+      "Use LaTeX: $\\frac{a}{b} \\times c$ or $c \\times \\frac{a}{b}$",
+      "When result is improper fraction, student should convert to mixed number",
+      "Ensure final answers are in simplest form"
+    ]
+  },
+
+  "mult-frac-whole-node-3": {
+    "nodeId": "mult-frac-whole-node-3",
+    "title": "Word Problems: Fraction of a Whole Number",
+    "section": "word-problems-fraction-whole",
+    "learningFocus": [
+      "Identify 'fraction of' situations in word problems",
+      "Draw bar models showing the whole divided into parts",
+      "Calculate the required fraction of the total",
+      "Include correct units in answer"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A ribbon is 18 metres long. Sarah uses $\\frac{2}{3}$ of the ribbon. How many metres of ribbon does she use?",
+        "correctAnswer": "12 metres"
+      },
+      {
+        "id": "ex2",
+        "problemText": "There are 35 apples in a basket. $\\frac{4}{5}$ of them are red. How many red apples are there?",
+        "correctAnswer": "28 apples"
+      },
+      {
+        "id": "ex3",
+        "problemText": "A water tank holds 24 litres. $\\frac{5}{8}$ of the tank is filled with water. How many litres of water are in the tank?",
+        "correctAnswer": "15 litres"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"item": "ribbon", "unit": "metres", "totals": [12, 15, 18, 21, 24, 27]},
+        {"item": "rope", "unit": "metres", "totals": [10, 15, 20, 25, 30, 35]},
+        {"item": "apples", "unit": "apples", "totals": [20, 24, 28, 30, 35, 40]},
+        {"item": "oranges", "unit": "oranges", "totals": [18, 24, 30, 36, 42]},
+        {"item": "buttons", "unit": "buttons", "totals": [24, 32, 40, 48, 56]},
+        {"item": "stickers", "unit": "stickers", "totals": [20, 25, 30, 35, 40, 45]},
+        {"item": "water tank", "unit": "litres", "totals": [16, 20, 24, 28, 32, 40]},
+        {"item": "flour bag", "unit": "kg", "totals": [6, 8, 10, 12, 15, 18]}
+      ],
+      "fractionDenominators": [2, 3, 4, 5, 6, 8],
+      "questionTypes": [
+        "Find fraction of total",
+        "Find what remains after using fraction"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - would reveal the answer",
+      "Choose totals that divide evenly by the denominator",
+      "Include units in both question and expected answer",
+      "Use real-world contexts appropriate for Primary 5",
+      "Mix question types: 'how much used' and 'how much left'",
+      "Use LaTeX for fractions: $\\frac{a}{b}$",
+      "Ensure mathematical correctness in all generated values"
+    ]
+  },
+
+  "mult-two-frac-node-1": {
+    "nodeId": "mult-two-frac-node-1",
+    "title": "Understanding Fraction × Fraction",
+    "section": "multiply-fractions-conceptual",
+    "learningFocus": [
+      "Understand 'fraction OF fraction' as multiplication",
+      "Visualize using area model (rectangle divided twice)",
+      "Recognize that product is smaller than both factors",
+      "Connect visual model to symbolic multiplication"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "What is $\\frac{1}{3}$ of $\\frac{1}{2}$?",
+        "correctAnswer": "$\\frac{1}{6}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Find $\\frac{1}{4}$ of $\\frac{1}{3}$.",
+        "correctAnswer": "$\\frac{1}{12}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Calculate $\\frac{1}{2}$ of $\\frac{1}{5}$.",
+        "correctAnswer": "$\\frac{1}{10}$"
+      }
+    ],
+    "variationRules": {
+      "unitFractionPairs": [
+        {"f1": "1/2", "f2": "1/3", "result": "1/6"},
+        {"f1": "1/3", "f2": "1/4", "result": "1/12"},
+        {"f1": "1/2", "f2": "1/5", "result": "1/10"},
+        {"f1": "1/4", "f2": "1/5", "result": "1/20"},
+        {"f1": "1/2", "f2": "1/4", "result": "1/8"},
+        {"f1": "1/3", "f2": "1/5", "result": "1/15"}
+      ],
+      "questionFormats": [
+        "What is {fraction1} of {fraction2}?",
+        "Find {fraction1} of {fraction2}.",
+        "Calculate {fraction1} of {fraction2}."
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - would reveal the answer",
+      "Focus on unit fractions (numerator = 1) for conceptual understanding",
+      "Use 'of' language to connect to real-world meaning",
+      "Use LaTeX for fractions: $\\frac{1}{a}$",
+      "Keep numbers simple - this is for conceptual understanding",
+      "Result should always be smaller than both input fractions"
+    ]
+  },
+
+  "mult-two-frac-node-2": {
+    "nodeId": "mult-two-frac-node-2",
+    "title": "Multiplying Two Fractions: Algorithm",
+    "section": "multiply-fractions-algorithm",
+    "learningFocus": [
+      "Multiply numerators together",
+      "Multiply denominators together",
+      "Simplify final answer to lowest terms",
+      "Apply: (a/b) × (c/d) = (a×c)/(b×d)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $\\frac{1}{3} \\times \\frac{5}{4}$",
+        "correctAnswer": "$\\frac{5}{12}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is $\\frac{3}{4} \\times \\frac{8}{7}$?",
+        "correctAnswer": "$\\frac{6}{7}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find $\\frac{2}{5} \\times \\frac{9}{5}$",
+        "correctAnswer": "$\\frac{18}{25}$"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Calculate $\\frac{7}{6} \\times \\frac{2}{3}$",
+        "correctAnswer": "$\\frac{7}{9}$"
+      }
+    ],
+    "variationRules": {
+      "numeratorRanges": [1, 2, 3, 4, 5, 6, 7, 8],
+      "denominatorRanges": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "resultTypes": [
+        "already in simplest form",
+        "requires simplification"
+      ],
+      "questionFormats": [
+        "Calculate {fraction1} × {fraction2}",
+        "What is {fraction1} × {fraction2}?",
+        "Find {fraction1} × {fraction2}",
+        "Multiply {fraction1} by {fraction2}"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute on paper",
+      "Include both proper and improper fractions",
+      "Generate mix: some results need simplification, some don't",
+      "Use LaTeX: $\\frac{a}{b} \\times \\frac{c}{d}$",
+      "Avoid fractions where cancellation is obvious (save for next section)",
+      "Ensure final answers are in simplest form"
+    ]
+  },
+
+  "mult-two-frac-node-3": {
+    "nodeId": "mult-two-frac-node-3",
+    "title": "Cancellation (Simplifying Before Multiplying)",
+    "section": "cancellation-before-multiply",
+    "learningFocus": [
+      "Identify common factors between any numerator and any denominator",
+      "Cancel (divide both by common factor) before multiplying",
+      "Recognize that cancellation makes numbers smaller and easier",
+      "Understand why cancellation works mathematically"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $\\frac{5}{6} \\times \\frac{9}{10}$ using cancellation.",
+        "correctAnswer": "$\\frac{3}{4}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Use cancellation to find $\\frac{4}{9} \\times \\frac{3}{8}$.",
+        "correctAnswer": "$\\frac{1}{6}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Calculate $\\frac{5}{12} \\times \\frac{8}{15}$ by simplifying first.",
+        "correctAnswer": "$\\frac{2}{9}$"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Find $\\frac{7}{10} \\times \\frac{5}{14}$ using cancellation.",
+        "correctAnswer": "$\\frac{1}{4}$"
+      }
+    ],
+    "variationRules": {
+      "cancellablePairs": [
+        {"f1_num": 5, "f1_den": 6, "f2_num": 9, "f2_den": 10, "cf1": 5, "cf2": 3},
+        {"f1_num": 4, "f1_den": 9, "f2_num": 3, "f2_den": 8, "cf1": 4, "cf2": 3},
+        {"f1_num": 3, "f1_den": 8, "f2_num": 4, "f2_den": 9, "cf1": 4, "cf2": 3},
+        {"f1_num": 7, "f1_den": 10, "f2_num": 5, "f2_den": 14, "cf1": 7, "cf2": 5},
+        {"f1_num": 6, "f1_den": 7, "f2_num": 14, "f2_den": 15, "cf1": 7, "cf2": 2},
+        {"f1_num": 8, "f1_den": 15, "f2_num": 5, "f2_den": 12, "cf1": 5, "cf2": 4}
+      ],
+      "questionFormats": [
+        "Calculate {fraction1} × {fraction2} using cancellation.",
+        "Use cancellation to find {fraction1} × {fraction2}.",
+        "Calculate {fraction1} × {fraction2} by simplifying first.",
+        "Find {fraction1} × {fraction2} using cancellation."
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute on paper",
+      "CRITICAL: Only generate fractions where cancellation IS possible",
+      "The question text should hint at using cancellation",
+      "Choose fractions where a numerator shares a factor with the OTHER fraction's denominator",
+      "Use LaTeX: $\\frac{a}{b} \\times \\frac{c}{d}$",
+      "Final answer should be in simplest form",
+      "Avoid trivial cancellations (like both having factor of 2)"
+    ]
+  },
+
+  "mult-mixed-node-1": {
+    "nodeId": "mult-mixed-node-1",
+    "title": "Multiplying Mixed Number × Whole Number",
+    "section": "convert-multiply-convert",
+    "learningFocus": [
+      "Convert mixed number to improper fraction",
+      "Multiply improper fraction by whole number",
+      "Convert product back to mixed number",
+      "Use cancellation when possible"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Calculate $1\\frac{1}{2} \\times 3$",
+        "correctAnswer": "$4\\frac{1}{2}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is $6 \\times 1\\frac{2}{9}$?",
+        "correctAnswer": "$7\\frac{1}{3}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find $4 \\times 2\\frac{1}{5}$",
+        "correctAnswer": "$8\\frac{4}{5}$"
+      },
+      {
+        "id": "ex4",
+        "problemText": "Calculate $5 \\times 2\\frac{3}{4}$",
+        "correctAnswer": "$13\\frac{3}{4}$"
+      }
+    ],
+    "variationRules": {
+      "mixedNumberWholes": [1, 2, 3],
+      "mixedNumberDenominators": [2, 3, 4, 5, 6, 8, 9, 10],
+      "wholeMultipliers": [2, 3, 4, 5, 6, 7, 8, 9],
+      "resultTypes": [
+        "result is whole number (rare)",
+        "result is mixed number (common)"
+      ],
+      "questionFormats": [
+        "Calculate {mixed} × {whole}",
+        "What is {whole} × {mixed}?",
+        "Find {mixed} × {whole}",
+        "Multiply {mixed} by {whole}"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should compute on paper",
+      "Use LaTeX for mixed numbers: $a\\frac{b}{c}$",
+      "Mix the order: sometimes mixed × whole, sometimes whole × mixed",
+      "Ensure final answer is expressed as a mixed number (not improper fraction)",
+      "Include some problems where cancellation can simplify the calculation",
+      "Keep numbers reasonable for Primary 5 level"
+    ]
+  },
+
+  "mult-mixed-node-2": {
+    "nodeId": "mult-mixed-node-2",
+    "title": "Visualizing Mixed Number × Whole Number",
+    "section": "visualize-mixed-times-whole",
+    "learningFocus": [
+      "Visualize mixed × whole as repeated groups",
+      "Draw models showing the multiplication",
+      "Connect visual model to numerical calculation",
+      "Verify answers using diagrams"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Draw a model to show $1\\frac{1}{2} \\times 3$ and find the answer.",
+        "correctAnswer": "$4\\frac{1}{2}$ (3 groups of 1½ = 3 wholes + 3 halves = 4½)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Use a visual model to calculate $2\\frac{1}{4} \\times 2$.",
+        "correctAnswer": "$4\\frac{1}{2}$ (2 groups of 2¼ = 4 wholes + 2 quarters = 4½)"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Show how to find $1\\frac{1}{3} \\times 3$ using a diagram.",
+        "correctAnswer": "4 (3 groups of 1⅓ = 3 wholes + 3 thirds = 3 + 1 = 4)"
+      }
+    ],
+    "variationRules": {
+      "mixedNumbers": [
+        {"whole": 1, "num": 1, "den": 2},
+        {"whole": 1, "num": 1, "den": 3},
+        {"whole": 1, "num": 1, "den": 4},
+        {"whole": 1, "num": 2, "den": 3},
+        {"whole": 2, "num": 1, "den": 4},
+        {"whole": 1, "num": 3, "den": 4}
+      ],
+      "multipliers": [2, 3, 4],
+      "questionFormats": [
+        "Draw a model to show {mixed} × {whole} and find the answer.",
+        "Use a visual model to calculate {mixed} × {whole}.",
+        "Show how to find {mixed} × {whole} using a diagram."
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should draw their own diagrams",
+      "Keep numbers small for easy visualization (multiplier ≤ 4)",
+      "Choose fractions that combine nicely (e.g., 3 × ⅓ = 1)",
+      "Include explanation of visual reasoning in the expected answer",
+      "Use LaTeX for mixed numbers: $a\\frac{b}{c}$",
+      "Questions should explicitly ask for visual/model approach"
+    ]
+  },
+
+  "mult-mixed-node-3": {
+    "nodeId": "mult-mixed-node-3",
+    "title": "Word Problems: Mixed Number × Whole Number",
+    "section": "word-problems-mixed-whole",
+    "learningFocus": [
+      "Identify multiplication situations in word problems",
+      "Set up mixed number × whole number correctly",
+      "Calculate and express answer with appropriate units",
+      "Verify answer is reasonable in context"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Each piece of string is $2\\frac{1}{5}$ metres long. What is the total length of 4 pieces of string?",
+        "correctAnswer": "$8\\frac{4}{5}$ metres"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A recipe uses $1\\frac{1}{2}$ cups of flour. How much flour is needed for 3 batches?",
+        "correctAnswer": "$4\\frac{1}{2}$ cups"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Each bottle contains $1\\frac{3}{8}$ litres of juice. How much juice is in 6 bottles?",
+        "correctAnswer": "$8\\frac{1}{4}$ litres"
+      },
+      {
+        "id": "ex4",
+        "problemText": "A bag of sand weighs $2\\frac{2}{3}$ kg. What is the total weight of 9 bags?",
+        "correctAnswer": "24 kg"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"item": "piece of rope", "unit": "metres"},
+        {"item": "piece of string", "unit": "metres"},
+        {"item": "piece of ribbon", "unit": "metres"},
+        {"item": "bottle of juice", "unit": "litres"},
+        {"item": "container of milk", "unit": "litres"},
+        {"item": "bag of flour", "unit": "kg"},
+        {"item": "bag of rice", "unit": "kg"},
+        {"item": "bag of sand", "unit": "kg"},
+        {"item": "cup of sugar", "unit": "cups"}
+      ],
+      "mixedNumbers": [
+        {"whole": 1, "num": 1, "den": 2},
+        {"whole": 1, "num": 1, "den": 4},
+        {"whole": 1, "num": 3, "den": 4},
+        {"whole": 1, "num": 3, "den": 8},
+        {"whole": 2, "num": 1, "den": 5},
+        {"whole": 2, "num": 2, "den": 3},
+        {"whole": 2, "num": 3, "den": 4}
+      ],
+      "multipliers": [3, 4, 5, 6, 7, 8, 9]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem only",
+      "DO NOT include mathTool - students should solve on paper",
+      "Use real-world contexts appropriate for Primary 5",
+      "Include units in both question and expected answer",
+      "Choose contexts where multiplication makes sense (identical items)",
+      "Use LaTeX for mixed numbers: $a\\frac{b}{c}$",
+      "Ensure answers are reasonable (not excessively large)",
+      "Include some problems where result is a whole number (special case)"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Metal Sheet with Notch Cut</text>
+
+  <!-- Rectangle -->
+  <rect x="60" y="50" width="280" height="120" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Notch (triangle cut from bottom edge) -->
+  <polygon points="145,170 200,100 255,170" fill="#FFEBEE" stroke="#E91E63" stroke-width="2"/>
+  <line x1="145" y1="170" x2="255" y2="170" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Height line for notch -->
+  <line x1="200" y1="100" x2="200" y2="170" stroke="#E91E63" stroke-width="2" stroke-dasharray="3,2"/>
+
+  <!-- Dimensions -->
+  <!-- Rectangle width -->
+  <line x1="60" y1="190" x2="340" y2="190" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="185" x2="60" y2="195" stroke="#333" stroke-width="1"/>
+  <line x1="340" y1="185" x2="340" y2="195" stroke="#333" stroke-width="1"/>
+  <text x="200" y="205" text-anchor="middle" font-size="12" fill="#333">20 cm</text>
+
+  <!-- Rectangle height -->
+  <line x1="355" y1="50" x2="355" y2="170" stroke="#333" stroke-width="1"/>
+  <line x1="350" y1="50" x2="360" y2="50" stroke="#333" stroke-width="1"/>
+  <line x1="350" y1="170" x2="360" y2="170" stroke="#333" stroke-width="1"/>
+  <text x="375" y="115" text-anchor="middle" font-size="12" fill="#333">10 cm</text>
+
+  <!-- Notch dimensions -->
+  <text x="200" y="180" text-anchor="middle" font-size="11" fill="#E91E63">10 cm</text>
+  <text x="215" y="140" font-size="11" fill="#E91E63">7 cm</text>
+
+  <!-- Labels -->
+  <text x="120" y="115" text-anchor="middle" font-size="11" fill="#1565C0">Remaining</text>
+  <text x="280" y="115" text-anchor="middle" font-size="11" fill="#1565C0">metal</text>
+  <text x="200" y="145" text-anchor="middle" font-size="10" fill="#C62828">Notch</text>
+</svg>

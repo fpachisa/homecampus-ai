@@ -30,6 +30,7 @@ export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({
     integration: '#5865F2',
     application: '#10B981',
     examPractice: '#EB459E',
+    'word-problems': '#8B5CF6',
   };
 
   // Daily goal (5 problems) - use global stats if provided, with date validation fallback

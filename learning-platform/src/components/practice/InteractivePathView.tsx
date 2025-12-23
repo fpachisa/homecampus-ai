@@ -320,6 +320,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
     integration: nodes.filter(n => n.layer === 'integration'),
     application: nodes.filter(n => n.layer === 'application'),
     examPractice: nodes.filter(n => n.layer === 'examPractice'),
+    'word-problems': nodes.filter(n => n.layer === 'word-problems'),
   }), [nodes]);
 
   // Memoize layer boundaries
@@ -467,28 +468,41 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
             );
           })}
 
-          {/* Layer Dividers */}
-          {nodesByLayer.foundation.length > 0 && foundationEnd + 1 < nodes.length && (
-            <div
-              className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-              style={{
-                top: `${((nodePositions[foundationEnd]?.y || 0) + (nodePositions[foundationEnd + 1]?.y || 0)) / 2 + 90}px`,
-                width: '80%'
-              }}
-            >
-              <div className="w-full h-px" style={{ backgroundColor: theme.glass.border }} />
+          {/* Layer Dividers - Dynamic based on actual layer after foundation */}
+          {nodesByLayer.foundation.length > 0 && foundationEnd + 1 < nodes.length && (() => {
+            // Determine what layer comes after foundation
+            const nextNode = nodes[foundationEnd + 1];
+            const layerNames: Record<PathLayer, string> = {
+              foundation: 'Foundation',
+              integration: 'Integration',
+              application: 'Application',
+              examPractice: 'Exam Practice',
+              'word-problems': 'Word Problems',
+            };
+            const nextLayerName = layerNames[nextNode?.layer] || 'Next Section';
+
+            return (
               <div
-                className="text-sm font-semibold mt-2 px-4 py-1 rounded-full"
+                className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center"
                 style={{
-                  color: theme.colors.textSecondary,
-                  backgroundColor: theme.glass.background,
-                  border: `1px solid ${theme.glass.border}`
+                  top: `${((nodePositions[foundationEnd]?.y || 0) + (nodePositions[foundationEnd + 1]?.y || 0)) / 2 + 90}px`,
+                  width: '80%'
                 }}
               >
-                Exam Practice
+                <div className="w-full h-px" style={{ backgroundColor: theme.glass.border }} />
+                <div
+                  className="text-sm font-semibold mt-2 px-4 py-1 rounded-full"
+                  style={{
+                    color: theme.colors.textSecondary,
+                    backgroundColor: theme.glass.background,
+                    border: `1px solid ${theme.glass.border}`
+                  }}
+                >
+                  {nextLayerName}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {nodesByLayer.integration.length > 0 && integrationEnd < nodes.length && (
             <MilestoneMarker

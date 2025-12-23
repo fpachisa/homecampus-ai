@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320">
+  <!-- Title -->
+  <text x="210" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Mrs Wong's Picture Frame</text>
+
+  <!-- Outer rectangle (frame) -->
+  <rect x="80" y="90" width="260" height="180" fill="#8D6E63" stroke="#5D4037" stroke-width="3"/>
+
+  <!-- Triangle top (frame) -->
+  <polygon points="80,90 340,90 210,30" fill="#A1887F" stroke="#5D4037" stroke-width="3"/>
+
+  <!-- Inner rectangle (photo area - white/cutout) -->
+  <rect x="120" y="120" width="180" height="130" fill="#FFF" stroke="#5D4037" stroke-width="2"/>
+
+  <!-- Photo area pattern -->
+  <text x="210" y="195" text-anchor="middle" font-size="12" fill="#999">Photo Area</text>
+
+  <!-- Dimensions - Outer -->
+  <!-- Rectangle base -->
+  <line x1="80" y1="285" x2="340" y2="285" stroke="#333" stroke-width="1"/>
+  <line x1="80" y1="280" x2="80" y2="290" stroke="#333" stroke-width="1"/>
+  <line x1="340" y1="280" x2="340" y2="290" stroke="#333" stroke-width="1"/>
+  <text x="210" y="300" text-anchor="middle" font-size="12" fill="#333">35 cm</text>
+
+  <!-- Rectangle height -->
+  <line x1="355" y1="90" x2="355" y2="270" stroke="#333" stroke-width="1"/>
+  <line x1="350" y1="90" x2="360" y2="90" stroke="#333" stroke-width="1"/>
+  <line x1="350" y1="270" x2="360" y2="270" stroke="#333" stroke-width="1"/>
+  <text x="380" y="185" text-anchor="middle" font-size="12" fill="#333">25 cm</text>
+
+  <!-- Triangle height -->
+  <line x1="210" y1="30" x2="210" y2="90" stroke="#E91E63" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="225" y="65" font-size="11" fill="#E91E63">14 cm</text>
+
+  <!-- Inner dimensions -->
+  <line x1="120" y1="260" x2="300" y2="260" stroke="#666" stroke-width="1"/>
+  <text x="210" y="275" text-anchor="middle" font-size="10" fill="#666">28 cm</text>
+
+  <line x1="310" y1="120" x2="310" y2="250" stroke="#666" stroke-width="1"/>
+  <text x="325" y="190" text-anchor="middle" font-size="10" fill="#666">18 cm</text>
+
+  <!-- Labels -->
+  <text x="150" y="160" text-anchor="middle" font-size="10" fill="#FFF">Frame</text>
+</svg>

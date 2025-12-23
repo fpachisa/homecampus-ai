@@ -74,7 +74,13 @@ export async function generateWithGemini(
   const responseAny = response as any;
   const finishReason = responseAny.candidates?.[0]?.finishReason;
   const textLength = response.text?.length || 0;
-  const textEndsCleanly = response.text?.trim().endsWith('}') || response.text?.trim().endsWith('"');
+
+  // Strip markdown code fences if present before checking if response ends cleanly
+  let trimmedText = response.text?.trim() || '';
+  if (trimmedText.endsWith('```')) {
+    trimmedText = trimmedText.slice(0, -3).trim();
+  }
+  const textEndsCleanly = trimmedText.endsWith('}') || trimmedText.endsWith('"');
 
   console.log('🔍 Gemini Response Debug:', {
     hasText: !!response.text,

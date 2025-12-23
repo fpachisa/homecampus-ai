@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Rectangle with Corner Cut Off</text>
+
+  <!-- Original rectangle outline (dashed for cut area) -->
+  <rect x="80" y="50" width="240" height="160" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Cut corner (white overlay to show removal) -->
+  <polygon points="80,50 150,50 80,120" fill="#FFEBEE" stroke="#E91E63" stroke-width="2"/>
+  <line x1="80" y1="50" x2="150" y2="50" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="80" y1="50" x2="80" y2="120" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Dimensions -->
+  <!-- Rectangle base -->
+  <line x1="80" y1="225" x2="320" y2="225" stroke="#333" stroke-width="1"/>
+  <line x1="80" y1="220" x2="80" y2="230" stroke="#333" stroke-width="1"/>
+  <line x1="320" y1="220" x2="320" y2="230" stroke="#333" stroke-width="1"/>
+  <text x="200" y="240" text-anchor="middle" font-size="12" fill="#333">18 cm</text>
+
+  <!-- Rectangle height -->
+  <line x1="335" y1="50" x2="335" y2="210" stroke="#333" stroke-width="1"/>
+  <line x1="330" y1="50" x2="340" y2="50" stroke="#333" stroke-width="1"/>
+  <line x1="330" y1="210" x2="340" y2="210" stroke="#333" stroke-width="1"/>
+  <text x="360" y="135" text-anchor="middle" font-size="12" fill="#333">12 cm</text>
+
+  <!-- Triangle dimensions -->
+  <text x="115" y="45" font-size="11" fill="#E91E63">7 cm</text>
+  <text x="60" y="90" font-size="11" fill="#E91E63">5 cm</text>
+
+  <!-- Labels -->
+  <text x="200" y="150" text-anchor="middle" font-size="11" fill="#1565C0">Remaining area</text>
+  <text x="100" y="85" text-anchor="middle" font-size="10" fill="#C62828">Cut off</text>
+</svg>

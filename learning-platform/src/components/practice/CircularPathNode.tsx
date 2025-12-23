@@ -70,6 +70,12 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = React.memo(({
       dark: '#C73680',
       glow: '#EB459E80',
     },
+    'word-problems': {
+      main: '#8B5CF6',      // Purple - for word problems
+      light: '#8B5CF640',
+      dark: '#7C3AED',
+      glow: '#8B5CF680',
+    },
   };
 
   const colors = layerColors[layer];

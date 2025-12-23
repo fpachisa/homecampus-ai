@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Poster with Two Corners Cut</text>
+
+  <!-- Rectangle -->
+  <rect x="60" y="50" width="280" height="160" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Top-left corner cut -->
+  <polygon points="60,50 120,50 60,100" fill="#FFEBEE" stroke="#E91E63" stroke-width="2"/>
+  <line x1="60" y1="50" x2="120" y2="50" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="60" y1="50" x2="60" y2="100" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Bottom-right corner cut -->
+  <polygon points="340,210 280,210 340,160" fill="#FFEBEE" stroke="#E91E63" stroke-width="2"/>
+  <line x1="280" y1="210" x2="340" y2="210" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="340" y1="160" x2="340" y2="210" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Dimensions -->
+  <!-- Rectangle width -->
+  <line x1="60" y1="230" x2="340" y2="230" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="225" x2="60" y2="235" stroke="#333" stroke-width="1"/>
+  <line x1="340" y1="225" x2="340" y2="235" stroke="#333" stroke-width="1"/>
+  <text x="200" y="245" text-anchor="middle" font-size="12" fill="#333">24 cm</text>
+
+  <!-- Rectangle height -->
+  <line x1="355" y1="50" x2="355" y2="210" stroke="#333" stroke-width="1"/>
+  <line x1="350" y1="50" x2="360" y2="50" stroke="#333" stroke-width="1"/>
+  <line x1="350" y1="210" x2="360" y2="210" stroke="#333" stroke-width="1"/>
+  <text x="375" y="135" text-anchor="middle" font-size="12" fill="#333">16 cm</text>
+
+  <!-- Triangle dimensions -->
+  <text x="90" y="43" font-size="10" fill="#E91E63">6 cm</text>
+  <text x="45" y="80" font-size="10" fill="#E91E63">5 cm</text>
+  <text x="310" y="225" font-size="10" fill="#E91E63">6 cm</text>
+  <text x="350" y="190" font-size="10" fill="#E91E63">5 cm</text>
+
+  <!-- Labels -->
+  <text x="200" y="140" text-anchor="middle" font-size="11" fill="#1565C0">Remaining poster</text>
+</svg>

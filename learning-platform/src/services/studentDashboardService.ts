@@ -448,6 +448,7 @@ function aggregatePracticePaths(practiceDocs: PracticeProgress[]): PracticePathD
       integrationNodes: { completed: 0, total: 0 },
       applicationNodes: { completed: 0, total: 0 },
       examPracticeNodes: { completed: 0, total: 0 },
+      wordProblemsNodes: { completed: 0, total: 0 },
       accuracy: doc.totalProblemsAttempted > 0
         ? Math.round((doc.totalProblemsCorrect / doc.totalProblemsAttempted) * 100)
         : 0,

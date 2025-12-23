@@ -194,7 +194,7 @@ class YAMLPathLoader {
       nodeIds.add(node.id);
 
       // Check layer field
-      if (!node.layer || !['foundation', 'integration', 'application', 'examPractice'].includes(node.layer)) {
+      if (!node.layer || !['foundation', 'integration', 'application', 'examPractice', 'word-problems'].includes(node.layer)) {
         throw new Error(`Invalid or missing layer in node ${node.id}: ${node.layer}`);
       }
 

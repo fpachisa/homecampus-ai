@@ -193,29 +193,16 @@ export const FORMATTING_RULES: FormattingRules = {
   // RULE 2: LaTeX Only When ABSOLUTELY Necessary and for fractions
   latex: {
     mathExpressions: {
-      rule: "Use $...$ LaTeX ONLY when Unicode or Markdown cannot represent the expression and is ABSOLUTELY ESSENTIAL. NEVER use LaTeX for plain text or unicode symbols.",
-      examples: {
-        correct: [
-          "All fractions: $\\frac{1}{2}$, $\\frac{13}{27}$ or $\\frac{x+1}{2x-3}$",
-          "Complex expressions: $\\sin^2(θ) + \\cos^2(θ) = 1$",
-          "Nested operations: $\\sqrt{x^2 + y^2}$"
-        ],
-        incorrect: [
-          "Simple variables: $x$, $y$, $n$ (use plain text: x, y, n)",
-          "Greek letters: $\\theta$, $\\alpha$, $\\pi$ (use Unicode: θ, α, π)",
-          "Operators: $\\times$, $\\div$, $\\pm$ (use Unicode: ×, ÷, ±)",
-          "Superscripts: $x^2$, $x^3$ (use Unicode: x², x³)"
-        ]
-      },
+      rule: "Use $...$ LaTeX ONLY when Unicode or Markdown cannot represent the expression and is ABSOLUTELY ESSENTIAL. NEVER use LaTeX for plain text or unicode symbols. CRITICAL FOR JSON OUTPUT: When writing LaTeX in JSON, use TWO backslashes (double backslash) before commands like frac, sqrt, sin, cos. ONE backslash breaks because JSON treats backslash-f as form feed, backslash-n as newline, etc.",
       reason: "Unicode handles simple cases without JSON escaping complexity"
     },
     jsonEscaping: {
-      rule: "In JSON: Use ONE backslash for LaTeX commands",
+      rule: "CRITICAL: In your JSON output, LaTeX commands like frac, sqrt, sin, cos must be preceded by TWO backslashes (a double backslash). Using only ONE backslash breaks rendering because JSON interprets backslash-f as a form feed character, backslash-n as newline, etc.",
       examples: {
-        correct: '{"content": "Solve $\\frac{x}{2} = 5$"}',
-        incorrect: '{"content": "Solve $\\\\frac{x}{2} = 5$"} // TWO backslashes breaks rendering'
+        correct: "TWO backslashes before frac, sqrt, sin, cos, theta, etc. - the LaTeX renders correctly",
+        incorrect: "ONE backslash before frac - BREAKS because backslash-f becomes form feed character in JSON"
       },
-      reason: "JSON.parse() keeps single backslash as-is, KaTeX renders it correctly"
+      reason: "JSON uses backslash for escape sequences. A double backslash in JSON becomes a single backslash after parsing, which is what KaTeX needs to render LaTeX commands correctly."
     },
     generalGuideline: "Use Unicode for simple symbols (80% of cases), LaTeX only for complex expressions (20% of cases)"
   },
@@ -248,11 +235,9 @@ export const FORMATTING_RULES: FormattingRules = {
  */
 export const FORMATTING_DECISION_TREE = `
 ┌─────────────────────────────────────────────────────────────────┐
-│ CRITICAL FIRST CHECK: Is it a currency/money amount?           │
+│ CRITICAL FIRST CHECK: Is it a currency/money amount?            │
 │ ($25, $1,500, $10,000)                                          │
-│   └─→ YES: ALWAYS escape with backslash: \\$25, \\$1,500        │
-│       - Wrong: "costs $25" ← garbled output                     │
-│       - Correct: "costs \\$25" ← shows $25                      │
+│   └─→ YES: ALWAYS escape with double backslashes so it displays correctly │
 └─────────────────────────────────────────────────────────────────┘
               │
               ↓
@@ -270,7 +255,8 @@ export const FORMATTING_DECISION_TREE = `
               │
               └─→ Is it a complex expression? (custom fractions, nested operations)
                    └─→ YES: Use LaTeX with $...$ delimiters
-                        Use ONE backslash: $\\frac{1}{2}$
+                        IMPORTANT: In JSON output, use TWO backslashes (double backslash) before LaTeX commands (frac, sqrt, sin, cos, theta)
+                        ONE backslash is WRONG and breaks rendering!
 `;
 
 /**

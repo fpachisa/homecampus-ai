@@ -1,0 +1,904 @@
+# P5 Mathematics - Area of Triangle Practice Module
+# Covers: Base & Height, Area Formula, and Composite Figures
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: BASE AND HEIGHT OF A TRIANGLE
+  # FOUNDATION LAYER (3 sections, 15 questions)
+  # ============================================
+
+  # Section 1: Understanding Base and Height
+  - id: triangle-base-height-node-1
+    title: "Identifying Base and Height"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 5
+    descriptor:
+      section: "what-is-base-height"
+      problemDescription:
+        - "Identify the base and perpendicular height of triangles"
+        - "Recognize the right-angle marker where base and height meet"
+      contexts:
+        - "triangle identification"
+      preWrittenQuestions:
+        - id: "bh-n1-q1"
+          avatarIntro: "Welcome to learning about triangles! Every triangle has a base and a height. Let's learn how to identify them."
+          problemText: "Look at triangle ABC shown below. The base is the horizontal side AB. Which letter marks the vertex where the height is drawn from?"
+          finalAnswer: "C"
+          stepByStepGuideline:
+            - "The base is side AB (the bottom horizontal side)"
+            - "The height is drawn from the opposite vertex to the base"
+            - "The opposite vertex to base AB is C"
+            - "Answer: C"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "C"
+              baseLeft: "A"
+              baseRight: "B"
+              heightFoot: "H"
+              shape: "acute"
+              showHeight: true
+              caption: "Triangle ABC"
+
+        - id: "bh-n1-q2"
+          problemText: "In the triangle PQR shown, the height is drawn from P to the base QR. What is the small square symbol at point H showing?"
+          finalAnswer: "A right angle (90°)"
+          stepByStepGuideline:
+            - "The small square symbol is called a right-angle marker"
+            - "It shows that two lines meet at exactly 90°"
+            - "The height PH meets the base QR at a right angle"
+            - "Answer: A right angle (90°)"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "P"
+              baseLeft: "Q"
+              baseRight: "R"
+              heightFoot: "H"
+              shape: "acute"
+              showHeight: true
+              caption: "Triangle PQR with height PH"
+
+        - id: "bh-n1-q3"
+          problemText: "Look at the right-angled triangle XYZ. Side XY is the base. The height goes from Z straight down to the base. What type of line is used to show the height?"
+          finalAnswer: "A dashed (dotted) line"
+          stepByStepGuideline:
+            - "In geometry diagrams, the height is shown as a dashed line"
+            - "This distinguishes it from the solid sides of the triangle"
+            - "The dashed line from Z meets XY at a right angle"
+            - "Answer: A dashed (dotted) line"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "Z"
+              baseLeft: "X"
+              baseRight: "Y"
+              heightFoot: "H"
+              shape: "acute"
+              showHeight: true
+              caption: "Triangle XYZ"
+
+        - id: "bh-n1-q4"
+          problemText: "In triangle DEF, the base is DE and the height is drawn from F. The height meets the base at point G. What is the relationship between the height FG and the base DE?"
+          finalAnswer: "They are perpendicular (meet at 90°)"
+          stepByStepGuideline:
+            - "The height of a triangle is ALWAYS perpendicular to the base"
+            - "Perpendicular means meeting at a right angle (90°)"
+            - "Look for the small square symbol showing 90°"
+            - "Answer: They are perpendicular (meet at 90°)"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "F"
+              baseLeft: "D"
+              baseRight: "E"
+              heightFoot: "G"
+              shape: "acute"
+              showHeight: true
+              caption: "Triangle DEF"
+
+        - id: "bh-n1-q5"
+          problemText: "Look at triangle JKL. If JK is the base, the height is the perpendicular distance from which vertex to the base?"
+          finalAnswer: "L"
+          stepByStepGuideline:
+            - "The base is JK"
+            - "The height is drawn from the vertex OPPOSITE to the base"
+            - "The vertex opposite to JK is L"
+            - "The height goes from L perpendicular to JK"
+            - "Answer: L"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "L"
+              baseLeft: "J"
+              baseRight: "K"
+              heightFoot: "M"
+              shape: "acute"
+              showHeight: true
+              caption: "Triangle JKL"
+      aiGeneratedQuestions: false
+
+  # Section 2: Any Side Can Be the Base
+  - id: triangle-base-height-node-2
+    title: "Different Base Choices"
+    layer: foundation
+    prerequisites:
+      - triangle-base-height-node-1
+    problemsRequired: 5
+    descriptor:
+      section: "any-side-as-base"
+      problemDescription:
+        - "Understand that any side can be chosen as the base"
+        - "Find the corresponding height for different base choices"
+      contexts:
+        - "rotated triangles"
+      preWrittenQuestions:
+        - id: "bh-n2-q1"
+          avatarIntro: "Here's something cool - any side of a triangle can be the base! Let's see how the height changes when we pick different bases."
+          problemText: "Triangle ABC is shown with side AC as the base (on the left). From which vertex is the height drawn?"
+          finalAnswer: "B"
+          stepByStepGuideline:
+            - "The base is AC (on the left side)"
+            - "The height is drawn from the opposite vertex"
+            - "The vertex opposite to AC is B"
+            - "Answer: B"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "B"
+              baseLeft: "A"
+              baseRight: "C"
+              shape: "acute"
+              rotation: 90
+              showHeight: true
+              caption: "Triangle ABC with AC as base"
+
+        - id: "bh-n2-q2"
+          problemText: "In the same triangle ABC, if we choose AB as the base instead, from which vertex would we draw the height?"
+          finalAnswer: "C"
+          stepByStepGuideline:
+            - "If AB is chosen as the base"
+            - "The height must come from the opposite vertex"
+            - "The vertex opposite to AB is C"
+            - "Answer: C"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "C"
+              baseLeft: "A"
+              baseRight: "B"
+              shape: "acute"
+              showHeight: true
+              caption: "Triangle ABC with AB as base"
+
+        - id: "bh-n2-q3"
+          problemText: "Triangle PQR is rotated so that side PR is at the top. If PR is the base, which vertex is used for the height?"
+          finalAnswer: "Q"
+          stepByStepGuideline:
+            - "The base PR is at the top"
+            - "The height drops from the opposite vertex"
+            - "The vertex opposite to PR is Q"
+            - "Answer: Q"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "Q"
+              baseLeft: "P"
+              baseRight: "R"
+              shape: "acute"
+              rotation: 180
+              showHeight: true
+              caption: "Triangle PQR with PR at top"
+
+        - id: "bh-n2-q4"
+          problemText: "How many different base-height pairs does a triangle have?"
+          finalAnswer: "3"
+          stepByStepGuideline:
+            - "A triangle has 3 sides"
+            - "Each side can be chosen as the base"
+            - "Each base has exactly one corresponding perpendicular height"
+            - "So there are 3 different base-height pairs"
+            - "Answer: 3"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "A"
+              baseLeft: "B"
+              baseRight: "C"
+              shape: "acute"
+              showHeight: true
+              caption: "Every triangle has 3 base-height pairs"
+
+        - id: "bh-n2-q5"
+          problemText: "Triangle XYZ is positioned with side XZ on the right. If XZ is the base, the height goes from Y. True or False: The height must always be vertical (pointing straight up)?"
+          finalAnswer: "False"
+          stepByStepGuideline:
+            - "The height is perpendicular to the BASE"
+            - "If the base is on the right (vertical), the height will be horizontal"
+            - "The direction of the height depends on the direction of the base"
+            - "Answer: False - the height direction depends on the base direction"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "Y"
+              baseLeft: "X"
+              baseRight: "Z"
+              shape: "acute"
+              rotation: 270
+              showHeight: true
+              caption: "Triangle XYZ with XZ on right side"
+      aiGeneratedQuestions: false
+
+  # Section 3: Height Outside the Triangle (Obtuse)
+  - id: triangle-base-height-node-3
+    title: "Height Outside the Triangle"
+    layer: foundation
+    prerequisites:
+      - triangle-base-height-node-2
+    problemsRequired: 5
+    descriptor:
+      section: "height-outside-triangle"
+      problemDescription:
+        - "Identify base and height in obtuse triangles"
+        - "Understand when height falls outside the triangle"
+      contexts:
+        - "obtuse triangles"
+      preWrittenQuestions:
+        - id: "bh-n3-q1"
+          avatarIntro: "Sometimes the height of a triangle falls OUTSIDE the triangle! This happens with obtuse triangles. Let's explore why."
+          problemText: "Look at the obtuse triangle ABC. The base is AB. Notice that the height from C lands outside the triangle on the extended base line. Why does this happen?"
+          finalAnswer: "Because the triangle has an obtuse angle (greater than 90°)"
+          stepByStepGuideline:
+            - "This is an obtuse triangle - one angle is greater than 90°"
+            - "When the apex leans far to one side, the perpendicular height lands outside"
+            - "The base line is extended (shown as dashed) to show where height meets it"
+            - "Answer: Because the triangle has an obtuse angle (greater than 90°)"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "C"
+              baseLeft: "A"
+              baseRight: "B"
+              heightFoot: "H"
+              shape: "obtuse-left"
+              showHeight: true
+              caption: "Obtuse triangle with height outside"
+
+        - id: "bh-n3-q2"
+          problemText: "In the obtuse triangle PQR, the base is PQ. The dashed line extending beyond P shows the extended base. Where does the height from R meet the base line?"
+          finalAnswer: "On the extended part of the base, outside the triangle"
+          stepByStepGuideline:
+            - "Triangle PQR is obtuse"
+            - "The height from R must be perpendicular to the base PQ"
+            - "The perpendicular from R lands on the extended base line"
+            - "Answer: On the extended part of the base, outside the triangle"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "R"
+              baseLeft: "P"
+              baseRight: "Q"
+              heightFoot: "H"
+              shape: "obtuse-left"
+              showHeight: true
+              caption: "Obtuse triangle PQR"
+
+        - id: "bh-n3-q3"
+          problemText: "Triangle DEF is obtuse with the obtuse angle at E. If DF is the base, will the height from E fall inside or outside the triangle?"
+          finalAnswer: "Inside the triangle"
+          stepByStepGuideline:
+            - "The obtuse angle is at E"
+            - "If DF is the base, E is the apex"
+            - "When the apex has the obtuse angle, the height falls inside"
+            - "Answer: Inside the triangle"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "E"
+              baseLeft: "D"
+              baseRight: "F"
+              heightFoot: "H"
+              shape: "acute"
+              showHeight: true
+              caption: "Height from obtuse vertex falls inside"
+
+        - id: "bh-n3-q4"
+          problemText: "Look at obtuse triangle XYZ with base XY. The height from Z is shown meeting the extended base at point W. What is the length of the height: XW, ZW, or XZ?"
+          finalAnswer: "ZW"
+          stepByStepGuideline:
+            - "The height is the perpendicular distance from Z to the base line"
+            - "W is where the perpendicular meets the extended base"
+            - "So the height is the segment ZW"
+            - "XZ is a side of the triangle, not the height"
+            - "Answer: ZW"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "Z"
+              baseLeft: "X"
+              baseRight: "Y"
+              heightFoot: "W"
+              shape: "obtuse-right"
+              showHeight: true
+              caption: "Obtuse triangle XYZ"
+
+        - id: "bh-n3-q5"
+          problemText: "Can the height of a triangle ever be equal to one of its sides?"
+          finalAnswer: "Yes, in a right-angled triangle"
+          stepByStepGuideline:
+            - "In a right-angled triangle, one angle is exactly 90°"
+            - "If the base is one of the sides forming the right angle"
+            - "The height is the other side forming the right angle"
+            - "So the height equals one of the sides"
+            - "Answer: Yes, in a right-angled triangle"
+          mathTool:
+            toolName: "triangleIdentify"
+            parameters:
+              apex: "C"
+              baseLeft: "A"
+              baseRight: "B"
+              shape: "right"
+              showHeight: true
+              caption: "Right triangle: height = side AC"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # SUBTOPIC 2: AREA OF TRIANGLE (FORMULA)
+  # FOUNDATION LAYER (4 sections, 18 questions)
+  # ============================================
+
+  # Section 1: Triangle-Rectangle Connection
+  - id: triangle-area-node-1
+    title: "Triangles and Rectangles"
+    layer: foundation
+    prerequisites:
+      - triangle-base-height-node-3
+    problemsRequired: 4
+    descriptor:
+      section: "triangle-rectangle-connection"
+      problemDescription:
+        - "Understand that a triangle is half of a related rectangle"
+        - "Connect triangle area to rectangle area"
+      contexts:
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "area-n1-q1"
+          avatarIntro: "Did you know a triangle is exactly HALF of a rectangle? Let's discover the connection between triangle and rectangle areas!"
+          problemText: "A rectangle has a base of 8 cm and a height of 6 cm. If you draw a diagonal to split it into two triangles, what is the area of each triangle?"
+          finalAnswer: "24 cm²"
+          stepByStepGuideline:
+            - "Area of rectangle = base × height = 8 × 6 = 48 cm²"
+            - "The diagonal splits the rectangle into 2 equal triangles"
+            - "Each triangle = 48 ÷ 2 = 24 cm²"
+            - "Answer: 24 cm²"
+
+        - id: "area-n1-q2"
+          problemText: "A triangle has base 10 m and height 4 m. What is the area of the rectangle that contains this triangle (with the same base and height)?"
+          finalAnswer: "40 m²"
+          stepByStepGuideline:
+            - "The related rectangle has the same base and height"
+            - "Rectangle base = 10 m, height = 4 m"
+            - "Area of rectangle = 10 × 4 = 40 m²"
+            - "Answer: 40 m²"
+
+        - id: "area-n1-q3"
+          problemText: "If a rectangle has an area of 36 cm², what is the area of a triangle with the same base and height?"
+          finalAnswer: "18 cm²"
+          stepByStepGuideline:
+            - "A triangle is half of the related rectangle"
+            - "Triangle area = Rectangle area ÷ 2"
+            - "Triangle area = 36 ÷ 2 = 18 cm²"
+            - "Answer: 18 cm²"
+
+        - id: "area-n1-q4"
+          problemText: "Two identical triangles are joined together. What shape do they form?"
+          finalAnswer: "A rectangle (or parallelogram)"
+          stepByStepGuideline:
+            - "When you flip one triangle and join it to another identical triangle"
+            - "They form a rectangle (if right-angled) or parallelogram"
+            - "This is why triangle area = ½ × rectangle area"
+            - "Answer: A rectangle (or parallelogram)"
+      aiGeneratedQuestions: false
+
+  # Section 2: Area Formula
+  - id: triangle-area-node-2
+    title: "Using the Area Formula"
+    layer: foundation
+    prerequisites:
+      - triangle-area-node-1
+    problemsRequired: 5
+    descriptor:
+      section: "area-formula"
+      problemDescription:
+        - "Apply Area = ½ × base × height"
+        - "Calculate area with whole number dimensions"
+      contexts:
+        - "direct calculation"
+      preWrittenQuestions:
+        - id: "area-n2-q1"
+          avatarIntro: "Now let's use the triangle area formula: Area = half times base times height. Remember to use the perpendicular height!"
+          problemText: "Find the area of the triangle shown with base 12 cm and height 8 cm."
+          finalAnswer: "48 cm²"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "Area = ½ × 12 × 8"
+            - "Area = ½ × 96 = 48 cm²"
+            - "Answer: 48 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "12 cm"
+              height: "8 cm"
+              shape: "acute"
+              shaded: true
+              caption: "Find the area"
+
+        - id: "area-n2-q2"
+          problemText: "Calculate the area of a triangle with base 15 m and height 6 m."
+          finalAnswer: "45 m²"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "Area = ½ × 15 × 6"
+            - "Area = ½ × 90 = 45 m²"
+            - "Answer: 45 m²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "15 m"
+              height: "6 m"
+              shape: "acute"
+              shaded: true
+              caption: "Find the area"
+
+        - id: "area-n2-q3"
+          problemText: "A right-angled triangle has base 9 cm and height 10 cm. What is its area?"
+          finalAnswer: "45 cm²"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "Area = ½ × 9 × 10"
+            - "Area = ½ × 90 = 45 cm²"
+            - "Answer: 45 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "9 cm"
+              height: "10 cm"
+              shape: "right"
+              shaded: true
+              caption: "Right-angled triangle"
+
+        - id: "area-n2-q4"
+          problemText: "Find the area of a triangle with base 20 cm and height 7 cm."
+          finalAnswer: "70 cm²"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "Area = ½ × 20 × 7"
+            - "Area = ½ × 140 = 70 cm²"
+            - "Answer: 70 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "20 cm"
+              height: "7 cm"
+              shape: "acute"
+              shaded: true
+              caption: "Find the area"
+
+        - id: "area-n2-q5"
+          problemText: "A triangle has base 14 m and height 12 m. Calculate its area."
+          finalAnswer: "84 m²"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "Area = ½ × 14 × 12"
+            - "Area = ½ × 168 = 84 m²"
+            - "Answer: 84 m²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "14 m"
+              height: "12 m"
+              shape: "acute"
+              shaded: true
+              caption: "Find the area"
+      aiGeneratedQuestions: false
+
+  # Section 3: Different Orientations
+  - id: triangle-area-node-3
+    title: "Triangles in Different Orientations"
+    layer: foundation
+    prerequisites:
+      - triangle-area-node-2
+    problemsRequired: 5
+    descriptor:
+      section: "different-orientations"
+      problemDescription:
+        - "Calculate area of rotated triangles"
+        - "Identify correct base and height regardless of orientation"
+      contexts:
+        - "rotated triangles"
+        - "obtuse triangles"
+      preWrittenQuestions:
+        - id: "area-n3-q1"
+          avatarIntro: "Triangles can be rotated or flipped, but the formula stays the same! Just identify the base and perpendicular height."
+          problemText: "This triangle is rotated so the base is on the right side. The base is 10 cm and the height is 6 cm. Find the area."
+          finalAnswer: "30 cm²"
+          stepByStepGuideline:
+            - "Even when rotated, the formula is the same"
+            - "Area = ½ × base × height"
+            - "Area = ½ × 10 × 6 = 30 cm²"
+            - "Answer: 30 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "10 cm"
+              height: "6 cm"
+              shape: "acute"
+              rotation: 90
+              shaded: true
+              caption: "Rotated triangle"
+
+        - id: "area-n3-q2"
+          problemText: "An obtuse triangle has base 16 cm and height 5 cm (shown outside the triangle). What is its area?"
+          finalAnswer: "40 cm²"
+          stepByStepGuideline:
+            - "For obtuse triangles, the formula is the same"
+            - "Area = ½ × base × height"
+            - "Area = ½ × 16 × 5 = 40 cm²"
+            - "Answer: 40 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "16 cm"
+              height: "5 cm"
+              shape: "obtuse-left"
+              shaded: true
+              caption: "Obtuse triangle"
+
+        - id: "area-n3-q3"
+          problemText: "The triangle shown has base 18 m at the top. The height is 8 m. Calculate the area."
+          finalAnswer: "72 m²"
+          stepByStepGuideline:
+            - "The base can be at any position"
+            - "Area = ½ × base × height"
+            - "Area = ½ × 18 × 8 = 72 m²"
+            - "Answer: 72 m²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "18 m"
+              height: "8 m"
+              shape: "acute"
+              rotation: 180
+              shaded: true
+              caption: "Base at top"
+
+        - id: "area-n3-q4"
+          problemText: "A triangle has these measurements: side A = 13 cm, base = 10 cm, height = 12 cm, side B = 15 cm. What is its area?"
+          finalAnswer: "60 cm²"
+          stepByStepGuideline:
+            - "Use only the BASE and HEIGHT for area"
+            - "Ignore the side lengths (13 cm and 15 cm)"
+            - "Area = ½ × 10 × 12 = 60 cm²"
+            - "Answer: 60 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "10 cm"
+              height: "12 cm"
+              shape: "acute"
+              shaded: true
+              caption: "Use base and height only"
+
+        - id: "area-n3-q5"
+          problemText: "An obtuse triangle has height 9 cm shown outside the triangle. The base is 14 cm. Find the area."
+          finalAnswer: "63 cm²"
+          stepByStepGuideline:
+            - "Even with height outside, use the same formula"
+            - "Area = ½ × base × height"
+            - "Area = ½ × 14 × 9 = 63 cm²"
+            - "Answer: 63 cm²"
+          mathTool:
+            toolName: "triangleArea"
+            parameters:
+              base: "14 cm"
+              height: "9 cm"
+              shape: "obtuse-right"
+              shaded: true
+              caption: "Height outside triangle"
+      aiGeneratedQuestions: false
+
+  # Section 4: Word Problems
+  - id: triangle-area-node-4
+    title: "Word Problems: Area of Triangles"
+    layer: foundation
+    prerequisites:
+      - triangle-area-node-3
+    problemsRequired: 4
+    descriptor:
+      section: "word-problems-area"
+      problemDescription:
+        - "Solve real-world problems involving triangle areas"
+        - "Extract base and height from word problems"
+      contexts:
+        - "real-world scenarios"
+      preWrittenQuestions:
+        - id: "area-n4-q1"
+          avatarIntro: "Let's apply triangle area to real-world problems! Read carefully to find the base and height in each situation."
+          problemText: "A triangular garden has a base of 12 m and a height of 9 m. What is the area of the garden?"
+          finalAnswer: "54 m²"
+          stepByStepGuideline:
+            - "Identify: base = 12 m, height = 9 m"
+            - "Area = ½ × base × height"
+            - "Area = ½ × 12 × 9 = 54 m²"
+            - "Answer: 54 m²"
+
+        - id: "area-n4-q2"
+          problemText: "A triangular sail has an area of 30 m². If the base of the sail is 10 m, what is its height?"
+          finalAnswer: "6 m"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "30 = ½ × 10 × height"
+            - "30 = 5 × height"
+            - "height = 30 ÷ 5 = 6 m"
+            - "Answer: 6 m"
+
+        - id: "area-n4-q3"
+          problemText: "A pizza slice is shaped like a triangle with base 8 cm and height 15 cm. What is the area of the pizza slice?"
+          finalAnswer: "60 cm²"
+          stepByStepGuideline:
+            - "Base = 8 cm, height = 15 cm"
+            - "Area = ½ × base × height"
+            - "Area = ½ × 8 × 15 = 60 cm²"
+            - "Answer: 60 cm²"
+
+        - id: "area-n4-q4"
+          problemText: "A triangular plot of land has an area of 84 m². If the height is 12 m, what is the base?"
+          finalAnswer: "14 m"
+          stepByStepGuideline:
+            - "Area = ½ × base × height"
+            - "84 = ½ × base × 12"
+            - "84 = 6 × base"
+            - "base = 84 ÷ 6 = 14 m"
+            - "Answer: 14 m"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # SUBTOPIC 3: COMPOSITE FIGURES
+  # WORD PROBLEMS LAYER (4 sections, 16 questions)
+  # ============================================
+
+  # Section 1: Split and Add Method
+  - id: triangle-composite-node-1
+    title: "Split and Add Method"
+    layer: word-problems
+    prerequisites:
+      - triangle-area-node-4
+    problemsRequired: 4
+    descriptor:
+      section: "split-and-add"
+      problemDescription:
+        - "Split composite figures into triangles and rectangles"
+        - "Add areas to find total"
+      contexts:
+        - "composite shapes"
+      preWrittenQuestions:
+        - id: "comp-n1-q1"
+          avatarIntro: "Let's find the area of this barn-shaped figure!"
+          problemText: "A barn-shaped sign is made by placing a triangle on top of a rectangle. The rectangle is 12 m by 7 m. The triangle has a base of 12 m and a height of 5 m. Find the total area."
+          finalAnswer: "114 m²"
+          stepByStepGuideline:
+            - "Split into rectangle + triangle"
+            - "Rectangle area = 12 × 7 = 84 m²"
+            - "Triangle area = ½ × 12 × 5 = 30 m²"
+            - "Total = 84 + 30 = 114 m²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/barn-sign.svg"
+
+        - id: "comp-n1-q2"
+          avatarIntro: "This rocket shape needs some calculation!"
+          problemText: "A rocket-shaped badge is made from a rectangle (9 cm by 5 cm) with a triangle attached to one end. The triangle has a base of 5 cm and a height of 7 cm. What is the total area?"
+          finalAnswer: "62.5 cm²"
+          stepByStepGuideline:
+            - "Split into rectangle + triangle"
+            - "Rectangle area = 9 × 5 = 45 cm²"
+            - "Triangle area = ½ × 5 × 7 = 17.5 cm²"
+            - "Total = 45 + 17.5 = 62.5 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/rocket-badge.svg"
+
+        - id: "comp-n1-q3"
+          avatarIntro: "Two triangles form this butterfly wing!"
+          problemText: "A butterfly wing is made from two triangles joined at their bases. Triangle A has base 14 cm and height 9 cm. Triangle B has base 14 cm and height 11 cm. Find the total area."
+          finalAnswer: "140 cm²"
+          stepByStepGuideline:
+            - "Calculate each triangle separately"
+            - "Triangle A = ½ × 14 × 9 = 63 cm²"
+            - "Triangle B = ½ × 14 × 11 = 77 cm²"
+            - "Total = 63 + 77 = 140 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/butterfly-wing.svg"
+
+        - id: "comp-n1-q4"
+          avatarIntro: "Let's find the area of this banner!"
+          problemText: "A championship banner is made by placing a triangle below a square. The square has sides of 8 cm. The triangle has base 8 cm and height 10 cm. What is the total area?"
+          finalAnswer: "104 cm²"
+          stepByStepGuideline:
+            - "Split into square + triangle"
+            - "Square area = 8 × 8 = 64 cm²"
+            - "Triangle area = ½ × 8 × 10 = 40 cm²"
+            - "Total = 64 + 40 = 104 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/championship-banner.svg"
+      aiGeneratedQuestions: false
+
+  # Section 2: Take Away Method
+  - id: triangle-composite-node-2
+    title: "Take Away Method"
+    layer: word-problems
+    prerequisites:
+      - triangle-composite-node-1
+    problemsRequired: 4
+    descriptor:
+      section: "take-away-method"
+      problemDescription:
+        - "Use take-away method when shape is cut from larger shape"
+        - "Subtract cutout area from whole"
+      contexts:
+        - "cutout shapes"
+      preWrittenQuestions:
+        - id: "comp-n2-q1"
+          avatarIntro: "A corner has been cut off this card!"
+          problemText: "A rectangular card is 18 cm by 12 cm. A triangular corner is cut off with base 7 cm and height 5 cm. What is the area of the remaining card?"
+          finalAnswer: "198.5 cm²"
+          stepByStepGuideline:
+            - "Rectangle area = 18 × 12 = 216 cm²"
+            - "Triangle cutout = ½ × 7 × 5 = 17.5 cm²"
+            - "Remaining = 216 - 17.5 = 198.5 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/corner-cutout.svg"
+
+        - id: "comp-n2-q2"
+          avatarIntro: "This wooden board has a corner removed!"
+          problemText: "A square wooden board has sides of 15 m. A right-angled triangular piece is cut from one corner. The triangle has perpendicular sides of 5 m each. What is the area of the remaining board?"
+          finalAnswer: "212.5 m²"
+          stepByStepGuideline:
+            - "Square area = 15 × 15 = 225 m²"
+            - "Triangle cutout = ½ × 5 × 5 = 12.5 m²"
+            - "Remaining = 225 - 12.5 = 212.5 m²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/square-corner-cut.svg"
+
+        - id: "comp-n2-q3"
+          avatarIntro: "Two corners have been removed!"
+          problemText: "A rectangular poster is 24 cm by 16 cm. Two identical triangular pieces are cut from opposite corners. Each triangle has base 6 cm and height 5 cm. What is the remaining area?"
+          finalAnswer: "354 cm²"
+          stepByStepGuideline:
+            - "Rectangle area = 24 × 16 = 384 cm²"
+            - "One triangle = ½ × 6 × 5 = 15 cm²"
+            - "Two triangles = 15 × 2 = 30 cm²"
+            - "Remaining = 384 - 30 = 354 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/two-corners-cut.svg"
+
+        - id: "comp-n2-q4"
+          avatarIntro: "A notch has been cut from this metal piece!"
+          problemText: "A rectangular metal sheet is 20 cm by 10 cm. A triangular notch with base 10 cm and height 7 cm is cut from the center of one long edge. What is the area of the remaining metal?"
+          finalAnswer: "165 cm²"
+          stepByStepGuideline:
+            - "Rectangle area = 20 × 10 = 200 cm²"
+            - "Triangle notch = ½ × 10 × 7 = 35 cm²"
+            - "Remaining = 200 - 35 = 165 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/notch-cut.svg"
+      aiGeneratedQuestions: false
+
+  # Section 3: Complex Composite
+  - id: triangle-composite-node-3
+    title: "Complex Composite Figures"
+    layer: word-problems
+    prerequisites:
+      - triangle-composite-node-2
+    problemsRequired: 4
+    descriptor:
+      section: "complex-composite"
+      problemDescription:
+        - "Handle complex figures with multiple shapes"
+        - "Combine split-and-add with take-away as needed"
+      contexts:
+        - "complex shapes"
+      preWrittenQuestions:
+        - id: "comp-n3-q1"
+          avatarIntro: "This kite has an interesting shape!"
+          problemText: "A kite is made from two triangles. The vertical line down the middle is 20 cm. The left triangle has the 20 cm line as base and height 9 cm. The right triangle has the same base (20 cm) and height 9 cm. Find the total area."
+          finalAnswer: "180 cm²"
+          stepByStepGuideline:
+            - "Two identical triangles"
+            - "Each triangle = ½ × 20 × 9 = 90 cm²"
+            - "Total = 90 × 2 = 180 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/kite-shape.svg"
+
+        - id: "comp-n3-q2"
+          avatarIntro: "This garden has an interesting shape!"
+          problemText: "A trapezoid-shaped garden can be split into a rectangle (12 m by 9 m) and a triangle (base 12 m, height 5 m). What is the total area of the garden?"
+          finalAnswer: "138 m²"
+          stepByStepGuideline:
+            - "Rectangle = 12 × 9 = 108 m²"
+            - "Triangle = ½ × 12 × 5 = 30 m²"
+            - "Total = 108 + 30 = 138 m²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/trapezoid-garden.svg"
+
+        - id: "comp-n3-q3"
+          avatarIntro: "This medal has a star shape!"
+          problemText: "A star medal is made from a hexagon with 6 identical triangles around it. The hexagon has an area of 54 cm². Each triangle has base 5 cm and height 4 cm. What is the total area?"
+          finalAnswer: "114 cm²"
+          stepByStepGuideline:
+            - "Hexagon area = 54 cm²"
+            - "Each triangle = ½ × 5 × 4 = 10 cm²"
+            - "Six triangles = 10 × 6 = 60 cm²"
+            - "Total = 54 + 60 = 114 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/star-medal.svg"
+
+        - id: "comp-n3-q4"
+          avatarIntro: "This arrow shape uses both adding and subtracting!"
+          problemText: "An arrow shape is made from a rectangle (14 cm by 8 cm) with a triangle added at one end (base 8 cm, height 6 cm) and a triangle removed from the other end (base 8 cm, height 4 cm). What is the area?"
+          finalAnswer: "120 cm²"
+          stepByStepGuideline:
+            - "Rectangle = 14 × 8 = 112 cm²"
+            - "Triangle added = ½ × 8 × 6 = 24 cm²"
+            - "Triangle removed = ½ × 8 × 4 = 16 cm²"
+            - "Total = 112 + 24 - 16 = 120 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/arrow-shape.svg"
+      aiGeneratedQuestions: false
+
+  # Section 4: Word Problems - Composite
+  - id: triangle-composite-node-4
+    title: "Word Problems: Composite Figures"
+    layer: word-problems
+    prerequisites:
+      - triangle-composite-node-3
+    problemsRequired: 4
+    descriptor:
+      section: "word-problems-composite"
+      problemDescription:
+        - "Solve real-world composite figure problems"
+        - "Calculate materials, costs, or quantities"
+      contexts:
+        - "real-world applications"
+      preWrittenQuestions:
+        - id: "comp-n4-q1"
+          avatarIntro: "Mr Chen needs to tile his porch!"
+          problemText: "Mr Chen's porch has a barn shape: a rectangle (6 m by 5 m) with a triangular roof section (base 6 m, height 3 m). If each tile covers 0.5 m², how many tiles does he need?"
+          finalAnswer: "78 tiles"
+          stepByStepGuideline:
+            - "Rectangle = 6 × 5 = 30 m²"
+            - "Triangle = ½ × 6 × 3 = 9 m²"
+            - "Total area = 30 + 9 = 39 m²"
+            - "Tiles needed = 39 ÷ 0.5 = 78 tiles"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/porch-tiling.svg"
+
+        - id: "comp-n4-q2"
+          avatarIntro: "The yacht club needs a new flag!"
+          problemText: "A yacht club flag is rectangular (90 cm by 60 cm) with a triangular piece cut from the bottom to form a swallowtail. The triangle has base 60 cm and height 25 cm. How much fabric is needed for the flag?"
+          finalAnswer: "4650 cm²"
+          stepByStepGuideline:
+            - "Rectangle = 90 × 60 = 5400 cm²"
+            - "Triangle cutout = ½ × 60 × 25 = 750 cm²"
+            - "Fabric needed = 5400 - 750 = 4650 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/yacht-flag.svg"
+
+        - id: "comp-n4-q3"
+          avatarIntro: "The farmer needs to plant his field!"
+          problemText: "A farmer has a trapezoid-shaped field that can be divided into a rectangle (16 m by 10 m) and a triangle (base 16 m, height 7 m). If each plant needs 2 m², how many plants can the farmer grow?"
+          finalAnswer: "108 plants"
+          stepByStepGuideline:
+            - "Rectangle = 16 × 10 = 160 m²"
+            - "Triangle = ½ × 16 × 7 = 56 m²"
+            - "Total = 160 + 56 = 216 m²"
+            - "Plants = 216 ÷ 2 = 108 plants"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/farmer-field.svg"
+
+        - id: "comp-n4-q4"
+          avatarIntro: "Mrs Wong is making a special picture frame!"
+          problemText: "Mrs Wong makes a barn-shaped frame from a rectangle (35 cm by 25 cm) with a triangular top (base 35 cm, height 14 cm). Inside is a rectangular photo area of 28 cm by 18 cm. What is the area of the visible frame?"
+          finalAnswer: "616 cm²"
+          stepByStepGuideline:
+            - "Rectangle = 35 × 25 = 875 cm²"
+            - "Triangle = ½ × 35 × 14 = 245 cm²"
+            - "Total frame = 875 + 245 = 1120 cm²"
+            - "Photo area = 28 × 18 = 504 cm²"
+            - "Visible frame = 1120 - 504 = 616 cm²"
+          diagramSvg: "/curriculum-content/P5/Maths/triangle-composite-svgs/practice/picture-frame.svg"
+      aiGeneratedQuestions: false

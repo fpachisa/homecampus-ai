@@ -1,0 +1,28 @@
+<svg viewBox="0 0 450 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Marbles: 120 total, 3/8 to brother, 2/3 of remaining to sister -->
+
+  <text x="55" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Total</text>
+
+  <!-- Brother (3/8 = 45) -->
+  <rect x="65" y="15" width="90" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="110" y="33" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Brother: 45</text>
+
+  <!-- Remaining (5/8 = 75) -->
+  <rect x="155" y="15" width="150" height="28" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" rx="2"/>
+  <text x="230" y="33" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Remaining: 75</text>
+
+  <!-- Breakdown of remaining -->
+  <text x="55" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Remain</text>
+
+  <!-- Sister (2/3 of 75 = 50) -->
+  <rect x="65" y="60" width="100" height="25" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="115" y="77" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Sister: 50</text>
+
+  <!-- James (1/3 of 75 = 25) -->
+  <rect x="165" y="60" width="50" height="25" fill="#a7f3d0" stroke="#10b981" stroke-width="2" rx="2"/>
+  <text x="190" y="77" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">James</text>
+
+  <!-- Calculation -->
+  <text x="220" y="110" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Brother=45, Remain=75, Sister=2/3×75=50</text>
+  <text x="220" y="128" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">James left with = 75 - 50 = 25 marbles</text>
+</svg>

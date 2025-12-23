@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Championship Banner</text>
+
+  <!-- Square (top) - 8 cm = 120px -->
+  <rect x="140" y="50" width="120" height="120" fill="#FFF3E0" stroke="#FF9800" stroke-width="2"/>
+
+  <!-- Triangle (bottom point) - height 10 cm = 150px -->
+  <polygon points="140,170 260,170 200,320" fill="#FFE0B2" stroke="#FF9800" stroke-width="2"/>
+
+  <!-- Height line for triangle -->
+  <line x1="200" y1="170" x2="200" y2="320" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Square dimensions - left side -->
+  <line x1="125" y1="50" x2="125" y2="170" stroke="#333" stroke-width="1"/>
+  <line x1="120" y1="50" x2="130" y2="50" stroke="#333" stroke-width="1"/>
+  <line x1="120" y1="170" x2="130" y2="170" stroke="#333" stroke-width="1"/>
+  <text x="110" y="115" text-anchor="middle" font-size="12" fill="#333">8 cm</text>
+
+  <!-- Square dimensions - top -->
+  <line x1="140" y1="40" x2="260" y2="40" stroke="#333" stroke-width="1"/>
+  <line x1="140" y1="35" x2="140" y2="45" stroke="#333" stroke-width="1"/>
+  <line x1="260" y1="35" x2="260" y2="45" stroke="#333" stroke-width="1"/>
+  <text x="200" y="32" text-anchor="middle" font-size="12" fill="#333">8 cm</text>
+
+  <!-- Triangle base label -->
+  <text x="200" y="185" text-anchor="middle" font-size="11" fill="#333">8 cm</text>
+
+  <!-- Triangle height label -->
+  <text x="215" y="250" font-size="12" fill="#E91E63">10 cm</text>
+
+  <!-- Labels -->
+  <text x="200" y="115" text-anchor="middle" font-size="11" fill="#E65100">Square</text>
+  <text x="200" y="270" text-anchor="middle" font-size="11" fill="#E65100">Triangle</text>
+</svg>

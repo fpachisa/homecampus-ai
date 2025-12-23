@@ -1,0 +1,28 @@
+<svg viewBox="0 0 450 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Carnival: 360 visitors, 3/5 adults, 1/3 of children are boys -->
+
+  <text x="55" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#374151" text-anchor="end">Visitors</text>
+
+  <!-- Adults (3/5 = 216) -->
+  <rect x="65" y="15" width="144" height="28" fill="#93c5fd" stroke="#3b82f6" stroke-width="2" rx="2"/>
+  <text x="137" y="33" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Adults: 216</text>
+
+  <!-- Children (2/5 = 144) -->
+  <rect x="209" y="15" width="96" height="28" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" rx="2"/>
+  <text x="257" y="33" font-family="system-ui, sans-serif" font-size="9" fill="#374151" text-anchor="middle">Children: 144</text>
+
+  <!-- Breakdown of children -->
+  <text x="55" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="end">Children</text>
+
+  <!-- Boys (1/3 of 144 = 48) -->
+  <rect x="65" y="60" width="32" height="25" fill="#a7f3d0" stroke="#10b981" stroke-width="2" rx="2"/>
+  <text x="81" y="77" font-family="system-ui, sans-serif" font-size="8" fill="#374151" text-anchor="middle">Boys</text>
+
+  <!-- Girls (2/3 of 144 = 96) -->
+  <rect x="97" y="60" width="64" height="25" fill="#fde047" stroke="#eab308" stroke-width="2" rx="2"/>
+  <text x="129" y="77" font-family="system-ui, sans-serif" font-size="8" fill="#374151" text-anchor="middle">Girls: 96</text>
+
+  <!-- Calculation -->
+  <text x="220" y="105" font-family="system-ui, sans-serif" font-size="10" fill="#374151" text-anchor="middle">Adults=216, Children=144, Boys=1/3×144=48</text>
+  <text x="220" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#374151" text-anchor="middle">Adults - Boys = 216 - 48 = 168, Total = 360</text>
+</svg>

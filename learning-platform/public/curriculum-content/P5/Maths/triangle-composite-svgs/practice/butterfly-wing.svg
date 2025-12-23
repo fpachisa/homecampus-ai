@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Butterfly Wing (Two Triangles)</text>
+
+  <!-- Triangle A (top) -->
+  <polygon points="100,130 300,130 200,50" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+
+  <!-- Triangle B (bottom) -->
+  <polygon points="100,130 300,130 200,230" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+
+  <!-- Height lines -->
+  <line x1="200" y1="50" x2="200" y2="130" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="200" y1="130" x2="200" y2="230" stroke="#1976D2" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Common base -->
+  <line x1="100" y1="140" x2="300" y2="140" stroke="#333" stroke-width="1"/>
+  <text x="200" y="155" text-anchor="middle" font-size="12" fill="#333">14 cm (shared base)</text>
+
+  <!-- Triangle A height -->
+  <text x="215" y="95" font-size="12" fill="#4CAF50">9 cm</text>
+  <text x="150" y="100" font-size="11" fill="#388E3C">Triangle A</text>
+
+  <!-- Triangle B height -->
+  <text x="215" y="185" font-size="12" fill="#1976D2">11 cm</text>
+  <text x="150" y="180" font-size="11" fill="#1565C0">Triangle B</text>
+</svg>

@@ -750,11 +750,12 @@ export function pathProgressToFirestore(
     foundation: { completed: 0, total: 0 },
     integration: { completed: 0, total: 0 },
     application: { completed: 0, total: 0 },
-    examPractice: { completed: 0, total: 0 }
+    examPractice: { completed: 0, total: 0 },
+    'word-problems': { completed: 0, total: 0 }
   };
 
   allNodes.forEach(node => {
-    const layer = node.layer as 'foundation' | 'integration' | 'application' | 'examPractice';
+    const layer = node.layer as 'foundation' | 'integration' | 'application' | 'examPractice' | 'word-problems';
     if (layer in layerProgress) {
       layerProgress[layer].total++;
       if (pathProgress.nodes[node.id]?.status === 'completed') {
