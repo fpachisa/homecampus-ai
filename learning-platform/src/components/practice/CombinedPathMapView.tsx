@@ -269,29 +269,6 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
 
           return (
             <div key={layer} id={`layer-${layer}`} className="mb-8">
-              {/* Layer Divider */}
-              {layerIndex > 0 && (
-                <div className="flex items-center mb-8">
-                  <div
-                    className="flex-1 h-0.5"
-                    style={{ backgroundColor: meta.color, opacity: 0.3 }}
-                  />
-                  <div
-                    className="px-4 py-1 mx-3 rounded-full text-xs font-semibold uppercase tracking-wide"
-                    style={{
-                      backgroundColor: meta.colorLight,
-                      color: meta.color,
-                    }}
-                  >
-                    {meta.icon} {meta.title}
-                  </div>
-                  <div
-                    className="flex-1 h-0.5"
-                    style={{ backgroundColor: meta.color, opacity: 0.3 }}
-                  />
-                </div>
-              )}
-
               {/* Layer Nodes */}
               <div className="flex flex-col items-center space-y-6">
                 {layerNodes.map((node, index) => (

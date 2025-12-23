@@ -242,19 +242,6 @@ const VerticallyOppositeAnglesVisualizer: React.FC<VerticallyOppositeAnglesVisua
         {angleElements}
       </svg>
 
-      {/* Info box showing opposite pairs */}
-      <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded border border-blue-200 dark:border-blue-800 text-sm">
-        <p className="text-center text-gray-800 dark:text-gray-200">
-          {angleLabels[0]} = {angleLabels[2]}
-        </p>
-        <p className="text-center text-gray-800 dark:text-gray-200 mt-1">
-          {angleLabels[1]} = {angleLabels[3]}
-        </p>
-        <p className="text-center text-xs text-gray-600 dark:text-gray-400 mt-2">
-          Vertically opposite angles are equal
-        </p>
-      </div>
-
       {/* Caption */}
       {caption && (
         <p className="mt-3 text-center text-gray-700 dark:text-gray-300 text-sm max-w-lg">

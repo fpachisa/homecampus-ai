@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "P5/Maths/p5-math-angles.yaml",
+      "displayName": "P5 Angles",
+      "category": "p5-math-angles"
+    },
+    {
       "filename": "P5/Maths/p5-math-decimals.yaml",
       "displayName": "P5 Decimals",
       "category": "p5-math-decimals"
@@ -9,6 +14,11 @@
       "filename": "P5/Maths/p5-math-rate.yaml",
       "displayName": "P5 Rate",
       "category": "p5-math-rate"
+    },
+    {
+      "filename": "P5/Maths/p5-math-percentage.yaml",
+      "displayName": "P5 Percentage",
+      "category": "p5-math-percentage"
     },
     {
       "filename": "P5/Maths/p5-math-volume.yaml",

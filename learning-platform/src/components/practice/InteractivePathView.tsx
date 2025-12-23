@@ -329,17 +329,11 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
     integrationEnd: nodesByLayer.foundation.length - 1 + nodesByLayer.integration.length,
   }), [nodesByLayer]);
 
-  // Memoize node positions with layer gaps
+  // Memoize node positions
   const nodePositions = useMemo(() => {
     if (basePositions.length === 0) return [];
-    const layerGap = 60;
-    return basePositions.map((pos, index) => {
-      let extraOffset = 0;
-      if (index > foundationEnd) extraOffset += layerGap;
-      if (index > integrationEnd) extraOffset += layerGap;
-      return { ...pos, y: pos.y + extraOffset };
-    });
-  }, [basePositions, foundationEnd, integrationEnd]);
+    return basePositions.map((pos) => ({ ...pos }));
+  }, [basePositions]);
 
   // Memoize total path height
   const totalHeight = useMemo(() =>
@@ -407,7 +401,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
           backgroundColor: theme.colors.sidebar,
         }}
       >
-        <div className="p-4 border-b flex-shrink-0" style={{ borderColor: theme.glass.border }}>
+        <div className="px-4 py-2 border-b flex-shrink-0 flex items-center min-h-[60px]" style={{ borderColor: theme.glass.border }}>
           <BackButton onClick={goToHome} />
         </div>
         <div className="flex-1 overflow-y-auto">
@@ -419,11 +413,13 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       <div
         ref={centerPanelRef}
         className="w-full md:w-1/2 min-h-[100dvh] overflow-y-auto relative flex flex-col pb-20 md:pb-0"
-        style={{}}
+        style={{
+          backgroundColor: theme.colors.sidebar,
+        }}
       >
         {/* Header - Sticky */}
         <div
-          className="sticky top-0 z-30 px-4 sm:px-6 py-4 border-b flex-shrink-0"
+          className="sticky top-0 z-30 px-4 sm:px-6 py-2 border-b flex-shrink-0 flex flex-col justify-center min-h-[60px]"
           style={{
             backgroundColor: theme.glass.background,
             backdropFilter: theme.glass.backdrop,
@@ -432,14 +428,14 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
         >
           {/* Mobile back button */}
           {isMobile && (
-            <div className="mb-3">
+            <div className="mb-2">
               <BackButton onClick={goToHome} />
             </div>
           )}
-          <h1 className="text-2xl sm:text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
+          <h1 className="text-xl sm:text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
             {displayName || 'Loading...'}
           </h1>
-          <div className="text-sm mt-1" style={{ color: theme.colors.textSecondary }}>
+          <div className="text-xs" style={{ color: theme.colors.textSecondary }}>
             {totalCompletedNodes}/{nodes.length} nodes completed
           </div>
         </div>
@@ -468,41 +464,6 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
             );
           })}
 
-          {/* Layer Dividers - Dynamic based on actual layer after foundation */}
-          {nodesByLayer.foundation.length > 0 && foundationEnd + 1 < nodes.length && (() => {
-            // Determine what layer comes after foundation
-            const nextNode = nodes[foundationEnd + 1];
-            const layerNames: Record<PathLayer, string> = {
-              foundation: 'Foundation',
-              integration: 'Integration',
-              application: 'Application',
-              examPractice: 'Exam Practice',
-              'word-problems': 'Word Problems',
-            };
-            const nextLayerName = layerNames[nextNode?.layer] || 'Next Section';
-
-            return (
-              <div
-                className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-                style={{
-                  top: `${((nodePositions[foundationEnd]?.y || 0) + (nodePositions[foundationEnd + 1]?.y || 0)) / 2 + 90}px`,
-                  width: '80%'
-                }}
-              >
-                <div className="w-full h-px" style={{ backgroundColor: theme.glass.border }} />
-                <div
-                  className="text-sm font-semibold mt-2 px-4 py-1 rounded-full"
-                  style={{
-                    color: theme.colors.textSecondary,
-                    backgroundColor: theme.glass.background,
-                    border: `1px solid ${theme.glass.border}`
-                  }}
-                >
-                  {nextLayerName}
-                </div>
-              </div>
-            );
-          })()}
 
           {nodesByLayer.integration.length > 0 && integrationEnd < nodes.length && (
             <MilestoneMarker
@@ -532,7 +493,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
           backgroundColor: theme.colors.sidebar,
         }}
       >
-        <div className="p-4 border-b flex-shrink-0" style={{ borderColor: theme.glass.border }}>
+        <div className="px-4 py-2 border-b flex-shrink-0 flex items-center min-h-[60px]" style={{ borderColor: theme.glass.border }}>
           <h2 className="text-lg font-bold" style={{ color: theme.colors.textPrimary }}>
             Goals & Progress
           </h2>

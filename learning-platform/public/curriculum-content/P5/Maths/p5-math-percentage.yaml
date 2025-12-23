@@ -1,0 +1,957 @@
+id: "p5-math-percentage"
+displayName: "Percentage"
+category: "percentage"
+description: "Master percentage concepts, conversions, and real-world applications including GST and discount."
+sections:
+  - "p5-math-percentage-per-cent"
+  - "p5-math-percentage-conversions"
+  - "p5-math-percentage-part-of-whole"
+  - "p5-math-percentage-pie-charts"
+  - "p5-math-percentage-gst-discount-interest"
+
+nodes:
+  # ============================================
+  # PER CENT
+  # ============================================
+
+  - id: percentage-understanding-per-cent
+    title: "Understanding Per Cent"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 3
+    descriptor:
+      section: "understanding-per-cent"
+      problemDescription:
+        - "Introduction to percent means per 100"
+        - "Identify 1% as 1/100"
+      contexts:
+        - "tiles"
+        - "survey"
+      preWrittenQuestions:
+        - id: "pp-intro-q1"
+          avatarIntro: "Welcome to Percentage! 'Per cent' is a special way of saying 'out of 100'. Let's explore!"
+          problemText: "The symbol **%** means:"
+          finalAnswer: "Out of 100"
+          stepByStepGuideline:
+            - "The word 'cent' comes from the Latin word for 100 (like century)."
+            - "So 'per cent' literally means 'for every 100'."
+            - "Answer: Out of 100"
+          questionTable: null
+
+        - id: "pp-intro-q2"
+          problemText: "Which fraction is equal to 1%?"
+          finalAnswer: "$\\frac{1}{100}$"
+          stepByStepGuideline:
+            - "1% means 1 out of 100."
+            - "As a fraction, this is written with 100 as the denominator."
+            - "Answer: $\\frac{1}{100}$"
+          questionTable: null
+
+        - id: "pp-intro-q3"
+          problemText: "If a whole is divided into 100 equal parts, how many percent does the whole represent?"
+          finalAnswer: "100%"
+          stepByStepGuideline:
+            - "The whole contains all 100 parts."
+            - "100 parts out of 100 is equal to $\\frac{100}{100}$."
+            - "This is equal to 100%."
+            - "Answer: 100%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-reading-grid
+    title: "Reading Percentages from Grids"
+    layer: foundation
+    prerequisites:
+      - percentage-understanding-per-cent
+    problemsRequired: 3
+    descriptor:
+      section: "reading-percentages"
+      problemDescription:
+        - "Read shaded parts from 100-grid"
+        - "Calculate unshaded parts"
+      contexts:
+        - "garden design"
+        - "art wall"
+      preWrittenQuestions:
+        - id: "pp-grid-q1"
+          avatarIntro: "We can see percentages easily on a 100-square grid. Try reading this one!"
+          problemText: "In a garden design of 100 squares, 28 squares are planted with flowers (shaded). What percentage of the garden is flowers?"
+          finalAnswer: "28%"
+          mathTool:
+            toolName: "percentageGrid"
+            parameters:
+              shadedCount: 28
+              showPercentage: true
+              caption: "28 shaded squares out of 100"
+          stepByStepGuideline:
+            - "There are 100 squares in total."
+            - "28 squares are shaded."
+            - "28 out of 100 is written as 28%."
+            - "Answer: 28%"
+          questionTable: null
+
+        - id: "pp-grid-q2"
+          problemText: "A wall has 100 tiles. 45 tiles are blue. What percentage of the tiles are NOT blue?"
+          finalAnswer: "55%"
+          mathTool:
+            toolName: "percentageGrid"
+            parameters:
+              shadedCount: 45
+              shadedColor: "#3b82f6"
+              caption: "45 blue tiles (shaded)"
+          stepByStepGuideline:
+            - "Total tiles = 100 (which is 100%)."
+            - "Blue tiles = 45 (which is 45%)."
+            - "Not blue = 100 - 45 = 55."
+            - "Answer: 55%"
+          questionTable: null
+
+        - id: "pp-grid-q3"
+          problemText: "Use the grid to find the percentage of unshaded squares if 7 squares are shaded."
+          finalAnswer: "93%"
+          mathTool:
+            toolName: "percentageGrid"
+            parameters:
+              shadedCount: 7
+              showPercentage: true
+              caption: "7 shaded squares"
+          stepByStepGuideline:
+            - "Total squares = 100."
+            - "Shaded = 7."
+            - "Unshaded = 100 - 7 = 93."
+            - "Answer: 93%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-simple-word-problems
+    title: "Simple Percentage Word Problems"
+    layer: foundation
+    prerequisites:
+      - percentage-reading-grid
+    problemsRequired: 3
+    descriptor:
+      section: "simple-percentage-problems"
+      problemDescription:
+        - "Word problems where total is 100"
+      contexts:
+        - "concert"
+        - "chocolates"
+      preWrittenQuestions:
+        - id: "pp-simple-q1"
+          avatarIntro: "When the total is exactly 100, finding the percentage is super fast!"
+          problemText: "There are 100 people at a concert. 65 differare adults and the rest are children. What percentage are adults?"
+          finalAnswer: "65%"
+          stepByStepGuideline:
+            - "The total number of people is 100."
+            - "Since percentage means 'out of 100', the number of adults is the percentage."
+            - "65 out of 100 = 65%."
+            - "Answer: 65%"
+          questionTable: null
+
+        - id: "pp-simple-q2"
+          problemText: "A box contains 100 chocolates. 30 are dark chocolate. What percentage are NOT dark chocolate?"
+          finalAnswer: "70%"
+          stepByStepGuideline:
+            - "Total chocolates = 100."
+            - "Dark chocolates = 30."
+            - "Not dark = 100 - 30 = 70."
+            - "70 out of 100 = 70%."
+            - "Answer: 70%"
+          questionTable: null
+
+        - id: "pp-simple-q3"
+          problemText: "Peter took a test with 100 questions. He answered 88 correctly. What percentage did he answer incorrectly?"
+          finalAnswer: "12%"
+          stepByStepGuideline:
+            - "Total questions = 100."
+            - "Correct = 88."
+            - "Incorrect = 100 - 88 = 12."
+            - "12 out of 100 = 12%."
+            - "Answer: 12%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # CONVERSIONS
+  # ============================================
+
+  - id: percentage-fraction-conversion
+    title: "Converting Fractions to Percentages"
+    layer: foundation
+    prerequisites:
+      - percentage-simple-word-problems
+    problemsRequired: 3
+    descriptor:
+      section: "fraction-to-percentage"
+      problemDescription:
+        - "Convert fractions to equivalent fractions out of 100"
+        - "Multiply fraction by 100%"
+      contexts:
+        - "test scores"
+        - "discounts"
+      preWrittenQuestions:
+        - id: "pc-frac-q1"
+          avatarIntro: "To turn a fraction into a percentage, we can make the denominator 100."
+          problemText: "Convert $\\frac{17}{20}$ to a percentage."
+          finalAnswer: "85%"
+          mathTool:
+            toolName: "fractionBar"
+            parameters:
+              fraction1: "17/20"
+              caption: "Target: Convert to denominator 100"
+          stepByStepGuideline:
+            - "**Method 1: Equivalent Fraction**"
+            - "Multiply top and bottom by 5 to make denominator 100."
+            - "$\\frac{17 \\times 5}{20 \\times 5} = \\frac{85}{100}$"
+            - "$\\frac{85}{100} = 85\\%$"
+            - "Answer: 85%"
+          questionTable: null
+
+        - id: "pc-frac-q2"
+          problemText: "Convert $\\frac{3}{5}$ to a percentage."
+          finalAnswer: "60%"
+          mathTool:
+            toolName: "fractionBar"
+            parameters:
+              fraction1: "3/5"
+              caption: "Target: Convert to denominator 100"
+          stepByStepGuideline:
+            - "**Method 2: Multiply by 100%**"
+            - "$\\frac{3}{5} \\times 100\\%$"
+            - "$= \\frac{300}{5}\\% = 60\\%$"
+            - "Answer: 60%"
+          questionTable: null
+
+        - id: "pc-frac-q3"
+          problemText: "Express $\\frac{9}{25}$ as a percentage."
+          finalAnswer: "36%"
+          mathTool:
+            toolName: "fractionBar"
+            parameters:
+              fraction1: "9/25"
+              caption: "Target: Convert to denominator 100"
+          stepByStepGuideline:
+            - "Make denominator 100."
+            - "$25 \\times 4 = 100$"
+            - "$\\frac{9 \\times 4}{25 \\times 4} = \\frac{36}{100}$"
+            - "Answer: 36%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-decimal-conversion
+    title: "Converting Decimals to Percentages"
+    layer: foundation
+    prerequisites:
+      - percentage-fraction-conversion
+    problemsRequired: 3
+    descriptor:
+      section: "decimal-to-percentage"
+      problemDescription:
+        - "Convert decimal to percentage"
+      contexts:
+        - "probability"
+        - "statistics"
+      preWrittenQuestions:
+        - id: "pc-dec-q1"
+          avatarIntro: "Decimals are easy! Just multiply by 100 to get the percentage."
+          problemText: "Convert **0.4** to a percentage."
+          finalAnswer: "40%"
+          stepByStepGuideline:
+            - "Multiply by 100: $0.4 \\times 100 = 40$"
+            - "Or convert to fraction: $0.4 = \\frac{4}{10} = \\frac{40}{100}$"
+            - "Answer: 40%"
+          questionTable: null
+
+        - id: "pc-dec-q2"
+          problemText: "The probability of rain is **0.85**. Write this as a percentage."
+          finalAnswer: "85%"
+          stepByStepGuideline:
+            - "Multiply by 100: $0.85 \\times 100 = 85$"
+            - "Answer: 85%"
+          questionTable: null
+
+        - id: "pc-dec-q3"
+          problemText: "Express **0.06** as a percentage."
+          finalAnswer: "6%"
+          stepByStepGuideline:
+            - "Multiply by 100: $0.06 \\times 100 = 6$"
+            - "Answer: 6%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-to-decimal-fraction
+    title: "Percentages to Decimals and Fractions"
+    layer: foundation
+    prerequisites:
+      - percentage-decimal-conversion
+    problemsRequired: 3
+    descriptor:
+      section: "percentage-to-decimal-fraction"
+      problemDescription:
+        - "Convert % to decimal and simplified fraction"
+      contexts:
+        - "general math"
+      preWrittenQuestions:
+        - id: "pc-rev-q1"
+          avatarIntro: "Now let's go the other way. Can you turn a percentage back into a decimal?"
+          problemText: "Convert **23%** to a decimal."
+          finalAnswer: "0.23"
+          stepByStepGuideline:
+            - "Divide by 100: $23 \\div 100 = 0.23$"
+            - "Answer: 0.23"
+          questionTable: null
+
+        - id: "pc-rev-q2"
+          problemText: "Convert **75%** to a fraction in simplest form."
+          finalAnswer: "$\\frac{3}{4}$"
+          stepByStepGuideline:
+            - "Write as fraction over 100: $\\frac{75}{100}$"
+            - "Simplify by dividing by 25."
+            - "$75 \\div 25 = 3$"
+            - "$100 \\div 25 = 4$"
+            - "Answer: $\\frac{3}{4}$"
+          questionTable: null
+
+        - id: "pc-rev-q3"
+          problemText: "Convert **8%** to a fraction in simplest form."
+          finalAnswer: "$\\frac{2}{25}$"
+          stepByStepGuideline:
+            - "Write as fraction over 100: $\\frac{8}{100}$"
+            - "Simplify by dividing by 4."
+            - "$8 \\div 4 = 2$"
+            - "$100 \\div 4 = 25$"
+            - "Answer: $\\frac{2}{25}$"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # PART OF A WHOLE
+  # ============================================
+
+  - id: percentage-part-of-whole
+    title: "Finding What Percentage Is"
+    layer: word-problems
+    prerequisites:
+      - percentage-fraction-conversion
+    problemsRequired: 3
+    descriptor:
+      section: "what-percentage-is"
+      problemDescription:
+        - "Identify part and whole"
+        - "Calculate percentage"
+      contexts:
+        - "attendance"
+        - "marbles"
+      preWrittenQuestions:
+        - id: "pw-find-q1"
+          avatarIntro: "To find the percentage, put the **Part** over the **Whole** and multiply by 100%!"
+          problemText: "45 out of 50 students attended the camp. What percentage of students attended?"
+          finalAnswer: "90%"
+          mathTool:
+            toolName: "fractionBar"
+            parameters:
+              fraction1: "45/50"
+              caption: "45 students out of 50"
+          stepByStepGuideline:
+            - "Part = 45, Whole = 50"
+            - "Fraction: $\\frac{45}{50}$"
+            - "Convert to percentage: $\\frac{45}{50} \\times 100\\%$"
+            - "$= 45 \\times 2\\% = 90\\%$"
+            - "Answer: 90%"
+          questionTable: null
+
+        - id: "pw-find-q2"
+          problemText: "A jar has 200 marbles. 40 are red. What percentage are red?"
+          finalAnswer: "20%"
+          mathTool:
+            toolName: "fractionBar"
+            parameters:
+              fraction1: "40/200"
+              caption: "40 red marbles out of 200"
+          stepByStepGuideline:
+            - "Part = 40, Whole = 200"
+            - "Fraction: $\\frac{40}{200}$"
+            - "Simplify: $\\frac{4}{20} = \\frac{1}{5}$"
+            - "Convert: $\\frac{1}{5} \\times 100\\% = 20\\%$"
+            - "Answer: 20%"
+          questionTable: null
+
+        - id: "pw-find-q3"
+          problemText: "Ben completed 12 out of 15 tasks. What percentage did he complete?"
+          finalAnswer: "80%"
+          mathTool:
+            toolName: "fractionBar"
+            parameters:
+              fraction1: "12/15"
+              caption: "12 tasks completed out of 15"
+          stepByStepGuideline:
+            - "Part = 12, Whole = 15"
+            - "Fraction: $\\frac{12}{15} = \\frac{4}{5}$ (divide by 3)"
+            - "Convert: $\\frac{4}{5} \\times 100\\% = 80\\%$"
+            - "Answer: 80%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-units-mix
+    title: "Unit Conversion Percentages"
+    layer: word-problems
+    prerequisites:
+      - percentage-part-of-whole
+    problemsRequired: 3
+    descriptor:
+      section: "unit-conversion-percentage"
+      problemDescription:
+        - "Convert mixed units before calculating percentage"
+      contexts:
+        - "volume"
+        - "length"
+      preWrittenQuestions:
+        - id: "pw-units-q1"
+          avatarIntro: "Watch out! If the units are different (like litres and ml), make them the same first."
+          problemText: "A bottle holds 2 litres of water. 500 ml is poured out. What percentage is poured out?"
+          finalAnswer: "25%"
+          stepByStepGuideline:
+            - "Convert to same unit: 2 litres = 2000 ml"
+            - "Part = 500, Whole = 2000"
+            - "Fraction: $\\frac{500}{2000} = \\frac{5}{20} = \\frac{1}{4}$"
+            - "Convert to %: $\\frac{1}{4} \\times 100\\% = 25\\%$"
+            - "Answer: 25%"
+          questionTable: null
+
+        - id: "pw-units-q2"
+          problemText: "A ribbon is 1 m long. 65 cm is cut off. What percentage is cut off?"
+          finalAnswer: "65%"
+          stepByStepGuideline:
+            - "Convert to same unit: 1 m = 100 cm"
+            - "Part = 65, Whole = 100"
+            - "Fraction: $\\frac{65}{100}$"
+            - "This is already out of 100!"
+            - "Answer: 65%"
+          questionTable: null
+
+        - id: "pw-units-q3"
+          problemText: "Express 400 g as a percentage of 2 kg."
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Convert to same unit: 2 kg = 2000 g"
+            - "Part = 400, Whole = 2000"
+            - "Fraction: $\\frac{400}{2000} = \\frac{4}{20} = \\frac{1}{5}$"
+            - "Convert to %: $\\frac{1}{5} \\times 100\\% = 20\\%$"
+            - "Answer: 20%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-finding-quantity
+    title: "Finding Quantity from Percentage"
+    layer: word-problems
+    prerequisites:
+      - percentage-part-of-whole
+    problemsRequired: 3
+    descriptor:
+      section: "finding-quantity-from-percentage"
+      problemDescription:
+        - "Find X% of Y"
+      contexts:
+        - "sale"
+        - "class stats"
+      preWrittenQuestions:
+        - id: "pw-quant-q1"
+          avatarIntro: "If we know the percentage, we can find the actual number by multiplying."
+          problemText: "A shop has 500 items. 20% of them are on sale. How many items are on sale?"
+          finalAnswer: "100"
+          stepByStepGuideline:
+            - "Calculate 20% of 500."
+            - "$\\frac{20}{100} \\times 500$"
+            - "$= 20 \\times 5 = 100$"
+            - "Answer: 100 items"
+          questionTable: null
+
+        - id: "pw-quant-q2"
+          problemText: "In a class of 40 students, 75% wear glasses. How many students wear glasses?"
+          finalAnswer: "30"
+          stepByStepGuideline:
+            - "Calculate 75% of 40."
+            - "$\\frac{75}{100} \\times 40$"
+            - "$= \\frac{3}{4} \\times 40$"
+            - "$= 3 \\times 10 = 30$"
+            - "Answer: 30 students"
+          questionTable: null
+
+        - id: "pw-quant-q3"
+          problemText: "There are 800 people at a parade. 60% are adults. How many children are there?"
+          finalAnswer: "320"
+          stepByStepGuideline:
+            - "**Method 1: Find adults first**"
+            - "60% of 800 = $\\frac{60}{100} \\times 800 = 480$"
+            - "Children = 800 - 480 = 320"
+            - "**Method 2: Find % of children**"
+            - "100% - 60% = 40% are children"
+            - "40% of 800 = $\\frac{40}{100} \\times 800 = 320$"
+            - "Answer: 320 children"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-multi-step
+    title: "Multi-Step Percentage Problems"
+    layer: foundation
+    prerequisites:
+      - percentage-finding-quantity
+    problemsRequired: 3
+    descriptor:
+      section: "multi-step-percentage-problems"
+      problemDescription:
+        - "Complex scenarios"
+        - "Find missing values first"
+      contexts:
+        - "library categories"
+        - "production"
+      preWrittenQuestions:
+        - id: "pw-multi-q1"
+          avatarIntro: "Let's tackle a challenge! Sometimes we need to find missing numbers before calculating the percentage."
+          problemText: "A library has 200 books. 80 are fiction, 60 are non-fiction, and the rest are comics. What percentage are comics?"
+          finalAnswer: "30%"
+          stepByStepGuideline:
+            - "Step 1: Find number of comics."
+            - "Comics = 200 - 80 - 60 = 60"
+            - "Step 2: Calculate percentage."
+            - "$\\frac{60}{200} \\times 100\\% = 30\\%$"
+            - "Answer: 30%"
+          questionTable: null
+
+        - id: "pw-multi-q2"
+          problemText: "A factory makes 1000 toys in 3 days. Day 1: 300, Day 2: 450. What percentage of the toys were made on Day 3?"
+          finalAnswer: "25%"
+          stepByStepGuideline:
+            - "Step 1: Find toys made on Day 3."
+            - "Day 3 = 1000 - 300 - 450 = 250"
+            - "Step 2: Calculate percentage."
+            - "$\\frac{250}{1000} \\times 100\\%$"
+            - "$= \\frac{1}{4} \\times 100\\% = 25\\%$"
+            - "Answer: 25%"
+          questionTable: null
+
+        - id: "pw-multi-q3"
+          problemText: "Tom has \\$50. He spent \\$15 on food and \\$10 on transport. What percentage of his money did he save?"
+          finalAnswer: "50%"
+          stepByStepGuideline:
+            - "Step 1: Find amount saved."
+            - "Total spent = 15 + 10 = 25"
+            - "Saved = 50 - 25 = 25"
+            - "Step 2: Calculate percentage."
+            - "$\\frac{25}{50} \\times 100\\% = 50\\%$"
+            - "Answer: 50%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # PIE CHARTS
+  # ============================================
+
+  - id: percentage-reading-pie
+    title: "Reading Pie Charts"
+    layer: word-problems
+    prerequisites:
+      - percentage-part-of-whole
+    problemsRequired: 3
+    descriptor:
+      section: "reading-pie-charts"
+      problemDescription:
+        - "Read values from pie charts"
+        - "Comparison"
+      contexts:
+        - "transport"
+      preWrittenQuestions:
+        - id: "pie-read-q1"
+          avatarIntro: "Pie charts are great for seeing how parts make up a whole. Let's read one!"
+          problemText: "The pie chart shows how 100 students go to school. 40 take the Bus, 25 take MRT, 20 go by Car, and the rest Walk. How many students Walk?"
+          finalAnswer: "15"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "Transport to School"
+              categories: ["Bus", "MRT", "Car", "Walk"]
+              frequencies: [40, 25, 20, 15]
+              displayMode: "frequency"
+              hiddenSlices: [3]
+          stepByStepGuideline:
+            - "Total students = 100."
+            - "Known methods: 40 + 25 + 20 = 85."
+            - "Walk = 100 - 85 = 15."
+            - "Answer: 15 students"
+          questionTable: null
+
+        - id: "pie-read-q2"
+          problemText: "Using the same transport data (Bus 40, MRT 25, Car 20, Walk 15), what percentage of students take the MRT?"
+          finalAnswer: "25%"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "Transport to School"
+              categories: ["Bus", "MRT", "Car", "Walk"]
+              frequencies: [40, 25, 20, 15]
+              displayMode: "frequency"
+              highlightSector: 1
+          stepByStepGuideline:
+            - "MRT = 25 students."
+            - "Total = 100 students."
+            - "$\\frac{25}{100} = 25\\%$"
+            - "Answer: 25%"
+          questionTable: null
+
+        - id: "pie-read-q3"
+          problemText: "Which mode of transport is the most popular?"
+          finalAnswer: "Bus"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "Transport to School"
+              categories: ["Bus", "MRT", "Car", "Walk"]
+              frequencies: [40, 25, 20, 15]
+              displayMode: "frequency"
+              highlightSector: 0
+          stepByStepGuideline:
+            - "Compare the numbers:"
+            - "Bus: 40, MRT: 25, Car: 20, Walk: 15"
+            - "40 is the largest number."
+            - "Answer: Bus"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-fractions-pie
+    title: "Fractions and Percentages in Pie Charts"
+    layer: foundation
+    prerequisites:
+      - percentage-reading-pie
+    problemsRequired: 3
+    descriptor:
+      section: "fractions-to-percentage-pie-charts"
+      problemDescription:
+        - "Convert pie chart fractions to %"
+      contexts:
+        - "CCA choices"
+      preWrittenQuestions:
+        - id: "pie-frac-q1"
+          avatarIntro: "Sometimes pie charts use fractions. Remember that the whole pie is 1 (or 100%)."
+          problemText: "A pie chart shows CCA participation. Sports is $\\frac{1}{2}$, Arts is $\\frac{3}{10}$, and Clubs is the rest. What fraction is Clubs?"
+          finalAnswer: "$\\frac{1}{5}$"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "CCA Participation"
+              categories: ["Sports", "Arts", "Clubs"]
+              frequencies: [50, 30, 20]
+              displayMode: "frequency"
+              caption: "Sports: 1/2 (50), Arts: 3/10 (30), Clubs: ?"
+              hiddenSlices: [2]
+          stepByStepGuideline:
+            - "The whole is 1."
+            - "Convert to denominator 10: $\\frac{1}{2} = \\frac{5}{10}$."
+            - "Known parts: $\\frac{5}{10} + \\frac{3}{10} = \\frac{8}{10}$."
+            - "Clubs = $1 - \\frac{8}{10} = \\frac{2}{10}$."
+            - "Simplify: $\\frac{1}{5}$."
+            - "Answer: $\\frac{1}{5}$"
+          questionTable: null
+
+        - id: "pie-frac-q2"
+          problemText: "What percentage of students chose Sports ($\\frac{1}{2}$)?"
+          finalAnswer: "50%"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "CCA Participation"
+              categories: ["Sports", "Arts", "Clubs"]
+              frequencies: [50, 30, 20]
+              displayMode: "percentage"
+              highlightSector: 0
+          stepByStepGuideline:
+            - "Convert $\\frac{1}{2}$ to percentage."
+            - "$\\frac{1}{2} \\times 100\\% = 50\\%$"
+            - "Answer: 50%"
+          questionTable: null
+
+        - id: "pie-frac-q3"
+          problemText: "What percentage of students chose Arts ($\\frac{3}{10}$)?"
+          finalAnswer: "30%"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "CCA Participation"
+              categories: ["Sports", "Arts", "Clubs"]
+              frequencies: [50, 30, 20]
+              displayMode: "percentage"
+              highlightSector: 1
+          stepByStepGuideline:
+            - "Convert $\\frac{3}{10}$ to percentage."
+            - "$\\frac{3}{10} \\times 100\\% = 30\\%$"
+            - "Answer: 30%"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-solving-pie
+    title: "Solving Pie Chart Word Problems"
+    layer: foundation
+    prerequisites:
+      - percentage-fractions-pie
+    problemsRequired: 3
+    descriptor:
+      section: "solving-pie-chart-problems"
+      problemDescription:
+        - "Multi-step analysis"
+      contexts:
+        - "allowance"
+      preWrittenQuestions:
+        - id: "pie-solve-q1"
+          avatarIntro: "We can use percentages in pie charts to find actual dollar amounts!"
+          problemText: "John's monthly allowance is \\$200. The pie chart shows his spending: Food 50%, Savings 30%, Transport 20%. How much does he spend on Food?"
+          finalAnswer: "\\$100"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "John's Spending ($200)"
+              categories: ["Food", "Savings", "Transport"]
+              frequencies: [100, 60, 40]
+              displayMode: "percentage"
+              highlightSector: 0
+          stepByStepGuideline:
+            - "Food is 50%."
+            - "50% of 200 = $\\frac{1}{2} \\times 200$"
+            - "$= 100$"
+            - "Answer: \\$100"
+          questionTable: null
+
+        - id: "pie-solve-q2"
+          problemText: "How much more does John save (30%) than spend on Transport (20%)?"
+          finalAnswer: "\\$20"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "John's Spending ($200)"
+              categories: ["Food", "Savings", "Transport"]
+              frequencies: [100, 60, 40]
+              displayMode: "percentage"
+          stepByStepGuideline:
+            - "Method 1: Find amounts first."
+            - "Savings: 30% of 200 = \\$60."
+            - "Transport: 20% of 200 = \\$40."
+            - "Difference: $60 - 40 = 20$."
+            - "Method 2: Find % difference first."
+            - "$30\\% - 20\\% = 10\\%$."
+            - "10% of 200 = \\$20."
+            - "Answer: \\$20"
+          questionTable: null
+
+        - id: "pie-solve-q3"
+          problemText: "If John's allowance increased to \\$300 and percentages stayed the same, how much would he save?"
+          finalAnswer: "\\$90"
+          mathTool:
+            toolName: "pieChart"
+            parameters:
+              showAngles: false
+              title: "John's Spending ($300)"
+              categories: ["Food", "Savings", "Transport"]
+              frequencies: [150, 90, 60]
+              displayMode: "percentage"
+              highlightSector: 1
+          stepByStepGuideline:
+            - "Savings is 30%."
+            - "Calculate 30% of 300."
+            - "$\\frac{30}{100} \\times 300$"
+            - "$= 30 \\times 3 = 90$"
+            - "Answer: \\$90"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # GST, DISCOUNT & INTEREST
+  # ============================================
+
+  - id: percentage-understanding-gst
+    title: "Understanding GST (9%)"
+    layer: foundation
+    prerequisites:
+      - percentage-finding-quantity
+    problemsRequired: 3
+    descriptor:
+      section: "understanding-gst"
+      problemDescription:
+        - "Calculate 9% GST"
+        - "Find total price"
+      contexts:
+        - "electronics"
+        - "furniture"
+      preWrittenQuestions:
+        - id: "money-gst-q1"
+          avatarIntro: "In Singapore, we pay a tax called GST on things we buy. It adds to the price!"
+          problemText: "A pair of headphones costs \\$100 before GST. How much is the 9% GST?"
+          finalAnswer: "\\$9"
+          stepByStepGuideline:
+            - "GST rate is 9%."
+            - "Calculate 9% of 100."
+            - "$\\frac{9}{100} \\times 100 = 9$"
+            - "Answer: \\$9"
+          questionTable: null
+
+        - id: "money-gst-q2"
+          problemText: "A laptop costs \\$1000 before GST. What is the total price including 9% GST?"
+          finalAnswer: "\\$1090"
+          stepByStepGuideline:
+            - "Step 1: Calculate GST."
+            - "9% of 1000 = $\\frac{9}{100} \\times 1000 = 90$."
+            - "Step 2: Add to original price."
+            - "Total = $1000 + 90 = 1090$."
+            - "Answer: \\$1090"
+          questionTable: null
+
+        - id: "money-gst-q3"
+          problemText: "A meal costs \\$50. Calculating 9% GST, what is the final bill amount?"
+          finalAnswer: "\\$54.50"
+          stepByStepGuideline:
+            - "Step 1: Calculate GST."
+            - "9% of 50 = $\\frac{9}{100} \\times 50 = 4.50$."
+            - "Step 2: Add to meal cost."
+            - "$50 + 4.50 = 54.50$."
+            - "Answer: \\$54.50"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-calc-discount
+    title: "Calculating Discounts"
+    layer: word-problems
+    prerequisites:
+      - percentage-understanding-gst
+    problemsRequired: 3
+    descriptor:
+      section: "calculating-discounts"
+      problemDescription:
+        - "Calculate discount amount"
+        - "Find final price"
+      contexts:
+        - "GSS sale"
+        - "member discount"
+      preWrittenQuestions:
+        - id: "money-disc-q1"
+          avatarIntro: "Everyone loves a sale! A discount means the price goes DOWN."
+          problemText: "A shirt costs \\$40. During the Great Singapore Sale, it has a 20% discount. How much is the discount?"
+          finalAnswer: "\\$8"
+          stepByStepGuideline:
+            - "Calculate 20% of 40."
+            - "$\\frac{20}{100} \\times 40$"
+            - "$= \\frac{1}{5} \\times 40 = 8$"
+            - "Answer: \\$8"
+          questionTable: null
+
+        - id: "money-disc-q2"
+          problemText: "A bag has a usual price of \\$80. Member discount is 10%. What is the price after discount?"
+          finalAnswer: "\\$72"
+          stepByStepGuideline:
+            - "Step 1: Calculate discount."
+            - "10% of 80 = $\\frac{10}{100} \\times 80 = 8$."
+            - "Step 2: Subtract from usual price."
+            - "Price = $80 - 8 = 72$."
+            - "Answer: \\$72"
+          questionTable: null
+
+        - id: "money-disc-q3"
+          problemText: "A toy costs \\$50. It is sold at a 50% discount. How much does it cost now?"
+          finalAnswer: "\\$25"
+          stepByStepGuideline:
+            - "50% is half."
+            - "Half of 50 is 25."
+            - "Answer: \\$25"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-annual-interest
+    title: "Annual Interest"
+    layer: word-problems
+    prerequisites:
+      - percentage-calc-discount
+    problemsRequired: 3
+    descriptor:
+      section: "annual-interest"
+      problemDescription:
+        - "Calculate simple interest"
+        - "Find total savings"
+      contexts:
+        - "bank savings"
+      preWrittenQuestions:
+        - id: "money-int-q1"
+          avatarIntro: "When you keep money in a bank, the bank pays you extra money called Interest. Nice!"
+          problemText: "Ali deposits \\$1000 in Lion Bank. The interest rate is 2% per year. How much interest does he earn in 1 year?"
+          finalAnswer: "\\$20"
+          stepByStepGuideline:
+            - "Calculate 2% of 1000."
+            - "$\\frac{2}{100} \\times 1000$"
+            - "$= 2 \\times 10 = 20$"
+            - "Answer: \\$20"
+          questionTable: null
+
+        - id: "money-int-q2"
+          problemText: "Siti puts \\$5000 in Star Bank. The interest rate is 3% per year. What is her total amount after 1 year?"
+          finalAnswer: "\\$5150"
+          stepByStepGuideline:
+            - "Step 1: Calculate interest."
+            - "3% of 5000 = $\\frac{3}{100} \\times 5000 = 150$."
+            - "Step 2: Add to principal."
+            - "Total = $5000 + 150 = 5150$."
+            - "Answer: \\$5150"
+          questionTable: null
+
+        - id: "money-int-q3"
+          problemText: "A bank offers 4% interest. If you deposit \\$200, how much interest do you get?"
+          finalAnswer: "\\$8"
+          stepByStepGuideline:
+            - "Calculate 4% of 200."
+            - "$\\frac{4}{100} \\times 200$"
+            - "$= 4 \\times 2 = 8$"
+            - "Answer: \\$8"
+          questionTable: null
+      aiGeneratedQuestions: false
+
+  - id: percentage-mixed-money
+    title: "Mixed Money Problems"
+    layer: foundation
+    prerequisites:
+      - percentage-annual-interest
+    problemsRequired: 2
+    descriptor:
+      section: "mixed-problems"
+      problemDescription:
+        - "Identify correct operation"
+      contexts:
+        - "shopping"
+      preWrittenQuestions:
+        - id: "money-mix-q1"
+          avatarIntro: "Be careful! Discount means MINUS, but GST and Interest mean PLUS."
+          problemText: "A watch costs \\$200. There is a 10% discount. After the discount, you also have to pay 9% GST on the discounted price. What is the final price?"
+          finalAnswer: "\\$196.20"
+          stepByStepGuideline:
+            - "Step 1: Calculate discounted price."
+            - "Discount = 10% of 200 = 20."
+            - "Price = 200 - 20 = 180."
+            - "Step 2: Calculate GST on \\$180."
+            - "9% of 180 = $\\frac{9}{100} \\times 180 = 16.20$."
+            - "Step 3: Add GST to price."
+            - "Final = $180 + 16.20 = 196.20$."
+            - "Answer: \\$196.20"
+          questionTable: null
+
+        - id: "money-mix-q2"
+          problemText: "Which is the better deal for a \\$100 item? Plan A: \\$20 discount. Plan B: 25% discount."
+          finalAnswer: "Plan B"
+          stepByStepGuideline:
+            - "Plan A saving: \\$20."
+            - "Plan B saving: 25% of 100 = \\$25."
+            - "\\$25 is more than \\$20."
+            - "Plan B saves more money."
+            - "Answer: Plan B"
+          questionTable: null
+      aiGeneratedQuestions: false

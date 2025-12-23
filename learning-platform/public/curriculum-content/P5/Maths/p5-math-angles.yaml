@@ -1,0 +1,1168 @@
+# P5 Mathematics - Angles Practice Module
+# Covers: Angles on Straight Line, Vertically Opposite, Angles at Point, Finding Unknown Angles
+# Total: 12 nodes, ~66 pre-written questions
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Angles on a Straight Line
+  # ============================================
+
+  - id: angles-straight-line-understanding
+    nodeNumber: 1
+    title: "Understanding Angles on a Straight Line"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-straight-line"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand that angles on a straight line sum to 180°"
+        - "Identify angles that are on a straight line"
+      contexts:
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "sl-u-q1"
+          problemText: "What do angles on a straight line add up to?"
+          avatarIntro: "Let's learn about angles on a straight line! A straight line is actually a special angle - do you know how many degrees it measures?"
+          finalAnswer: "180°"
+          stepByStepGuideline:
+            - "A straight line is half of a full turn"
+            - "A full turn is 360°"
+            - "Half of 360° = 180°"
+            - "So angles on a straight line sum to 180°"
+
+        - id: "sl-u-q2"
+          problemText: "Two angles on a straight line are 110° and 70°. Do these angles add up correctly? Explain."
+          finalAnswer: "Yes, because 110° + 70° = 180°"
+          stepByStepGuideline:
+            - "Angles on a straight line must sum to 180°"
+            - "Check: 110° + 70° = 180° ✓"
+            - "Yes, these are valid angles on a straight line"
+
+        - id: "sl-u-q3"
+          problemText: "Can two angles of 100° and 90° be on the same straight line? Explain why or why not."
+          finalAnswer: "No, because 100° + 90° = 190°, which is more than 180°"
+          stepByStepGuideline:
+            - "Angles on a straight line must sum to exactly 180°"
+            - "Check: 100° + 90° = 190°"
+            - "190° > 180°"
+            - "So these two angles cannot be on the same straight line"
+
+        - id: "sl-u-q4"
+          problemText: "Three angles on a straight line are 65°, 58°, and 57°. Verify that these angles sum to 180°."
+          finalAnswer: "65° + 58° + 57° = 180° ✓"
+          stepByStepGuideline:
+            - "Add all three angles:"
+            - "65° + 58° = 123°"
+            - "123° + 57° = 180° ✓"
+            - "Yes, these angles correctly sum to 180°"
+
+        - id: "sl-u-q5"
+          problemText: "A straight line has two angles. One angle is 45°. What property tells us how to find the other angle?"
+          finalAnswer: "Angles on a straight line sum to 180°, so the other angle = 180° - 45° = 135°"
+          stepByStepGuideline:
+            - "The property is: angles on a straight line sum to 180°"
+            - "If one angle is 45°, the other angle = 180° - 45°"
+            - "The other angle = 135°"
+
+  - id: angles-straight-line-two-angles
+    nodeNumber: 2
+    title: "Finding Unknown Angle (Two Angles)"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - angles-straight-line-understanding
+    descriptor:
+      section: "two-angles-straight-line"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Find an unknown angle when one angle is given on a straight line"
+        - "Apply the formula: unknown = 180° - known angle"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "sl-2-q1"
+          problemText: "Find angle m.\\n\\n[Diagram: A straight line with two angles: 67° and m]"
+          avatarIntro: "Now let's find unknown angles! Remember: angles on a straight line add up to 180°."
+          finalAnswer: "m = 113°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [67, null]
+              labels: ["67°", "m"]
+              highlight: 1
+              caption: "Find angle m"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "67° + m = 180°"
+            - "m = 180° - 67°"
+            - "m = 113°"
+
+        - id: "sl-2-q2"
+          problemText: "Find angle x.\\n\\n[Diagram: A straight line with angles 125° and x]"
+          finalAnswer: "x = 55°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [125, null]
+              labels: ["125°", "x"]
+              highlight: 1
+              caption: "Find angle x"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "125° + x = 180°"
+            - "x = 180° - 125°"
+            - "x = 55°"
+
+        - id: "sl-2-q3"
+          problemText: "Find angle p.\\n\\n[Diagram: A straight line with angles p and 38°]"
+          finalAnswer: "p = 142°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [null, 38]
+              labels: ["p", "38°"]
+              highlight: 0
+              caption: "Find angle p"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "p + 38° = 180°"
+            - "p = 180° - 38°"
+            - "p = 142°"
+
+        - id: "sl-2-q4"
+          problemText: "Find angle y.\\n\\n[Diagram: A straight line with angles 90° and y]"
+          finalAnswer: "y = 90°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [90, null]
+              labels: ["90°", "y"]
+              highlight: 1
+              caption: "Find angle y"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "90° + y = 180°"
+            - "y = 180° - 90°"
+            - "y = 90°"
+            - "Note: Both angles are right angles!"
+
+        - id: "sl-2-q5"
+          problemText: "Find angle a.\\n\\n[Diagram: A straight line with angles a and 156°]"
+          finalAnswer: "a = 24°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [null, 156]
+              labels: ["a", "156°"]
+              highlight: 0
+              caption: "Find angle a"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "a + 156° = 180°"
+            - "a = 180° - 156°"
+            - "a = 24°"
+
+  - id: angles-straight-line-multiple
+    nodeNumber: 3
+    title: "Finding Unknown Angle (Three or More Angles)"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - angles-straight-line-two-angles
+    descriptor:
+      section: "multiple-angles-straight-line"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find an unknown angle when multiple angles are given on a straight line"
+        - "Sum all known angles first, then subtract from 180°"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "sl-m-q1"
+          problemText: "Find angle k.\\n\\n[Diagram: A straight line with angles 15°, 144°, and k]"
+          avatarIntro: "When there are more than two angles, add the known angles first, then subtract from 180°."
+          finalAnswer: "k = 21°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [15, 144, null]
+              labels: ["15°", "144°", "k"]
+              highlight: 2
+              caption: "Find angle k"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "15° + 144° + k = 180°"
+            - "First add the known angles: 15° + 144° = 159°"
+            - "k = 180° - 159°"
+            - "k = 21°"
+
+        - id: "sl-m-q2"
+          problemText: "Find angle n.\\n\\n[Diagram: A straight line with angles 52°, 73°, and n]"
+          finalAnswer: "n = 55°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [52, 73, null]
+              labels: ["52°", "73°", "n"]
+              highlight: 2
+              caption: "Find angle n"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "52° + 73° + n = 180°"
+            - "First add: 52° + 73° = 125°"
+            - "n = 180° - 125°"
+            - "n = 55°"
+
+        - id: "sl-m-q3"
+          problemText: "Find angle q.\\n\\n[Diagram: A straight line with angles 28°, 63°, 45°, and q]"
+          finalAnswer: "q = 44°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [28, 63, 45, null]
+              labels: ["28°", "63°", "45°", "q"]
+              highlight: 3
+              caption: "Find angle q"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "28° + 63° + 45° + q = 180°"
+            - "First add: 28° + 63° + 45° = 136°"
+            - "q = 180° - 136°"
+            - "q = 44°"
+
+        - id: "sl-m-q4"
+          problemText: "Find angle r.\\n\\n[Diagram: A straight line with angles r, 35°, and 85°]"
+          finalAnswer: "r = 60°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [null, 35, 85]
+              labels: ["r", "35°", "85°"]
+              highlight: 0
+              caption: "Find angle r"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "r + 35° + 85° = 180°"
+            - "First add known angles: 35° + 85° = 120°"
+            - "r = 180° - 120°"
+            - "r = 60°"
+
+        - id: "sl-m-q5"
+          problemText: "Find angle t.\\n\\n[Diagram: A straight line with angles 40°, t, and 75°]"
+          finalAnswer: "t = 65°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [40, null, 75]
+              labels: ["40°", "t", "75°"]
+              highlight: 1
+              caption: "Find angle t"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "40° + t + 75° = 180°"
+            - "First add known angles: 40° + 75° = 115°"
+            - "t = 180° - 115°"
+            - "t = 65°"
+
+        - id: "sl-m-q6"
+          problemText: "Find angle w.\\n\\n[Diagram: A straight line with angles 22°, 48°, 50°, and w]"
+          finalAnswer: "w = 60°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [22, 48, 50, null]
+              labels: ["22°", "48°", "50°", "w"]
+              highlight: 3
+              caption: "Find angle w"
+          stepByStepGuideline:
+            - "Angles on a straight line sum to 180°"
+            - "22° + 48° + 50° + w = 180°"
+            - "First add: 22° + 48° + 50° = 120°"
+            - "w = 180° - 120°"
+            - "w = 60°"
+
+  # ============================================
+  # SUBTOPIC 2: Vertically Opposite Angles
+  # ============================================
+
+  - id: angles-vertically-opposite-understanding
+    nodeNumber: 4
+    title: "Understanding Vertically Opposite Angles"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - angles-straight-line-multiple
+    descriptor:
+      section: "understanding-vertically-opposite"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand that vertically opposite angles are equal"
+        - "Identify vertically opposite angles when two lines intersect"
+      contexts:
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "vo-u-q1"
+          problemText: "When two straight lines cross each other, how many angles are formed?"
+          avatarIntro: "When two straight lines intersect, they create a special pattern of angles. Let's explore!"
+          finalAnswer: "4 angles are formed"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [60, null, null, null]
+              labels: ["a", "b", "c", "d"]
+              caption: "Two lines intersecting form 4 angles"
+          stepByStepGuideline:
+            - "When two straight lines cross, they meet at one point"
+            - "This creates 4 angles around that point"
+            - "The angles are labeled a, b, c, and d"
+
+        - id: "vo-u-q2"
+          problemText: "What are vertically opposite angles?"
+          finalAnswer: "Vertically opposite angles are the angles that are across from each other when two lines intersect. They are always equal."
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [70, null, null, null]
+              labels: ["a", "b", "c", "d"]
+              caption: "a and c are vertically opposite; b and d are vertically opposite"
+          stepByStepGuideline:
+            - "When two lines cross, they form 4 angles"
+            - "Vertically opposite angles are across from each other"
+            - "∠a and ∠c are vertically opposite"
+            - "∠b and ∠d are vertically opposite"
+            - "Vertically opposite angles are always EQUAL"
+
+        - id: "vo-u-q3"
+          problemText: "Two lines intersect. If ∠a = 115°, what is ∠c (the angle opposite to ∠a)?"
+          finalAnswer: "∠c = 115°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [115, null, null, null]
+              labels: ["a = 115°", "b", "c", "d"]
+              caption: "Find angle c"
+          stepByStepGuideline:
+            - "∠a and ∠c are vertically opposite angles"
+            - "Vertically opposite angles are equal"
+            - "Therefore, ∠c = ∠a = 115°"
+
+        - id: "vo-u-q4"
+          problemText: "In intersecting lines, if ∠b = 65°, what is ∠d?"
+          finalAnswer: "∠d = 65°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [115, null, null, null]
+              labels: ["a", "b = 65°", "c", "d"]
+              caption: "Find angle d"
+          stepByStepGuideline:
+            - "∠b and ∠d are vertically opposite angles"
+            - "Vertically opposite angles are equal"
+            - "Therefore, ∠d = ∠b = 65°"
+
+        - id: "vo-u-q5"
+          problemText: "Two lines intersect. Angle a = 115° and angle b = 65°. Why do ∠a and ∠b not equal each other?"
+          finalAnswer: "Because ∠a and ∠b are adjacent angles (next to each other), not vertically opposite angles. Only vertically opposite angles are equal."
+          stepByStepGuideline:
+            - "∠a and ∠b are next to each other (adjacent)"
+            - "They are NOT vertically opposite"
+            - "Adjacent angles on a straight line sum to 180°"
+            - "Check: 115° + 65° = 180° ✓"
+            - "Only vertically opposite angles are equal"
+
+  - id: angles-vertically-opposite-pairs
+    nodeNumber: 5
+    title: "Identifying Vertically Opposite Pairs"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - angles-vertically-opposite-understanding
+    descriptor:
+      section: "identifying-pairs"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Identify both pairs of vertically opposite angles"
+        - "Name angle pairs correctly"
+      contexts:
+        - "identification"
+      preWrittenQuestions:
+        - id: "vo-p-q1"
+          problemText: "Two lines intersect forming angles a, b, c, and d. Name both pairs of vertically opposite angles."
+          avatarIntro: "Let's practice identifying the two pairs of equal angles when lines cross!"
+          finalAnswer: "Pair 1: ∠a and ∠c; Pair 2: ∠b and ∠d"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [50, null, null, null]
+              labels: ["a", "b", "c", "d"]
+              caption: "Identify both pairs of vertically opposite angles"
+          stepByStepGuideline:
+            - "When two lines intersect, they form 2 pairs of vertically opposite angles"
+            - "Pair 1: ∠a and ∠c (across from each other)"
+            - "Pair 2: ∠b and ∠d (across from each other)"
+            - "Each pair contains equal angles"
+
+        - id: "vo-p-q2"
+          problemText: "If ∠a = 40°, find the values of ∠b, ∠c, and ∠d."
+          finalAnswer: "∠b = 140°, ∠c = 40°, ∠d = 140°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [40, null, null, null]
+              labels: ["a = 40°", "b", "c", "d"]
+              caption: "Find all angles"
+          stepByStepGuideline:
+            - "∠c is vertically opposite to ∠a, so ∠c = 40°"
+            - "∠b is adjacent to ∠a on a straight line"
+            - "∠b = 180° - 40° = 140°"
+            - "∠d is vertically opposite to ∠b, so ∠d = 140°"
+
+        - id: "vo-p-q3"
+          problemText: "If ∠b = 75°, find the values of ∠a, ∠c, and ∠d."
+          finalAnswer: "∠a = 105°, ∠c = 105°, ∠d = 75°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [105, null, null, null]
+              labels: ["a", "b = 75°", "c", "d"]
+              caption: "Find all angles"
+          stepByStepGuideline:
+            - "∠d is vertically opposite to ∠b, so ∠d = 75°"
+            - "∠a is adjacent to ∠b on a straight line"
+            - "∠a = 180° - 75° = 105°"
+            - "∠c is vertically opposite to ∠a, so ∠c = 105°"
+
+        - id: "vo-p-q4"
+          problemText: "Two lines cross. One angle is 42°. What are all four angles?"
+          finalAnswer: "42°, 138°, 42°, 138°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [42, null, null, null]
+              labels: ["42°", "?", "?", "?"]
+              caption: "Find all four angles"
+          stepByStepGuideline:
+            - "The vertically opposite angle = 42°"
+            - "The adjacent angles = 180° - 42° = 138°"
+            - "The four angles are: 42°, 138°, 42°, 138°"
+            - "Note: There are two pairs of equal angles"
+
+        - id: "vo-p-q5"
+          problemText: "If one angle formed by two intersecting lines is 90°, what are all four angles?"
+          finalAnswer: "All four angles are 90°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [90, null, null, null]
+              labels: ["90°", "?", "?", "?"]
+              caption: "Special case: perpendicular lines"
+          stepByStepGuideline:
+            - "The vertically opposite angle = 90°"
+            - "The adjacent angle = 180° - 90° = 90°"
+            - "All four angles are 90°"
+            - "This happens when the two lines are perpendicular!"
+
+  - id: angles-vertically-opposite-finding
+    nodeNumber: 6
+    title: "Finding Unknown Angles (Vertically Opposite)"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - angles-vertically-opposite-pairs
+    descriptor:
+      section: "finding-unknown-vert-opp"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find unknown angles using vertically opposite property"
+        - "Combine with angles on a straight line when needed"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "vo-f-q1"
+          problemText: "Two lines intersect. ∠a = 58°. Find ∠x, which is adjacent to ∠a on a straight line."
+          avatarIntro: "Sometimes we need to use both properties: vertically opposite AND angles on a straight line!"
+          finalAnswer: "x = 122°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [58, null, null, null]
+              labels: ["a = 58°", "x", "c", "d"]
+              caption: "Find angle x"
+          stepByStepGuideline:
+            - "∠a and ∠x are adjacent angles on a straight line"
+            - "Angles on a straight line sum to 180°"
+            - "x = 180° - 58°"
+            - "x = 122°"
+
+        - id: "vo-f-q2"
+          problemText: "In the diagram, ∠p = 72°. Find angles q, r, and s."
+          finalAnswer: "q = 108°, r = 72°, s = 108°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [72, null, null, null]
+              labels: ["p = 72°", "q", "r", "s"]
+              caption: "Find angles q, r, and s"
+          stepByStepGuideline:
+            - "∠r is vertically opposite to ∠p, so ∠r = 72°"
+            - "∠q is adjacent to ∠p on a straight line"
+            - "∠q = 180° - 72° = 108°"
+            - "∠s is vertically opposite to ∠q, so ∠s = 108°"
+
+        - id: "vo-f-q3"
+          problemText: "Two lines intersect. One angle is 135°. Find all four angles."
+          finalAnswer: "135°, 45°, 135°, 45°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [135, null, null, null]
+              labels: ["135°", "?", "?", "?"]
+              caption: "Find all angles"
+          stepByStepGuideline:
+            - "Vertically opposite angle = 135°"
+            - "Adjacent angles = 180° - 135° = 45°"
+            - "All four angles: 135°, 45°, 135°, 45°"
+
+        - id: "vo-f-q4"
+          problemText: "∠a and ∠b are vertically opposite. If ∠a = 3 × 25°, find ∠b."
+          finalAnswer: "∠b = 75°"
+          stepByStepGuideline:
+            - "First calculate ∠a:"
+            - "∠a = 3 × 25° = 75°"
+            - "∠a and ∠b are vertically opposite"
+            - "Vertically opposite angles are equal"
+            - "∠b = 75°"
+
+        - id: "vo-f-q5"
+          problemText: "Two lines cross. If one pair of vertically opposite angles are each 110°, what are the other two angles?"
+          finalAnswer: "Both are 70°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [110, null, null, null]
+              labels: ["110°", "?", "110°", "?"]
+              caption: "Find the other pair of angles"
+          stepByStepGuideline:
+            - "One pair of vertically opposite angles = 110° each"
+            - "The other pair are adjacent to these (on a straight line)"
+            - "Each angle in the other pair = 180° - 110° = 70°"
+            - "So the other pair are both 70°"
+
+        - id: "vo-f-q6"
+          problemText: "In intersecting lines, ∠a = 63°. Find the angle vertically opposite to ∠a, and the two adjacent angles."
+          finalAnswer: "Vertically opposite = 63°; Adjacent angles = 117° each"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [63, null, null, null]
+              labels: ["a = 63°", "b", "c", "d"]
+              caption: "Find all angles from a = 63°"
+          stepByStepGuideline:
+            - "Vertically opposite to ∠a: ∠c = 63°"
+            - "Adjacent to ∠a: ∠b = 180° - 63° = 117°"
+            - "Vertically opposite to ∠b: ∠d = 117°"
+            - "Summary: 63°, 117°, 63°, 117°"
+
+  # ============================================
+  # SUBTOPIC 3: Angles at a Point
+  # ============================================
+
+  - id: angles-at-point-understanding
+    nodeNumber: 7
+    title: "Understanding Angles at a Point"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - angles-vertically-opposite-finding
+    descriptor:
+      section: "understanding-angles-point"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand that angles at a point sum to 360°"
+        - "Connect to a full circle"
+      contexts:
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "ap-u-q1"
+          problemText: "What do angles at a point add up to?"
+          avatarIntro: "Now let's learn about angles around a point! Think of it like going all the way around in a circle."
+          finalAnswer: "360°"
+          stepByStepGuideline:
+            - "Angles at a point form a complete turn around that point"
+            - "A complete turn = a full circle"
+            - "A full circle = 360°"
+            - "So angles at a point sum to 360°"
+
+        - id: "ap-u-q2"
+          problemText: "Four angles meet at a point: 60°, 70°, 130°, and 100°. Verify that they sum to 360°."
+          finalAnswer: "60° + 70° + 130° + 100° = 360° ✓"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [60, 70, 130, 100]
+              labels: ["60°", "70°", "130°", "100°"]
+              caption: "Four angles at a point"
+          stepByStepGuideline:
+            - "Add all four angles:"
+            - "60° + 70° = 130°"
+            - "130° + 130° = 260°"
+            - "260° + 100° = 360° ✓"
+            - "Yes, the angles sum to 360°"
+
+        - id: "ap-u-q3"
+          problemText: "Can three angles of 150°, 120°, and 100° meet at a point? Explain."
+          finalAnswer: "No, because 150° + 120° + 100° = 370°, which is more than 360°"
+          stepByStepGuideline:
+            - "Angles at a point must sum to exactly 360°"
+            - "Check: 150° + 120° + 100° = 370°"
+            - "370° > 360°"
+            - "So these angles cannot all meet at one point"
+
+        - id: "ap-u-q4"
+          problemText: "How is 'angles at a point' different from 'angles on a straight line'?"
+          finalAnswer: "Angles on a straight line sum to 180° (half turn). Angles at a point sum to 360° (full turn)."
+          stepByStepGuideline:
+            - "Angles on a straight line = 180° (half a circle)"
+            - "Angles at a point = 360° (full circle)"
+            - "A straight line is half of going around a point"
+            - "180° × 2 = 360°"
+
+        - id: "ap-u-q5"
+          problemText: "Three angles meet at a point: 90°, 90°, and 180°. Is this correct?"
+          finalAnswer: "Yes, because 90° + 90° + 180° = 360°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [90, 90, 180]
+              labels: ["90°", "90°", "180°"]
+              caption: "Three angles at a point"
+          stepByStepGuideline:
+            - "Check: 90° + 90° + 180° = 360° ✓"
+            - "Yes, these angles correctly meet at a point"
+            - "Note: The 180° angle is a straight angle"
+
+  - id: angles-at-point-finding
+    nodeNumber: 8
+    title: "Finding Unknown Angles at a Point"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - angles-at-point-understanding
+    descriptor:
+      section: "finding-unknown-point"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find unknown angles at a point"
+        - "Sum known angles and subtract from 360°"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "ap-f-q1"
+          problemText: "Find angle x.\\n\\n[Diagram: Three angles at a point: 135°, 25°, and x]"
+          avatarIntro: "To find an unknown angle at a point, add up all the known angles and subtract from 360°."
+          finalAnswer: "x = 200°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [135, 25, null]
+              labels: ["135°", "25°", "x"]
+              highlight: 2
+              caption: "Find angle x"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "135° + 25° + x = 360°"
+            - "160° + x = 360°"
+            - "x = 360° - 160°"
+            - "x = 200°"
+
+        - id: "ap-f-q2"
+          problemText: "Find angle d.\\n\\n[Diagram: Four angles at a point: 95°, 75°, 110°, and d]"
+          finalAnswer: "d = 80°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [95, 75, 110, null]
+              labels: ["95°", "75°", "110°", "d"]
+              highlight: 3
+              caption: "Find angle d"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "95° + 75° + 110° + d = 360°"
+            - "280° + d = 360°"
+            - "d = 360° - 280°"
+            - "d = 80°"
+
+        - id: "ap-f-q3"
+          problemText: "Find angle y.\\n\\n[Diagram: Four angles at a point: 120°, 85°, 70°, and y]"
+          finalAnswer: "y = 85°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [120, 85, 70, null]
+              labels: ["120°", "85°", "70°", "y"]
+              highlight: 3
+              caption: "Find angle y"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "120° + 85° + 70° + y = 360°"
+            - "275° + y = 360°"
+            - "y = 360° - 275°"
+            - "y = 85°"
+
+        - id: "ap-f-q4"
+          problemText: "Find angle m.\\n\\n[Diagram: Three angles at a point: 140°, 95°, and m]"
+          finalAnswer: "m = 125°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [140, 95, null]
+              labels: ["140°", "95°", "m"]
+              highlight: 2
+              caption: "Find angle m"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "140° + 95° + m = 360°"
+            - "235° + m = 360°"
+            - "m = 360° - 235°"
+            - "m = 125°"
+
+        - id: "ap-f-q5"
+          problemText: "Find angle p.\\n\\n[Diagram: Five angles at a point: 50°, 60°, 80°, 90°, and p]"
+          finalAnswer: "p = 80°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [50, 60, 80, 90, null]
+              labels: ["50°", "60°", "80°", "90°", "p"]
+              highlight: 4
+              caption: "Find angle p"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "50° + 60° + 80° + 90° + p = 360°"
+            - "280° + p = 360°"
+            - "p = 360° - 280°"
+            - "p = 80°"
+
+        - id: "ap-f-q6"
+          problemText: "Find angle n.\\n\\n[Diagram: Three angles at a point: 45°, 165°, and n]"
+          finalAnswer: "n = 150°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [45, 165, null]
+              labels: ["45°", "165°", "n"]
+              highlight: 2
+              caption: "Find angle n"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "45° + 165° + n = 360°"
+            - "210° + n = 360°"
+            - "n = 360° - 210°"
+            - "n = 150°"
+
+  - id: angles-at-point-equal
+    nodeNumber: 9
+    title: "Equal Angles at a Point"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - angles-at-point-finding
+    descriptor:
+      section: "equal-angles-point"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find equal angles that divide 360°"
+        - "Apply to real-world contexts like clocks and wind turbines"
+      contexts:
+        - "equal angles"
+        - "real-world applications"
+      preWrittenQuestions:
+        - id: "ap-e-q1"
+          problemText: "Four equal angles meet at a point. What is the size of each angle?"
+          avatarIntro: "When angles are equal and meet at a point, we can divide 360° by the number of angles!"
+          finalAnswer: "90° each"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [90, 90, 90, 90]
+              labels: ["?", "?", "?", "?"]
+              caption: "Four equal angles at a point"
+          stepByStepGuideline:
+            - "All angles are equal and sum to 360°"
+            - "There are 4 equal angles"
+            - "Each angle = 360° ÷ 4"
+            - "Each angle = 90°"
+
+        - id: "ap-e-q2"
+          problemText: "A wind turbine has 3 blades equally spaced. What is the angle between each pair of adjacent blades?"
+          finalAnswer: "120°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [120, 120, 120]
+              labels: ["?", "?", "?"]
+              caption: "Wind turbine with 3 equal angles"
+          stepByStepGuideline:
+            - "3 blades create 3 equal angles at the center"
+            - "Angles at a point sum to 360°"
+            - "Each angle = 360° ÷ 3"
+            - "Each angle = 120°"
+
+        - id: "ap-e-q3"
+          problemText: "A clock face is divided into 12 equal parts (for the hours). What angle does each hour mark represent?"
+          finalAnswer: "30°"
+          stepByStepGuideline:
+            - "A clock has 12 equal divisions"
+            - "Going around the clock is 360°"
+            - "Each hour = 360° ÷ 12"
+            - "Each hour = 30°"
+
+        - id: "ap-e-q4"
+          problemText: "Six equal angles meet at a point. Find the size of each angle."
+          finalAnswer: "60° each"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [60, 60, 60, 60, 60, 60]
+              labels: ["?", "?", "?", "?", "?", "?"]
+              caption: "Six equal angles at a point"
+          stepByStepGuideline:
+            - "6 equal angles sum to 360°"
+            - "Each angle = 360° ÷ 6"
+            - "Each angle = 60°"
+
+        - id: "ap-e-q5"
+          problemText: "Equal angles meet at a point. Each angle is 45°. How many angles are there?"
+          finalAnswer: "8 angles"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "Each angle is 45°"
+            - "Number of angles = 360° ÷ 45°"
+            - "Number of angles = 8"
+
+  # ============================================
+  # SUBTOPIC 4: Finding Unknown Angles (Combined)
+  # ============================================
+
+  - id: angles-finding-identifying
+    nodeNumber: 10
+    title: "Identifying Angle Relationships"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - angles-at-point-equal
+    descriptor:
+      section: "identifying-relationships"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Identify which angle property to use"
+        - "Recognize all three properties in diagrams"
+      contexts:
+        - "identification"
+        - "conceptual"
+      preWrittenQuestions:
+        - id: "fi-i-q1"
+          problemText: "What are the THREE angle properties we have learned?"
+          avatarIntro: "Let's review all three angle properties we've learned. Being able to identify which one to use is key to solving problems!"
+          finalAnswer: "1. Angles on a straight line = 180°; 2. Vertically opposite angles are equal; 3. Angles at a point = 360°"
+          stepByStepGuideline:
+            - "Property 1: Angles on a straight line sum to 180°"
+            - "Property 2: Vertically opposite angles are equal"
+            - "Property 3: Angles at a point sum to 360°"
+
+        - id: "fi-i-q2"
+          problemText: "Look at this diagram. What angle property should you use to find angle x?\\n\\n[Diagram: A straight line with angles 55° and x]"
+          finalAnswer: "Angles on a straight line sum to 180°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [55, null]
+              labels: ["55°", "x"]
+              highlight: 1
+              caption: "Which property applies here?"
+          stepByStepGuideline:
+            - "The two angles are on a straight line"
+            - "Use: Angles on a straight line sum to 180°"
+            - "x = 180° - 55° = 125°"
+
+        - id: "fi-i-q3"
+          problemText: "What property should you use when two straight lines cross and you need to find an angle opposite to a given angle?"
+          finalAnswer: "Vertically opposite angles are equal"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [70, null, null, null]
+              labels: ["70°", "b", "c", "d"]
+              caption: "Which property for opposite angles?"
+          stepByStepGuideline:
+            - "When lines cross, they form vertically opposite angles"
+            - "Use: Vertically opposite angles are equal"
+            - "The angle opposite to 70° is also 70°"
+
+        - id: "fi-i-q4"
+          problemText: "Several angles meet at one point. What property should you use to find an unknown angle?"
+          finalAnswer: "Angles at a point sum to 360°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [100, 80, 90, null]
+              labels: ["100°", "80°", "90°", "?"]
+              caption: "Which property at a point?"
+          stepByStepGuideline:
+            - "Multiple angles meeting at a single point"
+            - "Use: Angles at a point sum to 360°"
+            - "Unknown = 360° - sum of known angles"
+
+        - id: "fi-i-q5"
+          problemText: "Two lines cross. You know one angle is 65°. Which properties can you use to find all the other angles?"
+          finalAnswer: "Use vertically opposite angles (to find the equal angle = 65°) AND angles on a straight line (to find adjacent angles = 115°)"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [65, null, null, null]
+              labels: ["65°", "?", "?", "?"]
+              caption: "Which properties do you need?"
+          stepByStepGuideline:
+            - "Vertically opposite angle = 65° (equal)"
+            - "Adjacent angles = 180° - 65° = 115° (straight line)"
+            - "We use BOTH properties together"
+            - "All four angles: 65°, 115°, 65°, 115°"
+
+  - id: angles-finding-multi-step
+    nodeNumber: 11
+    title: "Multi-Step Problems"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - angles-finding-identifying
+    descriptor:
+      section: "multi-step-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve problems requiring multiple angle properties"
+        - "Use results from one step to find other angles"
+      contexts:
+        - "multi-step"
+        - "combined properties"
+      preWrittenQuestions:
+        - id: "fi-m-q1"
+          problemText: "Two lines intersect. ∠a = 72°. Find ∠b, ∠c, and ∠d."
+          avatarIntro: "These problems need more than one step. Use one property, then use the result to find more angles!"
+          finalAnswer: "∠b = 108°, ∠c = 72°, ∠d = 108°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [72, null, null, null]
+              labels: ["a = 72°", "b", "c", "d"]
+              caption: "Find all angles"
+          stepByStepGuideline:
+            - "Step 1: ∠c is vertically opposite to ∠a"
+            - "∠c = 72° (vertically opposite angles are equal)"
+            - "Step 2: ∠b is adjacent to ∠a on a straight line"
+            - "∠b = 180° - 72° = 108° (angles on straight line)"
+            - "Step 3: ∠d is vertically opposite to ∠b"
+            - "∠d = 108°"
+
+        - id: "fi-m-q2"
+          problemText: "In the diagram, AOB is a straight line. ∠AOC = 40° and ∠BOD = 65°. Find ∠COD."
+          finalAnswer: "∠COD = 75°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [40, null, 65]
+              labels: ["∠AOC = 40°", "∠COD", "∠BOD = 65°"]
+              highlight: 1
+              caption: "AOB is a straight line"
+          stepByStepGuideline:
+            - "AOB is a straight line, so angles sum to 180°"
+            - "∠AOC + ∠COD + ∠BOD = 180°"
+            - "40° + ∠COD + 65° = 180°"
+            - "105° + ∠COD = 180°"
+            - "∠COD = 180° - 105° = 75°"
+
+        - id: "fi-m-q3"
+          problemText: "Three lines meet at point O. The angles formed are 85°, x, 45°, y, 85°, and 60°. Find x and y."
+          finalAnswer: "x = 45°, y = 40°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [85, null, 45, null, 85, 60]
+              labels: ["85°", "x", "45°", "y", "85°", "60°"]
+              caption: "Six angles at point O"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "85° + x + 45° + y + 85° + 60° = 360°"
+            - "275° + x + y = 360°"
+            - "x + y = 85°"
+            - "Also notice: x is vertically opposite to 45°"
+            - "So x = 45°, and y = 85° - 45° = 40°"
+
+        - id: "fi-m-q4"
+          problemText: "Two lines AB and CD intersect at O. ∠AOC = 55°. Find ∠AOD, ∠BOC, and ∠BOD."
+          finalAnswer: "∠AOD = 125°, ∠BOC = 125°, ∠BOD = 55°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [55, null, null, null]
+              labels: ["∠AOC = 55°", "∠AOD", "∠BOD", "∠BOC"]
+              caption: "Lines AB and CD intersect at O"
+          stepByStepGuideline:
+            - "∠BOD is vertically opposite to ∠AOC"
+            - "∠BOD = 55°"
+            - "∠AOD is adjacent to ∠AOC on straight line CD"
+            - "∠AOD = 180° - 55° = 125°"
+            - "∠BOC is vertically opposite to ∠AOD"
+            - "∠BOC = 125°"
+
+        - id: "fi-m-q5"
+          problemText: "In the diagram, lines PQ and RS intersect at O. ∠POR = 3 × 30°. Find all four angles."
+          finalAnswer: "∠POR = 90°, ∠ROS = 90°, ∠SOQ = 90°, ∠QOP = 90°"
+          stepByStepGuideline:
+            - "First calculate ∠POR: 3 × 30° = 90°"
+            - "∠SOQ is vertically opposite to ∠POR = 90°"
+            - "∠ROS is adjacent to ∠POR on line PQ"
+            - "∠ROS = 180° - 90° = 90°"
+            - "∠QOP is vertically opposite to ∠ROS = 90°"
+            - "All four angles are 90° (perpendicular lines)"
+
+        - id: "fi-m-q6"
+          problemText: "At point O, angles are formed: ∠a = 100°, ∠b and ∠c are equal, ∠d = 80°. Find ∠b and ∠c."
+          finalAnswer: "∠b = 90°, ∠c = 90°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [100, null, null, 80]
+              labels: ["a = 100°", "b", "c", "d = 80°"]
+              caption: "Find equal angles b and c"
+          stepByStepGuideline:
+            - "Angles at a point sum to 360°"
+            - "100° + b + c + 80° = 360°"
+            - "180° + b + c = 360°"
+            - "b + c = 180°"
+            - "Since b = c: 2b = 180°"
+            - "b = 90°, c = 90°"
+
+  - id: angles-finding-multiple-methods
+    nodeNumber: 12
+    title: "Multiple Solution Methods"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - angles-finding-multi-step
+    descriptor:
+      section: "multiple-methods"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve problems using different methods"
+        - "Verify answers using alternative approaches"
+      contexts:
+        - "multiple methods"
+        - "verification"
+      preWrittenQuestions:
+        - id: "fi-mm-q1"
+          problemText: "Two lines cross. One angle is 52°. Find all four angles using TWO different methods, then verify they match."
+          avatarIntro: "For our final challenge, let's solve problems in different ways and check our answers!"
+          finalAnswer: "52°, 128°, 52°, 128°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [52, null, null, null]
+              labels: ["52°", "b", "c", "d"]
+              caption: "Find all angles - two ways"
+          stepByStepGuideline:
+            - "Method 1: Start with vertically opposite"
+            - "c = 52° (vertically opposite)"
+            - "b = 180° - 52° = 128° (straight line)"
+            - "d = 128° (vertically opposite to b)"
+            - "Method 2: Start with straight line"
+            - "b = 180° - 52° = 128° (straight line)"
+            - "d = 180° - 52° = 128° (other straight line)"
+            - "c = 52° (remaining, or vertically opposite)"
+            - "Both methods give: 52°, 128°, 52°, 128° ✓"
+
+        - id: "fi-mm-q2"
+          problemText: "AOB is a straight line. ∠AOC = 35° and ∠COD = 90°. Find ∠DOB using two different approaches."
+          finalAnswer: "∠DOB = 55°"
+          mathTool:
+            toolName: anglesOnLine
+            parameters:
+              angles: [35, 90, null]
+              labels: ["∠AOC = 35°", "∠COD = 90°", "∠DOB"]
+              highlight: 2
+              caption: "Find ∠DOB two ways"
+          stepByStepGuideline:
+            - "Method 1: Direct calculation"
+            - "∠AOC + ∠COD + ∠DOB = 180°"
+            - "35° + 90° + ∠DOB = 180°"
+            - "∠DOB = 180° - 125° = 55°"
+            - "Method 2: Step by step"
+            - "∠AOD = 35° + 90° = 125°"
+            - "∠DOB = 180° - 125° = 55° ✓"
+
+        - id: "fi-mm-q3"
+          problemText: "At point O, four angles are formed. Three angles are 75°, 105°, and 75°. Find the fourth angle using angles at a point, then verify using another property."
+          finalAnswer: "Fourth angle = 105°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [75, 105, 75, null]
+              labels: ["75°", "105°", "75°", "?"]
+              highlight: 3
+              caption: "Find the fourth angle"
+          stepByStepGuideline:
+            - "Method 1: Angles at a point"
+            - "75° + 105° + 75° + ? = 360°"
+            - "255° + ? = 360°"
+            - "? = 105°"
+            - "Verification: Notice 75° + 105° = 180°"
+            - "These could be angles on a straight line!"
+            - "The pattern is: 75°, 105°, 75°, 105° ✓"
+
+        - id: "fi-mm-q4"
+          problemText: "Lines AB and CD intersect at O. If ∠AOC + ∠BOD = 140°, find all four angles."
+          finalAnswer: "∠AOC = 70°, ∠BOD = 70°, ∠AOD = 110°, ∠BOC = 110°"
+          mathTool:
+            toolName: verticallyOppositeAngles
+            parameters:
+              angles: [70, null, null, null]
+              labels: ["∠AOC", "∠AOD", "∠BOD", "∠BOC"]
+              caption: "Find all angles"
+          stepByStepGuideline:
+            - "∠AOC and ∠BOD are vertically opposite, so they're equal"
+            - "∠AOC = ∠BOD"
+            - "∠AOC + ∠BOD = 140° means 2 × ∠AOC = 140°"
+            - "∠AOC = 70°, ∠BOD = 70°"
+            - "∠AOD = 180° - 70° = 110° (straight line)"
+            - "∠BOC = 110° (vertically opposite to ∠AOD)"
+
+        - id: "fi-mm-q5"
+          problemText: "At point O, angles x, y, x, and y are formed (alternating pattern). If x + y = 180°, find x and y given that x is 20° more than y."
+          finalAnswer: "y = 80°, x = 100°"
+          mathTool:
+            toolName: anglesAtPoint
+            parameters:
+              angles: [100, 80, 100, 80]
+              labels: ["x", "y", "x", "y"]
+              caption: "Alternating angles at a point"
+          stepByStepGuideline:
+            - "We know: x + y = 180° and x = y + 20°"
+            - "Substitute: (y + 20°) + y = 180°"
+            - "2y + 20° = 180°"
+            - "2y = 160°"
+            - "y = 80°"
+            - "x = 80° + 20° = 100°"
+            - "Check: Angles at point = 100° + 80° + 100° + 80° = 360° ✓"
