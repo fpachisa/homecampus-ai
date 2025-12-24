@@ -1,0 +1,589 @@
+topic: "Properties of Quadrilaterals"
+topicId: "p5-math-properties-of-quadrilaterals"
+workingMode: "practice"
+layer: "foundation"
+generator:
+  config: "p5-properties-of-quadrilaterals"
+  subject: "mathematics"
+  grade: "primary-5"
+description: "Master the properties of Parallelograms, Rhombuses, and Trapeziums."
+nodes:
+
+  # ============================================
+  # PROPERTIES OF PARALLELOGRAM
+  # ============================================
+
+  - id: identify-parallelogram
+    title: "Identifying a Parallelogram"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 3
+    descriptor:
+      section: "identify-parallelogram"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "para-id-q1"
+          avatarIntro: "Let's look at the special properties of a Parallelogram. It has 2 pairs of parallel sides!"
+          problemText: "Look at the quadrilateral below. Which two sides are parallel to each other?"
+          finalAnswer: "AB // DC and AD // BC"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: [null, null, null, null]
+              showParallelMarkers: true
+              caption: "Parallelogram ABCD"
+          stepByStepGuideline:
+            - "Look for the arrow markers."
+            - "Double arrows on AB and DC mean they are parallel."
+            - "Single arrows on AD and BC mean they are parallel."
+            - "Answer: AB // DC and AD // BC"
+          
+        - id: "para-id-q2"
+          problemText: "In this parallelogram, which side is equal in length to side WX?"
+          finalAnswer: "ZY"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["W", "X", "Y", "Z"]
+              angles: [null, null, null, null]
+              showParallelMarkers: true
+              caption: "Parallelogram WXYZ"
+          stepByStepGuideline:
+            - "In a parallelogram, opposite sides are equal."
+            - "The side opposite to WX is ZY."
+            - "Answer: ZY"
+
+        - id: "para-id-q3"
+          problemText: "Which statement is TRUE about a parallelogram?"
+          finalAnswer: "Opposite angles are equal."
+          stepByStepGuideline:
+            - "Let's check the properties:"
+            - "1. Opposite sides are equal (True)"
+            - "2. Opposite angles are equal (True)"
+            - "3. Adjacent angles sum to 180° (True)"
+            - "Answer: Opposite angles are equal."
+
+  - id: opposite-angles-equal
+    title: "Property: Opposite Angles Equal"
+    layer: foundation
+    prerequisites: ["identify-parallelogram"]
+    problemsRequired: 3
+    descriptor:
+      section: "opposite-angles-equal"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "para-opp-q1"
+          avatarIntro: "Did you know that angles across from each other (diagonally) are equal in a parallelogram?"
+          problemText: "In parallelogram PQRS, ∠P = 70°. Find ∠R."
+          finalAnswer: "70°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["P", "Q", "R", "S"]
+              angles: ["70°", null, "?", null]
+              highlightAngles: [0, 2]
+              showParallelMarkers: true
+              caption: "Find ∠R"
+          stepByStepGuideline:
+            - "∠P and ∠R are opposite angles."
+            - "Opposite angles are equal."
+            - "∠R = ∠P = 70°"
+            - "Answer: 70°"
+
+        - id: "para-opp-q2"
+          problemText: "If ∠ABC = 110°, what is the value of ∠ADC?"
+          finalAnswer: "110°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: [null, "110°", null, "?"]
+              highlightAngles: [1, 3]
+              showParallelMarkers: true
+              caption: "Find ∠ADC"
+          stepByStepGuideline:
+            - "Identify the relationship."
+            - "∠ABC and ∠ADC are opposite angles."
+            - "Therefore, ∠ADC = 110°."
+            - "Answer: 110°"
+
+        - id: "para-opp-q3"
+          problemText: "Find the value of angle y in the parallelogram."
+          finalAnswer: "65°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["J", "K", "L", "M"]
+              angles: ["65°", null, "y", null]
+              highlightAngles: [0, 2]
+              showParallelMarkers: true
+              caption: "Find y"
+          stepByStepGuideline:
+            - "Angle y is opposite to the 65° angle."
+            - "Opposite angles are equal."
+            - "y = 65°"
+            - "Answer: 65°"
+
+  - id: adjacent-angles-180
+    title: "Property: Adjacent Angles Sum to 180°"
+    layer: word-problems
+    prerequisites: ["opposite-angles-equal"]
+    problemsRequired: 3
+    descriptor:
+      section: "adjacent-angles-180"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "para-adj-q1"
+          avatarIntro: "Angles next to each other are neighbors! They add up to 180°."
+          problemText: "ABCD is a parallelogram. ∠A = 80°. Find ∠B."
+          finalAnswer: "100°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: ["80°", "?", null, null]
+              highlightAngles: [0, 1]
+              showParallelMarkers: true
+              caption: "Find ∠B"
+          stepByStepGuideline:
+            - "∠A and ∠B are adjacent angles (next to each other)."
+            - "They sum to 180°."
+            - "180° - 80° = 100°"
+            - "Answer: 100°"
+
+        - id: "para-adj-q2"
+          problemText: "In parallelogram WXYZ, ∠Z = 120°. What is the size of ∠W?"
+          finalAnswer: "60°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["W", "X", "Y", "Z"]
+              angles: ["?", null, null, "120°"]
+              highlightAngles: [0, 3]
+              showParallelMarkers: true
+              caption: "Find ∠W"
+          stepByStepGuideline:
+            - "∠W and ∠Z are co-interior angles between parallel lines."
+            - "They add up to 180°."
+            - "∠W = 180° - 120° = 60°"
+            - "Answer: 60°"
+
+        - id: "para-adj-q3"
+          problemText: "Find angle m if the adjacent angle is 75°."
+          finalAnswer: "105°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["P", "Q", "R", "S"]
+              angles: ["75°", "m", null, null]
+              highlightAngles: [0, 1]
+              showParallelMarkers: true
+              caption: "Find m"
+          stepByStepGuideline:
+            - "Adjacent angles sum to 180°."
+            - "m = 180° - 75°"
+            - "m = 105°"
+            - "Answer: 105°"
+
+  # ============================================
+  # PROPERTIES OF RHOMBUS
+  # ============================================
+
+  - id: identify-rhombus
+    title: "Identifying a Rhombus"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 3
+    descriptor:
+      section: "identify-rhombus"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "rhom-id-q1"
+          avatarIntro: "A Rhombus is a special parallelogram like a diamond. All its 4 sides are equal!"
+          problemText: "Which property makes a Rhombus different from a regular Parallelogram?"
+          finalAnswer: "All 4 sides are equal."
+          mathTool:
+            toolName: "rhombusAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: [null, null, null, null]
+              orientation: "diamond"
+              showEqualSideMarkers: true
+              caption: "Rhombus ABCD"
+          stepByStepGuideline:
+            - "A regular parallelogram only has opposite sides equal."
+            - "A Rhombus has ALL 4 sides equal."
+            - "Answer: All 4 sides are equal."
+
+        - id: "rhom-id-q2"
+          problemText: "In rhombus PQRS, if PQ = 5 cm, what is the length of SR?"
+          finalAnswer: "5 cm"
+          mathTool:
+            toolName: "rhombusAngles"
+            parameters:
+              vertexLabels: ["P", "Q", "R", "S"]
+              angles: [null, null, null, null]
+              orientation: "tilted"
+              showEqualSideMarkers: true
+              caption: "PQ = 5 cm"
+          stepByStepGuideline:
+            - "All sides of a rhombus are equal."
+            - "PQ = QR = RS = SP = 5 cm."
+            - "So, SR (or RS) is 5 cm."
+            - "Answer: 5 cm"
+
+        - id: "rhom-id-q3"
+          problemText: "Does a Rhombus have parallel sides?"
+          finalAnswer: "Yes, 2 pairs."
+          stepByStepGuideline:
+            - "A Rhombus is a type of parallelogram."
+            - "So it keeps the parallel sides property."
+            - "It has 2 pairs of parallel sides."
+            - "Answer: Yes, 2 pairs."
+
+  - id: rhombus-angle-properties
+    title: "Angle Properties of Rhombus"
+    layer: word-problems
+    prerequisites: ["identify-rhombus"]
+    problemsRequired: 3
+    descriptor:
+      section: "rhombus-angle-properties"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "rhom-ang-q1"
+          avatarIntro: "Since a Rhombus is a parallelogram, it follows the same angle rules! Opposite equal, adjacent 180°."
+          problemText: "In Rhombus ABCD, ∠A = 60°. Find ∠C."
+          finalAnswer: "60°"
+          mathTool:
+            toolName: "rhombusAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: ["60°", null, "?", null]
+              orientation: "tilted"
+              highlightAngles: [0, 2]
+              showEqualSideMarkers: true
+              caption: "Find ∠C"
+          stepByStepGuideline:
+            - "∠A and ∠C are opposite angles."
+            - "Opposite angles are equal."
+            - "∠C = 60°"
+            - "Answer: 60°"
+
+        - id: "rhom-ang-q2"
+          problemText: "In Rhombus EFGH, ∠E = 100°. Find ∠F."
+          finalAnswer: "80°"
+          mathTool:
+            toolName: "rhombusAngles"
+            parameters:
+              vertexLabels: ["H", "G", "F", "E"]
+              angles: [null, null, "?", "100°"]
+              orientation: "diamond"
+              highlightAngles: [2, 3]
+              showEqualSideMarkers: true
+              caption: "Find ∠F"
+          stepByStepGuideline:
+            - "∠E and ∠F are adjacent angles."
+            - "They sum to 180°."
+            - "∠F = 180° - 100° = 80°"
+            - "Answer: 80°"
+
+        - id: "rhom-ang-q3"
+          problemText: "In a rhombus, one angle is 40°. Find the adjacent obtuse angle."
+          finalAnswer: "140°"
+          mathTool:
+            toolName: "rhombusAngles"
+            parameters:
+              vertexLabels: ["W", "X", "Y", "Z"]
+              angles: ["40°", "?", null, null]
+              orientation: "tilted"
+              highlightAngles: [0, 1]
+              showEqualSideMarkers: true
+              caption: "Find the adjacent angle"
+          stepByStepGuideline:
+            - "Adjacent angles sum to 180°."
+            - "180° - 40° = 140°"
+            - "Answer: 140°"
+
+  - id: rhombus-vs-parallelogram
+    title: "Rhombus vs Parallelogram"
+    layer: examPractice
+    prerequisites: ["rhombus-angle-properties"]
+    problemsRequired: 2
+    descriptor:
+      section: "rhombus-vs-parallelogram"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "comp-q1"
+          avatarIntro: "Be sharp! Remember what makes a Rhombus special."
+          problemText: "True or False: Every Rhombus is a Parallelogram."
+          finalAnswer: "True"
+          stepByStepGuideline:
+            - "A rhombus has 2 pairs of parallel sides."
+            - "That is the definition of a parallelogram."
+            - "So, Yes, every rhombus is a parallelogram."
+            - "Answer: True"
+
+        - id: "comp-q2"
+          problemText: "True or False: Every Parallelogram is a Rhombus."
+          finalAnswer: "False"
+          stepByStepGuideline:
+            - "A rhombus needs 4 equal sides."
+            - "A standard parallelogram only needs opposite sides equal."
+            - "So NOT every parallelogram is a rhombus."
+            - "Answer: False"
+
+  # ============================================
+  # PROPERTIES OF TRAPEZIUM
+  # ============================================
+
+  - id: identify-trapezium
+    title: "Identifying a Trapezium"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 3
+    descriptor:
+      section: "identify-trapezium"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "trap-id-q1"
+          avatarIntro: "A Trapezium is unique! It has exactly ONE pair of parallel sides."
+          problemText: "How many pairs of parallel sides does a Trapezium have?"
+          finalAnswer: "1"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: [null, null, null, null]
+              showParallelMarkers: true
+              caption: "Trapezium ABCD"
+          stepByStepGuideline:
+            - "Look at the arrow markers."
+            - "Only the top and bottom sides have arrows."
+            - "There is only 1 pair of parallel sides."
+            - "Answer: 1"
+
+        - id: "trap-id-q2"
+          problemText: "Which sides are parallel in this trapezium?"
+          finalAnswer: "AB // DC"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["D", "C", "B", "A"]
+              angles: [null, null, null, null]
+              showParallelMarkers: true
+              caption: "Trapezium ABCD. Top is AB, Bottom is DC."
+          stepByStepGuideline:
+            - "Identify the arrow markers."
+            - "The markers are on AB and DC."
+            - "So AB is parallel to DC."
+            - "Answer: AB // DC"
+
+        - id: "trap-id-q3"
+          problemText: "Is a Trapezium a Parallelogram?"
+          finalAnswer: "No"
+          stepByStepGuideline:
+            - "A Parallelogram needs 2 pairs of parallel sides."
+            - "A Trapezium only has 1 pair."
+            - "So, No, it is not a parallelogram."
+            - "Answer: No"
+
+  - id: co-interior-angles
+    title: "Property: Co-interior Angles"
+    layer: word-problems
+    prerequisites: ["identify-trapezium"]
+    problemsRequired: 3
+    descriptor:
+      section: "co-interior-angles"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "trap-co-q1"
+          avatarIntro: "In a Trapezium, angles between the parallel sides add up to 180°."
+          problemText: "In Trapezium PQRS, PQ // SR. If ∠P = 110°, find ∠S."
+          finalAnswer: "70°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["P", "Q", "R", "S"]
+              angles: ["110°", null, null, "?"]
+              highlightAngles: [0, 3]
+              showParallelMarkers: true
+              caption: "Find ∠S"
+          stepByStepGuideline:
+            - "∠P and ∠S are co-interior angles between the parallel lines."
+            - "They sum to 180°."
+            - "∠S = 180° - 110° = 70°"
+            - "Answer: 70°"
+
+        - id: "trap-co-q2"
+          problemText: "Find the value of angle x."
+          finalAnswer: "65°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["D", "C", "B", "A"]
+              angles: [null, "115°", "x", null]
+              highlightAngles: [1, 2]
+              showParallelMarkers: true
+              caption: "Find x"
+          stepByStepGuideline:
+            - "The angles are between parallel sides (right side)."
+            - "x + 115° = 180°"
+            - "x = 180° - 115° = 65°"
+            - "Answer: 65°"
+
+        - id: "trap-co-q3"
+          problemText: "In a trapezium, two angles on the same side are y and 35°. Find y."
+          finalAnswer: "145°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["W", "X", "Y", "Z"]
+              angles: ["y", null, null, "35°"]
+              highlightAngles: [0, 3]
+              showParallelMarkers: true
+              caption: "Find y"
+          stepByStepGuideline:
+            - "They are co-interior angles."
+            - "Sum = 180°."
+            - "y = 180° - 35° = 145°"
+            - "Answer: 145°"
+
+  - id: isosceles-trapezium
+    title: "Isosceles Trapezium"
+    layer: word-problems
+    prerequisites: ["co-interior-angles"]
+    problemsRequired: 3
+    descriptor:
+      section: "isosceles-trapezium"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "trap-iso-q1"
+          avatarIntro: "An Isosceles Trapezium has equal non-parallel sides. This makes the angles at each parallel side equal!"
+          problemText: "This is an Isosceles Trapezium. If ∠C = 75°, what is ∠D?"
+          finalAnswer: "75°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: [null, null, "75°", "?"]
+              highlightAngles: [2, 3]
+              showParallelMarkers: true
+              showEqualSideMarkers: true
+              isIsosceles: true
+              caption: "Find ∠D"
+          stepByStepGuideline:
+            - "In an isosceles trapezium, angles at each parallel side are equal."
+            - "∠C and ∠D are at the same parallel side (top)."
+            - "∠D = ∠C = 75°"
+            - "Answer: 75°"
+
+        - id: "trap-iso-q2"
+          problemText: "ABCD is an isosceles trapezium with AB // DC. If ∠D = 70°, find ∠A."
+          finalAnswer: "110°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: ["?", null, null, "70°"]
+              highlightAngles: [0, 3]
+              showParallelMarkers: true
+              showEqualSideMarkers: true
+              isIsosceles: true
+              caption: "Find ∠A"
+          stepByStepGuideline:
+            - "∠A and ∠D are co-interior angles."
+            - "Ignore isosceles property for a moment, parallel lines rule applies."
+            - "Sum = 180°."
+            - "∠A = 180° - 70° = 110°"
+            - "Answer: 110°"
+
+        - id: "trap-iso-q3"
+          problemText: "In an isosceles trapezium, if one top angle is 80°, what is the opposite angle?"
+          finalAnswer: "100°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["Q", "R", "S", "P"]
+              angles: ["?", null, "80°", null]
+              highlightAngles: [0, 2]
+              showParallelMarkers: true
+              showEqualSideMarkers: true
+              isIsosceles: true
+              caption: "Find opposite angle ∠Q"
+          stepByStepGuideline:
+            - "Top angle ∠S = 80°."
+            - "Adjacent angle ∠R = 180° - 80° = 100° (co-interior)."
+            - "Since it is isosceles, bottom angles are equal. ∠Q = ∠R."
+            - "So ∠Q = 100°."
+            - "Answer: 100°"
+
+  # ============================================
+  # FINDING UNKNOWN ANGLES
+  # ============================================
+
+  - id: finding-unknown-angles
+    title: "Challenge: Unknown Angles"
+    layer: examPractice
+    prerequisites: ["isosceles-trapezium", "rhombus-angle-properties"]
+    problemsRequired: 3
+    descriptor:
+      section: "finding-unknown-angles"
+      aiGeneratedQuestions: false
+      preWrittenQuestions:
+        - id: "chall-q1"
+          avatarIntro: "Let's put everything together to solve some puzzles!"
+          problemText: "PQRS is a parallelogram. Triangle QRS is formed by drawing diagonal QS. If ∠QSR = 40° and ∠R = 110°, find ∠RQS."
+          finalAnswer: "30°"
+          mathTool:
+            toolName: "parallelogramAngles"
+            parameters:
+              vertexLabels: ["S", "R", "Q", "P"]
+              angles: ["40°", "110°", "?", null]
+              highlightAngles: [1]
+              showParallelMarkers: true
+              caption: "Find ∠RQS inside the triangle"
+          stepByStepGuideline:
+            - "Focus on Triangle QRS."
+            - "Sum of angles in a triangle = 180°."
+            - "∠RQS + 110° + 40° = 180°."
+            - "∠RQS + 150° = 180°."
+            - "∠RQS = 30°."
+            - "Answer: 30°"
+
+        - id: "chall-q2"
+          problemText: "ABCD is a rhombus. Diagonal AC cuts ∠A into two equal parts. If ∠DAC = 35°, find ∠D."
+          finalAnswer: "110°"
+          mathTool:
+            toolName: "rhombusAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: ["35°+35°", null, null, "?"]
+              orientation: "diamond"
+              highlightAngles: [0, 3]
+              showEqualSideMarkers: true
+              caption: "Find ∠D given half of ∠A is 35°"
+          stepByStepGuideline:
+            - "Diagonals in a rhombus bisect the angles."
+            - "So ∠A = 35° + 35° = 70°."
+            - "∠D and ∠A are adjacent angles."
+            - "∠D = 180° - 70° = 110°."
+            - "Answer: 110°"
+
+        - id: "chall-q3"
+          problemText: "A trapezium has angles x, 2x, 70°, and y. The angles x and 2x are between parallel sides. Find x."
+          finalAnswer: "60°"
+          mathTool:
+            toolName: "trapeziumAngles"
+            parameters:
+              vertexLabels: ["A", "B", "C", "D"]
+              angles: ["2x", "y", "70°", "x"]
+              highlightAngles: [0, 3]
+              showParallelMarkers: true
+              caption: "x and 2x are co-interior"
+          stepByStepGuideline:
+            - "Co-interior angles sum to 180°."
+            - "x + 2x = 180°"
+            - "3x = 180°"
+            - "x = 60°"
+            - "Answer: 60°"

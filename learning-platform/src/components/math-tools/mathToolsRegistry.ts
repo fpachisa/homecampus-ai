@@ -41,6 +41,7 @@ export interface MathToolDefinition {
   // Documentation
   description: string;             // What this tool does
   whenToUse: string;              // When AI should use this tool
+  visualAngleGuide?: string;      // CRITICAL: Guide for matching angle values to visual positions (for angle-based tools)
 
   // Parameters
   parameters: Record<string, string>;  // parameter: description
@@ -5008,9 +5009,24 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
 
     whenToUse: "Use when teaching parallelogram angle properties: opposite angles are equal, adjacent angles sum to 180°, identifying parallel sides and equal sides. Essential for 'Properties of Parallelogram' and 'Finding Unknown Angles' problems.",
 
+    visualAngleGuide: `CRITICAL - Visual angle positions (the parallelogram is drawn with fixed geometry):
+      - Index 0 (bottomLeft): ACUTE angle (~60°) - use for values < 90°
+      - Index 1 (bottomRight): OBTUSE angle (~120°) - use for values > 90°
+      - Index 2 (topRight): ACUTE angle (~60°) - use for values < 90°
+      - Index 3 (topLeft): OBTUSE angle (~120°) - use for values > 90°
+
+      Opposite pairs (equal angles): (0,2) both acute, (1,3) both obtuse
+      Adjacent pairs (sum to 180°): (0,1), (1,2), (2,3), (3,0)
+
+      IMPORTANT: To ensure the visual matches the stated angle value:
+      - Place ACUTE angles (< 90°) at indices 0 or 2
+      - Place OBTUSE angles (> 90°) at indices 1 or 3
+
+      Example: If ∠A = 70° (acute), put A at index 0 or 2, NOT at index 1 or 3.`,
+
     parameters: {
-      vertexLabels: "[string, string, string, string] - Labels at corners [bottomLeft, bottomRight, topRight, topLeft]. Default: ['A', 'B', 'C', 'D']",
-      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '120°', 'x', '∠m', or null to hide. Same order as vertices.",
+      vertexLabels: "[string, string, string, string] - Labels at corners [bottomLeft, bottomRight, topRight, topLeft]. Default: ['A', 'B', 'C', 'D']. See visualAngleGuide for which index to use for acute vs obtuse angles.",
+      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '120°', 'x', '∠m', or null to hide. IMPORTANT: Match angle values to visual positions - acute values at indices 0,2; obtuse values at indices 1,3.",
       highlightAngles: "number[] - Indices (0-3) of angles to highlight in red. Useful for showing opposite pairs.",
       showParallelMarkers: "boolean - Show arrow markers on parallel sides. Default: true",
       showEqualSideMarkers: "boolean - Show tick marks on equal opposite sides. Default: false (use arrows only)",
@@ -5068,9 +5084,32 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
 
     whenToUse: "Use when teaching rhombus properties: all 4 sides equal (most important!), opposite angles equal, adjacent angles sum to 180°, two pairs of parallel sides. Essential for 'Properties of Rhombus' and 'Finding Unknown Angles' problems involving rhombuses.",
 
+    visualAngleGuide: `CRITICAL - Visual angle positions (the rhombus is drawn with fixed geometry):
+
+      DIAMOND orientation [top, right, bottom, left]:
+      - Index 0 (top): ACUTE angle (~50°) - use for values < 90°
+      - Index 1 (right): OBTUSE angle (~130°) - use for values > 90°
+      - Index 2 (bottom): ACUTE angle (~50°) - use for values < 90°
+      - Index 3 (left): OBTUSE angle (~130°) - use for values > 90°
+
+      TILTED orientation [bottomLeft, bottomRight, topRight, topLeft]:
+      - Index 0 (bottomLeft): ACUTE angle (~50°) - use for values < 90°
+      - Index 1 (bottomRight): OBTUSE angle (~130°) - use for values > 90°
+      - Index 2 (topRight): ACUTE angle (~50°) - use for values < 90°
+      - Index 3 (topLeft): OBTUSE angle (~130°) - use for values > 90°
+
+      Opposite pairs (equal angles): (0,2) both acute, (1,3) both obtuse
+      Adjacent pairs (sum to 180°): (0,1), (1,2), (2,3), (3,0)
+
+      IMPORTANT: To ensure the visual matches the stated angle value:
+      - Place ACUTE angles (< 90°) at indices 0 or 2
+      - Place OBTUSE angles (> 90°) at indices 1 or 3
+
+      Example: If ∠A = 60° (acute), put A at index 0 or 2. If ∠D = 120° (obtuse), put D at index 1 or 3.`,
+
     parameters: {
-      vertexLabels: "[string, string, string, string] - Labels at corners. For diamond: [top, right, bottom, left]. For tilted: [bottomLeft, bottomRight, topRight, topLeft]. Default: ['E', 'F', 'G', 'H']",
-      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '135°', 'e', '∠GHF', or null to hide.",
+      vertexLabels: "[string, string, string, string] - Labels at corners. For diamond: [top, right, bottom, left]. For tilted: [bottomLeft, bottomRight, topRight, topLeft]. Default: ['E', 'F', 'G', 'H']. See visualAngleGuide for which index to use for acute vs obtuse angles.",
+      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '135°', 'e', '∠GHF', or null to hide. IMPORTANT: Match angle values to visual positions - acute values at indices 0,2; obtuse values at indices 1,3.",
       highlightAngles: "number[] - Indices (0-3) of angles to highlight in red.",
       orientation: "'diamond' | 'tilted' - How to display the rhombus. 'diamond' stands on a corner (common in P5). Default: 'diamond'",
       aspectRatio: "number - How stretched the rhombus is (0.3-1.0). Lower = more stretched. Default: 0.6",
@@ -5130,9 +5169,31 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
 
     whenToUse: "Use when teaching trapezium angle properties: one pair of parallel sides, angles between parallel sides sum to 180° (∠P + ∠S = 180° and ∠Q + ∠R = 180°). Essential for 'Properties of Trapezium' and 'Finding Unknown Angles' problems.",
 
+    visualAngleGuide: `CRITICAL - Visual angle positions (the trapezium is drawn with bottom wider than top):
+
+      Vertex positions [bottomLeft, bottomRight, topRight, topLeft]:
+      - Index 0 (bottomLeft): OBTUSE angle (~100-115°) - use for values > 90°
+      - Index 1 (bottomRight): OBTUSE angle (~100-115°) - use for values > 90°
+      - Index 2 (topRight): ACUTE angle (~65-80°) - use for values < 90°
+      - Index 3 (topLeft): ACUTE angle (~65-80°) - use for values < 90°
+
+      Co-interior pairs (angles on same side, sum to 180°):
+      - Left side: (0, 3) - one obtuse + one acute = 180°
+      - Right side: (1, 2) - one obtuse + one acute = 180°
+
+      In isosceles trapezium:
+      - Bottom angles equal: index 0 = index 1 (both obtuse)
+      - Top angles equal: index 2 = index 3 (both acute)
+
+      IMPORTANT: To ensure the visual matches the stated angle value:
+      - Place OBTUSE angles (> 90°) at indices 0 or 1 (bottom corners)
+      - Place ACUTE angles (< 90°) at indices 2 or 3 (top corners)
+
+      Example: If ∠P = 110° (obtuse), put P at index 0 or 1. If ∠S = 70° (acute), put S at index 2 or 3.`,
+
     parameters: {
-      vertexLabels: "[string, string, string, string] - Labels at corners [bottomLeft, bottomRight, topRight, topLeft]. Default: ['S', 'R', 'Q', 'P']",
-      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '116°', 'x', '∠QRS', or null to hide.",
+      vertexLabels: "[string, string, string, string] - Labels at corners [bottomLeft, bottomRight, topRight, topLeft]. Default: ['S', 'R', 'Q', 'P']. See visualAngleGuide for which index to use for acute vs obtuse angles.",
+      angles: "[string|null, string|null, string|null, string|null] - Angle labels at each vertex. Use values like '116°', 'x', '∠QRS', or null to hide. IMPORTANT: Match angle values to visual positions - obtuse values at indices 0,1 (bottom); acute values at indices 2,3 (top).",
       highlightAngles: "number[] - Indices (0-3) of angles to highlight in red.",
       showParallelMarkers: "boolean - Show double-arrow markers on the ONE pair of parallel sides. Default: true",
       showAngleSumAnnotation: "boolean - Show '= 180°' annotation beside angle pairs. Default: false",

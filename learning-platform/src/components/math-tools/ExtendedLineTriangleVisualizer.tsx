@@ -89,12 +89,6 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
 }) => {
   const { theme } = useTheme();
 
-  // SVG dimensions
-  const svgWidth = 500;
-  const svgHeight = 350;
-  const centerX = svgWidth / 2;
-  const centerY = svgHeight / 2;
-
   // Calculate angles - if not all provided, calculate from what we have
   let calcAngleA = angleA ?? 60;
   let calcAngleB = angleB ?? 60;
@@ -109,82 +103,103 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
   }
 
   // ============================================
-  // CALCULATE VERTEX POSITIONS
+  // CALCULATE VERTEX POSITIONS (relative to origin)
   // ============================================
-  // Base triangle layout: A at top, B at bottom-left, C at bottom-right
   const baseLength = 180;
-  const baseY = centerY + 60;
 
-  // Calculate triangle height based on angles
-  const angleA_rad = (calcAngleA * Math.PI) / 180;
+  // Convert angles to radians
   const angleB_rad = (calcAngleB * Math.PI) / 180;
+  const angleC_rad = (calcAngleC * Math.PI) / 180;
 
-  // Position B and C on the base
-  const posB = { x: centerX - baseLength / 2, y: baseY };
-  const posC = { x: centerX + baseLength / 2, y: baseY };
+  // Position B and C on the base (relative coordinates)
+  const relPosB = { x: 0, y: 0 };
+  const relPosC = { x: baseLength, y: 0 };
 
-  // Calculate A position using angle B
-  // A is above the line BC
-  const heightFromB = baseLength * Math.sin(angleB_rad) * Math.sin(angleA_rad) / Math.sin(Math.PI - angleA_rad - angleB_rad);
-  const horizontalFromB = baseLength * Math.cos(angleB_rad) * Math.sin(angleA_rad) / Math.sin(Math.PI - angleA_rad - angleB_rad);
+  // Calculate A position by finding intersection of rays from B and C
+  let relPosA: { x: number; y: number };
 
-  const posA = {
-    x: posB.x + horizontalFromB,
-    y: posB.y - Math.abs(heightFromB)
-  };
-
-  // ============================================
-  // CALCULATE EXTENSION POINT D
-  // ============================================
-  let posD = { x: 0, y: 0 };
-  let extendFrom = { x: 0, y: 0 };
-  let extendTo = { x: 0, y: 0 };
-
-  // Determine which side to extend and direction
-  switch (extendedSide) {
-    case 'BC':
-      // Extend BC beyond C
-      extendFrom = posB;
-      extendTo = posC;
-      break;
-    case 'CB':
-      // Extend BC beyond B
-      extendFrom = posC;
-      extendTo = posB;
-      break;
-    case 'AC':
-      // Extend AC beyond C
-      extendFrom = posA;
-      extendTo = posC;
-      break;
-    case 'CA':
-      // Extend AC beyond A
-      extendFrom = posC;
-      extendTo = posA;
-      break;
-    case 'AB':
-      // Extend AB beyond B
-      extendFrom = posA;
-      extendTo = posB;
-      break;
-    case 'BA':
-      // Extend AB beyond A
-      extendFrom = posB;
-      extendTo = posA;
-      break;
+  // Handle special case when angleC is 90° (vertical line from C)
+  if (Math.abs(calcAngleC - 90) < 0.5) {
+    const height = baseLength * Math.tan(angleB_rad);
+    relPosA = { x: relPosC.x, y: -height };
+  }
+  // Handle special case when angleB is 90° (vertical line from B)
+  else if (Math.abs(calcAngleB - 90) < 0.5) {
+    const height = baseLength * Math.tan(angleC_rad);
+    relPosA = { x: relPosB.x, y: -height };
+  }
+  else {
+    // General case: find intersection of two rays
+    const tanB = Math.tan(angleB_rad);
+    const tanC = Math.tan(angleC_rad);
+    const x = (tanC * relPosC.x) / (tanB + tanC);
+    const y = -tanB * x;
+    relPosA = { x, y };
   }
 
-  // Calculate D position
-  const dirX = extendTo.x - extendFrom.x;
-  const dirY = extendTo.y - extendFrom.y;
-  const length = Math.sqrt(dirX * dirX + dirY * dirY);
-  const unitX = dirX / length;
-  const unitY = dirY / length;
+  // Calculate extension point D (relative)
+  let relExtendFrom = { x: 0, y: 0 };
+  let relExtendTo = { x: 0, y: 0 };
 
-  posD = {
-    x: extendTo.x + unitX * extensionLength,
-    y: extendTo.y + unitY * extensionLength
+  switch (extendedSide) {
+    case 'BC': relExtendFrom = relPosB; relExtendTo = relPosC; break;
+    case 'CB': relExtendFrom = relPosC; relExtendTo = relPosB; break;
+    case 'AC': relExtendFrom = relPosA; relExtendTo = relPosC; break;
+    case 'CA': relExtendFrom = relPosC; relExtendTo = relPosA; break;
+    case 'AB': relExtendFrom = relPosA; relExtendTo = relPosB; break;
+    case 'BA': relExtendFrom = relPosB; relExtendTo = relPosA; break;
+  }
+
+  const dirX = relExtendTo.x - relExtendFrom.x;
+  const dirY = relExtendTo.y - relExtendFrom.y;
+  const len = Math.sqrt(dirX * dirX + dirY * dirY);
+  const unitX = dirX / len;
+  const unitY = dirY / len;
+  const relPosD = {
+    x: relExtendTo.x + unitX * extensionLength,
+    y: relExtendTo.y + unitY * extensionLength
   };
+
+  // ============================================
+  // CALCULATE BOUNDING BOX AND CENTER
+  // ============================================
+  const padding = 70; // Space for labels
+  const allPoints = [relPosA, relPosB, relPosC, relPosD];
+  const minX = Math.min(...allPoints.map(p => p.x)) - padding;
+  const maxX = Math.max(...allPoints.map(p => p.x)) + padding;
+  const minY = Math.min(...allPoints.map(p => p.y)) - padding;
+  const maxY = Math.max(...allPoints.map(p => p.y)) + padding;
+
+  const contentWidth = maxX - minX;
+  const contentHeight = maxY - minY;
+
+  // SVG dimensions - use content size with minimum dimensions
+  const svgWidth = Math.max(400, contentWidth);
+  const svgHeight = Math.max(280, contentHeight);
+
+  // Calculate offset to center the content
+  const offsetX = (svgWidth - contentWidth) / 2 - minX;
+  const offsetY = (svgHeight - contentHeight) / 2 - minY;
+
+  // Final positioned vertices
+  const posA = { x: relPosA.x + offsetX, y: relPosA.y + offsetY };
+  const posB = { x: relPosB.x + offsetX, y: relPosB.y + offsetY };
+  const posC = { x: relPosC.x + offsetX, y: relPosC.y + offsetY };
+  const posD = { x: relPosD.x + offsetX, y: relPosD.y + offsetY };
+
+  const centerX = svgWidth / 2;
+  const centerY = svgHeight / 2;
+
+  // Extension line endpoints (for drawing)
+  let extendFrom = { x: 0, y: 0 };
+  switch (extendedSide) {
+    case 'BC': extendFrom = posB; break;
+    case 'CB': extendFrom = posC; break;
+    case 'AC': extendFrom = posA; break;
+    case 'CA': extendFrom = posC; break;
+    case 'AB': extendFrom = posA; break;
+    case 'BA': extendFrom = posB; break;
+  }
 
   // ============================================
   // HELPER FUNCTIONS

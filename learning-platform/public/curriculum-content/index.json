@@ -1,6 +1,16 @@
 {
   "files": [
     {
+      "filename": "P5/Maths/p5-math-properties-of-triangles.yaml",
+      "displayName": "P5 Properties of Triangles",
+      "category": "p5-math-properties-of-triangles"
+    },
+    {
+      "filename": "P5/Maths/p5-math-properties-of-quadrilaterals.yaml",
+      "displayName": "P5 Properties of Quadrilaterals",
+      "category": "p5-math-properties-of-quadrilaterals"
+    },
+    {
       "filename": "P5/Maths/p5-math-angles.yaml",
       "displayName": "P5 Angles",
       "category": "p5-math-angles"
