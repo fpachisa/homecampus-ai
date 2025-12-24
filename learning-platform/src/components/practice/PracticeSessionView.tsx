@@ -1502,6 +1502,16 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                       </div>
                     </div>
                   )}
+                  {/* Solution Math Tool - Interactive visualization shown only with solution */}
+                  {currentProblem?.solutionMathTool && currentProblem.solutionMathTool.toolName !== "none" && (
+                    <div className="my-4">
+                      <MathToolRenderer
+                        toolName={currentProblem.solutionMathTool.toolName}
+                        parameters={currentProblem.solutionMathTool.parameters}
+                        caption={currentProblem.solutionMathTool.caption}
+                      />
+                    </div>
+                  )}
                   <div className="space-y-2">
                     {solution.steps.map((step, index) => (
                       <div key={index} style={{ color: theme.colors.textSecondary }}>

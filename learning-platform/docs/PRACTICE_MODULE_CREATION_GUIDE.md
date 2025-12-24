@@ -255,9 +255,19 @@ nodes:
 | `finalAnswer` | Yes | Correct answer (supports LaTeX) |
 | `stepByStepGuideline` | Yes | Array of solution steps |
 | `avatarIntro` | No | Tutor's introduction to the problem |
-| `solutionDiagramSvg` | No | Path to SVG diagram |
+| `solutionDiagramSvg` | No | Path to SVG diagram (shown only with solution) |
 | `questionTable` | No | Structured data table |
-| `mathTool` | No | Interactive visualization |
+| `mathTool` | No | Interactive visualization shown WITH the problem |
+| `solutionMathTool` | No | Interactive visualization shown ONLY with solution |
+
+#### When to Use `mathTool` vs `solutionMathTool`
+
+| Tool | When to Use | Example |
+|------|-------------|---------|
+| `mathTool` | Diagram needed to UNDERSTAND the problem | Triangle with labeled sides for geometry problems |
+| `solutionMathTool` | Visualization that shows the ANSWER/WORKING | `fractionDivision` with steps, `barModel` for word problems |
+
+**Rule of Thumb:** If the visualization reveals the answer before the student attempts the problem, use `solutionMathTool`.
 
 #### LaTeX Guidelines
 
@@ -484,6 +494,30 @@ problemText: "Cost is \\$5.00"  # Escaped dollar sign
 **Problem:** Questions lack engagement and guidance.
 
 **Rule:** The FIRST question of EVERY node **MUST** have an `avatarIntro` field.
+
+### Pitfall 11: Visualization Reveals Answer (Anti-Socratic)
+
+**Problem:** Using `mathTool` when visualization shows the answer before student attempts.
+
+**Wrong:**
+```yaml
+mathTool:
+  toolName: fractionDivision
+  parameters:
+    showSteps: true
+    showResult: true  # Reveals the answer!
+```
+
+**Correct:**
+```yaml
+solutionMathTool:
+  toolName: fractionDivision
+  parameters:
+    showSteps: true
+    showResult: true  # Only shown after solution is requested
+```
+
+**Rule:** If the visualization reveals the answer/working, use `solutionMathTool` so students attempt the problem first.
 
 ---
 

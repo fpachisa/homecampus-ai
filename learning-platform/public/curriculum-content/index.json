@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "P6/Maths/p6-math-fractions.yaml",
+      "displayName": "P6 Fractions (Division)",
+      "category": "p6-math-fractions"
+    },
+    {
       "filename": "P5/Maths/p5-math-properties-of-triangles.yaml",
       "displayName": "P5 Properties of Triangles",
       "category": "p5-math-properties-of-triangles"
@@ -244,11 +249,6 @@
       "filename": "P5/Maths/p5-math-four-operations.yaml",
       "displayName": "P5 Four Operations of Whole Numbers",
       "category": "p5-math-four-operations"
-    },
-    {
-      "filename": "P6/Maths/p6-math-placeholder.yaml",
-      "displayName": "Primary 6 Mathematics",
-      "category": "p6-math-placeholder"
     }
   ]
 }

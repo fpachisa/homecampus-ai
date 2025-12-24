@@ -116,6 +116,11 @@ class PathPracticeService {
         parameters: q.mathTool.parameters,
         caption: ''  // Caption not provided in pre-written questions
       } : undefined,  // Use mathTool if provided, otherwise rely on diagramSvg
+      solutionMathTool: q.solutionMathTool ? {
+        toolName: q.solutionMathTool.toolName,
+        parameters: q.solutionMathTool.parameters,
+        caption: ''  // Caption not provided in pre-written questions
+      } : undefined,  // Interactive visualization shown only with solution
       diagramSvg: q.diagramSvg,
       solutionDiagramSvg: q.solutionDiagramSvg,  // Bar models shown with solution
       tableData: q.tableData,  // Pass through table data

@@ -1,0 +1,1495 @@
+# P6 Mathematics - Fractions (Division of Fractions) Practice Module
+# Covers: Fraction ÷ Whole, Whole ÷ Fraction, Fraction ÷ Fraction, Word Problems
+# Total: 13 nodes, 70+ pre-written questions
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Dividing a Fraction by a Whole Number
+  # ============================================
+
+  - id: fractions-visual-model-frac-div-whole
+    nodeNumber: 1
+    title: "Dividing a Fraction by a Whole Number: Visual Model"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "visual-model-frac-div-whole"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Visualize fraction ÷ whole number as cutting into more pieces"
+        - "Understand that the result is smaller than the original fraction"
+      contexts:
+        - "visual model"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "vfw-q1"
+          avatarIntro: "When we divide a fraction by a whole number, we're cutting it into even smaller pieces! Let's see how this works."
+          problemText: "Mrs Lee has $\\frac{1}{2}$ of a cake. She shares it equally between 2 children. What fraction of the whole cake does each child get?"
+          finalAnswer: "$\\frac{1}{4}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "1/2"
+              divisor: "2"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Half a cake shared between 2 children"
+          stepByStepGuideline:
+            - "We have $\\frac{1}{2}$ of a cake to share between 2 children"
+            - "This is $\\frac{1}{2} \\div 2$"
+            - "When we cut half into 2 equal pieces, each piece is $\\frac{1}{4}$ of the whole"
+            - "Answer: Each child gets $\\frac{1}{4}$ of the cake"
+
+        - id: "vfw-q2"
+          problemText: "Ali has $\\frac{1}{3}$ of a pizza. He shares it equally among 2 friends. What fraction of the whole pizza does each friend get?"
+          finalAnswer: "$\\frac{1}{6}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "1/3"
+              divisor: "2"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "One-third of a pizza shared between 2 friends"
+          stepByStepGuideline:
+            - "We have $\\frac{1}{3}$ of a pizza to share between 2 friends"
+            - "This is $\\frac{1}{3} \\div 2$"
+            - "When we cut one-third into 2 equal pieces, each piece is $\\frac{1}{6}$ of the whole"
+            - "Answer: Each friend gets $\\frac{1}{6}$ of the pizza"
+
+        - id: "vfw-q3"
+          problemText: "Calculate: $\\frac{1}{4} \\div 3$"
+          finalAnswer: "$\\frac{1}{12}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "1/4"
+              divisor: "3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "One-quarter divided into 3 equal parts"
+          stepByStepGuideline:
+            - "We're dividing $\\frac{1}{4}$ into 3 equal parts"
+            - "Each part will be smaller than $\\frac{1}{4}$"
+            - "When we cut one-quarter into 3 pieces, we get $\\frac{1}{12}$ each"
+            - "Answer: $\\frac{1}{12}$"
+
+        - id: "vfw-q4"
+          problemText: "Sarah has $\\frac{2}{3}$ of a ribbon. She cuts it into 3 equal pieces. What fraction of the whole ribbon is each piece?"
+          finalAnswer: "$\\frac{2}{9}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/3"
+              divisor: "3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Two-thirds divided into 3 equal pieces"
+          stepByStepGuideline:
+            - "We have $\\frac{2}{3}$ of ribbon to cut into 3 pieces"
+            - "This is $\\frac{2}{3} \\div 3$"
+            - "The numerator stays the same (2), denominator becomes $3 \\times 3 = 9$"
+            - "Answer: Each piece is $\\frac{2}{9}$ of the whole ribbon"
+
+        - id: "vfw-q5"
+          problemText: "Calculate: $\\frac{3}{4} \\div 2$"
+          finalAnswer: "$\\frac{3}{8}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/4"
+              divisor: "2"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Three-quarters divided by 2"
+          stepByStepGuideline:
+            - "We're dividing $\\frac{3}{4}$ by 2"
+            - "The numerator stays the same (3)"
+            - "The denominator becomes $4 \\times 2 = 8$"
+            - "Answer: $\\frac{3}{8}$"
+
+  - id: fractions-reciprocal-rule-frac-div-whole
+    nodeNumber: 2
+    title: "The Reciprocal Rule: Fraction ÷ Whole Number"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-visual-model-frac-div-whole
+    descriptor:
+      section: "reciprocal-rule-frac-div-whole"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply the rule: a/b ÷ n = a/b × 1/n = a/(b×n)"
+        - "Understand that dividing by n is multiplying by 1/n"
+      contexts:
+        - "reciprocal rule"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "rfw-q1"
+          avatarIntro: "Here's a powerful rule: Dividing by a whole number is the same as multiplying by its reciprocal! The reciprocal of 3 is $\\frac{1}{3}$."
+          problemText: "Calculate $\\frac{2}{5} \\div 4$ using the reciprocal rule."
+          finalAnswer: "$\\frac{2}{20} = \\frac{1}{10}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/5"
+              divisor: "4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Using the reciprocal rule"
+          stepByStepGuideline:
+            - "The reciprocal of 4 is $\\frac{1}{4}$"
+            - "So $\\frac{2}{5} \\div 4 = \\frac{2}{5} \\times \\frac{1}{4}$"
+            - "Multiply: $\\frac{2 \\times 1}{5 \\times 4} = \\frac{2}{20}$"
+            - "Simplify: $\\frac{2}{20} = \\frac{1}{10}$"
+
+        - id: "rfw-q2"
+          problemText: "Calculate: $\\frac{4}{7} \\div 2$"
+          finalAnswer: "$\\frac{4}{14} = \\frac{2}{7}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4/7"
+              divisor: "2"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of 2 is $\\frac{1}{2}$"
+            - "$\\frac{4}{7} \\div 2 = \\frac{4}{7} \\times \\frac{1}{2}$"
+            - "Multiply: $\\frac{4}{14}$"
+            - "Simplify: $\\frac{4}{14} = \\frac{2}{7}$"
+
+        - id: "rfw-q3"
+          problemText: "Calculate: $\\frac{5}{6} \\div 5$"
+          finalAnswer: "$\\frac{5}{30} = \\frac{1}{6}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/6"
+              divisor: "5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of 5 is $\\frac{1}{5}$"
+            - "$\\frac{5}{6} \\div 5 = \\frac{5}{6} \\times \\frac{1}{5}$"
+            - "Multiply: $\\frac{5}{30}$"
+            - "Simplify: $\\frac{5}{30} = \\frac{1}{6}$"
+
+        - id: "rfw-q4"
+          problemText: "A piece of cloth measuring $\\frac{3}{4}$ m is cut into 6 equal pieces. What is the length of each piece?"
+          finalAnswer: "$\\frac{3}{24} = \\frac{1}{8}$ m"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/4"
+              divisor: "6"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Three-quarters of a metre cut into 6 pieces"
+          stepByStepGuideline:
+            - "We need to find $\\frac{3}{4} \\div 6$"
+            - "$\\frac{3}{4} \\div 6 = \\frac{3}{4} \\times \\frac{1}{6}$"
+            - "Multiply: $\\frac{3}{24}$"
+            - "Simplify: $\\frac{3}{24} = \\frac{1}{8}$"
+            - "Each piece is $\\frac{1}{8}$ m long"
+
+        - id: "rfw-q5"
+          problemText: "Calculate: $\\frac{7}{9} \\div 7$"
+          finalAnswer: "$\\frac{7}{63} = \\frac{1}{9}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "7/9"
+              divisor: "7"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of 7 is $\\frac{1}{7}$"
+            - "$\\frac{7}{9} \\div 7 = \\frac{7}{9} \\times \\frac{1}{7}$"
+            - "Multiply: $\\frac{7}{63}$"
+            - "Simplify: $\\frac{7}{63} = \\frac{1}{9}$"
+
+  - id: fractions-practice-frac-div-whole
+    nodeNumber: 3
+    title: "Practice: Fraction ÷ Whole Number"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-reciprocal-rule-frac-div-whole
+    descriptor:
+      section: "practice-frac-div-whole"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Fluent practice with fraction ÷ whole number"
+        - "Problems requiring simplification"
+      contexts:
+        - "pure computation"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "pfw-q1"
+          avatarIntro: "Let's practice! Remember to always simplify your answer to the lowest terms."
+          problemText: "Calculate: $\\frac{8}{9} \\div 4$"
+          finalAnswer: "$\\frac{8}{36} = \\frac{2}{9}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "8/9"
+              divisor: "4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "$\\frac{8}{9} \\div 4 = \\frac{8}{9} \\times \\frac{1}{4}$"
+            - "Multiply: $\\frac{8}{36}$"
+            - "Simplify: $\\frac{8}{36} = \\frac{2}{9}$"
+
+        - id: "pfw-q2"
+          problemText: "$\\frac{6}{7}$ of a chocolate bar is shared equally among 3 children. What fraction of the whole chocolate bar does each child get?"
+          finalAnswer: "$\\frac{6}{21} = \\frac{2}{7}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "6/7"
+              divisor: "3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Six-sevenths shared among 3 children"
+          stepByStepGuideline:
+            - "$\\frac{6}{7} \\div 3 = \\frac{6}{7} \\times \\frac{1}{3}$"
+            - "Multiply: $\\frac{6}{21}$"
+            - "Simplify: $\\frac{6}{21} = \\frac{2}{7}$"
+            - "Each child gets $\\frac{2}{7}$ of the chocolate bar"
+
+        - id: "pfw-q3"
+          problemText: "Calculate: $\\frac{9}{10} \\div 3$"
+          finalAnswer: "$\\frac{9}{30} = \\frac{3}{10}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "9/10"
+              divisor: "3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "$\\frac{9}{10} \\div 3 = \\frac{9}{10} \\times \\frac{1}{3}$"
+            - "Multiply: $\\frac{9}{30}$"
+            - "Simplify: $\\frac{9}{30} = \\frac{3}{10}$"
+
+        - id: "pfw-q4"
+          problemText: "Calculate: $\\frac{4}{5} \\div 8$"
+          finalAnswer: "$\\frac{4}{40} = \\frac{1}{10}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4/5"
+              divisor: "8"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "$\\frac{4}{5} \\div 8 = \\frac{4}{5} \\times \\frac{1}{8}$"
+            - "Multiply: $\\frac{4}{40}$"
+            - "Simplify: $\\frac{4}{40} = \\frac{1}{10}$"
+
+        - id: "pfw-q5"
+          problemText: "A rope measuring $\\frac{5}{8}$ m is cut into 5 equal pieces. What is the length of each piece?"
+          finalAnswer: "$\\frac{5}{40} = \\frac{1}{8}$ m"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/8"
+              divisor: "5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Five-eighths metre cut into 5 pieces"
+          stepByStepGuideline:
+            - "$\\frac{5}{8} \\div 5 = \\frac{5}{8} \\times \\frac{1}{5}$"
+            - "Multiply: $\\frac{5}{40}$"
+            - "Simplify: $\\frac{5}{40} = \\frac{1}{8}$"
+            - "Each piece is $\\frac{1}{8}$ m long"
+
+  # ============================================
+  # SUBTOPIC 2: Dividing a Whole Number by a Fraction
+  # ============================================
+
+  - id: fractions-counting-model-whole-div-frac
+    nodeNumber: 4
+    title: "Dividing a Whole Number by a Fraction: Counting Model"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-practice-frac-div-whole
+    descriptor:
+      section: "counting-model-whole-div-frac"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Visualize whole ÷ fraction as 'how many pieces fit'"
+        - "Understand that the result is LARGER than the original"
+      contexts:
+        - "counting model"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "cwf-q1"
+          avatarIntro: "Now for something different! When we divide a whole number by a fraction, we're asking: 'How many of these fractional pieces fit in the whole?' The answer is LARGER than the original number!"
+          problemText: "Ahmad has 1 pizza. He gives $\\frac{1}{4}$ of the pizza to each friend. How many friends can he give pizza to?"
+          finalAnswer: "4 friends"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "1"
+              divisor: "1/4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many quarters are in 1 whole?"
+          stepByStepGuideline:
+            - "We need to find $1 \\div \\frac{1}{4}$"
+            - "Think: How many quarters are in 1 whole?"
+            - "There are 4 quarters in 1 whole"
+            - "Ahmad can give pizza to 4 friends"
+
+        - id: "cwf-q2"
+          problemText: "A container has 2 litres of water. Each cup holds $\\frac{1}{3}$ litre. How many cups can be filled?"
+          finalAnswer: "6 cups"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2"
+              divisor: "1/3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many thirds are in 2 wholes?"
+          stepByStepGuideline:
+            - "We need to find $2 \\div \\frac{1}{3}$"
+            - "Think: How many thirds are in 2 wholes?"
+            - "Each whole has 3 thirds, so 2 wholes have $2 \\times 3 = 6$ thirds"
+            - "6 cups can be filled"
+
+        - id: "cwf-q3"
+          problemText: "Calculate: $3 \\div \\frac{1}{5}$"
+          finalAnswer: "15"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3"
+              divisor: "1/5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many fifths are in 3 wholes?"
+          stepByStepGuideline:
+            - "Think: How many fifths are in 3 wholes?"
+            - "Each whole has 5 fifths"
+            - "3 wholes have $3 \\times 5 = 15$ fifths"
+            - "Answer: 15"
+
+        - id: "cwf-q4"
+          problemText: "Mrs Tan has 4 chocolate bars. She gives $\\frac{1}{3}$ of a chocolate bar to each child. How many children can she give chocolate to?"
+          finalAnswer: "12 children"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4"
+              divisor: "1/3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many thirds are in 4 wholes?"
+          stepByStepGuideline:
+            - "We need to find $4 \\div \\frac{1}{3}$"
+            - "Think: How many thirds are in 4 wholes?"
+            - "Each chocolate bar has 3 thirds"
+            - "4 bars have $4 \\times 3 = 12$ thirds"
+            - "She can give chocolate to 12 children"
+
+        - id: "cwf-q5"
+          problemText: "Calculate: $5 \\div \\frac{1}{4}$"
+          finalAnswer: "20"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5"
+              divisor: "1/4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many quarters are in 5 wholes?"
+          stepByStepGuideline:
+            - "Think: How many quarters are in 5 wholes?"
+            - "Each whole has 4 quarters"
+            - "5 wholes have $5 \\times 4 = 20$ quarters"
+            - "Answer: 20"
+
+  - id: fractions-reciprocal-rule-whole-div-frac
+    nodeNumber: 5
+    title: "The Reciprocal Rule: Whole Number ÷ Fraction"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-counting-model-whole-div-frac
+    descriptor:
+      section: "reciprocal-rule-whole-div-frac"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply the rule: n ÷ a/b = n × b/a"
+        - "Handle both unit and non-unit fractions"
+      contexts:
+        - "reciprocal rule"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "rwf-q1"
+          avatarIntro: "The reciprocal rule works for dividing by any fraction! To divide by a fraction, we multiply by its reciprocal. The reciprocal of $\\frac{2}{3}$ is $\\frac{3}{2}$."
+          problemText: "Calculate: $4 \\div \\frac{2}{3}$"
+          finalAnswer: "$4 \\times \\frac{3}{2} = \\frac{12}{2} = 6$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4"
+              divisor: "2/3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Dividing by 2/3 means multiplying by 3/2"
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{2}{3}$ is $\\frac{3}{2}$"
+            - "$4 \\div \\frac{2}{3} = 4 \\times \\frac{3}{2}$"
+            - "$= \\frac{4 \\times 3}{2} = \\frac{12}{2}$"
+            - "= 6"
+
+        - id: "rwf-q2"
+          problemText: "Calculate: $6 \\div \\frac{3}{4}$"
+          finalAnswer: "$6 \\times \\frac{4}{3} = \\frac{24}{3} = 8$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "6"
+              divisor: "3/4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{3}{4}$ is $\\frac{4}{3}$"
+            - "$6 \\div \\frac{3}{4} = 6 \\times \\frac{4}{3}$"
+            - "$= \\frac{24}{3} = 8$"
+
+        - id: "rwf-q3"
+          problemText: "There are 5 litres of juice. Each bottle holds $\\frac{5}{6}$ litre. How many bottles can be filled?"
+          finalAnswer: "$5 \\times \\frac{6}{5} = \\frac{30}{5} = 6$ bottles"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5"
+              divisor: "5/6"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "5 litres divided into 5/6 litre bottles"
+          stepByStepGuideline:
+            - "We need $5 \\div \\frac{5}{6}$"
+            - "The reciprocal of $\\frac{5}{6}$ is $\\frac{6}{5}$"
+            - "$5 \\times \\frac{6}{5} = \\frac{30}{5} = 6$"
+            - "6 bottles can be filled"
+
+        - id: "rwf-q4"
+          problemText: "Calculate: $3 \\div \\frac{2}{5}$"
+          finalAnswer: "$3 \\times \\frac{5}{2} = \\frac{15}{2} = 7\\frac{1}{2}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3"
+              divisor: "2/5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{2}{5}$ is $\\frac{5}{2}$"
+            - "$3 \\div \\frac{2}{5} = 3 \\times \\frac{5}{2}$"
+            - "$= \\frac{15}{2} = 7\\frac{1}{2}$"
+
+        - id: "rwf-q5"
+          problemText: "Calculate: $8 \\div \\frac{4}{5}$"
+          finalAnswer: "$8 \\times \\frac{5}{4} = \\frac{40}{4} = 10$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "8"
+              divisor: "4/5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{4}{5}$ is $\\frac{5}{4}$"
+            - "$8 \\div \\frac{4}{5} = 8 \\times \\frac{5}{4}$"
+            - "$= \\frac{40}{4} = 10$"
+
+  - id: fractions-practice-whole-div-frac
+    nodeNumber: 6
+    title: "Practice: Whole Number ÷ Fraction"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-reciprocal-rule-whole-div-frac
+    descriptor:
+      section: "practice-whole-div-frac"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Fluent practice with whole ÷ fraction"
+        - "Mixed unit and non-unit fractions"
+      contexts:
+        - "pure computation"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "pwf-q1"
+          avatarIntro: "Time for more practice! Remember: divide by a fraction means multiply by its reciprocal (flip the fraction)."
+          problemText: "Calculate: $9 \\div \\frac{3}{5}$"
+          finalAnswer: "$9 \\times \\frac{5}{3} = \\frac{45}{3} = 15$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "9"
+              divisor: "3/5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{3}{5}$ is $\\frac{5}{3}$"
+            - "$9 \\div \\frac{3}{5} = 9 \\times \\frac{5}{3}$"
+            - "$= \\frac{45}{3} = 15$"
+
+        - id: "pwf-q2"
+          problemText: "A baker has 7 kg of flour. Each cake needs $\\frac{7}{8}$ kg of flour. How many cakes can she bake?"
+          finalAnswer: "$7 \\times \\frac{8}{7} = 8$ cakes"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "7"
+              divisor: "7/8"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "7 kg of flour divided into 7/8 kg portions"
+          stepByStepGuideline:
+            - "We need $7 \\div \\frac{7}{8}$"
+            - "The reciprocal of $\\frac{7}{8}$ is $\\frac{8}{7}$"
+            - "$7 \\times \\frac{8}{7} = \\frac{56}{7} = 8$"
+            - "She can bake 8 cakes"
+
+        - id: "pwf-q3"
+          problemText: "Calculate: $4 \\div \\frac{2}{9}$"
+          finalAnswer: "$4 \\times \\frac{9}{2} = \\frac{36}{2} = 18$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4"
+              divisor: "2/9"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{2}{9}$ is $\\frac{9}{2}$"
+            - "$4 \\div \\frac{2}{9} = 4 \\times \\frac{9}{2}$"
+            - "$= \\frac{36}{2} = 18$"
+
+        - id: "pwf-q4"
+          problemText: "Calculate: $6 \\div \\frac{2}{7}$"
+          finalAnswer: "$6 \\times \\frac{7}{2} = \\frac{42}{2} = 21$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "6"
+              divisor: "2/7"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "The reciprocal of $\\frac{2}{7}$ is $\\frac{7}{2}$"
+            - "$6 \\div \\frac{2}{7} = 6 \\times \\frac{7}{2}$"
+            - "$= \\frac{42}{2} = 21$"
+
+        - id: "pwf-q5"
+          problemText: "A rope is 10 m long. It is cut into pieces that are each $\\frac{5}{6}$ m long. How many pieces can be cut?"
+          finalAnswer: "$10 \\times \\frac{6}{5} = \\frac{60}{5} = 12$ pieces"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "10"
+              divisor: "5/6"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "10 metres cut into 5/6 metre pieces"
+          stepByStepGuideline:
+            - "We need $10 \\div \\frac{5}{6}$"
+            - "The reciprocal of $\\frac{5}{6}$ is $\\frac{6}{5}$"
+            - "$10 \\times \\frac{6}{5} = \\frac{60}{5} = 12$"
+            - "12 pieces can be cut"
+
+  # ============================================
+  # SUBTOPIC 3: Dividing a Fraction by a Fraction
+  # ============================================
+
+  - id: fractions-visual-model-frac-div-frac
+    nodeNumber: 7
+    title: "Dividing a Fraction by a Fraction: Visual Model"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-practice-whole-div-frac
+    descriptor:
+      section: "visual-model-frac-div-frac"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Visualize fraction ÷ fraction as 'how many of B fit in A'"
+        - "Use bar models to count fractional pieces"
+      contexts:
+        - "visual model"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "vff-q1"
+          avatarIntro: "Now for the grand finale! Dividing a fraction by a fraction. The question is: 'How many of the second fraction fit in the first?'"
+          problemText: "Raju has $\\frac{1}{2}$ of a cake. He cuts it into pieces that are each $\\frac{1}{4}$ of the cake. How many pieces does he get?"
+          finalAnswer: "2 pieces"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "1/2"
+              divisor: "1/4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many quarters fit in one half?"
+          stepByStepGuideline:
+            - "We need to find $\\frac{1}{2} \\div \\frac{1}{4}$"
+            - "Think: How many quarters fit in one half?"
+            - "One half equals two quarters"
+            - "So 2 pieces of $\\frac{1}{4}$ fit in $\\frac{1}{2}$"
+            - "Raju gets 2 pieces"
+
+        - id: "vff-q2"
+          problemText: "Hassan has $\\frac{2}{3}$ of a pancake. He cuts it into pieces that are each $\\frac{1}{6}$ of the pancake. How many pieces does he get?"
+          finalAnswer: "4 pieces"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/3"
+              divisor: "1/6"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many sixths fit in two-thirds?"
+          stepByStepGuideline:
+            - "We need $\\frac{2}{3} \\div \\frac{1}{6}$"
+            - "Convert $\\frac{2}{3}$ to sixths: $\\frac{2}{3} = \\frac{4}{6}$"
+            - "How many $\\frac{1}{6}$ pieces fit in $\\frac{4}{6}$?"
+            - "Answer: 4 pieces"
+
+        - id: "vff-q3"
+          problemText: "Calculate: $\\frac{3}{4} \\div \\frac{1}{8}$"
+          finalAnswer: "6"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/4"
+              divisor: "1/8"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many eighths fit in three-quarters?"
+          stepByStepGuideline:
+            - "Convert $\\frac{3}{4}$ to eighths: $\\frac{3}{4} = \\frac{6}{8}$"
+            - "How many $\\frac{1}{8}$ pieces fit in $\\frac{6}{8}$?"
+            - "Answer: 6"
+
+        - id: "vff-q4"
+          problemText: "Mei has $\\frac{1}{3}$ of a pizza. She shares it so each friend gets $\\frac{1}{6}$ of the pizza. How many friends share the pizza?"
+          finalAnswer: "2 friends"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "1/3"
+              divisor: "1/6"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many sixths fit in one-third?"
+          stepByStepGuideline:
+            - "We need $\\frac{1}{3} \\div \\frac{1}{6}$"
+            - "Convert $\\frac{1}{3}$ to sixths: $\\frac{1}{3} = \\frac{2}{6}$"
+            - "How many $\\frac{1}{6}$ pieces fit in $\\frac{2}{6}$?"
+            - "Answer: 2 friends"
+
+        - id: "vff-q5"
+          problemText: "Calculate: $\\frac{5}{6} \\div \\frac{1}{12}$"
+          finalAnswer: "10"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/6"
+              divisor: "1/12"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many twelfths fit in five-sixths?"
+          stepByStepGuideline:
+            - "Convert $\\frac{5}{6}$ to twelfths: $\\frac{5}{6} = \\frac{10}{12}$"
+            - "How many $\\frac{1}{12}$ pieces fit in $\\frac{10}{12}$?"
+            - "Answer: 10"
+
+  - id: fractions-reciprocal-rule-frac-div-frac
+    nodeNumber: 8
+    title: "The Reciprocal Rule: Fraction ÷ Fraction"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-visual-model-frac-div-frac
+    descriptor:
+      section: "reciprocal-rule-frac-div-frac"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply the rule: a/b ÷ c/d = a/b × d/c"
+        - "The Golden Rule: Keep - Change - Flip"
+      contexts:
+        - "reciprocal rule"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "rff-q1"
+          avatarIntro: "The same reciprocal rule works for dividing any two fractions! Remember: Keep the first fraction, Change ÷ to ×, Flip the second fraction."
+          problemText: "Calculate: $\\frac{2}{3} \\div \\frac{2}{9}$ using the reciprocal rule."
+          finalAnswer: "$\\frac{2}{3} \\times \\frac{9}{2} = \\frac{18}{6} = 3$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/3"
+              divisor: "2/9"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Keep: $\\frac{2}{3}$"
+            - "Change: ÷ becomes ×"
+            - "Flip: $\\frac{2}{9}$ becomes $\\frac{9}{2}$"
+            - "$\\frac{2}{3} \\times \\frac{9}{2} = \\frac{18}{6} = 3$"
+
+        - id: "rff-q2"
+          problemText: "Calculate: $\\frac{4}{5} \\div \\frac{2}{3}$"
+          finalAnswer: "$\\frac{4}{5} \\times \\frac{3}{2} = \\frac{12}{10} = \\frac{6}{5} = 1\\frac{1}{5}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4/5"
+              divisor: "2/3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Keep: $\\frac{4}{5}$"
+            - "Flip: $\\frac{2}{3}$ becomes $\\frac{3}{2}$"
+            - "$\\frac{4}{5} \\times \\frac{3}{2} = \\frac{12}{10}$"
+            - "Simplify: $\\frac{12}{10} = \\frac{6}{5} = 1\\frac{1}{5}$"
+
+        - id: "rff-q3"
+          problemText: "Calculate: $\\frac{3}{4} \\div \\frac{3}{8}$"
+          finalAnswer: "$\\frac{3}{4} \\times \\frac{8}{3} = \\frac{24}{12} = 2$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/4"
+              divisor: "3/8"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Keep: $\\frac{3}{4}$"
+            - "Flip: $\\frac{3}{8}$ becomes $\\frac{8}{3}$"
+            - "$\\frac{3}{4} \\times \\frac{8}{3} = \\frac{24}{12} = 2$"
+
+        - id: "rff-q4"
+          problemText: "Jiahao had $\\frac{2}{3}$ of a pizza. He gave $\\frac{1}{3}$ of the whole pizza to each friend. How many friends did he give pizza to?"
+          finalAnswer: "$\\frac{2}{3} \\div \\frac{1}{3} = \\frac{2}{3} \\times \\frac{3}{1} = 2$ friends"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/3"
+              divisor: "1/3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many thirds fit in two-thirds?"
+          stepByStepGuideline:
+            - "We need $\\frac{2}{3} \\div \\frac{1}{3}$"
+            - "Flip: $\\frac{1}{3}$ becomes $\\frac{3}{1} = 3$"
+            - "$\\frac{2}{3} \\times 3 = \\frac{6}{3} = 2$"
+            - "Jiahao gave pizza to 2 friends"
+
+        - id: "rff-q5"
+          problemText: "Calculate: $\\frac{5}{6} \\div \\frac{5}{12}$"
+          finalAnswer: "$\\frac{5}{6} \\times \\frac{12}{5} = \\frac{60}{30} = 2$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/6"
+              divisor: "5/12"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Keep: $\\frac{5}{6}$"
+            - "Flip: $\\frac{5}{12}$ becomes $\\frac{12}{5}$"
+            - "$\\frac{5}{6} \\times \\frac{12}{5} = \\frac{60}{30} = 2$"
+
+  - id: fractions-simplifying-before-multiplying
+    nodeNumber: 9
+    title: "Simplifying Before Multiplying"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - fractions-reciprocal-rule-frac-div-frac
+    descriptor:
+      section: "simplifying-before-multiplying"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Simplify cross-diagonally before multiplying"
+        - "Reduce computation with this efficient technique"
+      contexts:
+        - "simplification"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "sbm-q1"
+          avatarIntro: "Pro tip: You can simplify BEFORE multiplying! Look for common factors between any numerator and any denominator. This makes your calculations much easier."
+          problemText: "Calculate $\\frac{4}{9} \\div \\frac{2}{3}$ by simplifying before multiplying."
+          finalAnswer: "$\\frac{2}{3}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4/9"
+              divisor: "2/3"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "First set up: $\\frac{4}{9} \\times \\frac{3}{2}$"
+            - "Simplify: 4 and 2 share factor 2 → becomes $\\frac{2}{9} \\times \\frac{3}{1}$"
+            - "Simplify: 9 and 3 share factor 3 → becomes $\\frac{2}{3} \\times \\frac{1}{1}$"
+            - "Multiply: $\\frac{2}{3}$"
+
+        - id: "sbm-q2"
+          problemText: "Calculate: $\\frac{6}{8} \\div \\frac{3}{4}$ by simplifying first."
+          finalAnswer: "1"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "6/8"
+              divisor: "3/4"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Set up: $\\frac{6}{8} \\times \\frac{4}{3}$"
+            - "Simplify: 6 and 3 share factor 3 → $\\frac{2}{8} \\times \\frac{4}{1}$"
+            - "Simplify: 8 and 4 share factor 4 → $\\frac{2}{2} \\times \\frac{1}{1}$"
+            - "Answer: 1"
+
+        - id: "sbm-q3"
+          problemText: "Calculate: $\\frac{5}{12} \\div \\frac{10}{9}$ by simplifying first."
+          finalAnswer: "$\\frac{3}{8}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/12"
+              divisor: "10/9"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Set up: $\\frac{5}{12} \\times \\frac{9}{10}$"
+            - "Simplify: 5 and 10 share factor 5 → $\\frac{1}{12} \\times \\frac{9}{2}$"
+            - "Simplify: 12 and 9 share factor 3 → $\\frac{1}{4} \\times \\frac{3}{2}$"
+            - "Multiply: $\\frac{3}{8}$"
+
+        - id: "sbm-q4"
+          problemText: "Calculate: $\\frac{8}{15} \\div \\frac{4}{5}$ by simplifying first."
+          finalAnswer: "$\\frac{2}{3}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "8/15"
+              divisor: "4/5"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Set up: $\\frac{8}{15} \\times \\frac{5}{4}$"
+            - "Simplify: 8 and 4 share factor 4 → $\\frac{2}{15} \\times \\frac{5}{1}$"
+            - "Simplify: 15 and 5 share factor 5 → $\\frac{2}{3} \\times \\frac{1}{1}$"
+            - "Answer: $\\frac{2}{3}$"
+
+        - id: "sbm-q5"
+          problemText: "Calculate: $\\frac{9}{16} \\div \\frac{3}{8}$ by simplifying first."
+          finalAnswer: "$\\frac{3}{2} = 1\\frac{1}{2}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "9/16"
+              divisor: "3/8"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Set up: $\\frac{9}{16} \\times \\frac{8}{3}$"
+            - "Simplify: 9 and 3 share factor 3 → $\\frac{3}{16} \\times \\frac{8}{1}$"
+            - "Simplify: 16 and 8 share factor 8 → $\\frac{3}{2} \\times \\frac{1}{1}$"
+            - "Answer: $\\frac{3}{2} = 1\\frac{1}{2}$"
+
+  - id: fractions-practice-frac-div-frac
+    nodeNumber: 10
+    title: "Practice: Fraction ÷ Fraction"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - fractions-simplifying-before-multiplying
+    descriptor:
+      section: "practice-frac-div-frac"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Fluent practice with fraction ÷ fraction"
+        - "Mixed problems with various difficulty levels"
+      contexts:
+        - "pure computation"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "pff-q1"
+          avatarIntro: "Let's put it all together! Use whichever method works best for you - simplify first if you can spot common factors."
+          problemText: "Calculate: $\\frac{2}{5} \\div \\frac{1}{10}$"
+          finalAnswer: "$\\frac{2}{5} \\times \\frac{10}{1} = 4$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/5"
+              divisor: "1/10"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Flip: $\\frac{1}{10}$ becomes $\\frac{10}{1} = 10$"
+            - "$\\frac{2}{5} \\times 10 = \\frac{20}{5} = 4$"
+
+        - id: "pff-q2"
+          problemText: "Salleh has $\\frac{5}{9}$ kg of popcorn. He packs them into packets, each with a mass of $\\frac{1}{9}$ kg. How many packets can he pack?"
+          finalAnswer: "5 packets"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/9"
+              divisor: "1/9"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Five-ninths divided into one-ninth packets"
+          stepByStepGuideline:
+            - "We need $\\frac{5}{9} \\div \\frac{1}{9}$"
+            - "Flip: $\\frac{1}{9}$ becomes $\\frac{9}{1} = 9$"
+            - "$\\frac{5}{9} \\times 9 = \\frac{45}{9} = 5$"
+            - "Salleh can pack 5 packets"
+
+        - id: "pff-q3"
+          problemText: "Calculate: $\\frac{7}{8} \\div \\frac{7}{12}$"
+          finalAnswer: "$\\frac{7}{8} \\times \\frac{12}{7} = \\frac{12}{8} = \\frac{3}{2} = 1\\frac{1}{2}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "7/8"
+              divisor: "7/12"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Flip: $\\frac{7}{12}$ becomes $\\frac{12}{7}$"
+            - "$\\frac{7}{8} \\times \\frac{12}{7}$"
+            - "Simplify: 7 cancels → $\\frac{1}{8} \\times \\frac{12}{1} = \\frac{12}{8}$"
+            - "Simplify: $\\frac{12}{8} = \\frac{3}{2} = 1\\frac{1}{2}$"
+
+        - id: "pff-q4"
+          problemText: "Calculate: $\\frac{3}{5} \\div \\frac{9}{10}$"
+          finalAnswer: "$\\frac{3}{5} \\times \\frac{10}{9} = \\frac{30}{45} = \\frac{2}{3}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/5"
+              divisor: "9/10"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Flip: $\\frac{9}{10}$ becomes $\\frac{10}{9}$"
+            - "$\\frac{3}{5} \\times \\frac{10}{9}$"
+            - "Simplify first: 10 and 5 share 5, 3 and 9 share 3"
+            - "$\\frac{1}{1} \\times \\frac{2}{3} = \\frac{2}{3}$"
+
+        - id: "pff-q5"
+          problemText: "A jug contains $\\frac{2}{5}$ litre of orange juice. Audrey pours the juice into glasses. Each glass holds $\\frac{1}{10}$ litre. How many glasses can she fill?"
+          finalAnswer: "$\\frac{2}{5} \\div \\frac{1}{10} = 4$ glasses"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/5"
+              divisor: "1/10"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Two-fifths litre divided into one-tenth litre glasses"
+          stepByStepGuideline:
+            - "We need $\\frac{2}{5} \\div \\frac{1}{10}$"
+            - "Flip: $\\frac{1}{10}$ becomes 10"
+            - "$\\frac{2}{5} \\times 10 = \\frac{20}{5} = 4$"
+            - "Audrey can fill 4 glasses"
+
+        - id: "pff-q6"
+          problemText: "Calculate: $\\frac{4}{7} \\div \\frac{8}{21}$"
+          finalAnswer: "$\\frac{4}{7} \\times \\frac{21}{8} = \\frac{84}{56} = \\frac{3}{2} = 1\\frac{1}{2}$"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4/7"
+              divisor: "8/21"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+          stepByStepGuideline:
+            - "Flip: $\\frac{8}{21}$ becomes $\\frac{21}{8}$"
+            - "Simplify: 4 and 8 share 4 → $\\frac{1}{7} \\times \\frac{21}{2}$"
+            - "Simplify: 21 and 7 share 7 → $\\frac{1}{1} \\times \\frac{3}{2}$"
+            - "Answer: $\\frac{3}{2} = 1\\frac{1}{2}$"
+
+  # ============================================
+  # SUBTOPIC 4: Word Problems
+  # ============================================
+
+  - id: fractions-single-step-word-problems
+    nodeNumber: 11
+    title: "Single-Step Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - fractions-practice-frac-div-frac
+    descriptor:
+      section: "single-step-word-problems"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Identify when to use fraction division"
+        - "Set up and solve single-step word problems"
+      contexts:
+        - "sharing/distribution"
+        - "cutting/portioning"
+        - "filling containers"
+      preWrittenQuestions:
+        - id: "swp-q1"
+          avatarIntro: "Word problems help us apply fraction division to real life! Look for keywords like 'shared equally', 'cut into pieces', or 'how many portions'."
+          problemText: "A baker has $\\frac{3}{4}$ kg of sugar. She uses $\\frac{1}{8}$ kg of sugar for each batch of cookies. How many batches of cookies can she make?"
+          finalAnswer: "$\\frac{3}{4} \\div \\frac{1}{8} = 6$ batches"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/4"
+              divisor: "1/8"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "How many 1/8 kg portions fit in 3/4 kg?"
+          stepByStepGuideline:
+            - "We need to divide the total sugar by the amount per batch"
+            - "$\\frac{3}{4} \\div \\frac{1}{8} = \\frac{3}{4} \\times 8$"
+            - "$= \\frac{24}{4} = 6$"
+            - "She can make 6 batches of cookies"
+
+        - id: "swp-q2"
+          problemText: "Ramli took $\\frac{1}{12}$ hour to complete a puzzle. How many such puzzles did he complete in $\\frac{3}{4}$ hour?"
+          finalAnswer: "$\\frac{3}{4} \\div \\frac{1}{12} = 9$ puzzles"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "3/4"
+              divisor: "1/12"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Ramli completing puzzles"
+          stepByStepGuideline:
+            - "Total time ÷ time per puzzle = number of puzzles"
+            - "$\\frac{3}{4} \\div \\frac{1}{12} = \\frac{3}{4} \\times 12$"
+            - "$= \\frac{36}{4} = 9$"
+            - "Ramli completed 9 puzzles"
+
+        - id: "swp-q3"
+          problemText: "A ribbon is $\\frac{5}{6}$ m long. It is cut into pieces that are each $\\frac{1}{12}$ m long. How many pieces are there?"
+          finalAnswer: "$\\frac{5}{6} \\div \\frac{1}{12} = 10$ pieces"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "5/6"
+              divisor: "1/12"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Five-sixths metre cut into one-twelfth metre pieces"
+          stepByStepGuideline:
+            - "Total length ÷ length per piece = number of pieces"
+            - "$\\frac{5}{6} \\div \\frac{1}{12} = \\frac{5}{6} \\times 12$"
+            - "$= \\frac{60}{6} = 10$"
+            - "There are 10 pieces"
+
+        - id: "swp-q4"
+          problemText: "A tank contains $\\frac{4}{5}$ litre of water. Jenny pours the water into bottles. Each bottle holds $\\frac{2}{15}$ litre. How many bottles can she fill?"
+          finalAnswer: "$\\frac{4}{5} \\div \\frac{2}{15} = 6$ bottles"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "4/5"
+              divisor: "2/15"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Filling bottles from a tank"
+          stepByStepGuideline:
+            - "$\\frac{4}{5} \\div \\frac{2}{15} = \\frac{4}{5} \\times \\frac{15}{2}$"
+            - "Simplify: 4 and 2 share 2, 15 and 5 share 5"
+            - "$= \\frac{2}{1} \\times \\frac{3}{1} = 6$"
+            - "She can fill 6 bottles"
+
+        - id: "swp-q5"
+          problemText: "Wei Ming has $\\frac{2}{3}$ kg of flour. He uses $\\frac{1}{6}$ kg to make each loaf of bread. How many loaves can he make?"
+          finalAnswer: "$\\frac{2}{3} \\div \\frac{1}{6} = 4$ loaves"
+          solutionMathTool:
+            toolName: fractionDivision
+            parameters:
+              dividend: "2/3"
+              divisor: "1/6"
+              showReciprocal: true
+              showSteps: true
+              showResult: true
+              caption: "Making loaves from flour"
+          stepByStepGuideline:
+            - "$\\frac{2}{3} \\div \\frac{1}{6} = \\frac{2}{3} \\times 6$"
+            - "$= \\frac{12}{3} = 4$"
+            - "He can make 4 loaves"
+
+  - id: fractions-multi-step-word-problems
+    nodeNumber: 12
+    title: "Multi-Step Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - fractions-single-step-word-problems
+    descriptor:
+      section: "multi-step-word-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve 2-3 step word problems"
+        - "Use bar models to visualize complex problems"
+      contexts:
+        - "multi-step problems"
+        - "remainder problems"
+      preWrittenQuestions:
+        - id: "mwp-q1"
+          avatarIntro: "Multi-step problems require us to work step by step. Draw a bar model to help visualize the problem!"
+          problemText: "There are $1\\frac{3}{4}$ litres of juice in Jug A and $2\\frac{1}{4}$ litres of juice in Jug B.\n(a) How many litres of juice are there altogether?\n(b) John fills bottles that each hold $\\frac{4}{5}$ litre. How many bottles can he fill?"
+          finalAnswer: "(a) 4 litres\n(b) 5 bottles"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Juice in Two Jugs"
+              bars:
+                - label: "Jug A"
+                  segments:
+                    - value: "1 3/4 L"
+                      units: 7
+                  totalLabel: "1¾ litres"
+                - label: "Jug B"
+                  segments:
+                    - value: "2 1/4 L"
+                      units: 9
+                  totalLabel: "2¼ litres"
+              caption: "Total juice from both jugs"
+          stepByStepGuideline:
+            - "Part (a): Add the juice from both jugs"
+            - "$1\\frac{3}{4} + 2\\frac{1}{4} = 3\\frac{4}{4} = 4$ litres"
+            - "Part (b): Divide total by bottle capacity"
+            - "$4 \\div \\frac{4}{5} = 4 \\times \\frac{5}{4} = 5$"
+            - "John can fill 5 bottles"
+
+        - id: "mwp-q2"
+          problemText: "Julie, Tom, and Ben shared a pizza. Julie ate $\\frac{1}{4}$ of the pizza. Tom and Ben shared the rest equally.\n(a) What fraction of the pizza did Tom and Ben share?\n(b) What fraction of the pizza did Tom eat?"
+          finalAnswer: "(a) $\\frac{3}{4}$\n(b) $\\frac{3}{8}$"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Pizza Sharing"
+              bars:
+                - label: "Pizza"
+                  segments:
+                    - value: "Julie"
+                      units: 1
+                      highlight: true
+                    - value: "Tom & Ben"
+                      units: 3
+                  totalLabel: "1 whole pizza"
+              showUnitDividers: true
+              caption: "Pizza divided into 4 equal parts"
+          stepByStepGuideline:
+            - "Part (a): Find the remainder after Julie"
+            - "Remainder = $1 - \\frac{1}{4} = \\frac{3}{4}$"
+            - "Part (b): Tom's share = remainder ÷ 2"
+            - "$\\frac{3}{4} \\div 2 = \\frac{3}{4} \\times \\frac{1}{2} = \\frac{3}{8}$"
+            - "Tom ate $\\frac{3}{8}$ of the pizza"
+
+        - id: "mwp-q3"
+          problemText: "Peter spent $\\frac{2}{5}$ of his money on a pair of pants and $\\frac{2}{3}$ of the remainder on 6 T-shirts. What fraction of his money did Peter spend on each T-shirt?"
+          finalAnswer: "$\\frac{1}{15}$"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Peter's Money"
+              bars:
+                - label: "Money"
+                  segments:
+                    - value: "Pants"
+                      units: 2
+                      highlight: true
+                    - value: "T-shirts"
+                      units: 2
+                    - value: "Left"
+                      units: 1
+                  totalLabel: "All money (5 units)"
+              showUnitDividers: true
+              caption: "Peter's spending"
+          stepByStepGuideline:
+            - "Step 1: Find remainder after pants"
+            - "Remainder = $1 - \\frac{2}{5} = \\frac{3}{5}$"
+            - "Step 2: Find fraction spent on T-shirts"
+            - "$\\frac{2}{3} \\times \\frac{3}{5} = \\frac{6}{15} = \\frac{2}{5}$"
+            - "Step 3: Find fraction per T-shirt"
+            - "$\\frac{2}{5} \\div 6 = \\frac{2}{5} \\times \\frac{1}{6} = \\frac{2}{30} = \\frac{1}{15}$"
+
+        - id: "mwp-q4"
+          problemText: "$\\frac{3}{4}$ of a class are girls. $\\frac{1}{3}$ of the girls wear glasses. If 6 girls wear glasses, how many students are in the class?"
+          finalAnswer: "24 students"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Students in Class"
+              bars:
+                - label: "Class"
+                  segments:
+                    - value: "Girls"
+                      units: 3
+                    - value: "Boys"
+                      units: 1
+                  totalLabel: "Total students"
+              showUnitDividers: true
+              caption: "Class composition"
+          stepByStepGuideline:
+            - "Step 1: Find fraction of class wearing glasses"
+            - "Girls wearing glasses = $\\frac{1}{3} \\times \\frac{3}{4} = \\frac{1}{4}$ of class"
+            - "Step 2: If $\\frac{1}{4}$ of class = 6 students"
+            - "Total class = $6 \\div \\frac{1}{4} = 6 \\times 4 = 24$"
+            - "There are 24 students in the class"
+
+        - id: "mwp-q5"
+          problemText: "Ahmad used $\\frac{2}{5}$ of his savings to buy a book and $\\frac{1}{4}$ of the remainder to buy a pen. If he had \\$45 left, how much did he have at first?"
+          finalAnswer: "\\$100"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Ahmad's Savings"
+              bars:
+                - label: "Savings"
+                  segments:
+                    - value: "Book"
+                      units: 8
+                      highlight: true
+                    - value: "Pen"
+                      units: 3
+                    - value: "Left"
+                      units: 9
+                  totalLabel: "Total savings"
+              showUnitDividers: true
+              caption: "Ahmad's spending"
+          stepByStepGuideline:
+            - "Step 1: Remainder after book = $1 - \\frac{2}{5} = \\frac{3}{5}$"
+            - "Step 2: Fraction left after pen = $\\frac{3}{4}$ of $\\frac{3}{5} = \\frac{9}{20}$"
+            - "Step 3: If $\\frac{9}{20}$ of savings = \\$45"
+            - "Total savings = $45 \\div \\frac{9}{20} = 45 \\times \\frac{20}{9} = \\$100$"
+
+  - id: fractions-challenging-word-problems
+    nodeNumber: 13
+    title: "Challenging Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - fractions-multi-step-word-problems
+    descriptor:
+      section: "challenging-word-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve complex multi-step problems"
+        - "Handle 'remainder' and 'fraction of the rest' scenarios"
+      contexts:
+        - "exam-style problems"
+        - "challenging scenarios"
+      preWrittenQuestions:
+        - id: "cwp-q1"
+          avatarIntro: "These are challenging problems that combine everything we've learned. Take your time and work through each step carefully!"
+          problemText: "There are some blue and green paper clips in a container. $\\frac{2}{3}$ of the paper clips are blue and the rest are green. The blue clips are packed into boxes with $\\frac{1}{12}$ of the blue clips in each box. The green clips are packed with $\\frac{1}{9}$ of the green clips in each box. How many boxes are needed in total?"
+          finalAnswer: "11 boxes"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Paper Clips"
+              bars:
+                - label: "Clips"
+                  segments:
+                    - value: "Blue"
+                      units: 2
+                    - value: "Green"
+                      units: 1
+                  totalLabel: "All clips"
+              showUnitDividers: true
+              caption: "Blue and green paper clips"
+          stepByStepGuideline:
+            - "Step 1: Boxes for blue clips"
+            - "$\\frac{2}{3} \\div \\frac{1}{12} = \\frac{2}{3} \\times 12 = 8$ boxes"
+            - "Step 2: Green clips = $1 - \\frac{2}{3} = \\frac{1}{3}$"
+            - "Step 3: Boxes for green clips"
+            - "$\\frac{1}{3} \\div \\frac{1}{9} = \\frac{1}{3} \\times 9 = 3$ boxes"
+            - "Total boxes = 8 + 3 = 11 boxes"
+
+        - id: "cwp-q2"
+          problemText: "Mrs Lim had some money. She spent $\\frac{1}{4}$ of it on groceries and $\\frac{2}{5}$ of the remainder on clothes. She had \\$180 left. How much money did she have at first?"
+          finalAnswer: "\\$400"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Mrs Lim's Money"
+              bars:
+                - label: "Money"
+                  segments:
+                    - value: "Groceries"
+                      units: 5
+                      highlight: true
+                    - value: "Clothes"
+                      units: 6
+                    - value: "Left"
+                      units: 9
+                  totalLabel: "Total money"
+              showUnitDividers: true
+              caption: "Mrs Lim's spending"
+          stepByStepGuideline:
+            - "Step 1: Remainder after groceries = $1 - \\frac{1}{4} = \\frac{3}{4}$"
+            - "Step 2: Spent on clothes = $\\frac{2}{5} \\times \\frac{3}{4} = \\frac{6}{20} = \\frac{3}{10}$"
+            - "Step 3: Fraction left = $\\frac{3}{4} - \\frac{3}{10} = \\frac{15}{20} - \\frac{6}{20} = \\frac{9}{20}$"
+            - "Step 4: If $\\frac{9}{20}$ = \\$180"
+            - "Total = $180 \\div \\frac{9}{20} = 180 \\times \\frac{20}{9} = \\$400$"
+
+        - id: "cwp-q3"
+          problemText: "A tank is $\\frac{3}{4}$ full of water. After using $\\frac{2}{3}$ of the water, there are 15 litres left. What is the capacity of the tank?"
+          finalAnswer: "60 litres"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Water Tank"
+              bars:
+                - label: "Tank"
+                  segments:
+                    - value: "Water used"
+                      units: 6
+                      highlight: true
+                    - value: "Water left"
+                      units: 3
+                    - value: "Empty"
+                      units: 3
+                  totalLabel: "Full tank (12 units)"
+              showUnitDividers: true
+              caption: "Tank water levels"
+          stepByStepGuideline:
+            - "Step 1: Fraction of tank water remaining"
+            - "Used $\\frac{2}{3}$ of $\\frac{3}{4}$ tank = $\\frac{2}{4} = \\frac{1}{2}$ tank"
+            - "Step 2: Water left = $\\frac{3}{4} - \\frac{1}{2} = \\frac{3}{4} - \\frac{2}{4} = \\frac{1}{4}$ tank"
+            - "Step 3: If $\\frac{1}{4}$ tank = 15 litres"
+            - "Full tank = $15 \\div \\frac{1}{4} = 60$ litres"
+
+        - id: "cwp-q4"
+          problemText: "A farmer has chickens and ducks. $\\frac{5}{8}$ of the birds are chickens. If there are 42 more chickens than ducks, how many birds are there altogether?"
+          finalAnswer: "168 birds"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Chickens and Ducks"
+              bars:
+                - label: "Birds"
+                  segments:
+                    - value: "Chickens"
+                      units: 5
+                    - value: "Ducks"
+                      units: 3
+                  totalLabel: "All birds (8 units)"
+              showUnitDividers: true
+              caption: "Chickens and ducks on the farm"
+          stepByStepGuideline:
+            - "Step 1: Fraction of ducks = $1 - \\frac{5}{8} = \\frac{3}{8}$"
+            - "Step 2: Difference = $\\frac{5}{8} - \\frac{3}{8} = \\frac{2}{8} = \\frac{1}{4}$"
+            - "Step 3: If $\\frac{1}{4}$ of birds = 42"
+            - "Total birds = $42 \\div \\frac{1}{4} = 42 \\times 4 = 168$"
+
+        - id: "cwp-q5"
+          problemText: "Ali had some stickers. He gave $\\frac{1}{3}$ of them to Ben and $\\frac{2}{5}$ of the remainder to Chen. He then had 48 stickers left. How many stickers did Ali have at first?"
+          finalAnswer: "120 stickers"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Ali's Stickers"
+              bars:
+                - label: "Stickers"
+                  segments:
+                    - value: "Ben"
+                      units: 5
+                      highlight: true
+                    - value: "Chen"
+                      units: 4
+                    - value: "Left"
+                      units: 6
+                  totalLabel: "Total stickers"
+              showUnitDividers: true
+              caption: "Ali sharing stickers"
+          stepByStepGuideline:
+            - "Step 1: Remainder after Ben = $1 - \\frac{1}{3} = \\frac{2}{3}$"
+            - "Step 2: Given to Chen = $\\frac{2}{5} \\times \\frac{2}{3} = \\frac{4}{15}$"
+            - "Step 3: Left over = $\\frac{2}{3} - \\frac{4}{15} = \\frac{10}{15} - \\frac{4}{15} = \\frac{6}{15} = \\frac{2}{5}$"
+            - "Step 4: If $\\frac{2}{5}$ = 48 stickers"
+            - "Total = $48 \\div \\frac{2}{5} = 48 \\times \\frac{5}{2} = 120$ stickers"

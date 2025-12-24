@@ -122,6 +122,16 @@ const QuestionPreviewCard: React.FC<QuestionPreviewCardProps> = ({
 
           {solutionExpanded && (
             <div className="mt-3 p-4 bg-gray-50 rounded border border-gray-200">
+              {/* Solution Math Tool - shown only when solution is expanded */}
+              {question.solutionMathTool && (
+                <div className="mb-4">
+                  <h5 className="text-sm font-semibold text-gray-600 mb-2">Working Visualization:</h5>
+                  <MathToolRenderer
+                    toolName={question.solutionMathTool.toolName}
+                    parameters={question.solutionMathTool.parameters}
+                  />
+                </div>
+              )}
               <ol className="list-decimal list-inside space-y-2">
                 {question.stepByStepGuideline.map((step, index) => (
                   <li key={index} className="text-gray-700">
