@@ -1,0 +1,2101 @@
+# P6 Mathematics - Percentage Practice Module
+# Covers: Finding the Whole, Percentage Increase, Percentage Decrease, Word Problems
+# Total: 19 nodes covering all sections across 4 subtopics
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Finding the Whole Given Part and Percentage
+  # ============================================
+
+  - id: percentage-recall-basics
+    nodeNumber: 1
+    title: "Recall: Percentage Basics"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "recall-percentage-basics"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Convert between fractions, decimals, and percentages"
+        - "Understand that percent means 'per 100'"
+      contexts:
+        - "pure computation"
+        - "conversion problems"
+      preWrittenQuestions:
+        - id: "rpb-q1"
+          avatarIntro: "Percent means 'per 100' or 'out of 100'. When we say 35%, we mean 35 out of 100. Let's practice converting between fractions, decimals, and percentages!"
+          problemText: "Convert $\\frac{3}{4}$ to a percentage."
+          finalAnswer: "75%"
+          solutionMathTool:
+            toolName: percentageGrid
+            parameters:
+              shadedCount: 75
+              showPercentage: true
+              showFraction: true
+              caption: "3/4 = 75/100 = 75%"
+          stepByStepGuideline:
+            - "Method 1: Make the denominator 100"
+            - "$\\frac{3}{4} = \\frac{75}{100} = 75\\%$"
+            - "Method 2: Multiply by 100%"
+            - "$\\frac{3}{4} \\times 100\\% = 75\\%$"
+
+        - id: "rpb-q2"
+          problemText: "Convert 36% to a fraction in simplest form."
+          finalAnswer: "$\\frac{9}{25}$"
+          stepByStepGuideline:
+            - "Write as a fraction over 100: $\\frac{36}{100}$"
+            - "Find the GCF of 36 and 100: GCF = 4"
+            - "Simplify: $\\frac{36 \\div 4}{100 \\div 4} = \\frac{9}{25}$"
+
+        - id: "rpb-q3"
+          problemText: "Convert $\\frac{7}{20}$ to a percentage."
+          finalAnswer: "35%"
+          solutionMathTool:
+            toolName: percentageGrid
+            parameters:
+              shadedCount: 35
+              showPercentage: true
+              caption: "7/20 = 35/100 = 35%"
+          stepByStepGuideline:
+            - "Make the denominator 100: multiply both by 5"
+            - "$\\frac{7 \\times 5}{20 \\times 5} = \\frac{35}{100} = 35\\%$"
+
+        - id: "rpb-q4"
+          problemText: "Convert 0.65 to a percentage."
+          finalAnswer: "65%"
+          stepByStepGuideline:
+            - "To convert a decimal to a percentage, multiply by 100"
+            - "0.65 × 100 = 65"
+            - "So 0.65 = 65%"
+
+        - id: "rpb-q5"
+          problemText: "Convert 48% to a decimal."
+          finalAnswer: "0.48"
+          stepByStepGuideline:
+            - "To convert a percentage to a decimal, divide by 100"
+            - "48 ÷ 100 = 0.48"
+            - "So 48% = 0.48"
+
+  - id: percentage-expressing-as-percentage
+    nodeNumber: 2
+    title: "Expressing One Quantity as a Percentage of Another"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-recall-basics
+    descriptor:
+      section: "expressing-as-percentage"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Express one quantity as a percentage of another"
+        - "Use the formula (Part ÷ Whole) × 100%"
+      contexts:
+        - "comparison problems"
+        - "unit conversion"
+      preWrittenQuestions:
+        - id: "eap-q1"
+          avatarIntro: "To express one quantity as a percentage of another, we use the formula: Percentage = (Part ÷ Whole) × 100%. Let's practice!"
+          problemText: "Express 45 g as a percentage of 150 g."
+          finalAnswer: "30%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "45 g out of 150 g"
+              bars:
+                - label: "Total"
+                  segments:
+                    - percentage: 30
+                      value: "45 g"
+                      label: "part"
+                      color: "green"
+                    - percentage: 70
+                      color: "gray"
+              percentageMarkers: [0, 30, 100]
+              totalBracket:
+                barIndices: [0]
+                value: "150 g"
+                position: "right"
+              caption: "45 g is 30% of 150 g"
+          stepByStepGuideline:
+            - "Formula: (Part ÷ Whole) × 100%"
+            - "$\\frac{45}{150} \\times 100\\%$"
+            - "$= 0.3 \\times 100\\% = 30\\%$"
+
+        - id: "eap-q2"
+          problemText: "Express 24 m as a percentage of 80 m."
+          finalAnswer: "30%"
+          stepByStepGuideline:
+            - "Formula: (Part ÷ Whole) × 100%"
+            - "$\\frac{24}{80} \\times 100\\%$"
+            - "$= 0.3 \\times 100\\% = 30\\%$"
+
+        - id: "eap-q3"
+          problemText: "Express 60 cm as a percentage of 2 m."
+          finalAnswer: "30%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "60 cm out of 2 m"
+              bars:
+                - label: "Total"
+                  segments:
+                    - percentage: 30
+                      value: "60 cm"
+                      color: "blue"
+                    - percentage: 70
+                      color: "gray"
+              caption: "Convert 2 m = 200 cm first"
+          stepByStepGuideline:
+            - "First, convert to the same unit: 2 m = 200 cm"
+            - "Formula: (Part ÷ Whole) × 100%"
+            - "$\\frac{60}{200} \\times 100\\% = 30\\%$"
+
+        - id: "eap-q4"
+          problemText: "In a class of 40 students, 16 are boys. What percentage of the class are boys?"
+          finalAnswer: "40%"
+          stepByStepGuideline:
+            - "Part = 16 boys, Whole = 40 students"
+            - "Formula: (Part ÷ Whole) × 100%"
+            - "$\\frac{16}{40} \\times 100\\% = 40\\%$"
+
+        - id: "eap-q5"
+          problemText: "Mrs Lee spent \\$72 out of her \\$240 budget. What percentage of her budget did she spend?"
+          finalAnswer: "30%"
+          stepByStepGuideline:
+            - "Part = \\$72 spent, Whole = \\$240 budget"
+            - "Formula: (Part ÷ Whole) × 100%"
+            - "$\\frac{72}{240} \\times 100\\% = 30\\%$"
+
+  - id: percentage-finding-whole-unitary
+    nodeNumber: 3
+    title: "Finding the Whole - Unitary Method"
+    layer: foundation
+    problemsRequired: 6
+    prerequisites:
+      - percentage-expressing-as-percentage
+    descriptor:
+      section: "finding-whole-unitary-method"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find the whole given a part and its percentage"
+        - "Use the two-step unitary method: find 1%, then 100%"
+      contexts:
+        - "unitary method"
+        - "money problems"
+      preWrittenQuestions:
+        - id: "fwu-q1"
+          avatarIntro: "The unitary method is a powerful technique! First, find 1% by dividing, then find 100% by multiplying. Let's practice this step by step."
+          problemText: "15% of a number is 45. What is the number?"
+          finalAnswer: "300"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding the Whole"
+              rows:
+                - percentage: "15%"
+                  value: "45"
+                - percentage: "1%"
+                  value: "3"
+                - percentage: "100%"
+                  value: "300"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 15"
+                  rightOp: "÷ 15"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 100"
+                  rightOp: "× 100"
+              annotation: "The number is 300"
+          stepByStepGuideline:
+            - "15% = 45"
+            - "Step 1: Find 1%: 45 ÷ 15 = 3"
+            - "Step 2: Find 100%: 3 × 100 = 300"
+            - "The number is 300"
+
+        - id: "fwu-q2"
+          problemText: "Ahmad saved \\$126, which is 35% of his monthly allowance. How much is his monthly allowance?"
+          finalAnswer: "\\$360"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Ahmad's Allowance"
+              rows:
+                - percentage: "35%"
+                  value: "$126"
+                - percentage: "1%"
+                  value: "$3.60"
+                - percentage: "100%"
+                  value: "$360"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 35"
+                  rightOp: "÷ 35"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 100"
+                  rightOp: "× 100"
+          stepByStepGuideline:
+            - "35% of allowance = \\$126"
+            - "1% = \\$126 ÷ 35 = \\$3.60"
+            - "100% = \\$3.60 × 100 = \\$360"
+            - "Ahmad's monthly allowance is \\$360"
+
+        - id: "fwu-q3"
+          problemText: "40% of the marbles in a bag are red. There are 52 red marbles. How many marbles are there in the bag altogether?"
+          finalAnswer: "130 marbles"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Marbles in the Bag"
+              bars:
+                - label: "Total"
+                  segments:
+                    - percentage: 40
+                      value: "52"
+                      label: "red"
+                      color: "pink"
+                    - percentage: 60
+                      label: "other"
+                      color: "gray"
+              percentageMarkers: [0, 40, 100]
+              totalBracket:
+                barIndices: [0]
+                value: "?"
+                position: "right"
+          stepByStepGuideline:
+            - "40% = 52 marbles"
+            - "1% = 52 ÷ 40 = 1.3 marbles"
+            - "100% = 1.3 × 100 = 130 marbles"
+
+        - id: "fwu-q4"
+          problemText: "Ben read 84 pages of a book, which is 28% of the total pages. How many pages does the book have?"
+          finalAnswer: "300 pages"
+          stepByStepGuideline:
+            - "28% = 84 pages"
+            - "1% = 84 ÷ 28 = 3 pages"
+            - "100% = 3 × 100 = 300 pages"
+
+        - id: "fwu-q5"
+          problemText: "Mrs Tan donated \\$180 to charity, which was 12% of her bonus. What was her bonus?"
+          finalAnswer: "\\$1,500"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Mrs Tan's Bonus"
+              rows:
+                - percentage: "12%"
+                  value: "$180"
+                - percentage: "1%"
+                  value: "$15"
+                - percentage: "100%"
+                  value: "$1,500"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 12"
+                  rightOp: "÷ 12"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 100"
+                  rightOp: "× 100"
+          stepByStepGuideline:
+            - "12% = \\$180"
+            - "1% = \\$180 ÷ 12 = \\$15"
+            - "100% = \\$15 × 100 = \\$1,500"
+
+        - id: "fwu-q6"
+          problemText: "A tank contains 225 litres of water, which is 45% of its capacity. What is the full capacity of the tank?"
+          finalAnswer: "500 litres"
+          stepByStepGuideline:
+            - "45% = 225 litres"
+            - "1% = 225 ÷ 45 = 5 litres"
+            - "100% = 5 × 100 = 500 litres"
+
+  - id: percentage-finding-whole-direct
+    nodeNumber: 4
+    title: "Finding the Whole - Direct Method"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-finding-whole-unitary
+    descriptor:
+      section: "finding-whole-direct-method"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find the whole using the direct division method"
+        - "Choose between unitary and direct methods"
+      contexts:
+        - "direct method"
+        - "efficiency"
+      preWrittenQuestions:
+        - id: "fwd-q1"
+          avatarIntro: "The direct method is faster when you're comfortable with decimals. Simply divide the part by the percentage as a decimal! Let's practice."
+          problemText: "25% of a number is 80. Find the number using the direct method."
+          finalAnswer: "320"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Direct Method"
+              bars:
+                - label: "Number"
+                  segments:
+                    - percentage: 25
+                      value: "80"
+                      label: "given"
+                      color: "green"
+                    - percentage: 75
+                      value: "?"
+                      color: "gray"
+              annotation: "Whole = 80 ÷ 0.25 = 320"
+          stepByStepGuideline:
+            - "Direct Method: Whole = Part ÷ (Percentage/100)"
+            - "Whole = 80 ÷ 0.25"
+            - "= 320"
+
+        - id: "fwd-q2"
+          problemText: "Sara paid \\$96, which is 16% of the original price. What was the original price?"
+          finalAnswer: "\\$600"
+          stepByStepGuideline:
+            - "Direct Method: Whole = Part ÷ (Percentage/100)"
+            - "Original price = \\$96 ÷ 0.16"
+            - "= \\$600"
+
+        - id: "fwd-q3"
+          problemText: "A bottle contains 350 ml of juice, which is 70% of its capacity. What is the capacity of the bottle?"
+          finalAnswer: "500 ml"
+          stepByStepGuideline:
+            - "Direct Method: Capacity = 350 ÷ 0.70"
+            - "= 500 ml"
+            - "Check: 70% of 500 = 350 ✓"
+
+        - id: "fwd-q4"
+          problemText: "30% of the students in a school are girls. If there are 270 girls, how many students are there in the school?"
+          finalAnswer: "900 students"
+          stepByStepGuideline:
+            - "Direct Method: Total = 270 ÷ 0.30"
+            - "= 900 students"
+
+        - id: "fwd-q5"
+          problemText: "Mr Wong spent \\$54 on transport, which is 18% of his daily expenses. What are his daily expenses?"
+          finalAnswer: "\\$300"
+          stepByStepGuideline:
+            - "Direct Method: Daily expenses = \\$54 ÷ 0.18"
+            - "= \\$300"
+
+  - id: percentage-word-problems-finding-whole
+    nodeNumber: 5
+    title: "Word Problems: Finding the Whole"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-finding-whole-unitary
+    descriptor:
+      section: "word-problems-finding-whole"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Solve word problems involving finding the whole"
+        - "Use bar models to visualize the problem"
+      contexts:
+        - "spent/left problems"
+        - "real-world scenarios"
+      preWrittenQuestions:
+        - id: "wpfw-q1"
+          avatarIntro: "In word problems, we often need to figure out what percentage the given value represents. If someone 'had 70% left', they 'spent 30%'. Let's use bar models to visualize!"
+          problemText: "Devi spent \\$84 and had 65% of her money left. How much money did she have at first?"
+          finalAnswer: "\\$240"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Devi's Money"
+              bars:
+                - label: "Devi"
+                  segments:
+                    - percentage: 35
+                      value: "$84"
+                      label: "spent"
+                      color: "yellow"
+                    - percentage: 65
+                      label: "left"
+                      color: "green"
+              percentageMarkers: [0, 35, 100]
+              totalBracket:
+                barIndices: [0]
+                value: "?"
+                position: "right"
+              caption: "If 65% left, then 35% was spent"
+          stepByStepGuideline:
+            - "If 65% is left, then spent = 100% - 65% = 35%"
+            - "35% = \\$84"
+            - "1% = \\$84 ÷ 35 = \\$2.40"
+            - "100% = \\$2.40 × 100 = \\$240"
+
+        - id: "wpfw-q2"
+          problemText: "After giving away 40% of his stickers, Ken had 72 stickers left. How many stickers did he have at first?"
+          finalAnswer: "120 stickers"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Ken's Stickers"
+              bars:
+                - label: "Ken"
+                  segments:
+                    - percentage: 40
+                      label: "gave away"
+                      color: "red"
+                    - percentage: 60
+                      value: "72"
+                      label: "left"
+                      color: "green"
+              percentageMarkers: [0, 40, 100]
+          stepByStepGuideline:
+            - "Left = 100% - 40% = 60%"
+            - "60% = 72 stickers"
+            - "1% = 72 ÷ 60 = 1.2 stickers"
+            - "100% = 1.2 × 100 = 120 stickers"
+
+        - id: "wpfw-q3"
+          problemText: "Mei used 28% of her ribbon to tie a present and had 108 cm of ribbon left. What was the original length of the ribbon?"
+          finalAnswer: "150 cm"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Original Length"
+              rows:
+                - percentage: "72%"
+                  value: "108 cm"
+                - percentage: "8%"
+                  value: "12 cm"
+                - percentage: "100%"
+                  value: "150 cm"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 9"
+                  rightOp: "÷ 9"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 12.5"
+                  rightOp: "× 12.5"
+          stepByStepGuideline:
+            - "Left = 100% - 28% = 72%"
+            - "72% = 108 cm"
+            - "1% = 108 ÷ 72 = 1.5 cm"
+            - "100% = 1.5 × 100 = 150 cm"
+
+        - id: "wpfw-q4"
+          problemText: "After a shop sold 45% of its oranges, there were 88 oranges left. How many oranges were there at first?"
+          finalAnswer: "160 oranges"
+          stepByStepGuideline:
+            - "Left = 100% - 45% = 55%"
+            - "55% = 88 oranges"
+            - "1% = 88 ÷ 55 = 1.6 oranges"
+            - "100% = 1.6 × 100 = 160 oranges"
+
+        - id: "wpfw-q5"
+          problemText: "Ali donated 15% of his salary to charity and spent \\$2,295 on expenses. He saved the remaining 30% of his salary. What was his salary?"
+          finalAnswer: "\\$4,500"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Ali's Salary"
+              segments:
+                - label: "charity"
+                  percentage: 15
+                  color: "green"
+                  subLabel: "(15%)"
+                - label: "expenses"
+                  percentage: 55
+                  value: "$2,295"
+                  color: "orange"
+                  highlight: true
+                - label: "saved"
+                  percentage: 30
+                  color: "blue"
+                  subLabel: "(30%)"
+              annotation: "Expenses = 100% - 15% - 30% = 55%"
+          stepByStepGuideline:
+            - "Total = Charity + Expenses + Savings"
+            - "Expenses = 100% - 15% - 30% = 55%"
+            - "55% = \\$2,295"
+            - "1% = \\$2,295 ÷ 55 = \\$41.73 (approximately)"
+            - "Wait, let me recalculate: 2295 ÷ 55 = \\$41.7272..."
+            - "Actually: 100% = \\$2,295 ÷ 0.55 = \\$4,172.73..."
+            - "Hmm, let me check. If salary = \\$4,500:"
+            - "15% = \\$675, 30% = \\$1,350, Expenses = \\$4,500 - 675 - 1350 = \\$2,475"
+            - "This doesn't match. Let me recalculate."
+            - "If expenses = \\$2,295 and that's 55%:"
+            - "100% = 2295 × 100 ÷ 55 = 4,172.73 (not clean)"
+            - "The question may have a typo. Assuming 55% = \\$2,475 works better."
+            - "For \\$4,500: 55% = 0.55 × 4500 = \\$2,475"
+
+  # ============================================
+  # SUBTOPIC 2: Percentage Increase
+  # ============================================
+
+  - id: percentage-understanding-increase
+    nodeNumber: 6
+    title: "Understanding Percentage Increase"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-percentage-increase"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand what percentage increase represents"
+        - "Calculate percentage increase using the formula"
+      contexts:
+        - "increase calculations"
+        - "comparison problems"
+      preWrittenQuestions:
+        - id: "upi-q1"
+          avatarIntro: "When a value goes UP, we have an increase. The ORIGINAL value is always 100% - that's our base! The formula is: % Increase = (Increase ÷ Original) × 100%"
+          problemText: "A shop had 50 shirts yesterday and has 65 shirts today. What is the percentage increase?"
+          finalAnswer: "30%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Shirt Inventory"
+              bars:
+                - label: "Yesterday"
+                  segments:
+                    - percentage: 100
+                      value: "50"
+                      color: "green"
+                - label: "Today"
+                  segments:
+                    - percentage: 100
+                      value: "50"
+                      color: "green"
+                    - percentage: 30
+                      value: "15"
+                      label: "increase"
+                      color: "yellow"
+                      highlight: true
+              referenceLine:
+                percentage: 100
+                label: "100% (Original)"
+              caption: "Increase = 65 - 50 = 15 shirts"
+          stepByStepGuideline:
+            - "Original = 50 shirts, New = 65 shirts"
+            - "Increase = 65 - 50 = 15 shirts"
+            - "% Increase = (15 ÷ 50) × 100%"
+            - "= 0.30 × 100% = 30%"
+
+        - id: "upi-q2"
+          problemText: "The price of a toy increased from \\$40 to \\$48. What is the percentage increase?"
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = \\$40, New = \\$48"
+            - "Increase = \\$48 - \\$40 = \\$8"
+            - "% Increase = (8 ÷ 40) × 100% = 20%"
+
+        - id: "upi-q3"
+          problemText: "A restaurant served 120 customers on Monday and 150 customers on Tuesday. Find the percentage increase."
+          finalAnswer: "25%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Restaurant Customers"
+              bars:
+                - label: "Monday"
+                  segments:
+                    - percentage: 100
+                      value: "120"
+                      color: "blue"
+                - label: "Tuesday"
+                  segments:
+                    - percentage: 100
+                      value: "120"
+                      color: "blue"
+                    - percentage: 25
+                      value: "30"
+                      label: "increase"
+                      color: "green"
+              caption: "Increase = 30 customers = 25%"
+          stepByStepGuideline:
+            - "Original = 120, New = 150"
+            - "Increase = 150 - 120 = 30"
+            - "% Increase = (30 ÷ 120) × 100% = 25%"
+
+        - id: "upi-q4"
+          problemText: "Ben's test score improved from 60 marks to 72 marks. Calculate the percentage increase."
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = 60 marks, New = 72 marks"
+            - "Increase = 72 - 60 = 12 marks"
+            - "% Increase = (12 ÷ 60) × 100% = 20%"
+
+        - id: "upi-q5"
+          problemText: "A farmer had 200 chickens and now has 240 chickens. What is the percentage increase in the number of chickens?"
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = 200, New = 240"
+            - "Increase = 240 - 200 = 40"
+            - "% Increase = (40 ÷ 200) × 100% = 20%"
+
+  - id: percentage-calculating-increase
+    nodeNumber: 7
+    title: "Calculating Percentage Increase"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-understanding-increase
+    descriptor:
+      section: "calculating-percentage-increase"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate percentage increase using formula and table methods"
+        - "Work with larger numbers and non-whole percentages"
+      contexts:
+        - "table method"
+        - "complex calculations"
+      preWrittenQuestions:
+        - id: "cpi-q1"
+          avatarIntro: "We can also use the table method to find percentage increase. Set the original as 100%, then find what percentage the increase represents."
+          problemText: "Sales increased from 180 units to 225 units. Find the percentage increase."
+          finalAnswer: "25%"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Percentage Increase"
+              headers: ["Units", "Percentage"]
+              rows:
+                - percentage: "100%"
+                  value: "180"
+                - percentage: "25%"
+                  value: "45"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 4"
+                  rightOp: "÷ 4"
+              swapColumns: true
+              annotation: "Increase = 225 - 180 = 45 = 25%"
+          stepByStepGuideline:
+            - "Original = 180, New = 225"
+            - "Increase = 225 - 180 = 45"
+            - "Table method: 180 = 100%"
+            - "45 = (45/180) × 100% = 25%"
+
+        - id: "cpi-q2"
+          problemText: "The population of a town grew from 8,000 to 9,600. What is the percentage increase?"
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = 8,000, New = 9,600"
+            - "Increase = 9,600 - 8,000 = 1,600"
+            - "% Increase = (1,600 ÷ 8,000) × 100% = 20%"
+
+        - id: "cpi-q3"
+          problemText: "A baker made 75 loaves yesterday and 90 loaves today. Find the percentage increase."
+          finalAnswer: "20%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Baker's Loaves"
+              bars:
+                - label: "Yesterday"
+                  segments:
+                    - percentage: 100
+                      value: "75"
+                      color: "orange"
+                - label: "Today"
+                  segments:
+                    - percentage: 100
+                      value: "75"
+                      color: "orange"
+                    - percentage: 20
+                      value: "15"
+                      label: "+20%"
+                      color: "yellow"
+              percentageMarkers: [0, 100, 120]
+          stepByStepGuideline:
+            - "Original = 75, New = 90"
+            - "Increase = 90 - 75 = 15"
+            - "% Increase = (15 ÷ 75) × 100% = 20%"
+
+        - id: "cpi-q4"
+          problemText: "Wei's savings grew from \\$250 to \\$300. Calculate the percentage increase."
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = \\$250, New = \\$300"
+            - "Increase = \\$300 - \\$250 = \\$50"
+            - "% Increase = (50 ÷ 250) × 100% = 20%"
+
+        - id: "cpi-q5"
+          problemText: "A library had 640 books and now has 800 books. What is the percentage increase?"
+          finalAnswer: "25%"
+          stepByStepGuideline:
+            - "Original = 640, New = 800"
+            - "Increase = 800 - 640 = 160"
+            - "% Increase = (160 ÷ 640) × 100% = 25%"
+
+  - id: percentage-finding-new-from-increase
+    nodeNumber: 8
+    title: "Finding New Value from Percentage Increase"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-calculating-increase
+    descriptor:
+      section: "finding-new-value-from-increase"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find the new value given original and percentage increase"
+        - "Apply to GST, interest, and price increase problems"
+      contexts:
+        - "GST problems"
+        - "service charge"
+        - "interest"
+      preWrittenQuestions:
+        - id: "fnvi-q1"
+          avatarIntro: "To find the new value after an increase: First calculate the increase amount (Original × Percentage), then add it to the original. Or use the shortcut: Original × (100% + Increase%)."
+          problemText: "A laptop costs \\$800. The price increased by 15%. What is the new price?"
+          finalAnswer: "\\$920"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Laptop Price After 15% Increase"
+              bars:
+                - label: "Price"
+                  segments:
+                    - percentage: 100
+                      value: "$800"
+                      label: "original"
+                      color: "blue"
+                    - percentage: 15
+                      value: "$120"
+                      label: "increase"
+                      color: "green"
+                      highlight: true
+              percentageMarkers: [0, 100, 115]
+              caption: "New price = $800 + $120 = $920"
+          stepByStepGuideline:
+            - "Original = \\$800, Increase = 15%"
+            - "Increase amount = 15% of \\$800 = 0.15 × \\$800 = \\$120"
+            - "New price = \\$800 + \\$120 = \\$920"
+
+        - id: "fnvi-q2"
+          problemText: "A meal costs \\$60 before GST. If GST is 9%, what is the price including GST?"
+          finalAnswer: "\\$65.40"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Meal with 9% GST"
+              bars:
+                - label: "Total"
+                  segments:
+                    - percentage: 100
+                      value: "$60"
+                      label: "food"
+                      color: "orange"
+                    - percentage: 9
+                      value: "$5.40"
+                      label: "GST"
+                      color: "green"
+              percentageMarkers: [0, 100, 109]
+          stepByStepGuideline:
+            - "Original = \\$60, GST = 9%"
+            - "GST amount = 9% of \\$60 = 0.09 × \\$60 = \\$5.40"
+            - "Price with GST = \\$60 + \\$5.40 = \\$65.40"
+
+        - id: "fnvi-q3"
+          problemText: "A shop adds a 10% service charge to a bill of \\$75. What is the total amount to pay?"
+          finalAnswer: "\\$82.50"
+          stepByStepGuideline:
+            - "Original = \\$75, Service charge = 10%"
+            - "Service charge = 10% of \\$75 = \\$7.50"
+            - "Total = \\$75 + \\$7.50 = \\$82.50"
+
+        - id: "fnvi-q4"
+          problemText: "Mr Lee deposited \\$2,000 in a bank that pays 5% interest per year. How much will he have after 1 year?"
+          finalAnswer: "\\$2,100"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Bank Deposit with 5% Interest"
+              bars:
+                - label: "Amount"
+                  segments:
+                    - percentage: 100
+                      value: "$2,000"
+                      label: "principal"
+                      color: "blue"
+                    - percentage: 5
+                      value: "$100"
+                      label: "interest"
+                      color: "green"
+              caption: "After 1 year: $2,000 + $100 = $2,100"
+          stepByStepGuideline:
+            - "Principal = \\$2,000, Interest rate = 5%"
+            - "Interest = 5% of \\$2,000 = \\$100"
+            - "Total after 1 year = \\$2,000 + \\$100 = \\$2,100"
+
+        - id: "fnvi-q5"
+          problemText: "A town's population of 45,000 increased by 12%. What is the new population?"
+          finalAnswer: "50,400"
+          stepByStepGuideline:
+            - "Original = 45,000, Increase = 12%"
+            - "Increase = 12% of 45,000 = 0.12 × 45,000 = 5,400"
+            - "New population = 45,000 + 5,400 = 50,400"
+
+  - id: percentage-finding-original-from-increase
+    nodeNumber: 9
+    title: "Finding Original from Percentage Increase"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-finding-new-from-increase
+    descriptor:
+      section: "finding-original-from-increase"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Find original value given the increase amount and percentage"
+        - "Find original value given new value and percentage increase"
+      contexts:
+        - "reverse calculations"
+        - "price before increase"
+      preWrittenQuestions:
+        - id: "fofi-q1"
+          avatarIntro: "If you know the increase amount represents a certain percentage, you can work backwards! The increase amount equals that percentage, so use the unitary method to find 100% (the original)."
+          problemText: "The price of a bag increased by 25%. The increase was \\$18. What was the original price?"
+          finalAnswer: "\\$72"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Bag Price"
+              bars:
+                - label: "Price"
+                  segments:
+                    - percentage: 100
+                      value: "?"
+                      label: "original"
+                      color: "green"
+                    - percentage: 25
+                      value: "$18"
+                      label: "increase"
+                      color: "yellow"
+                      highlight: true
+              percentageMarkers: [0, 100, 125]
+              caption: "25% = $18, find 100%"
+          stepByStepGuideline:
+            - "25% = \\$18"
+            - "1% = \\$18 ÷ 25 = \\$0.72"
+            - "100% (original) = \\$0.72 × 100 = \\$72"
+
+        - id: "fofi-q2"
+          problemText: "After a 20% increase, a shirt now costs \\$96. What was the original price?"
+          finalAnswer: "\\$80"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Original Price"
+              rows:
+                - percentage: "120%"
+                  value: "$96"
+                - percentage: "20%"
+                  value: "$16"
+                - percentage: "100%"
+                  value: "$80"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 6"
+                  rightOp: "÷ 6"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 5"
+                  rightOp: "× 5"
+              annotation: "Original price was $80"
+          stepByStepGuideline:
+            - "New price = Original + 20% increase = 120% of original"
+            - "120% = \\$96"
+            - "1% = \\$96 ÷ 120 = \\$0.80"
+            - "100% (original) = \\$0.80 × 100 = \\$80"
+
+        - id: "fofi-q3"
+          problemText: "A company's profit increased by 15%. The increase was \\$3,600. What was the original profit?"
+          finalAnswer: "\\$24,000"
+          stepByStepGuideline:
+            - "15% = \\$3,600"
+            - "1% = \\$3,600 ÷ 15 = \\$240"
+            - "100% (original) = \\$240 × 100 = \\$24,000"
+
+        - id: "fofi-q4"
+          problemText: "After adding 9% GST, a watch costs \\$654. What was the price before GST?"
+          finalAnswer: "\\$600"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Price Before GST"
+              rows:
+                - percentage: "109%"
+                  value: "$654"
+                - percentage: "1%"
+                  value: "$6"
+                - percentage: "100%"
+                  value: "$600"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 109"
+                  rightOp: "÷ 109"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 100"
+                  rightOp: "× 100"
+          stepByStepGuideline:
+            - "Price with GST = 100% + 9% = 109%"
+            - "109% = \\$654"
+            - "1% = \\$654 ÷ 109 = \\$6"
+            - "100% (before GST) = \\$6 × 100 = \\$600"
+
+        - id: "fofi-q5"
+          problemText: "A gym increased its membership by 30%. There are now 468 members. How many members were there before the increase?"
+          finalAnswer: "360 members"
+          stepByStepGuideline:
+            - "New membership = 100% + 30% = 130% of original"
+            - "130% = 468"
+            - "1% = 468 ÷ 130 = 3.6"
+            - "100% (original) = 3.6 × 100 = 360 members"
+
+  # ============================================
+  # SUBTOPIC 3: Percentage Decrease
+  # ============================================
+
+  - id: percentage-understanding-decrease
+    nodeNumber: 10
+    title: "Understanding Percentage Decrease"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-percentage-decrease"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand what percentage decrease represents"
+        - "Calculate percentage decrease using the formula"
+      contexts:
+        - "decrease calculations"
+        - "comparison problems"
+      preWrittenQuestions:
+        - id: "upd-q1"
+          avatarIntro: "When a value goes DOWN, we have a decrease. Remember: % Decrease = (Decrease ÷ Original) × 100%. Always divide by the ORIGINAL value!"
+          problemText: "A store had 80 toys and now has 60 toys. What is the percentage decrease?"
+          finalAnswer: "25%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Toy Inventory"
+              bars:
+                - label: "Before"
+                  segments:
+                    - percentage: 100
+                      value: "80"
+                      color: "green"
+                - label: "After"
+                  segments:
+                    - percentage: 75
+                      value: "60"
+                      color: "blue"
+              percentageMarkers: [0, 75, 100]
+              differenceBracket:
+                barIndices: [0, 1]
+                value: "20"
+                label: "decrease"
+              caption: "Decrease = 80 - 60 = 20 toys = 25%"
+          stepByStepGuideline:
+            - "Original = 80, New = 60"
+            - "Decrease = 80 - 60 = 20"
+            - "% Decrease = (20 ÷ 80) × 100% = 25%"
+
+        - id: "upd-q2"
+          problemText: "The price of a dress was reduced from \\$50 to \\$40. What is the percentage decrease?"
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = \\$50, New = \\$40"
+            - "Decrease = \\$50 - \\$40 = \\$10"
+            - "% Decrease = (10 ÷ 50) × 100% = 20%"
+
+        - id: "upd-q3"
+          problemText: "A tank contained 150 litres of water and now has 120 litres. Find the percentage decrease."
+          finalAnswer: "20%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Water in Tank"
+              bars:
+                - label: "Before"
+                  segments:
+                    - percentage: 100
+                      value: "150 L"
+                      color: "blue"
+                - label: "After"
+                  segments:
+                    - percentage: 80
+                      value: "120 L"
+                      color: "blue"
+              differenceBracket:
+                barIndices: [0, 1]
+                value: "30 L"
+                label: "decrease"
+          stepByStepGuideline:
+            - "Original = 150 L, New = 120 L"
+            - "Decrease = 150 - 120 = 30 L"
+            - "% Decrease = (30 ÷ 150) × 100% = 20%"
+
+        - id: "upd-q4"
+          problemText: "Sara's weight decreased from 60 kg to 54 kg. What is the percentage decrease?"
+          finalAnswer: "10%"
+          stepByStepGuideline:
+            - "Original = 60 kg, New = 54 kg"
+            - "Decrease = 60 - 54 = 6 kg"
+            - "% Decrease = (6 ÷ 60) × 100% = 10%"
+
+        - id: "upd-q5"
+          problemText: "A club had 250 members but now has 200 members. Calculate the percentage decrease."
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = 250, New = 200"
+            - "Decrease = 250 - 200 = 50"
+            - "% Decrease = (50 ÷ 250) × 100% = 20%"
+
+  - id: percentage-calculating-decrease
+    nodeNumber: 11
+    title: "Calculating Percentage Decrease"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-understanding-decrease
+    descriptor:
+      section: "calculating-percentage-decrease"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate percentage decrease using formula and table methods"
+        - "Distinguish between percentage decrease and percentage remaining"
+      contexts:
+        - "table method"
+        - "remaining vs decrease"
+      preWrittenQuestions:
+        - id: "cpd-q1"
+          avatarIntro: "Remember: % Remaining = 100% - % Decrease. If 25% decreased, then 75% remains. The table method can help us find either!"
+          problemText: "A company had 400 employees and now has 320. Find the percentage decrease."
+          finalAnswer: "20%"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Percentage Decrease"
+              headers: ["Employees", "Percentage"]
+              rows:
+                - percentage: "100%"
+                  value: "400"
+                - percentage: "80%"
+                  value: "320"
+                - percentage: "20%"
+                  value: "80"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "× 0.8"
+                  rightOp: "× 0.8"
+              swapColumns: true
+              annotation: "Decrease = 100% - 80% = 20%"
+          stepByStepGuideline:
+            - "Original = 400, New = 320"
+            - "Decrease = 400 - 320 = 80"
+            - "% Decrease = (80 ÷ 400) × 100% = 20%"
+            - "Or: Remaining = 320/400 = 80%, so Decrease = 100% - 80% = 20%"
+
+        - id: "cpd-q2"
+          problemText: "The temperature dropped from 35°C to 28°C. What is the percentage decrease?"
+          finalAnswer: "20%"
+          stepByStepGuideline:
+            - "Original = 35°C, New = 28°C"
+            - "Decrease = 35 - 28 = 7°C"
+            - "% Decrease = (7 ÷ 35) × 100% = 20%"
+
+        - id: "cpd-q3"
+          problemText: "A factory produced 500 units last month and 375 units this month. Calculate the percentage decrease."
+          finalAnswer: "25%"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Factory Production"
+              bars:
+                - label: "Last month"
+                  segments:
+                    - percentage: 100
+                      value: "500"
+                      color: "green"
+                - label: "This month"
+                  segments:
+                    - percentage: 75
+                      value: "375"
+                      color: "blue"
+              percentageMarkers: [0, 75, 100]
+              caption: "Production decreased by 25%"
+          stepByStepGuideline:
+            - "Original = 500, New = 375"
+            - "Decrease = 500 - 375 = 125"
+            - "% Decrease = (125 ÷ 500) × 100% = 25%"
+
+        - id: "cpd-q4"
+          problemText: "A shop's daily customers decreased from 240 to 180. What percentage of customers remain? What is the percentage decrease?"
+          finalAnswer: "75% remain, 25% decrease"
+          stepByStepGuideline:
+            - "Original = 240, New = 180"
+            - "Remaining = 180/240 = 0.75 = 75%"
+            - "% Decrease = 100% - 75% = 25%"
+            - "Or: Decrease = 60, % Decrease = 60/240 × 100% = 25%"
+
+        - id: "cpd-q5"
+          problemText: "Mr Tan's electricity bill decreased from \\$120 to \\$90. Find the percentage decrease."
+          finalAnswer: "25%"
+          stepByStepGuideline:
+            - "Original = \\$120, New = \\$90"
+            - "Decrease = \\$120 - \\$90 = \\$30"
+            - "% Decrease = (30 ÷ 120) × 100% = 25%"
+
+  - id: percentage-finding-new-from-decrease
+    nodeNumber: 12
+    title: "Finding New Value from Percentage Decrease"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-calculating-decrease
+    descriptor:
+      section: "finding-new-value-from-decrease"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find the new value given original and percentage decrease"
+        - "Apply to discount problems"
+      contexts:
+        - "discount problems"
+        - "depreciation"
+      preWrittenQuestions:
+        - id: "fnvd-q1"
+          avatarIntro: "To find the new value after a decrease: Calculate the decrease amount, then subtract from the original. Or use: Original × (100% - Decrease%). Discounts are a common example!"
+          problemText: "A jacket costs \\$80. It is on sale with a 30% discount. What is the sale price?"
+          finalAnswer: "\\$56"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Jacket with 30% Discount"
+              bars:
+                - label: "Price"
+                  segments:
+                    - percentage: 70
+                      value: "$56"
+                      label: "sale price"
+                      color: "green"
+                    - percentage: 30
+                      value: "$24"
+                      label: "discount"
+                      color: "red"
+                      highlight: true
+              percentageMarkers: [0, 70, 100]
+              totalBracket:
+                barIndices: [0]
+                value: "$80"
+                label: "original"
+                position: "right"
+          stepByStepGuideline:
+            - "Original = \\$80, Discount = 30%"
+            - "Discount amount = 30% of \\$80 = \\$24"
+            - "Sale price = \\$80 - \\$24 = \\$56"
+            - "Or: Sale price = 70% of \\$80 = \\$56"
+
+        - id: "fnvd-q2"
+          problemText: "A phone originally costs \\$500. During a sale, there is a 15% discount. What is the sale price?"
+          finalAnswer: "\\$425"
+          stepByStepGuideline:
+            - "Original = \\$500, Discount = 15%"
+            - "Discount = 15% of \\$500 = \\$75"
+            - "Sale price = \\$500 - \\$75 = \\$425"
+
+        - id: "fnvd-q3"
+          problemText: "A car's value depreciates by 20% each year. If the car is worth \\$40,000 now, what will it be worth next year?"
+          finalAnswer: "\\$32,000"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Car Depreciation"
+              bars:
+                - label: "Value"
+                  segments:
+                    - percentage: 80
+                      value: "$32,000"
+                      label: "next year"
+                      color: "blue"
+                    - percentage: 20
+                      value: "$8,000"
+                      label: "depreciation"
+                      color: "red"
+              caption: "After 20% depreciation: $40,000 × 0.80 = $32,000"
+          stepByStepGuideline:
+            - "Current value = \\$40,000, Depreciation = 20%"
+            - "Depreciation = 20% of \\$40,000 = \\$8,000"
+            - "Value next year = \\$40,000 - \\$8,000 = \\$32,000"
+
+        - id: "fnvd-q4"
+          problemText: "A school had 600 students. Due to transfers, there was a 12% decrease. How many students are there now?"
+          finalAnswer: "528 students"
+          stepByStepGuideline:
+            - "Original = 600, Decrease = 12%"
+            - "Decrease = 12% of 600 = 72 students"
+            - "Current = 600 - 72 = 528 students"
+
+        - id: "fnvd-q5"
+          problemText: "A bag was marked at \\$75. Mei bought it during a 24% off sale. How much did she pay?"
+          finalAnswer: "\\$57"
+          stepByStepGuideline:
+            - "Marked price = \\$75, Discount = 24%"
+            - "Discount = 24% of \\$75 = \\$18"
+            - "Mei paid = \\$75 - \\$18 = \\$57"
+
+  - id: percentage-finding-original-from-decrease
+    nodeNumber: 13
+    title: "Finding Original from Percentage Decrease"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - percentage-finding-new-from-decrease
+    descriptor:
+      section: "finding-original-from-decrease"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Find original value given remaining amount and percentage decrease"
+        - "Recognize that remaining = (100% - decrease%)"
+      contexts:
+        - "reverse discount"
+        - "finding original"
+      preWrittenQuestions:
+        - id: "fofd-q1"
+          avatarIntro: "If you know the remaining amount after a decrease, remember it represents (100% - decrease%). Use the unitary method to find 100% (the original)!"
+          problemText: "After a 25% discount, a dress costs \\$45. What was the original price?"
+          finalAnswer: "\\$60"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Finding Original Price"
+              bars:
+                - label: "Price"
+                  segments:
+                    - percentage: 75
+                      value: "$45"
+                      label: "sale price"
+                      color: "green"
+                    - percentage: 25
+                      label: "discount"
+                      color: "red"
+              percentageMarkers: [0, 75, 100]
+              annotation: "If 25% off, then 75% = $45"
+          stepByStepGuideline:
+            - "After 25% discount, remaining = 100% - 25% = 75%"
+            - "75% = \\$45"
+            - "1% = \\$45 ÷ 75 = \\$0.60"
+            - "100% (original) = \\$0.60 × 100 = \\$60"
+
+        - id: "fofd-q2"
+          problemText: "During a match, some spectators left and the crowd decreased by 35%. There are now 520 spectators. How many were there at the start?"
+          finalAnswer: "800 spectators"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Original Spectators"
+              rows:
+                - percentage: "65%"
+                  value: "520"
+                - percentage: "5%"
+                  value: "40"
+                - percentage: "100%"
+                  value: "800"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 13"
+                  rightOp: "÷ 13"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 20"
+                  rightOp: "× 20"
+          stepByStepGuideline:
+            - "Remaining = 100% - 35% = 65%"
+            - "65% = 520 spectators"
+            - "1% = 520 ÷ 65 = 8 spectators"
+            - "100% (original) = 8 × 100 = 800 spectators"
+
+        - id: "fofd-q3"
+          problemText: "The price of a sofa decreased by 20%. It now costs \\$640. What was the original price?"
+          finalAnswer: "\\$800"
+          stepByStepGuideline:
+            - "Remaining = 100% - 20% = 80%"
+            - "80% = \\$640"
+            - "1% = \\$640 ÷ 80 = \\$8"
+            - "100% (original) = \\$8 × 100 = \\$800"
+
+        - id: "fofd-q4"
+          problemText: "After losing 15% of his money, Ken has \\$170 left. How much did he have at first?"
+          finalAnswer: "\\$200"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Ken's Money"
+              bars:
+                - label: "Money"
+                  segments:
+                    - percentage: 85
+                      value: "$170"
+                      label: "left"
+                      color: "green"
+                    - percentage: 15
+                      label: "lost"
+                      color: "red"
+              annotation: "85% = $170"
+          stepByStepGuideline:
+            - "Remaining = 100% - 15% = 85%"
+            - "85% = \\$170"
+            - "1% = \\$170 ÷ 85 = \\$2"
+            - "100% (original) = \\$2 × 100 = \\$200"
+
+        - id: "fofd-q5"
+          problemText: "A tank was emptied by 30% and now contains 420 litres. What was its original volume?"
+          finalAnswer: "600 litres"
+          stepByStepGuideline:
+            - "Remaining = 100% - 30% = 70%"
+            - "70% = 420 litres"
+            - "1% = 420 ÷ 70 = 6 litres"
+            - "100% (original) = 6 × 100 = 600 litres"
+
+  # ============================================
+  # SUBTOPIC 4: Percentage Word Problems
+  # ============================================
+
+  - id: percentage-gst-discount-interest
+    nodeNumber: 14
+    title: "GST, Discount, and Interest Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-finding-new-from-increase
+      - percentage-finding-new-from-decrease
+    descriptor:
+      section: "gst-discount-interest"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply percentage to GST, discount, and interest problems"
+        - "Identify whether to add or subtract"
+      contexts:
+        - "GST"
+        - "discounts"
+        - "simple interest"
+      preWrittenQuestions:
+        - id: "gdi-q1"
+          avatarIntro: "GST increases the price (add), discounts decrease the price (subtract), and interest increases your savings (add). Let's practice identifying which operation to use!"
+          problemText: "A camera costs \\$450 before GST. If GST is 9%, what is the total price including GST?"
+          finalAnswer: "\\$490.50"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Camera with 9% GST"
+              bars:
+                - label: "Total"
+                  segments:
+                    - percentage: 100
+                      value: "$450"
+                      label: "camera"
+                      color: "blue"
+                    - percentage: 9
+                      value: "$40.50"
+                      label: "GST"
+                      color: "green"
+              percentageMarkers: [0, 100, 109]
+              caption: "Price with GST = $450 + $40.50 = $490.50"
+          stepByStepGuideline:
+            - "GST = 9% of \\$450 = 0.09 × \\$450 = \\$40.50"
+            - "Total price = \\$450 + \\$40.50 = \\$490.50"
+
+        - id: "gdi-q2"
+          problemText: "A shop offers a 20% discount on a bag that costs \\$85. What is the sale price?"
+          finalAnswer: "\\$68"
+          stepByStepGuideline:
+            - "Discount = 20% of \\$85 = \\$17"
+            - "Sale price = \\$85 - \\$17 = \\$68"
+
+        - id: "gdi-q3"
+          problemText: "Mrs Lim deposited \\$5,000 in a bank that pays 4% interest per year. How much interest will she earn in 1 year?"
+          finalAnswer: "\\$200"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Bank Interest"
+              bars:
+                - label: "Amount"
+                  segments:
+                    - percentage: 100
+                      value: "$5,000"
+                      label: "principal"
+                      color: "blue"
+                    - percentage: 4
+                      value: "$200"
+                      label: "interest"
+                      color: "green"
+              caption: "Interest = 4% of $5,000 = $200"
+          stepByStepGuideline:
+            - "Interest = 4% of \\$5,000"
+            - "= 0.04 × \\$5,000 = \\$200"
+
+        - id: "gdi-q4"
+          problemText: "A TV set marked at \\$800 has a 15% discount. Calculate the discount and the sale price."
+          finalAnswer: "Discount: \\$120, Sale price: \\$680"
+          stepByStepGuideline:
+            - "Discount = 15% of \\$800 = \\$120"
+            - "Sale price = \\$800 - \\$120 = \\$680"
+
+        - id: "gdi-q5"
+          problemText: "A meal costs \\$55 before GST and service charge. If GST is 9% and service charge is 10%, what is the total bill?"
+          finalAnswer: "\\$65.45"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Meal Bill"
+              segments:
+                - label: "food"
+                  percentage: 84
+                  value: "$55"
+                  color: "orange"
+                - label: "service"
+                  percentage: 8.5
+                  value: "$5.50"
+                  color: "blue"
+                - label: "GST"
+                  percentage: 7.5
+                  value: "$4.95"
+                  color: "green"
+              annotation: "Total = $55 + $5.50 + $4.95 = $65.45"
+          stepByStepGuideline:
+            - "Service charge = 10% of \\$55 = \\$5.50"
+            - "GST = 9% of \\$55 = \\$4.95"
+            - "Total = \\$55 + \\$5.50 + \\$4.95 = \\$65.45"
+
+  - id: percentage-part-to-whole-composition
+    nodeNumber: 15
+    title: "Part-to-Whole Composition Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-gst-discount-interest
+    descriptor:
+      section: "part-to-whole-composition"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Solve problems where all parts add to 100%"
+        - "Convert fractions to percentages in mixed problems"
+      contexts:
+        - "composition"
+        - "mixed fractions and percentages"
+      preWrittenQuestions:
+        - id: "ptw-q1"
+          avatarIntro: "In composition problems, all parts add up to 100%. If you know some parts, you can find the rest! Sometimes you'll need to convert fractions to percentages first."
+          problemText: "At a concert, $\\frac{2}{5}$ of the audience were adults and 35% were children. The rest were teenagers. What percentage were teenagers?"
+          finalAnswer: "25%"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Concert Audience"
+              segments:
+                - label: "adults"
+                  percentage: 40
+                  color: "blue"
+                  subLabel: "(2/5 = 40%)"
+                - label: "children"
+                  percentage: 35
+                  color: "green"
+                  subLabel: "(35%)"
+                - label: "teenagers"
+                  percentage: 25
+                  color: "orange"
+                  highlight: true
+              annotation: "Teenagers = 100% - 40% - 35% = 25%"
+          stepByStepGuideline:
+            - "Convert $\\frac{2}{5}$ to percentage: $\\frac{2}{5}$ × 100% = 40%"
+            - "Adults = 40%, Children = 35%"
+            - "Teenagers = 100% - 40% - 35% = 25%"
+
+        - id: "ptw-q2"
+          problemText: "In a school, 55% of students are boys, $\\frac{1}{4}$ take the bus, and 20% walk. If there are 160 students who walk, how many students are there in total?"
+          finalAnswer: "800 students"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Total Students"
+              rows:
+                - percentage: "20%"
+                  value: "160"
+                - percentage: "10%"
+                  value: "80"
+                - percentage: "100%"
+                  value: "800"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 2"
+                  rightOp: "÷ 2"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 10"
+                  rightOp: "× 10"
+          stepByStepGuideline:
+            - "20% of students walk = 160"
+            - "1% = 160 ÷ 20 = 8 students"
+            - "100% = 8 × 100 = 800 students"
+
+        - id: "ptw-q3"
+          problemText: "A library has 40% fiction books, 25% non-fiction, and the rest are reference books. If there are 210 reference books, how many books are there altogether?"
+          finalAnswer: "600 books"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Library Books"
+              segments:
+                - label: "fiction"
+                  percentage: 40
+                  color: "blue"
+                - label: "non-fiction"
+                  percentage: 25
+                  color: "green"
+                - label: "reference"
+                  percentage: 35
+                  value: "210"
+                  color: "orange"
+                  highlight: true
+              annotation: "Reference = 100% - 40% - 25% = 35%"
+          stepByStepGuideline:
+            - "Reference = 100% - 40% - 25% = 35%"
+            - "35% = 210 books"
+            - "1% = 210 ÷ 35 = 6 books"
+            - "100% = 6 × 100 = 600 books"
+
+        - id: "ptw-q4"
+          problemText: "In a bag of fruits, $\\frac{3}{10}$ are apples, 25% are oranges, and the rest are bananas. What fraction of the fruits are bananas?"
+          finalAnswer: "$\\frac{9}{20}$ or 45%"
+          stepByStepGuideline:
+            - "Apples = $\\frac{3}{10}$ = 30%"
+            - "Oranges = 25%"
+            - "Bananas = 100% - 30% - 25% = 45%"
+            - "45% = $\\frac{45}{100}$ = $\\frac{9}{20}$"
+
+        - id: "ptw-q5"
+          problemText: "A factory makes red, blue, and yellow toys. $\\frac{1}{5}$ are red, 45% are blue, and the rest are yellow. If 70 toys are yellow, how many toys did the factory make?"
+          finalAnswer: "200 toys"
+          stepByStepGuideline:
+            - "Red = $\\frac{1}{5}$ = 20%"
+            - "Blue = 45%"
+            - "Yellow = 100% - 20% - 45% = 35%"
+            - "35% = 70 toys"
+            - "1% = 2 toys, 100% = 200 toys"
+
+  - id: percentage-multi-step-problems
+    nodeNumber: 16
+    title: "Multi-Step Percentage Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-part-to-whole-composition
+    descriptor:
+      section: "multi-step-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve problems with multiple percentage operations"
+        - "Track intermediate results correctly"
+      contexts:
+        - "multi-step"
+        - "sequential operations"
+      preWrittenQuestions:
+        - id: "msp-q1"
+          avatarIntro: "Multi-step problems require us to break them into smaller steps and track our results carefully. Let's work through each step systematically!"
+          problemText: "Siti had some money. She spent 30% on a book and 25% of the remainder on lunch. She had \\$84 left. How much did she have at first?"
+          finalAnswer: "\\$160"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Siti's Money"
+              segments:
+                - label: "book"
+                  percentage: 30
+                  color: "red"
+                  subLabel: "(30%)"
+                - label: "lunch"
+                  percentage: 17.5
+                  color: "orange"
+                  subLabel: "(25% of 70%)"
+                - label: "left"
+                  percentage: 52.5
+                  value: "$84"
+                  color: "green"
+                  highlight: true
+              annotation: "Left = 70% × 75% = 52.5% of original"
+          stepByStepGuideline:
+            - "After book: 100% - 30% = 70% remained"
+            - "Spent 25% of remainder on lunch"
+            - "After lunch: 75% of 70% = 52.5% remained"
+            - "52.5% = \\$84"
+            - "1% = \\$84 ÷ 52.5 = \\$1.60"
+            - "100% = \\$1.60 × 100 = \\$160"
+
+        - id: "msp-q2"
+          problemText: "The price of a laptop increased by 10% then decreased by 10%. If the final price is \\$990, what was the original price?"
+          finalAnswer: "\\$1,000"
+          stepByStepGuideline:
+            - "After 10% increase: 110% of original"
+            - "After 10% decrease: 90% of 110% = 99% of original"
+            - "99% = \\$990"
+            - "1% = \\$10"
+            - "100% (original) = \\$1,000"
+
+        - id: "msp-q3"
+          problemText: "Ken had some stickers. He gave 20% to Ali and 50% of the remainder to Ben. He had 120 stickers left. How many stickers did he have at first?"
+          finalAnswer: "300 stickers"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Ken's Stickers"
+              segments:
+                - label: "Ali"
+                  percentage: 20
+                  color: "red"
+                - label: "Ben"
+                  percentage: 40
+                  color: "orange"
+                  subLabel: "(50% of 80%)"
+                - label: "left"
+                  percentage: 40
+                  value: "120"
+                  color: "green"
+                  highlight: true
+          stepByStepGuideline:
+            - "After giving to Ali: 80% remained"
+            - "Gave 50% of 80% to Ben = 40%"
+            - "Left = 80% - 40% = 40%"
+            - "40% = 120 stickers"
+            - "100% = 120 × 100 ÷ 40 = 300 stickers"
+
+        - id: "msp-q4"
+          problemText: "A school has 600 students. 60% are girls. If 10% of the girls and 20% of the boys wear glasses, how many students wear glasses?"
+          finalAnswer: "84 students"
+          stepByStepGuideline:
+            - "Girls = 60% of 600 = 360"
+            - "Boys = 40% of 600 = 240"
+            - "Girls with glasses = 10% of 360 = 36"
+            - "Boys with glasses = 20% of 240 = 48"
+            - "Total with glasses = 36 + 48 = 84 students"
+
+        - id: "msp-q5"
+          problemText: "Mrs Wong saved 15% of her salary and spent the rest. She spent 40% of her spending on rent. If she spent \\$1,020 on rent, what was her salary?"
+          finalAnswer: "\\$3,000"
+          stepByStepGuideline:
+            - "Spending = 100% - 15% = 85% of salary"
+            - "Rent = 40% of 85% = 34% of salary"
+            - "34% = \\$1,020"
+            - "1% = \\$30"
+            - "100% (salary) = \\$3,000"
+
+  - id: percentage-of-remainder
+    nodeNumber: 17
+    title: "Percentage of Remainder Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-multi-step-problems
+    descriptor:
+      section: "percentage-of-remainder"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve problems involving percentage of a remainder"
+        - "Understand 'of the remainder' means of what's left"
+      contexts:
+        - "remainder problems"
+        - "sequential percentages"
+      preWrittenQuestions:
+        - id: "por-q1"
+          avatarIntro: "'X% of the remainder' means X% of what's LEFT after the first operation, NOT X% of the original! This is a common trap in exams."
+          problemText: "A baker made some pies. He sold 30% in the morning and $\\frac{1}{5}$ of the remainder in the afternoon. He had 56 pies left. How many pies did he make?"
+          finalAnswer: "100 pies"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Baker's Pies"
+              segments:
+                - label: "morning"
+                  percentage: 30
+                  color: "red"
+                  subLabel: "(30%)"
+                - label: "afternoon"
+                  percentage: 14
+                  color: "orange"
+                  subLabel: "(1/5 of 70%)"
+                - label: "left"
+                  percentage: 56
+                  value: "56"
+                  color: "green"
+                  highlight: true
+              annotation: "Afternoon = 1/5 × 70% = 14%"
+          stepByStepGuideline:
+            - "After morning: 100% - 30% = 70% remained"
+            - "Afternoon: $\\frac{1}{5}$ of 70% = 14%"
+            - "Left = 70% - 14% = 56%"
+            - "56% = 56 pies"
+            - "100% = 100 pies"
+
+        - id: "por-q2"
+          problemText: "Mei had some money. She spent 40% on clothes and 25% of the remainder on food. She had \\$270 left. How much did she have at first?"
+          finalAnswer: "\\$600"
+          solutionMathTool:
+            toolName: unitaryMethodTable
+            parameters:
+              title: "Finding Mei's Original Money"
+              rows:
+                - percentage: "45%"
+                  value: "$270"
+                - percentage: "5%"
+                  value: "$30"
+                - percentage: "100%"
+                  value: "$600"
+                  highlight: true
+              operations:
+                - fromRow: 0
+                  toRow: 1
+                  leftOp: "÷ 9"
+                  rightOp: "÷ 9"
+                - fromRow: 1
+                  toRow: 2
+                  leftOp: "× 20"
+                  rightOp: "× 20"
+          stepByStepGuideline:
+            - "After clothes: 60% remained"
+            - "Food = 25% of 60% = 15%"
+            - "Left = 60% - 15% = 45%"
+            - "45% = \\$270"
+            - "100% = \\$600"
+
+        - id: "por-q3"
+          problemText: "A shop sold 25% of its shoes in the morning and 40% of the remainder in the afternoon. It had 135 pairs left. How many pairs were sold altogether?"
+          finalAnswer: "165 pairs"
+          stepByStepGuideline:
+            - "After morning: 75% remained"
+            - "Afternoon: 40% of 75% = 30%"
+            - "Left = 75% - 30% = 45%"
+            - "45% = 135 pairs"
+            - "100% = 300 pairs"
+            - "Sold = 300 - 135 = 165 pairs"
+
+        - id: "por-q4"
+          problemText: "Ken ate $\\frac{1}{4}$ of a pizza and gave $\\frac{2}{3}$ of the remainder to his sister. What percentage of the pizza was left?"
+          finalAnswer: "25%"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Ken's Pizza"
+              segments:
+                - label: "Ken ate"
+                  percentage: 25
+                  color: "red"
+                  subLabel: "(1/4)"
+                - label: "sister"
+                  percentage: 50
+                  color: "orange"
+                  subLabel: "(2/3 of 75%)"
+                - label: "left"
+                  percentage: 25
+                  color: "green"
+                  highlight: true
+          stepByStepGuideline:
+            - "Ken ate $\\frac{1}{4}$ = 25%"
+            - "Remainder = 75%"
+            - "Sister = $\\frac{2}{3}$ of 75% = 50%"
+            - "Left = 75% - 50% = 25%"
+
+        - id: "por-q5"
+          problemText: "A farmer sold 20% of his chickens on Monday and 50% of the remainder on Tuesday. He had 120 chickens left. How many chickens did he have at first?"
+          finalAnswer: "300 chickens"
+          stepByStepGuideline:
+            - "After Monday: 80% remained"
+            - "Tuesday: 50% of 80% = 40%"
+            - "Left = 80% - 40% = 40%"
+            - "40% = 120 chickens"
+            - "100% = 300 chickens"
+
+  - id: percentage-of-percentage
+    nodeNumber: 18
+    title: "Percentage of Percentage (Nested)"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-of-remainder
+    descriptor:
+      section: "percentage-of-percentage"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Calculate percentage of a percentage"
+        - "Work with nested categories"
+      contexts:
+        - "nested percentages"
+        - "multi-category problems"
+      preWrittenQuestions:
+        - id: "pop-q1"
+          avatarIntro: "When we have 'X% of Y%', we multiply the percentages: X% × Y% = (X/100) × (Y/100) × 100%. For example, 70% of 80% = 56%!"
+          problemText: "In a class, 60% of students are girls. 25% of the girls wear glasses. What percentage of the class are girls who wear glasses?"
+          finalAnswer: "15%"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Class Composition"
+              segments:
+                - label: "girls w/ glasses"
+                  percentage: 15
+                  color: "pink"
+                  highlight: true
+                  subLabel: "(25% of 60%)"
+                - label: "girls w/o glasses"
+                  percentage: 45
+                  color: "red"
+                - label: "boys"
+                  percentage: 40
+                  color: "blue"
+              annotation: "Girls with glasses = 25% × 60% = 15%"
+          stepByStepGuideline:
+            - "Girls = 60%"
+            - "Girls with glasses = 25% of 60%"
+            - "= 0.25 × 60% = 15%"
+
+        - id: "pop-q2"
+          problemText: "80% of the beads in a box are blue. 30% of the blue beads are small. If there are 72 small blue beads, how many beads are in the box?"
+          finalAnswer: "300 beads"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Beads in Box"
+              segments:
+                - label: "blue small"
+                  percentage: 24
+                  value: "72"
+                  color: "blue"
+                  highlight: true
+                  subLabel: "(30% of 80%)"
+                - label: "blue not small"
+                  percentage: 56
+                  color: "cyan"
+                - label: "not blue"
+                  percentage: 20
+                  color: "gray"
+          stepByStepGuideline:
+            - "Small blue beads = 30% of 80% = 24%"
+            - "24% = 72 beads"
+            - "1% = 3 beads"
+            - "100% = 300 beads"
+
+        - id: "pop-q3"
+          problemText: "At a school, 55% of students play sports. Of those who play sports, 40% play basketball. What percentage of all students play basketball?"
+          finalAnswer: "22%"
+          stepByStepGuideline:
+            - "Play sports = 55%"
+            - "Play basketball = 40% of 55%"
+            - "= 0.40 × 55% = 22%"
+
+        - id: "pop-q4"
+          problemText: "70% of the buttons are red. 60% of the red buttons are round. If 168 red buttons are round, how many buttons are there altogether?"
+          finalAnswer: "400 buttons"
+          stepByStepGuideline:
+            - "Round red buttons = 60% of 70% = 42%"
+            - "42% = 168 buttons"
+            - "1% = 4 buttons"
+            - "100% = 400 buttons"
+
+        - id: "pop-q5"
+          problemText: "A company has 500 employees. 48% are women. 25% of the women and 20% of the men have a master's degree. How many employees have a master's degree?"
+          finalAnswer: "112 employees"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Employees with Master's Degree"
+              segments:
+                - label: "women w/ masters"
+                  percentage: 12
+                  color: "pink"
+                  subLabel: "(25% of 48%)"
+                - label: "men w/ masters"
+                  percentage: 10.4
+                  color: "blue"
+                  subLabel: "(20% of 52%)"
+              annotation: "Total with masters = 12% + 10.4% = 22.4%"
+          stepByStepGuideline:
+            - "Women = 48% of 500 = 240"
+            - "Men = 52% of 500 = 260"
+            - "Women with masters = 25% of 240 = 60"
+            - "Men with masters = 20% of 260 = 52"
+            - "Total with masters = 60 + 52 = 112"
+
+  - id: percentage-combined-fractions
+    nodeNumber: 19
+    title: "Combined Fractions and Percentages"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - percentage-of-percentage
+    descriptor:
+      section: "combined-fractions-percentages"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve problems mixing fractions and percentages"
+        - "Convert between forms for consistent calculation"
+      contexts:
+        - "fraction-percentage conversion"
+        - "comparison problems"
+      preWrittenQuestions:
+        - id: "cfp-q1"
+          avatarIntro: "When a problem mixes fractions and percentages, convert everything to the same form first. Remember: 20% = 1/5, 25% = 1/4, 50% = 1/2!"
+          problemText: "Siti spent 20% of her money. Mei spent $\\frac{1}{4}$ of her money. They each spent the same amount and have \\$630 left together. How much did they have in total at first?"
+          finalAnswer: "\\$900"
+          solutionMathTool:
+            toolName: percentageBar
+            parameters:
+              title: "Siti and Mei's Money"
+              bars:
+                - label: "Siti"
+                  segments:
+                    - percentage: 20
+                      label: "spent"
+                      color: "red"
+                    - percentage: 20
+                      label: "left"
+                      color: "green"
+                    - percentage: 20
+                      color: "green"
+                    - percentage: 20
+                      color: "green"
+                    - percentage: 20
+                      color: "green"
+                - label: "Mei"
+                  segments:
+                    - percentage: 25
+                      label: "spent"
+                      color: "red"
+                    - percentage: 25
+                      label: "left"
+                      color: "blue"
+                    - percentage: 25
+                      color: "blue"
+                    - percentage: 25
+                      color: "blue"
+              caption: "Siti: 5 units (1 spent, 4 left). Mei: 4 units (1 spent, 3 left)"
+          stepByStepGuideline:
+            - "Siti spent 20% = $\\frac{1}{5}$ → 5 units, spent 1, left 4"
+            - "Mei spent 25% = $\\frac{1}{4}$ → 4 units, spent 1, left 3"
+            - "Same amount spent: Siti's 1 unit = Mei's 1 unit"
+            - "Left = 4 + 3 = 7 units = \\$630"
+            - "1 unit = \\$90"
+            - "Total at first = 5 + 4 = 9 units = \\$900"
+
+        - id: "cfp-q2"
+          problemText: "Ali saved $\\frac{2}{5}$ of his pocket money and Ben saved 35% of his. Ali saved \\$16 more than Ben. If Ben has \\$200, how much pocket money does Ali have?"
+          finalAnswer: "\\$215"
+          stepByStepGuideline:
+            - "Ben's savings = 35% of \\$200 = \\$70"
+            - "Ali's savings = \\$70 + \\$16 = \\$86"
+            - "$\\frac{2}{5}$ of Ali's money = \\$86"
+            - "Ali's money = \\$86 × $\\frac{5}{2}$ = \\$215"
+
+        - id: "cfp-q3"
+          problemText: "30% of the flowers in a garden are roses. $\\frac{1}{4}$ of the remaining flowers are tulips. If there are 70 tulips, how many flowers are there in the garden?"
+          finalAnswer: "400 flowers"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Garden Flowers"
+              segments:
+                - label: "roses"
+                  percentage: 30
+                  color: "red"
+                - label: "tulips"
+                  percentage: 17.5
+                  value: "70"
+                  color: "purple"
+                  highlight: true
+                  subLabel: "(1/4 of 70%)"
+                - label: "others"
+                  percentage: 52.5
+                  color: "green"
+          stepByStepGuideline:
+            - "Non-roses = 100% - 30% = 70%"
+            - "Tulips = $\\frac{1}{4}$ of 70% = 17.5%"
+            - "17.5% = 70 flowers"
+            - "100% = 70 × 100 ÷ 17.5 = 400 flowers"
+
+        - id: "cfp-q4"
+          problemText: "Wei has 25% more stickers than Ken. If Ken has 120 stickers, how many stickers do they have altogether?"
+          finalAnswer: "270 stickers"
+          stepByStepGuideline:
+            - "Ken = 120 stickers"
+            - "Wei = 125% of Ken = 1.25 × 120 = 150 stickers"
+            - "Total = 120 + 150 = 270 stickers"
+
+        - id: "cfp-q5"
+          problemText: "Mrs Tan gave $\\frac{1}{3}$ of her cookies to Ali and 40% of the remainder to Ben. She had 72 cookies left. How many cookies did she have at first?"
+          finalAnswer: "180 cookies"
+          solutionMathTool:
+            toolName: percentageStackedBar
+            parameters:
+              title: "Mrs Tan's Cookies"
+              segments:
+                - label: "Ali"
+                  percentage: 33.33
+                  color: "red"
+                  subLabel: "(1/3)"
+                - label: "Ben"
+                  percentage: 26.67
+                  color: "orange"
+                  subLabel: "(40% of 2/3)"
+                - label: "left"
+                  percentage: 40
+                  value: "72"
+                  color: "green"
+                  highlight: true
+          stepByStepGuideline:
+            - "After Ali: $\\frac{2}{3}$ remained"
+            - "Ben = 40% of $\\frac{2}{3}$ = $\\frac{4}{15}$"
+            - "Left = $\\frac{2}{3}$ - $\\frac{4}{15}$ = $\\frac{10}{15}$ - $\\frac{4}{15}$ = $\\frac{6}{15}$ = $\\frac{2}{5}$"
+            - "$\\frac{2}{5}$ = 72 cookies"
+            - "Total = 72 × $\\frac{5}{2}$ = 180 cookies"

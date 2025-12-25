@@ -18,6 +18,34 @@ import { firestore } from './firebase';
 import { getDailyActivity, getWeekComparison } from './dailyActivityService';
 import { getMasteryEvents } from './masteryEventService';
 import { achievementService } from './achievementService';
+import { GRADE_LEVELS, getTopicsByGrade } from '../config/topicsByGrade';
+
+/**
+ * Fix displayName if it looks like a category ID
+ * Looks up the correct name from topicsByGrade config
+ */
+function fixDisplayName(displayName: string | undefined, topicId: string): string {
+  // If displayName is valid (not undefined and not looking like an ID), use it
+  if (displayName && !displayName.match(/^[ps]\d+-math-/i)) {
+    return displayName;
+  }
+
+  // Look up the correct name from topicsByGrade
+  const category = topicId;
+  for (const grade of GRADE_LEVELS) {
+    const topics = getTopicsByGrade(grade);
+    const topic = topics.find(t => t.category === category);
+    if (topic) {
+      return topic.name;
+    }
+  }
+
+  // Fallback: Clean up the category string
+  return (displayName || topicId)
+    .replace(/^[ps]\d+-math-/i, '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
 import type {
   StudentDashboardData,
   OverviewStats,
@@ -94,11 +122,12 @@ export async function getStudentDashboardData(
       learnVsPracticeComparison: aggregateLearnVsPracticeComparison(learnMode.summary, practiceDocs)
     };
 
-    // Aggregate Achievements
+    // Aggregate Achievements from practice progress
+    const earnedAchievements = aggregateEarnedAchievements(practiceDocs);
     const achievements = {
-      summary: aggregateAchievementSummary(userProfile),
+      summary: aggregateAchievementSummaryFromProgress(earnedAchievements),
       categories: aggregateAchievementCategories(userProfile),
-      recentAchievements: [] // TODO: Implement achievement timeline
+      recentAchievements: earnedAchievements
     };
 
     return {
@@ -252,7 +281,7 @@ function aggregateTopicsOverview(
 
     rows.push({
       topicId: doc.subtopicId,
-      displayName: doc.displayName,
+      displayName: fixDisplayName(doc.displayName, doc.subtopicId),
       status: 'active',
       problemsSolved: correct,
       totalProblems: estimatedTotalProblems,
@@ -281,7 +310,7 @@ function aggregateTopicsOverview(
 
     rows.push({
       topicId: doc.topicId,
-      displayName: doc.displayName,
+      displayName: fixDisplayName(doc.displayName, doc.topicId),
       status: 'active',
       problemsSolved: correct,
       totalProblems: Math.round(estimatedTotalProblems),
@@ -503,17 +532,88 @@ function aggregateLearnVsPracticeComparison(
 // ACHIEVEMENTS AGGREGATION
 // ============================================
 
-function aggregateAchievementSummary(userProfile: UserProfile | null): AchievementSummary {
-  const total = userProfile?.gamification?.totalAchievements || 0;
+/**
+ * Aggregate all earned achievements from practice progress documents
+ */
+function aggregateEarnedAchievements(practiceDocs: PracticeProgress[]): Array<{
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  earnedAt: Date;
+  xpReward: number;
+}> {
+  const allAchievements: Array<{
+    id: string;
+    title: string;
+    description: string;
+    icon: string;
+    earnedAt: Date;
+    xpReward: number;
+  }> = [];
+
+  // Collect achievements from all practice topics
+  for (const doc of practiceDocs) {
+    if (doc.achievements && Array.isArray(doc.achievements)) {
+      for (const achievement of doc.achievements) {
+        // Safely convert earnedAt to Date
+        let earnedDate: Date;
+        if (achievement.earnedAt instanceof Date) {
+          earnedDate = achievement.earnedAt;
+        } else if (achievement.earnedAt?.toDate) {
+          // Firestore Timestamp
+          earnedDate = achievement.earnedAt.toDate();
+        } else if (typeof achievement.earnedAt === 'string' || typeof achievement.earnedAt === 'number') {
+          earnedDate = new Date(achievement.earnedAt);
+        } else {
+          earnedDate = new Date();
+        }
+
+        allAchievements.push({
+          id: achievement.id,
+          title: achievement.title,
+          description: achievement.description || '',
+          icon: achievement.icon,
+          earnedAt: earnedDate,
+          xpReward: achievement.xpReward || 0
+        });
+      }
+    }
+  }
+
+  // Deduplicate by ID (same achievement might appear in multiple topics)
+  const uniqueAchievements = Array.from(
+    new Map(allAchievements.map(a => [a.id, a])).values()
+  );
+
+  // Sort by earnedAt descending (most recent first)
+  return uniqueAchievements.sort((a, b) => {
+    const timeA = a.earnedAt?.getTime?.() || 0;
+    const timeB = b.earnedAt?.getTime?.() || 0;
+    return timeB - timeA;
+  });
+}
+
+/**
+ * Create achievement summary from earned achievements
+ */
+function aggregateAchievementSummaryFromProgress(earnedAchievements: Array<{ xpReward: number }>): AchievementSummary {
+  const total = earnedAchievements.length;
+  const totalPossible = achievementService.ACHIEVEMENT_DEFINITIONS.length;
+  const totalXP = earnedAchievements.reduce((sum, a) => sum + (a.xpReward || 0), 0);
+
+  // Calculate next milestone
+  const milestones = [5, 10, 15, 20, 25, 30, 35, 40, 43];
+  const nextMilestoneTarget = milestones.find(m => m > total);
 
   return {
     totalUnlocked: total,
-    totalAvailable: 48, // TODO: Get from achievement service
-    percentageComplete: Math.round((total / 48) * 100),
-    totalXPFromAchievements: 0, // TODO: Calculate from achievements
-    nextMilestone: total < 30 ? {
-      achievementsNeeded: 30 - total,
-      xpReward: 300
+    totalAvailable: totalPossible,
+    percentageComplete: totalPossible > 0 ? Math.round((total / totalPossible) * 100) : 0,
+    totalXPFromAchievements: totalXP,
+    nextMilestone: nextMilestoneTarget ? {
+      achievementsNeeded: nextMilestoneTarget - total,
+      xpReward: nextMilestoneTarget * 10 // 10 XP per achievement milestone
     } : undefined
   };
 }
@@ -593,7 +693,7 @@ function getEmptyDashboard(): StudentDashboardData {
     achievements: {
       summary: {
         totalUnlocked: 0,
-        totalAvailable: 48,
+        totalAvailable: achievementService.ACHIEVEMENT_DEFINITIONS.length,
         percentageComplete: 0,
         totalXPFromAchievements: 0
       },

@@ -310,6 +310,19 @@ export interface AchievementEvent {
   achievement: AchievementDetail;
 }
 
+/**
+ * Simple earned achievement structure for recentAchievements array
+ * Used to track which achievements a student has earned
+ */
+export interface EarnedAchievement {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  earnedAt: Date | string;
+  xpReward: number;
+}
+
 // ============================================
 // MAIN DASHBOARD DATA
 // ============================================
@@ -340,7 +353,7 @@ export interface StudentDashboardData {
   achievements: {
     summary: AchievementSummary;
     categories: AchievementCategory[];
-    recentAchievements: AchievementEvent[];
+    recentAchievements: EarnedAchievement[];
   };
 
   isLoading: boolean;

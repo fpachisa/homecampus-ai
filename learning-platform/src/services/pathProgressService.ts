@@ -16,6 +16,30 @@ import { streakService } from './streakService';
 import { achievementService } from './achievementService';
 import { savePracticeProgress, pathProgressToFirestore } from './firestoreProgressService';
 import { getLocalDateString } from '../utils/dateUtils';
+import { GRADE_LEVELS, getTopicsByGrade } from '../config/topicsByGrade';
+
+/**
+ * Get the display name for a topic category
+ * Looks up in topicsByGrade config first, then falls back to formatted category
+ */
+function getDisplayNameForCategory(category: string): string {
+  // Search across all grade levels
+  for (const grade of GRADE_LEVELS) {
+    const topics = getTopicsByGrade(grade);
+    const topic = topics.find(t => t.category === category);
+    if (topic) {
+      return topic.name;
+    }
+  }
+
+  // Fallback: Clean up the category string
+  // p5-math-area-triangle -> Area Triangle
+  // s3-math-trigonometry -> Trigonometry
+  return category
+    .replace(/^[ps]\d+-math-/i, '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
 
 class PathProgressService {
   private readonly STORAGE_KEY_PREFIX = 'practice_path_state_';
@@ -521,8 +545,8 @@ class PathProgressService {
       try {
         console.log(`💾 Auto-saving progress to Firestore for ${category}...`);
         console.log('📊 SessionHistory being saved:', pathProgress.sessionHistory);
-        // Extract displayName from first node's title, or fall back to category
-        const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
+        // Get displayName from topicsByGrade config
+        const displayName = getDisplayNameForCategory(category);
         const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, allNodes);
         console.log('📊 Firestore sessionHistory:', firestoreProgress.sessionHistory);
         await savePracticeProgress(uid, category, firestoreProgress);
@@ -557,7 +581,7 @@ class PathProgressService {
         const savePromise = (async () => {
           try {
             console.log(`🚀 Flushing pending save for ${category}...`);
-            const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
+            const displayName = getDisplayNameForCategory(category);
             const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, allNodes);
             await savePracticeProgress(uid, category, firestoreProgress);
             console.log(`✅ Flushed save for ${category}`);

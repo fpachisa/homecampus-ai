@@ -311,9 +311,8 @@ export const ActiveStudentDashboard: React.FC = () => {
             <RecentAchievementsPanel
               achievements={progressSummary.achievements}
               totalAchievements={progressSummary.totalAchievements}
-              onViewAll={() => {
-                // TODO: Navigate to achievements page
-              }}
+              totalPossibleAchievements={progressSummary.totalPossibleAchievements}
+              onViewAll={() => navigate('/stats?tab=achievements')}
             />
 
             {/* Weekly Activity Chart */}

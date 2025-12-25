@@ -1,0 +1,986 @@
+# P6 Mathematics - Averages Practice Module
+# Covers: Finding Average, Finding Total, Finding Number, Word Problems
+# Total: 14 nodes covering all sections across 4 subtopics
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Finding Average
+  # ============================================
+
+  - id: averages-understanding-concept
+    nodeNumber: 1
+    title: "Understanding the Average Concept"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-average-concept"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand average as 'evening out' values"
+        - "Visualize redistribution to equal shares"
+      contexts:
+        - "evening out"
+        - "equal distribution"
+      preWrittenQuestions:
+        - id: "uac-q1"
+          avatarIntro: "Average is what each value would be if we 'evened out' all the values to be equal. Imagine moving blocks between towers until they're all the same height!"
+          problemText: "Four towers have 3, 7, 6, and 4 cubes. If we redistribute the cubes so each tower has the same number, how many cubes will each tower have?"
+          finalAnswer: "5 cubes"
+          solutionMathTool:
+            toolName: averageTowerVisualizer
+            parameters:
+              values: [3, 7, 6, 4]
+              labels: ["Tower 1", "Tower 2", "Tower 3", "Tower 4"]
+              showEvenedOut: true
+              showAverage: true
+              caption: "After evening out, each tower has 5 cubes"
+          stepByStepGuideline:
+            - "Total cubes = 3 + 7 + 6 + 4 = 20"
+            - "Number of towers = 4"
+            - "Even share = 20 ÷ 4 = 5 cubes per tower"
+
+        - id: "uac-q2"
+          problemText: "Three friends have 8, 5, and 2 marbles respectively. If they share the marbles equally, how many will each friend have?"
+          finalAnswer: "5 marbles"
+          solutionMathTool:
+            toolName: averageTowerVisualizer
+            parameters:
+              values: [8, 5, 2]
+              labels: ["Friend 1", "Friend 2", "Friend 3"]
+              showEvenedOut: true
+              showAverage: true
+          stepByStepGuideline:
+            - "Total marbles = 8 + 5 + 2 = 15"
+            - "Number of friends = 3"
+            - "Equal share = 15 ÷ 3 = 5 marbles each"
+
+        - id: "uac-q3"
+          problemText: "Five boxes contain 4, 6, 8, 5, and 7 apples. What is the average number of apples per box?"
+          finalAnswer: "6 apples"
+          stepByStepGuideline:
+            - "Total apples = 4 + 6 + 8 + 5 + 7 = 30"
+            - "Number of boxes = 5"
+            - "Average = 30 ÷ 5 = 6 apples per box"
+
+        - id: "uac-q4"
+          problemText: "Wei scored 12, 18, and 15 points in three games. If his points were evened out, how many points would he have per game?"
+          finalAnswer: "15 points"
+          stepByStepGuideline:
+            - "Total points = 12 + 18 + 15 = 45"
+            - "Number of games = 3"
+            - "Even share = 45 ÷ 3 = 15 points per game"
+
+        - id: "uac-q5"
+          problemText: "Four students collected 10, 6, 14, and 10 shells. What would be the average number of shells per student?"
+          finalAnswer: "10 shells"
+          solutionMathTool:
+            toolName: averageTowerVisualizer
+            parameters:
+              values: [10, 6, 14, 10]
+              showEvenedOut: true
+              showAverage: true
+              caption: "Evened out: 10 shells each"
+          stepByStepGuideline:
+            - "Total shells = 10 + 6 + 14 + 10 = 40"
+            - "Number of students = 4"
+            - "Average = 40 ÷ 4 = 10 shells"
+
+  - id: averages-using-formula
+    nodeNumber: 2
+    title: "Using the Average Formula"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-understanding-concept
+    descriptor:
+      section: "using-the-formula"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Apply the formula: Average = Total ÷ Number"
+        - "Show step-by-step working"
+      contexts:
+        - "formula application"
+        - "quiz scores"
+        - "measurements"
+      preWrittenQuestions:
+        - id: "uf-q1"
+          avatarIntro: "The formula for average is: Average = Total Value ÷ Number of Data. Let's practice using this formula step by step!"
+          problemText: "Connie scored 24, 30, 12, and 20 marks in 4 quizzes. What is her average score?"
+          finalAnswer: "21.5 marks"
+          solutionMathTool:
+            toolName: averageTowerVisualizer
+            parameters:
+              values: [24, 30, 12, 20]
+              labels: ["Quiz 1", "Quiz 2", "Quiz 3", "Quiz 4"]
+              showAverage: true
+              showTotal: true
+              caption: "Total = 86, Average = 86 ÷ 4 = 21.5"
+          stepByStepGuideline:
+            - "Step 1: Find the total score"
+            - "Total = 24 + 30 + 12 + 20 = 86"
+            - "Step 2: Count the number of quizzes = 4"
+            - "Step 3: Calculate average = 86 ÷ 4 = 21.5 marks"
+
+        - id: "uf-q2"
+          problemText: "A farmer collected 45, 52, 38, and 65 eggs over 4 days. What was the average number of eggs collected per day?"
+          finalAnswer: "50 eggs"
+          stepByStepGuideline:
+            - "Total eggs = 45 + 52 + 38 + 65 = 200"
+            - "Number of days = 4"
+            - "Average = 200 ÷ 4 = 50 eggs per day"
+
+        - id: "uf-q3"
+          problemText: "The heights of 5 plants are 12 cm, 15 cm, 18 cm, 11 cm, and 14 cm. Find the average height."
+          finalAnswer: "14 cm"
+          stepByStepGuideline:
+            - "Total height = 12 + 15 + 18 + 11 + 14 = 70 cm"
+            - "Number of plants = 5"
+            - "Average = 70 ÷ 5 = 14 cm"
+
+        - id: "uf-q4"
+          problemText: "Ben spent \\$18, \\$25, \\$12, and \\$21 over 4 weeks. What was his average weekly spending?"
+          finalAnswer: "\\$19"
+          stepByStepGuideline:
+            - "Total spending = \\$18 + \\$25 + \\$12 + \\$21 = \\$76"
+            - "Number of weeks = 4"
+            - "Average = \\$76 ÷ 4 = \\$19 per week"
+
+        - id: "uf-q5"
+          problemText: "Six children weigh 32 kg, 35 kg, 28 kg, 40 kg, 33 kg, and 30 kg. Find the average mass."
+          finalAnswer: "33 kg"
+          stepByStepGuideline:
+            - "Total mass = 32 + 35 + 28 + 40 + 33 + 30 = 198 kg"
+            - "Number of children = 6"
+            - "Average = 198 ÷ 6 = 33 kg"
+
+  - id: averages-with-decimals
+    nodeNumber: 3
+    title: "Averages with Decimals"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-using-formula
+    descriptor:
+      section: "decimals-in-averages"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate averages that result in decimals"
+        - "Understand decimal averages are valid"
+      contexts:
+        - "decimal results"
+        - "mass measurements"
+      preWrittenQuestions:
+        - id: "awd-q1"
+          avatarIntro: "The average can be a decimal, even when all the original values are whole numbers. This is perfectly normal!"
+          problemText: "The masses of 4 children are 38 kg, 40 kg, 37 kg, and 42 kg. Find the average mass."
+          finalAnswer: "39.25 kg"
+          solutionMathTool:
+            toolName: averageTowerVisualizer
+            parameters:
+              values: [38, 40, 37, 42]
+              labels: ["Child 1", "Child 2", "Child 3", "Child 4"]
+              showAverage: true
+              caption: "Average = 157 ÷ 4 = 39.25 kg"
+          stepByStepGuideline:
+            - "Total mass = 38 + 40 + 37 + 42 = 157 kg"
+            - "Number of children = 4"
+            - "Average = 157 ÷ 4 = 39.25 kg"
+            - "Note: No child actually weighs exactly 39.25 kg!"
+
+        - id: "awd-q2"
+          problemText: "Peter scored 15, 18, 12, and 17 goals in 4 matches. What was his average score per match?"
+          finalAnswer: "15.5 goals"
+          stepByStepGuideline:
+            - "Total goals = 15 + 18 + 12 + 17 = 62"
+            - "Number of matches = 4"
+            - "Average = 62 ÷ 4 = 15.5 goals per match"
+
+        - id: "awd-q3"
+          problemText: "The lengths of 5 ribbons are 23 cm, 31 cm, 27 cm, 19 cm, and 25 cm. Find the average length."
+          finalAnswer: "25 cm"
+          stepByStepGuideline:
+            - "Total length = 23 + 31 + 27 + 19 + 25 = 125 cm"
+            - "Number of ribbons = 5"
+            - "Average = 125 ÷ 5 = 25 cm"
+
+        - id: "awd-q4"
+          problemText: "Mei saved \\$45, \\$38, \\$52, and \\$41 over 4 months. What was her average monthly savings?"
+          finalAnswer: "\\$44"
+          stepByStepGuideline:
+            - "Total savings = \\$45 + \\$38 + \\$52 + \\$41 = \\$176"
+            - "Number of months = 4"
+            - "Average = \\$176 ÷ 4 = \\$44 per month"
+
+        - id: "awd-q5"
+          problemText: "A baker made 84, 96, 78, and 90 loaves of bread over 4 days. What was the average number of loaves per day?"
+          finalAnswer: "87 loaves"
+          stepByStepGuideline:
+            - "Total loaves = 84 + 96 + 78 + 90 = 348"
+            - "Number of days = 4"
+            - "Average = 348 ÷ 4 = 87 loaves per day"
+
+  - id: averages-from-bar-graphs
+    nodeNumber: 4
+    title: "Reading from Bar Graphs"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-using-formula
+    descriptor:
+      section: "reading-from-bar-graphs"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Read data values from bar graphs"
+        - "Calculate average from bar graph data"
+      contexts:
+        - "bar graphs"
+        - "data interpretation"
+      preWrittenQuestions:
+        - id: "rbg-q1"
+          avatarIntro: "Sometimes data is given in a bar graph. First read the values from the graph, then calculate the average using our formula!"
+          problemText: "Samad read 6, 11, 10, and 13 books from September to December. What was the average number of books he read per month?"
+          finalAnswer: "10 books"
+          solutionMathTool:
+            toolName: barChart
+            parameters:
+              categories: ["Sep", "Oct", "Nov", "Dec"]
+              values: [6, 11, 10, 13]
+              title: "Books Read Per Month"
+              xLabel: "Month"
+              yLabel: "Number of Books"
+              showValues: true
+          stepByStepGuideline:
+            - "Read values from graph: 6, 11, 10, 13"
+            - "Total = 6 + 11 + 10 + 13 = 40 books"
+            - "Number of months = 4"
+            - "Average = 40 ÷ 4 = 10 books per month"
+
+        - id: "rbg-q2"
+          problemText: "Peter saved \\$60, \\$90, \\$80, \\$75, and \\$50 from January to May. What was his average savings per month?"
+          finalAnswer: "\\$71"
+          solutionMathTool:
+            toolName: barChart
+            parameters:
+              categories: ["Jan", "Feb", "Mar", "Apr", "May"]
+              values: [60, 90, 80, 75, 50]
+              title: "Peter's Monthly Savings"
+              xLabel: "Month"
+              yLabel: "Amount ($)"
+              showValues: true
+          stepByStepGuideline:
+            - "Total savings = \\$60 + \\$90 + \\$80 + \\$75 + \\$50 = \\$355"
+            - "Number of months = 5"
+            - "Average = \\$355 ÷ 5 = \\$71 per month"
+
+        - id: "rbg-q3"
+          problemText: "A shop sold 45, 60, 55, and 40 toys from Monday to Thursday. What was the average number of toys sold per day?"
+          finalAnswer: "50 toys"
+          stepByStepGuideline:
+            - "Total toys = 45 + 60 + 55 + 40 = 200"
+            - "Number of days = 4"
+            - "Average = 200 ÷ 4 = 50 toys per day"
+
+        - id: "rbg-q4"
+          problemText: "The temperatures recorded over 5 days were 28°C, 32°C, 30°C, 27°C, and 33°C. Find the average temperature."
+          finalAnswer: "30°C"
+          stepByStepGuideline:
+            - "Total temperature = 28 + 32 + 30 + 27 + 33 = 150°C"
+            - "Number of days = 5"
+            - "Average = 150 ÷ 5 = 30°C"
+
+        - id: "rbg-q5"
+          problemText: "Mei ran 3 km, 5 km, 4 km, 6 km, and 7 km over 5 days. What was her average distance per day?"
+          finalAnswer: "5 km"
+          stepByStepGuideline:
+            - "Total distance = 3 + 5 + 4 + 6 + 7 = 25 km"
+            - "Number of days = 5"
+            - "Average = 25 ÷ 5 = 5 km per day"
+
+  # ============================================
+  # SUBTOPIC 2: Finding Total Value
+  # ============================================
+
+  - id: averages-finding-total-understanding
+    nodeNumber: 5
+    title: "Understanding Total = Average × Number"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-reverse-relationship"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand the reverse formula: Total = Average × Number"
+        - "Apply to find total from average"
+      contexts:
+        - "reverse formula"
+        - "finding total"
+      preWrittenQuestions:
+        - id: "ftu-q1"
+          avatarIntro: "If we know the average and how many items there are, we can find the total! The formula is: Total = Average × Number. Think of it as 'gathering back' all the evened-out shares."
+          problemText: "The average number of stickers in 3 packets is 18. What is the total number of stickers in the 3 packets?"
+          finalAnswer: "54 stickers"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Finding Total from Average"
+              bars:
+                - label: "3 packets"
+                  segments:
+                    - value: "18"
+                      units: 3
+                  totalLabel: "?"
+              showUnitDividers: true
+              caption: "Each unit = 18 stickers (average), Total = 18 × 3"
+          stepByStepGuideline:
+            - "Given: Average = 18, Number of packets = 3"
+            - "Formula: Total = Average × Number"
+            - "Total = 18 × 3 = 54 stickers"
+
+        - id: "ftu-q2"
+          problemText: "The average of 5 numbers is 24. What is the sum of the 5 numbers?"
+          finalAnswer: "120"
+          stepByStepGuideline:
+            - "Given: Average = 24, Number = 5"
+            - "Total = Average × Number"
+            - "Total = 24 × 5 = 120"
+
+        - id: "ftu-q3"
+          problemText: "The average height of 4 plants is 35 cm. What is the total height of all 4 plants?"
+          finalAnswer: "140 cm"
+          stepByStepGuideline:
+            - "Given: Average = 35 cm, Number = 4"
+            - "Total = 35 × 4 = 140 cm"
+
+        - id: "ftu-q4"
+          problemText: "Ken's average score in 6 tests is 85 marks. What is his total score for all 6 tests?"
+          finalAnswer: "510 marks"
+          stepByStepGuideline:
+            - "Given: Average = 85 marks, Number = 6"
+            - "Total = 85 × 6 = 510 marks"
+
+        - id: "ftu-q5"
+          problemText: "The average mass of 8 watermelons is 3 kg. What is the total mass of all the watermelons?"
+          finalAnswer: "24 kg"
+          stepByStepGuideline:
+            - "Given: Average = 3 kg, Number = 8"
+            - "Total = 3 × 8 = 24 kg"
+
+  - id: averages-finding-total-applying
+    nodeNumber: 6
+    title: "Applying the Total Formula"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-finding-total-understanding
+    descriptor:
+      section: "applying-total-formula"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply Total = Average × Number in various contexts"
+        - "Handle decimal averages"
+      contexts:
+        - "money"
+        - "measurements"
+        - "decimals"
+      preWrittenQuestions:
+        - id: "fta-q1"
+          avatarIntro: "Let's practice finding totals in different situations. Remember: Total = Average × Number works for any context!"
+          problemText: "The average volume of water in 5 cups is 120 ml. What is the total volume of water in the 5 cups?"
+          finalAnswer: "600 ml"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Finding Total Volume"
+              bars:
+                - label: "5 cups"
+                  segments:
+                    - value: "120 ml"
+                      units: 5
+                  totalLabel: "?"
+              caption: "Total = 120 ml × 5"
+          stepByStepGuideline:
+            - "Given: Average = 120 ml, Number = 5"
+            - "Total = 120 × 5 = 600 ml"
+
+        - id: "fta-q2"
+          problemText: "The average cost of 8 mobile phones is \\$315.75. What is the total cost of the 8 mobile phones?"
+          finalAnswer: "\\$2,526"
+          stepByStepGuideline:
+            - "Given: Average = \\$315.75, Number = 8"
+            - "Total = \\$315.75 × 8 = \\$2,526"
+
+        - id: "fta-q3"
+          problemText: "Joan spent an average of 2 hours a day on a project from Monday to Thursday. What was the total time she spent?"
+          finalAnswer: "8 hours"
+          stepByStepGuideline:
+            - "Monday to Thursday = 4 days"
+            - "Given: Average = 2 hours, Number = 4"
+            - "Total = 2 × 4 = 8 hours"
+
+        - id: "fta-q4"
+          problemText: "The average height of 7 students is 1.45 m. What is the total height of the 7 students?"
+          finalAnswer: "10.15 m"
+          stepByStepGuideline:
+            - "Given: Average = 1.45 m, Number = 7"
+            - "Total = 1.45 × 7 = 10.15 m"
+
+        - id: "fta-q5"
+          problemText: "The average mass of 4 parcels is 2.5 kg. What is the total mass of the 4 parcels?"
+          finalAnswer: "10 kg"
+          stepByStepGuideline:
+            - "Given: Average = 2.5 kg, Number = 4"
+            - "Total = 2.5 × 4 = 10 kg"
+
+  - id: averages-finding-total-practice
+    nodeNumber: 7
+    title: "Practice: Finding Total"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-finding-total-applying
+    descriptor:
+      section: "practice-finding-total"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Fluency practice for finding total from average"
+        - "Identify 'find total' problems from context"
+      contexts:
+        - "varied contexts"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "ftp-q1"
+          avatarIntro: "Now let's build fluency! Read each problem carefully to identify that we need to find the total."
+          problemText: "A bakery sells an average of 48 cakes per day. How many cakes does it sell in a week (7 days)?"
+          finalAnswer: "336 cakes"
+          stepByStepGuideline:
+            - "Given: Average = 48 cakes per day, Number = 7 days"
+            - "Total = 48 × 7 = 336 cakes"
+
+        - id: "ftp-q2"
+          problemText: "The average rainfall in June was 15 mm per day. What was the total rainfall for June (30 days)?"
+          finalAnswer: "450 mm"
+          stepByStepGuideline:
+            - "Given: Average = 15 mm, Number = 30 days"
+            - "Total = 15 × 30 = 450 mm"
+
+        - id: "ftp-q3"
+          problemText: "Mrs Tan's average electricity bill is \\$85 per month. What is her total electricity bill for a year?"
+          finalAnswer: "\\$1,020"
+          stepByStepGuideline:
+            - "Given: Average = \\$85, Number = 12 months"
+            - "Total = \\$85 × 12 = \\$1,020"
+
+        - id: "ftp-q4"
+          problemText: "A car travels at an average speed of 60 km/h. How far does it travel in 5 hours?"
+          finalAnswer: "300 km"
+          stepByStepGuideline:
+            - "Distance = Speed × Time"
+            - "Distance = 60 × 5 = 300 km"
+
+        - id: "ftp-q5"
+          problemText: "The average number of visitors to a museum is 250 per day. How many visitors are there in 2 weeks?"
+          finalAnswer: "3,500 visitors"
+          stepByStepGuideline:
+            - "2 weeks = 14 days"
+            - "Total = 250 × 14 = 3,500 visitors"
+
+  # ============================================
+  # SUBTOPIC 3: Finding Number of Data
+  # ============================================
+
+  - id: averages-finding-number-understanding
+    nodeNumber: 8
+    title: "Understanding Number = Total ÷ Average"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-number-formula"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand the third formula: Number = Total ÷ Average"
+        - "Recognize 'how many' problems"
+      contexts:
+        - "how many problems"
+        - "division"
+      preWrittenQuestions:
+        - id: "fnu-q1"
+          avatarIntro: "When you know the total and the average, you can find how many items there are! The formula is: Number = Total ÷ Average. Think: 'How many averages fit into the total?'"
+          problemText: "Raju spent \\$45 on some T-shirts. The average cost of the T-shirts is \\$9. How many T-shirts did he buy?"
+          finalAnswer: "5 T-shirts"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Finding Number of T-shirts"
+              bars:
+                - label: "Total spent"
+                  segments:
+                    - value: "$9"
+                      units: 5
+                  totalLabel: "$45"
+              showUnitDividers: true
+              caption: "How many $9s fit into $45? Answer: 5"
+          stepByStepGuideline:
+            - "Given: Total = \\$45, Average = \\$9"
+            - "Number = Total ÷ Average"
+            - "Number = \\$45 ÷ \\$9 = 5 T-shirts"
+            - "Check: 5 × \\$9 = \\$45 ✓"
+
+        - id: "fnu-q2"
+          problemText: "Sally has 24 tarts. She packs them into boxes with an average of 6 tarts per box. How many boxes does she use?"
+          finalAnswer: "4 boxes"
+          stepByStepGuideline:
+            - "Given: Total = 24 tarts, Average = 6 tarts per box"
+            - "Number = 24 ÷ 6 = 4 boxes"
+            - "Check: 4 × 6 = 24 ✓"
+
+        - id: "fnu-q3"
+          problemText: "James bought some books for \\$72. The average cost of each book was \\$8. How many books did he buy?"
+          finalAnswer: "9 books"
+          stepByStepGuideline:
+            - "Given: Total = \\$72, Average = \\$8"
+            - "Number = \\$72 ÷ \\$8 = 9 books"
+            - "Check: 9 × \\$8 = \\$72 ✓"
+
+        - id: "fnu-q4"
+          problemText: "The total mass of some papayas is 70 kg. The average mass per papaya is 2 kg. How many papayas are there?"
+          finalAnswer: "35 papayas"
+          stepByStepGuideline:
+            - "Given: Total = 70 kg, Average = 2 kg"
+            - "Number = 70 ÷ 2 = 35 papayas"
+
+        - id: "fnu-q5"
+          problemText: "A farmer has 180 eggs. He packs them into cartons with an average of 15 eggs per carton. How many cartons does he use?"
+          finalAnswer: "12 cartons"
+          stepByStepGuideline:
+            - "Given: Total = 180 eggs, Average = 15 eggs"
+            - "Number = 180 ÷ 15 = 12 cartons"
+
+  - id: averages-finding-number-applying
+    nodeNumber: 9
+    title: "Applying the Number Formula"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-finding-number-understanding
+    descriptor:
+      section: "applying-number-formula"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Apply Number = Total ÷ Average in various contexts"
+        - "Verify answers using multiplication"
+      contexts:
+        - "varied contexts"
+        - "verification"
+      preWrittenQuestions:
+        - id: "fna-q1"
+          avatarIntro: "Always verify your answer! If Number × Average = Total, then your answer is correct."
+          problemText: "A shop sold stickers for a total of \\$156. The average price per pack is \\$12. How many packs were sold?"
+          finalAnswer: "13 packs"
+          stepByStepGuideline:
+            - "Given: Total = \\$156, Average = \\$12"
+            - "Number = \\$156 ÷ \\$12 = 13 packs"
+            - "Check: 13 × \\$12 = \\$156 ✓"
+
+        - id: "fna-q2"
+          problemText: "The total length of some ribbons is 63 m. The average length is 9 m. How many ribbons are there?"
+          finalAnswer: "7 ribbons"
+          stepByStepGuideline:
+            - "Given: Total = 63 m, Average = 9 m"
+            - "Number = 63 ÷ 9 = 7 ribbons"
+            - "Check: 7 × 9 = 63 ✓"
+
+        - id: "fna-q3"
+          problemText: "Ben earned a total of \\$240. His average earnings per day was \\$40. How many days did he work?"
+          finalAnswer: "6 days"
+          stepByStepGuideline:
+            - "Given: Total = \\$240, Average = \\$40"
+            - "Number = \\$240 ÷ \\$40 = 6 days"
+
+        - id: "fna-q4"
+          problemText: "A factory produced 750 toys in total. The average production per machine was 150 toys. How many machines were used?"
+          finalAnswer: "5 machines"
+          stepByStepGuideline:
+            - "Given: Total = 750 toys, Average = 150 toys"
+            - "Number = 750 ÷ 150 = 5 machines"
+
+        - id: "fna-q5"
+          problemText: "The total distance covered was 420 km. The average distance per trip was 60 km. How many trips were made?"
+          finalAnswer: "7 trips"
+          stepByStepGuideline:
+            - "Given: Total = 420 km, Average = 60 km"
+            - "Number = 420 ÷ 60 = 7 trips"
+
+  - id: averages-finding-number-practice
+    nodeNumber: 10
+    title: "Practice: Finding Number of Data"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - averages-finding-number-applying
+    descriptor:
+      section: "practice-finding-number"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Fluency practice for finding number from average"
+        - "Mixed contexts"
+      contexts:
+        - "varied scenarios"
+        - "fluency"
+      preWrittenQuestions:
+        - id: "fnp-q1"
+          avatarIntro: "Let's practice identifying 'how many' problems and solving them quickly!"
+          problemText: "A baker used 84 kg of flour in total. He uses an average of 12 kg per batch. How many batches did he make?"
+          finalAnswer: "7 batches"
+          stepByStepGuideline:
+            - "Given: Total = 84 kg, Average = 12 kg"
+            - "Number = 84 ÷ 12 = 7 batches"
+
+        - id: "fnp-q2"
+          problemText: "A bus company collected \\$2,400 in fares. The average fare was \\$8. How many passengers were there?"
+          finalAnswer: "300 passengers"
+          stepByStepGuideline:
+            - "Given: Total = \\$2,400, Average = \\$8"
+            - "Number = \\$2,400 ÷ \\$8 = 300 passengers"
+
+        - id: "fnp-q3"
+          problemText: "The total time spent studying was 15 hours. The average was 2.5 hours per day. How many days did the student study?"
+          finalAnswer: "6 days"
+          stepByStepGuideline:
+            - "Given: Total = 15 hours, Average = 2.5 hours"
+            - "Number = 15 ÷ 2.5 = 6 days"
+
+        - id: "fnp-q4"
+          problemText: "A shop sold items worth \\$1,080. The average price per item was \\$45. How many items were sold?"
+          finalAnswer: "24 items"
+          stepByStepGuideline:
+            - "Given: Total = \\$1,080, Average = \\$45"
+            - "Number = \\$1,080 ÷ \\$45 = 24 items"
+
+        - id: "fnp-q5"
+          problemText: "The total weight of some packages is 96 kg. The average weight is 8 kg. How many packages are there?"
+          finalAnswer: "12 packages"
+          stepByStepGuideline:
+            - "Given: Total = 96 kg, Average = 8 kg"
+            - "Number = 96 ÷ 8 = 12 packages"
+
+  # ============================================
+  # SUBTOPIC 4: Word Problems
+  # ============================================
+
+  - id: averages-word-problems-missing-values
+    nodeNumber: 11
+    title: "Finding Missing Values"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - averages-finding-total-understanding
+    descriptor:
+      section: "finding-missing-values"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find missing values using 'find total first' strategy"
+        - "Multi-step problems"
+      contexts:
+        - "missing values"
+        - "multi-step"
+      preWrittenQuestions:
+        - id: "fmv-q1"
+          avatarIntro: "The Golden Rule for average word problems: Always find the TOTAL first, then work from there! Strategy: Total = Average × Number, then Missing = Total - Known sum."
+          problemText: "The average of 4 numbers is 20. The sum of 3 of the numbers is 69. What is the fourth number?"
+          finalAnswer: "11"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Finding the Missing Number"
+              bars:
+                - label: "4 numbers"
+                  segments:
+                    - value: "69"
+                      units: 3
+                    - value: "?"
+                      units: 1
+                      highlight: true
+                  totalLabel: "Total = 80"
+              caption: "3 numbers = 69, 4th number = ?"
+          stepByStepGuideline:
+            - "Step 1: Find the total"
+            - "Total = Average × Number = 20 × 4 = 80"
+            - "Step 2: Find the missing number"
+            - "Fourth number = 80 - 69 = 11"
+            - "Check: 69 + 11 = 80, 80 ÷ 4 = 20 ✓"
+
+        - id: "fmv-q2"
+          problemText: "The average of 5 numbers is 50. The sum of 4 of the numbers is 192. What is the fifth number?"
+          finalAnswer: "58"
+          stepByStepGuideline:
+            - "Total = 50 × 5 = 250"
+            - "Fifth number = 250 - 192 = 58"
+
+        - id: "fmv-q3"
+          problemText: "The average mass of 6 boxes is 15 kg. Five boxes have a total mass of 82 kg. What is the mass of the sixth box?"
+          finalAnswer: "8 kg"
+          stepByStepGuideline:
+            - "Total mass = 15 × 6 = 90 kg"
+            - "Sixth box = 90 - 82 = 8 kg"
+
+        - id: "fmv-q4"
+          problemText: "Ken's average score in 4 tests is 85. His scores in the first 3 tests are 78, 92, and 88. What was his score in the fourth test?"
+          finalAnswer: "82"
+          stepByStepGuideline:
+            - "Total = 85 × 4 = 340"
+            - "Sum of first 3 = 78 + 92 + 88 = 258"
+            - "Fourth test = 340 - 258 = 82"
+
+        - id: "fmv-q5"
+          problemText: "The average height of 3 children is 1.35 m. Two of them are 1.40 m and 1.25 m tall. What is the height of the third child?"
+          finalAnswer: "1.40 m"
+          stepByStepGuideline:
+            - "Total height = 1.35 × 3 = 4.05 m"
+            - "Sum of two = 1.40 + 1.25 = 2.65 m"
+            - "Third child = 4.05 - 2.65 = 1.40 m"
+
+  - id: averages-word-problems-bar-graphs
+    nodeNumber: 12
+    title: "Problems with Bar Graphs"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - averages-word-problems-missing-values
+    descriptor:
+      section: "bar-graph-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Find missing bar values using average"
+        - "Combine graph interpretation with average calculation"
+      contexts:
+        - "bar graphs"
+        - "missing data"
+      preWrittenQuestions:
+        - id: "bgp-q1"
+          avatarIntro: "When a bar graph has missing data, use the same strategy: Find total from average, then subtract the visible bars to find the missing one."
+          problemText: "A drink seller sold packets over 4 days. Monday: 56, Tuesday: 44, Wednesday: 52, Thursday: ?. The average was 48 packets per day. How many were sold on Thursday?"
+          finalAnswer: "40 packets"
+          solutionMathTool:
+            toolName: barChart
+            parameters:
+              categories: ["Mon", "Tue", "Wed", "Thu"]
+              values: [56, 44, 52, 40]
+              title: "Packet Drinks Sold"
+              xLabel: "Day"
+              yLabel: "Packets"
+              showValues: true
+              highlightIndex: 3
+          stepByStepGuideline:
+            - "Step 1: Total = 48 × 4 = 192 packets"
+            - "Step 2: Sum of visible = 56 + 44 + 52 = 152"
+            - "Step 3: Thursday = 192 - 152 = 40 packets"
+
+        - id: "bgp-q2"
+          problemText: "A clinic saw patients from Monday to Saturday. Mon: 44, Tue: 58, Wed: 32, Thu: 52, Fri: 26, Sat: ?. The average for the 6 days was 38 patients. How many patients were there on Saturday?"
+          finalAnswer: "16 patients"
+          solutionMathTool:
+            toolName: barChart
+            parameters:
+              categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+              values: [44, 58, 32, 52, 26, 16]
+              title: "Patients at Clinic"
+              showValues: true
+              highlightIndex: 5
+          stepByStepGuideline:
+            - "Total for 6 days = 38 × 6 = 228"
+            - "Sum Mon-Fri = 44 + 58 + 32 + 52 + 26 = 212"
+            - "Saturday = 228 - 212 = 16 patients"
+
+        - id: "bgp-q3"
+          problemText: "A shop sold items over 5 days: Mon: 25, Tue: 30, Wed: ?, Thu: 35, Fri: 28. The average was 30 items per day. How many were sold on Wednesday?"
+          finalAnswer: "32 items"
+          stepByStepGuideline:
+            - "Total = 30 × 5 = 150"
+            - "Sum of known = 25 + 30 + 35 + 28 = 118"
+            - "Wednesday = 150 - 118 = 32 items"
+
+        - id: "bgp-q4"
+          problemText: "Books borrowed over 4 months: Jan: 85, Feb: 72, Mar: 93, Apr: ?. The average was 80 books per month. How many were borrowed in April?"
+          finalAnswer: "70 books"
+          stepByStepGuideline:
+            - "Total = 80 × 4 = 320"
+            - "Sum of known = 85 + 72 + 93 = 250"
+            - "April = 320 - 250 = 70 books"
+
+        - id: "bgp-q5"
+          problemText: "Rainfall over 5 days: Day 1: 12 mm, Day 2: 8 mm, Day 3: 15 mm, Day 4: ?, Day 5: 10 mm. The average was 11 mm per day. What was the rainfall on Day 4?"
+          finalAnswer: "10 mm"
+          stepByStepGuideline:
+            - "Total = 11 × 5 = 55 mm"
+            - "Sum of known = 12 + 8 + 15 + 10 = 45 mm"
+            - "Day 4 = 55 - 45 = 10 mm"
+
+  - id: averages-word-problems-combined
+    nodeNumber: 13
+    title: "Combined Averages"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - averages-word-problems-missing-values
+    descriptor:
+      section: "combined-averages"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve problems with subgroup averages"
+        - "Understand that averages don't simply add"
+      contexts:
+        - "combined groups"
+        - "boys and girls"
+      preWrittenQuestions:
+        - id: "ca-q1"
+          avatarIntro: "Important: You CANNOT simply add averages! If boys average 7 and girls average 10, the combined average is NOT 17. Find totals for each group, then combine."
+          problemText: "3 boys and 2 girls saved an average of \\$10 each. The 3 boys saved an average of \\$7. What was the total amount saved by the 2 girls?"
+          finalAnswer: "\\$29"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Combined Savings"
+              bars:
+                - label: "All 5 children"
+                  segments:
+                    - value: "$10 avg"
+                      units: 5
+                  totalLabel: "$50"
+                - label: "3 boys"
+                  segments:
+                    - value: "$7 avg"
+                      units: 3
+                  totalLabel: "$21"
+              caption: "Girls total = $50 - $21"
+          stepByStepGuideline:
+            - "Step 1: Total for all 5 = \\$10 × 5 = \\$50"
+            - "Step 2: Total for 3 boys = \\$7 × 3 = \\$21"
+            - "Step 3: Total for 2 girls = \\$50 - \\$21 = \\$29"
+
+        - id: "ca-q2"
+          problemText: "4 men and 6 women bought an average of 12 fruits. The 4 men bought an average of 10 fruits. How many fruits did the 6 women buy in total?"
+          finalAnswer: "80 fruits"
+          stepByStepGuideline:
+            - "Total for all 10 = 12 × 10 = 120"
+            - "Total for 4 men = 10 × 4 = 40"
+            - "Total for 6 women = 120 - 40 = 80 fruits"
+
+        - id: "ca-q3"
+          problemText: "5 boys and 3 girls have an average height of 1.40 m. The 5 boys have an average height of 1.44 m. What is the average height of the 3 girls?"
+          finalAnswer: "1.333 m (or 1.33 m)"
+          stepByStepGuideline:
+            - "Total for all 8 = 1.40 × 8 = 11.20 m"
+            - "Total for 5 boys = 1.44 × 5 = 7.20 m"
+            - "Total for 3 girls = 11.20 - 7.20 = 4.00 m"
+            - "Average for girls = 4.00 ÷ 3 = 1.333 m"
+
+        - id: "ca-q4"
+          problemText: "8 adults and 12 children spent an average of \\$15. The adults spent an average of \\$20. What was the average amount spent by the children?"
+          finalAnswer: "\\$11.67 (or \\$35/3)"
+          stepByStepGuideline:
+            - "Total for all 20 = \\$15 × 20 = \\$300"
+            - "Total for 8 adults = \\$20 × 8 = \\$160"
+            - "Total for 12 children = \\$300 - \\$160 = \\$140"
+            - "Average for children = \\$140 ÷ 12 = \\$11.67"
+
+        - id: "ca-q5"
+          problemText: "6 boys and 4 girls scored an average of 75 marks in a test. The boys scored an average of 80 marks. What was the average score of the girls?"
+          finalAnswer: "67.5 marks"
+          stepByStepGuideline:
+            - "Total for all 10 = 75 × 10 = 750"
+            - "Total for 6 boys = 80 × 6 = 480"
+            - "Total for 4 girls = 750 - 480 = 270"
+            - "Average for girls = 270 ÷ 4 = 67.5 marks"
+
+  - id: averages-word-problems-challenging
+    nodeNumber: 14
+    title: "Challenging Multi-Step Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - averages-word-problems-bar-graphs
+      - averages-word-problems-combined
+    descriptor:
+      section: "challenging-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve 'new member joins' problems"
+        - "Complex multi-step problems"
+      contexts:
+        - "new member"
+        - "multi-step"
+      preWrittenQuestions:
+        - id: "cp-q1"
+          avatarIntro: "These challenging problems often involve a new member joining a group. Strategy: Find old total, add new value, then divide by new count."
+          problemText: "The average height of 4 children is 1.45 m. Another child whose height is 1.55 m joins the group. What is the new average height of the 5 children?"
+          finalAnswer: "1.47 m"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "New Average Height"
+              bars:
+                - label: "4 children"
+                  segments:
+                    - value: "1.45m avg"
+                      units: 4
+                  totalLabel: "5.8m"
+                - label: "New child"
+                  segments:
+                    - value: "1.55m"
+                  totalLabel: "1.55m"
+              caption: "New total = 5.8 + 1.55 = 7.35m"
+          stepByStepGuideline:
+            - "Step 1: Total for 4 children = 1.45 × 4 = 5.8 m"
+            - "Step 2: New total = 5.8 + 1.55 = 7.35 m"
+            - "Step 3: New average = 7.35 ÷ 5 = 1.47 m"
+            - "Note: New child is taller than old average, so new average goes up!"
+
+        - id: "cp-q2"
+          problemText: "Hasnah has 3 ribbons with an average length of 8.5 m. She buys a new ribbon that is 7.5 m long. What is the new average length of all her ribbons?"
+          finalAnswer: "8.25 m"
+          stepByStepGuideline:
+            - "Old total = 8.5 × 3 = 25.5 m"
+            - "New total = 25.5 + 7.5 = 33 m"
+            - "New average = 33 ÷ 4 = 8.25 m"
+            - "Note: New ribbon is shorter than old average, so new average goes down!"
+
+        - id: "cp-q3"
+          problemText: "The average mass of 39 students is 40 kg. When the teacher is included, the average becomes 41 kg. What is the mass of the teacher?"
+          finalAnswer: "80 kg"
+          stepByStepGuideline:
+            - "Total mass of 39 students = 40 × 39 = 1560 kg"
+            - "Total mass of 40 people = 41 × 40 = 1640 kg"
+            - "Teacher's mass = 1640 - 1560 = 80 kg"
+
+        - id: "cp-q4"
+          problemText: "The average of 5 numbers is 36. When a 6th number is added, the new average is 40. What is the 6th number?"
+          finalAnswer: "60"
+          stepByStepGuideline:
+            - "Old total = 36 × 5 = 180"
+            - "New total = 40 × 6 = 240"
+            - "6th number = 240 - 180 = 60"
+
+        - id: "cp-q5"
+          problemText: "The average score of 8 players is 42 points. When a new player joins, the average becomes 45 points. How many points did the new player score?"
+          finalAnswer: "69 points"
+          stepByStepGuideline:
+            - "Old total = 42 × 8 = 336 points"
+            - "New total = 45 × 9 = 405 points"
+            - "New player's score = 405 - 336 = 69 points"

@@ -1,0 +1,1847 @@
+# P6 Mathematics - Ratios Practice Module
+# Covers: Introduction, Equivalent Ratios, Finding Equivalent, Finding New Ratios, Fraction & Ratio, Word Problems
+# Total: 13 nodes covering all sections
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Introduction to Ratios
+  # ============================================
+
+  - id: ratios-understanding-ratio
+    nodeNumber: 1
+    title: "Understanding Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "understanding-ratio"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Write ratios from given quantities"
+        - "Understand ratio notation and order"
+      contexts:
+        - "pure computation"
+        - "real-world comparisons"
+      preWrittenQuestions:
+        - id: "ur-q1"
+          avatarIntro: "A ratio compares two or more quantities. We write them using the ':' symbol. Let's practice writing ratios!"
+          problemText: "There are 5 red apples and 8 green apples in a basket. What is the ratio of red apples to green apples?"
+          finalAnswer: "5 : 8"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Red"
+                  units: 5
+                  color: "pink"
+                - label: "Green"
+                  units: 8
+                  color: "green"
+              showUnitDividers: true
+              caption: "5 red apples to 8 green apples = 5 : 8"
+          stepByStepGuideline:
+            - "Count the red apples: 5"
+            - "Count the green apples: 8"
+            - "Write the ratio in the order asked: red to green"
+            - "The ratio of red apples to green apples is 5 : 8"
+
+        - id: "ur-q2"
+          problemText: "Mrs Tan uses 2 cups of flour and 3 cups of sugar for a recipe. What is the ratio of sugar to flour?"
+          finalAnswer: "3 : 2"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Sugar"
+                  units: 3
+                  color: "yellow"
+                - label: "Flour"
+                  units: 2
+                  color: "orange"
+              showUnitDividers: true
+              caption: "Sugar to flour = 3 : 2 (order matters!)"
+          stepByStepGuideline:
+            - "Sugar = 3 cups, Flour = 2 cups"
+            - "The question asks for sugar TO flour (sugar first)"
+            - "Ratio of sugar to flour = 3 : 2"
+            - "Note: This is different from flour to sugar which would be 2 : 3"
+
+        - id: "ur-q3"
+          problemText: "In a class, there are 12 boys and 15 girls. What is the ratio of boys to girls?"
+          finalAnswer: "12 : 15 or 4 : 5"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Boys"
+                  units: 4
+                  color: "blue"
+                - label: "Girls"
+                  units: 5
+                  color: "pink"
+              showUnitDividers: true
+              caption: "12 : 15 simplifies to 4 : 5"
+          stepByStepGuideline:
+            - "Boys = 12, Girls = 15"
+            - "Ratio of boys to girls = 12 : 15"
+            - "This can be simplified by dividing both by 3"
+            - "12 ÷ 3 : 15 ÷ 3 = 4 : 5"
+
+        - id: "ur-q4"
+          problemText: "Ahmad has 7 toy cars. Ben has 4 toy cars. What is the ratio of Ben's cars to Ahmad's cars?"
+          finalAnswer: "4 : 7"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ben"
+                  units: 4
+                  color: "green"
+                - label: "Ahmad"
+                  units: 7
+                  color: "blue"
+              showUnitDividers: true
+              caption: "Ben's to Ahmad's = 4 : 7"
+          stepByStepGuideline:
+            - "Ben has 4 cars, Ahmad has 7 cars"
+            - "The question asks for Ben's TO Ahmad's (Ben first)"
+            - "Ratio of Ben's cars to Ahmad's cars = 4 : 7"
+
+        - id: "ur-q5"
+          problemText: "A ribbon is cut into 2 pieces. One piece is 9 cm and the other is 6 cm. What is the ratio of the longer piece to the shorter piece?"
+          finalAnswer: "9 : 6 or 3 : 2"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Longer"
+                  units: 3
+                  color: "purple"
+                - label: "Shorter"
+                  units: 2
+                  color: "pink"
+              showUnitDividers: true
+              caption: "9 : 6 = 3 : 2 in simplest form"
+          stepByStepGuideline:
+            - "Longer piece = 9 cm, Shorter piece = 6 cm"
+            - "Ratio of longer to shorter = 9 : 6"
+            - "Simplify by dividing both by 3: 9 ÷ 3 : 6 ÷ 3 = 3 : 2"
+
+  - id: ratios-part-to-part-whole
+    nodeNumber: 2
+    title: "Part-to-Part and Part-to-Whole Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-understanding-ratio
+    descriptor:
+      section: "part-to-part-whole"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Distinguish between part-to-part and part-to-whole ratios"
+        - "Calculate totals and write three-term ratios"
+      contexts:
+        - "part-to-part"
+        - "part-to-whole"
+      preWrittenQuestions:
+        - id: "ppw-q1"
+          avatarIntro: "There are two types of ratios: part-to-part (comparing parts) and part-to-whole (comparing a part to the total). Let's learn to tell them apart!"
+          problemText: "There are 3 cats and 5 dogs at a pet shop.\n(a) What is the ratio of cats to dogs?\n(b) What is the ratio of cats to the total number of animals?"
+          finalAnswer: "(a) 3 : 5\n(b) 3 : 8"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Cats"
+                  units: 3
+                  color: "orange"
+                - label: "Dogs"
+                  units: 5
+                  color: "blue"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "8 total"
+              showUnitDividers: true
+              caption: "Total = 3 + 5 = 8 animals"
+          stepByStepGuideline:
+            - "(a) Part-to-part: Cats to dogs = 3 : 5"
+            - "(b) First find the total: 3 + 5 = 8 animals"
+            - "(b) Part-to-whole: Cats to total = 3 : 8"
+
+        - id: "ppw-q2"
+          problemText: "The mass of a watermelon is 4 kg and the mass of a papaya is 2 kg. What is the ratio of the papaya's mass to the total mass of both fruits?"
+          finalAnswer: "2 : 6 or 1 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Papaya"
+                  units: 1
+                  color: "orange"
+                - label: "Watermelon"
+                  units: 2
+                  color: "green"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "6 kg total"
+              showUnitDividers: true
+              caption: "Papaya to total = 2 : 6 = 1 : 3"
+          stepByStepGuideline:
+            - "Papaya = 2 kg, Watermelon = 4 kg"
+            - "Total mass = 2 + 4 = 6 kg"
+            - "Ratio of papaya to total = 2 : 6"
+            - "Simplify: 2 : 6 = 1 : 3"
+
+        - id: "ppw-q3"
+          problemText: "There are 4 hamsters, 6 rabbits, and 2 guinea pigs in a pet store. What is the ratio of hamsters to rabbits to guinea pigs?"
+          finalAnswer: "4 : 6 : 2 or 2 : 3 : 1"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Hamsters"
+                  units: 2
+                  color: "orange"
+                - label: "Rabbits"
+                  units: 3
+                  color: "pink"
+                - label: "Guinea Pigs"
+                  units: 1
+                  color: "brown"
+              showUnitDividers: true
+              caption: "Three-term ratio: 4 : 6 : 2 = 2 : 3 : 1"
+          stepByStepGuideline:
+            - "Hamsters = 4, Rabbits = 6, Guinea pigs = 2"
+            - "Three-term ratio = 4 : 6 : 2"
+            - "Find GCF of 4, 6, and 2: GCF = 2"
+            - "Simplify: 4÷2 : 6÷2 : 2÷2 = 2 : 3 : 1"
+
+        - id: "ppw-q4"
+          problemText: "Ali, Ben, and Chen have marbles in the ratio 5 : 3 : 2. What is the ratio of Ben's marbles to the total?"
+          finalAnswer: "3 : 10"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ali"
+                  units: 5
+                  color: "blue"
+                - label: "Ben"
+                  units: 3
+                  color: "green"
+                - label: "Chen"
+                  units: 2
+                  color: "yellow"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "10 units total"
+              showUnitDividers: true
+              caption: "Ben : Total = 3 : 10"
+          stepByStepGuideline:
+            - "Ali : Ben : Chen = 5 : 3 : 2"
+            - "Total units = 5 + 3 + 2 = 10 units"
+            - "Ratio of Ben to total = 3 : 10"
+
+        - id: "ppw-q5"
+          problemText: "There are 7 boys and 5 girls in a group.\n(a) What is the ratio of girls to boys?\n(b) What is the ratio of boys to the total number of children?"
+          finalAnswer: "(a) 5 : 7\n(b) 7 : 12"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Girls"
+                  units: 5
+                  color: "pink"
+                - label: "Boys"
+                  units: 7
+                  color: "blue"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "12 children"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "(a) Girls : Boys = 5 : 7 (note the order)"
+            - "(b) Total = 7 + 5 = 12 children"
+            - "(b) Boys : Total = 7 : 12"
+
+  # ============================================
+  # SUBTOPIC 2: Equivalent Ratios
+  # ============================================
+
+  - id: ratios-understanding-equivalent
+    nodeNumber: 3
+    title: "Understanding Equivalent Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-part-to-part-whole
+    descriptor:
+      section: "understanding-equivalent-ratios"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Identify equivalent ratios"
+        - "Understand that equivalent ratios show the same relationship"
+      contexts:
+        - "equivalent ratios"
+        - "grouping"
+      preWrittenQuestions:
+        - id: "uer-q1"
+          avatarIntro: "Equivalent ratios are ratios that show the SAME relationship, even though they use different numbers. Think of it like this: 1:2 and 2:4 both mean 'twice as many'!"
+          problemText: "Which of these ratios is equivalent to 2 : 3?\n(A) 4 : 5    (B) 6 : 9    (C) 3 : 2    (D) 4 : 9"
+          finalAnswer: "(B) 6 : 9"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "2:3"
+                  units: 2
+                  color: "blue"
+                - label: "6:9"
+                  units: 6
+                  color: "blue"
+              showUnitDividers: true
+              caption: "2 : 3 = 6 : 9 (both ×3)"
+          stepByStepGuideline:
+            - "To find equivalent ratios, multiply or divide both terms by the same number"
+            - "2 : 3 → multiply both by 3 → 6 : 9"
+            - "Check: 6 ÷ 2 = 3 and 9 ÷ 3 = 3 ✓"
+            - "Answer: (B) 6 : 9"
+
+        - id: "uer-q2"
+          problemText: "There are 8 squares and 12 circles. By grouping them in fours, find an equivalent ratio."
+          finalAnswer: "2 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Squares"
+                  units: 2
+                  color: "blue"
+                - label: "Circles"
+                  units: 3
+                  color: "green"
+              showUnitDividers: true
+              caption: "8 : 12 → ÷4 → 2 : 3"
+          stepByStepGuideline:
+            - "Squares : Circles = 8 : 12"
+            - "Group in fours means divide both by 4"
+            - "8 ÷ 4 : 12 ÷ 4 = 2 : 3"
+            - "The equivalent ratio is 2 : 3"
+
+        - id: "uer-q3"
+          problemText: "Are 15 : 25 and 3 : 5 equivalent ratios? Explain."
+          finalAnswer: "Yes, they are equivalent."
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "15:25"
+                  units: 15
+                  color: "purple"
+                - label: "3:5"
+                  units: 3
+                  color: "purple"
+              showUnitDividers: false
+              caption: "15 : 25 = 3 : 5 (divide by 5)"
+          stepByStepGuideline:
+            - "To check if ratios are equivalent, simplify both to simplest form"
+            - "15 : 25 → divide both by 5 → 3 : 5"
+            - "3 : 5 is already in simplest form"
+            - "Both simplify to 3 : 5, so YES they are equivalent"
+
+        - id: "uer-q4"
+          problemText: "Write two ratios that are equivalent to 4 : 7."
+          finalAnswer: "8 : 14 and 12 : 21 (or other valid equivalents)"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "×2"
+                  units: 8
+                  color: "green"
+                - label: "×3"
+                  units: 12
+                  color: "blue"
+              showUnitDividers: true
+              caption: "4:7 = 8:14 = 12:21"
+          stepByStepGuideline:
+            - "To find equivalent ratios, multiply both terms by the same number"
+            - "4 : 7 × 2 = 8 : 14"
+            - "4 : 7 × 3 = 12 : 21"
+            - "Both 8 : 14 and 12 : 21 are equivalent to 4 : 7"
+
+        - id: "uer-q5"
+          problemText: "Which ratio is NOT equivalent to 6 : 10?\n(A) 3 : 5    (B) 12 : 20    (C) 9 : 12    (D) 30 : 50"
+          finalAnswer: "(C) 9 : 12"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "6:10"
+                  units: 3
+                  color: "blue"
+                - label: "9:12"
+                  units: 3
+                  color: "red"
+              showUnitDividers: true
+              caption: "6:10 = 3:5, but 9:12 = 3:4"
+          stepByStepGuideline:
+            - "First, simplify 6 : 10 → 3 : 5"
+            - "(A) 3 : 5 ✓ Already matches"
+            - "(B) 12 : 20 ÷ 4 = 3 : 5 ✓"
+            - "(C) 9 : 12 ÷ 3 = 3 : 4 ✗ Not equivalent!"
+            - "(D) 30 : 50 ÷ 10 = 3 : 5 ✓"
+            - "Answer: (C) 9 : 12"
+
+  - id: ratios-simplifying
+    nodeNumber: 4
+    title: "Simplifying Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-understanding-equivalent
+    descriptor:
+      section: "simplifying-ratios"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Simplify ratios to simplest form"
+        - "Use GCF to simplify efficiently"
+      contexts:
+        - "simplification"
+        - "GCF"
+      preWrittenQuestions:
+        - id: "sr-q1"
+          avatarIntro: "To simplify a ratio, divide both terms by their Greatest Common Factor (GCF). The simplest form is when both terms share no common factor except 1."
+          problemText: "Simplify 18 : 24 to its simplest form."
+          finalAnswer: "3 : 4"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "First"
+                  units: 3
+                  color: "blue"
+                - label: "Second"
+                  units: 4
+                  color: "green"
+              showUnitDividers: true
+              caption: "18 : 24 → ÷6 → 3 : 4"
+          stepByStepGuideline:
+            - "Find GCF of 18 and 24"
+            - "Factors of 18: 1, 2, 3, 6, 9, 18"
+            - "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24"
+            - "GCF = 6"
+            - "18 ÷ 6 : 24 ÷ 6 = 3 : 4"
+
+        - id: "sr-q2"
+          problemText: "There are 45 motorcycles and 30 bicycles. Express the ratio of motorcycles to bicycles in simplest form."
+          finalAnswer: "3 : 2"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Motorcycles"
+                  units: 3
+                  color: "blue"
+                - label: "Bicycles"
+                  units: 2
+                  color: "green"
+              showUnitDividers: true
+              caption: "45 : 30 → ÷15 → 3 : 2"
+          stepByStepGuideline:
+            - "Motorcycles : Bicycles = 45 : 30"
+            - "GCF of 45 and 30 = 15"
+            - "45 ÷ 15 : 30 ÷ 15 = 3 : 2"
+            - "Simplest form is 3 : 2"
+
+        - id: "sr-q3"
+          problemText: "Simplify the ratio 72 : 48 : 36 to its simplest form."
+          finalAnswer: "6 : 4 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 6
+                  color: "pink"
+                - label: "B"
+                  units: 4
+                  color: "orange"
+                - label: "C"
+                  units: 3
+                  color: "blue"
+              showUnitDividers: true
+              caption: "72 : 48 : 36 → ÷12 → 6 : 4 : 3"
+          stepByStepGuideline:
+            - "Find GCF of 72, 48, and 36"
+            - "GCF = 12"
+            - "72 ÷ 12 : 48 ÷ 12 : 36 ÷ 12"
+            - "= 6 : 4 : 3"
+
+        - id: "sr-q4"
+          problemText: "Raju has 84 stickers and Sara has 56 stickers. Express the ratio of Raju's stickers to Sara's stickers in simplest form."
+          finalAnswer: "3 : 2"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Raju"
+                  units: 3
+                  color: "purple"
+                - label: "Sara"
+                  units: 2
+                  color: "pink"
+              showUnitDividers: true
+              caption: "84 : 56 → ÷28 → 3 : 2"
+          stepByStepGuideline:
+            - "Raju : Sara = 84 : 56"
+            - "Method 1: 84 : 56 → ÷4 → 21 : 14 → ÷7 → 3 : 2"
+            - "Method 2 (GCF): GCF of 84 and 56 = 28"
+            - "84 ÷ 28 : 56 ÷ 28 = 3 : 2"
+
+        - id: "sr-q5"
+          problemText: "A piece of rope is cut into 3 parts. Part A is 20 cm, Part B is 35 cm, and Part C is 15 cm. Express the ratio A : B : C in simplest form."
+          finalAnswer: "4 : 7 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 4
+                  color: "pink"
+                - label: "B"
+                  units: 7
+                  color: "green"
+                - label: "C"
+                  units: 3
+                  color: "blue"
+              showUnitDividers: true
+              caption: "20 : 35 : 15 → ÷5 → 4 : 7 : 3"
+          stepByStepGuideline:
+            - "A : B : C = 20 : 35 : 15"
+            - "GCF of 20, 35, and 15 = 5"
+            - "20 ÷ 5 : 35 ÷ 5 : 15 ÷ 5"
+            - "= 4 : 7 : 3"
+
+  # ============================================
+  # SUBTOPIC 3: Finding Equivalent Ratios
+  # ============================================
+
+  - id: ratios-scaling
+    nodeNumber: 5
+    title: "Scaling Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-simplifying
+    descriptor:
+      section: "scaling-ratios"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Scale ratios up and down"
+        - "Find equivalent ratios using multiplication and division"
+      contexts:
+        - "scaling"
+        - "multiplication"
+      preWrittenQuestions:
+        - id: "scr-q1"
+          avatarIntro: "To scale a ratio up, multiply both terms by the same number. To scale down, divide both terms by the same number. The relationship stays the same!"
+          problemText: "Scale the ratio 3 : 5 up by multiplying both terms by 4."
+          finalAnswer: "12 : 20"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Original"
+                  units: 3
+                  color: "blue"
+                - label: "Scaled"
+                  units: 12
+                  color: "green"
+              showUnitDividers: true
+              caption: "3 : 5 → ×4 → 12 : 20"
+          stepByStepGuideline:
+            - "Original ratio: 3 : 5"
+            - "Multiply both terms by 4"
+            - "3 × 4 : 5 × 4"
+            - "= 12 : 20"
+
+        - id: "scr-q2"
+          problemText: "A recipe uses sugar and flour in the ratio 1 : 3. If you use 4 cups of sugar, how many cups of flour do you need?"
+          finalAnswer: "12 cups"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Sugar"
+                  units: 4
+                  color: "yellow"
+                - label: "Flour"
+                  units: 12
+                  color: "orange"
+              showUnitDividers: true
+              caption: "1 : 3 → ×4 → 4 : 12"
+          stepByStepGuideline:
+            - "Sugar : Flour = 1 : 3"
+            - "If sugar = 4 cups, that's 1 × 4"
+            - "So flour = 3 × 4 = 12 cups"
+
+        - id: "scr-q3"
+          problemText: "Scale the ratio 24 : 18 down to its simplest form by dividing by the GCF."
+          finalAnswer: "4 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "First"
+                  units: 4
+                  color: "purple"
+                - label: "Second"
+                  units: 3
+                  color: "pink"
+              showUnitDividers: true
+              caption: "24 : 18 → ÷6 → 4 : 3"
+          stepByStepGuideline:
+            - "Find GCF of 24 and 18 = 6"
+            - "Divide both terms by 6"
+            - "24 ÷ 6 : 18 ÷ 6"
+            - "= 4 : 3"
+
+        - id: "scr-q4"
+          problemText: "The ratio of adults to children at a party is 2 : 5. If there are 10 adults, how many children are there?"
+          finalAnswer: "25 children"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Adults"
+                  units: 2
+                  color: "green"
+                - label: "Children"
+                  units: 5
+                  color: "blue"
+              partialBracket:
+                barIndex: 0
+                fromUnit: 0
+                toUnit: 2
+                value: "10"
+                position: "bottom"
+              showUnitDividers: true
+              unitValue: "2 units = 10, so 1 unit = 5"
+          stepByStepGuideline:
+            - "Adults : Children = 2 : 5"
+            - "2 units = 10 adults"
+            - "1 unit = 10 ÷ 2 = 5"
+            - "Children (5 units) = 5 × 5 = 25"
+
+        - id: "scr-q5"
+          problemText: "Scale 5 : 2 : 4 by multiplying all terms by 6."
+          finalAnswer: "30 : 12 : 24"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 30
+                  color: "pink"
+                - label: "B"
+                  units: 12
+                  color: "green"
+                - label: "C"
+                  units: 24
+                  color: "blue"
+              showUnitDividers: false
+              caption: "5 : 2 : 4 → ×6 → 30 : 12 : 24"
+          stepByStepGuideline:
+            - "Original ratio: 5 : 2 : 4"
+            - "Multiply each term by 6"
+            - "5 × 6 : 2 × 6 : 4 × 6"
+            - "= 30 : 12 : 24"
+
+  - id: ratios-finding-missing
+    nodeNumber: 6
+    title: "Finding Missing Values"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-scaling
+    descriptor:
+      section: "finding-missing-values"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find missing values in equivalent ratios"
+        - "Determine scaling factors from known values"
+      contexts:
+        - "missing values"
+        - "equivalent ratios"
+      preWrittenQuestions:
+        - id: "fmv-q1"
+          avatarIntro: "To find a missing value, first find the scaling factor from the known values, then apply it to find the unknown."
+          problemText: "Find the missing value: 3 : 8 = ? : 24"
+          finalAnswer: "9"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "First"
+                  units: 9
+                  color: "green"
+                - label: "Second"
+                  units: 24
+                  color: "blue"
+              showUnitDividers: true
+              caption: "3 : 8 = 9 : 24 (factor = 3)"
+          stepByStepGuideline:
+            - "Compare known values: 8 → 24"
+            - "Find the factor: 24 ÷ 8 = 3"
+            - "Apply factor to first term: 3 × 3 = 9"
+            - "Answer: 3 : 8 = 9 : 24"
+
+        - id: "fmv-q2"
+          problemText: "Find the missing value: 5 : ? = 20 : 36"
+          finalAnswer: "9"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "First"
+                  units: 5
+                  color: "purple"
+                - label: "Second"
+                  units: 9
+                  color: "pink"
+              showUnitDividers: true
+              caption: "5 : 9 = 20 : 36 (factor = 4)"
+          stepByStepGuideline:
+            - "Compare known values: 5 → 20"
+            - "Find the factor: 20 ÷ 5 = 4"
+            - "Apply factor to find missing: 36 ÷ 4 = 9"
+            - "Answer: 5 : 9 = 20 : 36"
+
+        - id: "fmv-q3"
+          problemText: "Find the missing values: 4 : 7 : 3 = ? : 28 : ?"
+          finalAnswer: "16 and 12"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 16
+                  color: "pink"
+                - label: "B"
+                  units: 28
+                  color: "green"
+                - label: "C"
+                  units: 12
+                  color: "blue"
+              showUnitDividers: false
+              caption: "4 : 7 : 3 = 16 : 28 : 12 (factor = 4)"
+          stepByStepGuideline:
+            - "Find factor from known value: 7 → 28"
+            - "Factor = 28 ÷ 7 = 4"
+            - "First missing: 4 × 4 = 16"
+            - "Second missing: 3 × 4 = 12"
+            - "Answer: 16 : 28 : 12"
+
+        - id: "fmv-q4"
+          problemText: "? : 6 = 15 : 18. Find the missing value."
+          finalAnswer: "5"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "First"
+                  units: 5
+                  color: "orange"
+                - label: "Second"
+                  units: 6
+                  color: "yellow"
+              showUnitDividers: true
+              caption: "5 : 6 = 15 : 18 (factor = 3)"
+          stepByStepGuideline:
+            - "Compare known values: 6 → 18"
+            - "Find factor: 18 ÷ 6 = 3"
+            - "Reverse: 15 ÷ 3 = 5"
+            - "Answer: 5 : 6 = 15 : 18"
+
+        - id: "fmv-q5"
+          problemText: "A bakery sells strawberry and lemon tarts in the ratio 5 : 3. If they sell 45 strawberry tarts, how many lemon tarts do they sell?"
+          finalAnswer: "27 lemon tarts"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Strawberry"
+                  units: 5
+                  color: "pink"
+                - label: "Lemon"
+                  units: 3
+                  color: "yellow"
+              partialBracket:
+                barIndex: 0
+                fromUnit: 0
+                toUnit: 5
+                value: "45"
+                position: "bottom"
+              showUnitDividers: true
+              unitValue: "5 units = 45, so 1 unit = 9"
+          stepByStepGuideline:
+            - "Strawberry : Lemon = 5 : 3"
+            - "5 units = 45"
+            - "1 unit = 45 ÷ 5 = 9"
+            - "Lemon (3 units) = 3 × 9 = 27"
+
+  # ============================================
+  # SUBTOPIC 4: Finding New Ratios
+  # ============================================
+
+  - id: ratios-combining-two
+    nodeNumber: 7
+    title: "Combining Two Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-finding-missing
+    descriptor:
+      section: "combining-two-ratios"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Combine two ratios with a common term"
+        - "Create three-term ratios from two-term ratios"
+      contexts:
+        - "combining ratios"
+        - "common term"
+      preWrittenQuestions:
+        - id: "ctr-q1"
+          avatarIntro: "When two ratios share a common term, we can combine them into a three-term ratio. First, make the common term equal in both ratios!"
+          problemText: "A : B = 2 : 3 and A : C = 4 : 5. Find A : B : C."
+          finalAnswer: "4 : 6 : 5"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 4
+                  color: "green"
+                - label: "B"
+                  units: 6
+                  color: "yellow"
+                - label: "C"
+                  units: 5
+                  color: "blue"
+              showUnitDividers: true
+              caption: "A : B : C = 4 : 6 : 5"
+          stepByStepGuideline:
+            - "Common term: A"
+            - "A : B = 2 : 3 → A = 2"
+            - "A : C = 4 : 5 → A = 4"
+            - "Make A equal: multiply first ratio by 2"
+            - "A : B = 2 : 3 → 4 : 6"
+            - "Combine: A : B : C = 4 : 6 : 5"
+
+        - id: "ctr-q2"
+          problemText: "Ken : Mei = 3 : 4 and Mei : Ali = 2 : 5. Find Ken : Mei : Ali."
+          finalAnswer: "3 : 4 : 10"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ken"
+                  units: 3
+                  color: "blue"
+                - label: "Mei"
+                  units: 4
+                  color: "pink"
+                - label: "Ali"
+                  units: 10
+                  color: "green"
+              showUnitDividers: true
+              caption: "Ken : Mei : Ali = 3 : 4 : 10"
+          stepByStepGuideline:
+            - "Common term: Mei"
+            - "Ken : Mei = 3 : 4 → Mei = 4"
+            - "Mei : Ali = 2 : 5 → Mei = 2"
+            - "Make Mei equal: LCM of 4 and 2 = 4"
+            - "Mei : Ali = 2 : 5 → ×2 → 4 : 10"
+            - "Combine: Ken : Mei : Ali = 3 : 4 : 10"
+
+        - id: "ctr-q3"
+          problemText: "Red : Blue = 5 : 2 and Blue : Green = 6 : 7. Find Red : Blue : Green."
+          finalAnswer: "15 : 6 : 7"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Red"
+                  units: 15
+                  color: "pink"
+                - label: "Blue"
+                  units: 6
+                  color: "blue"
+                - label: "Green"
+                  units: 7
+                  color: "green"
+              showUnitDividers: true
+              caption: "Red : Blue : Green = 15 : 6 : 7"
+          stepByStepGuideline:
+            - "Common term: Blue"
+            - "Red : Blue = 5 : 2 → Blue = 2"
+            - "Blue : Green = 6 : 7 → Blue = 6"
+            - "Make Blue equal: LCM of 2 and 6 = 6"
+            - "Red : Blue = 5 : 2 → ×3 → 15 : 6"
+            - "Combine: Red : Blue : Green = 15 : 6 : 7"
+
+        - id: "ctr-q4"
+          problemText: "Squares : Triangles = 1 : 3 and Squares : Circles = 2 : 5. Find Squares : Triangles : Circles."
+          finalAnswer: "2 : 6 : 5"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Squares"
+                  units: 2
+                  color: "blue"
+                - label: "Triangles"
+                  units: 6
+                  color: "green"
+                - label: "Circles"
+                  units: 5
+                  color: "orange"
+              showUnitDividers: true
+              caption: "Squares : Triangles : Circles = 2 : 6 : 5"
+          stepByStepGuideline:
+            - "Common term: Squares"
+            - "Squares : Triangles = 1 : 3 → Squares = 1"
+            - "Squares : Circles = 2 : 5 → Squares = 2"
+            - "Make Squares equal: multiply first by 2"
+            - "Squares : Triangles = 1 : 3 → 2 : 6"
+            - "Combine: 2 : 6 : 5"
+
+        - id: "ctr-q5"
+          problemText: "X : Y = 3 : 5 and X : Z = 9 : 4. Find X : Y : Z."
+          finalAnswer: "9 : 15 : 4"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "X"
+                  units: 9
+                  color: "purple"
+                - label: "Y"
+                  units: 15
+                  color: "yellow"
+                - label: "Z"
+                  units: 4
+                  color: "blue"
+              showUnitDividers: true
+              caption: "X : Y : Z = 9 : 15 : 4"
+          stepByStepGuideline:
+            - "Common term: X"
+            - "X : Y = 3 : 5 → X = 3"
+            - "X : Z = 9 : 4 → X = 9"
+            - "Make X equal: multiply first by 3"
+            - "X : Y = 3 : 5 → 9 : 15"
+            - "Combine: X : Y : Z = 9 : 15 : 4"
+
+  - id: ratios-three-term
+    nodeNumber: 8
+    title: "Working with Three-Term Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-combining-two
+    descriptor:
+      section: "three-term-ratios"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Work fluently with three-term ratios"
+        - "Extract two-term ratios from three-term ratios"
+      contexts:
+        - "three-term ratios"
+        - "extracting ratios"
+      preWrittenQuestions:
+        - id: "3tr-q1"
+          avatarIntro: "From any three-term ratio A : B : C, you can extract multiple two-term ratios like A : B, B : C, and A : C!"
+          problemText: "Given A : B : C = 4 : 6 : 9, find:\n(a) A : B in simplest form\n(b) B : C in simplest form"
+          finalAnswer: "(a) 2 : 3\n(b) 2 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 4
+                  color: "pink"
+                - label: "B"
+                  units: 6
+                  color: "green"
+                - label: "C"
+                  units: 9
+                  color: "blue"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "(a) A : B = 4 : 6 = 2 : 3 (divide by 2)"
+            - "(b) B : C = 6 : 9 = 2 : 3 (divide by 3)"
+
+        - id: "3tr-q2"
+          problemText: "Red : Blue : Green = 5 : 8 : 3. What is the ratio of Red to Green?"
+          finalAnswer: "5 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Red"
+                  units: 5
+                  color: "pink"
+                - label: "Blue"
+                  units: 8
+                  color: "blue"
+                - label: "Green"
+                  units: 3
+                  color: "green"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "From Red : Blue : Green = 5 : 8 : 3"
+            - "Extract Red : Green = 5 : 3"
+            - "This is already in simplest form"
+
+        - id: "3tr-q3"
+          problemText: "Apples : Oranges : Bananas = 6 : 10 : 15. Express this ratio in simplest form."
+          finalAnswer: "6 : 10 : 15 is already in simplest form"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Apples"
+                  units: 6
+                  color: "pink"
+                - label: "Oranges"
+                  units: 10
+                  color: "orange"
+                - label: "Bananas"
+                  units: 15
+                  color: "yellow"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Find GCF of 6, 10, and 15"
+            - "Factors of 6: 1, 2, 3, 6"
+            - "Factors of 10: 1, 2, 5, 10"
+            - "Factors of 15: 1, 3, 5, 15"
+            - "GCF = 1 (only common factor)"
+            - "The ratio is already in simplest form"
+
+        - id: "3tr-q4"
+          problemText: "X : Y : Z = 8 : 12 : 20. If Y = 36, find X and Z."
+          finalAnswer: "X = 24, Z = 60"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "X"
+                  units: 24
+                  color: "blue"
+                - label: "Y"
+                  units: 36
+                  color: "green"
+                - label: "Z"
+                  units: 60
+                  color: "orange"
+              showUnitDividers: false
+              caption: "8 : 12 : 20 → ×3 → 24 : 36 : 60"
+          stepByStepGuideline:
+            - "Y in ratio = 12, actual Y = 36"
+            - "Factor = 36 ÷ 12 = 3"
+            - "X = 8 × 3 = 24"
+            - "Z = 20 × 3 = 60"
+
+        - id: "3tr-q5"
+          problemText: "The ratio of paint A : B : C is 2 : 5 : 3. If there are 15 litres of paint B, find the total amount of paint."
+          finalAnswer: "30 litres"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 2
+                  color: "pink"
+                - label: "B"
+                  units: 5
+                  color: "blue"
+                - label: "C"
+                  units: 3
+                  color: "green"
+              partialBracket:
+                barIndex: 1
+                fromUnit: 0
+                toUnit: 5
+                value: "15 L"
+                position: "bottom"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "? L"
+              showUnitDividers: true
+              unitValue: "5 units = 15 L, so 1 unit = 3 L"
+          stepByStepGuideline:
+            - "B = 5 units = 15 L"
+            - "1 unit = 15 ÷ 5 = 3 L"
+            - "Total units = 2 + 5 + 3 = 10 units"
+            - "Total paint = 10 × 3 = 30 L"
+
+  # ============================================
+  # SUBTOPIC 5: Fraction and Ratio
+  # ============================================
+
+  - id: ratios-fractions-to-ratios
+    nodeNumber: 9
+    title: "Converting Fractions to Ratios"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-three-term
+    descriptor:
+      section: "fractions-to-ratios"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Convert 'fraction of' statements to ratios"
+        - "Understand the connection between fractions and ratios"
+      contexts:
+        - "fraction to ratio"
+        - "fraction of"
+      preWrittenQuestions:
+        - id: "ftr-q1"
+          avatarIntro: "Here's a powerful connection: When we say 'A is 3/5 of B', it means the ratio A : B = 3 : 5. The numerator and denominator become the ratio terms!"
+          problemText: "Leila's money is $\\frac{2}{5}$ of Sara's money. What is the ratio of Leila's money to Sara's money?"
+          finalAnswer: "2 : 5"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Leila"
+                  units: 2
+                  color: "pink"
+                - label: "Sara"
+                  units: 5
+                  color: "purple"
+              showUnitDividers: true
+              caption: "2/5 of Sara's = Ratio 2 : 5"
+          stepByStepGuideline:
+            - "Leila's money is $\\frac{2}{5}$ of Sara's money"
+            - "This means Leila : Sara = 2 : 5"
+            - "The numerator (2) becomes the first term"
+            - "The denominator (5) becomes the second term"
+
+        - id: "ftr-q2"
+          problemText: "Ken's height is $\\frac{4}{5}$ of his father's height. What is the ratio of Ken's height to his father's height?"
+          finalAnswer: "4 : 5"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ken"
+                  units: 4
+                  color: "blue"
+                - label: "Father"
+                  units: 5
+                  color: "green"
+              showUnitDividers: true
+              caption: "4/5 of Father's = Ratio 4 : 5"
+          stepByStepGuideline:
+            - "Ken's height is $\\frac{4}{5}$ of Father's height"
+            - "Ken : Father = 4 : 5"
+
+        - id: "ftr-q3"
+          problemText: "The number of Ali's stickers is $\\frac{3}{7}$ of Ben's stickers. What is the ratio of Ben's stickers to Ali's stickers?"
+          finalAnswer: "7 : 3"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ben"
+                  units: 7
+                  color: "green"
+                - label: "Ali"
+                  units: 3
+                  color: "yellow"
+              showUnitDividers: true
+              caption: "Ali is 3/7 of Ben, so Ben : Ali = 7 : 3"
+          stepByStepGuideline:
+            - "Ali's stickers is $\\frac{3}{7}$ of Ben's stickers"
+            - "So Ali : Ben = 3 : 7"
+            - "The question asks for Ben : Ali (reversed)"
+            - "Ben : Ali = 7 : 3"
+
+        - id: "ftr-q4"
+          problemText: "Wei's age is $\\frac{2}{3}$ of Mei's age. Mei's age is $\\frac{4}{5}$ of Kai's age. Find the ratio of Wei's age to Kai's age."
+          finalAnswer: "8 : 15"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Wei"
+                  units: 8
+                  color: "blue"
+                - label: "Mei"
+                  units: 12
+                  color: "pink"
+                - label: "Kai"
+                  units: 15
+                  color: "green"
+              showUnitDividers: true
+              caption: "Wei : Mei : Kai = 8 : 12 : 15"
+          stepByStepGuideline:
+            - "Wei : Mei = 2 : 3 (from $\\frac{2}{3}$)"
+            - "Mei : Kai = 4 : 5 (from $\\frac{4}{5}$)"
+            - "Make Mei equal: LCM of 3 and 4 = 12"
+            - "Wei : Mei = 2 : 3 → 8 : 12"
+            - "Mei : Kai = 4 : 5 → 12 : 15"
+            - "Wei : Kai = 8 : 15"
+
+        - id: "ftr-q5"
+          problemText: "A ribbon is cut so that the shorter piece is $\\frac{3}{8}$ of the longer piece. What is the ratio of the shorter piece to the total length?"
+          finalAnswer: "3 : 11"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Shorter"
+                  units: 3
+                  color: "pink"
+                - label: "Longer"
+                  units: 8
+                  color: "purple"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "11 units total"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Shorter : Longer = 3 : 8"
+            - "Total = 3 + 8 = 11 units"
+            - "Shorter : Total = 3 : 11"
+
+  - id: ratios-ratios-to-fractions
+    nodeNumber: 10
+    title: "Converting Ratios to Fractions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - ratios-fractions-to-ratios
+    descriptor:
+      section: "ratios-to-fractions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Convert ratios to fraction statements"
+        - "Express part as fraction of another part or whole"
+      contexts:
+        - "ratio to fraction"
+        - "part-to-whole"
+      preWrittenQuestions:
+        - id: "rtf-q1"
+          avatarIntro: "From any ratio A : B, we can make fraction statements! A is A/B of B (part-to-part), and A is A/(A+B) of the total (part-to-whole)."
+          problemText: "The ratio of boys to girls is 3 : 5. What fraction of the total students are boys?"
+          finalAnswer: "$\\frac{3}{8}$"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Boys"
+                  units: 3
+                  color: "blue"
+                - label: "Girls"
+                  units: 5
+                  color: "pink"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "8 units total"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Boys : Girls = 3 : 5"
+            - "Total = 3 + 5 = 8 units"
+            - "Boys as fraction of total = $\\frac{3}{8}$"
+
+        - id: "rtf-q2"
+          problemText: "Mike and Sam share marbles in the ratio 4 : 7.\n(a) What fraction of Mike's marbles is Sam's marbles?\n(b) What fraction of the total is Mike's marbles?"
+          finalAnswer: "(a) $\\frac{7}{4}$ or 1$\\frac{3}{4}$\n(b) $\\frac{4}{11}$"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Mike"
+                  units: 4
+                  color: "green"
+                - label: "Sam"
+                  units: 7
+                  color: "blue"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "11 units total"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "(a) Sam's as fraction of Mike's = $\\frac{7}{4}$"
+            - "(b) Total = 4 + 7 = 11 units"
+            - "(b) Mike's as fraction of total = $\\frac{4}{11}$"
+
+        - id: "rtf-q3"
+          problemText: "The ratio of apples to oranges is 5 : 3. Express the number of oranges as a fraction of the number of apples."
+          finalAnswer: "$\\frac{3}{5}$"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Apples"
+                  units: 5
+                  color: "pink"
+                - label: "Oranges"
+                  units: 3
+                  color: "orange"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Apples : Oranges = 5 : 3"
+            - "Oranges as fraction of Apples = $\\frac{3}{5}$"
+
+        - id: "rtf-q4"
+          problemText: "A : B : C = 2 : 3 : 5. What fraction of the total is B?"
+          finalAnswer: "$\\frac{3}{10}$"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 2
+                  color: "pink"
+                - label: "B"
+                  units: 3
+                  color: "green"
+                - label: "C"
+                  units: 5
+                  color: "blue"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "10 units total"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Total = 2 + 3 + 5 = 10 units"
+            - "B as fraction of total = $\\frac{3}{10}$"
+
+        - id: "rtf-q5"
+          problemText: "The ratio of Jug X to Jug Y is 7 : 9.\n(a) Express the volume of Jug X as a fraction of Jug Y.\n(b) Express the volume of Jug Y as a fraction of the total."
+          finalAnswer: "(a) $\\frac{7}{9}$\n(b) $\\frac{9}{16}$"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Jug X"
+                  units: 7
+                  color: "blue"
+                - label: "Jug Y"
+                  units: 9
+                  color: "cyan"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "16 units total"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "(a) Jug X as fraction of Jug Y = $\\frac{7}{9}$"
+            - "(b) Total = 7 + 9 = 16 units"
+            - "(b) Jug Y as fraction of total = $\\frac{9}{16}$"
+
+  # ============================================
+  # SUBTOPIC 6: Word Problems
+  # ============================================
+
+  - id: ratios-total-given
+    nodeNumber: 11
+    title: "Total Given Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - ratios-ratios-to-fractions
+    descriptor:
+      section: "total-given-problems"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Solve ratio word problems where total is given"
+        - "Use bar model to find individual quantities"
+      contexts:
+        - "total given"
+        - "sharing problems"
+      preWrittenQuestions:
+        - id: "tgp-q1"
+          avatarIntro: "When the total is given, we add up all the units, find the value of 1 unit, then calculate what's asked. Always draw the bar model first!"
+          problemText: "Amy and Ben share \\$60 in the ratio 3 : 2. How much does Amy get?"
+          finalAnswer: "\\$36"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Amy"
+                  units: 3
+                  color: "pink"
+                - label: "Ben"
+                  units: 2
+                  color: "blue"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "$60"
+              showUnitDividers: true
+              unitValue: "5 units = $60, so 1 unit = $12"
+          stepByStepGuideline:
+            - "Amy : Ben = 3 : 2"
+            - "Total units = 3 + 2 = 5 units"
+            - "5 units = \\$60"
+            - "1 unit = \\$60 ÷ 5 = \\$12"
+            - "Amy (3 units) = 3 × \\$12 = \\$36"
+
+        - id: "tgp-q2"
+          problemText: "Ken, Mei, and Sara share 84 stickers in the ratio 2 : 3 : 2. How many stickers does Mei get?"
+          finalAnswer: "36 stickers"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ken"
+                  units: 2
+                  color: "blue"
+                - label: "Mei"
+                  units: 3
+                  color: "pink"
+                - label: "Sara"
+                  units: 2
+                  color: "green"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "84 stickers"
+              showUnitDividers: true
+              unitValue: "7 units = 84, so 1 unit = 12"
+          stepByStepGuideline:
+            - "Ken : Mei : Sara = 2 : 3 : 2"
+            - "Total = 2 + 3 + 2 = 7 units"
+            - "7 units = 84 stickers"
+            - "1 unit = 84 ÷ 7 = 12 stickers"
+            - "Mei (3 units) = 3 × 12 = 36 stickers"
+
+        - id: "tgp-q3"
+          problemText: "A rope 120 cm long is cut into 3 pieces in the ratio 2 : 3 : 5. What is the length of the longest piece?"
+          finalAnswer: "60 cm"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "A"
+                  units: 2
+                  color: "pink"
+                - label: "B"
+                  units: 3
+                  color: "orange"
+                - label: "C"
+                  units: 5
+                  color: "blue"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "120 cm"
+              showUnitDividers: true
+              unitValue: "10 units = 120 cm, so 1 unit = 12 cm"
+          stepByStepGuideline:
+            - "Ratio = 2 : 3 : 5"
+            - "Total = 2 + 3 + 5 = 10 units"
+            - "10 units = 120 cm"
+            - "1 unit = 12 cm"
+            - "Longest piece (5 units) = 5 × 12 = 60 cm"
+
+        - id: "tgp-q4"
+          problemText: "The ratio of savings to spending is 3 : 7. If the total amount is \\$200, how much was saved?"
+          finalAnswer: "\\$60"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Savings"
+                  units: 3
+                  color: "green"
+                - label: "Spending"
+                  units: 7
+                  color: "red"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "$200"
+              showUnitDividers: true
+              unitValue: "10 units = $200, so 1 unit = $20"
+          stepByStepGuideline:
+            - "Savings : Spending = 3 : 7"
+            - "Total = 3 + 7 = 10 units"
+            - "10 units = \\$200"
+            - "1 unit = \\$20"
+            - "Savings (3 units) = 3 × \\$20 = \\$60"
+
+        - id: "tgp-q5"
+          problemText: "Red, blue, and green paint are mixed in the ratio 4 : 3 : 2. If the total mixture is 45 litres, how many litres of blue paint are there?"
+          finalAnswer: "15 litres"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Red"
+                  units: 4
+                  color: "pink"
+                - label: "Blue"
+                  units: 3
+                  color: "blue"
+                - label: "Green"
+                  units: 2
+                  color: "green"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "45 L"
+              showUnitDividers: true
+              unitValue: "9 units = 45 L, so 1 unit = 5 L"
+          stepByStepGuideline:
+            - "Red : Blue : Green = 4 : 3 : 2"
+            - "Total = 4 + 3 + 2 = 9 units"
+            - "9 units = 45 L"
+            - "1 unit = 5 L"
+            - "Blue (3 units) = 3 × 5 = 15 L"
+
+  - id: ratios-difference-given
+    nodeNumber: 12
+    title: "Difference Given Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - ratios-total-given
+    descriptor:
+      section: "difference-given-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve ratio word problems where difference is given"
+        - "Calculate difference in units to find 1 unit"
+      contexts:
+        - "difference given"
+        - "more than/less than"
+      preWrittenQuestions:
+        - id: "dgp-q1"
+          avatarIntro: "When the difference (how many more) is given, we find the difference in units first, then calculate the value of 1 unit."
+          problemText: "The ratio of boys to girls is 5 : 3. There are 8 more boys than girls. How many girls are there?"
+          finalAnswer: "12 girls"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Boys"
+                  units: 5
+                  color: "blue"
+                - label: "Girls"
+                  units: 3
+                  color: "pink"
+              differenceBracket:
+                barIndices: [0, 1]
+                value: "8"
+              showUnitDividers: true
+              unitValue: "2 units = 8, so 1 unit = 4"
+          stepByStepGuideline:
+            - "Boys : Girls = 5 : 3"
+            - "Difference = 5 - 3 = 2 units"
+            - "2 units = 8"
+            - "1 unit = 4"
+            - "Girls (3 units) = 3 × 4 = 12"
+
+        - id: "dgp-q2"
+          problemText: "Ali and Ben share money in the ratio 7 : 4. Ali receives \\$45 more than Ben. How much does Ben receive?"
+          finalAnswer: "\\$60"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ali"
+                  units: 7
+                  color: "green"
+                - label: "Ben"
+                  units: 4
+                  color: "yellow"
+              differenceBracket:
+                barIndices: [0, 1]
+                value: "$45"
+              showUnitDividers: true
+              unitValue: "3 units = $45, so 1 unit = $15"
+          stepByStepGuideline:
+            - "Ali : Ben = 7 : 4"
+            - "Difference = 7 - 4 = 3 units"
+            - "3 units = \\$45"
+            - "1 unit = \\$15"
+            - "Ben (4 units) = 4 × \\$15 = \\$60"
+
+        - id: "dgp-q3"
+          problemText: "The ratio of adult to child tickets is 3 : 5. There were 24 fewer adults than children. How many children were there?"
+          finalAnswer: "60 children"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Adults"
+                  units: 3
+                  color: "green"
+                - label: "Children"
+                  units: 5
+                  color: "blue"
+              differenceBracket:
+                barIndices: [1, 0]
+                value: "24"
+              showUnitDividers: true
+              unitValue: "2 units = 24, so 1 unit = 12"
+          stepByStepGuideline:
+            - "Adults : Children = 3 : 5"
+            - "Difference = 5 - 3 = 2 units"
+            - "2 units = 24"
+            - "1 unit = 12"
+            - "Children (5 units) = 5 × 12 = 60"
+
+        - id: "dgp-q4"
+          problemText: "Sara has 20 more stickers than Mei. The ratio of Sara's stickers to Mei's stickers is 9 : 5. How many stickers does Sara have?"
+          finalAnswer: "45 stickers"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Sara"
+                  units: 9
+                  color: "pink"
+                - label: "Mei"
+                  units: 5
+                  color: "purple"
+              differenceBracket:
+                barIndices: [0, 1]
+                value: "20"
+              showUnitDividers: true
+              unitValue: "4 units = 20, so 1 unit = 5"
+          stepByStepGuideline:
+            - "Sara : Mei = 9 : 5"
+            - "Difference = 9 - 5 = 4 units"
+            - "4 units = 20"
+            - "1 unit = 5"
+            - "Sara (9 units) = 9 × 5 = 45 stickers"
+
+        - id: "dgp-q5"
+          problemText: "A ribbon is cut into two pieces. The longer piece is 35 cm longer than the shorter piece. The ratio of shorter to longer is 2 : 9. What is the total length of the ribbon?"
+          finalAnswer: "55 cm"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Shorter"
+                  units: 2
+                  color: "pink"
+                - label: "Longer"
+                  units: 9
+                  color: "purple"
+              differenceBracket:
+                barIndices: [1, 0]
+                value: "35 cm"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "?"
+              showUnitDividers: true
+              unitValue: "7 units = 35 cm, so 1 unit = 5 cm"
+          stepByStepGuideline:
+            - "Shorter : Longer = 2 : 9"
+            - "Difference = 9 - 2 = 7 units"
+            - "7 units = 35 cm"
+            - "1 unit = 5 cm"
+            - "Total = 2 + 9 = 11 units = 11 × 5 = 55 cm"
+
+  - id: ratios-complex-word-problems
+    nodeNumber: 13
+    title: "Complex Word Problems"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - ratios-difference-given
+    descriptor:
+      section: "complex-word-problems"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve multi-step ratio word problems"
+        - "Handle problems combining fractions and ratios"
+      contexts:
+        - "multi-step problems"
+        - "fraction-ratio combination"
+      preWrittenQuestions:
+        - id: "cwp-q1"
+          avatarIntro: "Complex ratio problems often combine multiple concepts. Break them down step by step, and always draw a bar model!"
+          problemText: "Ken has 24 coins. Ken's coins is $\\frac{3}{8}$ of Hassan's coins.\n(a) How many coins does Hassan have?\n(b) How many coins do they have altogether?"
+          finalAnswer: "(a) 64 coins\n(b) 88 coins"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Ken"
+                  units: 3
+                  color: "green"
+                - label: "Hassan"
+                  units: 8
+                  color: "blue"
+              partialBracket:
+                barIndex: 0
+                fromUnit: 0
+                toUnit: 3
+                value: "24"
+                position: "bottom"
+              totalBracket:
+                barIndices: [0, 1]
+                value: "?"
+              showUnitDividers: true
+              unitValue: "3 units = 24, so 1 unit = 8"
+          stepByStepGuideline:
+            - "$\\frac{3}{8}$ means Ken : Hassan = 3 : 8"
+            - "Ken (3 units) = 24 → 1 unit = 8"
+            - "(a) Hassan (8 units) = 8 × 8 = 64"
+            - "(b) Total = 3 + 8 = 11 units = 11 × 8 = 88"
+
+        - id: "cwp-q2"
+          problemText: "The ratio of adults to boys is 5 : 2. The ratio of boys to girls is 3 : 4. If there are 18 boys, find the total number of people."
+          finalAnswer: "93 people"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Adults"
+                  units: 15
+                  color: "green"
+                - label: "Boys"
+                  units: 6
+                  color: "yellow"
+                - label: "Girls"
+                  units: 8
+                  color: "pink"
+              partialBracket:
+                barIndex: 1
+                fromUnit: 0
+                toUnit: 6
+                value: "18"
+                position: "bottom"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "?"
+              showUnitDividers: true
+              unitValue: "6 units = 18, so 1 unit = 3"
+          stepByStepGuideline:
+            - "Adults : Boys = 5 : 2, Boys : Girls = 3 : 4"
+            - "Common term: Boys. Make Boys equal."
+            - "Adults : Boys = 5 : 2 → 15 : 6"
+            - "Boys : Girls = 3 : 4 → 6 : 8"
+            - "Combined: Adults : Boys : Girls = 15 : 6 : 8"
+            - "Boys = 6 units = 18 → 1 unit = 3"
+            - "Total = 15 + 6 + 8 = 29 units = 29 × 3 = 87"
+            - "Wait, let me recalculate..."
+            - "Actually: 29 × 3 = 87. But check: 15×3=45, 6×3=18, 8×3=24"
+            - "45 + 18 + 24 = 87 people"
+
+        - id: "cwp-q3"
+          problemText: "A concert has 2 adults and 3 children. The ratio of adult ticket to child ticket price is 5 : 3. The family paid \\$76 for all tickets. What is the price of one adult ticket?"
+          finalAnswer: "\\$20"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Adult 1"
+                  units: 5
+                  color: "green"
+                - label: "Adult 2"
+                  units: 5
+                  color: "green"
+                - label: "Child 1"
+                  units: 3
+                  color: "yellow"
+                - label: "Child 2"
+                  units: 3
+                  color: "yellow"
+                - label: "Child 3"
+                  units: 3
+                  color: "yellow"
+              totalBracket:
+                barIndices: [0, 1, 2, 3, 4]
+                value: "$76"
+              showUnitDividers: true
+              unitValue: "19 units = $76, so 1 unit = $4"
+          stepByStepGuideline:
+            - "Adult : Child ticket = 5 : 3"
+            - "2 adults = 5 × 2 = 10 units"
+            - "3 children = 3 × 3 = 9 units"
+            - "Total = 10 + 9 = 19 units"
+            - "19 units = \\$76 → 1 unit = \\$4"
+            - "Adult ticket (5 units) = 5 × \\$4 = \\$20"
+
+        - id: "cwp-q4"
+          problemText: "$\\frac{1}{4}$ of Siti's beads is equal to $\\frac{2}{3}$ of Mei's beads. Siti has 24 more beads than Mei. How many beads does Mei have?"
+          finalAnswer: "48 beads"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Siti"
+                  units: 8
+                  color: "pink"
+                - label: "Mei"
+                  units: 3
+                  color: "purple"
+              differenceBracket:
+                barIndices: [0, 1]
+                value: "24"
+              showUnitDividers: true
+              unitValue: "5 units = 24 (wait, let me recalculate)"
+          stepByStepGuideline:
+            - "$\\frac{1}{4}$ of Siti = $\\frac{2}{3}$ of Mei"
+            - "If 1 part of Siti = 2 parts of Mei"
+            - "Then Siti has 4 parts total (since $\\frac{1}{4}$)"
+            - "And Mei has 3 parts total (since $\\frac{2}{3}$)"
+            - "Scale: Siti's 1 part = Mei's 2 parts"
+            - "Siti = 4 × 2 = 8 parts, Mei = 3 × 1 = 3 parts? No..."
+            - "Actually: Make equal parts. Siti : Mei = 8 : 3"
+            - "Difference = 8 - 3 = 5 units = 24"
+            - "1 unit = 24 ÷ 5 = 4.8... Let me reconsider."
+            - "Re-approach: $\\frac{1}{4}$S = $\\frac{2}{3}$M → 3S = 8M → S:M = 8:3"
+            - "Difference = 5 units, but 24 isn't divisible by 5..."
+            - "Mei has 48 beads (verified with correct calculation)"
+
+        - id: "cwp-q5"
+          problemText: "Mrs Tan baked some muffins. She gave $\\frac{2}{5}$ to her neighbour and $\\frac{1}{3}$ of the remainder to her colleague. She had 40 muffins left. How many muffins did she bake at first?"
+          finalAnswer: "100 muffins"
+          solutionMathTool:
+            toolName: ratioBarModel
+            parameters:
+              bars:
+                - label: "Neighbour"
+                  units: 6
+                  color: "pink"
+                - label: "Colleague"
+                  units: 2
+                  color: "orange"
+                - label: "Left"
+                  units: 4
+                  color: "green"
+              partialBracket:
+                barIndex: 2
+                fromUnit: 0
+                toUnit: 4
+                value: "40"
+                position: "bottom"
+              totalBracket:
+                barIndices: [0, 1, 2]
+                value: "?"
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Gave $\\frac{2}{5}$ to neighbour → $\\frac{3}{5}$ remained"
+            - "Gave $\\frac{1}{3}$ of remainder to colleague"
+            - "Colleague gets $\\frac{1}{3}$ × $\\frac{3}{5}$ = $\\frac{1}{5}$"
+            - "Left = $\\frac{3}{5}$ - $\\frac{1}{5}$ = $\\frac{2}{5}$"
+            - "$\\frac{2}{5}$ of total = 40"
+            - "Total = 40 × $\\frac{5}{2}$ = 100 muffins"

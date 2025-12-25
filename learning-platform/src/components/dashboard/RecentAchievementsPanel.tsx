@@ -13,13 +13,15 @@ import type { Achievement } from '../../types/practice';
 
 interface RecentAchievementsPanelProps {
   achievements: Achievement[];
-  totalAchievements: number;
+  totalAchievements: number;        // Total earned by user
+  totalPossibleAchievements: number; // Total possible achievements (e.g., 18)
   onViewAll?: () => void;
 }
 
 export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = ({
   achievements,
   totalAchievements,
+  totalPossibleAchievements,
   onViewAll,
 }) => {
   const { theme } = useTheme();
@@ -39,15 +41,41 @@ export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = (
     })
     .slice(0, 5);
 
-  // Format time ago
-  const getTimeAgo = (date: Date | string): string => {
-    const earnedDate = date instanceof Date ? date : new Date(date);
+  // Format time ago - handles Date, string, and Firestore Timestamp
+  const getTimeAgo = (date: Date | string | { toDate?: () => Date; seconds?: number } | undefined): string => {
+    if (!date) return 'recently';
+
+    let earnedDate: Date;
+
+    // Handle Firestore Timestamp with toDate method
+    if (typeof date === 'object' && 'toDate' in date && typeof date.toDate === 'function') {
+      earnedDate = date.toDate();
+    }
+    // Handle Timestamp-like object with seconds
+    else if (typeof date === 'object' && 'seconds' in date && date.seconds) {
+      earnedDate = new Date(date.seconds * 1000);
+    }
+    // Handle Date object
+    else if (date instanceof Date) {
+      earnedDate = date;
+    }
+    // Handle string
+    else {
+      earnedDate = new Date(date as string);
+    }
+
+    // Check for invalid date
+    if (isNaN(earnedDate.getTime())) {
+      return 'recently';
+    }
+
     const now = new Date();
     const diffMs = now.getTime() - earnedDate.getTime();
     const diffMins = Math.floor(diffMs / 60000);
     const diffHours = Math.floor(diffMins / 60);
     const diffDays = Math.floor(diffHours / 24);
 
+    if (diffMins < 1) return 'just now';
     if (diffMins < 60) return `${diffMins} ${diffMins === 1 ? 'minute' : 'minutes'} ago`;
     if (diffHours < 24) return `${diffHours} ${diffHours === 1 ? 'hour' : 'hours'} ago`;
     if (diffDays === 1) return 'yesterday';
@@ -108,7 +136,7 @@ export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = (
           className="text-sm font-medium"
           style={{ color: theme.colors.textMuted }}
         >
-          {achievements.length}/{totalAchievements}
+          {totalAchievements}/{totalPossibleAchievements}
         </div>
       </div>
 

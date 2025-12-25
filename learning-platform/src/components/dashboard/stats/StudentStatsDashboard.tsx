@@ -9,7 +9,7 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useTheme } from '../../../hooks/useTheme';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useStudentDashboardStats } from '../../../hooks/useStudentDashboardStats';
@@ -38,10 +38,25 @@ const TABS: Tab[] = [
 export const StudentStatsDashboard: React.FC = () => {
   const { theme } = useTheme();
   const { user, userProfile } = useAuth();
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<TabId>('overview');
+  const [searchParams] = useSearchParams();
+
+  // Read initial tab from URL query parameter (e.g., /stats?tab=achievements)
+  const tabFromUrl = searchParams.get('tab') as TabId | null;
+  const initialTab: TabId = tabFromUrl && ['overview', 'learn', 'practice', 'achievements'].includes(tabFromUrl)
+    ? tabFromUrl
+    : 'overview';
+
+  const [activeTab, setActiveTab] = useState<TabId>(initialTab);
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
   const [linkedChildren, setLinkedChildren] = useState<Array<{ uid: string; displayName: string }>>([]);
+
+  // Sync tab with URL when navigating (back/forward or direct link)
+  useEffect(() => {
+    const tabParam = searchParams.get('tab') as TabId | null;
+    if (tabParam && ['overview', 'learn', 'practice', 'achievements'].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [searchParams]);
 
   // Fetch linked children (separate accounts) from subcollection
   useEffect(() => {
@@ -87,6 +102,11 @@ export const StudentStatsDashboard: React.FC = () => {
     error,
     refresh
   } = useStudentDashboardStats(selectedChildId || undefined);
+
+  // Theme-aware accent color (darker in light mode for better contrast)
+  const isLight = theme.colors.textPrimary === '#1F2937'; // Check if light mode
+  const accentOrange = isLight ? '#CC7000' : '#FFA500';
+  const accentOrangeBg = isLight ? '#CC700015' : '#FFA50020';
 
   // Determine display title
   const displayTitle = useMemo(() => {
@@ -142,59 +162,28 @@ export const StudentStatsDashboard: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-4 sm:mb-6">
-          {/* Top row: Back/Refresh buttons */}
-          <div className="flex items-center justify-between mb-3">
-            <button
-              onClick={() => navigate('/')}
-              className="glass-surface p-2 rounded-lg transition-all hover:scale-105 flex items-center gap-1"
-              style={{
-                background: theme.glass.background,
-                border: `1px solid ${theme.glass.border}`,
-                backdropFilter: theme.glass.backdrop,
-                color: theme.colors.textSecondary
-              }}
-            >
-              <span>←</span>
-              <span className="text-sm">Back</span>
-            </button>
-
-            <div className="flex gap-3">
-              {/* Child Selector Dropdown (Parent Only) */}
-              {userProfile?.isParent && children.length > 1 && (
-                <select
-                  value={selectedChildId || ''}
-                  onChange={(e) => setSelectedChildId(e.target.value)}
-                  className="glass-surface px-3 py-2 rounded-lg font-medium outline-none cursor-pointer"
-                  style={{
-                    background: theme.glass.background,
-                    border: `1px solid ${theme.glass.border}`,
-                    backdropFilter: theme.glass.backdrop,
-                    color: theme.colors.textPrimary
-                  }}
-                >
-                  {children.map(child => (
-                    <option key={child.id} value={child.id}>
-                      {child.name}
-                    </option>
-                  ))}
-                </select>
-              )}
-
-              <button
-                onClick={refresh}
-                className="glass-surface px-3 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-1"
+          {/* Child Selector (Parent Only) */}
+          {userProfile?.isParent && children.length > 1 && (
+            <div className="mb-3">
+              <select
+                value={selectedChildId || ''}
+                onChange={(e) => setSelectedChildId(e.target.value)}
+                className="glass-surface px-3 py-2 rounded-lg font-medium outline-none cursor-pointer"
                 style={{
                   background: theme.glass.background,
                   border: `1px solid ${theme.glass.border}`,
                   backdropFilter: theme.glass.backdrop,
-                  color: theme.colors.textSecondary
+                  color: theme.colors.textPrimary
                 }}
               >
-                <span>🔄</span>
-                <span className="hidden sm:inline text-sm">Refresh</span>
-              </button>
+                {children.map(child => (
+                  <option key={child.id} value={child.id}>
+                    {child.name}
+                  </option>
+                ))}
+              </select>
             </div>
-          </div>
+          )}
 
           {/* Title section */}
           <div>
@@ -225,9 +214,9 @@ export const StudentStatsDashboard: React.FC = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className="flex-1 min-w-[70px] px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg font-medium transition-all relative flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2"
                   style={{
-                    backgroundColor: isActive ? '#FFA50020' : 'transparent',
-                    color: isActive ? '#FFA500' : theme.colors.textSecondary,
-                    borderBottom: isActive ? '3px solid #FFA500' : '3px solid transparent'
+                    backgroundColor: isActive ? accentOrangeBg : 'transparent',
+                    color: isActive ? accentOrange : theme.colors.textSecondary,
+                    borderBottom: isActive ? `3px solid ${accentOrange}` : '3px solid transparent'
                   }}
                 >
                   <span className="text-lg sm:text-base">{tab.icon}</span>

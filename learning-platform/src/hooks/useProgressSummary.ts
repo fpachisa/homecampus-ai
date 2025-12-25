@@ -17,6 +17,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { getProgressSummary } from '../services/firestoreProgressService';
 import { loadPracticeProgress, listPracticeTopics } from '../services/firestoreProgressService';
+import { achievementService } from '../services/achievementService';
 import type { ProgressSummary, PracticeProgress } from '../types/firestore';
 
 export interface TopicProgress {
@@ -56,7 +57,8 @@ export interface ProgressSummaryData {
 
   // Achievements
   achievements: any[]; // Achievement[]
-  totalAchievements: number;
+  totalAchievements: number;        // Total earned by user
+  totalPossibleAchievements: number; // Total possible (18)
 
   // Loading state
   isLoading: boolean;
@@ -82,6 +84,7 @@ export function useProgressSummary(): ProgressSummaryData {
     dailyGoal: 5,
     achievements: [],
     totalAchievements: 0,
+    totalPossibleAchievements: achievementService.ACHIEVEMENT_DEFINITIONS.length,
     isLoading: true,
   });
 
@@ -119,7 +122,7 @@ export function useProgressSummary(): ProgressSummaryData {
         // Calculate stats from the pre-fetched practice data
         const { thisWeek, lastWeek } = calculateWeeklyActivity(allPracticeProgress);
         const weeklyStats = calculateWeeklyStats(thisWeek);
-        const achievements = calculateRecentAchievements(allPracticeProgress);
+        const { recent: recentAchievements, total: totalAchievementsCount } = calculateRecentAchievements(allPracticeProgress);
 
         if (isMounted) {
           setData({
@@ -132,8 +135,9 @@ export function useProgressSummary(): ProgressSummaryData {
             weekTrend: calculateWeekTrend(thisWeek, lastWeek),
             dailyProblems: getTodayProblems(thisWeek),
             dailyGoal: 5,
-            achievements,
-            totalAchievements: userProfile?.gamification?.totalAchievements || 0,
+            achievements: recentAchievements,
+            totalAchievements: totalAchievementsCount,
+            totalPossibleAchievements: achievementService.ACHIEVEMENT_DEFINITIONS.length,
             isLoading: false,
           });
         }
@@ -430,8 +434,9 @@ function getTodayProblems(weeklyData: DailyActivity[]): number {
 
 /**
  * Calculate recent achievements from in-memory practice progress
+ * Returns both recent achievements (max 5) and total count
  */
-function calculateRecentAchievements(allProgress: PracticeProgress[]): any[] {
+function calculateRecentAchievements(allProgress: PracticeProgress[]): { recent: any[]; total: number } {
   try {
     const allAchievements: any[] = [];
 
@@ -441,17 +446,25 @@ function calculateRecentAchievements(allProgress: PracticeProgress[]): any[] {
       }
     }
 
-    // Sort by earnedAt and take most recent 5
+    // Deduplicate by ID (same achievement might appear in multiple topics)
+    const uniqueAchievements = Array.from(
+      new Map(allAchievements.map(a => [a.id, a])).values()
+    );
+
+    // Sort by earnedAt descending
     // Note: earnedAt might be Firestore timestamp or Date
-    return allAchievements
-      .sort((a, b) => {
-        const timeA = a.earnedAt?.toMillis ? a.earnedAt.toMillis() : new Date(a.earnedAt).getTime();
-        const timeB = b.earnedAt?.toMillis ? b.earnedAt.toMillis() : new Date(b.earnedAt).getTime();
-        return timeB - timeA;
-      })
-      .slice(0, 5);
+    const sorted = uniqueAchievements.sort((a, b) => {
+      const timeA = a.earnedAt?.toMillis ? a.earnedAt.toMillis() : new Date(a.earnedAt).getTime();
+      const timeB = b.earnedAt?.toMillis ? b.earnedAt.toMillis() : new Date(b.earnedAt).getTime();
+      return timeB - timeA;
+    });
+
+    return {
+      recent: sorted.slice(0, 5),
+      total: sorted.length
+    };
   } catch (error) {
     console.error('Failed to calculate achievements:', error);
-    return [];
+    return { recent: [], total: 0 };
   }
 }
