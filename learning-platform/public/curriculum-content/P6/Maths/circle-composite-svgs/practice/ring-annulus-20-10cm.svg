@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180">
+  <!-- Background -->
+  <rect width="200" height="180" fill="#f8fafc"/>
+
+  <!-- Outer circle (shaded) -->
+  <circle cx="100" cy="85" r="70" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+
+  <!-- Inner circle (white) -->
+  <circle cx="100" cy="85" r="35" fill="#f8fafc" stroke="#ea580c" stroke-width="2"/>
+
+  <!-- Center point -->
+  <circle cx="100" cy="85" r="2" fill="#ea580c"/>
+
+  <!-- Radius labels -->
+  <line x1="100" y1="85" x2="170" y2="85" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="140" y="78" font-size="10" fill="#334155">20 cm</text>
+
+  <line x1="100" y1="85" x2="100" y2="50" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="108" y="65" font-size="10" fill="#334155">10 cm</text>
+
+  <text x="100" y="172" text-anchor="middle" font-size="10" fill="#64748b">Find area of shaded ring</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120">
+  <!-- Background -->
+  <rect width="280" height="120" fill="#f8fafc"/>
+
+  <!-- Stadium shape -->
+  <path d="M 60 35 L 200 35 A 30 30 0 0 1 200 95 L 60 95 A 30 30 0 0 1 60 35 Z" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+  <rect x="60" y="35" width="140" height="60" fill="none" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Dimensions -->
+  <text x="130" y="25" text-anchor="middle" font-size="11" fill="#334155" font-weight="bold">50 m</text>
+  <line x1="60" y1="28" x2="200" y2="28" stroke="#334155" stroke-width="1"/>
+  <polygon points="60,28 67,25 67,31" fill="#334155"/>
+  <polygon points="200,28 193,25 193,31" fill="#334155"/>
+
+  <text x="250" y="68" font-size="11" fill="#334155" font-weight="bold">20 m</text>
+  <line x1="240" y1="35" x2="240" y2="95" stroke="#334155" stroke-width="1"/>
+  <polygon points="240,35 237,42 243,42" fill="#334155"/>
+  <polygon points="240,95 237,88 243,88" fill="#334155"/>
+</svg>

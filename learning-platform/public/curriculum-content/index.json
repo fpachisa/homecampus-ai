@@ -1,6 +1,16 @@
 {
   "files": [
     {
+      "filename": "P6/Maths/p6-math-circles.yaml",
+      "displayName": "P6 Circles",
+      "category": "p6-math-circles"
+    },
+    {
+      "filename": "P6/Maths/p6-math-algebra.yaml",
+      "displayName": "P6 Algebra",
+      "category": "p6-math-algebra"
+    },
+    {
       "filename": "P6/Maths/p6-math-fractions.yaml",
       "displayName": "P6 Fractions (Division)",
       "category": "p6-math-fractions"
@@ -19,6 +29,11 @@
       "filename": "P6/Maths/p6-math-averages.yaml",
       "displayName": "P6 Averages",
       "category": "p6-math-averages"
+    },
+    {
+      "filename": "P6/Maths/p6-math-volume-cube-cuboid.yaml",
+      "displayName": "P6 Volume of Cube and Cuboid",
+      "category": "p6-math-volume-cube-cuboid"
     },
     {
       "filename": "P5/Maths/p5-math-properties-of-triangles.yaml",

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120">
+  <!-- Background -->
+  <rect width="220" height="120" fill="#f8fafc"/>
+
+  <!-- Two quarter circles joined -->
+  <path d="M 30 90 L 30 30 A 60 60 0 0 1 110 90 L 30 90 Z" fill="#fcd34d" stroke="#d97706" stroke-width="2"/>
+  <path d="M 110 90 L 190 90 A 60 60 0 0 0 110 30 L 110 90 Z" fill="#fcd34d" stroke="#d97706" stroke-width="2"/>
+  <line x1="110" y1="30" x2="110" y2="90" stroke="#d97706" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Dimensions -->
+  <text x="70" y="108" text-anchor="middle" font-size="10" fill="#334155" font-weight="bold">10 cm</text>
+  <text x="150" y="108" text-anchor="middle" font-size="10" fill="#334155" font-weight="bold">10 cm</text>
+</svg>

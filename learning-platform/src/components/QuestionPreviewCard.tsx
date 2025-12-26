@@ -87,7 +87,7 @@ const QuestionPreviewCard: React.FC<QuestionPreviewCardProps> = ({
       {question.diagramSvg && (
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-gray-600 mb-2">Diagram:</h4>
-          <img src={question.diagramSvg} alt="Question diagram" className="max-w-full h-auto" />
+          <img src={question.diagramSvg} alt="Question diagram" className="max-w-full h-auto" style={{ maxHeight: '250px' }} />
         </div>
       )}
 

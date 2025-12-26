@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 230 200">
+  <!-- Background -->
+  <rect x="-10" y="-10" width="230" height="200" fill="#f8fafc"/>
+
+  <!-- Solid square border -->
+  <rect x="40" y="30" width="120" height="120" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <!-- Overlap region (leaf shape) -->
+  <path d="M 40 30 A 120 120 0 0 1 160 150 A 120 120 0 0 1 40 30 Z" fill="#86efac" stroke="#16a34a" stroke-width="2"/>
+
+  <!-- Corner points -->
+  <circle cx="40" cy="30" r="3" fill="#16a34a"/>
+  <circle cx="160" cy="150" r="3" fill="#16a34a"/>
+
+  <!-- Dimensions - width -->
+  <text x="100" y="18" text-anchor="middle" font-size="11" fill="#334155" font-weight="bold">10 cm</text>
+  <line x1="40" y1="22" x2="160" y2="22" stroke="#334155" stroke-width="1"/>
+  <polygon points="40,22 47,19 47,25" fill="#334155"/>
+  <polygon points="160,22 153,19 153,25" fill="#334155"/>
+
+  <!-- Dimensions - height -->
+  <text x="190" y="95" font-size="11" fill="#334155" font-weight="bold">10 cm</text>
+  <line x1="175" y1="30" x2="175" y2="150" stroke="#334155" stroke-width="1"/>
+  <polygon points="175,30 172,37 178,37" fill="#334155"/>
+  <polygon points="175,150 172,143 178,143" fill="#334155"/>
+</svg>

@@ -1,0 +1,1922 @@
+# P6 Mathematics - Algebra Practice Module
+# Covers: Writing Expressions, Simplifying, Evaluating, Solving Equations
+# Total: 17 nodes, 85+ pre-written questions
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Writing Algebraic Expressions
+  # ============================================
+
+  - id: algebra-intro-variables
+    nodeNumber: 1
+    title: "Understanding Variables"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "intro-variables"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Introduce the concept of variables as letters representing unknown numbers"
+        - "Help students understand why variables are useful in mathematics"
+      contexts:
+        - "mystery boxes"
+        - "unknown quantities"
+      preWrittenQuestions:
+        - id: "iv-q1"
+          avatarIntro: "Welcome to algebra! Today we'll learn about something called a 'variable'. A variable is a letter like n, x, or y that represents an unknown number - like a mystery box that could contain any number!"
+          problemText: "There are some cookies in a jar, but we don't know how many. If we use the letter n to represent this unknown number, how would we write 'the number of cookies in the jar'?"
+          finalAnswer: "n"
+          stepByStepGuideline:
+            - "The problem tells us there are an unknown number of cookies"
+            - "We use the letter n to represent this unknown number"
+            - "So 'the number of cookies in the jar' is simply n"
+            - "Answer: n"
+
+        - id: "iv-q2"
+          problemText: "Maya has some stickers. We use the letter x to represent the number of stickers Maya has. What does x represent in this situation?"
+          finalAnswer: "x represents the number of stickers Maya has (an unknown number)"
+          stepByStepGuideline:
+            - "The letter x is a variable"
+            - "A variable represents an unknown number"
+            - "In this case, x represents how many stickers Maya has"
+            - "We don't know the exact number, so we use x to represent it"
+
+        - id: "iv-q3"
+          problemText: "Which of the following are examples of variables?\nA) 5\nB) y\nC) 12\nD) m"
+          finalAnswer: "B) y and D) m"
+          stepByStepGuideline:
+            - "A variable is a letter that represents an unknown number"
+            - "5 is a specific number, not a variable"
+            - "y is a letter - this IS a variable"
+            - "12 is a specific number, not a variable"
+            - "m is a letter - this IS a variable"
+            - "Answer: y and m are variables"
+
+        - id: "iv-q4"
+          problemText: "Ahmad has p pencils. His teacher gives him 3 more pencils. Which expression shows the total number of pencils Ahmad has now?"
+          finalAnswer: "p + 3"
+          stepByStepGuideline:
+            - "Ahmad starts with p pencils (an unknown number)"
+            - "He gets 3 more pencils"
+            - "To find the total, we add: p + 3"
+            - "Answer: p + 3"
+
+        - id: "iv-q5"
+          problemText: "Explain in your own words: What is a variable and why do we use variables in mathematics?"
+          finalAnswer: "A variable is a letter that represents an unknown number. We use variables when we don't know the exact value of something, or when a value can change."
+          stepByStepGuideline:
+            - "A variable is a letter (like n, x, y, or any letter) that represents an unknown number"
+            - "We use variables when:"
+            - "- We don't know the exact number"
+            - "- The number can change or vary"
+            - "- We want to write a general rule or pattern"
+            - "Variables help us describe mathematical situations when we don't have all the information"
+
+  - id: algebra-addition-expressions
+    nodeNumber: 2
+    title: "Writing Addition Expressions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-intro-variables
+    descriptor:
+      section: "addition-expressions"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Write addition expressions combining variables and numbers"
+        - "Translate phrases like 'more than' into algebraic expressions"
+      contexts:
+        - "cupcakes"
+        - "cookies"
+        - "age problems"
+      preWrittenQuestions:
+        - id: "ae-q1"
+          avatarIntro: "Now let's learn to write addition expressions! When we add a number to a variable, we write expressions like 'n + 3' or '7 + y'."
+          problemText: "There are n cupcakes in a box. There are also 4 cupcakes on a plate. Write an expression for the total number of cupcakes."
+          finalAnswer: "n + 4"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Total Cupcakes"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "n"
+                      units: 1
+                    - value: "4"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "Cupcakes in box + cupcakes on plate"
+          stepByStepGuideline:
+            - "n represents the unknown number of cupcakes in the box"
+            - "4 is the number of cupcakes on the plate"
+            - "Total = cupcakes in box + cupcakes on plate"
+            - "Total = n + 4"
+
+        - id: "ae-q2"
+          problemText: "Raju had 7 cookies at first. His mother gives him y more cookies. How many cookies does Raju have now? Express your answer in terms of y."
+          finalAnswer: "7 + y or (7 + y) cookies"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Raju's Cookies"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "7"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "Started with 7, got y more"
+          stepByStepGuideline:
+            - "Raju started with 7 cookies"
+            - "He received y more cookies"
+            - "Total cookies = 7 + y"
+            - "Answer: (7 + y) cookies"
+
+        - id: "ae-q3"
+          problemText: "Siti is 12 years old now. In p years' time, how old will Siti be? Express your answer in terms of p."
+          finalAnswer: "(12 + p) years old"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Siti's Future Age"
+              bars:
+                - label: "Future age"
+                  segments:
+                    - value: "12"
+                      units: 1
+                    - value: "p"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "Current age + years to pass"
+          stepByStepGuideline:
+            - "Siti is currently 12 years old"
+            - "In p years' time, she will be older by p years"
+            - "Future age = current age + years to pass"
+            - "Future age = 12 + p"
+            - "Answer: (12 + p) years old"
+
+        - id: "ae-q4"
+          problemText: "After eating k oranges, Alan has 3 oranges left. How many oranges did Alan have at first? Express your answer in terms of k."
+          finalAnswer: "(k + 3) oranges"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Alan's Oranges"
+              bars:
+                - label: "At first"
+                  segments:
+                    - value: "k"
+                      units: 1
+                      highlight: true
+                    - value: "3"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "Eaten + left = original amount"
+          stepByStepGuideline:
+            - "Alan ate k oranges"
+            - "He has 3 oranges left"
+            - "Original amount = eaten + left"
+            - "Original = k + 3"
+            - "Answer: (k + 3) oranges"
+
+        - id: "ae-q5"
+          problemText: "Box A contains m marbles. Box B contains 15 more marbles than Box A. How many marbles are in Box B? Express your answer in terms of m."
+          finalAnswer: "(m + 15) marbles"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Marbles in Boxes"
+              bars:
+                - label: "Box A"
+                  segments:
+                    - value: "m"
+                      units: 1
+                - label: "Box B"
+                  segments:
+                    - value: "m"
+                      units: 1
+                    - value: "15"
+                      units: 1
+                      highlight: true
+                  totalLabel: "?"
+                  bracketPosition: "bottom"
+              caption: "Box B has 15 more than Box A"
+          stepByStepGuideline:
+            - "Box A has m marbles"
+            - "Box B has 15 MORE than Box A"
+            - "'15 more' means we add 15"
+            - "Box B = m + 15"
+            - "Answer: (m + 15) marbles"
+
+  - id: algebra-subtraction-expressions
+    nodeNumber: 3
+    title: "Writing Subtraction Expressions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-addition-expressions
+    descriptor:
+      section: "subtraction-expressions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Write subtraction expressions with correct order"
+        - "Understand that ORDER MATTERS in subtraction"
+        - "Translate 'subtract from' and 'less than' correctly"
+      contexts:
+        - "food items"
+        - "age problems"
+        - "money"
+      preWrittenQuestions:
+        - id: "se-q1"
+          avatarIntro: "In subtraction, ORDER MATTERS! 'p - 2' means 'start with p and take away 2'. This is different from '2 - p'. Let's practice getting the order right!"
+          problemText: "There are p buns in a bag. Leila takes out 5 buns. How many buns are left in the bag? Express your answer in terms of p."
+          finalAnswer: "(p - 5) buns"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Buns in Bag"
+              bars:
+                - label: "Original"
+                  segments:
+                    - value: "?"
+                      units: 1
+                    - value: "5"
+                      units: 1
+                      highlight: true
+                  totalLabel: "p"
+                  bracketPosition: "top"
+              caption: "Start with p, take away 5"
+          stepByStepGuideline:
+            - "Start with p buns in the bag"
+            - "Leila takes out 5 buns"
+            - "Buns left = original - taken out"
+            - "Buns left = p - 5"
+            - "Answer: (p - 5) buns"
+
+        - id: "se-q2"
+          problemText: "Mary had 20 apples at first. She gave away j apples. How many apples does Mary have left? Express your answer in terms of j."
+          finalAnswer: "(20 - j) apples"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Mary's Apples"
+              bars:
+                - label: "Apples"
+                  segments:
+                    - value: "?"
+                      units: 1
+                    - value: "j"
+                      units: 1
+                      highlight: true
+                  totalLabel: "20"
+                  bracketPosition: "top"
+              caption: "Started with 20, gave away j"
+          stepByStepGuideline:
+            - "Mary started with 20 apples (a known number)"
+            - "She gave away j apples (unknown number)"
+            - "Apples left = 20 - j"
+            - "Note: This is NOT (j - 20) because we start with 20"
+            - "Answer: (20 - j) apples"
+
+        - id: "se-q3"
+          problemText: "What is '15 less than d'? Write the expression."
+          finalAnswer: "d - 15"
+          stepByStepGuideline:
+            - "'15 less than d' means we start with d and take away 15"
+            - "This is d - 15"
+            - "COMMON MISTAKE: Writing 15 - d is WRONG"
+            - "'15 less than d' is NOT the same as '15 minus d'"
+            - "Answer: d - 15"
+
+        - id: "se-q4"
+          problemText: "Hassan is 12 years old now. r years ago, how old was Hassan? Express your answer in terms of r."
+          finalAnswer: "(12 - r) years old"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Hassan's Past Age"
+              bars:
+                - label: "Now: 12"
+                  segments:
+                    - value: "12"
+                      units: 1
+                - label: "Past"
+                  segments:
+                    - value: "?"
+                      units: 1
+                    - value: "r"
+                      units: 1
+                      highlight: true
+                  totalLabel: "12"
+              caption: "Past age + years passed = current age"
+          stepByStepGuideline:
+            - "Hassan is now 12 years old"
+            - "r years ago means going back in time"
+            - "Past age = current age - years ago"
+            - "Past age = 12 - r"
+            - "Answer: (12 - r) years old"
+
+        - id: "se-q5"
+          problemText: "Write the expression for 'subtract c from 25'."
+          finalAnswer: "25 - c"
+          stepByStepGuideline:
+            - "'Subtract c from 25' means start with 25 and take away c"
+            - "The word 'from' tells us what we start with"
+            - "'Subtract c FROM 25' → we start with 25"
+            - "So the expression is 25 - c"
+            - "COMMON MISTAKE: c - 25 would be 'subtract 25 from c'"
+
+  - id: algebra-multiplication-expressions
+    nodeNumber: 4
+    title: "Writing Multiplication Expressions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-subtraction-expressions
+    descriptor:
+      section: "multiplication-expressions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Write multiplication expressions in algebraic form"
+        - "Use correct notation: number before letter, no × sign"
+        - "Translate 'times as many' into multiplication"
+      contexts:
+        - "shirts and buttons"
+        - "stickers"
+        - "money"
+      preWrittenQuestions:
+        - id: "me-q1"
+          avatarIntro: "In algebra, we write multiplication differently! Instead of writing 'm × 8' or '8 × m', we write '8m' - the number goes before the letter, and we don't need the × sign!"
+          problemText: "Each shirt has 8 buttons. If Jiahao has m shirts, how many buttons are there altogether? Express your answer in terms of m."
+          finalAnswer: "8m buttons"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Buttons on m Shirts"
+              bars:
+                - label: "Buttons"
+                  segments:
+                    - value: "8"
+                      units: 1
+                    - value: "8"
+                      units: 1
+                    - value: "8"
+                      units: 1
+                    - value: "..."
+                      units: 1
+                  totalLabel: "8m"
+                  bracketPosition: "bottom"
+              showUnitDividers: true
+              caption: "8 buttons per shirt × m shirts = 8m buttons"
+          stepByStepGuideline:
+            - "Each shirt has 8 buttons"
+            - "Jiahao has m shirts (unknown number)"
+            - "Total buttons = 8 × m"
+            - "In algebra, we write this as 8m (number before letter)"
+            - "Answer: 8m buttons"
+
+        - id: "me-q2"
+          problemText: "Leila has q stickers. Siti has 5 times as many stickers as Leila. How many stickers does Siti have? Express your answer in terms of q."
+          finalAnswer: "5q stickers"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Comparing Stickers"
+              bars:
+                - label: "Leila"
+                  segments:
+                    - value: "q"
+                      units: 1
+                - label: "Siti"
+                  segments:
+                    - value: "q"
+                      units: 1
+                    - value: "q"
+                      units: 1
+                    - value: "q"
+                      units: 1
+                    - value: "q"
+                      units: 1
+                    - value: "q"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "bottom"
+              showUnitDividers: true
+              caption: "Siti has 5 groups of q stickers"
+          stepByStepGuideline:
+            - "Leila has q stickers"
+            - "Siti has 5 TIMES as many stickers as Leila"
+            - "'5 times as many' means multiply by 5"
+            - "Siti has 5 × q = 5q stickers"
+            - "Answer: 5q stickers"
+
+        - id: "me-q3"
+          problemText: "A notebook costs \\$w. Amy buys 6 notebooks. How much does Amy pay? Express your answer in terms of w."
+          finalAnswer: "\\$6w or \\$(6w)"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Cost of 6 Notebooks"
+              bars:
+                - label: "Total cost"
+                  segments:
+                    - value: "w"
+                      units: 1
+                    - value: "w"
+                      units: 1
+                    - value: "w"
+                      units: 1
+                    - value: "w"
+                      units: 1
+                    - value: "w"
+                      units: 1
+                    - value: "w"
+                      units: 1
+                  totalLabel: "6w"
+                  bracketPosition: "bottom"
+              showUnitDividers: true
+              caption: "6 notebooks × \\$w each = \\$6w"
+          stepByStepGuideline:
+            - "Each notebook costs \\$w"
+            - "Amy buys 6 notebooks"
+            - "Total cost = 6 × w = 6w"
+            - "Answer: \\$6w or \\$(6w)"
+
+        - id: "me-q4"
+          problemText: "Write '3 groups of x' as an algebraic expression."
+          finalAnswer: "3x"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "3 Groups of x"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "x"
+                      units: 1
+                    - value: "x"
+                      units: 1
+                    - value: "x"
+                      units: 1
+                  totalLabel: "3x"
+                  bracketPosition: "bottom"
+              showUnitDividers: true
+              caption: "3 × x = 3x"
+          stepByStepGuideline:
+            - "'3 groups of x' means 3 × x"
+            - "In algebra, we write this as 3x"
+            - "The number goes BEFORE the letter"
+            - "We don't write the × sign"
+            - "Answer: 3x"
+
+        - id: "me-q5"
+          problemText: "Tom is t years old. His grandfather is 4 times as old as Tom. How old is Tom's grandfather? Express your answer in terms of t."
+          finalAnswer: "4t years old"
+          stepByStepGuideline:
+            - "Tom is t years old"
+            - "Grandfather is 4 TIMES as old as Tom"
+            - "'4 times as old' means multiply by 4"
+            - "Grandfather's age = 4 × t = 4t"
+            - "Answer: 4t years old"
+
+  - id: algebra-division-expressions
+    nodeNumber: 5
+    title: "Writing Division Expressions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-multiplication-expressions
+    descriptor:
+      section: "division-expressions"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Write division expressions as fractions"
+        - "Understand that sharing equally = division"
+        - "Use fraction notation for division"
+      contexts:
+        - "sharing money"
+        - "cutting rope"
+        - "dividing items"
+      preWrittenQuestions:
+        - id: "de-q1"
+          avatarIntro: "When we divide in algebra, we write division as a fraction! Instead of 'y ÷ 6', we write 'y/6'. Let's practice this new notation!"
+          problemText: "\\$p is shared equally among 3 children. How much does each child get? Express your answer in terms of p."
+          finalAnswer: "\\$(p/3) or \\$p/3"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Sharing \\$p Among 3 Children"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                  totalLabel: "\\$p"
+                  bracketPosition: "top"
+              showUnitDividers: true
+              caption: "Each part = p ÷ 3 = p/3"
+          stepByStepGuideline:
+            - "Total money = \\$p"
+            - "Shared equally among 3 children"
+            - "Each child gets = p ÷ 3"
+            - "In algebra, we write this as p/3 (fraction form)"
+            - "Answer: \\$(p/3) or \\$p/3 each"
+
+        - id: "de-q2"
+          problemText: "A rope is y metres long. It is cut into 6 equal pieces. What is the length of each piece? Express your answer in terms of y."
+          finalAnswer: "y/6 metres"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Cutting a Rope"
+              bars:
+                - label: "Rope"
+                  segments:
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                    - value: "?"
+                      units: 1
+                  totalLabel: "y metres"
+                  bracketPosition: "top"
+              showUnitDividers: true
+              caption: "Each piece = y ÷ 6 = y/6"
+          stepByStepGuideline:
+            - "Total length = y metres"
+            - "Cut into 6 equal pieces"
+            - "Each piece = y ÷ 6 = y/6 metres"
+            - "Answer: y/6 metres"
+
+        - id: "de-q3"
+          problemText: "Write 'divide y by 6' as an algebraic expression."
+          finalAnswer: "y/6"
+          stepByStepGuideline:
+            - "'Divide y by 6' means y ÷ 6"
+            - "In algebra, we write division as a fraction"
+            - "y ÷ 6 = y/6"
+            - "The number being divided (y) goes on top"
+            - "The divisor (6) goes on the bottom"
+            - "Answer: y/6"
+
+        - id: "de-q4"
+          problemText: "Simon has 5 times as much money as Lucas. Together they have \\$q. Express the amount of money Lucas has in terms of q."
+          finalAnswer: "\\$(q/6) or \\$q/6"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Simon and Lucas's Money"
+              bars:
+                - label: "Simon"
+                  segments:
+                    - value: ""
+                      units: 1
+                    - value: ""
+                      units: 1
+                    - value: ""
+                      units: 1
+                    - value: ""
+                      units: 1
+                    - value: ""
+                      units: 1
+                  totalLabel: "5 units"
+                - label: "Lucas"
+                  segments:
+                    - value: "?"
+                      units: 1
+                  totalLabel: "1 unit"
+              groupBracket:
+                value: "\\$q"
+                bars: [0, 1]
+              showUnitDividers: true
+              caption: "6 equal units = \\$q"
+          stepByStepGuideline:
+            - "Let Lucas's money be 1 unit"
+            - "Simon has 5 times as much = 5 units"
+            - "Total = 5 + 1 = 6 units = \\$q"
+            - "1 unit (Lucas's money) = \\$q ÷ 6 = \\$(q/6)"
+            - "Answer: Lucas has \\$(q/6)"
+
+        - id: "de-q5"
+          problemText: "n pizzas are shared equally among 8 friends. How much pizza does each friend get? Express your answer in terms of n."
+          finalAnswer: "n/8 pizzas"
+          stepByStepGuideline:
+            - "Total pizzas = n"
+            - "Shared equally among 8 friends"
+            - "Each friend gets = n ÷ 8 = n/8 pizzas"
+            - "Answer: n/8 pizzas"
+
+  # ============================================
+  # SUBTOPIC 2: Simplifying Expressions
+  # ============================================
+
+  - id: algebra-like-terms-concept
+    nodeNumber: 6
+    title: "Understanding Like Terms"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-division-expressions
+    descriptor:
+      section: "like-terms-concept"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Identify like terms (same variable)"
+        - "Understand why unlike terms cannot be combined"
+      contexts:
+        - "boxes of clips"
+        - "identifying terms"
+      preWrittenQuestions:
+        - id: "lt-q1"
+          avatarIntro: "Like terms have the SAME variable! For example, 3y and 5y are like terms because they both have y. But 3x and 5y are NOT like terms because they have different variables."
+          problemText: "Which pairs are like terms?\nA) 3y and 5y\nB) 4x and 7y\nC) 2m and 9m\nD) 6a and 6b"
+          finalAnswer: "A) 3y and 5y, C) 2m and 9m"
+          stepByStepGuideline:
+            - "Like terms have the SAME variable"
+            - "A) 3y and 5y - both have y → LIKE TERMS ✓"
+            - "B) 4x and 7y - different variables (x and y) → NOT like terms ✗"
+            - "C) 2m and 9m - both have m → LIKE TERMS ✓"
+            - "D) 6a and 6b - different variables (a and b) → NOT like terms ✗"
+            - "Answer: A and C are like terms"
+
+        - id: "lt-q2"
+          problemText: "Mr Tan had 6 boxes of blue clips and 2 boxes of red clips. Each box contains y clips. Are 6y and 2y like terms? Explain why."
+          finalAnswer: "Yes, 6y and 2y are like terms because they both have the same variable y."
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Boxes of Clips"
+              bars:
+                - label: "Blue (6 boxes)"
+                  segments:
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                  totalLabel: "6y"
+                - label: "Red (2 boxes)"
+                  segments:
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                  totalLabel: "2y"
+              showUnitDividers: true
+              caption: "Both expressions have the variable y"
+          stepByStepGuideline:
+            - "6y means 6 boxes with y clips each"
+            - "2y means 2 boxes with y clips each"
+            - "Both have the SAME variable y"
+            - "Therefore, 6y and 2y are LIKE TERMS"
+            - "Like terms can be combined (added or subtracted)"
+
+        - id: "lt-q3"
+          problemText: "Can we simplify 3x + 2y? Explain your answer."
+          finalAnswer: "No, we cannot simplify 3x + 2y because they are unlike terms (different variables x and y)."
+          stepByStepGuideline:
+            - "3x has the variable x"
+            - "2y has the variable y"
+            - "x and y are DIFFERENT variables"
+            - "Therefore, 3x and 2y are UNLIKE TERMS"
+            - "Unlike terms CANNOT be combined"
+            - "3x + 2y stays as 3x + 2y"
+            - "COMMON MISTAKE: 3x + 2y ≠ 5xy"
+
+        - id: "lt-q4"
+          problemText: "Group the like terms:\n7a, 3b, 2a, 5b, 9a, b"
+          finalAnswer: "Like terms with a: 7a, 2a, 9a\nLike terms with b: 3b, 5b, b"
+          stepByStepGuideline:
+            - "Look for terms with the same variable"
+            - "Terms with variable a: 7a, 2a, 9a"
+            - "Terms with variable b: 3b, 5b, b (remember b = 1b)"
+            - "These groups can be simplified separately"
+
+        - id: "lt-q5"
+          problemText: "Are 4 and 9 like terms? Explain."
+          finalAnswer: "Yes, 4 and 9 are like terms because they are both constants (numbers without variables)."
+          stepByStepGuideline:
+            - "4 is a constant (just a number)"
+            - "9 is also a constant (just a number)"
+            - "Constants are like terms with each other"
+            - "They can be combined: 4 + 9 = 13"
+            - "Think of them as having an 'invisible' same variable"
+
+  - id: algebra-adding-like-terms
+    nodeNumber: 7
+    title: "Adding Like Terms"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-like-terms-concept
+    descriptor:
+      section: "adding-like-terms"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Add like terms by adding coefficients"
+        - "Understand that y alone means 1y"
+      contexts:
+        - "combining boxes"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "alt-q1"
+          avatarIntro: "To add like terms, we add the coefficients (the numbers in front). For example, 6y + 2y = 8y because 6 + 2 = 8, and the variable y stays the same!"
+          problemText: "Simplify: 6y + 2y"
+          finalAnswer: "8y"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Adding Like Terms"
+              bars:
+                - label: "6y"
+                  segments:
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                  totalLabel: "6y"
+                - label: "2y"
+                  segments:
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                  totalLabel: "2y"
+              groupBracket:
+                value: "8y"
+                bars: [0, 1]
+              showUnitDividers: true
+              caption: "6y + 2y = 8y"
+          stepByStepGuideline:
+            - "6y and 2y are like terms (both have y)"
+            - "Add the coefficients: 6 + 2 = 8"
+            - "Keep the variable: y"
+            - "Answer: 8y"
+
+        - id: "alt-q2"
+          problemText: "Simplify: 3x + 5x"
+          finalAnswer: "8x"
+          stepByStepGuideline:
+            - "3x and 5x are like terms (both have x)"
+            - "Add the coefficients: 3 + 5 = 8"
+            - "Keep the variable: x"
+            - "Answer: 8x"
+
+        - id: "alt-q3"
+          problemText: "Simplify: 4a + a"
+          finalAnswer: "5a"
+          stepByStepGuideline:
+            - "Remember: a by itself means 1a"
+            - "So 4a + a = 4a + 1a"
+            - "Add the coefficients: 4 + 1 = 5"
+            - "Answer: 5a"
+
+        - id: "alt-q4"
+          problemText: "Simplify: 7m + 3m + 2m"
+          finalAnswer: "12m"
+          stepByStepGuideline:
+            - "All three terms are like terms (all have m)"
+            - "Add all the coefficients: 7 + 3 + 2 = 12"
+            - "Keep the variable: m"
+            - "Answer: 12m"
+
+        - id: "alt-q5"
+          problemText: "Simplify: 9p + 4p"
+          finalAnswer: "13p"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Adding 9p and 4p"
+              bars:
+                - label: "9p"
+                  segments:
+                    - value: ""
+                      units: 9
+                  totalLabel: "9p"
+                - label: "4p"
+                  segments:
+                    - value: ""
+                      units: 4
+                  totalLabel: "4p"
+              groupBracket:
+                value: "13p"
+                bars: [0, 1]
+              showUnitDividers: true
+              caption: "9p + 4p = 13p"
+          stepByStepGuideline:
+            - "9p and 4p are like terms"
+            - "Add the coefficients: 9 + 4 = 13"
+            - "Answer: 13p"
+
+  - id: algebra-subtracting-like-terms
+    nodeNumber: 8
+    title: "Subtracting Like Terms"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-adding-like-terms
+    descriptor:
+      section: "subtracting-like-terms"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Subtract like terms by subtracting coefficients"
+        - "Handle subtracting single variables (n = 1n)"
+        - "Write simplified form (x not 1x)"
+      contexts:
+        - "comparing quantities"
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "slt-q1"
+          avatarIntro: "Subtracting like terms works the same way - we subtract the coefficients! For example, 6y - 2y = 4y because 6 - 2 = 4."
+          problemText: "Simplify: 6y - 2y"
+          finalAnswer: "4y"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Subtracting Like Terms"
+              bars:
+                - label: "6y"
+                  segments:
+                    - value: "4y"
+                      units: 1
+                    - value: "2y"
+                      units: 1
+                      highlight: true
+                  totalLabel: "6y"
+              caption: "6y - 2y = 4y"
+          stepByStepGuideline:
+            - "6y and 2y are like terms"
+            - "Subtract the coefficients: 6 - 2 = 4"
+            - "Keep the variable: y"
+            - "Answer: 4y"
+
+        - id: "slt-q2"
+          problemText: "Simplify: 10x - 3x"
+          finalAnswer: "7x"
+          stepByStepGuideline:
+            - "10x and 3x are like terms"
+            - "Subtract the coefficients: 10 - 3 = 7"
+            - "Answer: 7x"
+
+        - id: "slt-q3"
+          problemText: "Simplify: 8n - n"
+          finalAnswer: "7n"
+          stepByStepGuideline:
+            - "Remember: n by itself means 1n"
+            - "So 8n - n = 8n - 1n"
+            - "Subtract the coefficients: 8 - 1 = 7"
+            - "Answer: 7n"
+
+        - id: "slt-q4"
+          problemText: "Simplify: 4x - 3x"
+          finalAnswer: "x"
+          stepByStepGuideline:
+            - "4x and 3x are like terms"
+            - "Subtract the coefficients: 4 - 3 = 1"
+            - "1x is written simply as x (not 1x)"
+            - "Answer: x"
+
+        - id: "slt-q5"
+          problemText: "Simplify: 15k - 6k - 4k"
+          finalAnswer: "5k"
+          stepByStepGuideline:
+            - "All three terms are like terms"
+            - "Subtract step by step: 15 - 6 = 9"
+            - "Then: 9 - 4 = 5"
+            - "Or subtract all at once: 15 - 6 - 4 = 5"
+            - "Answer: 5k"
+
+  - id: algebra-combining-mixed-terms
+    nodeNumber: 9
+    title: "Combining Terms with Constants"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-subtracting-like-terms
+    descriptor:
+      section: "combining-mixed-terms"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Group and combine like terms in mixed expressions"
+        - "Handle expressions with variables AND constants"
+      contexts:
+        - "mixed expressions"
+        - "word problems"
+      preWrittenQuestions:
+        - id: "cmt-q1"
+          avatarIntro: "When you have variables AND numbers in an expression, group the like terms together first, then simplify each group!"
+          problemText: "Simplify: 6y + 2 + 2y + 5"
+          finalAnswer: "8y + 7"
+          solutionMathTool:
+            toolName: algebraExpression
+            parameters:
+              expression: "6y + 2 + 2y + 5"
+              highlightLikeTerms: true
+              showBreakdown: true
+              caption: "Group like terms: (6y + 2y) + (2 + 5)"
+          stepByStepGuideline:
+            - "Group like terms together:"
+            - "Variable terms: 6y + 2y = 8y"
+            - "Constant terms: 2 + 5 = 7"
+            - "Combine: 8y + 7"
+            - "Answer: 8y + 7"
+
+        - id: "cmt-q2"
+          problemText: "Simplify: 5x + 3 - 2x + 7"
+          finalAnswer: "3x + 10"
+          solutionMathTool:
+            toolName: algebraExpression
+            parameters:
+              expression: "5x + 3 - 2x + 7"
+              highlightLikeTerms: true
+              showBreakdown: true
+              caption: "Group: (5x - 2x) + (3 + 7)"
+          stepByStepGuideline:
+            - "Group like terms:"
+            - "Variable terms: 5x - 2x = 3x"
+            - "Constant terms: 3 + 7 = 10"
+            - "Answer: 3x + 10"
+
+        - id: "cmt-q3"
+          problemText: "Simplify: 4a + 2b - a"
+          finalAnswer: "3a + 2b"
+          stepByStepGuideline:
+            - "Group like terms:"
+            - "Terms with a: 4a - a = 4a - 1a = 3a"
+            - "Terms with b: 2b (nothing to combine with)"
+            - "Remember: 2b cannot combine with a terms"
+            - "Answer: 3a + 2b"
+
+        - id: "cmt-q4"
+          problemText: "Simplify: 8k + 5 - 3k + 2"
+          finalAnswer: "5k + 7"
+          solutionMathTool:
+            toolName: algebraExpression
+            parameters:
+              expression: "8k + 5 - 3k + 2"
+              highlightLikeTerms: true
+              showBreakdown: true
+          stepByStepGuideline:
+            - "Group like terms:"
+            - "Variable terms: 8k - 3k = 5k"
+            - "Constant terms: 5 + 2 = 7"
+            - "Answer: 5k + 7"
+
+        - id: "cmt-q5"
+          problemText: "Box A has x cherries. Box B has 3 times as many cherries as Box A. Box C has 9 cherries. Express the total number of cherries in all 3 boxes in terms of x."
+          finalAnswer: "4x + 9"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Cherries in Boxes"
+              bars:
+                - label: "Box A"
+                  segments:
+                    - value: "x"
+                      units: 1
+                - label: "Box B"
+                  segments:
+                    - value: "x"
+                      units: 1
+                    - value: "x"
+                      units: 1
+                    - value: "x"
+                      units: 1
+                  totalLabel: "3x"
+                - label: "Box C"
+                  segments:
+                    - value: "9"
+                      units: 1
+              groupBracket:
+                value: "?"
+                bars: [0, 1, 2]
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Box A = x cherries"
+            - "Box B = 3 times Box A = 3x cherries"
+            - "Box C = 9 cherries"
+            - "Total = x + 3x + 9"
+            - "Combine like terms: x + 3x = 4x"
+            - "Total = 4x + 9"
+
+  # ============================================
+  # SUBTOPIC 3: Evaluating Expressions
+  # ============================================
+
+  - id: algebra-substitution-basics
+    nodeNumber: 10
+    title: "Introduction to Substitution"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-combining-mixed-terms
+    descriptor:
+      section: "substitution-basics"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand substitution as replacing variables with numbers"
+        - "Perform simple substitution with addition/subtraction"
+      contexts:
+        - "simple substitution"
+        - "step-by-step calculation"
+      preWrittenQuestions:
+        - id: "sb-q1"
+          avatarIntro: "Substitution is like solving a mystery! When we know the value of a variable, we replace the letter with the number and calculate the answer."
+          problemText: "If y = 5, find the value of y + 3."
+          finalAnswer: "8"
+          stepByStepGuideline:
+            - "We know that y = 5"
+            - "Replace y with 5 in the expression"
+            - "y + 3 = 5 + 3"
+            - "= 8"
+
+        - id: "sb-q2"
+          problemText: "If n = 7, find the value of 25 - n."
+          finalAnswer: "18"
+          stepByStepGuideline:
+            - "We know that n = 7"
+            - "Replace n with 7 in the expression"
+            - "25 - n = 25 - 7"
+            - "= 18"
+
+        - id: "sb-q3"
+          problemText: "If p = 3, find the value of 12 + p."
+          finalAnswer: "15"
+          stepByStepGuideline:
+            - "We know that p = 3"
+            - "Replace p with 3"
+            - "12 + p = 12 + 3"
+            - "= 15"
+
+        - id: "sb-q4"
+          problemText: "If x = 8, find the value of x - 5."
+          finalAnswer: "3"
+          stepByStepGuideline:
+            - "We know that x = 8"
+            - "Replace x with 8"
+            - "x - 5 = 8 - 5"
+            - "= 3"
+
+        - id: "sb-q5"
+          problemText: "The length of a rod is (20 + y) cm. Find the length of the rod when y = 9."
+          finalAnswer: "29 cm"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Length of Rod"
+              bars:
+                - label: "Rod"
+                  segments:
+                    - value: "20"
+                      units: 1
+                    - value: "9"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "When y = 9: 20 + 9 = 29 cm"
+          stepByStepGuideline:
+            - "Length = (20 + y) cm"
+            - "When y = 9:"
+            - "Length = 20 + 9"
+            - "= 29 cm"
+
+  - id: algebra-single-variable-eval
+    nodeNumber: 11
+    title: "Evaluating Single Variable Expressions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-substitution-basics
+    descriptor:
+      section: "single-variable-eval"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Evaluate expressions with multiplication (4x means 4 × x)"
+        - "Evaluate expressions with division (y/6 means y ÷ 6)"
+      contexts:
+        - "multiplication expressions"
+        - "division expressions"
+      preWrittenQuestions:
+        - id: "sve-q1"
+          avatarIntro: "Remember: 4x means 4 × x, and y/6 means y ÷ 6. When substituting, replace the variable with the number and do the calculation!"
+          problemText: "If x = 15, find the value of 4x."
+          finalAnswer: "60"
+          stepByStepGuideline:
+            - "4x means 4 × x"
+            - "When x = 15:"
+            - "4x = 4 × 15"
+            - "= 60"
+
+        - id: "sve-q2"
+          problemText: "If y = 84, find the value of y/6."
+          finalAnswer: "14"
+          stepByStepGuideline:
+            - "y/6 means y ÷ 6"
+            - "When y = 84:"
+            - "y/6 = 84 ÷ 6"
+            - "= 14"
+
+        - id: "sve-q3"
+          problemText: "If m = 7, find the value of 9m."
+          finalAnswer: "63"
+          stepByStepGuideline:
+            - "9m means 9 × m"
+            - "When m = 7:"
+            - "9m = 9 × 7"
+            - "= 63"
+
+        - id: "sve-q4"
+          problemText: "If p = 36, find the value of p/4."
+          finalAnswer: "9"
+          stepByStepGuideline:
+            - "p/4 means p ÷ 4"
+            - "When p = 36:"
+            - "p/4 = 36 ÷ 4"
+            - "= 9"
+
+        - id: "sve-q5"
+          problemText: "Each packet contains k sweets. If k = 12, how many sweets are in 5 packets?"
+          finalAnswer: "60 sweets"
+          stepByStepGuideline:
+            - "Number of sweets = 5 × k = 5k"
+            - "When k = 12:"
+            - "5k = 5 × 12"
+            - "= 60 sweets"
+
+  - id: algebra-multi-term-eval
+    nodeNumber: 12
+    title: "Evaluating Multi-term Expressions"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-single-variable-eval
+    descriptor:
+      section: "multi-term-eval"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Evaluate expressions with multiple terms"
+        - "Follow order of operations (× ÷ before + -)"
+      contexts:
+        - "multi-term expressions"
+        - "order of operations"
+      preWrittenQuestions:
+        - id: "mte-q1"
+          avatarIntro: "When evaluating expressions with multiple operations, remember: do multiplication and division BEFORE addition and subtraction!"
+          problemText: "If x = 15, find the value of 4x + 9."
+          finalAnswer: "69"
+          stepByStepGuideline:
+            - "When x = 15:"
+            - "4x + 9 = 4 × 15 + 9"
+            - "= 60 + 9 (do multiplication first!)"
+            - "= 69"
+
+        - id: "mte-q2"
+          problemText: "If p = 20, find the value of 30 + 6p."
+          finalAnswer: "150"
+          stepByStepGuideline:
+            - "When p = 20:"
+            - "30 + 6p = 30 + 6 × 20"
+            - "= 30 + 120 (do multiplication first!)"
+            - "= 150"
+
+        - id: "mte-q3"
+          problemText: "If n = 8, find the value of 5n - 7."
+          finalAnswer: "33"
+          stepByStepGuideline:
+            - "When n = 8:"
+            - "5n - 7 = 5 × 8 - 7"
+            - "= 40 - 7"
+            - "= 33"
+
+        - id: "mte-q4"
+          problemText: "If m = 6, find the value of 3m + 2m."
+          finalAnswer: "30"
+          stepByStepGuideline:
+            - "Method 1: Simplify first"
+            - "3m + 2m = 5m"
+            - "When m = 6: 5m = 5 × 6 = 30"
+            - "Method 2: Substitute directly"
+            - "3 × 6 + 2 × 6 = 18 + 12 = 30"
+
+        - id: "mte-q5"
+          problemText: "If y = 10, find the value of y/2 + 8."
+          finalAnswer: "13"
+          stepByStepGuideline:
+            - "When y = 10:"
+            - "y/2 + 8 = 10/2 + 8"
+            - "= 5 + 8 (do division first!)"
+            - "= 13"
+
+  - id: algebra-word-problems-eval
+    nodeNumber: 13
+    title: "Word Problem Evaluation"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - algebra-multi-term-eval
+    descriptor:
+      section: "word-problems-eval"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Extract expressions from word problems"
+        - "Evaluate expressions in real-world contexts"
+      contexts:
+        - "bus rental"
+        - "taxi fare"
+        - "shopping"
+      preWrittenQuestions:
+        - id: "wpe-q1"
+          avatarIntro: "Let's apply what we've learned to real-world situations! First, write the expression, then substitute the given value."
+          problemText: "Mr Low rented a bus for p students. He paid \\$30 for the bus rental and \\$6 for each student.\n(a) Express the total amount Mr Low paid in terms of p.\n(b) Find the total amount when p = 20."
+          finalAnswer: "(a) \\$(30 + 6p)\n(b) \\$150"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Bus Rental Cost"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "\\$30"
+                      units: 1
+                    - value: "\\$6p"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "Fixed cost + cost per student"
+          stepByStepGuideline:
+            - "(a) Total = bus rental + (cost per student × number of students)"
+            - "Total = \\$30 + \\$6 × p = \\$(30 + 6p)"
+            - "(b) When p = 20:"
+            - "Total = \\$(30 + 6 × 20)"
+            - "= \\$(30 + 120)"
+            - "= \\$150"
+
+        - id: "wpe-q2"
+          problemText: "A taxi charges \\$3 flag-down fare plus \\$2 per kilometre.\n(a) Write an expression for the fare for a journey of k kilometres.\n(b) Find the fare when k = 12."
+          finalAnswer: "(a) \\$(3 + 2k)\n(b) \\$27"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Taxi Fare"
+              bars:
+                - label: "Fare"
+                  segments:
+                    - value: "\\$3"
+                      units: 1
+                    - value: "\\$2k"
+                      units: 1
+                  totalLabel: "?"
+                  bracketPosition: "top"
+              caption: "Flag-down + distance cost"
+          stepByStepGuideline:
+            - "(a) Fare = flag-down + (cost per km × distance)"
+            - "Fare = \\$3 + \\$2 × k = \\$(3 + 2k)"
+            - "(b) When k = 12:"
+            - "Fare = \\$(3 + 2 × 12)"
+            - "= \\$(3 + 24)"
+            - "= \\$27"
+
+        - id: "wpe-q3"
+          problemText: "Box A has x cherries. Box B has 3 times as many cherries as Box A. Box C has 9 cherries.\n(a) Write an expression for the total cherries in all 3 boxes.\n(b) Find the total when x = 15."
+          finalAnswer: "(a) 4x + 9\n(b) 69 cherries"
+          stepByStepGuideline:
+            - "Box A = x cherries"
+            - "Box B = 3x cherries"
+            - "Box C = 9 cherries"
+            - "(a) Total = x + 3x + 9 = 4x + 9"
+            - "(b) When x = 15:"
+            - "Total = 4 × 15 + 9"
+            - "= 60 + 9 = 69 cherries"
+
+        - id: "wpe-q4"
+          problemText: "\\$w is shared equally among 4 friends. Each friend also receives an extra \\$5.\n(a) Express how much each friend gets in terms of w.\n(b) Find the amount when w = 80."
+          finalAnswer: "(a) \\$(w/4 + 5)\n(b) \\$25"
+          stepByStepGuideline:
+            - "(a) Each friend gets:"
+            - "Share from \\$w = w/4"
+            - "Plus extra = \\$5"
+            - "Total per friend = \\$(w/4 + 5)"
+            - "(b) When w = 80:"
+            - "Each gets = \\$(80/4 + 5)"
+            - "= \\$(20 + 5) = \\$25"
+
+        - id: "wpe-q5"
+          problemText: "Hassan's age is (12 + p) years. Find Hassan's age when p = 5."
+          finalAnswer: "17 years old"
+          stepByStepGuideline:
+            - "Age = (12 + p) years"
+            - "When p = 5:"
+            - "Age = 12 + 5"
+            - "= 17 years old"
+
+  # ============================================
+  # SUBTOPIC 4: Solving Algebraic Equations
+  # ============================================
+
+  - id: algebra-one-step-equations
+    nodeNumber: 14
+    title: "One-Step Equations"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-word-problems-eval
+    descriptor:
+      section: "one-step-equations"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Solve one-step addition equations"
+        - "Solve one-step multiplication equations"
+        - "Apply inverse operations"
+      contexts:
+        - "one-step equations"
+        - "inverse operations"
+      preWrittenQuestions:
+        - id: "ose-q1"
+          avatarIntro: "An equation is like a balance scale - both sides must be equal! To solve an equation, we find the value that makes it true. We use inverse operations: to undo +, we use -; to undo ×, we use ÷."
+          problemText: "Solve: 7 + j = 18. Find the value of j."
+          finalAnswer: "j = 11"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "7 + j = 18"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "7"
+                      units: 1
+                    - value: "j"
+                      units: 1
+                      highlight: true
+                  totalLabel: "18"
+                  bracketPosition: "top"
+              caption: "Find the value of j"
+          stepByStepGuideline:
+            - "7 + j = 18"
+            - "To find j, we need to undo the +7"
+            - "Use inverse operation: subtract 7 from both sides"
+            - "j = 18 - 7"
+            - "j = 11"
+            - "Check: 7 + 11 = 18 ✓"
+
+        - id: "ose-q2"
+          problemText: "Solve: 9g = 72. Find the value of g."
+          finalAnswer: "g = 8"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "9g = 72"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                    - value: "g"
+                      units: 1
+                  totalLabel: "72"
+                  bracketPosition: "top"
+              showUnitDividers: true
+              caption: "9 units = 72, so 1 unit = ?"
+          stepByStepGuideline:
+            - "9g = 72"
+            - "To find g, we need to undo the ×9"
+            - "Use inverse operation: divide both sides by 9"
+            - "g = 72 ÷ 9"
+            - "g = 8"
+            - "Check: 9 × 8 = 72 ✓"
+
+        - id: "ose-q3"
+          problemText: "Solve: x + 15 = 23. Find the value of x."
+          finalAnswer: "x = 8"
+          stepByStepGuideline:
+            - "x + 15 = 23"
+            - "Subtract 15 from both sides"
+            - "x = 23 - 15"
+            - "x = 8"
+            - "Check: 8 + 15 = 23 ✓"
+
+        - id: "ose-q4"
+          problemText: "Solve: 5m = 45. Find the value of m."
+          finalAnswer: "m = 9"
+          stepByStepGuideline:
+            - "5m = 45"
+            - "Divide both sides by 5"
+            - "m = 45 ÷ 5"
+            - "m = 9"
+            - "Check: 5 × 9 = 45 ✓"
+
+        - id: "ose-q5"
+          problemText: "Siti had 7 crayons. She bought j more crayons and now has 18 crayons. How many crayons did she buy?"
+          finalAnswer: "j = 11 crayons"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Siti's Crayons"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "7"
+                      units: 1
+                    - value: "j"
+                      units: 1
+                      highlight: true
+                  totalLabel: "18"
+                  bracketPosition: "top"
+              caption: "7 + j = 18"
+          stepByStepGuideline:
+            - "Equation: 7 + j = 18"
+            - "j = 18 - 7"
+            - "j = 11"
+            - "Siti bought 11 crayons"
+
+  - id: algebra-bar-model-equations
+    nodeNumber: 15
+    title: "Bar Models for Equations"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-one-step-equations
+    descriptor:
+      section: "bar-model-equations"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Draw bar models to represent equations"
+        - "Convert bar models to equations"
+        - "Use 'find 1 unit' strategy"
+      contexts:
+        - "bar model equations"
+        - "finding 1 unit"
+      preWrittenQuestions:
+        - id: "bme-q1"
+          avatarIntro: "Bar models help us visualize equations! The key strategy is to find what 1 unit equals. Draw the bar model, set up the equation, then solve step by step."
+          problemText: "A container had k yellow buttons at first. After putting the same number of yellow buttons and 4 green buttons into the container, there were 20 buttons in all. How many yellow buttons were there at first?"
+          finalAnswer: "k = 8 buttons"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Buttons in Container"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "k"
+                      units: 1
+                    - value: "k"
+                      units: 1
+                    - value: "4"
+                      units: 1
+                      highlight: true
+                  totalLabel: "20"
+                  bracketPosition: "top"
+              showUnitDividers: true
+              caption: "k + k + 4 = 20, which is 2k + 4 = 20"
+          stepByStepGuideline:
+            - "Set up equation: k + k + 4 = 20"
+            - "Simplify: 2k + 4 = 20"
+            - "Subtract 4: 2k = 20 - 4 = 16"
+            - "Divide by 2: k = 16 ÷ 2 = 8"
+            - "There were 8 yellow buttons at first"
+
+        - id: "bme-q2"
+          problemText: "Lucy had 18 coins in her savings jar. When she put p coins in the jar, there were 35 coins in all. How many coins did she put in?"
+          finalAnswer: "p = 17 coins"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Lucy's Coins"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "18"
+                      units: 1
+                    - value: "p"
+                      units: 1
+                      highlight: true
+                  totalLabel: "35"
+                  bracketPosition: "top"
+              caption: "18 + p = 35"
+          stepByStepGuideline:
+            - "Equation: 18 + p = 35"
+            - "Subtract 18: p = 35 - 18"
+            - "p = 17"
+            - "Lucy put 17 coins in the jar"
+
+        - id: "bme-q3"
+          problemText: "Solve using a bar model: 3x + 6 = 24"
+          finalAnswer: "x = 6"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "3x + 6 = 24"
+              bars:
+                - label: "Total"
+                  segments:
+                    - value: "x"
+                      units: 1
+                    - value: "x"
+                      units: 1
+                    - value: "x"
+                      units: 1
+                    - value: "6"
+                      units: 1
+                      highlight: true
+                  totalLabel: "24"
+                  bracketPosition: "top"
+              showUnitDividers: true
+              caption: "3 units of x plus 6 equals 24"
+          stepByStepGuideline:
+            - "3x + 6 = 24"
+            - "Subtract 6: 3x = 24 - 6 = 18"
+            - "Divide by 3: x = 18 ÷ 3 = 6"
+            - "Check: 3(6) + 6 = 18 + 6 = 24 ✓"
+
+        - id: "bme-q4"
+          problemText: "The sum of two numbers is 30. One number is y and the other is twice as large. Find the value of y."
+          finalAnswer: "y = 10"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Two Numbers"
+              bars:
+                - label: "Smaller"
+                  segments:
+                    - value: "y"
+                      units: 1
+                - label: "Larger"
+                  segments:
+                    - value: "y"
+                      units: 1
+                    - value: "y"
+                      units: 1
+                  totalLabel: "2y"
+              groupBracket:
+                value: "30"
+                bars: [0, 1]
+              showUnitDividers: true
+              caption: "y + 2y = 30"
+          stepByStepGuideline:
+            - "First number = y"
+            - "Second number = 2y (twice as large)"
+            - "Total: y + 2y = 30"
+            - "3y = 30"
+            - "y = 30 ÷ 3 = 10"
+
+        - id: "bme-q5"
+          problemText: "Ali had some marbles. He gave 12 to his friend and had 25 left. How many marbles did Ali have at first? Set up and solve the equation."
+          finalAnswer: "37 marbles"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Ali's Marbles"
+              bars:
+                - label: "At first"
+                  segments:
+                    - value: "25"
+                      units: 1
+                    - value: "12"
+                      units: 1
+                      highlight: true
+                  totalLabel: "m"
+                  bracketPosition: "top"
+              caption: "Left + gave away = original"
+          stepByStepGuideline:
+            - "Let m = marbles at first"
+            - "m - 12 = 25"
+            - "m = 25 + 12"
+            - "m = 37"
+            - "Ali had 37 marbles at first"
+
+  - id: algebra-multi-step-equations
+    nodeNumber: 16
+    title: "Multi-Step Equations"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - algebra-bar-model-equations
+    descriptor:
+      section: "multi-step-equations"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Solve two-step equations systematically"
+        - "Isolate variable terms first"
+        - "Verify solutions by substitution"
+      contexts:
+        - "multi-step solving"
+        - "verification"
+      preWrittenQuestions:
+        - id: "mse-q1"
+          avatarIntro: "Multi-step equations need two or more operations to solve. The strategy: first isolate the variable term (get rid of constants), then find 1 unit (divide by the coefficient)."
+          problemText: "Solve: 2x + 14 = 70"
+          finalAnswer: "x = 28"
+          solutionMathTool:
+            toolName: balanceScale
+            parameters:
+              leftSide: "2x + 14"
+              rightSide: "70"
+              operation: "subtract"
+              operationValue: "14"
+              caption: "Step 1: Subtract 14 from both sides"
+          stepByStepGuideline:
+            - "2x + 14 = 70"
+            - "Step 1: Subtract 14 from both sides"
+            - "2x = 70 - 14 = 56"
+            - "Step 2: Divide both sides by 2"
+            - "x = 56 ÷ 2 = 28"
+            - "Check: 2(28) + 14 = 56 + 14 = 70 ✓"
+
+        - id: "mse-q2"
+          problemText: "Solve: 3y + 9 = 36"
+          finalAnswer: "y = 9"
+          stepByStepGuideline:
+            - "3y + 9 = 36"
+            - "Subtract 9: 3y = 36 - 9 = 27"
+            - "Divide by 3: y = 27 ÷ 3 = 9"
+            - "Check: 3(9) + 9 = 27 + 9 = 36 ✓"
+
+        - id: "mse-q3"
+          problemText: "Solve: 5m - 8 = 32"
+          finalAnswer: "m = 8"
+          stepByStepGuideline:
+            - "5m - 8 = 32"
+            - "Add 8: 5m = 32 + 8 = 40"
+            - "Divide by 5: m = 40 ÷ 5 = 8"
+            - "Check: 5(8) - 8 = 40 - 8 = 32 ✓"
+
+        - id: "mse-q4"
+          problemText: "Solve: 4p + 15 = 51"
+          finalAnswer: "p = 9"
+          stepByStepGuideline:
+            - "4p + 15 = 51"
+            - "Subtract 15: 4p = 51 - 15 = 36"
+            - "Divide by 4: p = 36 ÷ 4 = 9"
+            - "Check: 4(9) + 15 = 36 + 15 = 51 ✓"
+
+        - id: "mse-q5"
+          problemText: "Solve: 6n - 12 = 42"
+          finalAnswer: "n = 9"
+          stepByStepGuideline:
+            - "6n - 12 = 42"
+            - "Add 12: 6n = 42 + 12 = 54"
+            - "Divide by 6: n = 54 ÷ 6 = 9"
+            - "Check: 6(9) - 12 = 54 - 12 = 42 ✓"
+
+  - id: algebra-word-problems-solving
+    nodeNumber: 17
+    title: "Word Problems with Equations"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - algebra-multi-step-equations
+    descriptor:
+      section: "word-problems-solving"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Extract relationships from word problems"
+        - "Draw bar models and set up equations"
+        - "Solve systematically and state answers in context"
+      contexts:
+        - "comparing quantities"
+        - "total and parts"
+        - "sports and activities"
+      preWrittenQuestions:
+        - id: "wps-q1"
+          avatarIntro: "Word problems are where algebra really shines! Read carefully, draw a bar model, write the equation, solve step by step, and always check your answer!"
+          problemText: "There are 70 children playing table tennis or badminton in a sports hall. There are x children playing table tennis. There are 14 more children playing badminton than table tennis. How many children are playing table tennis?"
+          finalAnswer: "28 children"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Children Playing Sports"
+              bars:
+                - label: "Table Tennis"
+                  segments:
+                    - value: "x"
+                      units: 1
+                - label: "Badminton"
+                  segments:
+                    - value: "x"
+                      units: 1
+                    - value: "14"
+                      units: 1
+                      highlight: true
+                  totalLabel: "x + 14"
+              groupBracket:
+                value: "70"
+                bars: [0, 1]
+              showUnitDividers: true
+              caption: "Table tennis + badminton = 70"
+          stepByStepGuideline:
+            - "Table tennis = x children"
+            - "Badminton = x + 14 children"
+            - "Total: x + (x + 14) = 70"
+            - "2x + 14 = 70"
+            - "2x = 70 - 14 = 56"
+            - "x = 56 ÷ 2 = 28"
+            - "28 children are playing table tennis"
+            - "Check: 28 + (28 + 14) = 28 + 42 = 70 ✓"
+
+        - id: "wps-q2"
+          problemText: "The sum of two numbers is 60. The smaller number is p. The greater number is 4 times the smaller number. What are the two numbers?"
+          finalAnswer: "Smaller number = 12, Greater number = 48"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Two Numbers"
+              bars:
+                - label: "Smaller"
+                  segments:
+                    - value: "p"
+                      units: 1
+                - label: "Greater"
+                  segments:
+                    - value: "p"
+                      units: 1
+                    - value: "p"
+                      units: 1
+                    - value: "p"
+                      units: 1
+                    - value: "p"
+                      units: 1
+                  totalLabel: "4p"
+              groupBracket:
+                value: "60"
+                bars: [0, 1]
+              showUnitDividers: true
+              caption: "5 units = 60"
+          stepByStepGuideline:
+            - "Smaller = p"
+            - "Greater = 4p"
+            - "Total: p + 4p = 60"
+            - "5p = 60"
+            - "p = 60 ÷ 5 = 12"
+            - "Greater = 4 × 12 = 48"
+            - "Check: 12 + 48 = 60 ✓"
+
+        - id: "wps-q3"
+          problemText: "Khadijah baked n chocolate cookies, 30 coconut cookies, and 2n peanut cookies. She baked 75 cookies altogether. How many chocolate cookies did she bake?"
+          finalAnswer: "15 chocolate cookies"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Khadijah's Cookies"
+              bars:
+                - label: "Chocolate"
+                  segments:
+                    - value: "n"
+                      units: 1
+                - label: "Coconut"
+                  segments:
+                    - value: "30"
+                      units: 1
+                - label: "Peanut"
+                  segments:
+                    - value: "n"
+                      units: 1
+                    - value: "n"
+                      units: 1
+                  totalLabel: "2n"
+              groupBracket:
+                value: "75"
+                bars: [0, 1, 2]
+              showUnitDividers: true
+          stepByStepGuideline:
+            - "Chocolate = n, Coconut = 30, Peanut = 2n"
+            - "Total: n + 30 + 2n = 75"
+            - "3n + 30 = 75"
+            - "3n = 75 - 30 = 45"
+            - "n = 45 ÷ 3 = 15"
+            - "She baked 15 chocolate cookies"
+
+        - id: "wps-q4"
+          problemText: "James has \\$x. He has \\$14 less than Alex. Together they have \\$50. How much money does James have?"
+          finalAnswer: "\\$18"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "James and Alex's Money"
+              bars:
+                - label: "James"
+                  segments:
+                    - value: "x"
+                      units: 1
+                - label: "Alex"
+                  segments:
+                    - value: "x"
+                      units: 1
+                    - value: "14"
+                      units: 1
+                      highlight: true
+                  totalLabel: "x + 14"
+              groupBracket:
+                value: "\\$50"
+                bars: [0, 1]
+              caption: "James has \\$14 less means Alex has \\$14 more"
+          stepByStepGuideline:
+            - "James = \\$x"
+            - "Alex has \\$14 more = \\$(x + 14)"
+            - "Total: x + (x + 14) = 50"
+            - "2x + 14 = 50"
+            - "2x = 50 - 14 = 36"
+            - "x = 36 ÷ 2 = 18"
+            - "James has \\$18"
+            - "Check: \\$18 + \\$32 = \\$50 ✓"
+
+        - id: "wps-q5"
+          problemText: "Andy weighs (j + 3) kg. Bill weighs j kg more than Andy. The total mass of the two boys is 45 kg. Find the value of j."
+          finalAnswer: "j = 13"
+          solutionMathTool:
+            toolName: barModel
+            parameters:
+              title: "Andy and Bill's Mass"
+              bars:
+                - label: "Andy"
+                  segments:
+                    - value: "j"
+                      units: 1
+                    - value: "3"
+                      units: 1
+                  totalLabel: "j + 3"
+                - label: "Bill"
+                  segments:
+                    - value: "j"
+                      units: 1
+                    - value: "3"
+                      units: 1
+                    - value: "j"
+                      units: 1
+                      highlight: true
+                  totalLabel: "2j + 3"
+              groupBracket:
+                value: "45 kg"
+                bars: [0, 1]
+              caption: "Bill = Andy + j = (j + 3) + j = 2j + 3"
+          stepByStepGuideline:
+            - "Andy = (j + 3) kg"
+            - "Bill = Andy + j = (j + 3) + j = (2j + 3) kg"
+            - "Total: (j + 3) + (2j + 3) = 45"
+            - "3j + 6 = 45"
+            - "3j = 45 - 6 = 39"
+            - "j = 39 ÷ 3 = 13"
+            - "Check: Andy = 16 kg, Bill = 29 kg, Total = 45 kg ✓"

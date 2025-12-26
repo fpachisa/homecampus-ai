@@ -1,0 +1,1131 @@
+# P6 Mathematics - Circles Practice Module
+# Covers: Parts of Circle, Circumference, Perimeter, Area, Composite Figures
+# Total: 15 nodes, 75+ pre-written questions
+
+nodes:
+  # ============================================
+  # SUBTOPIC 1: Parts of a Circle
+  # ============================================
+
+  - id: circles-centre-radius-diameter
+    nodeNumber: 1
+    title: "Centre, Radius, and Diameter"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      section: "centre-radius-diameter"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Identify the centre, radius, and diameter of circles"
+        - "Understand that all radii of a circle are equal"
+      contexts:
+        - "circle parts identification"
+        - "labeling diagrams"
+      preWrittenQuestions:
+        - id: "crd-q1"
+          avatarIntro: "Welcome to circles! A circle has three important parts: the centre (usually called O), the radius (a line from centre to edge), and the diameter (a line through the centre with both ends on the circle)."
+          problemText: "In circle O, the line from the centre O to point A on the circle is called the ______."
+          finalAnswer: "Radius"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              showCentre: true
+              showRadiusLine: true
+              centreLabel: "O"
+              caption: "OA is a radius - it goes from centre to the edge"
+          stepByStepGuideline:
+            - "A line from the centre to any point on the circle is called a radius"
+            - "The plural of radius is 'radii'"
+            - "All radii of the same circle have equal length"
+            - "Answer: Radius"
+
+        - id: "crd-q2"
+          problemText: "In circle O, line AB passes through the centre O and has both endpoints on the circle. What is line AB called?"
+          finalAnswer: "Diameter"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              showCentre: true
+              showDiameterLine: true
+              centreLabel: "O"
+              caption: "AB is a diameter - it passes through the centre"
+          stepByStepGuideline:
+            - "A line that passes through the centre with both endpoints on the circle is a diameter"
+            - "The diameter is the longest line you can draw inside a circle"
+            - "Answer: Diameter"
+
+        - id: "crd-q3"
+          problemText: "True or False: All radii of the same circle have the same length."
+          finalAnswer: "True"
+          stepByStepGuideline:
+            - "The centre is equidistant (same distance) from all points on the circle"
+            - "Since every radius goes from centre to the circle..."
+            - "All radii must have the same length"
+            - "Answer: True"
+
+        - id: "crd-q4"
+          problemText: "Which is longer: the radius or the diameter of a circle?"
+          finalAnswer: "The diameter is longer. The diameter is twice the radius."
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "5"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              showDiameterLine: true
+              caption: "The diameter passes through the centre - it's 2 radii!"
+          stepByStepGuideline:
+            - "The diameter passes through the centre from one side to the other"
+            - "It's made up of two radii placed end to end"
+            - "So diameter = 2 × radius"
+            - "Answer: The diameter is longer (it's twice the radius)"
+
+        - id: "crd-q5"
+          problemText: "Point O is the centre of a circle. OA = 6 cm and OB = 6 cm. What can we say about OA and OB?"
+          finalAnswer: "OA and OB are both radii of the circle. They are equal in length."
+          stepByStepGuideline:
+            - "Both OA and OB start from the centre O"
+            - "They both end on points on the circle (A and B)"
+            - "Lines from centre to circle = radii"
+            - "All radii are equal, so OA = OB = 6 cm"
+
+  - id: circles-diameter-radius-relationship
+    nodeNumber: 2
+    title: "Relationship: Diameter = 2 × Radius"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-centre-radius-diameter
+    descriptor:
+      section: "diameter-radius-relationship"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Convert between radius and diameter using d = 2r"
+        - "Work with whole numbers and decimals"
+      contexts:
+        - "radius to diameter conversion"
+        - "diameter to radius conversion"
+      preWrittenQuestions:
+        - id: "drr-q1"
+          avatarIntro: "The diameter is always twice the radius! So d = 2 × r, and r = d ÷ 2. Let's practice converting between them."
+          problemText: "The radius of a circle is 8 cm. Find its diameter."
+          finalAnswer: "16 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "8"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              caption: "Radius = 8 cm"
+          stepByStepGuideline:
+            - "Diameter = 2 × Radius"
+            - "Diameter = 2 × 8 cm"
+            - "Diameter = 16 cm"
+
+        - id: "drr-q2"
+          problemText: "The diameter of a circle is 24 cm. Find its radius."
+          finalAnswer: "12 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "24"
+              givenType: "diameter"
+              unit: "cm"
+              showCentre: true
+              showDiameterLine: true
+              caption: "Diameter = 24 cm"
+          stepByStepGuideline:
+            - "Radius = Diameter ÷ 2"
+            - "Radius = 24 cm ÷ 2"
+            - "Radius = 12 cm"
+
+        - id: "drr-q3"
+          problemText: "A circular table has a radius of 0.75 m. What is its diameter?"
+          finalAnswer: "1.5 m"
+          stepByStepGuideline:
+            - "Diameter = 2 × Radius"
+            - "Diameter = 2 × 0.75 m"
+            - "Diameter = 1.5 m"
+
+        - id: "drr-q4"
+          problemText: "The diameter of a coin is 2.8 cm. What is its radius?"
+          finalAnswer: "1.4 cm"
+          stepByStepGuideline:
+            - "Radius = Diameter ÷ 2"
+            - "Radius = 2.8 cm ÷ 2"
+            - "Radius = 1.4 cm"
+
+        - id: "drr-q5"
+          problemText: "Circle A has radius 7 cm and Circle B has diameter 12 cm. Which circle is larger?"
+          finalAnswer: "Circle A is larger (diameter 14 cm > 12 cm)"
+          stepByStepGuideline:
+            - "Circle A: radius = 7 cm, so diameter = 2 × 7 = 14 cm"
+            - "Circle B: diameter = 12 cm"
+            - "Compare: 14 cm > 12 cm"
+            - "Circle A is larger"
+
+  # ============================================
+  # SUBTOPIC 2: Circumference of a Circle
+  # ============================================
+
+  - id: circles-understanding-pi
+    nodeNumber: 3
+    title: "Understanding Pi (π)"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-diameter-radius-relationship
+    descriptor:
+      section: "understanding-pi"
+      aiGeneratedQuestions: false
+      difficulty: easy
+      problemDescription:
+        - "Understand that π is the ratio of circumference to diameter"
+        - "Know the approximate values: π ≈ 3.14 or 22/7"
+      contexts:
+        - "introduction to pi"
+        - "conceptual understanding"
+      preWrittenQuestions:
+        - id: "up-q1"
+          avatarIntro: "Pi (π) is a very special number! If you divide the circumference of ANY circle by its diameter, you always get about 3.14. We call this number pi."
+          problemText: "A circle has circumference 31.4 cm and diameter 10 cm. What is the value of circumference ÷ diameter?"
+          finalAnswer: "3.14 (which is approximately π)"
+          stepByStepGuideline:
+            - "Circumference ÷ Diameter = 31.4 ÷ 10"
+            - "= 3.14"
+            - "This is the value of π (pi)"
+
+        - id: "up-q2"
+          problemText: "What are the two common values we use for π in calculations?"
+          finalAnswer: "π ≈ 3.14 (decimal) and π ≈ 22/7 (fraction)"
+          stepByStepGuideline:
+            - "π ≈ 3.14 (decimal form)"
+            - "π ≈ 22/7 (fraction form)"
+            - "Use 22/7 when the radius or diameter is a multiple of 7"
+            - "Questions will tell you which value to use"
+
+        - id: "up-q3"
+          problemText: "True or False: The value of π is different for big circles and small circles."
+          finalAnswer: "False. π is the same for ALL circles, regardless of size."
+          stepByStepGuideline:
+            - "π = Circumference ÷ Diameter"
+            - "This ratio is ALWAYS approximately 3.14"
+            - "It doesn't matter if the circle is tiny or huge"
+            - "π is a constant - it never changes"
+
+        - id: "up-q4"
+          problemText: "When should you use $\\pi = \\frac{22}{7}$ instead of $\\pi = 3.14$?"
+          finalAnswer: "Use 22/7 when the radius or diameter is a multiple of 7 (like 7, 14, 21, 28)"
+          stepByStepGuideline:
+            - "Use π = 22/7 when measurements are multiples of 7"
+            - "Examples: radius = 7, 14, 21, 28, 35..."
+            - "The 7 in the denominator will cancel out"
+            - "This makes calculations easier"
+
+        - id: "up-q5"
+          problemText: "If a circle has diameter 7 cm, which value of π would make the calculation easier?"
+          finalAnswer: "$\\pi = \\frac{22}{7}$ because 7 will cancel out"
+          stepByStepGuideline:
+            - "Diameter = 7 cm (a multiple of 7)"
+            - "Using π = 22/7:"
+            - "Circumference = 22/7 × 7 = 22 cm"
+            - "The 7s cancel out, making it easier!"
+
+  - id: circles-circumference-diameter
+    nodeNumber: 4
+    title: "Circumference from Diameter (C = πd)"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-understanding-pi
+    descriptor:
+      section: "circumference-diameter"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate circumference using C = π × d"
+        - "Apply with both π = 3.14 and π = 22/7"
+      contexts:
+        - "wheels"
+        - "circular objects"
+      preWrittenQuestions:
+        - id: "cd-q1"
+          avatarIntro: "The circumference is the distance around a circle - like its perimeter! When you know the diameter, use the formula: Circumference = π × diameter."
+          problemText: "Find the circumference of a circle with diameter 14 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "44 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "14"
+              givenType: "diameter"
+              unit: "cm"
+              showCentre: true
+              showDiameterLine: true
+              highlightArc: true
+              caption: "Circumference = π × d"
+          stepByStepGuideline:
+            - "Circumference = π × diameter"
+            - "= 22/7 × 14"
+            - "= 22 × 2"
+            - "= 44 cm"
+
+        - id: "cd-q2"
+          problemText: "A circular plate has diameter 20 cm. Find its circumference. (Take $\\pi = 3.14$)"
+          finalAnswer: "62.8 cm"
+          stepByStepGuideline:
+            - "Circumference = π × diameter"
+            - "= 3.14 × 20"
+            - "= 62.8 cm"
+
+        - id: "cd-q3"
+          problemText: "Find the circumference of a circle with diameter 21 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "66 cm"
+          stepByStepGuideline:
+            - "Circumference = π × diameter"
+            - "= 22/7 × 21"
+            - "= 22 × 3"
+            - "= 66 cm"
+
+        - id: "cd-q4"
+          problemText: "A wheel has diameter 35 cm. How far does it travel in one complete turn? (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "110 cm"
+          stepByStepGuideline:
+            - "One complete turn = circumference"
+            - "Circumference = π × diameter"
+            - "= 22/7 × 35"
+            - "= 22 × 5"
+            - "= 110 cm"
+
+        - id: "cd-q5"
+          problemText: "The diameter of a circular pond is 50 m. A man walks around the pond once. How far does he walk? (Take $\\pi = 3.14$)"
+          finalAnswer: "157 m"
+          stepByStepGuideline:
+            - "Distance walked = circumference"
+            - "Circumference = π × diameter"
+            - "= 3.14 × 50"
+            - "= 157 m"
+
+  - id: circles-circumference-radius
+    nodeNumber: 5
+    title: "Circumference from Radius (C = 2πr)"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-circumference-diameter
+    descriptor:
+      section: "circumference-radius"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate circumference using C = 2 × π × r"
+        - "Choose between finding diameter first or using 2πr directly"
+      contexts:
+        - "circular tracks"
+        - "wheels"
+      preWrittenQuestions:
+        - id: "cr-q1"
+          avatarIntro: "When you're given the radius, you can either find the diameter first (d = 2r) then use C = πd, OR use the formula C = 2 × π × r directly!"
+          problemText: "Find the circumference of a circle with radius 7 m. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "44 m"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "7"
+              givenType: "radius"
+              unit: "m"
+              showCentre: true
+              showRadiusLine: true
+              highlightArc: true
+              caption: "C = 2 × π × r"
+          stepByStepGuideline:
+            - "Method 1: Find diameter first"
+            - "Diameter = 2 × 7 = 14 m"
+            - "Circumference = π × 14 = 22/7 × 14 = 44 m"
+            - "Method 2: Use C = 2πr directly"
+            - "C = 2 × 22/7 × 7 = 44 m"
+
+        - id: "cr-q2"
+          problemText: "Find the circumference of a circle with radius 10 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "62.8 cm"
+          stepByStepGuideline:
+            - "Circumference = 2 × π × r"
+            - "= 2 × 3.14 × 10"
+            - "= 62.8 cm"
+
+        - id: "cr-q3"
+          problemText: "A circular track has radius 35 m. How far does an athlete run in one lap? (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "220 m"
+          stepByStepGuideline:
+            - "One lap = circumference"
+            - "C = 2 × π × r"
+            - "= 2 × 22/7 × 35"
+            - "= 2 × 22 × 5"
+            - "= 220 m"
+
+        - id: "cr-q4"
+          problemText: "A car tyre has radius 30 cm. Find the circumference of the tyre. (Take $\\pi = 3.14$)"
+          finalAnswer: "188.4 cm"
+          stepByStepGuideline:
+            - "Circumference = 2 × π × r"
+            - "= 2 × 3.14 × 30"
+            - "= 188.4 cm"
+
+        - id: "cr-q5"
+          problemText: "A circular garden has radius 21 m. The owner wants to build a fence around it. What is the length of fencing needed? (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "132 m"
+          stepByStepGuideline:
+            - "Fencing needed = circumference"
+            - "C = 2 × π × r"
+            - "= 2 × 22/7 × 21"
+            - "= 2 × 22 × 3"
+            - "= 132 m"
+
+  # ============================================
+  # SUBTOPIC 3: Perimeter of Semicircle & Quarter Circle
+  # ============================================
+
+  - id: circles-perimeter-semicircle
+    nodeNumber: 6
+    title: "Perimeter of a Semicircle"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-circumference-radius
+    descriptor:
+      section: "perimeter-semicircle"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate perimeter = arc + diameter"
+        - "Arc = half the circumference"
+      contexts:
+        - "semicircular shapes"
+        - "archways"
+      preWrittenQuestions:
+        - id: "ps-q1"
+          avatarIntro: "A semicircle is half a circle. Its perimeter has TWO parts: the curved arc (half the circumference) AND the straight diameter!"
+          problemText: "Find the perimeter of a semicircle with diameter 14 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "36 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "semicircle"
+              orientation: "top"
+              givenValue: "14"
+              givenType: "diameter"
+              unit: "cm"
+              showCentre: true
+              showDiameterLine: true
+              highlightArc: true
+              caption: "Perimeter = Arc + Diameter"
+          stepByStepGuideline:
+            - "Arc = 1/2 × circumference = 1/2 × π × d"
+            - "= 1/2 × 22/7 × 14"
+            - "= 22 cm"
+            - "Perimeter = Arc + Diameter"
+            - "= 22 + 14 = 36 cm"
+
+        - id: "ps-q2"
+          problemText: "Find the perimeter of a semicircle with diameter 10 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "25.7 cm"
+          stepByStepGuideline:
+            - "Arc = 1/2 × π × d = 1/2 × 3.14 × 10 = 15.7 cm"
+            - "Perimeter = Arc + Diameter"
+            - "= 15.7 + 10 = 25.7 cm"
+
+        - id: "ps-q3"
+          problemText: "A semicircle has radius 7 cm. Find its perimeter. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "36 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "semicircle"
+              orientation: "bottom"
+              givenValue: "7"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              caption: "When radius is given, diameter = 2r"
+          stepByStepGuideline:
+            - "Diameter = 2 × 7 = 14 cm"
+            - "Arc = 1/2 × π × d = 1/2 × 22/7 × 14 = 22 cm"
+            - "Perimeter = Arc + Diameter = 22 + 14 = 36 cm"
+
+        - id: "ps-q4"
+          problemText: "A semicircular window has radius 35 cm. Find the length of frame needed to go around it. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "180 cm"
+          stepByStepGuideline:
+            - "Diameter = 2 × 35 = 70 cm"
+            - "Arc = 1/2 × 2 × π × r = π × r = 22/7 × 35 = 110 cm"
+            - "Perimeter = 110 + 70 = 180 cm"
+
+        - id: "ps-q5"
+          problemText: "Find the perimeter of a semicircle with diameter 20 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "51.4 cm"
+          stepByStepGuideline:
+            - "Arc = 1/2 × π × d = 1/2 × 3.14 × 20 = 31.4 cm"
+            - "Perimeter = Arc + Diameter = 31.4 + 20 = 51.4 cm"
+
+  - id: circles-perimeter-quarter-circle
+    nodeNumber: 7
+    title: "Perimeter of a Quarter Circle"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-perimeter-semicircle
+    descriptor:
+      section: "perimeter-quarter-circle"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate perimeter = arc + radius + radius"
+        - "Arc = quarter of circumference"
+      contexts:
+        - "corner shapes"
+        - "quarter circle patterns"
+      preWrittenQuestions:
+        - id: "pqc-q1"
+          avatarIntro: "A quarter circle is one-fourth of a circle. Its perimeter has THREE parts: the curved arc (1/4 of circumference) AND two straight edges (both are radii)!"
+          problemText: "Find the perimeter of a quarter circle with radius 7 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "25 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "quarter"
+              orientation: "top-right"
+              givenValue: "7"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              highlightArc: true
+              showShading: true
+              caption: "Perimeter = Arc + r + r"
+          stepByStepGuideline:
+            - "Arc = 1/4 × 2πr = 1/4 × 2 × 22/7 × 7 = 11 cm"
+            - "Perimeter = Arc + Radius + Radius"
+            - "= 11 + 7 + 7 = 25 cm"
+
+        - id: "pqc-q2"
+          problemText: "Find the perimeter of a quarter circle with radius 10 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "35.7 cm"
+          stepByStepGuideline:
+            - "Arc = 1/4 × 2πr = 1/4 × 2 × 3.14 × 10 = 15.7 cm"
+            - "Perimeter = 15.7 + 10 + 10 = 35.7 cm"
+
+        - id: "pqc-q3"
+          problemText: "Find the perimeter of a quarter circle with radius 14 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "50 cm"
+          stepByStepGuideline:
+            - "Arc = 1/4 × 2πr = 1/4 × 2 × 22/7 × 14"
+            - "= 1/4 × 88 = 22 cm"
+            - "Perimeter = 22 + 14 + 14 = 50 cm"
+
+        - id: "pqc-q4"
+          problemText: "A quarter-circle corner shelf has radius 20 cm. What is the total length of its edges? (Take $\\pi = 3.14$)"
+          finalAnswer: "71.4 cm"
+          stepByStepGuideline:
+            - "Arc = 1/4 × 2πr = 1/4 × 2 × 3.14 × 20 = 31.4 cm"
+            - "Perimeter = 31.4 + 20 + 20 = 71.4 cm"
+
+        - id: "pqc-q5"
+          problemText: "Find the perimeter of a quarter circle with radius 21 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "75 cm"
+          stepByStepGuideline:
+            - "Arc = 1/4 × 2πr = 1/4 × 2 × 22/7 × 21 = 33 cm"
+            - "Perimeter = 33 + 21 + 21 = 75 cm"
+
+  - id: circles-perimeter-three-quarter
+    nodeNumber: 8
+    title: "Perimeter of a Three-Quarter Circle"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-perimeter-quarter-circle
+    descriptor:
+      section: "perimeter-three-quarter"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate perimeter = arc + radius + radius"
+        - "Arc = 3/4 of circumference"
+      contexts:
+        - "pac-man shapes"
+        - "three-quarter patterns"
+      preWrittenQuestions:
+        - id: "ptq-q1"
+          avatarIntro: "A three-quarter circle is 3/4 of a circle - imagine a circle with a quarter 'bitten out'! The perimeter = arc (3/4 of circumference) + two radii."
+          problemText: "Find the perimeter of a three-quarter circle with radius 14 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "94 cm"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "three-quarter"
+              orientation: "missing-bottom-right"
+              givenValue: "14"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              showShading: true
+              caption: "3/4 circle: arc + r + r"
+          stepByStepGuideline:
+            - "Arc = 3/4 × 2πr = 3/4 × 2 × 22/7 × 14"
+            - "= 3/4 × 88 = 66 cm"
+            - "Perimeter = 66 + 14 + 14 = 94 cm"
+
+        - id: "ptq-q2"
+          problemText: "Find the perimeter of a three-quarter circle with radius 7 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "47 cm"
+          stepByStepGuideline:
+            - "Arc = 3/4 × 2πr = 3/4 × 2 × 22/7 × 7 = 33 cm"
+            - "Perimeter = 33 + 7 + 7 = 47 cm"
+
+        - id: "ptq-q3"
+          problemText: "Find the perimeter of a three-quarter circle with radius 10 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "67.1 cm"
+          stepByStepGuideline:
+            - "Arc = 3/4 × 2πr = 3/4 × 2 × 3.14 × 10"
+            - "= 3/4 × 62.8 = 47.1 cm"
+            - "Perimeter = 47.1 + 10 + 10 = 67.1 cm"
+
+        - id: "ptq-q4"
+          problemText: "A three-quarter circular garden plot has radius 21 m. What length of edging is needed? (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "141 m"
+          stepByStepGuideline:
+            - "Arc = 3/4 × 2πr = 3/4 × 2 × 22/7 × 21 = 99 m"
+            - "Perimeter = 99 + 21 + 21 = 141 m"
+
+        - id: "ptq-q5"
+          problemText: "Find the perimeter of a three-quarter circle with radius 5 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "33.55 cm"
+          stepByStepGuideline:
+            - "Arc = 3/4 × 2πr = 3/4 × 2 × 3.14 × 5 = 23.55 cm"
+            - "Perimeter = 23.55 + 5 + 5 = 33.55 cm"
+
+  # ============================================
+  # SUBTOPIC 4: Area of a Circle
+  # ============================================
+
+  - id: circles-area-formula-radius
+    nodeNumber: 9
+    title: "Area Formula with Radius (A = πr²)"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-perimeter-three-quarter
+    descriptor:
+      section: "area-formula-radius"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate area using A = π × r × r"
+        - "Remember to square the radius, not the diameter"
+      contexts:
+        - "circular gardens"
+        - "pizza"
+        - "circular tables"
+      preWrittenQuestions:
+        - id: "afr-q1"
+          avatarIntro: "Area is the space INSIDE the circle. The formula is A = π × r × r (or πr²). Important: always use the RADIUS, not the diameter!"
+          problemText: "Find the area of a circle with radius 7 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "154 cm²"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "7"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              showShading: true
+              caption: "Area = π × r × r"
+          stepByStepGuideline:
+            - "Area = π × r × r"
+            - "= 22/7 × 7 × 7"
+            - "= 22 × 7 (the 7s cancel)"
+            - "= 154 cm²"
+
+        - id: "afr-q2"
+          problemText: "Find the area of a circle with radius 10 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "314 cm²"
+          stepByStepGuideline:
+            - "Area = π × r × r"
+            - "= 3.14 × 10 × 10"
+            - "= 3.14 × 100"
+            - "= 314 cm²"
+
+        - id: "afr-q3"
+          problemText: "A circular pizza has radius 14 cm. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "616 cm²"
+          stepByStepGuideline:
+            - "Area = π × r × r"
+            - "= 22/7 × 14 × 14"
+            - "= 22 × 2 × 14"
+            - "= 616 cm²"
+
+        - id: "afr-q4"
+          problemText: "A circular garden has radius 5 m. Find the area of the garden. (Take $\\pi = 3.14$)"
+          finalAnswer: "78.5 m²"
+          stepByStepGuideline:
+            - "Area = π × r × r"
+            - "= 3.14 × 5 × 5"
+            - "= 3.14 × 25"
+            - "= 78.5 m²"
+
+        - id: "afr-q5"
+          problemText: "Find the area of a circle with radius 21 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "1386 cm²"
+          stepByStepGuideline:
+            - "Area = π × r × r"
+            - "= 22/7 × 21 × 21"
+            - "= 22 × 3 × 21"
+            - "= 1386 cm²"
+
+  - id: circles-area-with-diameter
+    nodeNumber: 10
+    title: "Area When Diameter is Given"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-area-formula-radius
+    descriptor:
+      section: "area-with-diameter"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Find radius first (r = d ÷ 2)"
+        - "Then apply area formula"
+      contexts:
+        - "circular objects"
+        - "ponds"
+        - "clocks"
+      preWrittenQuestions:
+        - id: "awd-q1"
+          avatarIntro: "If you're given the diameter, you MUST find the radius first! Remember: radius = diameter ÷ 2. Then use the area formula."
+          problemText: "The diameter of a circle is 14 cm. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "154 cm²"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "full"
+              givenValue: "14"
+              givenType: "diameter"
+              unit: "cm"
+              showCentre: true
+              showDiameterLine: true
+              showShading: true
+              caption: "Step 1: Find radius. Step 2: Calculate area."
+          stepByStepGuideline:
+            - "Step 1: Find radius"
+            - "Radius = 14 ÷ 2 = 7 cm"
+            - "Step 2: Find area"
+            - "Area = 22/7 × 7 × 7 = 154 cm²"
+
+        - id: "awd-q2"
+          problemText: "A circular pond has diameter 20 m. Find its area. (Take $\\pi = 3.14$)"
+          finalAnswer: "314 m²"
+          stepByStepGuideline:
+            - "Radius = 20 ÷ 2 = 10 m"
+            - "Area = 3.14 × 10 × 10 = 314 m²"
+
+        - id: "awd-q3"
+          problemText: "A clock face has diameter 28 cm. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "616 cm²"
+          stepByStepGuideline:
+            - "Radius = 28 ÷ 2 = 14 cm"
+            - "Area = 22/7 × 14 × 14 = 616 cm²"
+
+        - id: "awd-q4"
+          problemText: "A circular table top has diameter 1.4 m. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "1.54 m²"
+          stepByStepGuideline:
+            - "Radius = 1.4 ÷ 2 = 0.7 m"
+            - "Area = 22/7 × 0.7 × 0.7"
+            - "= 22/7 × 0.49"
+            - "= 1.54 m²"
+
+        - id: "awd-q5"
+          problemText: "A circular rug has diameter 2 m. Find its area. (Take $\\pi = 3.14$)"
+          finalAnswer: "3.14 m²"
+          stepByStepGuideline:
+            - "Radius = 2 ÷ 2 = 1 m"
+            - "Area = 3.14 × 1 × 1 = 3.14 m²"
+
+  # ============================================
+  # SUBTOPIC 5: Area of Semicircle & Quarter Circle
+  # ============================================
+
+  - id: circles-area-semicircle
+    nodeNumber: 11
+    title: "Area of a Semicircle"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-area-with-diameter
+    descriptor:
+      section: "area-semicircle"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate area as half the full circle area"
+        - "A = 1/2 × π × r²"
+      contexts:
+        - "semicircular gardens"
+        - "half pizzas"
+      preWrittenQuestions:
+        - id: "as-q1"
+          avatarIntro: "A semicircle is HALF a circle, so its area is half the area of a full circle. Find the full circle area first, then divide by 2!"
+          problemText: "Find the area of a semicircle with radius 7 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "77 cm²"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "semicircle"
+              orientation: "top"
+              givenValue: "7"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              showShading: true
+              caption: "Area of semicircle = 1/2 × πr²"
+          stepByStepGuideline:
+            - "Area of full circle = 22/7 × 7 × 7 = 154 cm²"
+            - "Area of semicircle = 154 ÷ 2 = 77 cm²"
+
+        - id: "as-q2"
+          problemText: "Find the area of a semicircle with diameter 20 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "157 cm²"
+          stepByStepGuideline:
+            - "Radius = 20 ÷ 2 = 10 cm"
+            - "Area of full circle = 3.14 × 10 × 10 = 314 cm²"
+            - "Area of semicircle = 314 ÷ 2 = 157 cm²"
+
+        - id: "as-q3"
+          problemText: "A semicircular garden has radius 14 m. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "308 m²"
+          stepByStepGuideline:
+            - "Area of full circle = 22/7 × 14 × 14 = 616 m²"
+            - "Area of semicircle = 616 ÷ 2 = 308 m²"
+
+        - id: "as-q4"
+          problemText: "Find the area of a semicircle with diameter 28 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "308 cm²"
+          stepByStepGuideline:
+            - "Radius = 28 ÷ 2 = 14 cm"
+            - "Area of full circle = 22/7 × 14 × 14 = 616 cm²"
+            - "Area of semicircle = 616 ÷ 2 = 308 cm²"
+
+        - id: "as-q5"
+          problemText: "A semicircular stage has radius 10 m. Find its area. (Take $\\pi = 3.14$)"
+          finalAnswer: "157 m²"
+          stepByStepGuideline:
+            - "Area of full circle = 3.14 × 10 × 10 = 314 m²"
+            - "Area of semicircle = 314 ÷ 2 = 157 m²"
+
+  - id: circles-area-quarter-circle
+    nodeNumber: 12
+    title: "Area of a Quarter Circle"
+    layer: foundation
+    problemsRequired: 5
+    prerequisites:
+      - circles-area-semicircle
+    descriptor:
+      section: "area-quarter-circle"
+      aiGeneratedQuestions: false
+      difficulty: medium
+      problemDescription:
+        - "Calculate area as one-quarter of full circle area"
+        - "A = 1/4 × π × r²"
+      contexts:
+        - "quarter pizza slices"
+        - "corner gardens"
+      preWrittenQuestions:
+        - id: "aqc-q1"
+          avatarIntro: "A quarter circle is 1/4 of a circle, so its area is one-quarter of the full circle area. Find the full circle area first, then divide by 4!"
+          problemText: "Find the area of a quarter circle with radius 7 cm. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "38.5 cm²"
+          mathTool:
+            toolName: p6Circle
+            parameters:
+              mode: "quarter"
+              orientation: "top-right"
+              givenValue: "7"
+              givenType: "radius"
+              unit: "cm"
+              showCentre: true
+              showRadiusLine: true
+              showShading: true
+              caption: "Area of quarter circle = 1/4 × πr²"
+          stepByStepGuideline:
+            - "Area of full circle = 22/7 × 7 × 7 = 154 cm²"
+            - "Area of quarter circle = 154 ÷ 4 = 38.5 cm²"
+
+        - id: "aqc-q2"
+          problemText: "Find the area of a quarter circle with radius 10 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "78.5 cm²"
+          stepByStepGuideline:
+            - "Area of full circle = 3.14 × 10 × 10 = 314 cm²"
+            - "Area of quarter circle = 314 ÷ 4 = 78.5 cm²"
+
+        - id: "aqc-q3"
+          problemText: "A quarter of a circular pizza has radius 14 cm. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "154 cm²"
+          stepByStepGuideline:
+            - "Area of full pizza = 22/7 × 14 × 14 = 616 cm²"
+            - "Area of quarter = 616 ÷ 4 = 154 cm²"
+
+        - id: "aqc-q4"
+          problemText: "Find the area of a quarter circle with radius 20 cm. (Take $\\pi = 3.14$)"
+          finalAnswer: "314 cm²"
+          stepByStepGuideline:
+            - "Area of full circle = 3.14 × 20 × 20 = 1256 cm²"
+            - "Area of quarter circle = 1256 ÷ 4 = 314 cm²"
+
+        - id: "aqc-q5"
+          problemText: "A quarter-circle flower bed has radius 21 m. Find its area. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "346.5 m²"
+          stepByStepGuideline:
+            - "Area of full circle = 22/7 × 21 × 21 = 1386 m²"
+            - "Area of quarter circle = 1386 ÷ 4 = 346.5 m²"
+
+  # ============================================
+  # SUBTOPIC 6: Composite Figures
+  # ============================================
+
+  - id: circles-composite-addition
+    nodeNumber: 13
+    title: "Composite Figures: Addition Method"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - circles-area-quarter-circle
+    descriptor:
+      section: "composite-addition"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Identify component shapes in composite figures"
+        - "Add areas when shapes are joined together"
+        - "Calculate total perimeter by adding all outer edges"
+      contexts:
+        - "playgrounds"
+        - "gardens"
+        - "sports fields"
+      preWrittenQuestions:
+        - id: "ca-q1"
+          avatarIntro: "Composite figures are made of multiple shapes combined! For the ADDITION method, we add the areas of shapes that are joined together. Let's break down each problem step by step."
+          problemText: "A playground is made of a rectangle (50 m × 20 m) with two semicircles on the shorter ends. Find the area of the playground. (Take $\\pi = 3.14$)"
+          finalAnswer: "1314 m²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/playground-50x20m.svg"
+          stepByStepGuideline:
+            - "Step 1: Identify the shapes"
+            - "Rectangle: 50 m × 20 m"
+            - "Two semicircles with diameter 20 m (radius = 10 m)"
+            - "Step 2: Area of rectangle = 50 × 20 = 1000 m²"
+            - "Step 3: Two semicircles = one full circle"
+            - "Area of circle = 3.14 × 10 × 10 = 314 m²"
+            - "Step 4: Total area = 1000 + 314 = 1314 m²"
+
+        - id: "ca-q2"
+          problemText: "A garden tile is made of a square (20 cm × 20 cm) with a semicircle on one side. Find the total area of the tile. (Take $\\pi = 3.14$)"
+          finalAnswer: "557 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/square-semicircle-20cm.svg"
+          stepByStepGuideline:
+            - "Area of square = 20 × 20 = 400 cm²"
+            - "Semicircle: diameter = 20 cm, radius = 10 cm"
+            - "Area of semicircle = 1/2 × 3.14 × 10 × 10 = 157 cm²"
+            - "Total area = 400 + 157 = 557 cm²"
+
+        - id: "ca-q3"
+          problemText: "Two quarter circles are joined at their straight edges. Each has radius 10 cm. Find the area of the combined shape. (Take $\\pi = 3.14$)"
+          finalAnswer: "157 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/two-quarters-joined-10cm.svg"
+          stepByStepGuideline:
+            - "2 quarter circles = 1 semicircle = 1/2 circle"
+            - "Area of full circle = 3.14 × 10 × 10 = 314 cm²"
+            - "Area of 2 quarters = 314 ÷ 2 = 157 cm²"
+
+        - id: "ca-q4"
+          problemText: "A sports field consists of a rectangle (100 m × 35 m) with semicircles on the shorter ends. Find the perimeter of the outer edge. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "310 m"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/running-track-100x35m.svg"
+          stepByStepGuideline:
+            - "The perimeter = 2 long sides + 2 semicircular arcs"
+            - "Two long sides = 2 × 100 = 200 m"
+            - "Two semicircles = 1 full circumference"
+            - "Circumference = π × d = 22/7 × 35 = 110 m"
+            - "Total perimeter = 200 + 110 = 310 m"
+
+        - id: "ca-q5"
+          problemText: "A decorative panel is made of a rectangle (24 cm × 12 cm) with a quarter circle at each corner. Each quarter circle has radius 6 cm. Find the total area. (Take $\\pi = 3.14$)"
+          finalAnswer: "401.04 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/rect-with-quarters-24x12cm.svg"
+          stepByStepGuideline:
+            - "Area of rectangle = 24 × 12 = 288 cm²"
+            - "4 quarter circles = 1 full circle"
+            - "Area of 4 quarters = 3.14 × 6 × 6 = 113.04 cm²"
+            - "Total area = 288 + 113.04 = 401.04 cm²"
+
+  - id: circles-composite-subtraction
+    nodeNumber: 14
+    title: "Composite Figures: Subtraction Method"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - circles-composite-addition
+    descriptor:
+      section: "composite-subtraction"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Recognize when a shape is 'cut out' from another"
+        - "Calculate shaded area = outer area - inner area"
+      contexts:
+        - "tiles with cutouts"
+        - "decorative patterns"
+        - "garden designs"
+      preWrittenQuestions:
+        - id: "cs-q1"
+          avatarIntro: "When a shape is CUT OUT from another, we SUBTRACT! The shaded area = big shape - small shape (the cutout)."
+          problemText: "A square tile has side 10 cm. A quarter circle is cut from one corner. Find the area of the shaded part. (Take $\\pi = 3.14$)"
+          finalAnswer: "21.5 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/quarter-in-square-10cm.svg"
+          stepByStepGuideline:
+            - "Area of square = 10 × 10 = 100 cm²"
+            - "Quarter circle radius = 10 cm"
+            - "Area of quarter circle = 1/4 × 3.14 × 10 × 10 = 78.5 cm²"
+            - "Shaded area = 100 - 78.5 = 21.5 cm²"
+
+        - id: "cs-q2"
+          problemText: "A square tile has side 10 cm. A quarter circle with the same radius is cut from one corner. Find the perimeter of the shaded part. (Take $\\pi = 3.14$)"
+          finalAnswer: "35.7 cm"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/quarter-in-square-10cm.svg"
+          stepByStepGuideline:
+            - "The perimeter consists of:"
+            - "- Two sides of the square = 10 + 10 = 20 cm"
+            - "- The quarter circle arc = 1/4 × 2πr = 1/4 × 2 × 3.14 × 10 = 15.7 cm"
+            - "Total perimeter = 20 + 15.7 = 35.7 cm"
+
+        - id: "cs-q3"
+          problemText: "A rectangular card is 30 cm by 20 cm. A semicircle of diameter 20 cm is cut from one short side. Find the area of the remaining card. (Take $\\pi = 3.14$)"
+          finalAnswer: "443 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/rect-minus-semicircle-30x20cm.svg"
+          stepByStepGuideline:
+            - "Area of rectangle = 30 × 20 = 600 cm²"
+            - "Semicircle: radius = 10 cm"
+            - "Area of semicircle = 1/2 × 3.14 × 10 × 10 = 157 cm²"
+            - "Remaining area = 600 - 157 = 443 cm²"
+
+        - id: "cs-q4"
+          problemText: "A decorative ring is made from two circles. The outer circle has radius 20 cm and the inner circle has radius 10 cm. Find the area of the ring. (Take $\\pi = 3.14$)"
+          finalAnswer: "942 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/ring-annulus-20-10cm.svg"
+          stepByStepGuideline:
+            - "Area of outer circle = 3.14 × 20 × 20 = 1256 cm²"
+            - "Area of inner circle = 3.14 × 10 × 10 = 314 cm²"
+            - "Area of ring = 1256 - 314 = 942 cm²"
+
+        - id: "cs-q5"
+          problemText: "A square coaster of side 12 cm has a circle of diameter 12 cm inscribed in it. Find the area of the corner regions (outside circle, inside square). (Take $\\pi = 3.14$)"
+          finalAnswer: "30.96 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/circle-in-square-12cm.svg"
+          stepByStepGuideline:
+            - "Area of square = 12 × 12 = 144 cm²"
+            - "Circle: radius = 6 cm"
+            - "Area of circle = 3.14 × 6 × 6 = 113.04 cm²"
+            - "Area of corners = 144 - 113.04 = 30.96 cm²"
+
+  - id: circles-composite-complex
+    nodeNumber: 15
+    title: "Complex Composite Figures"
+    layer: word-problems
+    problemsRequired: 5
+    prerequisites:
+      - circles-composite-subtraction
+    descriptor:
+      section: "composite-complex"
+      aiGeneratedQuestions: false
+      difficulty: hard
+      problemDescription:
+        - "Combine addition and subtraction methods"
+        - "Recognize patterns: 2 semicircles = 1 circle, 4 quarter circles = 1 circle"
+        - "Solve multi-step composite figure problems"
+      contexts:
+        - "logos"
+        - "decorative patterns"
+        - "art designs"
+      preWrittenQuestions:
+        - id: "cc-q1"
+          avatarIntro: "Complex composite figures need careful analysis! Look for patterns like: 2 semicircles = 1 circle, 4 quarter circles = 1 circle. These shortcuts make calculations much easier!"
+          problemText: "A logo shows a square of side 10 cm with four quarter circles cut from each corner. Each quarter circle has radius 5 cm. Find the area of the shaded part. (Take $\\pi = 3.14$)"
+          finalAnswer: "21.5 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/four-star-10cm.svg"
+          stepByStepGuideline:
+            - "Key insight: 4 quarter circles = 1 full circle!"
+            - "Area of square = 10 × 10 = 100 cm²"
+            - "Area of 4 quarters = πr² = 3.14 × 5 × 5 = 78.5 cm²"
+            - "Shaded area = 100 - 78.5 = 21.5 cm²"
+
+        - id: "cc-q2"
+          problemText: "Two overlapping quarter circles are drawn in a square of side 10 cm. Find the area of the overlap (the 'leaf' shape). (Take $\\pi = 3.14$)"
+          finalAnswer: "57 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/overlapping-quarters-10cm.svg"
+          stepByStepGuideline:
+            - "Area of square = 10 × 10 = 100 cm²"
+            - "Area of one quarter circle = 1/4 × 3.14 × 10 × 10 = 78.5 cm²"
+            - "Area of two quarters = 2 × 78.5 = 157 cm²"
+            - "Overlap = 2 × quarter - square = 157 - 100 = 57 cm²"
+
+        - id: "cc-q3"
+          problemText: "A decorative border is made up of two quarter circles (top) and a semicircle (bottom), all with radius 35 cm. Find the perimeter of the figure. (Take $\\pi = \\frac{22}{7}$)"
+          finalAnswer: "290 cm"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/quarters-semicircle-35cm.svg"
+          stepByStepGuideline:
+            - "Key insight: 2 quarters + 1 semicircle = 1 full circle!"
+            - "So total arc length = full circumference"
+            - "Circumference = 2 × 22/7 × 35 = 220 cm"
+            - "Plus 2 straight edges = 35 + 35 = 70 cm"
+            - "Total perimeter = 220 + 70 = 290 cm"
+
+        - id: "cc-q4"
+          problemText: "Two identical semicircles are placed side by side, one curving up and one curving down, forming an S-curve. The diameter of each semicircle is 20 cm. Find (a) the area and (b) the perimeter of the shape. (Take $\\pi = 3.14$)"
+          finalAnswer: "(a) 314 cm², (b) 62.8 cm"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/semicircles-scurve-20cm.svg"
+          stepByStepGuideline:
+            - "(a) Area: 2 semicircles = 1 full circle"
+            - "Radius = 10 cm"
+            - "Area = 3.14 × 10 × 10 = 314 cm²"
+            - "(b) Perimeter: 2 semicircle arcs (no straight edges!)"
+            - "Each arc = 1/2 × πd = 1/2 × 3.14 × 20 = 31.4 cm"
+            - "Total perimeter = 31.4 + 31.4 = 62.8 cm"
+
+        - id: "cc-q5"
+          problemText: "A pattern is made of a quarter circle (radius 20 cm) with 2 semicircles on its edges. Each semicircle has diameter 20 cm. One semicircle bulges outward and one inward. What is the area of the shaded region? (Take $\\pi = 3.14$)"
+          finalAnswer: "314 cm²"
+          diagramSvg: "/curriculum-content/P6/Maths/circle-composite-svgs/practice/semicircles-quarter-cancel-20cm.svg"
+          stepByStepGuideline:
+            - "Key insight: The two semicircles CANCEL OUT!"
+            - "Semicircle area = 1/2 × 3.14 × 10 × 10 = 157 cm²"
+            - "One adds area (+157 cm²), one subtracts area (-157 cm²)"
+            - "Net effect = 0"
+            - "Shaded area = just the quarter circle"
+            - "Quarter circle radius = 20 cm"
+            - "Area = 1/4 × 3.14 × 20 × 20 = 314 cm²"

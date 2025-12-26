@@ -1,0 +1,829 @@
+# P6 Mathematics - Volume of Cube and Cuboid Practice Module
+# Covers: Finding dimensions, face areas, and word problems
+# Total Sections: 10 | Total Nodes: 13 | Total Questions: 66
+
+nodes:
+  # ============================================
+  # FOUNDATION LAYER - Finding the Side of Cube or Cuboid
+  # ============================================
+
+  - id: volume-basics-foundation
+    title: "Volume Formula Basics"
+    layer: foundation
+    prerequisites: []
+    problemsRequired: 5
+    descriptor:
+      section: "volume-formula-basics"
+      problemDescription:
+        - "Calculate volume of cubes and cuboids using V = L × B × H"
+        - "Apply V = Side³ for cubes"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "vb-q1"
+          avatarIntro: "Let's practice finding the volume of cubes and cuboids! Remember, volume tells us how much space a solid takes up."
+          problemText: "Find the volume of a cuboid with length 6 cm, breadth 4 cm, and height 5 cm."
+          finalAnswer: "120 cm³"
+          stepByStepGuideline:
+            - "Use the formula: Volume = Length × Breadth × Height"
+            - "Substitute: Volume = 6 × 4 × 5"
+            - "Calculate: Volume = 24 × 5 = 120 cm³"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: "6 cm"
+              width: "4 cm"
+              height: "5 cm"
+              caption: "Cuboid with given dimensions"
+
+        - id: "vb-q2"
+          problemText: "A cube has edges of length 7 cm. What is its volume?"
+          finalAnswer: "343 cm³"
+          stepByStepGuideline:
+            - "For a cube: Volume = Side × Side × Side = Side³"
+            - "Substitute: Volume = 7 × 7 × 7"
+            - "Calculate: 7 × 7 = 49, then 49 × 7 = 343 cm³"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: "7 cm"
+              width: "7 cm"
+              height: "7 cm"
+              caption: "Cube with edge 7 cm"
+
+        - id: "vb-q3"
+          problemText: "Find the volume of a rectangular container that measures 12 m by 8 m by 5 m."
+          finalAnswer: "480 m³"
+          stepByStepGuideline:
+            - "Volume = Length × Breadth × Height"
+            - "Volume = 12 × 8 × 5"
+            - "Volume = 96 × 5 = 480 m³"
+
+        - id: "vb-q4"
+          problemText: "A cubical box has edges of 9 cm. What is the volume of the box?"
+          finalAnswer: "729 cm³"
+          stepByStepGuideline:
+            - "For a cube: Volume = Side³"
+            - "Volume = 9 × 9 × 9"
+            - "9 × 9 = 81, then 81 × 9 = 729 cm³"
+
+        - id: "vb-q5"
+          problemText: "Calculate the volume of a cuboid with length 15 cm, breadth 10 cm, and height 8 cm."
+          finalAnswer: "1200 cm³"
+          stepByStepGuideline:
+            - "Volume = Length × Breadth × Height"
+            - "Volume = 15 × 10 × 8"
+            - "Volume = 150 × 8 = 1200 cm³"
+      aiGeneratedQuestions: false
+
+  - id: finding-unknown-dimension-foundation
+    title: "Finding an Unknown Dimension"
+    layer: foundation
+    prerequisites:
+      - volume-basics-foundation
+    problemsRequired: 6
+    descriptor:
+      section: "finding-unknown-dimension"
+      problemDescription:
+        - "Find unknown height, length, or breadth using division"
+        - "Rearrange V = L × B × H to solve for missing dimension"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "fud-q1"
+          avatarIntro: "Now let's work backwards! If we know the volume and two dimensions, we can find the third."
+          problemText: "A cuboid has a volume of 360 cm³. Its length is 9 cm and its breadth is 8 cm. Find its height."
+          finalAnswer: "5 cm"
+          stepByStepGuideline:
+            - "Use: Height = Volume ÷ (Length × Breadth)"
+            - "Height = 360 ÷ (9 × 8)"
+            - "Height = 360 ÷ 72 = 5 cm"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: "8 cm"
+              width: "9 cm"
+              height: "?"
+              highlightElement: "height"
+              caption: "Find the height"
+
+        - id: "fud-q2"
+          problemText: "The volume of a rectangular box is 540 cm³. Its breadth is 6 cm and height is 9 cm. What is its length?"
+          finalAnswer: "10 cm"
+          stepByStepGuideline:
+            - "Use: Length = Volume ÷ (Breadth × Height)"
+            - "Length = 540 ÷ (6 × 9)"
+            - "Length = 540 ÷ 54 = 10 cm"
+
+        - id: "fud-q3"
+          problemText: "A cuboid has a volume of 1680 cm³. Its length is 14 cm and its height is 10 cm. Find its breadth."
+          finalAnswer: "12 cm"
+          stepByStepGuideline:
+            - "Use: Breadth = Volume ÷ (Length × Height)"
+            - "Breadth = 1680 ÷ (14 × 10)"
+            - "Breadth = 1680 ÷ 140 = 12 cm"
+
+        - id: "fud-q4"
+          problemText: "A rectangular tank has a volume of 2160 m³. The length is 18 m and the breadth is 12 m. Find the height of the tank."
+          finalAnswer: "10 m"
+          stepByStepGuideline:
+            - "Height = Volume ÷ (Length × Breadth)"
+            - "Height = 2160 ÷ (18 × 12)"
+            - "Height = 2160 ÷ 216 = 10 m"
+
+        - id: "fud-q5"
+          problemText: "A cuboid has a volume of 3024 cm³. If its breadth is 14 cm and height is 12 cm, find its length."
+          finalAnswer: "18 cm"
+          stepByStepGuideline:
+            - "Length = Volume ÷ (Breadth × Height)"
+            - "Length = 3024 ÷ (14 × 12)"
+            - "Length = 3024 ÷ 168 = 18 cm"
+
+        - id: "fud-q6"
+          problemText: "The volume of a container is 4320 cm³. Its length is 24 cm and height is 15 cm. What is the breadth?"
+          finalAnswer: "12 cm"
+          stepByStepGuideline:
+            - "Breadth = Volume ÷ (Length × Height)"
+            - "Breadth = 4320 ÷ (24 × 15)"
+            - "Breadth = 4320 ÷ 360 = 12 cm"
+      aiGeneratedQuestions: false
+
+  - id: cube-edge-from-volume-foundation
+    title: "Finding the Edge of a Cube"
+    layer: foundation
+    prerequisites:
+      - volume-basics-foundation
+    problemsRequired: 5
+    descriptor:
+      section: "cube-edge-from-volume"
+      problemDescription:
+        - "Find edge length of cube using cube root"
+        - "Recognize perfect cubes and calculate cube roots"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "cef-q1"
+          avatarIntro: "For cubes, all sides are equal. To find the edge from volume, we use cube roots. Let's practice!"
+          problemText: "A cube has a volume of 512 cm³. What is the length of one edge?"
+          finalAnswer: "8 cm"
+          stepByStepGuideline:
+            - "For a cube: Volume = Side × Side × Side = Side³"
+            - "To find side: Side = ∛Volume"
+            - "Side = ∛512 = 8 cm (since 8 × 8 × 8 = 512)"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: "?"
+              width: "?"
+              height: "?"
+              caption: "Cube with volume 512 cm³"
+
+        - id: "cef-q2"
+          problemText: "The volume of a cubical container is 1000 cm³. Find the length of each edge."
+          finalAnswer: "10 cm"
+          stepByStepGuideline:
+            - "Side = ∛Volume"
+            - "Side = ∛1000"
+            - "Since 10 × 10 × 10 = 1000, the edge is 10 cm"
+
+        - id: "cef-q3"
+          problemText: "A cubical box has a volume of 216 cm³. What is the length of one edge of the box?"
+          finalAnswer: "6 cm"
+          stepByStepGuideline:
+            - "Side = ∛Volume = ∛216"
+            - "6 × 6 × 6 = 216"
+            - "Edge = 6 cm"
+
+        - id: "cef-q4"
+          problemText: "Find the edge length of a cube with volume 343 cm³."
+          finalAnswer: "7 cm"
+          stepByStepGuideline:
+            - "Side = ∛343"
+            - "7 × 7 × 7 = 343"
+            - "Edge = 7 cm"
+
+        - id: "cef-q5"
+          problemText: "A cubical tank has a volume of 125 m³. What is the length of one edge?"
+          finalAnswer: "5 m"
+          stepByStepGuideline:
+            - "Side = ∛Volume = ∛125"
+            - "5 × 5 × 5 = 125"
+            - "Edge = 5 m"
+      aiGeneratedQuestions: false
+
+  - id: using-face-area-foundation
+    title: "Using Face Area to Find Dimensions"
+    layer: foundation
+    prerequisites:
+      - finding-unknown-dimension-foundation
+      - cube-edge-from-volume-foundation
+    problemsRequired: 5
+    descriptor:
+      section: "using-face-area"
+      problemDescription:
+        - "Apply Volume = Base Area × Height"
+        - "Find dimensions using face area relationships"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "ufa-q1"
+          avatarIntro: "Sometimes we're given the area of a face instead of individual dimensions. Let's see how to use that!"
+          problemText: "The area of the base of a cuboid is 84 cm² and its volume is 1260 cm³. Find the height of the cuboid."
+          finalAnswer: "15 cm"
+          stepByStepGuideline:
+            - "Volume = Base Area × Height"
+            - "Height = Volume ÷ Base Area"
+            - "Height = 1260 ÷ 84 = 15 cm"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: ""
+              width: ""
+              height: "?"
+              highlightElement: "height"
+              caption: "Base Area = 84 cm², Volume = 1260 cm³"
+
+        - id: "ufa-q2"
+          problemText: "A cuboid has a base area of 96 cm² and a volume of 1440 cm³. What is its height?"
+          finalAnswer: "15 cm"
+          stepByStepGuideline:
+            - "Height = Volume ÷ Base Area"
+            - "Height = 1440 ÷ 96 = 15 cm"
+
+        - id: "ufa-q3"
+          problemText: "The area of one face of a cube is 49 cm². What is the length of one edge of the cube?"
+          finalAnswer: "7 cm"
+          stepByStepGuideline:
+            - "For a cube, each face is a square"
+            - "Face Area = Edge × Edge = Edge²"
+            - "Edge = √49 = 7 cm"
+
+        - id: "ufa-q4"
+          problemText: "A cube has a face area of 144 cm². Find the length of each edge."
+          finalAnswer: "12 cm"
+          stepByStepGuideline:
+            - "Face Area = Edge²"
+            - "Edge = √144 = 12 cm"
+
+        - id: "ufa-q5"
+          problemText: "The base area of a rectangular container is 120 m² and its volume is 1800 m³. Find its height."
+          finalAnswer: "15 m"
+          stepByStepGuideline:
+            - "Height = Volume ÷ Base Area"
+            - "Height = 1800 ÷ 120 = 15 m"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # FOUNDATION LAYER - Finding the Area of One Face
+  # ============================================
+
+  - id: base-area-from-volume-foundation
+    title: "Finding Base Area from Volume"
+    layer: foundation
+    prerequisites:
+      - volume-basics-foundation
+    problemsRequired: 5
+    descriptor:
+      section: "base-area-from-volume"
+      problemDescription:
+        - "Calculate base area using Base Area = Volume ÷ Height"
+        - "Apply correct units (cm² for area)"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "bav-q1"
+          avatarIntro: "Think of volume as stacking layers. Each layer is the base area, and we stack them to the height!"
+          problemText: "A cuboid has a volume of 720 cm³ and a height of 8 cm. Find the base area."
+          finalAnswer: "90 cm²"
+          stepByStepGuideline:
+            - "Volume = Base Area × Height"
+            - "Base Area = Volume ÷ Height"
+            - "Base Area = 720 ÷ 8 = 90 cm²"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: ""
+              width: ""
+              height: "8 cm"
+              caption: "Volume = 720 cm³, Height = 8 cm"
+
+        - id: "bav-q2"
+          problemText: "A rectangular tank has a volume of 1350 m³ and a height of 9 m. What is the base area?"
+          finalAnswer: "150 m²"
+          stepByStepGuideline:
+            - "Base Area = Volume ÷ Height"
+            - "Base Area = 1350 ÷ 9 = 150 m²"
+
+        - id: "bav-q3"
+          problemText: "The volume of a cuboid is 2240 cm³ and its height is 14 cm. Find the area of its base."
+          finalAnswer: "160 cm²"
+          stepByStepGuideline:
+            - "Base Area = Volume ÷ Height"
+            - "Base Area = 2240 ÷ 14 = 160 cm²"
+
+        - id: "bav-q4"
+          problemText: "A storage box has a volume of 5400 cm³ and a height of 12 cm. Calculate its base area."
+          finalAnswer: "450 cm²"
+          stepByStepGuideline:
+            - "Base Area = Volume ÷ Height"
+            - "Base Area = 5400 ÷ 12 = 450 cm²"
+
+        - id: "bav-q5"
+          problemText: "A container has a volume of 3780 m³ and a height of 21 m. Find the base area."
+          finalAnswer: "180 m²"
+          stepByStepGuideline:
+            - "Base Area = Volume ÷ Height"
+            - "Base Area = 3780 ÷ 21 = 180 m²"
+      aiGeneratedQuestions: false
+
+  - id: face-area-of-cuboid-foundation
+    title: "Finding Face Area of a Cuboid"
+    layer: foundation
+    prerequisites:
+      - base-area-from-volume-foundation
+    problemsRequired: 5
+    descriptor:
+      section: "face-area-of-cuboid"
+      problemDescription:
+        - "Find area of any face using Volume ÷ perpendicular dimension"
+        - "Identify which dimension is perpendicular to the face"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "fac-q1"
+          avatarIntro: "A cuboid has 6 faces - 3 pairs. To find any face area, divide volume by the dimension perpendicular to it!"
+          problemText: "The volume of a cuboid is 2880 cm³. Its breadth is 8 cm. Find the area of the front face (the face perpendicular to the breadth)."
+          finalAnswer: "360 cm²"
+          stepByStepGuideline:
+            - "The front face is perpendicular to the breadth"
+            - "Face Area = Volume ÷ Breadth"
+            - "Face Area = 2880 ÷ 8 = 360 cm²"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: ""
+              width: "8 cm"
+              height: ""
+              caption: "Volume = 2880 cm³, Breadth = 8 cm"
+
+        - id: "fac-q2"
+          problemText: "A cuboid has a volume of 4200 cm³. Its height is 12 cm. Find the area of the base (top or bottom face)."
+          finalAnswer: "350 cm²"
+          stepByStepGuideline:
+            - "Base/top face is perpendicular to height"
+            - "Base Area = Volume ÷ Height"
+            - "Face Area = 4200 ÷ 12 = 350 cm²"
+
+        - id: "fac-q3"
+          problemText: "The volume of a cuboid is 3150 cm³ and its length is 15 cm. Find the area of the side face (perpendicular to the length)."
+          finalAnswer: "210 cm²"
+          stepByStepGuideline:
+            - "Side face is perpendicular to length"
+            - "Face Area = Volume ÷ Length"
+            - "Face Area = 3150 ÷ 15 = 210 cm²"
+
+        - id: "fac-q4"
+          problemText: "A rectangular box has a volume of 5760 cm³. The breadth is 16 cm. What is the area of the face perpendicular to the breadth?"
+          finalAnswer: "360 cm²"
+          stepByStepGuideline:
+            - "This face is perpendicular to breadth"
+            - "Face Area = Volume ÷ Breadth"
+            - "Face Area = 5760 ÷ 16 = 360 cm²"
+
+        - id: "fac-q5"
+          problemText: "The volume of a cuboid is 2100 m³ and its height is 10 m. Find the base area."
+          finalAnswer: "210 m²"
+          stepByStepGuideline:
+            - "Base is perpendicular to height"
+            - "Base Area = Volume ÷ Height"
+            - "Base Area = 2100 ÷ 10 = 210 m²"
+      aiGeneratedQuestions: false
+
+  - id: face-area-of-cube-foundation
+    title: "Finding Face Area of a Cube"
+    layer: foundation
+    prerequisites:
+      - cube-edge-from-volume-foundation
+      - base-area-from-volume-foundation
+    problemsRequired: 5
+    descriptor:
+      section: "face-area-of-cube"
+      problemDescription:
+        - "Apply two-step process: find edge using cube root, then square it"
+        - "Step 1: Edge = ∛Volume, Step 2: Face Area = Edge²"
+      contexts:
+        - "pure computation"
+      preWrittenQuestions:
+        - id: "fcu-q1"
+          avatarIntro: "For cubes, we need two steps: first find the edge using cube root, then square it to get face area!"
+          problemText: "A cube has a volume of 1728 cm³. Find the area of one face."
+          finalAnswer: "144 cm²"
+          stepByStepGuideline:
+            - "Step 1: Find the edge"
+            - "Edge = ∛1728 = 12 cm (since 12 × 12 × 12 = 1728)"
+            - "Step 2: Find face area"
+            - "Face Area = Edge × Edge = 12 × 12 = 144 cm²"
+
+        - id: "fcu-q2"
+          problemText: "The volume of a cube is 3375 cm³. What is the area of one of its faces?"
+          finalAnswer: "225 cm²"
+          stepByStepGuideline:
+            - "Step 1: Edge = ∛3375 = 15 cm (15 × 15 × 15 = 3375)"
+            - "Step 2: Face Area = 15 × 15 = 225 cm²"
+
+        - id: "fcu-q3"
+          problemText: "A cubical box has a volume of 2197 cm³. Find the area of one face."
+          finalAnswer: "169 cm²"
+          stepByStepGuideline:
+            - "Step 1: Edge = ∛2197 = 13 cm (13 × 13 × 13 = 2197)"
+            - "Step 2: Face Area = 13 × 13 = 169 cm²"
+
+        - id: "fcu-q4"
+          problemText: "The volume of a cube is 4096 cm³. Calculate the area of one face."
+          finalAnswer: "256 cm²"
+          stepByStepGuideline:
+            - "Step 1: Edge = ∛4096 = 16 cm (16 × 16 × 16 = 4096)"
+            - "Step 2: Face Area = 16 × 16 = 256 cm²"
+
+        - id: "fcu-q5"
+          problemText: "A cubical container has a volume of 5832 cm³. Find the area of one of its square faces."
+          finalAnswer: "324 cm²"
+          stepByStepGuideline:
+            - "Step 1: Edge = ∛5832 = 18 cm (18 × 18 × 18 = 5832)"
+            - "Step 2: Face Area = 18 × 18 = 324 cm²"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # WORD PROBLEMS LAYER - Basic Volume Problems
+  # ============================================
+
+  - id: basic-volume-word-problems-node
+    title: "Basic Volume Word Problems"
+    layer: word-problems
+    prerequisites:
+      - finding-unknown-dimension-foundation
+      - cube-edge-from-volume-foundation
+    problemsRequired: 5
+    descriptor:
+      section: "basic-volume-word-problems"
+      problemDescription:
+        - "Solve real-world problems about boxes and containers"
+        - "Extract dimensions from context and apply volume formulas"
+      contexts:
+        - "storage boxes"
+        - "containers"
+        - "tanks"
+      preWrittenQuestions:
+        - id: "bwp-q1"
+          avatarIntro: "Let's apply what we've learned to real-world problems! Read carefully to identify what you need to find."
+          problemText: "Mei Lin has a rectangular jewellery box with a volume of 1350 cm³. The length of the box is 18 cm and its height is 5 cm. What is the breadth of the box?"
+          finalAnswer: "15 cm"
+          stepByStepGuideline:
+            - "Volume = 1350 cm³, Length = 18 cm, Height = 5 cm"
+            - "Breadth = Volume ÷ (Length × Height)"
+            - "Breadth = 1350 ÷ (18 × 5) = 1350 ÷ 90 = 15 cm"
+          mathTool:
+            toolName: "cuboid"
+            parameters:
+              length: "?"
+              width: "18 cm"
+              height: "5 cm"
+              highlightElement: "length"
+              caption: "Jewellery box: Volume = 1350 cm³"
+
+        - id: "bwp-q2"
+          problemText: "A cubical dice has a volume of 64 cm³. What is the length of one edge of the dice?"
+          finalAnswer: "4 cm"
+          stepByStepGuideline:
+            - "For a cube: Edge = ∛Volume"
+            - "Edge = ∛64 = 4 cm (since 4 × 4 × 4 = 64)"
+
+        - id: "bwp-q3"
+          problemText: "Ravi's fish tank has a base area of 800 cm² and a volume of 12,000 cm³. What is the height of the fish tank?"
+          finalAnswer: "15 cm"
+          stepByStepGuideline:
+            - "Volume = Base Area × Height"
+            - "Height = Volume ÷ Base Area"
+            - "Height = 12000 ÷ 800 = 15 cm"
+
+        - id: "bwp-q4"
+          problemText: "A rectangular storage container has a volume of 2520 cm³. Its length is 21 cm and its breadth is 12 cm. Find its height."
+          finalAnswer: "10 cm"
+          stepByStepGuideline:
+            - "Height = Volume ÷ (Length × Breadth)"
+            - "Height = 2520 ÷ (21 × 12)"
+            - "Height = 2520 ÷ 252 = 10 cm"
+
+        - id: "bwp-q5"
+          problemText: "A wooden block is in the shape of a cube. Its volume is 729 cm³. What is the length of each edge?"
+          finalAnswer: "9 cm"
+          stepByStepGuideline:
+            - "Edge = ∛Volume = ∛729"
+            - "9 × 9 × 9 = 729"
+            - "Edge = 9 cm"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # WORD PROBLEMS LAYER - Water Tank Problems
+  # ============================================
+
+  - id: water-tank-problems-node-1
+    title: "Water Tank Problems: Water Level"
+    layer: word-problems
+    prerequisites:
+      - basic-volume-word-problems-node
+    problemsRequired: 5
+    descriptor:
+      section: "water-tank-problems"
+      problemDescription:
+        - "Calculate water level height from volume"
+        - "Convert between litres and cm³ (1 L = 1000 cm³)"
+      contexts:
+        - "water tanks"
+        - "containers with water"
+      preWrittenQuestions:
+        - id: "wtp1-q1"
+          avatarIntro: "Water tank problems often involve converting between litres and cm³. Remember: 1 litre = 1000 cm³!"
+          problemText: "A rectangular tank measures 50 cm by 30 cm by 40 cm. It contains 36 litres of water. What is the height of the water level?"
+          finalAnswer: "24 cm"
+          stepByStepGuideline:
+            - "First, convert litres to cm³: 36 litres = 36 × 1000 = 36,000 cm³"
+            - "Base Area = 50 × 30 = 1500 cm²"
+            - "Water Height = Volume ÷ Base Area = 36000 ÷ 1500 = 24 cm"
+
+        - id: "wtp1-q2"
+          problemText: "A tank measuring 45 cm by 20 cm by 35 cm is filled with 18 litres of water. Find the height of the water level."
+          finalAnswer: "20 cm"
+          stepByStepGuideline:
+            - "18 litres = 18,000 cm³"
+            - "Base Area = 45 × 20 = 900 cm²"
+            - "Water Height = 18000 ÷ 900 = 20 cm"
+
+        - id: "wtp1-q3"
+          problemText: "A rectangular tank has a base area of 1200 cm² and is filled with 24 litres of water. What is the height of the water level?"
+          finalAnswer: "20 cm"
+          stepByStepGuideline:
+            - "24 litres = 24,000 cm³"
+            - "Water Height = Volume ÷ Base Area = 24000 ÷ 1200 = 20 cm"
+
+        - id: "wtp1-q4"
+          problemText: "A tank measures 60 cm by 40 cm by 50 cm. It is filled with 48 litres of water. Find the height of the water level."
+          finalAnswer: "20 cm"
+          stepByStepGuideline:
+            - "48 litres = 48,000 cm³"
+            - "Base Area = 60 × 40 = 2400 cm²"
+            - "Water Height = 48000 ÷ 2400 = 20 cm"
+
+        - id: "wtp1-q5"
+          problemText: "A rectangular container measuring 35 cm by 25 cm by 30 cm contains 21 litres of water. What is the height of the water?"
+          finalAnswer: "24 cm"
+          stepByStepGuideline:
+            - "21 litres = 21,000 cm³"
+            - "Base Area = 35 × 25 = 875 cm²"
+            - "Water Height = 21000 ÷ 875 = 24 cm"
+      aiGeneratedQuestions: false
+
+  - id: water-tank-problems-node-2
+    title: "Water Tank Problems: Filling and Emptying"
+    layer: word-problems
+    prerequisites:
+      - water-tank-problems-node-1
+    problemsRequired: 5
+    descriptor:
+      section: "water-tank-problems"
+      problemDescription:
+        - "Calculate volume needed to fill tank completely"
+        - "Find remaining water after pouring away"
+      contexts:
+        - "filling tanks"
+        - "pouring away water"
+      preWrittenQuestions:
+        - id: "wtp2-q1"
+          avatarIntro: "Now let's work with filling and emptying tanks. Think about what space is left or what volume changes!"
+          problemText: "A rectangular tank measures 50 cm by 35 cm by 45 cm. It contains 52.5 litres of water. How much more water is needed to fill the tank completely? Give your answer in litres."
+          finalAnswer: "26.25 litres"
+          stepByStepGuideline:
+            - "Total tank volume = 50 × 35 × 45 = 78,750 cm³ = 78.75 litres"
+            - "Water already in tank = 52.5 litres"
+            - "Water needed = 78.75 - 52.5 = 26.25 litres"
+
+        - id: "wtp2-q2"
+          problemText: "A tank measuring 42 cm by 30 cm by 50 cm contains 37.8 litres of water. John pours away 12.6 litres. What is the new height of the water level?"
+          finalAnswer: "20 cm"
+          stepByStepGuideline:
+            - "Water remaining = 37.8 - 12.6 = 25.2 litres = 25,200 cm³"
+            - "Base Area = 42 × 30 = 1260 cm²"
+            - "New water height = 25200 ÷ 1260 = 20 cm"
+
+        - id: "wtp2-q3"
+          problemText: "A rectangular tank is 48 cm long and 32 cm wide. The water level is at 25 cm. Sally pours away 7680 cm³ of water. What is the new height of the water?"
+          finalAnswer: "20 cm"
+          stepByStepGuideline:
+            - "Original water volume = 48 × 32 × 25 = 38,400 cm³"
+            - "Water remaining = 38400 - 7680 = 30,720 cm³"
+            - "New height = 30720 ÷ (48 × 32) = 30720 ÷ 1536 = 20 cm"
+
+        - id: "wtp2-q4"
+          problemText: "A tank measures 40 cm by 25 cm by 36 cm. It is half-filled with water. How many litres of water does it contain?"
+          finalAnswer: "18 litres"
+          stepByStepGuideline:
+            - "Tank volume = 40 × 25 × 36 = 36,000 cm³"
+            - "Half-filled = 36000 ÷ 2 = 18,000 cm³"
+            - "18,000 cm³ = 18 litres"
+
+        - id: "wtp2-q5"
+          problemText: "A rectangular tank measures 55 cm by 40 cm by 30 cm. It contains 44 litres of water. How many more litres are needed to fill it to the brim?"
+          finalAnswer: "22 litres"
+          stepByStepGuideline:
+            - "Tank volume = 55 × 40 × 30 = 66,000 cm³ = 66 litres"
+            - "Water needed = 66 - 44 = 22 litres"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # WORD PROBLEMS LAYER - Multi-step Problems
+  # ============================================
+
+  - id: multi-step-problems-node-1
+    title: "Multi-step Problems: Fractional Fill"
+    layer: word-problems
+    prerequisites:
+      - water-tank-problems-node-2
+    problemsRequired: 5
+    descriptor:
+      section: "multi-step-transfer-problems"
+      problemDescription:
+        - "Solve fractional fill problems (tank is 2/3 filled)"
+        - "Calculate water volume from fractional heights"
+      contexts:
+        - "partially filled tanks"
+        - "fractional fill"
+      preWrittenQuestions:
+        - id: "msp1-q1"
+          avatarIntro: "When a tank is fractionally filled, we can find the water height by multiplying the fraction by the total height!"
+          problemText: "A rectangular tank measures 48 cm by 36 cm by 50 cm. It is $\\frac{3}{5}$ filled with water. How many litres of water does it contain?"
+          finalAnswer: "51.84 litres"
+          stepByStepGuideline:
+            - "Water height = $\\frac{3}{5}$ × 50 = 30 cm"
+            - "Volume of water = 48 × 36 × 30 = 51,840 cm³"
+            - "51,840 cm³ = 51.84 litres"
+
+        - id: "msp1-q2"
+          problemText: "A tank measuring 40 cm by 25 cm by 45 cm is $\\frac{2}{3}$ filled with water. Find the volume of water in litres."
+          finalAnswer: "30 litres"
+          stepByStepGuideline:
+            - "Water height = $\\frac{2}{3}$ × 45 = 30 cm"
+            - "Volume = 40 × 25 × 30 = 30,000 cm³ = 30 litres"
+
+        - id: "msp1-q3"
+          problemText: "A rectangular container measures 56 cm by 35 cm by 40 cm. It is $\\frac{5}{8}$ filled with water. How much more water is needed to fill it completely? Give your answer in litres."
+          finalAnswer: "29.4 litres"
+          stepByStepGuideline:
+            - "Total volume = 56 × 35 × 40 = 78,400 cm³"
+            - "Water in tank = $\\frac{5}{8}$ × 78,400 = 49,000 cm³"
+            - "Empty space = 78,400 - 49,000 = 29,400 cm³ = 29.4 litres"
+
+        - id: "msp1-q4"
+          problemText: "Tank A measures 60 cm by 45 cm by 40 cm and is $\\frac{3}{4}$ filled with water. All this water is poured into empty Tank B which measures 54 cm by 50 cm by 30 cm. What is the height of the water level in Tank B?"
+          finalAnswer: "30 cm"
+          stepByStepGuideline:
+            - "Water height in A = $\\frac{3}{4}$ × 40 = 30 cm"
+            - "Volume of water = 60 × 45 × 30 = 81,000 cm³"
+            - "In Tank B: Height = 81000 ÷ (54 × 50) = 81000 ÷ 2700 = 30 cm"
+
+        - id: "msp1-q5"
+          problemText: "A tank measuring 44 cm by 30 cm by 50 cm is $\\frac{4}{5}$ filled with water. Liam pours out 13.2 litres. What is the new height of the water?"
+          finalAnswer: "30 cm"
+          stepByStepGuideline:
+            - "Water height = $\\frac{4}{5}$ × 50 = 40 cm"
+            - "Original water volume = 44 × 30 × 40 = 52,800 cm³"
+            - "After pouring: 52,800 - 13,200 = 39,600 cm³"
+            - "New height = 39600 ÷ (44 × 30) = 39600 ÷ 1320 = 30 cm"
+      aiGeneratedQuestions: false
+
+  - id: multi-step-problems-node-2
+    title: "Multi-step Problems: Transfer and Rate"
+    layer: word-problems
+    prerequisites:
+      - multi-step-problems-node-1
+    problemsRequired: 5
+    descriptor:
+      section: "multi-step-transfer-problems"
+      problemDescription:
+        - "Solve water transfer problems (volume stays constant)"
+        - "Apply rate formula: Time = Volume ÷ Rate"
+      contexts:
+        - "water transfer"
+        - "flow rate problems"
+      preWrittenQuestions:
+        - id: "msp2-q1"
+          avatarIntro: "When water is transferred, the volume stays the same. For rate problems, use Time = Volume ÷ Rate."
+          problemText: "Tank A measures 48 cm by 25 cm by 45 cm and is $\\frac{2}{3}$ filled with water. The water is poured into an empty cubical tank. If the water level in the cube is 40 cm, find the length of one edge of the cubical tank."
+          finalAnswer: "30 cm"
+          stepByStepGuideline:
+            - "Water height in Tank A = $\\frac{2}{3}$ × 45 = 30 cm"
+            - "Volume of water = 48 × 25 × 30 = 36,000 cm³"
+            - "For cube: Base Area = Volume ÷ Water Height = 36000 ÷ 40 = 900 cm²"
+            - "Edge of cube = √900 = 30 cm"
+
+        - id: "msp2-q2"
+          problemText: "A rectangular tank with a base area of 2400 cm² has water up to a height of 25 cm. A tap is turned on and water flows in at 6 litres per minute. How long will it take for the water level to rise by 10 cm?"
+          finalAnswer: "4 minutes"
+          stepByStepGuideline:
+            - "Volume needed to raise level by 10 cm = 2400 × 10 = 24,000 cm³"
+            - "24,000 cm³ = 24 litres"
+            - "Time = Volume ÷ Rate = 24 ÷ 6 = 4 minutes"
+
+        - id: "msp2-q3"
+          problemText: "A tank measuring 60 cm by 40 cm by 50 cm is $\\frac{2}{5}$ filled with water. A tap is turned on and water flows in at 4.8 litres per minute. How long will it take to fill the tank completely?"
+          finalAnswer: "15 minutes"
+          stepByStepGuideline:
+            - "Total volume = 60 × 40 × 50 = 120,000 cm³ = 120 litres"
+            - "Water already in = $\\frac{2}{5}$ × 120 = 48 litres"
+            - "Water needed = 120 - 48 = 72 litres"
+            - "Time = 72 ÷ 4.8 = 15 minutes"
+
+        - id: "msp2-q4"
+          problemText: "A rectangular tank with base 45 cm by 36 cm is half-filled with water. Water drains out at a rate of 2.7 litres per minute. How long will it take for the water level to drop by 15 cm?"
+          finalAnswer: "9 minutes"
+          stepByStepGuideline:
+            - "Volume to drain = 45 × 36 × 15 = 24,300 cm³ = 24.3 litres"
+            - "Time = 24.3 ÷ 2.7 = 9 minutes"
+
+        - id: "msp2-q5"
+          problemText: "Tank P measures 50 cm by 40 cm by 36 cm and is completely filled with water. All the water is poured into an empty Tank Q measuring 60 cm by 48 cm by 30 cm. What is the height of the water level in Tank Q?"
+          finalAnswer: "25 cm"
+          stepByStepGuideline:
+            - "Volume of water = 50 × 40 × 36 = 72,000 cm³"
+            - "Base Area of Tank Q = 60 × 48 = 2880 cm²"
+            - "Water height in Q = 72000 ÷ 2880 = 25 cm"
+      aiGeneratedQuestions: false
+
+  # ============================================
+  # EXAM PRACTICE LAYER
+  # ============================================
+
+  - id: volume-exam-practice
+    title: "More Practice: Volume of Cube and Cuboid"
+    layer: examPractice
+    prerequisites:
+      - multi-step-problems-node-2
+      - face-area-of-cube-foundation
+    problemsRequired: 6
+    descriptor:
+      section: "multi-step-transfer-problems"
+      problemDescription:
+        - "Challenging exam-style questions"
+        - "Multi-step problems combining various concepts"
+      contexts:
+        - "exam-style questions"
+      preWrittenQuestions:
+        - id: "ep-q1"
+          avatarIntro: "Let's tackle some challenging exam-style problems that combine everything you've learned!"
+          problemText: "A cubical container has a volume of 2744 cm³. Find (a) the length of one edge, and (b) the area of one face."
+          finalAnswer: "(a) 14 cm, (b) 196 cm²"
+          stepByStepGuideline:
+            - "(a) Edge = ∛2744 = 14 cm (since 14 × 14 × 14 = 2744)"
+            - "(b) Face Area = 14 × 14 = 196 cm²"
+
+        - id: "ep-q2"
+          problemText: "The volume of a cuboid is 4500 cm³. Its base area is 180 cm². If the length is 15 cm, find (a) the height and (b) the breadth."
+          finalAnswer: "(a) 25 cm, (b) 12 cm"
+          stepByStepGuideline:
+            - "(a) Height = Volume ÷ Base Area = 4500 ÷ 180 = 25 cm"
+            - "(b) Breadth = Base Area ÷ Length = 180 ÷ 15 = 12 cm"
+
+        - id: "ep-q3"
+          problemText: "A rectangular tank measures 75 cm by 48 cm by 40 cm and is $\\frac{5}{8}$ filled with water. (a) How many litres of water are in the tank? (b) If water is added at a rate of 6 litres per minute, how long will it take to fill the tank completely?"
+          finalAnswer: "(a) 90 litres, (b) 9 minutes"
+          stepByStepGuideline:
+            - "Total volume = 75 × 48 × 40 = 144,000 cm³ = 144 litres"
+            - "(a) Water in tank = $\\frac{5}{8}$ × 144 = 90 litres"
+            - "(b) Water needed = 144 - 90 = 54 litres"
+            - "Time = 54 ÷ 6 = 9 minutes"
+
+        - id: "ep-q4"
+          problemText: "A metal cube has edges of 12 cm. It is melted and recast into a cuboid with length 18 cm and breadth 16 cm. Find the height of the cuboid."
+          finalAnswer: "6 cm"
+          stepByStepGuideline:
+            - "Volume of cube = 12 × 12 × 12 = 1728 cm³"
+            - "Volume of cuboid = Volume of cube = 1728 cm³"
+            - "Height = Volume ÷ (Length × Breadth) = 1728 ÷ (18 × 16) = 1728 ÷ 288 = 6 cm"
+
+        - id: "ep-q5"
+          problemText: "Tank A measuring 50 cm by 40 cm by 30 cm is completely filled with water. All the water is poured into Tank B which is a cube with edges of 50 cm. Find (a) the height of the water level in Tank B, and (b) how much more water is needed to fill Tank B completely, in litres."
+          finalAnswer: "(a) 24 cm, (b) 65 litres"
+          stepByStepGuideline:
+            - "Volume of water from Tank A = 50 × 40 × 30 = 60,000 cm³"
+            - "Base area of Tank B = 50 × 50 = 2500 cm²"
+            - "(a) Water height = 60000 ÷ 2500 = 24 cm"
+            - "Volume of Tank B = 50³ = 125,000 cm³"
+            - "(b) Water needed = 125,000 - 60,000 = 65,000 cm³ = 65 litres"
+
+        - id: "ep-q6"
+          problemText: "A cuboid-shaped container has a volume of 3600 cm³. The area of its base is 120 cm² and its breadth is 8 cm. Find (a) the height, (b) the length, and (c) the area of the front face."
+          finalAnswer: "(a) 30 cm, (b) 15 cm, (c) 450 cm²"
+          stepByStepGuideline:
+            - "(a) Height = Volume ÷ Base Area = 3600 ÷ 120 = 30 cm"
+            - "(b) Length = Base Area ÷ Breadth = 120 ÷ 8 = 15 cm"
+            - "(c) Front face area = Length × Height = 15 × 30 = 450 cm²"
+      aiGeneratedQuestions: false

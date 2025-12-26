@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180">
+  <!-- Background -->
+  <rect width="200" height="180" fill="#f8fafc"/>
+
+  <!-- Square (corners shaded) -->
+  <rect x="40" y="30" width="120" height="120" fill="#fecdd3" stroke="#e11d48" stroke-width="2"/>
+
+  <!-- Inscribed circle (white) -->
+  <circle cx="100" cy="90" r="60" fill="#f8fafc" stroke="#e11d48" stroke-width="2"/>
+
+  <!-- Dimensions -->
+  <text x="100" y="22" text-anchor="middle" font-size="11" fill="#334155" font-weight="bold">12 cm</text>
+  <line x1="40" y1="25" x2="160" y2="25" stroke="#334155" stroke-width="1"/>
+
+  <text x="175" y="95" font-size="11" fill="#334155" font-weight="bold">12 cm</text>
+  <line x1="168" y1="30" x2="168" y2="150" stroke="#334155" stroke-width="1"/>
+
+  <text x="100" y="172" text-anchor="middle" font-size="10" fill="#64748b">Find area of shaded corners</text>
+</svg>
